@@ -1,0 +1,36 @@
+\usepackage{booktabs}
+\usepackage{amsthm}
+
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=8pt plus 2pt minus 4pt
+  \thm@postskip=\thm@preskip
+}
+
+\usepackage{tcolorbox}
+
+\definecolor{yellownote}{RGB}{254,255,156}
+\definecolor{bluenote}{RGB}{218,238,255}
+
+\newtcolorbox{notebox}{
+  colback=yellownote,
+  colframe=black,
+  coltext=black,
+  boxsep=4pt,
+  fontupper=\small,
+  fontlower=\small,
+  arc=3pt}
+
+\newtcolorbox{tipbox}{
+  colback=bluenote,
+  colframe=black,
+  coltext=black,
+  boxsep=4pt,
+  fontupper=\small,
+  fontlower=\small,
+  arc=3pt}
+
+
+\newenvironment{rnote}{\par\raggedleft}{\par}
+
+\makeatother

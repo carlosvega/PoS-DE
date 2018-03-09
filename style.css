@@ -1,0 +1,78 @@
+p.caption {
+  color: #777;
+  margin-top: 10px;
+}
+p code {
+  white-space: inherit;
+}
+pre {
+  word-break: normal;
+  word-wrap: normal;
+}
+pre code {
+  white-space: inherit;
+}
+
+figure{
+  margin-bottom: 10px;
+}
+
+
+.csl-entry {
+  display: list-item;
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+.wrap-figure {
+  text-align: center;
+  float: right;
+  width: 220px;
+  margin: 20px;
+  border: solid 1px black;
+  padding: 5px;
+  font-size: 10pt;
+}
+
+.wrap-figure img {
+ width: 200px;
+}
+
+.wrap-figure figcaption {
+ width: 200px;
+}
+
+
+
+.notebox {
+  padding: 0.7em;
+  margin:5px;
+  font-style: italic;
+  text-align: center;
+  background: #feff9c;
+  color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 11pt;
+  line-height: 1.2;
+}
+.center {
+  text-align: center;
+}
+
+
+.tipbox {
+  padding: 0.7em;
+  margin:5px;
+  margin-bottom: 10px;
+  background: #daeeff;
+  color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 11pt;
+  line-height: 1.2;
+}
+
+.rnote{
+  text-align: right;
+}

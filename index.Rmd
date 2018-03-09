@@ -1,0 +1,58 @@
+--- 
+title: "Applied Philosophy of Science and Data Ethics"
+author: "Dr. Carlos Vega"
+date: "2021: Last compiled `r Sys.Date()`"
+site: bookdown::bookdown_site
+output: 
+  bookdown::gitbook:
+    includes:
+      in_header: includeme.html
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: carlosvega/POScourse
+description: "A tutorial and working resources for writing open-source textbooks using open-source tools"
+urlcolor: blue
+linkcolor: red
+---
+
+# Preface {-}
+
+:::: {.notebox data-latex=""}
+::: {.center data-latex=""}
+**Course Note:**
+:::
+
+This book is still under construction. There are more chapters coming. The current published version is a test to check serving the contents through GitHub.
+::::
+
+This book gathers the contents addressed in the course **Applied Philosophy of Science and Data Ethics** from the [Master of Data Science](https://wwwfr.uni.lu/formations/fstm/master_of_data_science) at the University of Luxembourg. This course will introduce basic philosophical and scientific concepts supported by examples and discussion. The course expects pro-active participation from the students in the form of presentations and essays as well as open debates. 
+
+This course aims to provide the students with guidelines and methodologies to identify epistemic and ethical issues present in data science. We expect the students to develop a critical eye that helps them mitigate such problems in their daily work as data scientists.
+
+During this course, students will learn by example different layers of the scientific method and how they relate to data science and data ethics. In particular, they will learn how the mechanisms behind the data affect the data analysis, and how the different types of scientific inference condition method choice and affect the conclusions drawn from the analysis. In this sense, examples of statistical abuse, misconduct and bad visualization will be shown together with their, sometimes catastrophic, collateral consequences.
+
+**Disclaimer**
+
+Although the impact and extension of the topics addressed in this course are broad and diverse, its duration is limited. Hence the scope and depth of the contents are restricted. Consequently, several topics on Philosophy of Science are tackled superficially while some others are completely ignored. Such philosophical questions are handle from a practical data science point of view. Similarly, Data Ethics is a relatively new matter in continuous evolution. Therefore we will try to cope with the main issues in the most practical way.
+
+**Learning outcomes:**
+
+In line with the European Qualitity Framework, Bachelor degrees require a critical understanding of theories and principles, while Master degrees involves higher specialised knowledge and critical awareness of knowledge issues in a field. In this case, the field at issue is data science and the contents will tackle philosophical and ethical issues concerning data science. The aim is to provide students with a better understanding of method justification, which increases their knowledge about such methods, their scope, purpose and relation to other methods.
+
+- Get familiar with the scientific goals and methods.
+- Learn the most common data science and visualization misconduct problems.
+- Critically evaluate ethical issues and method choice.
+
+**About this course**
+
+A great part of the first chapters of this course is inspired by the book from Prof. Dr Lars-Göran Johansson [@johansson2016philosophy] and the works of Prof. Dr Till Grüne-Yanoff [@grune2014teaching] as well as its great course at EDX on "Philosophy of Science for Engineers and Scientists". Regarding the second part of the course covering data ethics. I would like to thank the Univerisity of Michigan for its online courses (from which I was already a fan during my PhD, especially Applied Data Science) and especially Prof. Dr H. V. Jagadish for its course on Data Science Ethics which inspired me on the contents and examples of this course. Moreover, this last part of the course would not have been possible without many relevant books on the topics tackled in this course (see References). Including The Book of Why [@book-of-why]; Ethics and Data Science [@loukides2018ethics]; Philosophy of Natural Science [@hempel-pos]; How charts lie [@cairo2019charts]; Automating inequality [@eubanks2018automating]. I hope any resemblance or imitation is seen as an act of flattery.
+
+**About this book**
+
+This book was made thanks to the great tutorial available on the book ["Open tools for writing open interactive textbooks (and more)"](https://www.crumplab.com/OER_bookdown).
+
+**License CC BY-SA 4.0 license**
+
+The book is released under a creative commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license. This means that this book can be reused, remixed, retained, revised and redistributed (including commercially) as long as appropriate credit is given to the authors. If you remix, or modify the original version of this open textbook, you must redistribute all versions of this open textbook under the same license - CC BY-SA 4.0.

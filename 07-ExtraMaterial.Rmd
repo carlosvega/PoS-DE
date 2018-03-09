@@ -1,0 +1,20 @@
+# Extra Material {#wont-fix}
+
+This section includes related questions and topics not tackled in this course.
+
+## History of science
+
+Although many historical examples are given to the students to illustrate the different chapters and topics addressed in this course, the history of science is not part of the course curriculum. However, we aim to include a rich but brief summary of the history of science as optional reading in further semesters of this course.
+
+## Theory-relatedness of observations
+
+"A related topic is the theory-relatedness of observations; some have claimed that there are no such things as fully theory-independent observations. If true, it would undermine the possibility of objectivity of science and force us to accept strong relativism. I believe that this disastrous consequence can be avoided and that there really is a basis of theory-neutral data, also in the humanities." — Philosophy of Science for Scientists.
+
+## Gettier problems
+
+The definition of knowledge is an ongoing debate among epistemologists. Although the three criteria from Plato are necessary conditions, they are not sufficient as there are situations that satisfy all these conditions and yet don't constitute knowledge (see [Gettier cases](https://en.wikipedia.org/wiki/Gettier_case)) but such cases are rather philosophical and will not be discussed during this course.
+
+
+## Realism and anti-realism {#realism}
+
+For now this will not be included as part of the course curriculum. For a short account of this topic, read Chapter 4 from [@okasha-pos]. <!-- However, I include few sentences that might be useful regarding content already covered in the course -->
