@@ -5,7 +5,7 @@ This is a tutorial and set of working examples for creating web-based textbooks 
 
 This book gathers the contents addressed in the course **Applied Philosophy of Science and Data Ethics** from the [Master of Data Science](https://wwwfr.uni.lu/formations/fstm/master_of_data_science) at the University of Luxembourg. This course will introduce basic philosophical and scientific concepts supported by examples and discussion. The course expects pro-active participation from the students in the form of presentations and essays as well as open debates. 
 
-[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 **Licensed under CC BY-NC-SA 4.0**
 
