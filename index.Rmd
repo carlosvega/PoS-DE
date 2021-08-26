@@ -11,7 +11,7 @@ documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-github-repo: carlosvega/POScourse
+github-repo: carlosvega/PoS-DE
 description: "A tutorial and working resources for writing open-source textbooks using open-source tools"
 urlcolor: blue
 linkcolor: red
