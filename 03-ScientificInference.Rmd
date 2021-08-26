@@ -1,7 +1,5 @@
 # Scientific Inference
 
-## Overview
-
 ```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
 cat(
 '<figure style="text-align: center">
@@ -208,7 +206,7 @@ Consequently, Hume concludes that no inductive inference rule can be justified. 
 **Note for data scientists!**
 :::
 
-If we visualise the data as points in a plane; every set of finite points belongs to infinite functions or curves. The problem of induction, in this case, consists in establishing criteria that allow us to say that the finite series of data confirms only one of the functions, or less dramatically but just as problematic, that one is more confirmed than the others [@diez1997fundamentos]. (See the problem of underdetermination in § \@ref(confirmation)).
+If we visualise the data as points in a plane; every set of finite points belongs to infinite functions or curves. The problem of induction, in this case, consists in establishing criteria that allow us to say that the finite series of data confirms only one of the functions, or less dramatically but just as problematic, that one is more confirmed than the others [@diez1997fundamentos]. (See the problem of underdetermination in §\@ref(confirmation)).
 
 ::::
 
@@ -238,8 +236,6 @@ There are though some criteria for a [good hypothesis](https://opentext.wsu.edu/
 - Finally, the hypothesis should be positive. That is, the hypothesis should make a positive statement about the existence of a relationship or effect, rather than a statement that a relationship or effect does not exist. 
 
 - Finally, it should have some generality (e.g. "things of certain type...") or be about some non-directly observable property of a particular.
-
-https://en.wikipedia.org/wiki/Hypothetico-deductive_model
 
 ### Falsification {#falsification}
 
@@ -326,13 +322,13 @@ There is certain debate on this last point. Not everybody agrees that it makes s
 
 Is important to note the relevance of frequentist and Bayesian approaches in artificial intelligence. Both frequentist and Bayesian are statistical approaches to learning from data. But there is a broad distinction between the frequentist and Bayesian. The frequentist learning only depends on the given data, while the Bayesian learning is performed by the prior belief as well as the given data [@jun2016frequentist].
 
-The frequentist computes the probability of result or data $D$ given hypothesis $H$ is true, i.e. $P(D|H)$. In comparison, the Bayesian approach focus on the probability of hypothesis $H$ when the result pr data $D$ occurs, i.e. $P(H|D)$ [@orloffcomparison].
+The frequentist computes the probability of result or data $D$ given hypothesis $H$ is true, i.e. $P(D|H)$. In comparison, the Bayesian approach focus on the probability of hypothesis $H$ when the result or data $D$ occurs, i.e. $P(H|D)$ [@orloffcomparison].
 ::::
 
 Understanding that confirmation comes in degrees may help clarify the last step of **H-D method**.  Observing $C$ to be true, increases our degree of confidence that $H$ is true. But why is this? A naïve answer to this question is that observing $C$ confirms $H$ because $H$ is compatible with $C$. But this seems rather weak justification. Indefinitely irrelevant implications could be inferred from a hypothesis. For instance:
 
 ```
-I have pancreas cancer, I have a pancreas
+I have pancreas cancer, then I have a pancreas
 I have a pancreas    
 ---------
 I have pancreas cancer
@@ -398,6 +394,29 @@ Phenomenon to be explained (explanandum)
 <!-- ### Causation -->
 
 ## Examples
+
+### Neptune and Vulcan {#neptune-vulcan}
+
+Newton's gravitational theory predicted the paths the planets should follow as they orbit the sun. Most of these were confirmed by observation, but the orbit of Uranus differed from Newton's predictions. In 1846 John Adams in England and Urbain Le Verrier in France solved the mystery. Both of them suggested that another planet, yet undiscovered, was the cause of an additional gravitational force exerted on Uranus. These scientists calculated the mass and position that this planet would need to have to explain Uranus' orbit. The planet Neptune was indeed found close to the location predicted by Adams and Le Verrier.
+
+So, instead of rejecting Newton's theory right away (see \@ref(falsification)), these scientists stuck to it and tried to find another missing factor that could explain the difference. When the motion of Uranus was found not to match the predictions of Newton's laws, the theory "There are seven planets in the solar system" was rejected, and not Newton's laws themselves.
+
+However, Le Verrier also found irregularities in the motion of the planet Mercury and tried to explain them as resulting from the gravitational pull of an, again, yet undetected planet Vulcan. This hypothetical planet would have to be a very dense and small object between the sun and Mercury. In this case, no planet was found between Mercury and the sun. A satisfactory explanation was provided much later by the general theory of relativity, which justified irregularities through a new system of laws. In this case, the hypothesis or theory had to be reformulated or replaced by new one.
+
+Below you can find a [clip from lecture "The Law of Gravitation"](https://www.youtube.com/watch?v=j3mhkYbznBk&t=1830s), from the Messenger Lectures given by the renowned American theoretical physicist Richard Phillips Feynman. 
+
+```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
+cat(
+'<figure style="text-align: center">
+<video width="500"
+  frameborder="0" controls>
+  <source src="videos/Feynman-Newton-trim.mp4" type="video/mp4">
+ </video>
+ <figcaption>Clip from the first lecture, "The Law of Gravitation", from the Messenger Lectures given by the renowned American theoretical physicist Richard Phillips Feynman, about the Character of Physical Laws, at Cornell University U.S.A. recorded by BBC Nov. 9-19, 1964. The full lecture can be found at <a href="https://www.youtube.com/watch?v=j3mhkYbznBk">YouTube</a>.</figcaption>
+</figure>'
+)
+```
+
 
 ### The problem is in your hands! {#semmelweis}
 
@@ -580,9 +599,11 @@ I recommend the following [blog post](https://simonfischer.me/the-necessity-of-n
 
   -->
 
+<!--
 ### Eddington expeditions {#eddington-expeditions}
 
 [to be added] example for falsification
+-->
 
 <!--
 
