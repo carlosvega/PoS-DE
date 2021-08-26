@@ -1,5 +1,5 @@
-Crump, Matthew J. C. (2018). Applied Philosophy of Science and Data Ethics. 
-https://github.com/carlosvega/POScourse
+Carlos Vega. (2021). Applied Philosophy of Science and Data Ethics. 
+https://github.com/carlosvega/PoS-DE publicly available at https://carlosvega.github.io/PoS-DE/
 
 This is a tutorial and set of working examples for creating web-based textbooks using a collection of open-source tools.
 
@@ -7,6 +7,15 @@ This book gathers the contents addressed in the course **Applied Philosophy of S
 
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
-**License CC BY-SA 4.0 license**
+**Licensed under CC BY-NC-SA 4.0**
 
-The book is released under a creative commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license. This means that this book can be reused, remixed, retained, revised and redistributed (including commercially) as long as appropriate credit is given to the authors. If you remix, or modify the original version of this open textbook, you must redistribute all versions of this open textbook under the same license - CC BY-SA 4.0.
+The book is released under a creative commons [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license. This means that you are free to: 
+
+- **Share**: copy and redistribute the material in any medium or format.
+- **Adapt**: remix, transform, and build upon the material.
+
+Under the following terms:
+
+- **Attribution**: You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+- **Non-Commercial**: You may not use the material for commercial purposes.
+- **Share-A-like**: If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
