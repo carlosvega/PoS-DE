@@ -41,7 +41,7 @@ Below you can find a [clip from the last lecture](https://youtu.be/ECY-4Ng9Nkc?t
 cat(
 '<figure style="text-align: center">
 <video width="500"
-  frameborder="0" controls autoplay>
+  frameborder="0" controls>
   <source src="videos/feynman.mp4" type="video/mp4">
  </video>
  <figcaption>Clip from the last lecture of a series of 7 special Messenger Lectures given by the renowned American theoretical physicist Richard Phillips Feynman, about the Character of Physical Laws, at Cornell University U.S.A. recorded by BBC Nov. 9-19, 1964. The full lecture can be found at <a href="https://youtu.be/ECY-4Ng9Nkc">YouTube</a>.</figcaption>
@@ -130,7 +130,7 @@ To the ancients, the concept of a void universe was impossible. Aristotle arrive
 cat(
 '<figure style="text-align: center">
 <video width="400"
-  frameborder="0" controls autoplay>
+  frameborder="0" controls>
   <source src="videos/crop4.mp4" type="video/mp4">
  </video>
  <figcaption><b>Experiment expectation.</b> Source: <a href="https://en.wikipedia.org/wiki/The_Mechanical_Universe">The Mechanical Universe, Episode 41</a>.</figcaption>
@@ -144,7 +144,7 @@ Michelson and Morley attempted to detect the absolute motion of Earth through sp
 cat(
 '<figure style="text-align: center">
 <video width="400"
-  frameborder="0" controls autoplay>
+  frameborder="0" controls>
   <source src="videos/crop3.mp4" type="video/mp4">
  </video><figcaption><b>Experiment result.</b> Source: <a href="https://en.wikipedia.org/wiki/The_Mechanical_Universe">The Mechanical Universe, Episode 41</a>.</figcaption>
 </figure>'
@@ -190,13 +190,15 @@ The third step of the scientific method (see § \@ref(sci-method)) requires gues
 knitr::include_graphics('Figures/Ouroboros-benzene.png')
 ```
 
-<!--
-
 ### Neptune and Vulcan {#neptune-vulcan}
 
+[to be added]
+
+
+<!--
 Reformulating Newton's Laws
 
-example for reformulation of hypothesis
+example for reformulation of a hypothesis
 
 when the motion of Uranus was found not to match the predictions of Newton's laws, the theory "There are seven planets in the solar system" was rejected, and not Newton's laws themselves
 

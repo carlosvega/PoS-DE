@@ -16,6 +16,7 @@ historical-examples
 michelson-morley
 smoke-debate
 kekulés-dream
+neptune-vulcan
 scientific-inference
 overview-1
 types-of-inferences
@@ -36,6 +37,7 @@ wason
 u.s.a.-presidents
 yersinia-pestis
 risks-of-induction-and-non-epistemic-values-in-ml
+eddington-expeditions
 wont-fix
 history-of-science
 theory-relatedness-of-observations

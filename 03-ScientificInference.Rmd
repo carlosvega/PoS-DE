@@ -6,7 +6,7 @@
 cat(
 '<figure style="text-align: center">
 <video width="500"
-  frameborder="0" controls autoplay>
+  frameborder="0" controls>
   <source src="videos/sagan.mp4" type="video/mp4">
  </video>
  <figcaption>Clip from the television series Cosmos: A Personal Voyage, presented by Carl Sagan. </br> The clip can also be found in <a href="https://youtu.be/_GVhzZCt4yI?">YouTube</a>.</figcaption>
@@ -580,13 +580,11 @@ I recommend the following [blog post](https://simonfischer.me/the-necessity-of-n
 
   -->
 
-<!--
-
 ### Eddington expeditions {#eddington-expeditions}
 
-[continue] example for falsification
+[to be added] example for falsification
 
-
+<!--
 
 ## Takeaway Messages
 
