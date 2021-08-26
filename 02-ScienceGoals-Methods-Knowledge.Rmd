@@ -1,11 +1,13 @@
 # Scientific Goals, Methods and Knowledge
 
-## Overview
+<!-- ## Overview
 
 1. A
 2. B
 3. C
 4. D
+
+-->
 
 ## What is Science?
 
@@ -57,7 +59,7 @@ knitr::include_graphics('Figures/plato_knowledge.png')
 
 Definitions should not be  accepted without reason, and instead, we should attend to the arguments that support such definitions. Certain definitions may have widespread popularity but that doesn't make them any more true. For example, a dolphin is a mammal even if many people consider it a fish. In the same way, tomatoes and cucumbers are fruits for botanists even if we daily sort them as vegetables. And sometimes, even the [EU](https://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=CELEX:32001L0113:En:HTML#d1e32-72-1) and [the Supreme Court of the United States of America](https://www.nationalgeographic.com/culture/article/fruit-or-vegetable) need to act to set certain market debates.
 
-As another example, the first astronomers who lacked the telescope believed on the geocentric model because their observations did not suffice to reject it. These first astronomers had **false justified beliefs**. After the advent of the telescope in 1609, the geocentric model was rejected. But how do we know we are not in a similar situation that of the pre-telescope astronomers? Events as recent as the Michelson-Morley (see \@ref(michelson-morley)) experiment, the expeditions of Sir Arthur S. Eddington (see \@ref(eddington-expeditions)) or the predictions of Urbain Le Verrier (see \@ref(neptune-vulcan)) have changed our conceptions of the universe and physics forcing scientists to re-formulate models and theories. 
+As another example, the first astronomers who lacked the telescope believed on the geocentric model because their observations did not suffice to reject it. These first astronomers had **false justified beliefs**. After the advent of the telescope in 1609, the geocentric model was rejected. But how do we know we are not in a similar situation that of the pre-telescope astronomers? Events as recent as the Michelson-Morley (see \@ref(michelson-morley)) experiment, the expeditions of Sir Arthur S. Eddington or the predictions of Urbain Le Verrier (see \@ref(neptune-vulcan)) have changed our conceptions of the universe and physics forcing scientists to re-formulate models and theories. 
 
 In the next chapter we will see how knowledge is obtained.
 
@@ -118,7 +120,7 @@ Traditionally there are three ways to choose between alternative methods.
 
 See \@ref(smoke-debate) for an example of how reason-based methods are not always easy to implement while at the same time, outcome-oriented methods led the mainstream of an important debate.
 
-## Historical Examples
+## Examples
 
 ### The most famous "failed" experiment {#michelson-morley}
 
@@ -171,14 +173,11 @@ knitr::include_graphics('Figures/Smoking-and-lung-cancer-mortality-US-only.png')
 
 However, this method has some drawbacks too. First, the study is retrospective, meaning that participants known to have cancer are considered and researchers look back to understand why. Second, the probability logic is backwards, as the data tell us the probability that a cancer patient is a smoker instead of the probability that a smoker will get cancer. Moreover, case-control studies admit several possible sources of bias such as recall bias or selection bias. Hospitalised cancer patients were not a representative sample of the population, not even from the smoke population. Researchers were careful to call their results an "association". Later on, the study was replicated with similar results. Deniers such as R. A. Fischer were right to point out that repeating a biased study doesn't make it any better as is still biased. 
 
-We won't focus on how this story ends here but is important to notice how methods chosen based on scientific reasons are sometimes tough to implement and often need to fight against outcome-oriented studies such as those sponsored by leading tobacco companies.
+We won't focus on how this story ends here but **is important to notice how methods chosen based on scientific reasons are sometimes tough to implement and often need to fight against outcome-oriented studies** such as those sponsored by leading tobacco companies.
 
 In the end, many subsequent studies settled the smoking-cancer debate. We will come back to this example in upcoming sections of the course. If you can't wait, read Chapter 5 from the Book of Why, by Judea Pearl and Dana Mackenzie [@book-of-why].
 
 <!-- For part II: Explain the later prospective studies. The constitutional hypothesis. Its mathematical rebuttal. etc. -->
-
-<!-- Use text references to properly render links in captions for both HTML and PDF outputs https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#text-references -->
-
 
 ### Kekulé's dream
 
@@ -190,25 +189,8 @@ The third step of the scientific method (see § \@ref(sci-method)) requires gues
 knitr::include_graphics('Figures/Ouroboros-benzene.png')
 ```
 
-### Neptune and Vulcan {#neptune-vulcan}
-
-[to be added]
-
 
 <!--
-Reformulating Newton's Laws
-
-example for reformulation of a hypothesis
-
-when the motion of Uranus was found not to match the predictions of Newton's laws, the theory "There are seven planets in the solar system" was rejected, and not Newton's laws themselves
-
-[continue]
-
-https://en.wikipedia.org/wiki/Discovery_of_Neptune
-
-https://en.wikipedia.org/wiki/Vulcan_(hypothetical_planet)
-
-Freydmann
 
 ## Takeaway Messages
 
