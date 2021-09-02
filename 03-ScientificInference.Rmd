@@ -1,5 +1,9 @@
 # Scientific Inference
 
+## Overview
+
+Humans have a natural ability to conjecture and spot relationships about the world, *jumping* from hypotheses to conclusions. The scientific attitude is to keep such *jumps* under control and use a well defined procedure to arrive to a conclusion from an hypothesis. In this chapter we will examine in detail those procedures.
+
 ```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
 cat(
 '<figure style="text-align: center">
@@ -351,13 +355,20 @@ According to *anti-realists*, there will always be multiple *competing* theories
 
 But why is this important for data scientists? Often you will find many ML models or solutions that fit your available data or fulfil your requirements, and yet you will have to decide which model/solution is best. If possible, validation with external data and other assessments must be conducted, but sometimes solutions are also chosen based on *non-epistemic* values, such as making society more just or making money.
 
-Is also important to notice how the problem of underdetermination relates to the popular *No Free Lunch Theorem* which is very relevant in the Machine Learning community [@dotan2020theory].
+Is also important to notice how the problem of underdetermination relates to the popular *No Free Lunch Theorem* which is very relevant in the Machine Learning community [@dotan2020theory]. For more on the NFL read [@domingos2015master].
 
 ::::
 
 ### Other types of inference
 
-[complete?]
+:::: {.notebox data-latex=""}
+::: {.center data-latex=""}
+**Course Note:**
+:::
+
+The following content is under construction but might as well be taught during the course. I hope to complete it on time.
+This section will superficially tackle abduction and causal inferences and its relation to data science regarding non-monotonic logic. 
+::::
 
 <!--
 
@@ -371,18 +382,22 @@ Abduction or Inference to the Best Explanation (IBE)...
 
 #### Probability and Inference
 
-Mention defeasible reasoning and tweety.
+Mention non-monotonic logic, defeasible reasoning and tweety.
 
 -->
 
 ## Explanation
 
-[continue]
-[Consider moving this to chapter 3]
-
 At this point, many of you probably have already related data science to two of the goals of science: explanation and prediction. But how do they relate to one another? and what is a scientific explanation? Either to satisfy our natural curiosity or for a further purpose, science has always attempted to understand how the world works. The German philosopher Carl Hempel attempted to answer this question in the 1950s with what is known as the *covering law* model of explanation. He stated that a scientific explanation is an answer given in response to *explanation-seeking why-questions* (e.g. why salt dissolves in water).
 
-According to Hempel, explanations are structured like an argument, i.e. a set of premises followed by a conclusion. Therefore, the conclusion of such an argument states that certain phenomenon occurs, e.g. "salt dissolves in water". On the other hand, the premises indicate why the conclusion is true. Then, the challenge lays in the relationship that should follow between such premises and the conclusion. For Hempel, the premises should all be true and entail the conclusion, i.e. the argument should be deductive and *sound*. Additionally, the premises should contain at least one general law (e.g. all metals conduct electricity), a.k.a. *laws of nature*. Newton explained the elliptical orbits of planets alluding a general rule (his law of universal gravitation) together with some minor assumptions. This example fits Hempel's model very well, but not all scientific explanations do.
+According to Hempel, explanations are structured like an argument, i.e. a set of premises followed by a conclusion. Therefore, the conclusion of such an argument states that certain phenomenon occurs, e.g. "salt dissolves in water". On the other hand, the premises indicate why the conclusion is true. Then, the challenge lays in the relationship that should follow between such premises and the conclusion. For Hempel, the premises should all be true and entail the conclusion, i.e. the argument should be deductive and *sound*. Additionally, the premises should contain at least one general law (e.g. all metals conduct electricity), a.k.a. *laws of nature*. The name of the model comes from that fact that the phenomenon to be explained is "covered" by some general law.
+
+1. The *explanandum* must be a valid deductive argument.
+2. The *explanans* must contain at least one general law actually needed in the deduction.
+3. The *explanans* must be empirically testable.
+4. The sentences in the *explanans* must be true.
+
+For instance, Newton explained the elliptical orbits of planets alluding a general rule (his law of universal gravitation) together with some minor assumptions. This example fits Hempel's model very well, but not all scientific explanations do.
 
 ```
 General Law      (explanans)
@@ -391,32 +406,67 @@ Particular Facts (explanans)
 Phenomenon to be explained (explanandum)
 ```
 
-<!-- ### Causation -->
+An interesting consequence of this model lays in the relationship between explanation and prediction. Hempel argued that these are two sides of the same coin. Whenever a phenomenon is explained with the help of a covering law, the laws and the particular facts we use could have allowed us to predict the occurrence of the phenomenon. Hempel expressed this by saying that every scientific explanation is potentially a prediction. Hempel argued that the opposite is also true: every prediction is potentially an explanation. **For Hempel, explanation and prediction are structurally symmetric**. For instance, the same information we could use to predict an animal species extinction before it happened will serve to explain that very same fact after it has happened.
 
-## Examples
+(ref:flagpole-okasha) A 15-metre flagpole casts a shadow of 20 metres when the sun is 37° overhead. Figure from [@okasha-pos].
 
-### Neptune and Vulcan {#neptune-vulcan}
-
-Newton's gravitational theory predicted the paths the planets should follow as they orbit the sun. Most of these were confirmed by observation, but the orbit of Uranus differed from Newton's predictions. In 1846 John Adams in England and Urbain Le Verrier in France solved the mystery. Both of them suggested that another planet, yet undiscovered, was the cause of an additional gravitational force exerted on Uranus. These scientists calculated the mass and position that this planet would need to have to explain Uranus' orbit. The planet Neptune was indeed found close to the location predicted by Adams and Le Verrier.
-
-So, instead of rejecting Newton's theory right away (see \@ref(falsification)), these scientists stuck to it and tried to find another missing factor that could explain the difference. When the motion of Uranus was found not to match the predictions of Newton's laws, the theory "There are seven planets in the solar system" was rejected, and not Newton's laws themselves.
-
-However, Le Verrier also found irregularities in the motion of the planet Mercury and tried to explain them as resulting from the gravitational pull of an, again, yet undetected planet Vulcan. This hypothetical planet would have to be a very dense and small object between the sun and Mercury. In this case, no planet was found between Mercury and the sun. A satisfactory explanation was provided much later by the general theory of relativity, which justified irregularities through a new system of laws. In this case, the hypothesis or theory had to be reformulated or replaced by new one.
-
-Below you can find a [clip from lecture "The Law of Gravitation"](https://www.youtube.com/watch?v=j3mhkYbznBk&t=1830s), from the Messenger Lectures given by the renowned American theoretical physicist Richard Phillips Feynman. 
-
-```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
-cat(
-'<figure style="text-align: center">
-<video width="500"
-  frameborder="0" controls>
-  <source src="videos/Feynman-Newton-trim.mp4" type="video/mp4">
- </video>
- <figcaption>Clip from the first lecture, "The Law of Gravitation", from the Messenger Lectures given by the renowned American theoretical physicist Richard Phillips Feynman, about the Character of Physical Laws, at Cornell University U.S.A. recorded by BBC Nov. 9-19, 1964. The full lecture can be found at <a href="https://www.youtube.com/watch?v=j3mhkYbznBk">YouTube</a>.</figcaption>
-</figure>'
-)
+```{r flagpole, echo=F, out.width="75%", fig.align="center", fig.cap='(ref:flagpole-okasha)'}
+knitr::include_graphics('Figures/flagpole.png')
 ```
 
+Hempel's model might be too liberal, as it faces a number of odd counterexamples. For example, consider Figure \@ref(fig:flagpole). In order to explain why the shadow is 20 metres long. Indeed, this is a *explanation-seeking why-question* and a possible answer could be the following: The light rays from the sun hit the flagpole (15 metres high), the sun's elevation angle is 37° and light travels in straight lines. The trigonometric calculation $tan(37°) = 15/20$ demonstrates that the flagpole will cast a shadow of 20 metres long. This example can be found in both [@rosenberg2019philosophy] and [@okasha-pos].
+
+```
+General Law      (Light travels in straight lines)
+General Law      (Trigonometric laws)
+Particular Fact  (Flagpole is 15 metres high)
+Particular Fact  (Sun's angle of elevation is 37°)
+---------
+Phenomenon to be explained (Shadow is 20 metres long)
+```
+
+This explanation can be structured according to Hempel's schema and indeed fits Hempel's covering law model. However, when we swap the *explanandum* with the particular fact that the flagpole is 15 metres high, a problem arises. The explanation still complies with the covering law pattern, but it would be rather odd to regard it as an explanation of why the flagpole is 15 metres high. In this case, we know that the height of the flagpole is not conditioned by the sun's angle of elevation but rather because it was manufactured with such height. We can *calculate* or *predict* its height but this height will not change upon the other variables, so they do not *explain* the flagpole height.
+
+```
+General Law      (Light travels in straight lines)
+General Law      (Trigonometric laws)
+Particular Fact  (Shadow is 20 metres long)
+Particular Fact  (Sun's angle of elevation is 37°)
+---------
+Phenomenon to be explained (Flagpole is 15 metres high)
+```
+
+The moral of this example is that the concept of explanation showcases an important **asymmetry**. The length of the shadow can be explained by the height of the flagpole, given aforementioned general laws. But this does not happen in the other direction. In general, if $x$ explains $y$, then it will not be true that $y$ explains $x$ given the same laws and facts. Explanation is then an asymetric relation and Hempel's covering law model does not respect such asymmetry. Information that allow us to predict a fact before we know it does not serve to explain that very same fact after we know it, which **contradicts Hempel's thesis**.
+The general conclusion is that a good explanation of a phenomenon should contain information that is relevant to the phenomenon's occurrence.
+
+### Explanation and causality
+
+There are alternatives to the covering law model that help us understanding scientific explanation. For many, explaining a phenomenon is simply to say what caused it. Obviously, causality is also an asymmetric relation. If a faulty appliance caused a fire, then is clear that the fire did not cause the appliance to failure. The asymmetry of explanation derives from the asymmetry of causality. 
+
+However, the criticism against Hempel covering law is a bit unfair as he was an empiricist. Empiricists are sceptical about the concept of causality and argue that all our knowledge comes from experience. David Hume argued that is impossible to experience causal relations, and that causality is just what we humans project to understand the world.
+
+There are however some examples were explanation and causality do not match. For example, to say that an object's temperature is the average kinetic energy of its molecules is to explain what temperature *is*, but this does not yield the cause of such temperature.
+
+The law $PV = nRT.$ explains the temperature of a gas at equilibrium by appeal to its pressure and the volume it takes up. But volume and pressure cannot be *causes* of temperature since all of them — the temperature, the volume, and the pressure — vary, in the way the law describes, instantaneously. The changes in volume at one time do not cause changes in temperature at a later time; instead, the change in temperature occurs during exactly the same interval that pressure is changing [@rosenberg2019philosophy]. The nature of causation is still an open debate, but most philosophers have agreed that causes somehow necessitate their effects and that mere regularity cannot express this necessity.
+
+Another example, this time from [@book-of-why], show us the gap between causal vocabulary and ordinary scientific vocabulary. Consider the problem of expressing the following causal relationship: The barometer reading $B$ tracks the atmospheric pressure $P$. We can write down the relationship as $B = kP$, where $k$ is a constant of proportionality. Thanks to algebra we can rewrite the equation in multiple ways such as: $P = B/k$, $k = B/P$, or $B-kP = 0$. They mean the same and given two of the variables we can calculate the third. But in these equations there is no account of directionality. We cannot express that is the pressure which *causes* the barometer to change and not the other way around. Similarly, we cannot express the fact that the singing of the rooster *does not cause* the sun to rise. Why have scientists not captured such facts in formulas as is done in other areas like mechanics, geometry or optics? For a better understanding of causation and its role in data science I recommend you the Book of Why [@book-of-why].
+
+> Data can tell you that the people who took a medicine recovered faster than those who did not take it, but they can't tell you why. --- Book of Why
+
+
+:::: {.tipbox data-latex=""}
+::: { data-latex=""}
+**Note for data scientists!**
+:::
+
+In the biological and social sciences, instead of strict laws one finds statements of probabilities, or statistical regularities, and explanations that appeal to them. In the medical contexts, explanations often employ relations that are reported in statistical form in order to express causal relationships. For instance, it is accepted that smoking causes lung cancer because it is associated with a big increase in the probability of contracting lung cancer. Nonetheless, we know that **statistical correlation does not warrant causal connection**. There are some problems with the statement that smoking causes cancer. Some smokers never contract cancer, while some lung cancer victims never smoked. The latter issue is easy, smoking is not the only cause of lung cancer. However, the first problem is harder to tackle. 
+
+> Smoking can be said to cause cancer if and only if, among all the different background conditions we know about (heredity, diet, exercise, air pollution, etc.), there is no correlation between smoking and a lower than average incidence of lung cancer, and in one or more of these background conditions, smoking is correlated with a higher incidence in lung cancer rates. --- [@rosenberg2019philosophy]
+
+::::
+
+
+## Examples
 
 ### The problem is in your hands! {#semmelweis}
 
@@ -549,6 +599,28 @@ Therefore, not even (conclusion)
 ```
 
 Another approach is to take the truth table of $p \rightarrow q$ and take the case where $p \rightarrow q$ is false - second line - i.e. when $p$ is true and $q$ is false or for our case, when a card is even and its back not red (so brown). From this we need to take the cards that are $p$ and $\lnot q$ i.e. even cards and brown cards.
+
+### Neptune and Vulcan {#neptune-vulcan}
+
+Newton's gravitational theory predicted the paths the planets should follow as they orbit the sun. Most of these were confirmed by observation, but the orbit of Uranus differed from Newton's predictions. In 1846 John Adams in England and Urbain Le Verrier in France solved the mystery. Both of them suggested that another planet, yet undiscovered, was the cause of an additional gravitational force exerted on Uranus. These scientists calculated the mass and position that this planet would need to have to explain Uranus' orbit. The planet Neptune was indeed found close to the location predicted by Adams and Le Verrier.
+
+So, instead of rejecting Newton's theory right away (see \@ref(falsification)), these scientists stuck to it and tried to find another missing factor that could explain the difference. When the motion of Uranus was found not to match the predictions of Newton's laws, the theory "There are seven planets in the solar system" was rejected, and not Newton's laws themselves.
+
+However, Le Verrier also found irregularities in the motion of the planet Mercury and tried to explain them as resulting from the gravitational pull of an, again, yet undetected planet Vulcan. This hypothetical planet would have to be a very dense and small object between the sun and Mercury. In this case, no planet was found between Mercury and the sun. A satisfactory explanation was provided much later by the general theory of relativity, which justified irregularities through a new system of laws. In this case, the hypothesis or theory had to be reformulated or replaced by new one.
+
+Below you can find a [clip from lecture "The Law of Gravitation"](https://www.youtube.com/watch?v=j3mhkYbznBk&t=1830s), from the Messenger Lectures given by the renowned American theoretical physicist Richard Phillips Feynman. 
+
+```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
+cat(
+'<figure style="text-align: center">
+<video width="500"
+  frameborder="0" controls>
+  <source src="videos/Feynman-Newton-trim.mp4" type="video/mp4">
+ </video>
+ <figcaption>Clip from the first lecture, "The Law of Gravitation", from the Messenger Lectures given by the renowned American theoretical physicist Richard Phillips Feynman, about the Character of Physical Laws, at Cornell University U.S.A. recorded by BBC Nov. 9-19, 1964. The full lecture can be found at <a href="https://www.youtube.com/watch?v=j3mhkYbznBk">YouTube</a>.</figcaption>
+</figure>'
+)
+```
 
 ### U.S.A. Presidents
 

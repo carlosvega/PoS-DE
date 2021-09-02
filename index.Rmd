@@ -24,10 +24,10 @@ linkcolor: red
 **Course Note:**
 :::
 
-This book is still under construction. There are more chapters coming. The current published version is a test to check serving the contents through GitHub.
+This class book is still under construction. There are more chapters coming. The current published version is a test to check serving the contents through GitHub.
 ::::
 
-This book gathers the contents addressed in the course **Applied Philosophy of Science and Data Ethics** from the [Master of Data Science](https://wwwfr.uni.lu/formations/fstm/master_of_data_science) at the University of Luxembourg. This course will introduce basic philosophical and scientific concepts supported by examples and discussion. The course expects pro-active participation from the students in the form of presentations and essays as well as open debates. 
+This class book gathers the contents addressed in the course **Applied Philosophy of Science and Data Ethics** from the [Master of Data Science](https://wwwfr.uni.lu/formations/fstm/master_of_data_science) at the University of Luxembourg. This course will introduce basic philosophical and scientific concepts supported by examples and discussion. The course expects pro-active participation from the students in the form of presentations and essays as well as open debates. 
 
 This course aims to provide the students with guidelines and methodologies to identify epistemic and ethical issues present in data science. We expect the students to develop a critical eye that helps them mitigate such problems in their daily work as data scientists.
 
@@ -49,10 +49,19 @@ In line with the European Qualitity Framework, Bachelor degrees require a critic
 
 A great part of the first chapters of this course is inspired by the book from Prof. Dr Lars-Göran Johansson [@johansson2016philosophy] and the works of Prof. Dr Till Grüne-Yanoff [@grune2014teaching] as well as its great course at EDX on "Philosophy of Science for Engineers and Scientists". Regarding the second part of the course covering data ethics. I would like to thank the Univerisity of Michigan for its online courses (from which I was already a fan during my PhD, especially Applied Data Science) and especially Prof. Dr H. V. Jagadish for its course on Data Science Ethics which inspired me on the contents and examples of this course. Moreover, this last part of the course would not have been possible without many relevant books on the topics tackled in this course (see References). Including The Book of Why [@book-of-why]; Ethics and Data Science [@loukides2018ethics]; Philosophy of Natural Science [@hempel-pos]; How charts lie [@cairo2019charts]; Automating inequality [@eubanks2018automating]. I hope any resemblance or imitation is seen as an act of flattery.
 
-**About this book**
+**About this class book**
 
-This book was made thanks to the great tutorial available on the book ["Open tools for writing open interactive textbooks (and more)"](https://www.crumplab.com/OER_bookdown).
+This class book was made thanks to the great tutorial available on the book ["Open tools for writing open interactive textbooks (and more)"](https://www.crumplab.com/OER_bookdown).
 
-**License CC BY-SA 4.0 license**
+**Licensed under CC BY-NC-SA 4.0**
 
-The book is released under a creative commons [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license. This means that this book can be reused, remixed, retained, revised and redistributed (including commercially) as long as appropriate credit is given to the authors. If you remix, or modify the original version of this open textbook, you must redistribute all versions of this open textbook under the same license - CC BY-SA 4.0.
+The book is released under a creative commons [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license. This means that you are free to: 
+
+- **Share**: copy and redistribute the material in any medium or format.
+- **Adapt**: remix, transform, and build upon the material.
+
+Under the following terms:
+
+- **Attribution**: You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+- **Non-Commercial**: You may not use the material for commercial purposes.
+- **Share-A-like**: If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.

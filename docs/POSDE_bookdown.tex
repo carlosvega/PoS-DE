@@ -117,7 +117,7 @@
 
 \title{Applied Philosophy of Science and Data Ethics}
 \author{Dr.~Carlos Vega}
-\date{2021: Last compiled 2021-08-26}
+\date{2021: Last compiled 2021-09-02}
 
 \begin{document}
 \maketitle
@@ -138,11 +138,11 @@
 
 \end{center}
 
-This book is still under construction. There are more chapters coming. The current published version is a test to check serving the contents through GitHub.
+This class book is still under construction. There are more chapters coming. The current published version is a test to check serving the contents through GitHub.
 
 \end{notebox}
 
-This book gathers the contents addressed in the course \textbf{Applied Philosophy of Science and Data Ethics} from the \href{https://wwwfr.uni.lu/formations/fstm/master_of_data_science}{Master of Data Science} at the University of Luxembourg. This course will introduce basic philosophical and scientific concepts supported by examples and discussion. The course expects pro-active participation from the students in the form of presentations and essays as well as open debates.
+This class book gathers the contents addressed in the course \textbf{Applied Philosophy of Science and Data Ethics} from the \href{https://wwwfr.uni.lu/formations/fstm/master_of_data_science}{Master of Data Science} at the University of Luxembourg. This course will introduce basic philosophical and scientific concepts supported by examples and discussion. The course expects pro-active participation from the students in the form of presentations and essays as well as open debates.
 
 This course aims to provide the students with guidelines and methodologies to identify epistemic and ethical issues present in data science. We expect the students to develop a critical eye that helps them mitigate such problems in their daily work as data scientists.
 
@@ -170,13 +170,33 @@ In line with the European Qualitity Framework, Bachelor degrees require a critic
 
 A great part of the first chapters of this course is inspired by the book from Prof.~Dr Lars-Göran Johansson \citep{johansson2016philosophy} and the works of Prof.~Dr Till Grüne-Yanoff \citep{grune2014teaching} as well as its great course at EDX on ``Philosophy of Science for Engineers and Scientists''. Regarding the second part of the course covering data ethics. I would like to thank the Univerisity of Michigan for its online courses (from which I was already a fan during my PhD, especially Applied Data Science) and especially Prof.~Dr H. V. Jagadish for its course on Data Science Ethics which inspired me on the contents and examples of this course. Moreover, this last part of the course would not have been possible without many relevant books on the topics tackled in this course (see References). Including The Book of Why \citep{book-of-why}; Ethics and Data Science \citep{loukides2018ethics}; Philosophy of Natural Science \citep{hempel-pos}; How charts lie \citep{cairo2019charts}; Automating inequality \citep{eubanks2018automating}. I hope any resemblance or imitation is seen as an act of flattery.
 
-\textbf{About this book}
+\textbf{About this class book}
 
-This book was made thanks to the great tutorial available on the book \href{https://www.crumplab.com/OER_bookdown}{``Open tools for writing open interactive textbooks (and more)''}.
+This class book was made thanks to the great tutorial available on the book \href{https://www.crumplab.com/OER_bookdown}{``Open tools for writing open interactive textbooks (and more)''}.
 
-\textbf{License CC BY-SA 4.0 license}
+\textbf{Licensed under CC BY-NC-SA 4.0}
 
-The book is released under a creative commons \href{https://creativecommons.org/licenses/by-sa/4.0/}{CC BY-SA 4.0} license. This means that this book can be reused, remixed, retained, revised and redistributed (including commercially) as long as appropriate credit is given to the authors. If you remix, or modify the original version of this open textbook, you must redistribute all versions of this open textbook under the same license - CC BY-SA 4.0.
+The book is released under a creative commons \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{CC BY-NC-SA 4.0} license. This means that you are free to:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Share}: copy and redistribute the material in any medium or format.
+\item
+  \textbf{Adapt}: remix, transform, and build upon the material.
+\end{itemize}
+
+Under the following terms:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Attribution}: You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+\item
+  \textbf{Non-Commercial}: You may not use the material for commercial purposes.
+\item
+  \textbf{Share-A-like}: If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+\end{itemize}
 
 \hypertarget{scientific-goals-methods-and-knowledge}{%
 \chapter{Scientific Goals, Methods and Knowledge}\label{scientific-goals-methods-and-knowledge}}
@@ -384,6 +404,11 @@ The third step of the scientific method (see § \ref{sci-method}) requires guess
 
 \hypertarget{scientific-inference}{%
 \chapter{Scientific Inference}\label{scientific-inference}}
+
+\hypertarget{overview}{%
+\section{Overview}\label{overview}}
+
+Humans have a natural ability to conjecture and spot relationships about the world, \emph{jumping} from hypotheses to conclusions. The scientific attitude is to keep such \emph{jumps} under control and use a well defined procedure to arrive to a conclusion from an hypothesis. In this chapter we will examine in detail those procedures.
 
 \begin{quote}
 But our sun is only one of a billion-trillion stars within the observable universe. And those countless suns all obey natural laws some of which are already known to us. How did we discover that there are such laws? If we lived on a planet where nothing ever changed, there wouldn't be much to do, there'd be nothing to figure out. There'd be no impetus for science. And if we lived in an unpredictable world where things changed in random or very complex ways, we wouldn't be able to figure things out. And again, there'd be no such thing as science. But we live in an in between universe where things change alright, but according to patterns, rules, or as we call them, laws of nature. If I throw a stick up in the air, it always falls down. If the sun sets in the west, it always rises again the next morning in the east. And so it's possible to figure things out. We can do science. And with it we can improve our lives. --- Carl Sagan
@@ -823,24 +848,46 @@ According to \emph{anti-realists}, there will always be multiple \emph{competing
 
 But why is this important for data scientists? Often you will find many ML models or solutions that fit your available data or fulfil your requirements, and yet you will have to decide which model/solution is best. If possible, validation with external data and other assessments must be conducted, but sometimes solutions are also chosen based on \emph{non-epistemic} values, such as making society more just or making money.
 
-Is also important to notice how the problem of underdetermination relates to the popular \emph{No Free Lunch Theorem} which is very relevant in the Machine Learning community \citep{dotan2020theory}.
+Is also important to notice how the problem of underdetermination relates to the popular \emph{No Free Lunch Theorem} which is very relevant in the Machine Learning community \citep{dotan2020theory}. For more on the NFL read \citep{domingos2015master}.
 
 \end{tipbox}
 
 \hypertarget{other-types-of-inference}{%
 \subsection{Other types of inference}\label{other-types-of-inference}}
 
-{[}complete?{]}
+\begin{notebox}
+
+\begin{center}
+\textbf{Course Note:}
+
+\end{center}
+
+The following content is under construction but might as well be taught during the course. I hope to complete it on time.
+This section will superficially tackle abduction and causal inferences and its relation to data science regarding non-monotonic logic.
+
+\end{notebox}
 
 \hypertarget{explanation}{%
 \section{Explanation}\label{explanation}}
 
-{[}continue{]}
-{[}Consider moving this to chapter 3{]}
-
 At this point, many of you probably have already related data science to two of the goals of science: explanation and prediction. But how do they relate to one another? and what is a scientific explanation? Either to satisfy our natural curiosity or for a further purpose, science has always attempted to understand how the world works. The German philosopher Carl Hempel attempted to answer this question in the 1950s with what is known as the \emph{covering law} model of explanation. He stated that a scientific explanation is an answer given in response to \emph{explanation-seeking why-questions} (e.g.~why salt dissolves in water).
 
-According to Hempel, explanations are structured like an argument, i.e.~a set of premises followed by a conclusion. Therefore, the conclusion of such an argument states that certain phenomenon occurs, e.g.~``salt dissolves in water''. On the other hand, the premises indicate why the conclusion is true. Then, the challenge lays in the relationship that should follow between such premises and the conclusion. For Hempel, the premises should all be true and entail the conclusion, i.e.~the argument should be deductive and \emph{sound}. Additionally, the premises should contain at least one general law (e.g.~all metals conduct electricity), a.k.a. \emph{laws of nature}. Newton explained the elliptical orbits of planets alluding a general rule (his law of universal gravitation) together with some minor assumptions. This example fits Hempel's model very well, but not all scientific explanations do.
+According to Hempel, explanations are structured like an argument, i.e.~a set of premises followed by a conclusion. Therefore, the conclusion of such an argument states that certain phenomenon occurs, e.g.~``salt dissolves in water''. On the other hand, the premises indicate why the conclusion is true. Then, the challenge lays in the relationship that should follow between such premises and the conclusion. For Hempel, the premises should all be true and entail the conclusion, i.e.~the argument should be deductive and \emph{sound}. Additionally, the premises should contain at least one general law (e.g.~all metals conduct electricity), a.k.a. \emph{laws of nature}. The name of the model comes from that fact that the phenomenon to be explained is ``covered'' by some general law.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  The \emph{explanandum} must be a valid deductive argument.
+\item
+  The \emph{explanans} must contain at least one general law actually needed in the deduction.
+\item
+  The \emph{explanans} must be empirically testable.
+\item
+  The sentences in the \emph{explanans} must be true.
+\end{enumerate}
+
+For instance, Newton explained the elliptical orbits of planets alluding a general rule (his law of universal gravitation) together with some minor assumptions. This example fits Hempel's model very well, but not all scientific explanations do.
 
 \begin{verbatim}
 General Law      (explanans)
@@ -849,19 +896,75 @@ Particular Facts (explanans)
 Phenomenon to be explained (explanandum)
 \end{verbatim}
 
+An interesting consequence of this model lays in the relationship between explanation and prediction. Hempel argued that these are two sides of the same coin. Whenever a phenomenon is explained with the help of a covering law, the laws and the particular facts we use could have allowed us to predict the occurrence of the phenomenon. Hempel expressed this by saying that every scientific explanation is potentially a prediction. Hempel argued that the opposite is also true: every prediction is potentially an explanation. \textbf{For Hempel, explanation and prediction are structurally symmetric}. For instance, the same information we could use to predict an animal species extinction before it happened will serve to explain that very same fact after it has happened.
+
+
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.75\linewidth]{Figures/flagpole} 
+
+}
+
+\caption{A 15-metre flagpole casts a shadow of 20 metres when the sun is 37° overhead. Figure from \citep{okasha-pos}.}\label{fig:flagpole}
+\end{figure}
+
+Hempel's model might be too liberal, as it faces a number of odd counterexamples. For example, consider Figure \ref{fig:flagpole}. In order to explain why the shadow is 20 metres long. Indeed, this is a \emph{explanation-seeking why-question} and a possible answer could be the following: The light rays from the sun hit the flagpole (15 metres high), the sun's elevation angle is 37° and light travels in straight lines. The trigonometric calculation \(tan(37°) = 15/20\) demonstrates that the flagpole will cast a shadow of 20 metres long. This example can be found in both \citep{rosenberg2019philosophy} and \citep{okasha-pos}.
+
+\begin{verbatim}
+General Law      (Light travels in straight lines)
+General Law      (Trigonometric laws)
+Particular Fact  (Flagpole is 15 metres high)
+Particular Fact  (Sun's angle of elevation is 37°)
+---------
+Phenomenon to be explained (Shadow is 20 metres long)
+\end{verbatim}
+
+This explanation can be structured according to Hempel's schema and indeed fits Hempel's covering law model. However, when we swap the \emph{explanandum} with the particular fact that the flagpole is 15 metres high, a problem arises. The explanation still complies with the covering law pattern, but it would be rather odd to regard it as an explanation of why the flagpole is 15 metres high. In this case, we know that the height of the flagpole is not conditioned by the sun's angle of elevation but rather because it was manufactured with such height. We can \emph{calculate} or \emph{predict} its height but this height will not change upon the other variables, so they do not \emph{explain} the flagpole height.
+
+\begin{verbatim}
+General Law      (Light travels in straight lines)
+General Law      (Trigonometric laws)
+Particular Fact  (Shadow is 20 metres long)
+Particular Fact  (Sun's angle of elevation is 37°)
+---------
+Phenomenon to be explained (Flagpole is 15 metres high)
+\end{verbatim}
+
+The moral of this example is that the concept of explanation showcases an important \textbf{asymmetry}. The length of the shadow can be explained by the height of the flagpole, given aforementioned general laws. But this does not happen in the other direction. In general, if \(x\) explains \(y\), then it will not be true that \(y\) explains \(x\) given the same laws and facts. Explanation is then an asymetric relation and Hempel's covering law model does not respect such asymmetry. Information that allow us to predict a fact before we know it does not serve to explain that very same fact after we know it, which \textbf{contradicts Hempel's thesis}.
+The general conclusion is that a good explanation of a phenomenon should contain information that is relevant to the phenomenon's occurrence.
+
+\hypertarget{explanation-and-causality}{%
+\subsection{Explanation and causality}\label{explanation-and-causality}}
+
+There are alternatives to the covering law model that help us understanding scientific explanation. For many, explaining a phenomenon is simply to say what caused it. Obviously, causality is also an asymmetric relation. If a faulty appliance caused a fire, then is clear that the fire did not cause the appliance to failure. The asymmetry of explanation derives from the asymmetry of causality.
+
+However, the criticism against Hempel covering law is a bit unfair as he was an empiricist. Empiricists are sceptical about the concept of causality and argue that all our knowledge comes from experience. David Hume argued that is impossible to experience causal relations, and that causality is just what we humans project to understand the world.
+
+There are however some examples were explanation and causality do not match. For example, to say that an object's temperature is the average kinetic energy of its molecules is to explain what temperature \emph{is}, but this does not yield the cause of such temperature.
+
+The law \(PV = nRT.\) explains the temperature of a gas at equilibrium by appeal to its pressure and the volume it takes up. But volume and pressure cannot be \emph{causes} of temperature since all of them --- the temperature, the volume, and the pressure --- vary, in the way the law describes, instantaneously. The changes in volume at one time do not cause changes in temperature at a later time; instead, the change in temperature occurs during exactly the same interval that pressure is changing \citep{rosenberg2019philosophy}. The nature of causation is still an open debate, but most philosophers have agreed that causes somehow necessitate their effects and that mere regularity cannot express this necessity.
+
+Another example, this time from \citep{book-of-why}, show us the gap between causal vocabulary and ordinary scientific vocabulary. Consider the problem of expressing the following causal relationship: The barometer reading \(B\) tracks the atmospheric pressure \(P\). We can write down the relationship as \(B = kP\), where \(k\) is a constant of proportionality. Thanks to algebra we can rewrite the equation in multiple ways such as: \(P = B/k\), \(k = B/P\), or \(B-kP = 0\). They mean the same and given two of the variables we can calculate the third. But in these equations there is no account of directionality. We cannot express that is the pressure which \emph{causes} the barometer to change and not the other way around. Similarly, we cannot express the fact that the singing of the rooster \emph{does not cause} the sun to rise. Why have scientists not captured such facts in formulas as is done in other areas like mechanics, geometry or optics? For a better understanding of causation and its role in data science I recommend you the Book of Why \citep{book-of-why}.
+
+\begin{quote}
+Data can tell you that the people who took a medicine recovered faster than those who did not take it, but they can't tell you why. --- Book of Why
+\end{quote}
+
+\begin{tipbox}
+
+\textbf{Note for data scientists!}
+
+In the biological and social sciences, instead of strict laws one finds statements of probabilities, or statistical regularities, and explanations that appeal to them. In the medical contexts, explanations often employ relations that are reported in statistical form in order to express causal relationships. For instance, it is accepted that smoking causes lung cancer because it is associated with a big increase in the probability of contracting lung cancer. Nonetheless, we know that \textbf{statistical correlation does not warrant causal connection}. There are some problems with the statement that smoking causes cancer. Some smokers never contract cancer, while some lung cancer victims never smoked. The latter issue is easy, smoking is not the only cause of lung cancer. However, the first problem is harder to tackle.
+
+\begin{quote}
+Smoking can be said to cause cancer if and only if, among all the different background conditions we know about (heredity, diet, exercise, air pollution, etc.), there is no correlation between smoking and a lower than average incidence of lung cancer, and in one or more of these background conditions, smoking is correlated with a higher incidence in lung cancer rates. --- \citep{rosenberg2019philosophy}
+\end{quote}
+
+\end{tipbox}
+
 \hypertarget{examples-1}{%
 \section{Examples}\label{examples-1}}
-
-\hypertarget{neptune-vulcan}{%
-\subsection{Neptune and Vulcan}\label{neptune-vulcan}}
-
-Newton's gravitational theory predicted the paths the planets should follow as they orbit the sun. Most of these were confirmed by observation, but the orbit of Uranus differed from Newton's predictions. In 1846 John Adams in England and Urbain Le Verrier in France solved the mystery. Both of them suggested that another planet, yet undiscovered, was the cause of an additional gravitational force exerted on Uranus. These scientists calculated the mass and position that this planet would need to have to explain Uranus' orbit. The planet Neptune was indeed found close to the location predicted by Adams and Le Verrier.
-
-So, instead of rejecting Newton's theory right away (see \ref{falsification}), these scientists stuck to it and tried to find another missing factor that could explain the difference. When the motion of Uranus was found not to match the predictions of Newton's laws, the theory ``There are seven planets in the solar system'' was rejected, and not Newton's laws themselves.
-
-However, Le Verrier also found irregularities in the motion of the planet Mercury and tried to explain them as resulting from the gravitational pull of an, again, yet undetected planet Vulcan. This hypothetical planet would have to be a very dense and small object between the sun and Mercury. In this case, no planet was found between Mercury and the sun. A satisfactory explanation was provided much later by the general theory of relativity, which justified irregularities through a new system of laws. In this case, the hypothesis or theory had to be reformulated or replaced by new one.
-
-Below you can find a \href{https://www.youtube.com/watch?v=j3mhkYbznBk\&t=1830s}{clip from lecture ``The Law of Gravitation''}, from the Messenger Lectures given by the renowned American theoretical physicist Richard Phillips Feynman.
 
 \hypertarget{semmelweis}{%
 \subsection{The problem is in your hands!}\label{semmelweis}}
@@ -1011,6 +1114,17 @@ Therefore, not even (conclusion)
 
 Another approach is to take the truth table of \(p \rightarrow q\) and take the case where \(p \rightarrow q\) is false - second line - i.e.~when \(p\) is true and \(q\) is false or for our case, when a card is even and its back not red (so brown). From this we need to take the cards that are \(p\) and \(\lnot q\) i.e.~even cards and brown cards.
 
+\hypertarget{neptune-vulcan}{%
+\subsection{Neptune and Vulcan}\label{neptune-vulcan}}
+
+Newton's gravitational theory predicted the paths the planets should follow as they orbit the sun. Most of these were confirmed by observation, but the orbit of Uranus differed from Newton's predictions. In 1846 John Adams in England and Urbain Le Verrier in France solved the mystery. Both of them suggested that another planet, yet undiscovered, was the cause of an additional gravitational force exerted on Uranus. These scientists calculated the mass and position that this planet would need to have to explain Uranus' orbit. The planet Neptune was indeed found close to the location predicted by Adams and Le Verrier.
+
+So, instead of rejecting Newton's theory right away (see \ref{falsification}), these scientists stuck to it and tried to find another missing factor that could explain the difference. When the motion of Uranus was found not to match the predictions of Newton's laws, the theory ``There are seven planets in the solar system'' was rejected, and not Newton's laws themselves.
+
+However, Le Verrier also found irregularities in the motion of the planet Mercury and tried to explain them as resulting from the gravitational pull of an, again, yet undetected planet Vulcan. This hypothetical planet would have to be a very dense and small object between the sun and Mercury. In this case, no planet was found between Mercury and the sun. A satisfactory explanation was provided much later by the general theory of relativity, which justified irregularities through a new system of laws. In this case, the hypothesis or theory had to be reformulated or replaced by new one.
+
+Below you can find a \href{https://www.youtube.com/watch?v=j3mhkYbznBk\&t=1830s}{clip from lecture ``The Law of Gravitation''}, from the Messenger Lectures given by the renowned American theoretical physicist Richard Phillips Feynman.
+
 \hypertarget{u.s.a.-presidents}{%
 \subsection{U.S.A. Presidents}\label{u.s.a.-presidents}}
 
@@ -1084,8 +1198,19 @@ In the case of Amazon the false hypothesis and background assumptions were found
 \hypertarget{empirical-practices}{%
 \chapter{Empirical Practices and Models}\label{empirical-practices}}
 
-\hypertarget{overview}{%
-\section{Overview}\label{overview}}
+\begin{notebox}
+
+\begin{center}
+\textbf{Course Note:}
+
+\end{center}
+
+This chapter is under construction. Some content is hidden.
+
+\end{notebox}
+
+\hypertarget{overview-1}{%
+\section{Overview}\label{overview-1}}
 
 \begin{quote}
 \emph{Empirical}: based on, concerned with, or verifiable by observation or experience rather than theory or pure logic.
@@ -1100,7 +1225,11 @@ This example synthesizes the process of controlled experiments employed nowadays
 
 Many data scientists believe their role should be limited to data analysis, but experiment design is fundamental for data collection, which conditions the data to be analysed. Conclusions drawn from data can be biased or determined by decisions and errors taken during experiment design. Understanding this can help you spot issues during the data analysis and ask the right questions to your colleagues in charge of the experiments.
 
-An experiment is an observation process in which we control background variables through manipulation, intervene on target variable (through manipulation) and observe the difference produced by such intervention.
+An experiment is an observation process in which we control background variables through manipulation, intervene on target variable (through manipulation) and observe the difference produced by such intervention thanks to measurements.
+
+\begin{quote}
+Experiment is the kind of scientific experience in which some change is deliberately provoked, and its outcome observed, recorded and interpreted with a cognitive aim. --- \citep{bunge2017philosophy}
+\end{quote}
 
 \hypertarget{observational-studies}{%
 \subsection{Observational studies}\label{observational-studies}}
@@ -1119,6 +1248,60 @@ However, there are whole research areas were scientists cannot make experiments.
 
 \end{tipbox}
 
+We can recognise five elements in the observation process: the \emph{object} of observation; the \emph{subject} (or observer) and its perceptions; the \emph{circumstances} of observation (e.g.~environment of object and subject); the observation \emph{media} (e.g.~senses, instruments, procedures); and the body of \emph{knowledge} used to relate all the previous elements. The last two can be grouped into \emph{tools} (concrete and conceptual). So, an observation statement has the form ``\(w\) observes \(x\) under \(y\) with the help of \(z\)''. \citep{bunge2017philosophy}
+
+\hypertarget{observability}{%
+\subsubsection{Observability}\label{observability}}
+
+We can try to define observability by stating that a fact is \emph{observable} ``only if there exists at least one subject, one set of circumstances, and one set of observation tools, such that the fact can appear to the subject armed with those tools under those circumstances'' \citep{bunge2017philosophy}. This definition is rather unsatisfactory since someone could claim the existence of ghosts or aliens. We should define what is objectively observable. Then, \(x\) is observable only if there exist at least one recording instrument \(w\), one set of circumstances \(Y\), and one set of observation tools \(Z\), such that \(w\) can register \(x\) under \(y\) helped by \(z\). Here we have eliminated the possibility of the subject's perceptual delusions, but devices (e.g.~a camera) have limitations too.
+
+Observations are often expressed in the form of a rule so that other researchers can reproduce their results under similar conditions. Some facts cannot be repeated, such as the eruption of a volcano or a supernova. So very often, we expect results of the same kind to be reproducible by observers. Exact duplication is desirable but not always achievable. Even independent observers may make the same wrong observations due to faulty equipment or false hypotheses.
+
+\hypertarget{indicators}{%
+\subsubsection{Indicators}\label{indicators}}
+
+Most facts we know about are indirectly observable, i.e.~we infer them through an intermediary. For instance, the wind is not directly observable but inferred from bodies apparently moved by it. We \emph{objectify} an observable fact by establishing its relationship to some perceptible fact(s) that serve us as an \emph{indicator} of the fact. In other words, hypotheses are made concerning unperceived facts and tested through evidence consisting of data about other directly observable facts, assuming that the latter are \textbf{collaterally connected with} or \textbf{effects} of the former. Of course, that such relationship should hold is as well a hypothesis (see Figure \ref{fig:indicator}).
+
+
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{Figures/indicator} 
+
+}
+
+\caption{The physical object-indicator relation, is expressed by a hypothesis enabling us to infer the object from observations made on its indicator. Figure extracted from \citep{bunge2017philosophy}.}\label{fig:indicator}
+\end{figure}
+
+\hypertarget{data-and-evidence}{%
+\subsubsection{Data and Evidence}\label{data-and-evidence}}
+
+Every evidence is a \emph{datum} but not every datum constitutes \emph{evidence}. What turns a datum into evidence is that is relevant to some idea, that it makes sense under some theory or body of knowledge. In particular, we believe a datum constitutes an evidence in favour of a theory and assign the theory some \emph{credence} because it justifies or predicts that evidence. The evidence must be related to a specific hypothesis, and this relationship is justified because of a body of theoretical knowledge. In fact, no evidence is absolute. Consider the following example from \citep{bunge2017philosophy}:
+
+\begin{quote}
+The observed deviation of a magnetic needle in the vicinity of an electric circuit (datum \(e\)) supports the hypothesis \(h_x\) that electricity is flowing through the circuit, on the theory \(⊤_1\) that electric currents produce magnetic fields which in turn interact with the fields of magnetic needles. But exactly the same datum \(e\) might be taken as an evidence in favour of the rival hypothesis \(h_2\) that a big magnet somewhere nearby has been switched on, on the theory \(⊤_2\) that magnets can interact directly with one another. The given datum is then \emph{ambiguous} and only an independent checking of \(h_x\) and \(h_2\), i.e.~a test independent of \(e\), will enable us to reach a decision between the two rivals.
+\end{quote}
+
+Importantly, the characteristics that make data count as evidence must be agreed prior to observation and on the basis of theory. Sometimes a scientist may obtain data that seems incompatible with a theory. Instead of getting rid of such data (or the theory), the scientist will attempt to reproduce the data and assess whether is anomalous data (e.g.~due to a faulty instrument) or not. The \emph{raw} data may contain any information, but \emph{refined} data should express only relevant and useful information for the problem at hand. Of course, some information is always lost in the process. In consequence, the refinement process is irreversible. Data are \emph{means} rather than \emph{ends} and we aim to systematise data in order to disclose patterns on it. For this reason \emph{noise} must be removed. The systematization of refined data may involve displaying information in graphs or tables as well as arranging information in data structures such as matrices.
+
+\begin{tipbox}
+
+\textbf{Note for data scientists!}
+
+As he have seen, data alone is not enough. Note that this is a problem for solutions based on Machine Learning, since domain knowledge or \emph{context} should be introduced somehow to \emph{direct} the model in the desired direction.
+
+\begin{quote}
+``There is no learning without bias, there is no learning without knowledge'' --- \citep{skansi2020guide} \citep{domingos2015master}.
+\end{quote}
+
+An example of how data depends on its context is user ratings or opinions. For instance, the meaning of \emph{fashionable clothes} changes over time, as do political terms. This issue is known as \emph{concept drift} \citep{kubat2017introduction}. Similarly, a text-mining engine to tag biology terms with the corresponding ontology terms may confuse elements between species, as several entities appear in multiple animals or organisms.
+
+Finally, context is crucial for external validation and translation of solutions into real-world settings. A system for clothes recommendation should adapt to countries, cultures or ages. Similarly, a health system to predict patient risk based on disease comorbidities must be \emph{calibrated} for each country or region (e.g.~Diabetes treatment is often affordable in the EU, but an expensive treatment in the USA, which increases its mortality rate).
+
+In Chapter \ref{stats-abuse} we will see another side of this problem.
+
+\end{tipbox}
+
 \hypertarget{field-laboratory-and-simulation-experiments}{%
 \subsection{Field, laboratory and simulation experiments}\label{field-laboratory-and-simulation-experiments}}
 
@@ -1126,27 +1309,11 @@ In contrast to observational experiments, \textbf{field experiments} randomly as
 
 Therefore, an experiment is a controlled observation in which the observer manipulates the real variables (independent variables) that are believed to influence the outcome (dependent variable), both for the purpose of intervention and control. The following article provides a good description of the \href{https://opentextbc.ca/researchmethods/chapter/experiment-basics/}{basics of experiments}.
 
-Section ``Why RCTs work'' in Chapter 4 from \citep{book-of-why}.
-
-\begin{itemize}
-\tightlist
-\item
-  confirmation bias, selection bias, internal validity
-\item
-  detecting experimental errors
-
-  \begin{itemize}
-  \tightlist
-  \item
-    apply all available design knowledge (theoretical and experimental)
-  \item
-    learn from previous experiments, importance of reproducibility and replication
-  \end{itemize}
-\end{itemize}
+In Chapter \ref{stats-abuse} we will see some examples of experimental errors (e.g.~confirmation bias, selection bias, etc) as well as examples of statistical abuse. All in all, the experiment process is also a craft which entails learning from previous experiments (ours and others), as well as applying all available knowledge (theoretical and experimental) for the design of experiments.
 
 \begin{tipbox}
 
-\textbf{Definition Note:}
+\textbf{Definitions:}
 
 \textbf{Repetition}: An experiment is repeatable if enough information is provided about the used data and the experiment methods and conditions. With such information, it should be possible to repeat the experiment.
 
@@ -1156,44 +1323,173 @@ Section ``Why RCTs work'' in Chapter 4 from \citep{book-of-why}.
 
 \end{tipbox}
 
-\hypertarget{testing-methods}{%
-\section{Testing methods}\label{testing-methods}}
+\hypertarget{control}{%
+\subsection{Control}\label{control}}
+
+Experimental control entails a series of procedures for experiment and observation design aimed at minimising the effects of extraneous variables (i.e.~confounding factors) other than the manipulated variables (i.e.~independent variable) to ensure that the measured variable (i.e.~dependent variable) is only affected by the independent variables. To evaluate the effects of manipulating the independent variables, some control system is needed in which no such deliberate changes are introduced. As we have seen, sampling units (e.g.~study participants) are often divided into two groups (the experimental group and the control group) in a way that the only noticeable (or significant) difference between them lies in the stimuli exerted by the experiment.
+Therefore, the control and experimental groups must be \emph{homogeneous} in all relevant factors.
+
+In general, there are two techniques for the formation of such homogeneous groups: individual and collective control \citep{bunge2017philosophy}. \textbf{Individual control} requires simultaneous pairing of individuals in both groups, i.e.~every member of the experimental group has a corresponding equivalent member in the control group. For instance, for every thirty years old Asian man in the control group another thirty years old Asian man is assigned to the experimental group. Simultaneous pairing is complex and expensive. \textbf{Statistical control} has two main types. On one side, the \emph{control of distributions} should be performed to equate certain parameters such as averages, spreads (i.e.~std. dev.) and other collective properties (e.g.~medians). This technique is more flexible as only some properties are kept under control. In this case, we would take two samples of people with the same age and height distributions. Both simultaneous pairing and distribution control share a common disadvantage regarding the formation of the groups, which could be unintentionally biased. For instance, we could assign the strongest people to the treatment (or experimental) group to make sure they bear the treatment. To prevent this issue the two groups are usually formed at random. Thanks to \textbf{randomisation}, all variables (including most unknown factors) that were not previously controlled become randomly distributed, minimising their effect on the dependent variables. However, randomisation is not an alternative to other techniques, but rather a complement.
+
+\hypertarget{other-experimental-control-techniques}{%
+\subsubsection{Other experimental control techniques}\label{other-experimental-control-techniques}}
+
+There are multiple strategies for experimental control. We have previously seen the method of division into treatment and control groups. The control and treatment groups can entail two moments in \textbf{time}, with the initial setting being the control scenario which is later on manipulated through the intervention of certain variables (e.g.~measure noise from bats in a dark chamber before and after turning a light). Another technique requires \textbf{holding certain factors constant} or finding scenarios (like in a field experiment) with the same background conditions. Nonetheless, constructing such conditions in a laboratory can also achieve this goal. In an \textbf{elimination} strategy some factors are removed to simplify study conditions, such as air resistance in a vacuum chamber or \href{https://en.wikipedia.org/wiki/Drop_tube}{drop tower}, radio waves in a Faraday cage, or gravity in space experiments. A common case of elimination is \textbf{blinding}, where subjects do not know which group they are assigned to (single blinding). Moreover, double-blinding implies hiding this information from the experimenter and/or the data analyst. Finally, we can \textbf{separate factors} by measuring their effect and correcting for it. For example, the measurements of time dilation require taking into account the Doppler effect caused by the changing distance between the observer and the moving clock. GPS systems perform adjustments due to the effects of time dilation and gravitational frequency shifts. Another example, missile trajectories are often adjusted for the effect of \href{https://en.wikipedia.org/wiki/Coriolis_force}{Coriolis force}.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{Figures/pyramid-evidence} 
+
+}
+
+\caption{Figure from \href{https://commons.wikimedia.org/wiki/File:Research_design_and_evidence_-_Capho.svg}{Wikimedia} by CFCF. Keep in mind that this hierarchy is not free from \href{https://en.wikipedia.org/wiki/Hierarchy_of_evidence\#Criticism}{criticism} and take it just as a useful simplification.}\label{fig:pyramid-eviodence}
+\end{figure}
+
+\hypertarget{randomised-control-trials}{%
+\subsection{Randomised Control Trials}\label{randomised-control-trials}}
+
+Randomisation offers a systematic solution for the division of participants (or sampling units) into two groups. In particular, RCTs are frequently regarded as a gold standard for clinical trials and among the highest quality evidence available (see Figure \ref{fig:pyramid-eviodence}). However, as with every method, it will only yield fruitful results if applied correctly, and its sole employment does not warrant against other errors.
+
+There are different types of randomisation. In \textbf{simple randomisation}, subjects are assigned into two groups purely randomly but in small samples, we risk creating uneven groups. \textbf{Block randomisation} works by randomising participants within blocks such that an equal number are assigned to each treatment. For example, given a block size of 4, there are 6 possible ways to equally assign participants to a block (AABB, ABAB, ABBA, BAAB, BABA, BBAA). Allocation proceeds by randomly selecting one of the orderings and assigning the next block of participants to study groups according to the specified sequence. A major disadvantage of this method is that it might be possible to predict the next sequence. \textbf{Stratified randomisation} is crucial whenever all other properties (except for the factors of interest) need to be assigned equally. The study population is first stratified into subgroups (i.e.~\emph{stratas}) sharing attributes, then followed by simple or block random sampling from the subgroups.
+
+One of the main advantages of RCTs is the reduction of selection bias or allocation bias. In Chapter \ref{stats-abuse} we will see biases in more detail. The randomisation process reduces mistrust towards a potential rigged distribution of the participants. Another common advantage is that it facilitates blinding the groups from investigators and participants.
+
+\begin{tipbox}
+
+\textbf{Terminology Note:}
+
+Very often terms are used interchangeably in many domain but they can also mean different things depending on the are.
+
+\begin{quote}
+By ``allocation bias'' we understand the bias caused by allocating patients with better prognosis to either the experimental or the control group. In the context of a randomized trial the term ``selection bias'' is sometimes used instead of allocation bias to indicate selection of patients into treatment arms. We avoid the term ``selection bias'' as it has a different meaning in epidemiology more broadly: selection of non-representative persons into a study. --- \citep{paludan2016mechanisms}
+\end{quote}
+
+\end{tipbox}
+
+However, RCTs do not necessarily ensure that background factors are equally distributed in the treatment and control groups. For small samples randomisation can provide unequal distributions. The average number after rolling a dice an infinite amount of times will converge to 3.5, but we should not be surprised if we roll a dice 10 or 20 times obtaining considerably more occurrences of the number 6 than the other numbers. The danger of relying on pure randomisation to balance covariates has been described in \citep{krause2003random} \citep{morgan2012rerandomization}. For this reason is essential to check for imbalances in known factors after randomisation. Stratified randomisation also helps balancing known factors. Nonetheless, randomisation does not necessarily guarantee full control of unknown factors but \emph{on average} their effect should be significantly smaller than the treatment applied \citep{deaton2018understanding}.
+
+Although RCTs are still preferred to observational studies, there are scenarios in which intervention is not possible. For instance, we cannot assign participants to be obese or not in order to study the effect of obesity on heart diseases.
+
+\hypertarget{origins-of-rcts}{%
+\subsubsection{Origins of RCTs}\label{origins-of-rcts}}
+
+R.A. Fisher (1890-1962) conceived the RCTs in the 1930s. Fisher designed intricate approaches to disentangle the effects of fertiliser from other variables. Using the \emph{Latin square}, he would divide the field into a grid of subplots to test each fertiliser with each combination of soil type and plant. However, in this scenario the experimenter would observe the effects of the fertiliser \emph{mixed} (i.e.~\emph{confounded}) with a variety of other things (e.g.~soil fertility, drainage, microflora). Fischer realised that the only design that would ``\emph{trick nature}'' is one where the fertilisers are assigned randomly to the subplots. Of course, sometimes you might be unlucky and assign a certain fertiliser to the least fertile subplots, but other times you might get the opposite assignment. A new random allocation is generated each time the experiment is conducted. By running the experiment multiple times the luck of each fertiliser is \emph{averaged}.
+
+\begin{quote}
+But Fisher realized that an uncertain answer to the right question is much better than a highly certain answer to the wrong question. {[}\ldots{]} If you ask the right question, getting an answer that is occasionally wrong is much less of a problem. You can still estimate the amount of uncertainty in your answer, because the uncertainty comes from the randomization procedure (which is known) rather than the characteristics of the soil (which are unknown). --- Section ``Why RCTs work'' in Chapter 4 from \citep{book-of-why}
+\end{quote}
+
+The Book of Why describes the aforementioned experiment in causal terms \citep{book-of-why}. The causal diagram from Figure \ref{fig:rct-diagram} depicts a model describing how the yield of each plot is determined by both the fertiliser and other variables, but the effect of the fertiliser is also affected by the same variables (red arrows). The experimenter aims to know about the effect of the fertiliser controlling for the latter effects. In other words, a model in which the effects represented by the red arrows are controlled. In this second scenario, the relation between Fertilizer and Yield is \emph{unconfounded} since there is no common cause of Fertiliser and Yield.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{Figures/RCT-causal-diagram} 
+
+}
+
+\caption{Causal diagram depicting an improperly controlled experiment.}\label{fig:rct-diagram}
+\end{figure}
+
+\hypertarget{validity}{%
+\subsubsection{Validity}\label{validity}}
+
+Transferring RCTs results to other scenarios is not trivial. All in all, RCTs results concern a particular sample used during the study. The study sample is of course drawn from a larger group, i.e.~the population, but the RCT results cannot be simply applied to another sample drawn from the population. Randomisation is not the same as random sampling from the population. In fact, there are many RCT studies that misrepresented certain population groups. An example of women inclusion issues in clinical studies includes the under-representation of women in stroke randomized controlled trials, which leads to misleading conclusions that affect stroke care delivery \citep{tsivgoulis2017under}. A similar bias exists in animal research, including \href{https://www.wired.com/2016/07/science-huge-diversity-problem-lab-rats/}{lab mice}.
+
+\begin{quote}
+Most rodents used in biomedical studies --- the ones that suss out the effects of treatments before they make it to humans --- have boy parts and boy biological functions. And that particular kind of gender imbalance has cascading effects. A growing body of evidence indicates that females process pain differently than males. But many lab scientists who study ways of treating pain \emph{still }use all-male cohorts of lab mice. They say it's because male mice and rats aren't as hormonal as females---because isn't that what they always say---and are therefore more reliable in terms of getting data. And that means the scientific community is ignoring research that might help women manage pain better. --- \textbf{Science Has a Huge Diversity Problem\ldots{} in Lab Mice - Wired}
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{quote}
+Of 2,347 articles reviewed, 618 included animals and/or cells. For animal research, 22\% of the publications did not specify the sex of the animals. Of the reports that did specify the sex, 80\% of publications included only males, 17\% only females, and 3\% both sexes. A greater disparity existed in the number of animals studied: 16,152 (84\%) male and 3,173 (16\%) female. --- \citep{yoon2014sex}
+\end{quote}
+
+Therefore, RCTs must be internally valid, --- i.e.~the design must eliminate the possibility of bias --- but to be clinically useful the result must also be relevant to a well-defined group of patients (i.e.~external validity). Differences between trial protocol and routine practice also affect the external validity of RCTs. In \citep{rothwell2006factors}, the authors list some of the most important potential determinants of external validity.
+
+\hypertarget{cross-validation-in-machine-learning}{%
+\subsection{Cross-validation in Machine Learning}\label{cross-validation-in-machine-learning}}
+
+As data scientists, you may wonder why the previous practices are relevant to your job. In this section I want to show how similar control measures must be considered regarding machine learning (ML). When applying supervised ML methods, is important to prevent over-fitting and under-fitting situations. In particular, over-fitting occurs when a model begins to \emph{memorize} training data rather than \emph{learning} to generalize from a trend (see Figure \ref{fig:overfitting}). One of the techniques to detect or lessen the change of over-fitting includes cross-validation. The basis of this technique is to test the generalization power of the model by evaluating its performance on a set of data not used during the training stage.
+
+
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.45\linewidth]{Figures/Overfitting} 
+
+}
+
+\caption{Source: \href{https://en.wikipedia.org/wiki/File:Overfitting.svg}{Wikimedia}. The green line represents an overfitted model and the black line represents a regularized model. While the green line best follows the training data, it is too dependent on that data and it is likely to have a higher error rate on new unseen data, compared to the black line.}\label{fig:overfitting}
+\end{figure}
+
+The simplest approach is the \textbf{hold out method} which entails spliting the dataset into a train and test sets. However, yet another part of the dataset is often held out (validation set) so that the model training proceeds on the training set, the model evaluation on the validation set, and once the hyperparameters are successfully tweaked, the final evaluation is conducted on the test set. This process reduces the amount of data available for training. Cross-validation (CV) alleviates this issue.
+
+The following procedure (see Figure \ref{fig:cross-validation}) is followed for each of the \(k\) ``folds'':
+
+\begin{itemize}
+\tightlist
+\item
+  A model is trained using \(k-1\) of the folds as training data.
+\item
+  The resulting model is validated on the remaining part of the data.
+\end{itemize}
+
+The performance measure reported by K-fold CV is then the average of the values computed in the loop. This approach can be computationally expensive, but does not waste too much data \citep{scikit-learn}.
+
+
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.75\linewidth]{Figures/grid_search_cross_validation} 
+
+}
+
+\caption{Source: \href{https://scikit-learn.org/stable/modules/cross_validation.html\#cross-validation}{Scikit-Learn}. A test set should still be held out for final evaluation, but the validation set is no longer needed when doing CV. In the basic approach, called K-fold CV, the training set is split into k smaller sets \citep{scikit-learn}.}\label{fig:cross-validation}
+\end{figure}
+
+However, the vanilla approach to K-fold CV does not consider certain properties of the dataset. In particular, K-fold CV is not affected by classes or groups. For instance, the training set of the first CV iteration in Figure \ref{fig:k-fold-vis} does not contain one of the classes.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.63\linewidth]{Figures/k-fold-vis} 
+
+}
+
+\caption{Source: Scikit-Learn. K-fold CV is not affected by classes or groups.}\label{fig:k-fold-vis}
+\end{figure}
+
+Issues similar to the ones previously studied regarding RCTs can arise when conducting cross-validation. Some problems exhibit a large imbalance in the distribution of the target classes. For example, the negative class can be more representative than the positive class. In such cases, stratified sampling is recommended (see Figure \ref{fig:k-fold-strategies}) to preserve relative class frequencies in each train and validation fold.
+
+One strong assumption of machine learning theory is that data is Independent and Identically Distributed (i.i.d.), i.e.~that all samples stem from the same generative process and that such process is assumed to have no memory regarding past samples. For example, a succession of throws of a fair coin is i.i.d. since the coin has no memory, so all the throws are independent. In this sense, if we know that the generative process has a group structure (e.g.~samples collected from different subjects, experiments, measurement devices) we should use group-wise CV. The grouping of data depends on the context. For instance, in medical data, we can find multiple samples for each patient, so it makes sense to group the samples by patient to prevent any \href{https://scikit-learn.org/0.24/common_pitfalls.html\#data-leakage}{\emph{data leakage}}. Similarly, problems where the samples have been generated using a time-dependent process call for \href{https://scikit-learn.org/stable/modules/cross_validation.html\#timeseries-cv}{time-series aware CV schemes}.
+
+
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{Figures/kfold-strategies} 
+
+}
+
+\caption{Source: Scikit-Learn. Other K-fold CV strategies. \href{https://scikit-learn.org/stable/modules/cross_validation.html\#group-k-fold}{\textbf{GroupKFold}} is a variation of K-fold which ensures that the same group is not represented in both testing and training sets. \href{https://scikit-learn.org/stable/modules/cross_validation.html\#stratified-k-fold}{\textbf{StratifiedKFold}} is a variation of K-fold which returns stratified folds: each set contains approximately the same percentage of samples of each target class as the complete set..}\label{fig:k-fold-strategies}
+\end{figure}
+
+Similar to RTC internal validity, cross-validation does not ensure transferability to other scenarios. External validation must be performed with independent datasets to ensure robustness against new scenarios. Consider a deep-learning algorithm trained to predict the number of years a patient will survive based on its characteristics and the medication administrated. This system could be then transferred to a different hospital, in another country, region, or city where the population characteristics (diet, hygiene, professions) are different. The model will require undertaking a certain recalibration process to learn the new conditions.
 
 \hypertarget{how-to-evaluate-experiment-success}{%
-\section{How to evaluate experiment success}\label{how-to-evaluate-experiment-success}}
+\subsection{How to evaluate experiment success}\label{how-to-evaluate-experiment-success}}
 
-\hypertarget{what-is-a-model}{%
-\section{What is a model?}\label{what-is-a-model}}
+Very often, success is not defined by a single goal or metric. For instance, the best car is not always the fastest car. In fact, there are many other values to bear in mind, such as gasoline consumption, pollution, ease of manufacture, etc. Similarly an experiment success is rarely assessed with a single metric in mind.
 
-Very often is not possible to directly conduct research on the targets (e.g.~it might not be feasible, legal, affordable). For example, is common to study aerodynamics in scale models or computational models.
+Moreover, some metrics must not be degraded, often called \textbf{guardrail metrics}. This type of metrics can include security, speed, robustness, etc. But very often include \emph{non-epistemic values} too. In this context, non-epistemic values are metrics not directly related to the instance to be designed, such as fairness, justice, or making money (or saving it), in contrast to metrics that make the instance at issue \emph{internally} or \emph{intrinsically} better (e.g.~speed). For instance, a car is not necessarily a better car depending on its price if what is judged is the \emph{car itself} in isolation, but a low price might make it easier to sell. In another example, the fastest data processing system might not necessarily be the best choice since other requirements must be considered too (e.g.~ease of use).
 
-are:
+A non-epistemic value that is always at stake is money, or in a different shape, OPEX (operational expenditure) and CAPEX (capital expenditure). Very often, they condition other metrics, such as performance (e.g.~use less/worse resources) or safety (e.g.~employ less/worse materials). For example, I had the opportunity to work on the design of enterprise log processing systems. In this case, we wanted to maximise speed while reducing resources, as mid-sized companies often wish to reduce the number of servers deployed, which ultimately affects their operational costs (e.g.~space and electricity). Most commercial solutions scale horizontally, requiring the use of on-site server clusters to handle large amounts of data (at prohibitively high prices) or cloud-hosted clusters (impractical due to data protection). Our proposal optimised vertical scalability and coped with tens of millions of events per second with a single server. But of course, such an approach was specifically designed for a particular task, in contrast to the flexibility offered by commercial alternatives.
 
-representations
-
-\begin{itemize}
-\tightlist
-\item
-  When we take a model (e.g.~DNA model) it is representing or substituting the target.
-\end{itemize}
-
-idealisations
-
-depend on the purpose
-
-things to be manipulated
-
-\hypertarget{differences-between-models-theories-and-experiments}{%
-\section{Differences between Models, Theories and Experiments}\label{differences-between-models-theories-and-experiments}}
-
-\hypertarget{the-problems-with-machine-learning}{%
-\section{The problems with Machine Learning}\label{the-problems-with-machine-learning}}
-
-\begin{itemize}
-\tightlist
-\item
-  Ref. Chapter ``A blueprint of reality'' from The book of Why.
-\end{itemize}
+In data science, success should be defined by how well the analysis answers the research questions. For this reason, setting the research questions at the very beginning of the process remains crucial. They not only determine the data analysis but, more importantly, the data collection design. However, very frequently, the data science process starts with a given dataset. Still, it is essential to assess if the collected data can answer the posed questions.
 
 \hypertarget{examples-2}{%
 \section{Examples}\label{examples-2}}
@@ -1201,188 +1497,8 @@ things to be manipulated
 \hypertarget{john-snow}{%
 \subsection{1854 Broad Street cholera outbreak}\label{john-snow}}
 
-{[}write{]}
-
-This case is very popular and can be found in several books and posts online but I recommend the explanation given in Chapter 7 from The Book of Why \citep{book-of-why} as the authors also re-formulate the case in causal terms.
-
-\hypertarget{study-about-honesty-is-retracted-over-fake-data}{%
-\subsection{Study about honesty is retracted over fake data}\label{study-about-honesty-is-retracted-over-fake-data}}
-
-{[}write{]}
-
-\url{https://www.buzzfeednews.com/article/stephaniemlee/dan-ariely-honesty-study-retraction}
-
-\url{https://twitter.com/jpsimmon/status/1427628315939049491}
-
-\hypertarget{takeaway-messages}{%
-\section{Takeaway Messages}\label{takeaway-messages}}
-
 \hypertarget{stats-abuse}{%
-\chapter{Statistics Abuse, Biases and Confounders}\label{stats-abuse}}
-
-\hypertarget{overview-1}{%
-\section{Overview}\label{overview-1}}
-
-Continue on the example from chapter \ref{empirical-practices} from Chapter 4 from the Book of Why.
-
-\hypertarget{bias-and-confounders}{%
-\section{Bias and Confounders}\label{bias-and-confounders}}
-
-Example from § \ref{covid-israel}.
-
-\begin{itemize}
-\tightlist
-\item
-  Ref. Chapter Confounding and deconfounding, from The Book of Why.
-\item
-  Ref. Judgment under Uncertainty. (Amos Tversky and Daniel Kahneman).
-\item
-  Ref. John Snow and cholera.
-\item
-  Ref. \url{https://catalogofbias.org/}
-\item
-  The trouble with bias \url{https://www.youtube.com/watch?v=fMym_BKWQzk}
-\item
-  The problem with building a fair system \url{https://www.oreilly.com/radar/the-problem-with-building-a-fair-system/}
-\end{itemize}
-
-\hypertarget{data-alone-is-not-enough}{%
-\section{Data alone is not enough}\label{data-alone-is-not-enough}}
-
-The confirmation of a hypothesis is often considered to increase as the number of favourable test findings grows, but the increase in confirmation, produced by one new favourable instance, will generally become smaller as the number of previously established favourable instances grows \citep{hempel-pos}. Many researchers and data scientists blindly rely on the dogma \emph{the more data, the merrier} but the addition of one more favourable finding raises the hypothesis confirmation but little. The confirmation of a hypothesis depends not only on the quantity of the favourable evidence available but also on its variety.
-
-\hypertarget{visualizations-can-lie}{%
-\section{Visualizations can lie}\label{visualizations-can-lie}}
-
-\begin{itemize}
-\tightlist
-\item
-  Ref. How charts lie from Alberto Cairo. \url{https://www.newyorker.com/magazine/2021/06/21/when-graphs-are-a-matter-of-life-and-death}
-\end{itemize}
-
-Example from § \ref{viz-hurricane}.
-
-\hypertarget{more}{%
-\section{More\ldots{}}\label{more}}
-
-\hypertarget{examples-3}{%
-\section{Examples}\label{examples-3}}
-
-\hypertarget{covid-israel}{%
-\subsection{Covid-19: How can efficacy versus severe disease be strong when 60\% of hospitalized are vaccinated?}\label{covid-israel}}
-
-\begin{rnote}
-\emph{There are three kinds of lies: Lies, damned lies, and statistics}
-
-\end{rnote}
-
-In this \href{https://www.covid-datascience.com/post/israeli-data-how-can-efficacy-vs-severe-disease-be-strong-when-60-of-hospitalized-are-vaccinated}{blog post}, biostatistics Professor Jeffrey Morris demonstrates how without properly controlling for age, efficacy against severe disease in Israel may appear weak when in fact within each age-group it is extremely strong. Consider the table from Figure \ref{fig:vaccine-rates-a} and the following data from the the Israeli government. As of August 15, 2021 nearly 60\% of all patients currently hospitalized for COVID-19 are vaccinated. Out of 515 patients currently hospitalized with severe cases in Israel, 301 (58.4\%) of these cases were fully vaccinated.
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.7\linewidth]{Figures/vaccines-ex-fig1} 
-
-}
-
-\caption{Misleading table. This kind of tables have been used to claim that vaccines do not work or that its efectiveness reduces over time.}\label{fig:vaccine-rates-a}
-\end{figure}
-
-The numbers are true, but we need more than that to draw a proper conclusion about vaccine efficacy. Consider the following extreme scenarios. If the number of vaccinated people would be 0 we would expect all severe cases to be not vaccinated (obviously). On the other hand, if 100\% of people would have been vaccinated, we would expect all severe cases to proceed from vaccinated people and 0 from non vaccinated. In this case, we have an in-between situation where 80\% of residents (older than 12 years) have been vaccinated. Therefore, since the group of vaccinated people is larger than the non-vaccinated, we can expect more severe cases in absolute numbers. However, once we adjust for vaccination rates and normalise the counts, the story changes. The rate of severe cases is three times higher in unvaccinated individuals.
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.7\linewidth]{Figures/vaccines-ex-fig2} 
-
-}
-
-\caption{Table adjusted for vaccination rates.}\label{fig:vaccine-rates-b}
-\end{figure}
-
-\begin{quote}
-Vaccine Efficacy vs.~Severe disease = 1 - 5.3/16.4 = 67.5\%.
-The interpretation of this number is that the vaccines are preventing \textgreater2/3 of the serious infections leading to hospitalization that would have occurred sans vaccination.
-\end{quote}
-
-Still, the obtained efficacy is lower than what we would expect. There are other factors that contribute to this confusion, including: age disparity in vaccinations, old people is more likely to be hospitalized than young people, etc.
-
-I recommend going through the blog post to see how the author continues to apply adjustments and stratifications to find the true efficacy of the vaccines. Moreover, this is a good example of the Simpson's paradox, where misleading results can be obtained in the presence of confounding factors.
-
-\begin{quote}
-In conclusion, as long as there is a major age disparity in vaccination rates, with older individuals being more highly vaccinated, then the fact that older people have an inherently higher risk of hospitalization when infected with a respiratory virus means that it is always important to stratify results by age; Even more fundamentally, it is important to use infection and disease rates (per 100k, e.g.) and not raw counts to compare unvaccinated and vaccinated groups to adjust for the proportion vaccinated. Use of raw counts exaggerates the vaccine efficacy when vaccinated proportion is low and attenuates the vaccine efficacy when, like in Israel, vaccines proportions are high.
-\end{quote}
-
-\hypertarget{viz-hurricane}{%
-\subsection{Misinterpretations of hurricane forecast maps}\label{viz-hurricane}}
-
-The \href{https://www.nytimes.com/interactive/2019/08/29/opinion/hurricane-dorian-forecast-map.html}{following article} by Alberto Cairo published in The New York Times explains how hurricane cone forecast maps can mislead the public and produce real-world consequences.
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.66\linewidth]{Figures/hurricane-forecast-maps-tv} 
-
-}
-
-\caption{Example of hurricane forecast cone graphic in TV.}\label{fig:hurricane-tv}
-\end{figure}
-
-\href{https://www.semanticscholar.org/paper/Misinterpretations-of-the-\%E2\%80\%9CCone-of-Uncertainty\%E2\%80\%9D-in-Broad-Leiserowitz/f7c04b6eb883cf7d7fdee007cda056ed18182829}{Studies} show that people can misinterpret this type of map as indicating that the hurricane will get bigger over time. Others think it shows areas under threat. Recent \href{https://interactive.miami.edu/hurakan/}{research} suggests that 40\% of people would not feel threatened if they lived just outside of the cone. Moreover, people who live inside the cone, but far from the center, take less precautions than those closer to the central line. These misunderstandings have real-world consequences. Actually, the cone represents a range of possible positions and paths for the storm's center. The dots in the middle of the cone correspond to the forecast of where the hurricane's center could be in the following five days. But there's a good chance that the actual center of the storm will not end up being at those positions.
-
-To create the cone, the National Hurricane Center (N.H.C.) surrounds each estimated position of the storm center with circles of increasing size. \textbf{These circles represent uncertainty}, meaning that the storm center may end up being anywhere inside the circles --- or even outside of them. The uncertainty circles grow over time because it is more difficult to to predict what will happen in five days from now than in one day. Finally, a curve connects the circles, resulting in what is popularly known as the `cone of uncertainty'.
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.66\linewidth]{Figures/hurricane-forecast-maps} 
-
-}
-
-\caption{Cone of uncertainty.}\label{fig:hurricane-map}
-\end{figure}
-
-\begin{quote}
-N.H.C. says cones will contain the path of the storm center only 60 to 70 \% of the time. In other words, one out of three times we experience a storm like this, its center will be outside the boundaries of the cone. Hurricanes are also hundreds of miles wide, and the cone shows only the possible path of the storm's center. Heavy rain, storm surges, flooding, wind and other hazards may affect areas outside the cone. The cone, when presented on its own, doesn't give us much information about a hurricane's dangers. The N.H.C. designs other graphics, including this one showing areas that may be affected by strong winds. But these don't receive nearly as much attention as the cone. The cone graphic is deceptively simple. That becomes a liability if people believe they're out of harm's way when they aren't. As with many charts, it's risky to assume we can interpret a hurricane map correctly with just a glance. Graphics like these need to be read closely and carefully. Only then can we grasp what they're really saying.
-\end{quote}
-
-\begin{rnote}
-From a \href{https://www.nytimes.com/interactive/2019/08/29/opinion/hurricane-dorian-forecast-map.html}{NYT article} by Alberto Cairo
-
-\end{rnote}
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.66\linewidth]{Figures/hurricane-forecast-heat-map} 
-
-}
-
-\caption{Other graphics designed by USA National Hurricane Center.}\label{fig:hurricane-heatmap}
-\end{figure}
-
-\hypertarget{the-smoke-debate-part-ii}{%
-\subsection{The smoke debate (part II)}\label{the-smoke-debate-part-ii}}
-
-\hypertarget{takeaway-messages-1}{%
-\section{Takeaway Messages}\label{takeaway-messages-1}}
-
-\hypertarget{ethics-and-responsibility}{%
-\chapter{Ethics and Responsibility}\label{ethics-and-responsibility}}
-
-\hypertarget{overview-2}{%
-\section{Overview}\label{overview-2}}
-
-Very often, progress, ethics and laws go hand in hand. The industrial revolution increased the living standards but also brought new challenges, problems and ethical questions. Labour conditions were harsh and child labour was common long before the industrial revolution. Progress and technology raise new ethical questions. Bit by bit certain practices and conditions became culturally unacceptable with a growing social consensus in the same direction that eventually forced laws to reflect those changes. Nowadays, rights such as office restrooms or the lunch break are widespread.
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.25\linewidth]{Figures/coaltub} 
-
-}
-
-\caption{A young drawer pulling a coal tub along a mine gallery.}\label{fig:coaltub}
-\end{figure}
-
-Similarly, we live in the information revolution, which has transformed the way societies communicate in a way not seen since the Gutenberg printer revolution, enabling the world to transmit information worldwide almost instantaneously through the interconnection of computers. The information era brings ethical challenges to a new dimension. Gutenberg print helped to spread literature and knowledge but it also made it easier to spread hate and fake news (see \href{https://www.politico.com/magazine/story/2016/12/fake-news-history-long-violent-214535/}{this article for some examples}). Today, tools like Facebook have been used to incite the \href{https://www.nytimes.com/2018/10/15/technology/myanmar-facebook-genocide.html}{genocide of Rohingya in Myanmar}. Every data scientist must understand the impact of their work for the good and the bad. Something as simple as a good visualization can be enlightening and convince people to get a vaccine or find the root of an outbreak (see the map of John Snow). But bad data science can have unexpected real-world consequences too.
-
-\hypertarget{morality-and-ethics}{%
-\section{Morality and Ethics}\label{morality-and-ethics}}
+\chapter{Statistical abuse, Biases and Confounders}\label{stats-abuse}}
 
 \begin{notebox}
 
@@ -1391,199 +1507,23 @@ Similarly, we live in the information revolution, which has transformed the way 
 
 \end{center}
 
-In this course we will not address all the philosophical questions regarding ethics but will try to focus on the ethical practice of data science.
+This chapter is under construction. Content is hidden.
 
 \end{notebox}
 
-Ethics comes from the Greek word \emph{Ethos}, meaning habit or custom. Ethics are theories that offer normatively valid reasons to rationally endorsing a code of behaviour. In general, the cost of following an ethical rule is less than the benefit we obtain from others following the same rule. For example, feminist ethics aims to understand, criticise and correct how gender operates within our moral beliefs and practices \citep{sep-feminism-ethics}. Similarly, we can find environmental ethics and of course data ethics. In science, we often need to answer ethical questions like: is it right to use RCT in this specific scenario? under what conditions is justified to conduct animal experiments?.
+\hypertarget{ethics-and-responsibility}{%
+\chapter{Ethics and Responsibility}\label{ethics-and-responsibility}}
 
-Descriptively, \emph{morality} refers to a code of conduct that is put forward by a society or group (e.g.~a religion), or accepted by an individiual. In a normative sense, \emph{morality} refers to a code of conduct that would be accepted by anyone who meets certain intellectual conditions (e.g.~being rational) \citep{sep-morality-definition}. For example, a company is not a \emph{moral agent} but it can encourage a certain \emph{code of conduct} to their workers. Even though \emph{morality} is the subject matter of ethics, it is most often used interchangeably with \emph{ethics}. Finally, ethics are not laws but laws are often used to enforce certain shared social values.
+\begin{notebox}
 
-\hypertarget{values-in-science}{%
-\subsection{Values in Science}\label{values-in-science}}
+\begin{center}
+\textbf{Course Note:}
 
-\begin{quote}
-``Chapter 13 contains a discussion of some aspects of values in science, the most important being the discussion about the concepts value-free and value-laden, once introduced by Weber. The important point is that science is driven by values, it is value-laden, but its results can, and should, be value-free.'' --- Philosophy of Science for Scientists \citep{johansson2016philosophy}
-\end{quote}
+\end{center}
 
-\hypertarget{ethical-frameworks-consequentialism-deontology-and-virtue}{%
-\section{Ethical Frameworks: Consequentialism, Deontology and Virtue}\label{ethical-frameworks-consequentialism-deontology-and-virtue}}
+This chapter is under construction. Content is hidden.
 
-\hypertarget{data-ethics}{%
-\section{Data Ethics}\label{data-ethics}}
-
-We often face situations where we care about the privacy of our data. For example, we do not want our location to be shared to certain companies, but we wish to benefit from the same data to see if the road is jammed. Similarly, we want our medical records to remain private but also wish to benefit from the analysis of data in medial records to improve the care and treatment given to us. We aim to automate and ease decisions thanks to data-driven algorithms but we also worry about unintended bias. Getting to know the consequences of our actions make us aware of what is right or wrong. Without that, we lack any motivation to fix potential problems. Data science is a new field and we are still defining what is right and wrong. We are noticing certain consequences on privacy, fairness, equity, etc. And in so, a social consensus is growing and laws are being created to enforce such values.
-
-A good example of this is the unsolicited email or SPAM. This was considered a great idea in the 1990s for marketing purposes. Overtime it became a problem and socially unacceptable. The \href{https://en.wikipedia.org/wiki/CAN-SPAM_Act_of_2003}{Can't SPAM act} was created to regulate it (e.g.~offering a method to unsubscribe).
-
-\hypertarget{informed-consent}{%
-\subsection{Informed consent}\label{informed-consent}}
-
-\begin{itemize}
-\tightlist
-\item
-  History
-\item
-  review board
-\item
-  right to be informed
-\item
-  must consent
-\item
-  right to withdraw
-\item
-  before things need to be implemented (a way to remove data, etc)
-\item
-  IC Exceptions
-\item
-  IC Limitations
-\end{itemize}
-
-\hypertarget{data-ownership}{%
-\subsection{Data Ownership}\label{data-ownership}}
-
-\begin{itemize}
-\tightlist
-\item
-  Nature paper on data ownership
-\item
-  github copilot and code ownership
-\item
-  recording limits
-\item
-  data destruction (data as an asset)
-\item
-  GPDR note (backups?)
-\end{itemize}
-
-\hypertarget{privacy}{%
-\subsection{Privacy}\label{privacy}}
-
-\begin{itemize}
-\tightlist
-\item
-  human right (e.g.~voting in elections)
-\item
-  zero privacy
-\item
-  sense of privacy
-\item
-  degrees of privacy (DNA)
-\item
-  collection vs use
-\item
-  amazon vs correos
-\end{itemize}
-
-\hypertarget{anonymity}{%
-\subsection{Anonymity}\label{anonymity}}
-
-\begin{itemize}
-\tightlist
-\item
-  de-identification
-\item
-  potential issues (agg. data)
-\end{itemize}
-
-\hypertarget{validity}{%
-\subsection{Validity}\label{validity}}
-
-\begin{itemize}
-\tightlist
-\item
-  consequences of errors (deny a loan, misdiagnose)
-\item
-  soruces of error
-
-  \begin{itemize}
-  \tightlist
-  \item
-    choice of a representative sample
-
-    \begin{itemize}
-    \tightlist
-    \item
-      balance important attributes (race, age, gender)
-    \item
-      project future population
-    \item
-      gradual drift
-    \end{itemize}
-  \item
-    choice of attributes and measures
-
-    \begin{itemize}
-    \tightlist
-    \item
-      limited to what's available
-    \item
-      leavce out attrs
-    \end{itemize}
-  \item
-    errors in data processing
-
-    \begin{itemize}
-    \tightlist
-    \item
-      first party error during processing
-    \item
-      \ldots{}
-    \end{itemize}
-  \item
-    errors in model design
-
-    \begin{itemize}
-    \tightlist
-    \item
-      model structure
-    \item
-      extrapolation
-    \item
-      ecological fallacy
-    \item
-      simpson's paradox
-    \end{itemize}
-  \item
-    managing change
-
-    \begin{itemize}
-    \tightlist
-    \item
-      google flu
-    \item
-      campbell's law
-    \item
-      studies balanced on gender
-    \end{itemize}
-  \end{itemize}
-\end{itemize}
-
-\hypertarget{algorithmic-fairness}{%
-\subsection{Algorithmic Fairness}\label{algorithmic-fairness}}
-
-\begin{itemize}
-\tightlist
-\item
-  correlated attributes
-\item
-  correct but misleading results
-\end{itemize}
-
-\hypertarget{reproducibility-and-fair-data}{%
-\subsection{Reproducibility and FAIR Data}\label{reproducibility-and-fair-data}}
-
-\hypertarget{data-ownership-and-the-dilution-of-responsibility}{%
-\section{Data Ownership and the Dilution of Responsibility}\label{data-ownership-and-the-dilution-of-responsibility}}
-
-\hypertarget{gdpr}{%
-\section{GDPR}\label{gdpr}}
-
-\hypertarget{historical-examples}{%
-\section{Historical Examples}\label{historical-examples}}
-
-\hypertarget{takeaway-messages-2}{%
-\section{Takeaway Messages}\label{takeaway-messages-2}}
+\end{notebox}
 
 \hypertarget{wont-fix}{%
 \chapter{Extra Material}\label{wont-fix}}
