@@ -1,0 +1,122 @@
+# Ethics and Responsibility
+
+:::: {.notebox data-latex=""}
+::: {.center data-latex=""}
+**Course Note:**
+:::
+
+This chapter is under construction. Content is hidden.
+::::
+
+<!--
+
+## Overview
+
+Very often, progress, ethics and laws go hand in hand. The industrial revolution increased the living standards but also brought new challenges, problems and ethical questions. Labour conditions were harsh and child labour was common long before the industrial revolution. Progress and technology raise new ethical questions. Bit by bit certain practices and conditions became culturally unacceptable with a growing social consensus in the same direction that eventually forced laws to reflect those changes. Nowadays, rights such as office restrooms or the lunch break are widespread.
+
+```{r coaltub, echo=F, out.width="25%", fig.align="center", fig.cap='A young drawer pulling a coal tub along a mine gallery.'}
+knitr::include_graphics('Figures/coaltub.png')
+```
+
+Similarly, we live in the information revolution, which has transformed the way societies communicate in a way not seen since the Gutenberg printer revolution, enabling the world to transmit information worldwide almost instantaneously through the interconnection of computers. The information era brings ethical challenges to a new dimension. Gutenberg print helped to spread literature and knowledge but it also made it easier to spread hate and fake news (see [this article for some examples](https://www.politico.com/magazine/story/2016/12/fake-news-history-long-violent-214535/)). Today, tools like Facebook have been used to incite the [genocide of Rohingya in Myanmar](https://www.nytimes.com/2018/10/15/technology/myanmar-facebook-genocide.html). Every data scientist must understand the impact of their work for the good and the bad. Something as simple as a good visualization can be enlightening and convince people to get a vaccine or find the root of an outbreak (see the map of John Snow). But bad data science can have unexpected real-world consequences too.
+
+## Morality and Ethics
+
+
+:::: {.notebox data-latex=""}
+::: {.center data-latex=""}
+**Course Note:**
+:::
+
+In this course we will not address all the philosophical questions regarding ethics but will try to focus on the ethical practice of data science. 
+::::
+
+Ethics comes from the Greek word *Ethos*, meaning habit or custom. Ethics are theories that offer normatively valid reasons to rationally endorsing a code of behaviour. In general, the cost of following an ethical rule is less than the benefit we obtain from others following the same rule. For example, feminist ethics aims to understand, criticise and correct how gender operates within our moral beliefs and practices [@sep-feminism-ethics]. Similarly, we can find environmental ethics and of course data ethics. In science, we often need to answer ethical questions like: is it right to use RCT in this specific scenario? under what conditions is justified to conduct animal experiments?.
+
+Descriptively, *morality* refers to a code of conduct that is put forward by a society or group (e.g. a religion), or accepted by an individiual. In a normative sense, *morality* refers to a code of conduct that would be accepted by anyone who meets certain intellectual conditions (e.g. being rational) [@sep-morality-definition]. For example, a company is not a *moral agent* but it can encourage a certain *code of conduct* to their workers. Even though *morality* is the subject matter of ethics, it is most often used interchangeably with *ethics*. Finally, ethics are not laws but laws are often used to enforce certain shared social values.
+
+### Values in Science
+
+> "Chapter 13 contains a discussion of some aspects of values in science, the most important being the discussion about the concepts value-free and value-laden, once introduced by Weber. The important point is that science is driven by values, it is value-laden, but its results can, and should, be value-free." --- Philosophy of Science for Scientists [@johansson2016philosophy]
+
+## Ethical Frameworks: Consequentialism, Deontology and Virtue
+
+## Data Ethics
+
+We often face situations where we care about the privacy of our data. For example, we do not want our location to be shared to certain companies, but we wish to benefit from the same data to see if the road is jammed. Similarly, we want our medical records to remain private but also wish to benefit from the analysis of data in medial records to improve the care and treatment given to us. We aim to automate and ease decisions thanks to data-driven algorithms but we also worry about unintended bias. Getting to know the consequences of our actions make us aware of what is right or wrong. Without that, we lack any motivation to fix potential problems. Data science is a new field and we are still defining what is right and wrong. We are noticing certain consequences on privacy, fairness, equity, etc. And in so, a social consensus is growing and laws are being created to enforce such values.
+
+A good example of this is the unsolicited email or SPAM. This was considered a great idea in the 1990s for marketing purposes. Overtime it became a problem and socially unacceptable. The [Can't SPAM act](https://en.wikipedia.org/wiki/CAN-SPAM_Act_of_2003) was created to regulate it (e.g. offering a method to unsubscribe).
+
+### Informed consent
+
+- History
+- review board
+- right to be informed
+- must consent
+- right to withdraw
+- before things need to be implemented (a way to remove data, etc)
+- IC Exceptions 
+- IC Limitations
+
+### Data Ownership
+
+- Nature paper on data ownership
+- github copilot and code ownership
+- recording limits
+- data destruction (data as an asset)
+- GPDR note (backups?)
+
+### Privacy
+
+- human right (e.g. voting in elections)
+- zero privacy
+- sense of privacy 
+- degrees of privacy (DNA)
+- collection vs use
+- amazon vs correos
+
+### Anonymity 
+
+- de-identification
+- potential issues (agg. data)
+
+### Validity
+
+- consequences of errors (deny a loan, misdiagnose)
+- soruces of error
+  - choice of a representative sample
+    - balance important attributes (race, age, gender)
+    - project future population
+    - gradual drift
+  - choice of attributes and measures
+    - limited to what's available
+    - leavce out attrs
+  - errors in data processing
+    - first party error during processing
+    - ...
+  - errors in model design
+    - model structure
+    - extrapolation
+    - ecological fallacy
+    - simpson's paradox
+  - managing change
+    - google flu
+    - campbell's law
+    - studies balanced on gender
+
+### Algorithmic Fairness
+
+- correlated attributes
+- correct but misleading results
+
+### Reproducibility and FAIR Data
+
+## Data Ownership and the Dilution of Responsibility
+
+## GDPR
+
+## Historical Examples
+
+## Takeaway Messages
+
+-->
