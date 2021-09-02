@@ -2,13 +2,13 @@ bookdown::gitbook:
   toc_depth: 4
   css: style.css
   config:
+    sharing: null
     toc:
       scroll_highlight: yes
       before: |
         <li><a href="./">Applied Philosophy of Science and Data Ethics</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-    edit: https://github.com/carlosvega/PoS-DE/edit/master/%s
     download: ["pdf"]
 bookdown::pdf_book:
   toc_depth: 4
