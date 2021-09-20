@@ -600,28 +600,6 @@ Therefore, not even (conclusion)
 
 Another approach is to take the truth table of $p \rightarrow q$ and take the case where $p \rightarrow q$ is false - second line - i.e. when $p$ is true and $q$ is false or for our case, when a card is even and its back not red (so brown). From this we need to take the cards that are $p$ and $\lnot q$ i.e. even cards and brown cards.
 
-### Neptune and Vulcan {#neptune-vulcan}
-
-Newton's gravitational theory predicted the paths the planets should follow as they orbit the sun. Most of these were confirmed by observation, but the orbit of Uranus differed from Newton's predictions. In 1846 John Adams in England and Urbain Le Verrier in France solved the mystery. Both of them suggested that another planet, yet undiscovered, was the cause of an additional gravitational force exerted on Uranus. These scientists calculated the mass and position that this planet would need to have to explain Uranus' orbit. The planet Neptune was indeed found close to the location predicted by Adams and Le Verrier.
-
-So, instead of rejecting Newton's theory right away (see \@ref(falsification)), these scientists stuck to it and tried to find another missing factor that could explain the difference. When the motion of Uranus was found not to match the predictions of Newton's laws, the theory "There are seven planets in the solar system" was rejected, and not Newton's laws themselves.
-
-However, Le Verrier also found irregularities in the motion of the planet Mercury and tried to explain them as resulting from the gravitational pull of an, again, yet undetected planet Vulcan. This hypothetical planet would have to be a very dense and small object between the sun and Mercury. In this case, no planet was found between Mercury and the sun. A satisfactory explanation was provided much later by the general theory of relativity, which justified irregularities through a new system of laws. In this case, the hypothesis or theory had to be reformulated or replaced by new one.
-
-Below you can find a [clip from lecture "The Law of Gravitation"](https://www.youtube.com/watch?v=j3mhkYbznBk&t=1830s), from the Messenger Lectures given by the renowned American theoretical physicist Richard Phillips Feynman. 
-
-```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
-cat(
-'<figure style="text-align: center">
-<video width="500"
-  frameborder="0" controls>
-  <source src="videos/Feynman-Newton-trim.mp4" type="video/mp4">
- </video>
- <figcaption>Clip from the first lecture, "The Law of Gravitation", from the Messenger Lectures given by the renowned American theoretical physicist Richard Phillips Feynman, about the Character of Physical Laws, at Cornell University U.S.A. recorded by BBC Nov. 9-19, 1964. The full lecture can be found at <a href="https://www.youtube.com/watch?v=j3mhkYbznBk">YouTube</a>.</figcaption>
-</figure>'
-)
-```
-
 ### U.S.A. Presidents
 
 ```{r us-presidents, echo=F, out.width="100%", fig.align="center", fig.cap='Presidents of the United States of America as of 2021.'}

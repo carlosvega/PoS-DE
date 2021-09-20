@@ -105,7 +105,7 @@ In Chapter \@ref(stats-abuse) we will see some examples of experimental errors (
 
 **Reproduction**: An experiment is considered as reproduced if the repetition of the experiment yields the same result. For instance, in computer science, reproducing involves using the original data and code.
 
-**Replication**:  An independent experiment, in the spirit of the original experiment produces the same result. For example, in computer science replication entails collecting new data and use similar methods to reach similar conclusions in answer to the same scientific question.
+**Replication**:  An independent experiment, in the spirit of the original experiment produces the same result. For example, in computer science replication entails collecting new data and use similar methods to reach similar conclusions in answer to the same scientific question. Or implementing a new software following similar design principles and reaching similar results.
 
 ::::
 
@@ -265,23 +265,23 @@ What distinguishes models from theories and experiments is examined and two ways
 
 ### 1854 Broad Street cholera outbreak {#john-snow}
 
-<!--
 
-[write]
+<!-- [write]
 
 This case is very popular and can be found in several books and posts online but I recommend the explanation given in Chapter 7 from The Book of Why [@book-of-why] as the authors also re-formulate the case in causal terms.
+-->
 
 
 ### Study about honesty is retracted over fake data
 
-
+<!--
 [write]
 
 https://www.buzzfeednews.com/article/stephaniemlee/dan-ariely-honesty-study-retraction
 
 https://twitter.com/jpsimmon/status/1427628315939049491
+-->
 
 ## Takeaway Messages
 
--->
 

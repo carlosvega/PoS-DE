@@ -19,7 +19,7 @@ Rather than finding a proper definition of science, which many have struggled wi
 
 ### Scientific Goals and Knowledge
 
-The main goals of science include prediction, explanation, understanding, and design. Through observation we can draw explanations and achieve understanding of nature phenomena. Once we understand we can aim to make predictions. Thanks to our understanding we can as well design experiments, instruments and solutions that help us further explaining, understanding and predicting our world. Predicting X means knowing that at time *t*, X will happen. Explaining X means to know the cause(s) that produced X. Designing X requires knowing that artifact X will satisfy certain functions F. All these goals share a common ingredient, scientific knowledge. Scientists arrive to such knowledge by applying the scientific method (see § \@ref(sci-method)). The goals of science are achieved through a series of activities that constitute the scientific method which include systematic observation and experimentation, inductive and deductive reasoning, and the formation and testing of hypotheses and theories.
+The main goals of science include prediction, explanation, understanding, and design. Through observation we can draw explanations and achieve understanding of nature phenomena. Once we understand we can aim to make predictions. Thanks to our understanding we can as well design experiments, instruments and solutions that help us further explaining, understanding and predicting our world. Predicting $X$ means knowing that at time *t*, $X$ will happen. Explaining $X$ means to know the cause(s) that produced $X$. Designing $X$ requires knowing that artifact $X$ will satisfy certain functions $F$. All these goals share a common ingredient, scientific knowledge. Scientists arrive to such knowledge by applying the scientific method (see § \@ref(sci-method)). The goals of science are achieved through a series of activities that constitute the scientific method which include systematic observation and experimentation, inductive and deductive reasoning, and the formation and testing of hypotheses and theories.
 
 > Knowledge is justified true belief — Plato (428 - 348 BC)
 
@@ -33,7 +33,7 @@ The most popular definition of knowledge was given by philosopher Plato in the a
 - **Belief** because even under justified reasons about true facts, people can choose not to believe such knowledge. We define belief as to the state of mind of a person that thinks something is the case. This state of mind is of course *tied to the individual* and *comes in degrees*. We act based on our beliefs and values, and new knowledge can affect these.
 
 Certainty of belief and truth are different. Is possible to have certain beliefs about false claims. 
-Similarly, we can have uncertain beliefs about true claims. From tossing a coin, we can expect a fair probability in which head and tails have the same probability. But we cannot know for sure if the coin is biased or no until it lands. Similarly, is possible that even our best theories are wrong or partially wrong. Even after many successful experiments, they might be proved wrong (see \@ref(neptune-vulcan)). In fact, scientific hypotheses can rarely if ever be proved right, they can, however, be proven wrong. 
+Similarly, we can have uncertain beliefs about true claims. From tossing a coin, we can expect a fair probability in which head and tails have the same probability. But we cannot know for sure if the coin is biased or not until it lands. Similarly, is possible that even our best theories are wrong or partially wrong. Even after many successful experiments, they might be proved wrong (see \@ref(neptune-vulcan)). In fact, scientific hypotheses can rarely if ever be proved right, they can, however, be proven wrong. 
 
 > “We never are definitely right, we can only be sure we are wrong” — Richard Feynman
 
@@ -121,6 +121,28 @@ Traditionally there are three ways to choose between alternative methods.
 See \@ref(smoke-debate) for an example of how reason-based methods are not always easy to implement while at the same time, outcome-oriented methods led the mainstream of an important debate.
 
 ## Examples
+
+### Neptune and Vulcan {#neptune-vulcan}
+
+Newton's gravitational theory predicted the paths the planets should follow as they orbit the sun. Most of these were confirmed by observation, but the orbit of Uranus differed from Newton's predictions. In 1846 John Adams in England and Urbain Le Verrier in France solved the mystery. Both of them suggested that another planet, yet undiscovered, was the cause of an additional gravitational force exerted on Uranus. These scientists calculated the mass and position that this planet would need to have to explain Uranus' orbit. The planet Neptune was indeed found close to the location predicted by Adams and Le Verrier.
+
+So, instead of rejecting Newton's theory right away (see \@ref(falsification)), these scientists stuck to it and tried to find another missing factor that could explain the difference. When the motion of Uranus was found not to match the predictions of Newton's laws, the theory "There are seven planets in the solar system" was rejected, and not Newton's laws themselves.
+
+However, Le Verrier also found irregularities in the motion of the planet Mercury and tried to explain them as resulting from the gravitational pull of an, again, yet undetected planet Vulcan. This hypothetical planet would have to be a very dense and small object between the sun and Mercury. In this case, no planet was found between Mercury and the sun. A satisfactory explanation was provided much later by the general theory of relativity, which justified irregularities through a new system of laws. In this case, the hypothesis or theory had to be reformulated or replaced by new one.
+
+Below you can find a [clip from lecture "The Law of Gravitation"](https://www.youtube.com/watch?v=j3mhkYbznBk&t=1830s), from the Messenger Lectures given by the renowned American theoretical physicist Richard Phillips Feynman. 
+
+```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
+cat(
+'<figure style="text-align: center">
+<video width="500"
+  frameborder="0" controls>
+  <source src="videos/Feynman-Newton-trim.mp4" type="video/mp4">
+ </video>
+ <figcaption>Clip from the first lecture, "The Law of Gravitation", from the Messenger Lectures given by the renowned American theoretical physicist Richard Phillips Feynman, about the Character of Physical Laws, at Cornell University U.S.A. recorded by BBC Nov. 9-19, 1964. The full lecture can be found at <a href="https://www.youtube.com/watch?v=j3mhkYbznBk">YouTube</a>.</figcaption>
+</figure>'
+)
+```
 
 ### The most famous "failed" experiment {#michelson-morley}
 
