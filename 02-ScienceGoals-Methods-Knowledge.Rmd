@@ -198,7 +198,7 @@ Figure \@ref(fig:eddington-eclipse) shows the positions of different stars durin
 
 > Einstein's theory made a clear prediction: light rays from distant stars would be deflected by the gravitational field of the sun. Normally this effect would be impossible to observe — except during a solar eclipse. In 1919 the English astrophysicist Sir Arthur Eddington organized two expeditions to observe the solar eclipse of that year, one to Brazil and one to the island of Principe off the Atlantic coast of Africa, with the aim of testing Einstein’s prediction. The expeditions found that starlight was indeed deflected by the sun, by almost exactly the amount Einstein had predicted. Popper was very impressed by this. Einstein's theory had made a definite, precise prediction, which was confirmed by observations. Had it turned out that starlight was not deflected by the sun, this would have shown that Einstein was wrong. So Einstein's theory satisfies the criterion of falsifiability. --- [@okasha-pos]
 
-```{r eddington-instruments, echo=F, fig.align="center", out.width="100%", fig.cap='Instruments used in the 1919 observations to test Einstein's predictions about warped spacetime. Credit: Getty Images'}
+```{r eddington-instruments, echo=F, fig.align="center", out.width="50%", fig.cap="Instruments used in the 1919 observations to test Einstein's predictions about warped spacetime. Credit: Getty Images"}
 knitr::include_graphics('Figures/eddington-instruments.jpg')
 ```
 
@@ -207,6 +207,8 @@ knitr::include_graphics('Figures/eddington-instruments.jpg')
 ```{r eddington-eclipse, echo=F, fig.align="center", out.width="100%", fig.cap='(ref:solar-eclipse-caption)'}
 knitr::include_graphics('Figures/solar_eclipse.jpg')
 ```
+
+> One of the interesting facts from Stanley’s account is that Einstein had made a stab at calculating the bending of light back in 1911, before he had formulated the full general theory of relativity. His result was precisely the same as the Newtonian value. I was left wondering what would have happened to his reputation if measurements had been taken then. Would they have been a setback? Or would they just have driven him harder to produce the full theory, with its crucial factor of two? --- [@coles2019einstein]
 
 ### The smoke debate {#smoke-debate}
 
