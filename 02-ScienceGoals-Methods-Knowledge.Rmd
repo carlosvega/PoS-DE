@@ -179,6 +179,35 @@ The extent to which the negative result of the Michelson–Morley experiment inf
 
 For a longer and deeper explanation of the experiment, its historical context and consequences, watch [episode 41 from The Mechanical Universe](https://www.youtube.com/watch?v=Ip_jdcA8fcw). The timeline of luminiferous aether can be found [at the Wikipedia](https://en.wikipedia.org/wiki/Timeline_of_luminiferous_aether).
 
+### Eddington expeditions {#eddington-expeditions}
+
+```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
+cat(
+'<figure class="wrap-figure">
+<img src="Figures/Arthur_Stanley_Eddington.jpg">
+<figcaption>English astrophysicist Sir Arthur Stanley Eddington (1882–1944).</figcaption>
+</figure>'
+)
+```
+
+The following example also relates to falsification (see \@ref(falsification)) which is taught in the next Chapter. However, this is also a good example of how a good theory should make definite predictions such as those from Einstein's theory of general relativity.
+
+Figure \@ref(fig:eddington-eclipse) shows the positions of different stars during the eclipse. Such stars are not normally visible in the daytime due to the brightness of the Sun but become visible during the moment when the Moon fully covers the solar disc. A difference in the observed position of the stars during the eclipse, compared to their normal position at night, indicates that the light from these stars had bent as it passed close to the Sun.
+
+(ref:solar-eclipse-caption) Eddington and Crommelin imaged the eclipse using the technology of the time: photographic plates made of glass. Sadly, the original plates from the 1919 expedition have been lost — but, luckily, copies of one of the plates were made and sent to observatories around the world to allow scientists everywhere to see the evidence in support of relativity with their own eyes. Source: [European Southern Observatory](https://www.eso.org/public/images/potw1926a/).
+
+> Einstein's theory made a clear prediction: light rays from distant stars would be deflected by the gravitational field of the sun. Normally this effect would be impossible to observe — except during a solar eclipse. In 1919 the English astrophysicist Sir Arthur Eddington organized two expeditions to observe the solar eclipse of that year, one to Brazil and one to the island of Principe off the Atlantic coast of Africa, with the aim of testing Einstein’s prediction. The expeditions found that starlight was indeed deflected by the sun, by almost exactly the amount Einstein had predicted. Popper was very impressed by this. Einstein's theory had made a definite, precise prediction, which was confirmed by observations. Had it turned out that starlight was not deflected by the sun, this would have shown that Einstein was wrong. So Einstein's theory satisfies the criterion of falsifiability. --- [@okasha-pos]
+
+```{r eddington-instruments, echo=F, fig.align="center", out.width="100%", fig.cap='Instruments used in the 1919 observations to test Einstein's predictions about warped spacetime. Credit: Getty Images'}
+knitr::include_graphics('Figures/eddington-instruments.jpg')
+```
+
+> Einstein published his general theory of relativity in 1915. The total solar eclipse of 1919 offered the perfect opportunity to test it experimentally, by exploring whether — and how — the immense gravity of the Sun bends and distorts incoming light from more distant stars, as predicted by Einstein’s theory. For a brief moment during the eclipse, the Moon would block the Sun’s light in the sky and make visible some of the stars that lie close to the line of sight of the Sun, not normally visible during the daytime. By measuring the positions of these stars during the eclipse and comparing them to their positions at night, when the sun is not in the field of view, it would be possible to determine whether their light rays bends while passing close to the Sun. --- European Southern Observatory
+
+```{r eddington-eclipse, echo=F, fig.align="center", out.width="100%", fig.cap='(ref:solar-eclipse-caption)'}
+knitr::include_graphics('Figures/solar_eclipse.jpg')
+```
+
 ### The smoke debate {#smoke-debate}
 
 In the mid-1700s, James Lind discovered that citrus fruits prevent scurvy, while in the mid-1800s, John Snow figured out that water contaminated with faecal matter caused cholera. These two examples share a common fortunate one-to-one relation between cause and effect. Deficiency of vitamin C is necessary to produce scurvy. Similarly, cholera bacillus is the only cause of cholera.

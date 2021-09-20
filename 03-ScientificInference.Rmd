@@ -650,12 +650,6 @@ I recommend the following [blog post](https://simonfischer.me/the-necessity-of-n
   -->
 
 <!--
-### Eddington expeditions {#eddington-expeditions}
-
-[to be added] example for falsification
--->
-
-<!--
 
 ## Takeaway Messages
 
