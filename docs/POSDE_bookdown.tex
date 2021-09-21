@@ -117,7 +117,7 @@
 
 \title{Applied Philosophy of Science and Data Ethics}
 \author{Dr.~Carlos Vega}
-\date{2021: Last compiled 2021-09-20}
+\date{2021: Last compiled 2021-09-21}
 
 \begin{document}
 \maketitle
@@ -336,7 +336,7 @@ Similar considerations may be necessary for other seemingly trivial questions su
 How do we decide between alternative methods? Is there a way to determine what is rational to choose?
 Traditionally there are three ways to choose between alternative methods.
 
-\textbf{By convention,} The methods are chosen because you have been taught to, or because is an established convention between your peers. Conventionalisms create long-term when methods become dominant in a field. A good example is the use of p-value in hypothesis significance testing. Similarly, accuracy and precision metrics in Machine Learning can be considered conventionalism. More problems arise when different disciplines have different conventions, hindering inter-disciplinary work.
+\textbf{By convention,} The methods are chosen because you have been taught to, or because is an established convention between your peers. Conventionalisms create long-term issues when methods become dominant in a field. A good example is the use of p-value in hypothesis significance testing. Similarly, accuracy and precision metrics in Machine Learning can be considered conventionalism. More problems arise when different disciplines have different conventions, hindering inter-disciplinary work.
 
 \textbf{Outcome-oriented.} While choosing the method that yields the best results may seem well-intended and appropriate, this certainly sounds very vague too. The intention is to find a method that serves some purpose best, but this purpose is sometimes not sufficiently clear. Science frequently involves long-term projects where the final material outcome is uncertain or unknown. For example, the International Space Station or the Large Hadron Collider. This methodology raises the question of how to measure the outcome. For instance, is speed the best way to assess which car is best? Should we focus on fuel autonomy or pollution instead? What about combining all of them?
 
@@ -386,7 +386,7 @@ Einstein's theory made a clear prediction: light rays from distant stars would b
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{Figures/eddington-instruments} 
+{\centering \includegraphics[width=0.5\linewidth]{Figures/eddington-instruments} 
 
 }
 
@@ -417,8 +417,6 @@ In the mid-1700s, James Lind discovered that citrus fruits prevent scurvy, while
 
 However, during the late 1950s and early 1960s, whether or not smoking caused lung cancer was not clear. The subject of the debate wasn't tobacco or cancer but rather the word \emph{caused} as one of the most important arguments against the smoking-cancer hypothesis was the possible existence of confounding factors that may cause lung cancer and nicotine dependency. Many smokers live long lives without getting lung cancer while others develop cancer without ever smoking. Plotting the rates of lung cancer and tobacco consumption makes the connection impossible to miss (See Figure \ref{fig:smoke-ts}). However, time-series data are poor evidence for causality. Researchers already knew about RCT though its use was unethical in this case.
 
-Austin B. Hill proposed to compare patients already diagnosed with cancer to a control group of healthy volunteers. The results showed that all but two of the 649 lung cancer patients had been smokers. This type of study is today called a case-control study because it compares cases to controls. However, this method has some drawbacks too. First, the study is retrospective, meaning that we study people known to have cancer and look back to understand why. Second, the probability logic is backwards, as the data tell us the probability that a cancer patient is a smoker instead of the probability that a smoker will get cancer.
-
 
 
 \begin{figure}
@@ -430,7 +428,7 @@ Austin B. Hill proposed to compare patients already diagnosed with cancer to a c
 \caption{Source: \href{https://ourworldindata.org/smoking-big-problem-in-brief}{Our World in Data}.}\label{fig:smoke-ts}
 \end{figure}
 
-However, this method has some drawbacks too. First, the study is retrospective, meaning that participants known to have cancer are considered and researchers look back to understand why. Second, the probability logic is backwards, as the data tell us the probability that a cancer patient is a smoker instead of the probability that a smoker will get cancer. Moreover, case-control studies admit several possible sources of bias such as recall bias or selection bias. Hospitalised cancer patients were not a representative sample of the population, not even from the smoke population. Researchers were careful to call their results an ``association''. Later on, the study was replicated with similar results. Deniers such as R. A. Fischer were right to point out that repeating a biased study doesn't make it any better as is still biased.
+Austin B. Hill proposed to compare patients already diagnosed with cancer to a control group of healthy volunteers. The results showed that all but two of the 649 lung cancer patients had been smokers. This type of study is today called a case-control study because it compares cases to controls. However, \textbf{this method has some drawbacks too}. First, the study is retrospective, meaning that participants known to have cancer are considered and researchers look back to understand why. Second, the probability logic is backwards, as the data tell us the probability that a cancer patient is a smoker instead of the probability that a smoker will get cancer. Moreover, case-control studies admit several possible sources of bias such as recall bias or selection bias. Hospitalised cancer patients were not a representative sample of the population, not even from the smoke population. Researchers were careful to call their results an ``association''. Later on, the study was replicated with similar results. Deniers such as R. A. Fischer were right to point out that repeating a biased study doesn't make it any better as is still biased.
 
 We won't focus on how this story ends here but \textbf{is important to notice how methods chosen based on scientific reasons are sometimes tough to implement and often need to fight against outcome-oriented studies} such as those sponsored by leading tobacco companies.
 
