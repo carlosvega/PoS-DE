@@ -117,7 +117,7 @@
 
 \title{Applied Philosophy of Science and Data Ethics}
 \author{Dr.~Carlos Vega}
-\date{2021: Last compiled 2021-09-21}
+\date{2021: Last compiled 2021-09-30}
 
 \begin{document}
 \maketitle
@@ -258,7 +258,7 @@ While is relatively easy to determine cases of failed justification, is much har
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.5\linewidth]{Figures/plato_knowledge} 
+{\centering \includegraphics[width=1\linewidth]{Figures/knowledge} 
 
 }
 
@@ -915,6 +915,22 @@ This section will superficially tackle abduction and causal inferences and its r
 
 \end{notebox}
 
+\hypertarget{non-monotonic-logic-and-defeasible-reasoning}{%
+\section{Non-Monotonic logic and defeasible reasoning}\label{non-monotonic-logic-and-defeasible-reasoning}}
+
+In its epistemic sense, monotonicity expresses the fact that adding more premises to an argument allows you to derive all the same conclusions as you could with fewer \citep{sep-logic-nonmonotonic}. Specifically, under monotonic reasoning, if a conclusion \(p\) follows from a set of premises \(A\), (denoted as \(A\) \vdash \(p\)), adding another set of premises \(B\) doesn't alter the conclusion (i.e.~\(A ∧ B \vdash p\) also holds). Therefore, reasoning is \href{https://plato.stanford.edu/entries/logic-nonmonotonic/}{non-monotonic} when a conclusion supported by a set of premises can be retracted in the light of new information. Or in other words, we can infer certain conclusions from a subset of a set \(S\) of premises which cannot be inferred from \(S\) as a whole. Medical diagnosis fits very well under such definition.
+
+Defeasible reasoning deals with tentative relationships between premises and conclusions, which can be \emph{defeated} by additional information, allowing for the retraction of inferences. For instance, while we may infer that Tweety flies based on the information that Tweety is a bird and the domain knowledge that birds generally fly, we can retract this inference when we learn that Tweety is a penguin. Tweety is indeed a bird but it cannot fly. Defeasible reasoning is not exempt from limitations, requiring from causal information to properly derive conclusions under certain scenarios. Consider, for example, this problem of Judea Pearl: if the sprinkler is on, then normally the sidewalk is wet, and, if the sidewalk is wet, then normally it is raining. However, we should not infer that it is raining from the fact that the sprinkler is on \citep{pearl2014probabilistic}. Conflicts may arise between hard facts and defeasible conclusions. For instance, both arguments in Figure \ref{fig:tweety} \(Penguin ⇒ Bird → flies\) and \(Penguin → ¬flies\) finish with a defeasible inference. The transitivity rule \((a → b, b → c) ⇒ a → c\) cannot be applied to the first argument. In this case, according to their specificity we can give priority to the argument with more a specific antecedent but is not always as trivial, and complex conflicts can remain unresolved.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.33\linewidth]{Figures/PenguinFlies} 
+
+}
+
+\caption{Double arrows indicate non-defeasible inferences (hard fact), single arrows depict defeasible inferences, and strikethrough arrows denote a negation. It can be read as: Penguins are birds (no exceptions); Birds usually fly; and Penguins usually don’t fly.}\label{fig:tweety}
+\end{figure}
+
 \hypertarget{explanation}{%
 \section{Explanation}\label{explanation}}
 
@@ -1536,34 +1552,6 @@ In data science, success should be defined by how well the analysis answers the 
 
 \hypertarget{study-about-honesty-is-retracted-over-fake-data}{%
 \subsection{Study about honesty is retracted over fake data}\label{study-about-honesty-is-retracted-over-fake-data}}
-
-\hypertarget{stats-abuse}{%
-\chapter{Statistical abuse, Biases and Confounders}\label{stats-abuse}}
-
-\begin{notebox}
-
-\begin{center}
-\textbf{Course Note:}
-
-\end{center}
-
-This chapter is under construction. Content is hidden.
-
-\end{notebox}
-
-\hypertarget{ethics-and-responsibility}{%
-\chapter{Ethics and Responsibility}\label{ethics-and-responsibility}}
-
-\begin{notebox}
-
-\begin{center}
-\textbf{Course Note:}
-
-\end{center}
-
-This chapter is under construction. Content is hidden.
-
-\end{notebox}
 
 \hypertarget{wont-fix}{%
 \chapter{Extra Material}\label{wont-fix}}

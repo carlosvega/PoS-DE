@@ -53,8 +53,8 @@ cat(
 
 While is relatively easy to determine cases of failed justification, is much harder to identify what suffices to justify a belief. Few claims can be conclusively proven so that no doubt remains. An ideal justification of a belief would consider all relevant reasons for and against believing a statement. This is why science is a human enterprise where justifications, hypotheses and experiments are made public for review, replication or rebuttal.
 
-```{r plato-knowledge, echo=F, out.width="50%", fig.align="center", fig.cap='A Venn diagram illustrating the classical theory of knowledge.'}
-knitr::include_graphics('Figures/plato_knowledge.png')
+```{r plato-knowledge, echo=F, out.width="100%", fig.align="center", fig.cap='A Venn diagram illustrating the classical theory of knowledge.'}
+knitr::include_graphics('Figures/knowledge.png')
 ```
 
 Definitions should not be  accepted without reason, and instead, we should attend to the arguments that support such definitions. Certain definitions may have widespread popularity but that doesn't make them any more true. For example, a dolphin is a mammal even if many people consider it a fish. In the same way, tomatoes and cucumbers are fruits for botanists even if we daily sort them as vegetables. And sometimes, even the [EU](https://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=CELEX:32001L0113:En:HTML#d1e32-72-1) and [the Supreme Court of the United States of America](https://www.nationalgeographic.com/culture/article/fruit-or-vegetable) need to act to set certain market debates.
@@ -244,6 +244,5 @@ knitr::include_graphics('Figures/Ouroboros-benzene.png')
 <!--
 
 ## Takeaway Messages
-
 
 -->

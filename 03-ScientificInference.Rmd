@@ -386,6 +386,16 @@ Mention non-monotonic logic, defeasible reasoning and tweety.
 
 -->
 
+## Non-Monotonic logic and defeasible reasoning
+
+In its epistemic sense, monotonicity expresses the fact that adding more premises to an argument allows you to derive all the same conclusions as you could with fewer [@sep-logic-nonmonotonic]. Specifically, under monotonic reasoning, if a conclusion $p$ follows from a set of premises $A$, (denoted as $A$ \vdash $p$), adding another set of premises $B$ doesn’t alter the conclusion (i.e. $A ∧ B \vdash p$ also holds). Therefore, reasoning is [non-monotonic](https://plato.stanford.edu/entries/logic-nonmonotonic/) when a conclusion supported by a set of premises can be retracted in the light of new information. Or in other words, we can infer certain conclusions from a subset of a set $S$ of premises which cannot be inferred from $S$ as a whole. Medical diagnosis fits very well under such definition.
+
+Defeasible reasoning deals with tentative relationships between premises and conclusions, which can be *defeated* by additional information, allowing for the retraction of inferences. For instance, while we may infer that Tweety flies based on the information that Tweety is a bird and the domain knowledge that birds generally fly, we can retract this inference when we learn that Tweety is a penguin. Tweety is indeed a bird but it cannot fly. Defeasible reasoning is not exempt from limitations, requiring from causal information to properly derive conclusions under certain scenarios. Consider, for example, this problem of Judea Pearl: if the sprinkler is on, then normally the sidewalk is wet, and, if the sidewalk is wet, then normally it is raining. However, we should not infer that it is raining from the fact that the sprinkler is on [@pearl2014probabilistic]. Conflicts may arise between hard facts and defeasible conclusions. For instance, both arguments in Figure \@ref(fig:tweety) $Penguin ⇒ Bird → flies$ and $Penguin → ¬flies$ finish with a defeasible inference. The transitivity rule $(a → b, b → c) ⇒ a → c$ cannot be applied to the first argument. In this case, according to their specificity we can give priority to the argument with more a specific antecedent but is not always as trivial, and complex conflicts can remain unresolved.
+
+```{r tweety, echo=F, fig.align="center", out.width="33%", fig.cap='Double arrows indicate non-defeasible inferences (hard fact), single arrows depict defeasible inferences, and strikethrough arrows denote a negation. It can be read as: Penguins are birds (no exceptions); Birds usually fly; and Penguins usually don’t fly.'}
+knitr::include_graphics('Figures/PenguinFlies.png')
+```
+
 ## Explanation
 
 At this point, many of you probably have already related data science to two of the goals of science: explanation and prediction. But how do they relate to one another? and what is a scientific explanation? Either to satisfy our natural curiosity or for a further purpose, science has always attempted to understand how the world works. The German philosopher Carl Hempel attempted to answer this question in the 1950s with what is known as the *covering law* model of explanation. He stated that a scientific explanation is an answer given in response to *explanation-seeking why-questions* (e.g. why salt dissolves in water).
