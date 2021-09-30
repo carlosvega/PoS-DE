@@ -359,7 +359,7 @@ Is also important to notice how the problem of underdetermination relates to the
 
 ::::
 
-### Other types of inference
+## Other types of inference
 
 :::: {.notebox data-latex=""}
 ::: {.center data-latex=""}
