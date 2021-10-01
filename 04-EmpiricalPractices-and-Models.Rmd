@@ -237,27 +237,105 @@ A non-epistemic value that is always at stake is money, or in a different shape,
 
 In data science, success should be defined by how well the analysis answers the research questions. For this reason, setting the research questions at the very beginning of the process remains crucial. They not only determine the data analysis but, more importantly, the data collection design. However, very frequently, the data science process starts with a given dataset. Still, it is essential to assess if the collected data can answer the posed questions.
 
+## Scientific models
+
+Scientific models are widespread and varied. These include scale models (e.g. plane models for aerodynamic studies), laboratory animals (e.g. mice for drug trials), simulation models (e.g. computational model for weather forecast). In all the previous cases, a model is made to replace or to stand in for what we are ultimately interested in. Models are characterised by being representations, containing idealisations, being purpose dependent, and ready to be manipulated.
+
+```{r sbml-model, echo=F, fig.align="center", out.width="100%", fig.cap='Different representations of a biological process. On the right side, the process is encoded in a XML file in Systems Biology Markup Language (SBML) format. '}
+knitr::include_graphics('Figures/sbml_model.png')
+```
+
+For instance, a physical model of DNA on a table represents the real DNA. Obviously, such a model is not a piece of real DNA. It is made of something else (e.g. plastic) and at a different scale. In this case, such a model is useful for pedagogic purposes. Although there are clear differences between models and targets, the key relationship is that **a model represents (in some way) the target**. From the methodological point of view, we must justify why to represent targets with models instead of investigating the targets themselves?. Possible answers include physical impossibility, costs, ethical and legal reasons, etc. However, very often the main justification to employ models is that targets are very complex. Therefore, employing a model that simplifies the target complexity might allow us to get a better understanding of the main factors operating in the target system. Our cognitive limits very often determine how we investigate complex systems, starting with a simpler model and increasing its complexity as we gain understanding.
+
+Therefore, we are intentionally choosing or building a model that differs from the target in some properties. Precisely because of this condition, we cannot assume that whatever is the case in the model is also the case in the target. **Models come with idealisations.** Not bearing in mind this key condition of the models can lead us to produce false claims about the target. 
+
+> - **Idealized models.** Idealized models are models that involve a deliberate simplification or distortion of something complicated with the objective of making it more tractable or understandable. Frictionless planes, point masses, completely isolated systems, omniscient and fully rational agents, and markets in perfect equilibrium are well-known examples. Idealizations are a crucial means for science to cope with systems that are too difficult to study in their full complexity.
+> - **Scale models.** Some models are down-sized or enlarged copies of their target systems (Black 1962). A typical example is a small wooden car that is put into a wind tunnel to explore the actual car’s aerodynamic properties. 
+> - **Phenomenological models.** Phenomenological models have been defined in different, although related, ways. A common definition takes them to be models that only represent observable properties of their targets and refrain from postulating hidden mechanisms and the like.
+> - **Exploratory models.** Exploratory models are models which are not proposed in the first place to learn something about a specific target system or a particular experimentally established phenomenon.
+> - **Models of data.** A model of data (sometimes also “data model”) is a corrected, rectified, regimented, and in many instances idealized version of the data we gain from immediate observation, the so-called raw data. Characteristically, one first eliminates errors (e.g., removes points from the record that are due to faulty observation) and then presents the data in a “neat” way, for instance by drawing a smooth curve through a set of points. These two steps are commonly referred to as “data reduction” and “curve fitting”. 
+> --- [@sep-models-science]
+
+For example, Bohr's model of the atom assumes that electrons orbit the atomic nucleus in circles. The success of such a model relied that the Bohr assumptions reproduced the series that fitted the hydrogen emission spectra. In 1913 it predicted the correct frequencies of the specific colours of light absorbed and emitted by ionised helium. One could say that Bohr was very lucky as despite his model is wrong in some ways, it also has some bits of truth, enough for his predictions about ionised helium to work out. However, other predictions about the properties of the atom were wrong, and its implications were not observed in experiments. In the Schrödinger model, the electron of a one-electron atom, rather than travelling in fixed orbits around the nucleus, has a probability distribution allowing the electron to be at almost all locations in space, some being much more likely than others. Bohr theory (1913) was rejected in 1925 after the advent of quantum mechanics, but its model remains because despite its flaws and idealisations, [Bohr's model is useful for education](https://blogs.scientificamerican.com/guest-blog/why-it-s-okay-to-teach-wrong-ideas-in-physics/).
+
+(ref:bohr-caption) Source: [Wikipedia Commons](https://commons.wikimedia.org/wiki/File:Bohr_atom_model.svg).
+
+```{r bohr-model, echo=F, fig.align="center", out.width="40%", fig.cap='Illustration of bound-bound transition in the Bohr atomic model. (ref:bohr-caption)'}
+knitr::include_graphics('Figures/bohr-atom-model.png')
+```
+
+**Models are as well purpose-dependent**. Suppose the next question. Which benzene model is better? A quantum mechanic model, or a structural formula?. On one side, the quantum mechanic model is more precise about the potential position of electrons. Additionally, is more similar to the target as it represents better its relevant properties. The structural model is simpler and easier to work with. In this case, theoretically tractable models such as structural models allow for functional group analysis in chemistry.
+
+(ref:benzene-caption) Source: [Wikipedia Commons](https://en.wikipedia.org/wiki/File:Benzene_Representations.svg).
+
+```{r benzene-model, echo=F, fig.align="center", out.width="100%", fig.cap='Various representations of Benzene. (ref:benzene-caption)'}
+knitr::include_graphics('Figures/Benzene_Representations.png')
+```
+
+(ref:benzene-caption-history) Historic benzene structures (from left to right) by Claus (1867), Dewar (1867), Ladenburg (1869), Armstrong (1887), Thiele (1899) and Kekulé (1865). Dewar benzene and prismane are distinct molecules that have Dewar's and Ladenburg's structures. Thiele and Kekulé's structures are used today.
+
+```{r benzene-model-evolution, echo=F, fig.align="center", out.width="100%", fig.cap='(ref:benzene-caption-history)'}
+knitr::include_graphics('Figures/Historic_Benzene_Formulae.png')
+```
+
+Philosopher Mary Hesse (1924-2016) argued that models act as analogies rather than descriptions of the targets. She distinguished between 3 kinds of analogies. In the first place, she considered that **positive analogies** hold between the aspects of a model and its target for which we have reasons to believe they are similar. An example of positive analogies can be found between mice and humans, which have similar hormone systems and physiology.  On the other hand, the idealisations constitute **negative analogies**, such as the differences in size or lifespan between mice and humans. These negative analogies cover the properties in which model and target differ. Finally, **neutral analogies** concern the properties that we cannot investigate directly in the target, requiring the model for their study. For instance, the reaction to a certain drug or treatment of interest. At the initial stage, is not possible to tell whether the model-target relationships concerning these properties constitute positive or negative analogies because we do not know yet how the relevant target properties are affected. Instead, such properties are investigated in the model, and researchers hypothesise that the model is analogous to the target in such properties. For instance, we assume that the effects of a drug in mice will give us knowledge about its effects in humans.
+
+> The positive analogy between two items consists in the properties or relations they share (both gas molecules and billiard balls have mass); the negative analogy consists in the properties they do not share (billiard balls are colored, gas molecules are not); the neutral analogy comprises the properties of which it is not known (yet) whether they belong to the positive or the negative analogy (do billiard balls and molecules have the same cross section in scattering processes?). Neutral analogies play an important role in scientific research because they give rise to questions and suggest new hypotheses. --- [@sep-models-science]
+
+Consider again the Michelson and Morley experiment. Before the XX century, most physicists considered light as a wave. Their beliefs were justified on the many positive analogies between light, water and sound waves. For instance, light produces a diffraction pattern when encountering an obstacle, just as water and sound waves do. With this model in mind, physicists inferred a neutral analogy, namely, that light needs a medium to travel, as other waves require. They called this medium: luminiferous aether. The experiment from Michelson and Morley is a consequence of such model. However, the experiment revealed that such analogy was indeed a negative analogy, an idealisation. This discovery led people to replace the model of light for more precise models. Therefore, model manipulation allows discovering the effects of neutral analogies.
+
+(ref:aether-caption) Source: [Wikipedia Commons](https://commons.wikimedia.org/wiki/File:AetherWind.svg).
+
+```{r aether, echo=F, fig.align="center", out.width="50%", fig.cap='The luminiferous aether: it was hypothesised that the Earth moves through a "medium" of aether that carries light. (ref:aether-caption)'}
+knitr::include_graphics('Figures/luminiferous_aether.png')
+```
+
+### Differences between Models and Experiments
+
+There are several commonalities between models and experiments. Setting parameters and variables in models resembles experimental control. In the same way, model manipulation is akin to experimental manipulation. Finally, model manipulation yields results that are observed, just as in experimental observations. Notwithstanding, there are also important differences to bear in mind, which mainly concern the source of errors. For instance, the most troubling experimental errors concern internal validity questions, i.e. the degree of confidence that the causal relationship put to test is not influenced by other factors or variables. For these reasons, researchers require careful design and control of experiments. Nonetheless, models are generally less sensitive to these issues since the modeller is aware of the idealisations and mechanisms of its models. For modelling, the key concern is whether the relevant analogies between model and target hold. Such concern is usually not a problem for experiments, especially those conducted directly on the target. Once internal validity is assessed, researchers are confident that the inferences drawn from the experiment refer to the target. However, inferences drawn from model manipulation constitute neutral analogies considered as hypotheses regarding the target, requiring further testing and justification. This last step is error-prone.
+
+### What makes a good model?
+
+Since models are purpose dependent, there is no exhaustive set of sufficient and necessary conditions to define what a good model is. Nonetheless, there are some common criteria (e.g. robustness, simplicity, tractability) that can be balanced, but is often impossible to optimise all criteria at the same because some criteria are complements of each other.
+
+The **similarity** criterion can for example assess physical resemblance. More generally, we could say that a model $M$ is similar to target $X$ if and only if $M$ is similar to $X$ with respect to the set of properties $P$ to a certain degree. However, this definition does not tell us which properties should be optimised. For instance, for a scale model of an air plane aimed at aerodynamic studies, it might be more justified to maximise the similarities of geometric properties over the interior design (e.g. the number of seats might not be relevant since the cabin is closed). Therefore, the purpose of the model justifies maximising one set of properties over another, in particular, the properties that are relevant for the research purpose.
+
+**Robustness** expresses how model results are affected by condition changes. Therefore, a model result is robust (w.r.t. some condition) if changing such condition does not alter the result. For example, all properties except one (e.g. plane hull colour) can be kept fixed to test whether painting the plane with a different colour might affect its aerodynamic properties. If the result remains equal, we can say the model is robust with respect to the hull colour. Perhaps such property is not relevant to the research purpose, but that is not enough to justify removing the property.
+
+(ref:prec-vs-acc-caption) Accuracy consists of trueness (proximity of measurement results to the true value) and precision (repeatability or reproducibility of the measurement). Source: [St. Olaf College](https://wp.stolaf.edu/it/gis-precision-accuracy/).
+
+```{r prec-vs-acc, echo=F, fig.align="center", out.width="66%", fig.cap='(ref:prec-vs-acc-caption)'}
+knitr::include_graphics('Figures/prec_vs_acc.png')
+```
+
+Another model criterion to consider is **precision** (w.r.t. parameters). We say that model $M_1$ is more precise than $M_2$ if the parameter specifications of $M_1$ *imply* those from $M_2$. This definition is better understood through an example. Consider the following models $M_1$, $M_2$, and $M_3$ and below definitions. The first model describes a rate of changes as a function of $X$. $M_2$ is more precise as describes the rate of changes as a linear function of $X$. The description of $M_2$ implies the description of $M_1$. Linear functions of $X$ are a subset of functions of $X$. Finally, the third model is yet more precise as it indicates an absolute value of the parameter $a$, reducing the subset of linear functions from the definition of $M_2$ to a particular linear function. Importantly, parameter precision is a property of the model alone, not of the relationship between model and target. Although precision offers potential for high accuracy, it is no warrant for it. For instance, if the actual rate of linear change would be other than $1.2X$, then the less precise model $M_2$ would be more accurate than $M_3$. Similarly, if the rate of change would not change linearly, the more general model $M_1$ would be more accurate than the alternatives.
+
+- $M_1: dX/dt = f(X)$
+- $M_2: dX/dt = aX$
+- $M_3: dX/dt = 1.2X$
+
+:::: {.tipbox data-latex=""}
+::: { data-latex=""}
+**Note for data scientists!**
+:::
+
+Questions regarding scientific models also concern Machine Learning models to a great extent. For example, consider the precision and accuracy criteria. The following paragraph is extracted from [the article "A Few Useful Things to Know About Machine Learning" by Pedro Domingos](https://dl.acm.org/doi/pdf/10.1145/2347736.2347755).
+
+> Everyone in machine learning knows about overfitting, but it comes in many forms that are not immediately obvious. One way to understand overfitting is by decomposing generalization error into bias and variance. Bias is a learner’s tendency to consistently learn the same wrong thing. Variance is the tendency to learn random things irrespective of the real signal. Figure illustrates this by an analogy with throwing darts at a board. A linear learner has high bias, because when the frontier between two classes is not a hyperplane the learner is unable to induce it. Decision trees do not have this problem because they can represent any Boolean function, but on the other hand they can suffer from high variance: decision trees learned on different training sets generated by the same phenomenon are often very different, when in fact they should be the same. Similar reasoning applies to the choice of optimization method: beam search has lower bias than greedy search, but higher variance, because it tries more hypotheses. Thus, contrary to intuition, a more powerful learner is not necessarily better than a less powerful one. --- [@domingos2012few]
+
+::::
+
+**Simplicity** is often another criteria that affects models. A simpler model might fit very well its purpose. For example, underground maps often misrepresent distances or omit unnecessary details such as roads, monuments, etc. Such simplification is suited for the particular purpose of travelling in the underground but is not useful for other purposes. We can say a model is simpler if it contains less parameters, considers less variables and uses less operations than another model. Therefore, simplicity is a virtue w.r.t. models and not to targets. Is usually a practical criterion that facilitates the model use.
+
+Related to simplicity, we can find **tractability**. We say a model is tractable (w.r.t. a set of rules) if the relevant model result may be obtained by applying certain principles to the model. For instance, models solved through analytical methods (e.g. mathematical proofs) are called analytically tractable in contrast to models for which results can only be approximated through numerical simulations methods. Tractability implies the existence of methods to analyse and solve such models. In this sense, **theoretical tractability** considers theoretical principles to assess the suitability of the model for certain operations. For instance, a structural representation of a chemical compound allows for the application of functional group classification (this is an example of theoretical principle to fulfil). In contrast, a quantum mechanical model is more accurate but does not allow for such operation. Therefore we consider it a less tractable model.
+
+Finally, **transparency** is an epistemic value that assesses the degree to which the model user can cognitively understand how the model result is produced. This criterion is known in artificial intelligence as interpretability and/or explainability. For example, a decision tree is often human-readable while the nature of neural networks creates obfuscated models difficult to interpret. Transparent models allow to back-track the result and understand how it was produced from a given input. A transparent model enables the scientist to check the correctness of the results, which is especially important when employing models developed by third parties.
+
+Again, most of the previous virtues will require certain trade-off. Increasing an epistemic value often entails decreasing another one. Therefore, building or choosing a model requires finding the best trade-off for the model's purpose.
+
 <!--
 
-## What is a model?
-
-Very often is not possible to directly conduct research on the targets (e.g. it might not be feasible, legal, affordable). For example, is common to study aerodynamics in scale models or computational models.
-
-are:
-
-representations
-
-- When we take a model (e.g. DNA model) it is representing or substituting the target.
-
-idealisations
-
-depend on the purpose
-
-things to be manipulated
-
-## Differences between Models, Theories and Experiments
-
-What distinguishes models from theories and experiments is examined and two ways of using models are presented, as mirrors and as isolation.
+Models as mirrors. Models as isolations.
 
 -->
 
@@ -265,10 +343,9 @@ What distinguishes models from theories and experiments is examined and two ways
 
 ### 1854 Broad Street cholera outbreak {#john-snow}
 
-
 <!-- [write]
 
-This case is very popular and can be found in several books and posts online but I recommend the explanation given in Chapter 7 from The Book of Why [@book-of-why] as the authors also re-formulate the case in causal terms.
+This case is very popular and can be found in several books and posts on-line but I recommend the explanation given in Chapter 7 from The Book of Why [@book-of-why] as the authors also re-formulate the case in causal terms.
 -->
 
 
