@@ -14,7 +14,7 @@ This chapter is under construction. Some content is hidden.
 
 I would like to introduce this chapter in the same way the Book of Why [@book-of-why] introduces its fourth chapter "Slaying the lurking variable". During the times of Babylonian King Nebuchadnezzar (642 BC - 562 BC), one captive -- Daniel -- refused to eat royal meat offered by the King as part of their education and service in the court since it did not comply with his religious beliefs. Instead, Daniel asked to be fed on a vegetable diet. The overseer was reluctant as he thought the servants would lose weight and become weaker. Daniel proposed an experiment to convince his overseer. For ten days, one group of servants would be given a vegetable diet, while another group of servants would eat the king's meat. Then, the overseer would compare both groups and see that the vegetable diet did not reduce their strength. Of course, the experiment was a success, and the king was so impressed that he granted Daniel a favoured place in the court.
 
-This example synthesizes the process of controlled experiments employed nowadays in experimental science. The overseer poses a question, *will the vegetarian diet cause my servants to lose weight?*. There it is our hypothesis. To address the question, Daniel proposed a methodology. Divide the servants in two identical groups. Give one group a new treatment (e.g. diet or a drug), while another group (control) remains under no special treatment. Of course, the two groups should be comparable and representative of some population in order to transfer the conclusions to the population at large. This process allowed Daniel to show the *causal effect* (beware, we will tackle this in Chapter \@ref(stats-abuse)) of the diet. Moreover, Daniel's experiment was proactive (in contrast to retrospective studies) as the groups were chosen in advance. Prospective controlled trials are a common characteristic of sound science. Still, Daniel didn't think of everything, but we will see that in Chapter \@ref(stats-abuse).
+This example synthesizes the process of controlled experiments employed nowadays in experimental science. The overseer poses a question, *will the vegetarian diet cause my servants to lose weight?*. There it is our hypothesis. To address the question, Daniel proposed a methodology. Divide the servants in two identical groups. Give one group a new treatment (e.g. diet or a drug), while another group (control) remains under no special treatment. Of course, the two groups should be comparable and representative of some population in order to transfer the conclusions to the population at large. This process allowed Daniel to show the *causal effect* (beware, we will tackle this in Chapter \@ref(stats-abuse)) of the diet. Moreover, Daniel's experiment was prospective (in contrast to retrospective studies) as the groups were chosen in advance. Prospective controlled trials are a common characteristic of sound science. Still, Daniel didn't think of everything, but we will see that in Chapter \@ref(stats-abuse).
 
 ## What is an experiment?
 
@@ -70,23 +70,6 @@ Every evidence is a *datum* but not every datum constitutes *evidence*. What tur
 
 Importantly, the characteristics that make data count as evidence must be agreed prior to observation and on the basis of theory. Sometimes a scientist may obtain data that seems incompatible with a theory. Instead of getting rid of such data (or the theory), the scientist will attempt to reproduce the data and assess whether is anomalous data (e.g. due to a faulty instrument) or not. The *raw* data may contain any information, but *refined* data should express only relevant and useful information for the problem at hand. Of course, some information is always lost in the process. In consequence, the refinement process is irreversible. Data are *means* rather than *ends* and we aim to systematise data in order to disclose patterns on it. For this reason *noise* must be removed. The systematization of refined data may involve displaying information in graphs or tables as well as arranging information in data structures such as matrices.
 
-:::: {.tipbox data-latex=""}
-::: { data-latex=""}
-**Note for data scientists!**
-:::
-
-As he have seen, data alone is not enough. Note that this is a problem for solutions based on Machine Learning, since domain knowledge or *context* should be introduced somehow to *direct* the model in the desired direction. 
-
-> "There is no learning without bias, there is no learning without knowledge" --- [@skansi2020guide] [@domingos2015master].
-
-An example of how data depends on its context is user ratings or opinions. For instance, the meaning of *fashionable clothes* changes over time, as do political terms. This issue is known as *concept drift* [@kubat2017introduction]. Similarly, a text-mining engine to tag biology terms with the corresponding ontology terms may confuse elements between species, as several entities appear in multiple animals or organisms.
-
-Finally, context is crucial for external validation and translation of solutions into real-world settings. A system for clothes recommendation should adapt to countries, cultures or ages. Similarly, a health system to predict patient risk based on disease comorbidities must be *calibrated* for each country or region (e.g. Diabetes treatment is often affordable in the EU, but an expensive treatment in the USA, which increases its mortality rate).
-
-In Chapter \@ref(stats-abuse) we will see another side of this problem.
-
-::::
-
 ### Field, laboratory and simulation experiments
 
 In contrast to observational experiments, **field experiments** randomly assing the sampling units (e.g. study participants) into two groups (treatment and control) to test causal relationships. The same conditions are maintained for both groups only varying the intervention on the factor of interest (e.g. two parts of soil (fertilized/unfertilized)). The background variables are considered as given and not manipulated. On the other side, **laboratory experiments** construct the same background conditions in both groups manipulating the environment (lab settings) and varying the intervention on the factor of interest. Finally, **simulation experiments** are constructions representing a real system on a computer to perform interventions. This type of experiments are done when is not feasible to experiment on the real entities (e.g. climate simulations or geological simulations).
@@ -108,124 +91,6 @@ In Chapter \@ref(stats-abuse) we will see some examples of experimental errors (
 **Replication**:  An independent experiment, in the spirit of the original experiment produces the same result. For example, in computer science replication entails collecting new data and use similar methods to reach similar conclusions in answer to the same scientific question. Or implementing a new software following similar design principles and reaching similar results.
 
 ::::
-
-### Control
-
-Experimental control entails a series of procedures for experiment and observation design aimed at minimising the effects of extraneous variables (i.e. confounding factors) other than the manipulated variables (i.e. independent variable) to ensure that the measured variable (i.e. dependent variable) is only affected by the independent variables. To evaluate the effects of manipulating the independent variables, some control system is needed in which no such deliberate changes are introduced. As we have seen, sampling units (e.g. study participants) are often divided into two groups (the experimental group and the control group) in a way that the only noticeable (or significant) difference between them lies in the stimuli exerted by the experiment.
-Therefore, the control and experimental groups must be *homogeneous* in all relevant factors. 
-
-In general, there are two techniques for the formation of such homogeneous groups: individual and collective control [@bunge2017philosophy]. **Individual control** requires simultaneous pairing of individuals in both groups, i.e. every member of the experimental group has a corresponding equivalent member in the control group. For instance, for every thirty years old Asian man in the control group another thirty years old Asian man is assigned to the experimental group. Simultaneous pairing is complex and expensive. **Statistical control** has two main types. On one side, the *control of distributions* should be performed to equate certain parameters such as averages, spreads (i.e. std. dev.) and other collective properties (e.g. medians). This technique is more flexible as only some properties are kept under control. In this case, we would take two samples of people with the same age and height distributions. Both simultaneous pairing and distribution control share a common disadvantage regarding the formation of the groups, which could be unintentionally biased. For instance, we could assign the strongest people to the treatment (or experimental) group to make sure they bear the treatment. To prevent this issue the two groups are usually formed at random. Thanks to **randomisation**, all variables (including most unknown factors) that were not previously controlled become randomly distributed, minimising their effect on the dependent variables. However, randomisation is not an alternative to other techniques, but rather a complement.
-
-#### Other experimental control techniques
-
-There are multiple strategies for experimental control. We have previously seen the method of division into treatment and control groups. The control and treatment groups can entail two moments in **time**, with the initial setting being the control scenario which is later on manipulated through the intervention of certain variables (e.g. measure noise from bats in a dark chamber before and after turning a light). Another technique requires **holding certain factors constant** or finding scenarios (like in a field experiment) with the same background conditions. Nonetheless, constructing such conditions in a laboratory can also achieve this goal. In an **elimination** strategy some factors are removed to simplify study conditions, such as air resistance in a vacuum chamber or [drop tower](https://en.wikipedia.org/wiki/Drop_tube), radio waves in a Faraday cage, or gravity in space experiments. A common case of elimination is **blinding**, where subjects do not know which group they are assigned to (single blinding). Moreover, double-blinding implies hiding this information from the experimenter and/or the data analyst. Finally, we can **separate factors** by measuring their effect and correcting for it. For example, the measurements of time dilation require taking into account the Doppler effect caused by the changing distance between the observer and the moving clock. GPS systems perform adjustments due to the effects of time dilation and gravitational frequency shifts. Another example, missile trajectories are often adjusted for the effect of [Coriolis force](https://en.wikipedia.org/wiki/Coriolis_force).
-
----
-
-(ref:pyramid-evidence) Figure from [Wikimedia](https://commons.wikimedia.org/wiki/File:Research_design_and_evidence_-_Capho.svg) by CFCF. Keep in mind that this hierarchy is not free from [criticism](https://en.wikipedia.org/wiki/Hierarchy_of_evidence#Criticism) and take it just as a useful simplification.
-
-```{r pyramid-eviodence, echo=F, out.width="70%", fig.align="center", fig.cap='(ref:pyramid-evidence)'}
-knitr::include_graphics('Figures/pyramid-evidence.png')
-```
-
-### Randomised Control Trials
-
-Randomisation offers a systematic solution for the division of participants (or sampling units) into two groups. In particular, RCTs are frequently regarded as a gold standard for clinical trials and among the highest quality evidence available (see Figure \@ref(fig:pyramid-eviodence)). However, as with every method, it will only yield fruitful results if applied correctly, and its sole employment does not warrant against other errors.
-
-There are different types of randomisation. In **simple randomisation**, subjects are assigned into two groups purely randomly but in small samples, we risk creating uneven groups. **Block randomisation** works by randomising participants within blocks such that an equal number are assigned to each treatment. For example, given a block size of 4, there are 6 possible ways to equally assign participants to a block (AABB, ABAB, ABBA, BAAB, BABA, BBAA). Allocation proceeds by randomly selecting one of the orderings and assigning the next block of participants to study groups according to the specified sequence. A major disadvantage of this method is that it might be possible to predict the next sequence. **Stratified randomisation** is crucial whenever all other properties (except for the factors of interest) need to be assigned equally. The study population is first stratified into subgroups (i.e. *stratas*) sharing attributes, then followed by simple or block random sampling from the subgroups.
-
-One of the main advantages of RCTs is the reduction of selection bias or allocation bias. In Chapter \@ref(stats-abuse) we will see biases in more detail. The randomisation process reduces mistrust towards a potential rigged distribution of the participants. Another common advantage is that it facilitates blinding the groups from investigators and participants. 
-
-:::: {.tipbox data-latex=""}
-::: { data-latex=""}
-**Terminology Note:**
-:::
-
-Very often terms are used interchangeably in many domain but they can also mean different things depending on the are.
-
-> By "allocation bias" we understand the bias caused by allocating patients with better prognosis to either the experimental or the control group. In the context of a randomized trial the term "selection bias" is sometimes used instead of allocation bias to indicate selection of patients into treatment arms. We avoid the term "selection bias" as it has a different meaning in epidemiology more broadly: selection of non-representative persons into a study. --- [@paludan2016mechanisms]
-
-::::
-
-However, RCTs do not necessarily ensure that background factors are equally distributed in the treatment and control groups. For small samples randomisation can provide unequal distributions. The average number after rolling a dice an infinite amount of times will converge to 3.5, but we should not be surprised if we roll a dice 10 or 20 times obtaining considerably more occurrences of the number 6 than the other numbers. The danger of relying on pure randomisation to balance covariates has been described in [@krause2003random] [@morgan2012rerandomization]. For this reason is essential to check for imbalances in known factors after randomisation. Stratified randomisation also helps balancing known factors. Nonetheless, randomisation does not necessarily guarantee full control of unknown factors but *on average* their effect should be significantly smaller than the treatment applied [@deaton2018understanding].
-
-Although RCTs are still preferred to observational studies, there are scenarios in which intervention is not possible. For instance, we cannot assign participants to be obese or not in order to study the effect of obesity on heart diseases.
-
-```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
-cat(
-'<figure class="wrap-figure">
-<img src="Figures/RAFisher.jpeg">
-<figcaption>Ronald Aylmer Fisher in 1913</figcaption>
-</figure>'
-)
-```
-
-#### Origins of RCTs
-
-R.A. Fisher (1890-1962) conceived the RCTs in the 1930s. Fisher designed intricate approaches to disentangle the effects of fertiliser from other variables. Using the *Latin square*, he would divide the field into a grid of subplots to test each fertiliser with each combination of soil type and plant. However, in this scenario the experimenter would observe the effects of the fertiliser *mixed* (i.e. *confounded*) with a variety of other things (e.g. soil fertility, drainage, microflora). Fischer realised that the only design that would "*trick nature*" is one where the fertilisers are assigned randomly to the subplots. Of course, sometimes you might be unlucky and assign a certain fertiliser to the least fertile subplots, but other times you might get the opposite assignment. A new random allocation is generated each time the experiment is conducted. By running the experiment multiple times the luck of each fertiliser is *averaged*. 
-
-> But Fisher realized that an uncertain answer to the right question is much better than a highly certain answer to the wrong question. [...] If you ask the right question, getting an answer that is occasionally wrong is much less of a problem. You can still estimate the amount of uncertainty in your answer, because the uncertainty comes from the randomization procedure (which is known) rather than the characteristics of the soil (which are unknown). --- Section "Why RCTs work" in Chapter 4 from [@book-of-why]
-
-The Book of Why describes the aforementioned experiment in causal terms [@book-of-why]. The causal diagram from Figure \@ref(fig:rct-diagram) depicts a model describing how the yield of each plot is determined by both the fertiliser and other variables, but the effect of the fertiliser is also affected by the same variables (red arrows). The experimenter aims to know about the effect of the fertiliser controlling for the latter effects. In other words, a model in which the effects represented by the red arrows are controlled. In this second scenario, the relation between Fertilizer and Yield is *unconfounded* since there is no common cause of Fertiliser and Yield.
-
-```{r rct-diagram, echo=F, fig.align="center",  out.width="100%", fig.cap='Causal diagram depicting an improperly controlled experiment.'} 
-knitr::include_graphics('Figures/RCT-causal-diagram.png')
-```
-
-#### Validity
-
-Transferring RCTs results to other scenarios is not trivial. All in all, RCTs results concern a particular sample used during the study. The study sample is of course drawn from a larger group, i.e. the population, but the RCT results cannot be simply applied to another sample drawn from the population. Randomisation is not the same as random sampling from the population. In fact, there are many RCT studies that misrepresented certain population groups. An example of women inclusion issues in clinical studies includes the under-representation of women in stroke randomized controlled trials, which leads to misleading conclusions that affect stroke care delivery [@tsivgoulis2017under]. A similar bias exists in animal research, including [lab mice](https://www.wired.com/2016/07/science-huge-diversity-problem-lab-rats/). 
-
-> Most rodents used in biomedical studies --- the ones that suss out the effects of treatments before they make it to humans --- have boy parts and boy biological functions. And that particular kind of gender imbalance has cascading effects. A growing body of evidence indicates that females process pain differently than males. But many lab scientists who study ways of treating pain *still *use all-male cohorts of lab mice. They say it's because male mice and rats aren't as hormonal as females—because isn't that what they always say—and are therefore more reliable in terms of getting data. And that means the scientific community is ignoring research that might help women manage pain better. --- **Science Has a Huge Diversity Problem... in Lab Mice - Wired**
-
----
-
-> Of 2,347 articles reviewed, 618 included animals and/or cells. For animal research, 22% of the publications did not specify the sex of the animals. Of the reports that did specify the sex, 80% of publications included only males, 17% only females, and 3% both sexes. A greater disparity existed in the number of animals studied: 16,152 (84%) male and 3,173 (16%) female. --- [@yoon2014sex]
-
-Therefore, RCTs must be internally valid, --- i.e. the design must eliminate the possibility of bias --- but to be clinically useful the result must also be relevant to a well-defined group of patients (i.e. external validity). Differences between trial protocol and routine practice also affect the external validity of RCTs. In [@rothwell2006factors], the authors list some of the most important potential determinants of external validity.
-
-### Cross-validation in Machine Learning
-
-As data scientists, you may wonder why the previous practices are relevant to your job. In this section I want to show how similar control measures must be considered regarding machine learning (ML). When applying supervised ML methods, is important to prevent over-fitting and under-fitting situations. In particular, over-fitting occurs when a model begins to *memorize* training data rather than *learning* to generalize from a trend (see Figure \@ref(fig:overfitting)). One of the techniques to detect or lessen the change of over-fitting includes cross-validation. The basis of this technique is to test the generalization power of the model by evaluating its performance on a set of data not used during the training stage.
-
-(ref:overfitting-caption) Source: [Wikimedia](https://en.wikipedia.org/wiki/File:Overfitting.svg). The green line represents an overfitted model and the black line represents a regularized model. While the green line best follows the training data, it is too dependent on that data and it is likely to have a higher error rate on new unseen data, compared to the black line.
-
-```{r overfitting, echo=F, fig.align="center",  out.width="45%", fig.cap='(ref:overfitting-caption)'}
-knitr::include_graphics('Figures/Overfitting.png')
-```
-
-The simplest approach is the **hold out method** which entails spliting the dataset into a train and test sets. However, yet another part of the dataset is often held out (validation set) so that the model training proceeds on the training set, the model evaluation on the validation set, and once the hyperparameters are successfully tweaked, the final evaluation is conducted on the test set. This process reduces the amount of data available for training. Cross-validation (CV) alleviates this issue.
-
-The following procedure (see Figure \@ref(fig:cross-validation)) is followed for each of the $k$ "folds":
-
-- A model is trained using $k-1$ of the folds as training data.
-- The resulting model is validated on the remaining part of the data.
-
-The performance measure reported by K-fold CV is then the average of the values computed in the loop. This approach can be computationally expensive, but does not waste too much data [@scikit-learn].
-
-(ref:cross-validation) Source: [Scikit-Learn](https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation). A test set should still be held out for final evaluation, but the validation set is no longer needed when doing CV. In the basic approach, called K-fold CV, the training set is split into k smaller sets [@scikit-learn]. 
-
-```{r cross-validation, echo=F, fig.align="center",  out.width="75%", fig.cap='(ref:cross-validation)'}
-knitr::include_graphics('Figures/grid_search_cross_validation.png')
-```
-
-However, the vanilla approach to K-fold CV does not consider certain properties of the dataset. In particular, K-fold CV is not affected by classes or groups. For instance, the training set of the first CV iteration in Figure \@ref(fig:k-fold-vis) does not contain one of the classes.
-
-```{r k-fold-vis, echo=F, fig.align="center",  out.width="63%", fig.cap='Source: Scikit-Learn. K-fold CV is not affected by classes or groups.'}
-knitr::include_graphics('Figures/k-fold-vis.png')
-```
-
-Issues similar to the ones previously studied regarding RCTs can arise when conducting cross-validation. Some problems exhibit a large imbalance in the distribution of the target classes. For example, the negative class can be more representative than the positive class. In such cases, stratified sampling is recommended (see Figure \@ref(fig:k-fold-strategies)) to preserve relative class frequencies in each train and validation fold.
-
-One strong assumption of machine learning theory is that data is Independent and Identically Distributed (i.i.d.), i.e. that all samples stem from the same generative process and that such process is assumed to have no memory regarding past samples. For example, a succession of throws of a fair coin is i.i.d. since the coin has no memory, so all the throws are independent. In this sense, if we know that the generative process has a group structure (e.g. samples collected from different subjects, experiments, measurement devices) we should use group-wise CV. The grouping of data depends on the context. For instance, in medical data, we can find multiple samples for each patient, so it makes sense to group the samples by patient to prevent any [*data leakage*](https://scikit-learn.org/0.24/common_pitfalls.html#data-leakage). Similarly, problems where the samples have been generated using a time-dependent process call for [time-series aware CV schemes](https://scikit-learn.org/stable/modules/cross_validation.html#timeseries-cv).
-
-(ref:k-fold-strategies) Source: Scikit-Learn. Other K-fold CV strategies. [**GroupKFold**](https://scikit-learn.org/stable/modules/cross_validation.html#group-k-fold) is a variation of K-fold which ensures that the same group is not represented in both testing and training sets. [**StratifiedKFold**](https://scikit-learn.org/stable/modules/cross_validation.html#stratified-k-fold) is a variation of K-fold which returns stratified folds: each set contains approximately the same percentage of samples of each target class as the complete set..
-
-```{r k-fold-strategies, echo=F, fig.align="center",  out.width="100%", fig.cap='(ref:k-fold-strategies)'}
-knitr::include_graphics('Figures/kfold-strategies.png')
-```
-
-Similar to RTC internal validity, cross-validation does not ensure transferability to other scenarios. External validation must be performed with independent datasets to ensure robustness against new scenarios. Consider a deep-learning algorithm trained to predict the number of years a patient will survive based on its characteristics and the medication administrated. This system could be then transferred to a different hospital, in another country, region, or city where the population characteristics (diet, hygiene, professions) are different. The model will require undertaking a certain recalibration process to learn the new conditions. 
 
 ### How to evaluate experiment success
 
@@ -337,7 +202,7 @@ Again, most of the previous virtues will require certain trade-off. Increasing a
 
 Models as mirrors. Models as isolations.
 
--->
+--->
 
 ## Examples
 
@@ -346,7 +211,6 @@ Models as mirrors. Models as isolations.
 <!-- [write]
 
 This case is very popular and can be found in several books and posts on-line but I recommend the explanation given in Chapter 7 from The Book of Why [@book-of-why] as the authors also re-formulate the case in causal terms.
--->
 
 
 ### Study about honesty is retracted over fake data
