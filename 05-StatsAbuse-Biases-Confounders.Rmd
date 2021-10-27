@@ -10,9 +10,13 @@ This chapter is under construction. Content is hidden.
 
 ## Overview
 
+
+<!--
 Continue on the example from chapter \@ref(empirical-practices) from Chapter 4 from the Book of Why.
 
 For the Abuse of event space: If we shrink the hypothesis space, the bound improves, but the chances that it contains the true classifier shrink also. (pedro domingos)
+
+-->
 
 ## Experimental Control
 
