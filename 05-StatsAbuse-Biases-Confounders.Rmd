@@ -16,6 +16,8 @@ Continue on the example from chapter \@ref(empirical-practices) from Chapter 4 f
 
 For the Abuse of event space: If we shrink the hypothesis space, the bound improves, but the chances that it contains the true classifier shrink also. (pedro domingos)
 
+https://catalogofbias.org/biases/collider-bias/#:~:text=The%20collider%20bias%20occurs%20when,effect%20of%20obesity%20on%20mortality.
+
 -->
 
 ## Experimental Control
@@ -96,6 +98,7 @@ Example from § \@ref(covid-israel).
 
 -->
 
+> When a hypothesis is designed to explain certain observed phenomena, it will of course be so constructed that it implies their occurrence; hence, the fact to be explained will then constitute confirmatory evidence for it. But it is highly desirable for a scientific hypothesis to be confirmed also by “new” evidence — by facts that were not known or not taken into account when the hypothesis was formulated. Many hypotheses and theories in natural science have indeed received support from such “new” phenomena, with the result that their confirmation was considerably strengthened. --- [@hempel-pos]
 
 Transferring RCTs results to other scenarios is not trivial. All in all, RCTs results concern a particular sample used during the study. The study sample is of course drawn from a larger group, i.e. the population, but the RCT results cannot be simply applied to another sample drawn from the population. Randomisation is not the same as random sampling from the population. In fact, there are many RCT studies that misrepresented certain population groups. An example of women inclusion issues in clinical studies includes the under-representation of women in stroke randomized controlled trials, which leads to misleading conclusions that affect stroke care delivery [@tsivgoulis2017under]. A similar bias exists in animal research, including [lab mice](https://www.wired.com/2016/07/science-huge-diversity-problem-lab-rats/). 
 
