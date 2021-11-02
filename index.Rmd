@@ -1,7 +1,7 @@
 --- 
 title: "Applied Philosophy of Science and Data Ethics"
 author: "Dr. Carlos Vega"
-date: "2021: Last compiled `r Sys.Date()`"
+date: "2021: Last compiled: `r Sys.Date()`"
 site: bookdown::bookdown_site
 output: 
   bookdown::gitbook:

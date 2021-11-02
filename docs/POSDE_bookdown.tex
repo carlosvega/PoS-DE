@@ -117,7 +117,7 @@
 
 \title{Applied Philosophy of Science and Data Ethics}
 \author{Dr.~Carlos Vega}
-\date{2021: Last compiled 2021-10-27}
+\date{2021: Last compiled: 2021-11-02}
 
 \begin{document}
 \maketitle
@@ -1288,7 +1288,7 @@ This example synthesizes the process of controlled experiments employed nowadays
 \hypertarget{what-is-an-experiment}{%
 \section{What is an experiment?}\label{what-is-an-experiment}}
 
-Many data scientists believe their role should be limited to data analysis, but experiment design is fundamental for data collection, which conditions the data to be analysed. Conclusions drawn from data can be biased or determined by decisions and errors taken during experiment design. Understanding this can help you spot issues during the data analysis and ask the right questions to your colleagues in charge of the experiments.
+Many data scientists believe their role should be limited to data analysis, but experiment design is fundamental for data collection, which conditions how the data must be analysed. Conclusions drawn from data can be biased or determined by decisions and errors taken during experiment design. Understanding this can help you spot issues during the data analysis and ask the right questions to your colleagues in charge of the experiments.
 
 An experiment is an observation process in which we control background variables through manipulation, intervene on target variable (through manipulation) and observe the difference produced by such intervention thanks to measurements.
 
@@ -1299,7 +1299,37 @@ Experiment is the kind of scientific experience in which some change is delibera
 \hypertarget{observational-studies}{%
 \subsection{Observational studies}\label{observational-studies}}
 
-However, there are whole research areas were scientists cannot make experiments. For instance, astrophysics is mainly observational and theoretical as is not possible to manipulate the observed entities (e.g.~stars). It aims to find out measurable implications of physical models. Sometimes is not feasible, legal or ethical to conduct certain types of experiments, conducting observational studies instead. So, in \textbf{observational studies} there is no manipulation, no intervention on the target variable, neither control of background variables. \href{https://en.wikipedia.org/wiki/Natural_experiment}{\textbf{Natural experiments}} on the other side share the first two characteristics but is possible to control background variables (but not through manipulation though). See § \ref{john-snow} for an example of the latter.
+However, there are whole research areas were scientists cannot make experiments. For instance, astrophysics is mainly observational and theoretical as is not possible to manipulate the observed entities (e.g.~stars). It aims to find out measurable implications of physical models. Sometimes is not feasible, legal or ethical to conduct certain types of experiments, conducting observational studies instead. So, in \textbf{observational studies} there is no manipulation, no intervention on the target variable, neither control of background variables.
+
+\hypertarget{natural-experiments}{%
+\subsubsection{Natural experiments}\label{natural-experiments}}
+
+\href{https://en.wikipedia.org/wiki/Natural_experiment}{\textbf{Natural experiments}} on the other side share the first two characteristics but is possible to control background variables (but not through manipulation though). See § \ref{john-snow} for an example. A major limitation of natural experiments when inferring causation is the presence of unmeasured confounding factors. Natural experiments are appealing for public health research because they enable the evaluation of events or interventions that are difficult or impossible to manipulate experimentally, such as many policy and health system reforms \citep{de2021conceptualising}.
+
+\begin{quote}
+For example the Canterbury earthquakes in 2010-2011 could be used to study the impact of such disasters because about half of a well-studied birth cohort lived in the affected area with the remainder living outside. {[}\ldots{]} More recently, the use of the term `natural' has been understood more broadly as an event which did not involve the deliberate manipulation of exposure for research purposes, even if human agency was involved. {[}\ldots{]} Natural experiments describing the study of an event which did not involve the deliberate manipulation of an exposure but involved human agency, such as the impact of a new policy, are the mainstay of `natural experimental research' in public health. --- \citep{de2021conceptualising}
+\end{quote}
+
+See Figure \ref{fig:diagram-experiments} for an schema depicting the conceptualisation of natural and quasi-experiments. Some authors differentiate between natural experiments and \emph{quasi-experiments}. In a quasi-experiment, the criterion for group assignment of the study units (e.g.~study participants) is selected by the researchers, whereas, in a natural experiment, the assignment occurs \emph{naturally}, without the intervention of the researchers.
+
+\begin{quote}
+Quasi-experiment: A quasi-experiment is an empirical interventional study used to estimate the causal impact of an intervention on target population without random assignment. Quasi-experimental research shares similarities with the traditional experimental design or randomized controlled trial, but it specifically lacks the element of random assignment to treatment or control. Instead, quasi-experimental designs typically allow the researcher to control the assignment to the treatment condition, but using some criterion other than random assignment. Quasi-experiments are subject to concerns regarding internal validity, because the treatment and control groups may not be comparable at baseline. In other words, it may not be possible to convincingly demonstrate a causal link between the treatment condition and observed outcomes. This is particularly true if there are confounding variables that cannot be controlled or accounted for. --- Wikipedia on \citep{rossi1985evaluation} and \citep{dinardo2010natural}.
+\end{quote}
+
+
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{Figures/natural-experiments} 
+
+}
+
+\caption{Diagram depicting the conceptualisation of natural and quasi-experiments within the evaluation framework of Thad Dunning. Extracted from \citep{de2021conceptualising}. Note that the same article provides three additional conceptualisations from different frameworks. For example, a different conceptualisation makes a distinction between quasi and natural experiments, arguing that natural experiments describe unplanned events whereas quasi-experiments describe events that are planned (but not controlled by the researcher).}\label{fig:diagram-experiments}
+\end{figure}
+
+\begin{quote}
+Dunning takes this concept further and defines a `natural experiment' as a quasi-experiment where knowledge about the exposure allocation process provides a strong argument that allocation, although not deliberately manipulated by the researcher, is essentially random, referred to as `as-if randomization'. --- \citep{de2021conceptualising}
+\end{quote}
 
 \begin{tipbox}
 
@@ -1307,7 +1337,7 @@ However, there are whole research areas were scientists cannot make experiments.
 
 \textbf{Target variables}: The target variable of a dataset is the feature of a dataset about which you want to gain a deeper understanding. They also receive the name ``dependent variables'' because, in an experiment, their values are studied under the supposition or demand that they depend, by some law or rule (e.g., by a mathematical function), on the values of other variables. The dependent variable is the \emph{effect}. Its value depends on changes in the independent variable.
 
-\textbf{Independent variables}:: It is a variable that stands alone and isn't changed by the other variables you are trying to measure. The independent variable is the \emph{cause}. Its value is independent of other variables in your study.
+\textbf{Independent variables}: It is a variable that stands alone and isn't changed by the other variables you are trying to measure. The independent variable is the \emph{cause}. Its value is independent of other variables in your study.
 
 \textbf{Background variables}: An explanatory variable that can affect other (dependent) variables but cannot be affected by them. For example, one's schooling may affect one's subsequent career, but the reverse is unlikely to be true.
 
@@ -1535,6 +1565,97 @@ Again, most of the previous virtues will require certain trade-off. Increasing a
 \hypertarget{john-snow}{%
 \subsection{1854 Broad Street cholera outbreak}\label{john-snow}}
 
+The birth of epidemiology and public health is often attributed to the Natural Experiment described by Dr.~John Snow in the mid-1800s when he investigated the relationship between drinking contaminated water and the incidence of cholera \citep{applied_stats_healthcare}. The case of Dr.~Snow is very popular in public health science and can be found in several books and posts on-line but I recommend the explanation given in Chapter 7 from The Book of Why \citep{book-of-why} as the authors also re-formulate the case in causal terms, using concepts that were not available in the mid-1800s. Below, I give a summarised account of this study.
+
+\begin{quote}
+\emph{Miasma}: ``A vaporous exhalation formerly believed to cause disease.'' --- Merriam-Webster dictionary.
+\end{quote}
+
+Since the 1830s, various epidemics spread across Europe but were often attributed to social unrest and political upheaval. During the 1850s, there were several theories and misconceptions about the causes of cholera outbreaks. The miasma theory attempted to explain outbreaks of bubonic plague and cholera, stating that they were caused by a form of ``bad air''. According to the competing theory, i.e.~the germ theory of disease, the cause of the outbreak was a yet unknown germ. However, in 1853, disease-causing germs had never yet been observed under a microscope for any illness and the germ theory of disease was not established yet. Louis Pasteur did not propose it until 1861. Therefore, the prevailing theory was that a miasma of unhealthy air caused cholera.
+
+In August 1854, a major outbreak of cholera occurred in Soho, London (United Kingdom). In just three days, 127 people died in Broad Street. By September, 500 people had died. John Snow was skeptical of the prevailing miasma theory and theorized that the cause was the presence of an agent in the contaminated water source from certain water supplying companies \citep{applied_stats_healthcare}. Namely, the Southwark and Vauxhall Company and the Lambeth Waterworks Company. The main difference between the two companies was that the former drew its water from London Bridge, which was downstream from London's sewers. Years earlier, Lambeth had moved its water intake so that it would be upstream of the sewers.
+
+
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{Figures/JohnSnowRiver} 
+
+}
+
+\caption{Water distribution by the Lambeth Water and the Southwark \& Vauxhall Companies.}\label{fig:thames}
+\end{figure}
+
+Therefore, the customers of the Southwark and Vauxhall Company were getting water contaminated by the excrements of cholera victims, whereas Lambeth users were drinking uncontaminated water.
+
+In consequence, districts supplied by the Southwark and Vauxhall Company had a death rate eight times higher than other districts. At this point, the evidence supporting the hypothesis of water contamination is just circumstantial. The causal diagram from Figure \ref{fig:snow-dia-A} depicts the situation. A proponent of the miasma theory could argue that the effect of miasma was strongest in those districts \citep{book-of-why}.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.33\linewidth]{Figures/SnowDiagramA} 
+
+}
+
+\caption{Causal diagram for cholera for the case of John Snow.}\label{fig:snow-dia-A}
+\end{figure}
+
+Then, Snow noted that some districts water was served by both companies (see Fig. \ref{fig:snow-map}), and even there, the death rate was still higher in the houses where water was supplied by the Southwark and Vauxhall Company. Those households did not showcase any difference in terms of poverty or miasma. Snow wrote: ``each company supplies {[}water{]} to both rich and poor, both large houses and small; there is no difference either in the condition or occupation of the persons receiving the water of the different companies.'' \citep{book-of-why}.
+
+\begin{longtable}[]{@{}lc@{}}
+\caption{Relation of the household water source and deaths}\tabularnewline
+\toprule
+Source of water & Deaths \\
+\midrule
+\endfirsthead
+\toprule
+Source of water & Deaths \\
+\midrule
+\endhead
+Southwark and Vauxhall company & 286 \\
+Lambeth company & 14 \\
+Direct from the river & 22 \\
+Pump wells & 4 \\
+Ditches & 4 \\
+Unknown & 4 \\
+\bottomrule
+\end{longtable}
+
+\textbf{It is precisely at this point where the natural experiment takes all its strength.} Around 300 people of both sexes, every age, and socio-economic class were naturally divided into two groups without them to know. One group received pure water, whereas the other received water mixed with sewage.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{Figures/SnowDiagramB} 
+
+}
+
+\caption{Causal diagram after the introduction of an instrumental variable.}\label{fig:snow-dia-B}
+\end{figure}
+
+The observations of John Snow introduced a new variable into the causal diagram (see Fig. \ref{fig:snow-dia-B}), the \textbf{Water Company}. In this new diagram we can see that there is no arrow between Miasma and Water Company, therefore both variables are independent. Moreover, we can note the presence of an arrow between Water Company and Water Purity. Finally, the diagram depicts a third assumption. There is no direct arrow from Water Company to Cholera, i.e.~water companies do not deliver cholera to their customers in any other way.
+
+A variable that satisfies these properties is called an \textbf{instrumental variable}. See \citep{pokropek2016introduction} for examples of valid and invalid instrumental variables. \textbf{Since there are no confounders of the relation between Water Company and Cholera, any observed association must be causal}. Similarly, the association between Water Purity and Cholera is also causal \citep{book-of-why}.
+
+\begin{quote}
+Specifically, an instrumental variable Z is an additional variable used to estimate the causal effect of variable X on Y. The traditional definition qualifies a variable Z as an instrumental (relative to the pair (X, Y)) if (i) Z is independent of all variables (including error terms) that have an influence on Y that is not mediated by X and (ii) Z is not independent of X. --- \citep{pearl2000causality}
+\end{quote}
+
+Although today miasma theory has been discredited, poverty and location are clear confounders. In \citep{book-of-why}, the authors show how instrumental variables can be used to determine the number of lives that could have been saved by purifying the water supply. The instrumental variable \textbf{Water Company} allow us to find the effect of \textbf{Water Purity} on \textbf{Cholera} even without being able to control, or collect data on, the confounder variables (poverty, location, etc.).
+
+One of the main innovations of John Snow approach was to focus on death rates in districts served by two water companies rather than on data from victims of the Broad Street pump which drew water from a well.
+
+\begin{quote}
+A transitional period began in the late 1850s with the work of Louis Pasteur. This work was later extended by Robert Koch in the 1880s. By the end of that decade, the miasma theory was struggling to compete with the germ theory of disease. Viruses were initially discovered in the 1890s. Eventually, a ``golden era'' of bacteriology ensued, during which the germ theory quickly led to the identification of the actual organisms that cause many diseases. --- Wikipedia, \href{https://en.wikipedia.org/wiki/Germ_theory_of_disease}{Germ theory of disease}.
+\end{quote}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{Figures/snow-cholera-map-crop} 
+
+}
+
+\caption{Detail of John Snow’s map of Cholera in the Broad Street outbreak in 1854. Each bar represents one death in a topography that attempted to relate the water source (“Pump”) to pattern of cases in the neighborhood outbreak.}\label{fig:snow-map}
+\end{figure}
+
 \hypertarget{stats-abuse}{%
 \chapter{Statistical abuse, Biases and Confounders}\label{stats-abuse}}
 
@@ -1625,6 +1746,10 @@ The Book of Why describes the aforementioned experiment in causal terms \citep{b
 
 \hypertarget{validity}{%
 \subsection{Validity}\label{validity}}
+
+\begin{quote}
+When a hypothesis is designed to explain certain observed phenomena, it will of course be so constructed that it implies their occurrence; hence, the fact to be explained will then constitute confirmatory evidence for it. But it is highly desirable for a scientific hypothesis to be confirmed also by ``new'' evidence --- by facts that were not known or not taken into account when the hypothesis was formulated. Many hypotheses and theories in natural science have indeed received support from such ``new'' phenomena, with the result that their confirmation was considerably strengthened. --- \citep{hempel-pos}
+\end{quote}
 
 Transferring RCTs results to other scenarios is not trivial. All in all, RCTs results concern a particular sample used during the study. The study sample is of course drawn from a larger group, i.e.~the population, but the RCT results cannot be simply applied to another sample drawn from the population. Randomisation is not the same as random sampling from the population. In fact, there are many RCT studies that misrepresented certain population groups. An example of women inclusion issues in clinical studies includes the under-representation of women in stroke randomized controlled trials, which leads to misleading conclusions that affect stroke care delivery \citep{tsivgoulis2017under}. A similar bias exists in animal research, including \href{https://www.wired.com/2016/07/science-huge-diversity-problem-lab-rats/}{lab mice}.
 
