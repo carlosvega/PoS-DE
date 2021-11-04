@@ -22,7 +22,7 @@ cat(
 
 Most scientific conclusions are uncanny at first glance and difficult to believe without more information and proper explanations about them (e.g. expansion of the universe, electromagnetism, etc.). How do scientists reach such unlikely conclusions? An inference is the act of reaching a conclusion from known facts but there are multiple types as we will see below.
 
-### Deduction and Induction {#deduction-and-induction}
+### Deduction and Induction {#deduction}
 
 A good argument is one whose conclusions follow from its premises. But how do we tell if the conclusion is a consequence of its premises? Is often assumed that as long as the premises are valid, the conclusions will be valid too. This does not imply that the conclusion is also true. The premises might not be true, but if they are true, then the conclusion will also be true. However, is the truth of the premises always *necessarily sufficient* for the truth of the conclusions? Logicians distinguish between deductive and inductive inference. [@sep-abduction]
 
@@ -69,7 +69,7 @@ We are sure that the sun will rise tomorrow, and if we are asked why we believe 
 The following content relates to deduction and is usually taught in high school philosophy courses as part of propositional calculus. It will help getting a better understanding of the deductive inference rules. If this is already clear to you, feel free to jump to the problem(s) of induction \@ref(problem-induction).
 ::::
 
-There are two rules of inference in deductive reasoning. We call deduction top-down logic because we reach particular conclusions from general premises. Whereas in bottom-up logic the conclusion is reached by generalizing from specific cases.
+There are two rules of inference in deductive reasoning. Deduction constitutes top-down logic because particular conclusions are drawn from general premises. Whereas in bottom-up logic the conclusion is reached by generalizing from specific cases.
 
 - Modus ponens: `P implies Q. P is true. Therefore Q must also be true.`
 - Modus tollens: `If P, then Q. Not Q. Therefore, not P.`
@@ -114,7 +114,7 @@ Therefore, H is false.
 
 ---
 
-There are other forms of arguments that are apparently **similar but invalid forms**.
+Other forms of arguments are apparently **similar but invalid forms**.
 
 **Affirming the consequent**. This formal fallacy consists of taking a true conditional statement  $P \rightarrow Q$ and invalidly inferring its converse  $Q \rightarrow P$. For example, the statement "if the light is broken, the room would be dark" does not justify inferring the converse "the room is dark, therefore the lamp is broken". This situations may arise when a consequent has more than one possible antecedent.
 
@@ -165,15 +165,26 @@ by Allan Ramsay.</figcaption>
 )
 ```
 
-We use induction to justify our statements but how do we justify induction itself? How would you convince someone else that induction is a good inference method? The Scottish philosopher David Hume (1711-76) argued that the use of induction cannot be rationally justified at all. 
+```{r, include=knitr::is_latex_output(), echo = F}
+knitr::asis_output('\\begin{wrapfigure}{R}{.33\\textwidth}  
+ \\begin{center}
+    \\includegraphics[width=.30\\textwidth]{Figures/David_Hume.jpg}  
+  \\captionsetup{labelformat=empty}
+  \\caption{Portrait of David Hume by Allan Ramsay.} 
+\\end{center}
+\\end{wrapfigure}
+\\addtocounter{figure}{-1}')
+```
 
-In 1739, still under the shadow of the bubonic plague in Europe, David Hume publishes *A Treatise of Human Nature*, presumably without knowing that his work would not only continue to be debated more than 200 years later, but also still remarkably relevant in the technological advances of our time. In *the problem of induction* Hume argues that we cannot make a causal inference just by *a priori* means, and poses the question of how we can conclude from the observed to the unobserved.
+We use induction to justify our statements but how do we justify induction itself? How would you convince someone else that induction is a good inference method? The Scottish philosopher David Hume (1711-76) argued that the use of induction cannot be rationally justified at all. In 1739, still under the shadow of the bubonic plague in Europe, David Hume publishes *A Treatise of Human Nature*, presumably without knowing that his work would not only continue to be debated more than 200 years later, but also still remarkably relevant in the technological advances of our time. In *the problem of induction* Hume argues that we cannot make a causal inference just by *a priori* means, and poses the question of how we can conclude from the observed to the unobserved.
 
 Hume admitted that we use induction all the time in everyday life and science but insisted that this is just a matter of brute animal habit. What does he mean by that? Bertrand Russell (1872-1970) gives us a good example on this. He argues that the inductive association is also present in animals.
 
 > “And this kind of association is not confined to men; in animals also it is very strong. A horse which has been often driven along a certain road resists the attempt to drive him in a different direction. Domestic animals expect food when they see the person who usually feeds them. We know that all these rather crude expectations of uniformity are liable to be misleading. The man who has fed the chicken every day throughout its life at last wrings its neck instead, showing that more refined views as to the uniformity of nature would have been useful to the chicken. [...] The mere fact that something has happened a certain number of times causes animals and men to expect that it will happen again. Thus our instincts certainly cause us to believe that the sun will rise to-morrow, but we may be in no better a position than the chicken which unexpectedly has its neck wrung.” --- [@russell2001problems]
 
-Hume arrived to this conclusion by noting that whenever we make inductive inferences we presuppose the *uniformity of nature*. Remember the eggs box example in § \@ref(deduction-and-induction) ? Our reasoning depends on the assumption that objects that we have not examined yet will resemble those objects that we have already examined. Then, Hume argues that we cannot prove the truth of the uniformity assumption. Basically, from the mere act of being able to imagine a world where nature is not uniform but changes at random it follows that we cannot prove that the uniformity assumption is true. Also, if we try to argue for the uniformity assumption on empirical grounds, we end up reasoning in a circle.
+Hume arrived to this conclusion by noting that whenever we make inductive inferences we presuppose the *uniformity of nature*. Remember the eggs box example in § \@ref(deduction) ? Our reasoning depends on the assumption that objects that we have not examined yet will resemble those objects that we have already examined. Then, Hume argues that we cannot prove the truth of the uniformity assumption. Basically, from the mere act of being able to imagine a world where nature is not uniform but changes at random it follows that we cannot prove that the uniformity assumption is true. Also, if we try to argue for the uniformity assumption on empirical grounds, we end up reasoning in a circle.
+
+The conclusion then is that our tendency to project past regularities into the future is not underpinned by reason. The problem of induction is to find a way to avoid this conclusion, despite Hume’s argument [@sep-induction-problem]. **Hume's problem of induction is still an active area of research for philosophers**. There are many different ways to respond to Hume's argument, yet none is fully convincing. Peter Strawson (1950s) used the following analogy: justifying induction is like asking whether the law is itself legal. This is rather odd, since the law is the standard against which the legality of other things is judged. Others, like Karl Popper (1902-1994) argued that science is not in fact based on inductive inferences at all and presented a deductivist view of science. We will study this in detail in § \@ref(falsification).
 
 :::: {.tipbox data-latex=""}
 ::: { data-latex=""}
@@ -189,8 +200,6 @@ And it continues: *“Our foregoing method of reasoning will easily convince us,
 [@hume1739treatise] T. 1.3.6.4
 
 ::::
-
-The conclusion then is that our tendency to project past regularities into the future is not underpinned by reason. The problem of induction is to find a way to avoid this conclusion, despite Hume’s argument [@sep-induction-problem]. **Hume's problem of induction is still an active area of research for philosophers**. There are many different ways to respond to Hume's argument, yet none is fully convincing. Peter Strawson (1950s) used the following analogy: justifying induction is like asking whether the law is itself legal. This is rather odd, since the law is the standard against which the legality of other things is judged. Others, like Karl Popper (1902-1994) argued that science is not in fact based on inductive inferences at all and presented a deductivist view of science. We will study this in detail in § \@ref(falsification).
 
 As scientists, Hume's problem of induction may leave a huge void in our heart. An empty feeling that science is indeed fallible and the sudden realisation of the impossibility of establishing the truth or falsity of scientific laws [@rosenberg2019philosophy]. But perhaps there is a way to fill such gap, and perhaps big part of the effort of science is put on filling this void with as much certainty as possible. 
 
@@ -252,6 +261,16 @@ cat(
 )
 ```
 
+```{r, include=knitr::is_latex_output(), echo = F}
+knitr::asis_output('\\begin{wrapfigure}{R}{.25\\textwidth}  
+ \\begin{center}
+    \\includegraphics[width=.22\\textwidth]{Figures/Karl_Popper.jpg}  
+  \\captionsetup{labelformat=empty}
+  \\caption{Karl Popper in the 1980\'s.} 
+\\end{center}
+\\end{wrapfigure}
+\\addtocounter{figure}{-1}')
+```
 
 According to the Hypothetico-deductive method (H-D), a hypothesis is formulated, then relevant consequences are deduced, and finally we observe whether these consequences are false or true. Depending on these observations the hypothesis will be either falsified or confirmed. 
 
@@ -409,9 +428,20 @@ Defeasible reasoning deals with tentative relationships between premises and con
 cat(
 '<figure class="wrap-figure">
 <img src="Figures/Carl_Gustav_Hempel.jpg">
-<figcaption>Carl Hempel (1905 - 1997).</figcaption>
+<figcaption>Carl Hempel\\\\(1905 - 1997).</figcaption>
 </figure>'
 )
+```
+
+```{r, include=knitr::is_latex_output(), echo = F}
+knitr::asis_output('\\begin{wrapfigure}{R}{.25\\textwidth}  
+ \\begin{center}
+    \\includegraphics[width=.22\\textwidth]{Figures/Carl_Gustav_Hempel.jpg}  
+  \\captionsetup{labelformat=empty}
+  \\caption{Carl Hempel (1905 - 1997).} 
+\\end{center}
+\\end{wrapfigure}
+\\addtocounter{figure}{-1}')
 ```
 
 At this point, many of you probably have already related data science to two of the goals of science: explanation and prediction. But how do they relate to one another? and what is a scientific explanation? Either to satisfy our natural curiosity or for a further purpose, science has always attempted to understand how the world works. The German philosopher Carl Hempel attempted to answer this question in the 1950s with what is known as the *covering law* model of explanation. He stated that a scientific explanation is an answer given in response to *explanation-seeking why-questions* (e.g. why salt dissolves in water).
@@ -491,6 +521,9 @@ In the biological and social sciences, instead of strict laws one finds statemen
 
 ::::
 
+```{r, include=knitr::is_latex_output(), echo = F}
+knitr::asis_output('\\newpage')
+```
 
 ## Examples
 
@@ -503,6 +536,17 @@ cat(
 <figcaption>Dr. Ignaz Semmelweis, aged 42 in 1860 copperplate engraving by Jenő Doby.</figcaption>
 </figure>'
 )
+```
+
+```{r, include=knitr::is_latex_output(), echo = F}
+knitr::asis_output('\\begin{wrapfigure}{R}{.25\\textwidth}  
+ \\begin{center}
+    \\includegraphics[width=.22\\textwidth]{Figures/Semmelweis.jpg}  
+  \\captionsetup{labelformat=empty}
+  \\caption{Dr. Ignaz Semmelweis in 1860.} 
+\\end{center}
+\\end{wrapfigure}
+\\addtocounter{figure}{-1}')
 ```
 
 Ignaz Semmelweis, a Hungarian physician, was a member of the First Maternity Division at the Vienna General Hospital from 1844 to 1848. Semmelweis was distressed to find a big proportion of the women who delivered their babies contracted a serious and often fatal illness known as childbed fever. In 1844, 8.2% of mothers died from the disease, 6.8% in 1845 and 11.4% in 1846. However, in the adjacent Second Maternity Division which had as many women as the first, the death toll was much lower (2.3%, 2% and 2.7% respectively).
@@ -571,13 +615,13 @@ Notice how Machine Learning (ML) models can also be affected by the previous sta
 
 ### Wason selection task {#wason}
 
+```{r wason-cards, echo=F, out.width="25%", fig.align="center", fig.cap='Wason selection task or four-card problem.', fig.pos="hbtp"}
+knitr::include_graphics('Figures/wason_cards.png')
+```
+
 Consider the following  hypothetico-deductive reasoning problem created by Peter Cathcart Wason employing the logical rule of implication:
 
 > You are shown a set of four cards placed on a table, each of which has a number on one side and a colored patch on the other side. The visible faces of the cards show 3, 8, red and brown. Which card(s) must you turn over in order to test the truth of the proposition that if a card shows an even number on one face, then its opposite face is red?
-
-```{r wason-cards, echo=F, out.width="25%", fig.align="center", fig.cap='Wason selection task or four-card problem.'}
-knitr::include_graphics('Figures/wason_cards.png')
-```
 
 Hypothesis H: "If a card shows an even number on one face, then its opposite face is red"
 
@@ -626,6 +670,10 @@ Therefore, not even (conclusion)
 
 Another approach is to take the truth table of $p \rightarrow q$ and take the case where $p \rightarrow q$ is false - second line - i.e. when $p$ is true and $q$ is false or for our case, when a card is even and its back not red (so brown). From this we need to take the cards that are $p$ and $\lnot q$ i.e. even cards and brown cards.
 
+```{r, include=knitr::is_latex_output(), echo = F}
+knitr::asis_output('\\newpage')
+```
+
 ### U.S.A. Presidents
 
 ```{r us-presidents, echo=F, out.width="100%", fig.align="center", fig.cap='Presidents of the United States of America as of 2021.'}
@@ -646,19 +694,21 @@ From [@vega2021hume].
 ```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
 cat(
 '<figure class="wrap-figure">
-<img src="Figures/kitasato.png">
-<figcaption>Kitasato Shibasaburō</figcaption>
+<img src="Figures/yersin.jpg">
+<figcaption>Alexandre Yersin.</figcaption>
 </figure>'
 )
 ```
 
-```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
-cat(
-'<figure class="wrap-figure">
-<img src="Figures/yersin.jpg">
-<figcaption>Alexandre Yersin</figcaption>
-</figure>'
-)
+```{r, include=knitr::is_latex_output(), echo = F}
+knitr::asis_output('\\begin{wrapfigure}{R}{.25\\textwidth}  
+ \\begin{center}
+    \\includegraphics[width=.22\\textwidth]{Figures/yersin.jpg}  
+  \\captionsetup{labelformat=empty}
+  \\caption{Alexandre Yersin.} 
+\\end{center}
+\\end{wrapfigure}
+\\addtocounter{figure}{-1}')
 ```
 
 This excerpt from Plague and Cholera is a great example of how laboratory conditions can act as an unintended auxiliary hypothesis that must be taken into account during research. It was 1894 in Hong Kong and all was set for an intellectual duel between Alexandre Yersin and Kitasato Shibasaburō that eventually unveiled the cause of the disease plague.

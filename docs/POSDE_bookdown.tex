@@ -75,6 +75,10 @@
 \setcounter{secnumdepth}{5}
 \usepackage{booktabs}
 \usepackage{amsthm}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{caption}
+
 
 \makeatletter
 \def\thm@space@setup{%
@@ -109,6 +113,9 @@
 \newenvironment{rnote}{\par\raggedleft}{\par}
 
 \makeatother
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{caption}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -117,7 +124,7 @@
 
 \title{Applied Philosophy of Science and Data Ethics}
 \author{Dr.~Carlos Vega}
-\date{2021: Last compiled: 2021-11-03}
+\date{2021: Last compiled: 2021-11-04}
 
 \begin{document}
 \maketitle
@@ -344,6 +351,8 @@ Traditionally there are three ways to choose between alternative methods.
 
 See \ref{smoke-debate} for an example of how reason-based methods are not always easy to implement while at the same time, outcome-oriented methods led the mainstream of an important debate.
 
+\newpage
+
 \hypertarget{examples}{%
 \section{Examples}\label{examples}}
 
@@ -373,6 +382,15 @@ For a longer and deeper explanation of the experiment, its historical context an
 
 \hypertarget{eddington-expeditions}{%
 \subsection{Eddington expeditions}\label{eddington-expeditions}}
+
+\begin{wrapfigure}{R}{.25\textwidth}  
+ \begin{center}
+    \includegraphics[width=.22\textwidth]{Figures/Arthur_Stanley_Eddington.jpg}  
+  \captionsetup{labelformat=empty}
+  \caption{Sir Arthur Stanley Eddington (1882–1944).} 
+\end{center}
+\end{wrapfigure}
+\addtocounter{figure}{-1}
 
 The following example also relates to falsification (see \ref{falsification}) which is taught in the next Chapter. However, this is also a good example of how a good theory should make definite predictions such as those from Einstein's theory of general relativity.
 
@@ -467,8 +485,8 @@ But our sun is only one of a billion-trillion stars within the observable univer
 
 Most scientific conclusions are uncanny at first glance and difficult to believe without more information and proper explanations about them (e.g.~expansion of the universe, electromagnetism, etc.). How do scientists reach such unlikely conclusions? An inference is the act of reaching a conclusion from known facts but there are multiple types as we will see below.
 
-\hypertarget{deduction-and-induction}{%
-\subsection{Deduction and Induction}\label{deduction-and-induction}}
+\hypertarget{deduction}{%
+\subsection{Deduction and Induction}\label{deduction}}
 
 A good argument is one whose conclusions follow from its premises. But how do we tell if the conclusion is a consequence of its premises? Is often assumed that as long as the premises are valid, the conclusions will be valid too. This does not imply that the conclusion is also true. The premises might not be true, but if they are true, then the conclusion will also be true. However, is the truth of the premises always \emph{necessarily sufficient} for the truth of the conclusions? Logicians distinguish between deductive and inductive inference. \citep{sep-abduction}
 
@@ -519,7 +537,7 @@ The following content relates to deduction and is usually taught in high school 
 
 \end{notebox}
 
-There are two rules of inference in deductive reasoning. We call deduction top-down logic because we reach particular conclusions from general premises. Whereas in bottom-up logic the conclusion is reached by generalizing from specific cases.
+There are two rules of inference in deductive reasoning. Deduction constitutes top-down logic because particular conclusions are drawn from general premises. Whereas in bottom-up logic the conclusion is reached by generalizing from specific cases.
 
 \begin{itemize}
 \tightlist
@@ -569,7 +587,7 @@ Therefore, H is false.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-There are other forms of arguments that are apparently \textbf{similar but invalid forms}.
+Other forms of arguments are apparently \textbf{similar but invalid forms}.
 
 \textbf{Affirming the consequent}. This formal fallacy consists of taking a true conditional statement \(P \rightarrow Q\) and invalidly inferring its converse \(Q \rightarrow P\). For example, the statement ``if the light is broken, the room would be dark'' does not justify inferring the converse ``the room is dark, therefore the lamp is broken''. This situations may arise when a consequent has more than one possible antecedent.
 
@@ -614,9 +632,16 @@ Suppose the following inductive inference \(I\): If the probability of observing
 \hypertarget{david-humes-problem-of-induction}{%
 \subsection{David Hume's Problem of Induction}\label{david-humes-problem-of-induction}}
 
-We use induction to justify our statements but how do we justify induction itself? How would you convince someone else that induction is a good inference method? The Scottish philosopher David Hume (1711-76) argued that the use of induction cannot be rationally justified at all.
+\begin{wrapfigure}{R}{.33\textwidth}  
+ \begin{center}
+    \includegraphics[width=.30\textwidth]{Figures/David_Hume.jpg}  
+  \captionsetup{labelformat=empty}
+  \caption{Portrait of David Hume by Allan Ramsay.} 
+\end{center}
+\end{wrapfigure}
+\addtocounter{figure}{-1}
 
-In 1739, still under the shadow of the bubonic plague in Europe, David Hume publishes \emph{A Treatise of Human Nature}, presumably without knowing that his work would not only continue to be debated more than 200 years later, but also still remarkably relevant in the technological advances of our time. In \emph{the problem of induction} Hume argues that we cannot make a causal inference just by \emph{a priori} means, and poses the question of how we can conclude from the observed to the unobserved.
+We use induction to justify our statements but how do we justify induction itself? How would you convince someone else that induction is a good inference method? The Scottish philosopher David Hume (1711-76) argued that the use of induction cannot be rationally justified at all. In 1739, still under the shadow of the bubonic plague in Europe, David Hume publishes \emph{A Treatise of Human Nature}, presumably without knowing that his work would not only continue to be debated more than 200 years later, but also still remarkably relevant in the technological advances of our time. In \emph{the problem of induction} Hume argues that we cannot make a causal inference just by \emph{a priori} means, and poses the question of how we can conclude from the observed to the unobserved.
 
 Hume admitted that we use induction all the time in everyday life and science but insisted that this is just a matter of brute animal habit. What does he mean by that? Bertrand Russell (1872-1970) gives us a good example on this. He argues that the inductive association is also present in animals.
 
@@ -624,7 +649,9 @@ Hume admitted that we use induction all the time in everyday life and science bu
 ``And this kind of association is not confined to men; in animals also it is very strong. A horse which has been often driven along a certain road resists the attempt to drive him in a different direction. Domestic animals expect food when they see the person who usually feeds them. We know that all these rather crude expectations of uniformity are liable to be misleading. The man who has fed the chicken every day throughout its life at last wrings its neck instead, showing that more refined views as to the uniformity of nature would have been useful to the chicken. {[}\ldots{]} The mere fact that something has happened a certain number of times causes animals and men to expect that it will happen again. Thus our instincts certainly cause us to believe that the sun will rise to-morrow, but we may be in no better a position than the chicken which unexpectedly has its neck wrung.'' --- \citep{russell2001problems}
 \end{quote}
 
-Hume arrived to this conclusion by noting that whenever we make inductive inferences we presuppose the \emph{uniformity of nature}. Remember the eggs box example in § \ref{deduction-and-induction} ? Our reasoning depends on the assumption that objects that we have not examined yet will resemble those objects that we have already examined. Then, Hume argues that we cannot prove the truth of the uniformity assumption. Basically, from the mere act of being able to imagine a world where nature is not uniform but changes at random it follows that we cannot prove that the uniformity assumption is true. Also, if we try to argue for the uniformity assumption on empirical grounds, we end up reasoning in a circle.
+Hume arrived to this conclusion by noting that whenever we make inductive inferences we presuppose the \emph{uniformity of nature}. Remember the eggs box example in § \ref{deduction} ? Our reasoning depends on the assumption that objects that we have not examined yet will resemble those objects that we have already examined. Then, Hume argues that we cannot prove the truth of the uniformity assumption. Basically, from the mere act of being able to imagine a world where nature is not uniform but changes at random it follows that we cannot prove that the uniformity assumption is true. Also, if we try to argue for the uniformity assumption on empirical grounds, we end up reasoning in a circle.
+
+The conclusion then is that our tendency to project past regularities into the future is not underpinned by reason. The problem of induction is to find a way to avoid this conclusion, despite Hume's argument \citep{sep-induction-problem}. \textbf{Hume's problem of induction is still an active area of research for philosophers}. There are many different ways to respond to Hume's argument, yet none is fully convincing. Peter Strawson (1950s) used the following analogy: justifying induction is like asking whether the law is itself legal. This is rather odd, since the law is the standard against which the legality of other things is judged. Others, like Karl Popper (1902-1994) argued that science is not in fact based on inductive inferences at all and presented a deductivist view of science. We will study this in detail in § \ref{falsification}.
 
 \begin{tipbox}
 
@@ -639,8 +666,6 @@ And it continues: \emph{``Our foregoing method of reasoning will easily convince
 \citep{hume1739treatise} T. 1.3.6.4
 
 \end{tipbox}
-
-The conclusion then is that our tendency to project past regularities into the future is not underpinned by reason. The problem of induction is to find a way to avoid this conclusion, despite Hume's argument \citep{sep-induction-problem}. \textbf{Hume's problem of induction is still an active area of research for philosophers}. There are many different ways to respond to Hume's argument, yet none is fully convincing. Peter Strawson (1950s) used the following analogy: justifying induction is like asking whether the law is itself legal. This is rather odd, since the law is the standard against which the legality of other things is judged. Others, like Karl Popper (1902-1994) argued that science is not in fact based on inductive inferences at all and presented a deductivist view of science. We will study this in detail in § \ref{falsification}.
 
 As scientists, Hume's problem of induction may leave a huge void in our heart. An empty feeling that science is indeed fallible and the sudden realisation of the impossibility of establishing the truth or falsity of scientific laws \citep{rosenberg2019philosophy}. But perhaps there is a way to fill such gap, and perhaps big part of the effort of science is put on filling this void with as much certainty as possible.
 
@@ -740,6 +765,15 @@ There are though some criteria for a \href{https://opentext.wsu.edu/carriecuttle
 
 \hypertarget{falsification}{%
 \subsection{Falsification}\label{falsification}}
+
+\begin{wrapfigure}{R}{.25\textwidth}  
+ \begin{center}
+    \includegraphics[width=.22\textwidth]{Figures/Karl_Popper.jpg}  
+  \captionsetup{labelformat=empty}
+  \caption{Karl Popper in the 1980's.} 
+\end{center}
+\end{wrapfigure}
+\addtocounter{figure}{-1}
 
 According to the Hypothetico-deductive method (H-D), a hypothesis is formulated, then relevant consequences are deduced, and finally we observe whether these consequences are false or true. Depending on these observations the hypothesis will be either falsified or confirmed.
 
@@ -946,6 +980,15 @@ Defeasible reasoning is a particular kind of non-demonstrative reasoning, where 
 \hypertarget{explanation}{%
 \section{Explanation}\label{explanation}}
 
+\begin{wrapfigure}{R}{.25\textwidth}  
+ \begin{center}
+    \includegraphics[width=.22\textwidth]{Figures/Carl_Gustav_Hempel.jpg}  
+  \captionsetup{labelformat=empty}
+  \caption{Carl Hempel (1905 - 1997).} 
+\end{center}
+\end{wrapfigure}
+\addtocounter{figure}{-1}
+
 At this point, many of you probably have already related data science to two of the goals of science: explanation and prediction. But how do they relate to one another? and what is a scientific explanation? Either to satisfy our natural curiosity or for a further purpose, science has always attempted to understand how the world works. The German philosopher Carl Hempel attempted to answer this question in the 1950s with what is known as the \emph{covering law} model of explanation. He stated that a scientific explanation is an answer given in response to \emph{explanation-seeking why-questions} (e.g.~why salt dissolves in water).
 
 According to Hempel, explanations are structured like an argument, i.e.~a set of premises followed by a conclusion. Therefore, the conclusion of such an argument states that certain phenomenon occurs, e.g.~``salt dissolves in water''. On the other hand, the premises indicate why the conclusion is true. Then, the challenge lays in the relationship that should follow between such premises and the conclusion. For Hempel, the premises should all be true and entail the conclusion, i.e.~the argument should be deductive and \emph{sound}. Additionally, the premises should contain at least one general law (e.g.~all metals conduct electricity), a.k.a. \emph{laws of nature}. The name of the model comes from that fact that the phenomenon to be explained is ``covered'' by some general law.
@@ -1039,11 +1082,22 @@ Smoking can be said to cause cancer if and only if, among all the different back
 
 \end{tipbox}
 
+\newpage
+
 \hypertarget{examples-1}{%
 \section{Examples}\label{examples-1}}
 
 \hypertarget{semmelweis}{%
 \subsection{The problem is in your hands!}\label{semmelweis}}
+
+\begin{wrapfigure}{R}{.25\textwidth}  
+ \begin{center}
+    \includegraphics[width=.22\textwidth]{Figures/Semmelweis.jpg}  
+  \captionsetup{labelformat=empty}
+  \caption{Dr. Ignaz Semmelweis in 1860.} 
+\end{center}
+\end{wrapfigure}
+\addtocounter{figure}{-1}
 
 Ignaz Semmelweis, a Hungarian physician, was a member of the First Maternity Division at the Vienna General Hospital from 1844 to 1848. Semmelweis was distressed to find a big proportion of the women who delivered their babies contracted a serious and often fatal illness known as childbed fever. In 1844, 8.2\% of mothers died from the disease, 6.8\% in 1845 and 11.4\% in 1846. However, in the adjacent Second Maternity Division which had as many women as the first, the death toll was much lower (2.3\%, 2\% and 2.7\% respectively).
 
@@ -1116,13 +1170,7 @@ Notice how Machine Learning (ML) models can also be affected by the previous sta
 \hypertarget{wason}{%
 \subsection{Wason selection task}\label{wason}}
 
-Consider the following hypothetico-deductive reasoning problem created by Peter Cathcart Wason employing the logical rule of implication:
-
-\begin{quote}
-You are shown a set of four cards placed on a table, each of which has a number on one side and a colored patch on the other side. The visible faces of the cards show 3, 8, red and brown. Which card(s) must you turn over in order to test the truth of the proposition that if a card shows an even number on one face, then its opposite face is red?
-\end{quote}
-
-\begin{figure}
+\begin{figure}[hbtp]
 
 {\centering \includegraphics[width=0.25\linewidth]{Figures/wason_cards} 
 
@@ -1130,6 +1178,12 @@ You are shown a set of four cards placed on a table, each of which has a number 
 
 \caption{Wason selection task or four-card problem.}\label{fig:wason-cards}
 \end{figure}
+
+Consider the following hypothetico-deductive reasoning problem created by Peter Cathcart Wason employing the logical rule of implication:
+
+\begin{quote}
+You are shown a set of four cards placed on a table, each of which has a number on one side and a colored patch on the other side. The visible faces of the cards show 3, 8, red and brown. Which card(s) must you turn over in order to test the truth of the proposition that if a card shows an even number on one face, then its opposite face is red?
+\end{quote}
 
 Hypothesis H: ``If a card shows an even number on one face, then its opposite face is red''
 
@@ -1190,6 +1244,8 @@ Therefore, not even (conclusion)
 
 Another approach is to take the truth table of \(p \rightarrow q\) and take the case where \(p \rightarrow q\) is false - second line - i.e.~when \(p\) is true and \(q\) is false or for our case, when a card is even and its back not red (so brown). From this we need to take the cards that are \(p\) and \(\lnot q\) i.e.~even cards and brown cards.
 
+\newpage
+
 \hypertarget{u.s.a.-presidents}{%
 \subsection{U.S.A. Presidents}\label{u.s.a.-presidents}}
 
@@ -1213,6 +1269,15 @@ From \citep{vega2021hume}.
 
 \hypertarget{yersinia-pestis}{%
 \subsection{Yersinia pestis}\label{yersinia-pestis}}
+
+\begin{wrapfigure}{R}{.25\textwidth}  
+ \begin{center}
+    \includegraphics[width=.22\textwidth]{Figures/yersin.jpg}  
+  \captionsetup{labelformat=empty}
+  \caption{Alexandre Yersin.} 
+\end{center}
+\end{wrapfigure}
+\addtocounter{figure}{-1}
 
 This excerpt from Plague and Cholera is a great example of how laboratory conditions can act as an unintended auxiliary hypothesis that must be taken into account during research. It was 1894 in Hong Kong and all was set for an intellectual duel between Alexandre Yersin and Kitasato Shibasaburō that eventually unveiled the cause of the disease plague.
 
@@ -1382,7 +1447,55 @@ Importantly, the characteristics that make data count as evidence must be agreed
 \hypertarget{field-laboratory-and-simulation-experiments}{%
 \subsection{Field, laboratory and simulation experiments}\label{field-laboratory-and-simulation-experiments}}
 
-In contrast to observational experiments, \textbf{field experiments} randomly assing the sampling units (e.g.~study participants) into two groups (treatment and control) to test causal relationships. The same conditions are maintained for both groups only varying the intervention on the factor of interest (e.g.~two parts of soil (fertilized/unfertilized)). The background variables are considered as given and not manipulated. On the other side, \textbf{laboratory experiments} construct the same background conditions in both groups manipulating the environment (lab settings) and varying the intervention on the factor of interest. Finally, \textbf{simulation experiments} are constructions representing a real system on a computer to perform interventions. This type of experiments are done when is not feasible to experiment on the real entities (e.g.~climate simulations or geological simulations).
+\hypertarget{field-experiments}{%
+\subsubsection{Field experiments}\label{field-experiments}}
+
+In contrast to observational experiments, \textbf{field experiments} randomly assign the sampling units (e.g.~study participants) into two groups (treatment and control) to test causal relationships. The same conditions are maintained for both groups only varying the intervention on the factor of interest (e.g.~two parts of soil (fertilized/unfertilized)). The background variables are considered as given and not manipulated.
+
+\begin{itemize}
+\tightlist
+\item
+  No manipulation.
+\item
+  No intervention on the target variable.
+\item
+  Control for the background variable (but not through manipulation).
+\end{itemize}
+
+In the example (see Figure \ref{fig:fertiliser}), the background variables are controlled, we do not alter the soil, the number of hours of sun light received by the two groups of plants, nor the watering conditions. The only intervention is giving fertiliser to one side of the field. In this case, the seeds can be randomly assigned the treatment (fertiliser) or control groups.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.66\linewidth]{Figures/crop} 
+
+}
+
+\caption{Fertiliser experiment.}\label{fig:fertiliser}
+\end{figure}
+
+\textbf{Potential threats to internal validity}
+
+\begin{itemize}
+\item
+  Excludability: The assumption of excludability states that the randomization does not affect outcomes through other variables than the reception of the treatment. If this assumption is violated, the causal effect identified in a study is a combination of the treatment and other variables \citep{hansen2020systematic}. For instance, that the two fields do not receive the same amount of light.
+\item
+  Interference: Interference occurs when experimental units alter each other's outcomes. This generates a bias that precludes the proper estimation of causal effects by the reseachers.
+\item
+  Attrition: Attrition occurs when outcome data are missing. Attrition becomes a problem for causal inference when two conditions are present: (1) units with missing outcomes differ systematically on the outcome from those that are not missing and (2) attrition is different in experimental groups. There is greater potential for attrition in field experiments than in laboratory experiments because field experiments confer less control \citep{hansen2020systematic}. For instance, some participants may leave a study if they do not get any improvement.
+\end{itemize}
+
+\hypertarget{laboratory-experiments}{%
+\subsubsection{Laboratory experiments}\label{laboratory-experiments}}
+
+On the other side, \textbf{laboratory experiments} construct the same background conditions in both groups manipulating the environment (lab settings) and varying the intervention on the factor of interest. Background conditions are controlled through manipulation. For instance, temperature, pressure, humidity can be controlled for a fertiliser trial. Laboratory experiments tend to have higher internal validity, but at the cost of lower external validity (generalistation), owing to the artificial setting in which the study is conducted may not reflect the real world.
+
+\hypertarget{simulation-experiments}{%
+\subsubsection{Simulation experiments}\label{simulation-experiments}}
+
+Finally, \textbf{simulation experiments} are constructions representing a real system on a computer to perform interventions. This type of experiments are done when it is not feasible to experiment on the real entities (e.g.~climate simulations or geological simulations). The important consideration is that all interventions and manipulations are performed on the computer representation instead of the real target itself.
+
+\hypertarget{wrap-up}{%
+\subsubsection{Wrap-up}\label{wrap-up}}
 
 Therefore, an experiment is a controlled observation in which the observer manipulates the real variables (independent variables) that are believed to influence the outcome (dependent variable), both for the purpose of intervention and control. The following article provides a good description of the \href{https://opentextbc.ca/researchmethods/chapter/experiment-basics/}{basics of experiments}.
 
@@ -1446,26 +1559,34 @@ Therefore, we are intentionally choosing or building a model that differs from t
 \end{itemize}
 \end{quote}
 
-For example, Bohr's model of the atom assumes that electrons orbit the atomic nucleus in circles. The success of such a model relied that the Bohr assumptions reproduced the series that fitted the hydrogen emission spectra. In 1913 it predicted the correct frequencies of the specific colours of light absorbed and emitted by ionised helium. One could say that Bohr was very lucky as despite his model is wrong in some ways, it also has some bits of truth, enough for his predictions about ionised helium to work out. However, other predictions about the properties of the atom were wrong, and its implications were not observed in experiments. In the Schrödinger model, the electron of a one-electron atom, rather than travelling in fixed orbits around the nucleus, has a probability distribution allowing the electron to be at almost all locations in space, some being much more likely than others. Bohr theory (1913) was rejected in 1925 after the advent of quantum mechanics, but its model remains because despite its flaws and idealisations, \href{https://blogs.scientificamerican.com/guest-blog/why-it-s-okay-to-teach-wrong-ideas-in-physics/}{Bohr's model is useful for education}.
+\hypertarget{the-models-of-the-atom}{%
+\subsection{The models of the atom}\label{the-models-of-the-atom}}
+
+For example, Bohr's model of the atom assumes that electrons orbit the atomic nucleus in circles. The success of such a model relied that the Bohr assumptions reproduced the series that fitted the hydrogen emission spectra. In 1913 it predicted the correct frequencies of the specific colours of light absorbed and emitted by ionised helium. One could say that Bohr was very lucky as despite his model is wrong in some ways, it also has some bits of truth, enough for his predictions about ionised helium to work out.
 
 
 
-\begin{figure}
+\begin{figure}[hbtp]
 
-{\centering \includegraphics[width=0.4\linewidth]{Figures/bohr-atom-model} 
+{\centering \includegraphics[width=0.33\linewidth]{Figures/bohr-atom-model} 
 
 }
 
 \caption{Illustration of bound-bound transition in the Bohr atomic model. Source: \href{https://commons.wikimedia.org/wiki/File:Bohr_atom_model.svg}{Wikipedia Commons}.}\label{fig:bohr-model}
 \end{figure}
 
+However, other predictions about the properties of the atom were wrong, and its implications were not observed in experiments. In the Schrödinger model, the electron of a one-electron atom, rather than travelling in fixed orbits around the nucleus, has a probability distribution allowing the electron to be at almost all locations in space, some being much more likely than others. Bohr theory (1913) was rejected in 1925 after the advent of quantum mechanics, but its model remains because despite its flaws and idealisations, \href{https://blogs.scientificamerican.com/guest-blog/why-it-s-okay-to-teach-wrong-ideas-in-physics/}{Bohr's model is useful for education}.
+
+\hypertarget{the-models-of-benzene}{%
+\subsection{The models of benzene}\label{the-models-of-benzene}}
+
 \textbf{Models are as well purpose-dependent}. Suppose the next question. Which benzene model is better? A quantum mechanic model, or a structural formula?. On one side, the quantum mechanic model is more precise about the potential position of electrons. Additionally, is more similar to the target as it represents better its relevant properties. The structural model is simpler and easier to work with. In this case, theoretically tractable models such as structural models allow for functional group analysis in chemistry.
 
 
 
-\begin{figure}
+\begin{figure}[hbtp]
 
-{\centering \includegraphics[width=1\linewidth]{Figures/Benzene_Representations} 
+{\centering \includegraphics[width=0.9\linewidth]{Figures/Benzene_Representations} 
 
 }
 
@@ -1474,16 +1595,30 @@ For example, Bohr's model of the atom assumes that electrons orbit the atomic nu
 
 
 
-\begin{figure}
+\begin{figure}[hbtp]
 
-{\centering \includegraphics[width=1\linewidth]{Figures/Historic_Benzene_Formulae} 
+{\centering \includegraphics[width=0.9\linewidth]{Figures/Historic_Benzene_Formulae} 
 
 }
 
 \caption{Historic benzene structures (from left to right) by Claus (1867), Dewar (1867), Ladenburg (1869), Armstrong (1887), Thiele (1899) and Kekulé (1865). Dewar benzene and prismane are distinct molecules that have Dewar's and Ladenburg's structures. Thiele and Kekulé's structures are used today.}\label{fig:benzene-model-evolution}
 \end{figure}
 
-Philosopher Mary Hesse (1924-2016) argued that models act as analogies rather than descriptions of the targets. She distinguished between 3 kinds of analogies. In the first place, she considered that \textbf{positive analogies} hold between the aspects of a model and its target for which we have reasons to believe they are similar. An example of positive analogies can be found between mice and humans, which have similar hormone systems and physiology. On the other hand, the idealisations constitute \textbf{negative analogies}, such as the differences in size or lifespan between mice and humans. These negative analogies cover the properties in which model and target differ. Finally, \textbf{neutral analogies} concern the properties that we cannot investigate directly in the target, requiring the model for their study. For instance, the reaction to a certain drug or treatment of interest. At the initial stage, is not possible to tell whether the model-target relationships concerning these properties constitute positive or negative analogies because we do not know yet how the relevant target properties are affected. Instead, such properties are investigated in the model, and researchers hypothesise that the model is analogous to the target in such properties. For instance, we assume that the effects of a drug in mice will give us knowledge about its effects in humans.
+\hypertarget{models-as-analogies}{%
+\subsection{Models as analogies}\label{models-as-analogies}}
+
+\begin{wrapfigure}{R}{.36\textwidth}  
+ \begin{center}
+    \includegraphics[width=.33\textwidth]{Figures/mary-hesse.jpeg}  
+  \captionsetup{labelformat=empty}
+  \caption{Prof. Mary Hesse (1924-2016), by Peter Mennim.} 
+\end{center}
+\end{wrapfigure}
+\addtocounter{figure}{-1}
+
+Philosopher Mary Hesse (1924-2016) argued that models act as analogies rather than descriptions of the targets. She distinguished between 3 kinds of analogies. In the first place, she considered that \textbf{positive analogies} hold between the aspects of a model and its target for which we have reasons to believe they are similar. An example of positive analogies can be found between mice and humans, which have similar hormone systems and physiology. On the other hand, the idealisations constitute \textbf{negative analogies}, such as the differences in size or lifespan between mice and humans. These negative analogies cover the properties in which model and target differ. Finally, \textbf{neutral analogies} concern the properties that we cannot investigate directly in the target, requiring the model for their study.
+
+For instance, the reaction to a certain drug or treatment of interest. At the initial stage, is not possible to tell whether the model-target relationships concerning these properties constitute positive or negative analogies because we do not know yet how the relevant target properties are affected. Instead, such properties are investigated in the model, and researchers hypothesise that the model is analogous to the target in such properties. For instance, we assume that the effects of a drug in mice will give us knowledge about its effects in humans.
 
 \begin{quote}
 The positive analogy between two items consists in the properties or relations they share (both gas molecules and billiard balls have mass); the negative analogy consists in the properties they do not share (billiard balls are colored, gas molecules are not); the neutral analogy comprises the properties of which it is not known (yet) whether they belong to the positive or the negative analogy (do billiard balls and molecules have the same cross section in scattering processes?). Neutral analogies play an important role in scientific research because they give rise to questions and suggest new hypotheses. --- \citep{sep-models-science}
@@ -1505,7 +1640,11 @@ Consider again the Michelson and Morley experiment. Before the XX century, most 
 \hypertarget{differences-between-models-and-experiments}{%
 \subsection{Differences between Models and Experiments}\label{differences-between-models-and-experiments}}
 
-There are several commonalities between models and experiments. Setting parameters and variables in models resembles experimental control. In the same way, model manipulation is akin to experimental manipulation. Finally, model manipulation yields results that are observed, just as in experimental observations. Notwithstanding, there are also important differences to bear in mind, which mainly concern the source of errors. For instance, the most troubling experimental errors concern internal validity questions, i.e.~the degree of confidence that the causal relationship put to test is not influenced by other factors or variables. For these reasons, researchers require careful design and control of experiments. Nonetheless, models are generally less sensitive to these issues since the modeller is aware of the idealisations and mechanisms of its models. For modelling, the key concern is whether the relevant analogies between model and target hold. Such concern is usually not a problem for experiments, especially those conducted directly on the target. Once internal validity is assessed, researchers are confident that the inferences drawn from the experiment refer to the target. However, inferences drawn from model manipulation constitute neutral analogies considered as hypotheses regarding the target, requiring further testing and justification. This last step is error-prone.
+There are several commonalities between models and experiments. Setting parameters and variables in models resembles experimental control. In the same way, model manipulation is akin to experimental manipulation. Moreover, model manipulation yields results that are observed, just as in experimental observations.
+
+Notwithstanding, there are also important differences to bear in mind, which mainly concern the source of errors. For instance, the most troubling experimental errors concern internal validity questions, i.e.~the degree of confidence that the causal relationship put to test is not influenced by other factors or variables. For these reasons, researchers require careful design and control of experiments. Nonetheless, models are generally less sensitive to these issues since the modeller is aware of the idealisations and mechanisms of its models.
+
+For modelling, the key concern is whether the relevant analogies between model and target hold. Such concern is usually not a problem for experiments, especially those conducted directly on the target. Once internal validity is assessed, researchers are confident that the inferences drawn from the experiment refer to the target. However, inferences drawn from model manipulation constitute neutral analogies considered as hypotheses regarding the target, requiring further testing and justification. This last step is error-prone.
 
 \hypertarget{what-makes-a-good-model}{%
 \subsection{What makes a good model?}\label{what-makes-a-good-model}}
@@ -1559,11 +1698,100 @@ Finally, \textbf{transparency} is an epistemic value that assesses the degree to
 
 Again, most of the previous virtues will require certain trade-off. Increasing an epistemic value often entails decreasing another one. Therefore, building or choosing a model requires finding the best trade-off for the model's purpose.
 
+\hypertarget{models-as-mirrors}{%
+\subsection{Models as mirrors}\label{models-as-mirrors}}
+
+A common way to consider models is as mirrors of the real world. Very often, models are built to be as similar as possible to the target. This is common in highly complex projects such as brain simulations of the neural networks that represent human brain activity or epidemic simulations in which all the available demographic information (e.g.~transportation, habits) is considered. The aim of such complex projects is to build a model as a replacement of the actual target system. In the case of epidemic simulations, it is clear that is not feasible to conduct real-world experiments, but the simulation can serve as a way to try different vaccination strategies that might, for instance, prioritise the vaccination of potential super spreaders, i.e.~people who are in contact with many people during their daily routine (e.g.~supermarket cashiers, waiters). In this sense, we say that the simulation is \emph{mirroring} the world. Another example from engineering includes finite element analysis (FEA) which is used to divide a complex problem into smaller elements to facilitate calculations.
+
+This type of model is very similar to the target and require high precision modelling. However, these advantages come at a cost. For instance, they compromise the simplicity, transparency and sometimes the tractability of the models. Despite the high similarity of the models to their target systems, it is not enough to avoid external validity issues. For example, FEA employs a mesh consisting of millions of small elements that mould the physical shape of the analysed structure. Then, calculations are made for each element. Such approximations are usually polynomial, which means that the structural elements have been interpolated, and their precision is bounded to the mesh size. Therefore, the accuracy depends on the purpose of the analysis (e.g.~car, hardware tools, camera).
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{Figures/FAE_visualization} 
+
+}
+
+\caption{A visualization of an asymmetrical collision analysis using the finite element analysis method.}\label{fig:fea}
+\end{figure}
+
+\hypertarget{models-as-isolations}{%
+\subsection{Models as isolations}\label{models-as-isolations}}
+
+An alternative perspective is to consider models as isolations of particular features of the complex world. This consideration is motivated by the following question. Can models be similar to their target systems and still be simple? We have previously seen that these two factors are very often inversely related. Isolated models choose a particular aspect of the target, disregarding all the rest. Then, a model is built to represent the behaviour of such factors as accurately as possible.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{Figures/lift} 
+
+}
+
+\caption{Reproduction of lift balance used in 1901 wind tunnel; model airfoil in testing position. Source: NPS.}\label{fig:lift}
+\end{figure}
+
+During the development of the airplane. Arthur Cayley (1821 - 1895) proposed to separate the airplane system into 3 subsystems: Lift, Propulsion, Control. After this, the problem is divided into three problems, i.e.~how to obtain lift, how to provide propulsion, and how to offer control. The Wright Brothers developed a separate model for each of this subsystems. As can be observed in Figure \ref{fig:lift}, the lift balance model does not resemble an airplane. Similarly, their propeller model was not attached to the airplane. Similarly, they employed gliders to test their control systems. This contrast with the approach of other inventors, such as Hiram Maxim, who attempted to build a full scale from scratch.
+An overview of the Wright Brothers Invention Process can be found at \href{https://wright.nasa.gov/overview.htm}{NASA's website}.
+
+
+
+\begin{figure}[h]
+
+{\centering \includegraphics[width=0.5\linewidth]{Figures/Wright_Brothers} 
+
+}
+
+\caption{Historic photo of the Wright brothers' third test glider being launched at Kill Devil Hills, North Carolina, on October 10, 1902. Wilbur Wright is at the controls, Orville Wright is at left, and Dan Tate (a local resident and friend of the Wright brothers) is at right.}\label{fig:brothers}
+\end{figure}
+
+However, a limitation of this approach is that the target system must be dividable in different subsystems. Similarly, the results of valid isolating models might not look like the real world phenomena simply because the latter is a combination of effects. On the other side, the model represents a single effect in isolation. Therefore, the validation of isolated models is problematic.
+
 \hypertarget{examples-2}{%
 \section{Examples}\label{examples-2}}
 
+\hypertarget{willow}{%
+\subsection{Willow tree experiment}\label{willow}}
+
+\begin{wrapfigure}{R}{.25\textwidth}  
+ \begin{center}
+    \includegraphics[width=.22\textwidth]{Figures/Jan_Baptist_van_Helmont_portrait.jpg}  
+  \captionsetup{labelformat=empty}
+  \caption{Portrait of Jan Baptist van Helmont by Mary Beale, c.1674.} 
+\end{center}
+\end{wrapfigure}
+\addtocounter{figure}{-1}
+
+Jan Baptist van Helmont (1580 - 1644) was a chemist, physiologist, and physician from the Spanish Netherlands (current Belgium).
+In 1634, Jan Baptist was arrested by agents of the Spanish Inquisition for the crime of studying plants and other natural phenomena. During his house arrest, he studied how plants grew. The prevailing theory at the time, stated that plants grew by eating soil, and Jan Baptist conceived an experiment to test this idea. Such prevailing theory has its origins in the ancient Greeks.
+
+Jan Baptist started by weighing a small willow tree (2.28 kg) and then weighed the dry soil (90 kg) in which he planted the tree. To prevent the dust from the surrounding air from mixing with the earth, the rim of the pot was protected, covered with a sheet of iron covered with tin and pierced by many holes. The tree was watered with rainwater or (when necessary) with distilled water. Jan Baptist left the tree for five years. After the five years had passed, Jan Baptist re-weighed the tree, which weighed 169 pounds (about 77 kg). He also re-weighed the dried soil and found the same 200 pounds (90 kg) minus about 2 ounces (56 gm).
+
+He wrongly concluded that the mass gain of the tree was produced by the water, which was his only intervention on the system. Although the experiment was carefully conducted, the conclusions derived from the experiment were wrong because the theory on which it was based was incorrect. Importantly, the fact that Helmont used soil contradicted his hypothesis that only water was needed for plant growth \citep{hershey1991digging}.
+
+Jan Baptist did not know anything about photosynthesis. During the photosynthesis, carbon from the air and minerals from the soil are used to generate new plant tissue. Ironically, Helmont has been credited with discovering carbon dioxide \citep{hershey1991digging}.
+
+The employment of the balance during van Helmont's experiment was an important improvement; Jan Baptist believed that the mass of materials had to be accounted for during the study of chemical processes. This experiment is considered the first quantitative experiment in plant nutrition. It is also a great example of how firm conclusions can be misled by lack of knowledge of the studied system. Jan Baptist failed to control for an important background factor.
+
+
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth]{Figures/Van_Helmont_Experiment} 
+
+}
+
+\caption{Illustration of the willow tree experiment. By \href{https://commons.wikimedia.org/wiki/File:Van_Helmont_Experiment.jpg}{Lars Ebbersmeyer}.}\label{fig:van-helmont}
+\end{figure}
+
 \hypertarget{john-snow}{%
 \subsection{1854 Broad Street cholera outbreak}\label{john-snow}}
+
+\begin{wrapfigure}{R}{.25\textwidth}  
+ \begin{center}
+    \includegraphics[width=.22\textwidth]{Figures/John_Snow.jpg}  
+  \captionsetup{labelformat=empty}
+  \caption{Dr. John Snow (1813-1858), British physician.} 
+\end{center}
+\end{wrapfigure}
+\addtocounter{figure}{-1}
 
 The birth of epidemiology and public health is often attributed to the Natural Experiment described by Dr.~John Snow in the mid-1800s when he investigated the relationship between drinking contaminated water and the incidence of cholera \citep{applied_stats_healthcare}. The case of Dr.~Snow is very popular in public health science and can be found in several books and posts on-line but I recommend the explanation given in Chapter 7 from The Book of Why \citep{book-of-why} as the authors also re-formulate the case in causal terms, using concepts that were not available in the mid-1800s. Below, I give a summarised account of this study.
 
@@ -1579,7 +1807,7 @@ In August 1854, a major outbreak of cholera occurred in Soho, London (United Kin
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.8\linewidth]{Figures/JohnSnowRiver} 
+{\centering \includegraphics[width=0.66\linewidth]{Figures/JohnSnowRiver} 
 
 }
 
@@ -1599,7 +1827,7 @@ In consequence, districts supplied by the Southwark and Vauxhall Company had a d
 \caption{Causal diagram for cholera for the case of John Snow.}\label{fig:snow-dia-A}
 \end{figure}
 
-Then, Snow noted that in some districts water was served by both companies (see Fig. \ref{fig:snow-map}), and even there, the death rate was still higher in the houses where water was supplied by the Southwark and Vauxhall Company. Those households did not showcase any difference in terms of poverty or miasma. Snow wrote: ``each company supplies {[}water{]} to both rich and poor, both large houses and small; there is no difference either in the condition or occupation of the persons receiving the water of the different companies.'' \citep{book-of-why}.
+Then, Snow noted that in some districts water was served by both companies (see Fig. \ref{fig:snow-map}), and even there, the death rate was still higher in the houses where water was supplied by the Southwark and Vauxhall Company. Those households did not showcase any difference in terms of poverty or miasma. Snow wrote: ``each company supplies to both rich and poor, both large houses and small; there is no difference either in the condition or occupation of the persons receiving the water of the different companies.'' \citep{book-of-why}.
 
 \begin{longtable}[]{@{}lc@{}}
 \caption{Relation of the household water source and deaths}\tabularnewline
@@ -1633,7 +1861,7 @@ Unknown & 4 \\
 
 The observations of John Snow introduced a new variable into the causal diagram (see Fig. \ref{fig:snow-dia-B}), the \textbf{Water Company}. In this new diagram we can see that there is no arrow between Miasma and Water Company, therefore both variables are independent. Moreover, we can note the presence of an arrow between Water Company and Water Purity. Finally, the diagram depicts a third assumption. There is no direct arrow from Water Company to Cholera, i.e.~water companies do not deliver cholera to their customers in any other way.
 
-A variable that satisfies these properties is called an \textbf{instrumental variable}. See \citep{pokropek2016introduction} for examples of valid and invalid instrumental variables. \textbf{Since there are no confounders of the relation between Water Company and Cholera, any observed association must be causal}. Similarly, the association between Water Purity and Cholera is also causal \citep{book-of-why}.
+A variable that satisfies these properties is called an \textbf{instrumental variable}. See \citep{pokropek2016introduction} for examples of valid and invalid instrumental variables. \textbf{Since there are no confounders of the relation between Water Company and Cholera, any observed association must be causal}. Similarly, the association between Water Purity and Cholera is also causal.
 
 \begin{quote}
 Specifically, an instrumental variable Z is an additional variable used to estimate the causal effect of variable X on Y. The traditional definition qualifies a variable Z as an instrumental (relative to the pair (X, Y)) if (i) Z is independent of all variables (including error terms) that have an influence on Y that is not mediated by X and (ii) Z is not independent of X. --- \citep{pearl2000causality}
@@ -1647,7 +1875,7 @@ One of the main innovations of John Snow approach was to focus on death rates in
 A transitional period began in the late 1850s with the work of Louis Pasteur. This work was later extended by Robert Koch in the 1880s. By the end of that decade, the miasma theory was struggling to compete with the germ theory of disease. Viruses were initially discovered in the 1890s. Eventually, a ``golden era'' of bacteriology ensued, during which the germ theory quickly led to the identification of the actual organisms that cause many diseases. --- Wikipedia, \href{https://en.wikipedia.org/wiki/Germ_theory_of_disease}{Germ theory of disease}.
 \end{quote}
 
-\begin{figure}
+\begin{figure}[htbp]
 
 {\centering \includegraphics[width=1\linewidth]{Figures/snow-cholera-map-crop} 
 
@@ -1723,6 +1951,15 @@ By ``allocation bias'' we understand the bias caused by allocating patients with
 However, RCTs do not necessarily ensure that background factors are equally distributed in the treatment and control groups. For small samples randomisation can provide unequal distributions. The average number after rolling a dice an infinite amount of times will converge to 3.5, but we should not be surprised if we roll a dice 10 or 20 times obtaining considerably more occurrences of the number 6 than the other numbers. The danger of relying on pure randomisation to balance covariates has been described in \citep{krause2003random} \citep{morgan2012rerandomization}. For this reason is essential to check for imbalances in known factors after randomisation. Stratified randomisation also helps balancing known factors. Nonetheless, randomisation does not necessarily guarantee full control of unknown factors but \emph{on average} their effect should be significantly smaller than the treatment applied \citep{deaton2018understanding}.
 
 Although RCTs are still preferred to observational studies, there are scenarios in which intervention is not possible. For instance, we cannot assign participants to be obese or not in order to study the effect of obesity on heart diseases.
+
+\begin{wrapfigure}{R}{.25\textwidth}  
+ \begin{center}
+    \includegraphics[width=.22\textwidth]{Figures/RAFisher.jpeg}  
+  \captionsetup{labelformat=empty}
+  \caption{Ronald Aylmer Fisher in 1913} 
+\end{center}
+\end{wrapfigure}
+\addtocounter{figure}{-1}
 
 \hypertarget{origins-of-rcts}{%
 \subsection{Origins of RCTs}\label{origins-of-rcts}}

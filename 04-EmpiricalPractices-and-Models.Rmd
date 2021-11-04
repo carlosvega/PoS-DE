@@ -90,10 +90,39 @@ Importantly, the characteristics that make data count as evidence must be agreed
 
 ### Field, laboratory and simulation experiments
 
-In contrast to observational experiments, **field experiments** randomly assing the sampling units (e.g. study participants) into two groups (treatment and control) to test causal relationships. The same conditions are maintained for both groups only varying the intervention on the factor of interest (e.g. two parts of soil (fertilized/unfertilized)). The background variables are considered as given and not manipulated. On the other side, **laboratory experiments** construct the same background conditions in both groups manipulating the environment (lab settings) and varying the intervention on the factor of interest. Finally, **simulation experiments** are constructions representing a real system on a computer to perform interventions. This type of experiments are done when is not feasible to experiment on the real entities (e.g. climate simulations or geological simulations).
+#### Field experiments
+
+In contrast to observational experiments, **field experiments** randomly assign the sampling units (e.g. study participants) into two groups (treatment and control) to test causal relationships. The same conditions are maintained for both groups only varying the intervention on the factor of interest (e.g. two parts of soil (fertilized/unfertilized)). The background variables are considered as given and not manipulated.
+
+- No manipulation.
+- No intervention on the target variable.
+- Control for the background variable (but not through manipulation).
+
+In the example (see Figure \@ref(fig:fertiliser)), the background variables are controlled, we do not alter the soil, the number of hours of sun light received by the two groups of plants, nor the watering conditions. The only intervention is giving fertiliser to one side of the field. In this case, the seeds can be randomly assigned the treatment (fertiliser) or control groups.
+
+```{r fertiliser, echo=F, fig.align="center", out.width="66%", fig.cap='Fertiliser experiment.'}
+knitr::include_graphics('Figures/crop.jpeg')
+```
+
+**Potential threats to internal validity**
+
+- Excludability: The assumption of excludability states that the randomization does not affect outcomes through other variables than the reception of the treatment. If this assumption is violated, the causal effect identified in a study is a combination of the treatment and other variables [@hansen2020systematic]. For instance, that the two fields do not receive the same amount of light. 
+
+- Interference: Interference occurs when experimental units alter each other's outcomes. This generates a bias that precludes the proper estimation of causal effects by the reseachers.
+
+- Attrition: Attrition occurs when outcome data are missing. Attrition becomes a problem for causal inference when two conditions are present: (1) units with missing outcomes differ systematically on the outcome from those that are not missing and (2) attrition is different in experimental groups. There is greater potential for attrition in field experiments than in laboratory experiments because field experiments confer less control [@hansen2020systematic]. For instance, some participants may leave a study if they do not get any improvement.
+
+#### Laboratory experiments
+
+On the other side, **laboratory experiments** construct the same background conditions in both groups manipulating the environment (lab settings) and varying the intervention on the factor of interest. Background conditions are controlled through manipulation. For instance, temperature, pressure, humidity can be controlled for a fertiliser trial. Laboratory experiments tend to have higher internal validity, but at the cost of lower external validity (generalistation), owing to the artificial setting in which the study is conducted may not reflect the real world.
+
+#### Simulation experiments
+
+Finally, **simulation experiments** are constructions representing a real system on a computer to perform interventions. This type of experiments are done when it is not feasible to experiment on the real entities (e.g. climate simulations or geological simulations). The important consideration is that all interventions and manipulations are performed on the computer representation instead of the real target itself.
+
+#### Wrap-up
 
 Therefore, an experiment is a controlled observation in which the observer manipulates the real variables (independent variables) that are believed to influence the outcome (dependent variable), both for the purpose of intervention and control. The following article provides a good description of the [basics of experiments](https://opentextbc.ca/researchmethods/chapter/experiment-basics/).
-
 
 In Chapter \@ref(stats-abuse) we will see some examples of experimental errors (e.g. confirmation bias, selection bias, etc) as well as examples of statistical abuse. All in all, the experiment process is also a craft which entails learning from previous experiments (ours and others), as well as applying all available knowledge (theoretical and experimental) for the design of experiments.
   
@@ -139,38 +168,59 @@ Therefore, we are intentionally choosing or building a model that differs from t
 > - **Models of data.** A model of data (sometimes also “data model”) is a corrected, rectified, regimented, and in many instances idealized version of the data we gain from immediate observation, the so-called raw data. Characteristically, one first eliminates errors (e.g., removes points from the record that are due to faulty observation) and then presents the data in a “neat” way, for instance by drawing a smooth curve through a set of points. These two steps are commonly referred to as “data reduction” and “curve fitting”. 
 > --- [@sep-models-science]
 
-For example, Bohr's model of the atom assumes that electrons orbit the atomic nucleus in circles. The success of such a model relied that the Bohr assumptions reproduced the series that fitted the hydrogen emission spectra. In 1913 it predicted the correct frequencies of the specific colours of light absorbed and emitted by ionised helium. One could say that Bohr was very lucky as despite his model is wrong in some ways, it also has some bits of truth, enough for his predictions about ionised helium to work out. However, other predictions about the properties of the atom were wrong, and its implications were not observed in experiments. In the Schrödinger model, the electron of a one-electron atom, rather than travelling in fixed orbits around the nucleus, has a probability distribution allowing the electron to be at almost all locations in space, some being much more likely than others. Bohr theory (1913) was rejected in 1925 after the advent of quantum mechanics, but its model remains because despite its flaws and idealisations, [Bohr's model is useful for education](https://blogs.scientificamerican.com/guest-blog/why-it-s-okay-to-teach-wrong-ideas-in-physics/).
+### The models of the atom
+
+For example, Bohr's model of the atom assumes that electrons orbit the atomic nucleus in circles. The success of such a model relied that the Bohr assumptions reproduced the series that fitted the hydrogen emission spectra. In 1913 it predicted the correct frequencies of the specific colours of light absorbed and emitted by ionised helium. One could say that Bohr was very lucky as despite his model is wrong in some ways, it also has some bits of truth, enough for his predictions about ionised helium to work out. 
 
 (ref:bohr-caption) Source: [Wikipedia Commons](https://commons.wikimedia.org/wiki/File:Bohr_atom_model.svg).
 
-```{r bohr-model, echo=F, fig.align="center", out.width="40%", fig.cap='Illustration of bound-bound transition in the Bohr atomic model. (ref:bohr-caption)'}
+```{r bohr-model, echo=F, fig.align="center", out.width="33%", fig.cap='Illustration of bound-bound transition in the Bohr atomic model. (ref:bohr-caption)', fig.pos="hbtp"}
 knitr::include_graphics('Figures/bohr-atom-model.png')
 ```
+
+However, other predictions about the properties of the atom were wrong, and its implications were not observed in experiments. In the Schrödinger model, the electron of a one-electron atom, rather than travelling in fixed orbits around the nucleus, has a probability distribution allowing the electron to be at almost all locations in space, some being much more likely than others. Bohr theory (1913) was rejected in 1925 after the advent of quantum mechanics, but its model remains because despite its flaws and idealisations, [Bohr's model is useful for education](https://blogs.scientificamerican.com/guest-blog/why-it-s-okay-to-teach-wrong-ideas-in-physics/).
+
+### The models of benzene
 
 **Models are as well purpose-dependent**. Suppose the next question. Which benzene model is better? A quantum mechanic model, or a structural formula?. On one side, the quantum mechanic model is more precise about the potential position of electrons. Additionally, is more similar to the target as it represents better its relevant properties. The structural model is simpler and easier to work with. In this case, theoretically tractable models such as structural models allow for functional group analysis in chemistry.
 
 (ref:benzene-caption) Source: [Wikipedia Commons](https://en.wikipedia.org/wiki/File:Benzene_Representations.svg).
 
-```{r benzene-model, echo=F, fig.align="center", out.width="100%", fig.cap='Various representations of Benzene. (ref:benzene-caption)'}
+```{r benzene-model, echo=F, fig.align="center", out.width="90%", fig.cap='Various representations of Benzene. (ref:benzene-caption)', fig.pos="hbtp"}
 knitr::include_graphics('Figures/Benzene_Representations.png')
 ```
 
 (ref:benzene-caption-history) Historic benzene structures (from left to right) by Claus (1867), Dewar (1867), Ladenburg (1869), Armstrong (1887), Thiele (1899) and Kekulé (1865). Dewar benzene and prismane are distinct molecules that have Dewar's and Ladenburg's structures. Thiele and Kekulé's structures are used today.
 
-```{r benzene-model-evolution, echo=F, fig.align="center", out.width="100%", fig.cap='(ref:benzene-caption-history)'}
+```{r benzene-model-evolution, echo=F, fig.align="center", out.width="90%", fig.cap='(ref:benzene-caption-history)', fig.pos="hbtp"}
 knitr::include_graphics('Figures/Historic_Benzene_Formulae.png')
 ```
+
+### Models as analogies
 
 ```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
 cat(
 '<figure class="wrap-figure">
 <img src="Figures/mary-hesse.jpeg">
-<figcaption>Professor Mary Hesse (1924-2016), by Peter Mennim.</figcaption>
+<figcaption>Prof. Mary Hesse (1924-2016), by Peter Mennim.</figcaption>
 </figure>'
 )
 ```
 
-Philosopher Mary Hesse (1924-2016) argued that models act as analogies rather than descriptions of the targets. She distinguished between 3 kinds of analogies. In the first place, she considered that **positive analogies** hold between the aspects of a model and its target for which we have reasons to believe they are similar. An example of positive analogies can be found between mice and humans, which have similar hormone systems and physiology.  On the other hand, the idealisations constitute **negative analogies**, such as the differences in size or lifespan between mice and humans. These negative analogies cover the properties in which model and target differ. Finally, **neutral analogies** concern the properties that we cannot investigate directly in the target, requiring the model for their study. For instance, the reaction to a certain drug or treatment of interest. At the initial stage, is not possible to tell whether the model-target relationships concerning these properties constitute positive or negative analogies because we do not know yet how the relevant target properties are affected. Instead, such properties are investigated in the model, and researchers hypothesise that the model is analogous to the target in such properties. For instance, we assume that the effects of a drug in mice will give us knowledge about its effects in humans.
+```{r, include=knitr::is_latex_output(), echo = F}
+knitr::asis_output('\\begin{wrapfigure}{R}{.36\\textwidth}  
+ \\begin{center}
+    \\includegraphics[width=.33\\textwidth]{Figures/mary-hesse.jpeg}  
+  \\captionsetup{labelformat=empty}
+  \\caption{Prof. Mary Hesse (1924-2016), by Peter Mennim.} 
+\\end{center}
+\\end{wrapfigure}
+\\addtocounter{figure}{-1}')
+```
+
+Philosopher Mary Hesse (1924-2016) argued that models act as analogies rather than descriptions of the targets. She distinguished between 3 kinds of analogies. In the first place, she considered that **positive analogies** hold between the aspects of a model and its target for which we have reasons to believe they are similar. An example of positive analogies can be found between mice and humans, which have similar hormone systems and physiology.  On the other hand, the idealisations constitute **negative analogies**, such as the differences in size or lifespan between mice and humans. These negative analogies cover the properties in which model and target differ. Finally, **neutral analogies** concern the properties that we cannot investigate directly in the target, requiring the model for their study. 
+
+For instance, the reaction to a certain drug or treatment of interest. At the initial stage, is not possible to tell whether the model-target relationships concerning these properties constitute positive or negative analogies because we do not know yet how the relevant target properties are affected. Instead, such properties are investigated in the model, and researchers hypothesise that the model is analogous to the target in such properties. For instance, we assume that the effects of a drug in mice will give us knowledge about its effects in humans.
 
 > The positive analogy between two items consists in the properties or relations they share (both gas molecules and billiard balls have mass); the negative analogy consists in the properties they do not share (billiard balls are colored, gas molecules are not); the neutral analogy comprises the properties of which it is not known (yet) whether they belong to the positive or the negative analogy (do billiard balls and molecules have the same cross section in scattering processes?). Neutral analogies play an important role in scientific research because they give rise to questions and suggest new hypotheses. --- [@sep-models-science]
 
@@ -184,7 +234,11 @@ knitr::include_graphics('Figures/luminiferous_aether.png')
 
 ### Differences between Models and Experiments
 
-There are several commonalities between models and experiments. Setting parameters and variables in models resembles experimental control. In the same way, model manipulation is akin to experimental manipulation. Finally, model manipulation yields results that are observed, just as in experimental observations. Notwithstanding, there are also important differences to bear in mind, which mainly concern the source of errors. For instance, the most troubling experimental errors concern internal validity questions, i.e. the degree of confidence that the causal relationship put to test is not influenced by other factors or variables. For these reasons, researchers require careful design and control of experiments. Nonetheless, models are generally less sensitive to these issues since the modeller is aware of the idealisations and mechanisms of its models. For modelling, the key concern is whether the relevant analogies between model and target hold. Such concern is usually not a problem for experiments, especially those conducted directly on the target. Once internal validity is assessed, researchers are confident that the inferences drawn from the experiment refer to the target. However, inferences drawn from model manipulation constitute neutral analogies considered as hypotheses regarding the target, requiring further testing and justification. This last step is error-prone.
+There are several commonalities between models and experiments. Setting parameters and variables in models resembles experimental control. In the same way, model manipulation is akin to experimental manipulation. Moreover, model manipulation yields results that are observed, just as in experimental observations. 
+
+Notwithstanding, there are also important differences to bear in mind, which mainly concern the source of errors. For instance, the most troubling experimental errors concern internal validity questions, i.e. the degree of confidence that the causal relationship put to test is not influenced by other factors or variables. For these reasons, researchers require careful design and control of experiments. Nonetheless, models are generally less sensitive to these issues since the modeller is aware of the idealisations and mechanisms of its models. 
+
+For modelling, the key concern is whether the relevant analogies between model and target hold. Such concern is usually not a problem for experiments, especially those conducted directly on the target. Once internal validity is assessed, researchers are confident that the inferences drawn from the experiment refer to the target. However, inferences drawn from model manipulation constitute neutral analogies considered as hypotheses regarding the target, requiring further testing and justification. This last step is error-prone.
 
 ### What makes a good model?
 
@@ -225,6 +279,35 @@ Finally, **transparency** is an epistemic value that assesses the degree to whic
 
 Again, most of the previous virtues will require certain trade-off. Increasing an epistemic value often entails decreasing another one. Therefore, building or choosing a model requires finding the best trade-off for the model's purpose.
 
+### Models as mirrors
+
+A common way to consider models is as mirrors of the real world. Very often, models are built to be as similar as possible to the target. This is common in highly complex projects such as brain simulations of the neural networks that represent human brain activity or epidemic simulations in which all the available demographic information (e.g. transportation, habits) is considered. The aim of such complex projects is to build a model as a replacement of the actual target system. In the case of epidemic simulations, it is clear that is not feasible to conduct real-world experiments, but the simulation can serve as a way to try different vaccination strategies that might, for instance, prioritise the vaccination of potential super spreaders, i.e. people who are in contact with many people during their daily routine (e.g. supermarket cashiers, waiters). In this sense, we say that the simulation is *mirroring* the world. Another example from engineering includes finite element analysis (FEA) which is used to divide a complex problem into smaller elements to facilitate calculations.
+
+This type of model is very similar to the target and require high precision modelling. However, these advantages come at a cost. For instance, they compromise the simplicity, transparency and sometimes the tractability of the models. Despite the high similarity of the models to their target systems, it is not enough to avoid external validity issues. For example, FEA employs a mesh consisting of millions of small elements that mould the physical shape of the analysed structure. Then, calculations are made for each element. Such approximations are usually polynomial, which means that the structural elements have been interpolated, and their precision is bounded to the mesh size. Therefore, the accuracy depends on the purpose of the analysis (e.g. car, hardware tools, camera).
+
+```{r fea, echo=F, fig.align="center", out.width="50%", fig.cap='A visualization of an asymmetrical collision analysis using the finite element analysis method.'}
+knitr::include_graphics('Figures/FAE_visualization.jpg')
+```
+
+### Models as isolations
+
+An alternative perspective is to consider models as isolations of particular features of the complex world. This consideration is motivated by the following question. Can models be similar to their target systems and still be simple? We have previously seen that these two factors are very often inversely related. Isolated models choose a particular aspect of the target, disregarding all the rest. Then, a model is built to represent the behaviour of such factors as accurately as possible.
+
+```{r lift, echo=F, fig.align="center", out.width="50%", fig.cap='Reproduction of lift balance used in 1901 wind tunnel; model airfoil in testing position. Source: NPS.'}
+knitr::include_graphics('Figures/lift.jpg')
+```
+
+During the development of the airplane. Arthur Cayley (1821 - 1895) proposed to separate the airplane system into 3 subsystems: Lift, Propulsion, Control. After this, the problem is divided into three problems, i.e. how to obtain lift, how to provide propulsion, and how to offer control. The Wright Brothers developed a separate model for each of this subsystems. As can be observed in Figure \@ref(fig:lift), the lift balance model does not resemble an airplane. Similarly, their propeller model was not attached to the airplane. Similarly, they employed gliders to test their control systems. This contrast with the approach of other inventors, such as Hiram Maxim, who attempted to build a full scale from scratch.
+An overview of the Wright Brothers Invention Process can be found at [NASA's website](https://wright.nasa.gov/overview.htm).
+
+(ref:brothers-caption) Historic photo of the Wright brothers' third test glider being launched at Kill Devil Hills, North Carolina, on October 10, 1902. Wilbur Wright is at the controls, Orville Wright is at left, and Dan Tate (a local resident and friend of the Wright brothers) is at right.
+
+```{r brothers, echo=F, fig.align="center", out.width="50%", fig.cap='(ref:brothers-caption)', fig.pos="h"}
+knitr::include_graphics('Figures/Wright_Brothers.jpg')
+```
+
+However, a limitation of this approach is that the target system must be dividable in different subsystems. Similarly, the results of valid isolating models might not look like the real world phenomena simply because the latter is a combination of effects. On the other side, the model represents a single effect in isolation. Therefore, the validation of isolated models is problematic.
+
 <!--
 
 Models as mirrors. Models as isolations.
@@ -232,6 +315,45 @@ Models as mirrors. Models as isolations.
 --->
 
 ## Examples
+
+### Willow tree experiment {#willow}
+
+```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
+cat(
+'<figure class="wrap-figure">
+<img src="Figures/Jan_Baptist_van_Helmont_portrait.jpg">
+<figcaption>Portrait of Jan Baptist van Helmont by Mary Beale, c.1674.</figcaption>
+</figure>'
+)
+```
+
+```{r, include=knitr::is_latex_output(), echo = F}
+knitr::asis_output('\\begin{wrapfigure}{R}{.25\\textwidth}  
+ \\begin{center}
+    \\includegraphics[width=.22\\textwidth]{Figures/Jan_Baptist_van_Helmont_portrait.jpg}  
+  \\captionsetup{labelformat=empty}
+  \\caption{Portrait of Jan Baptist van Helmont by Mary Beale, c.1674.} 
+\\end{center}
+\\end{wrapfigure}
+\\addtocounter{figure}{-1}')
+```
+
+Jan Baptist van Helmont (1580 - 1644) was a chemist, physiologist, and physician from the Spanish Netherlands (current Belgium).
+In 1634, Jan Baptist was arrested by agents of the Spanish Inquisition for the crime of studying plants and other natural phenomena. During his house arrest, he studied how plants grew. The prevailing theory at the time, stated that plants grew by eating soil, and Jan Baptist conceived an experiment to test this idea. Such prevailing theory has its origins in the ancient Greeks.
+
+Jan Baptist started by weighing a small willow tree (2.28 kg) and then weighed the dry soil (90 kg) in which he planted the tree. To prevent the dust from the surrounding air from mixing with the earth, the rim of the pot was protected, covered with a sheet of iron covered with tin and pierced by many holes. The tree was watered with rainwater or (when necessary) with distilled water. Jan Baptist left the tree for five years. After the five years had passed, Jan Baptist re-weighed the tree, which weighed 169 pounds (about 77 kg). He also re-weighed the dried soil and found the same 200 pounds (90 kg) minus about 2 ounces (56 gm). 
+
+He wrongly concluded that the mass gain of the tree was produced by the water, which was his only intervention on the system. Although the experiment was carefully conducted, the conclusions derived from the experiment were wrong because the theory on which it was based was incorrect. Importantly, the fact that Helmont used soil contradicted his hypothesis that only water was needed for plant growth [@hershey1991digging].
+
+Jan Baptist did not know anything about photosynthesis. During the photosynthesis, carbon from the air and minerals from the soil are used to generate new plant tissue. Ironically, Helmont has been credited with discovering carbon dioxide [@hershey1991digging].
+
+The employment of the balance during van Helmont's experiment was an important improvement; Jan Baptist believed that the mass of materials had to be accounted for during the study of chemical processes. This experiment is considered the first quantitative experiment in plant nutrition. It is also a great example of how firm conclusions can be misled by lack of knowledge of the studied system. Jan Baptist failed to control for an important background factor.
+
+(ref:caption-van-helmont) Illustration of the willow tree experiment. By [Lars Ebbersmeyer](https://commons.wikimedia.org/wiki/File:Van_Helmont_Experiment.jpg).
+
+```{r van-helmont, echo=F, fig.align="center",  out.width="70%", fig.cap='(ref:caption-van-helmont)', fig.pos = "H"} 
+knitr::include_graphics('Figures/Van_Helmont_Experiment.jpg')
+```
 
 ### 1854 Broad Street cholera outbreak {#john-snow}
 
@@ -244,6 +366,17 @@ cat(
 )
 ```
 
+```{r, include=knitr::is_latex_output(), echo = F}
+knitr::asis_output('\\begin{wrapfigure}{R}{.25\\textwidth}  
+ \\begin{center}
+    \\includegraphics[width=.22\\textwidth]{Figures/John_Snow.jpg}  
+  \\captionsetup{labelformat=empty}
+  \\caption{Dr. John Snow (1813-1858), British physician.} 
+\\end{center}
+\\end{wrapfigure}
+\\addtocounter{figure}{-1}')
+```
+
 The birth of epidemiology and public health is often attributed to the Natural Experiment described by Dr. John Snow in the mid-1800s when he investigated the relationship between drinking contaminated water and the incidence of cholera [@applied_stats_healthcare]. The case of Dr. Snow is very popular in public health science and can be found in several books and posts on-line but I recommend the explanation given in Chapter 7 from The Book of Why [@book-of-why] as the authors also re-formulate the case in causal terms, using concepts that were not available in the mid-1800s. Below, I give a summarised account of this study.
 
 > *Miasma*: "A vaporous exhalation formerly believed to cause disease." --- Merriam-Webster dictionary.
@@ -254,7 +387,7 @@ In August 1854, a major outbreak of cholera occurred in Soho, London (United Kin
 
 (ref:thames-caption) Water distribution by the Lambeth Water and the Southwark & Vauxhall Companies.
 
-```{r thames, echo=F, fig.align="center",  out.width="80%", fig.cap='(ref:thames-caption)'} 
+```{r thames, echo=F, fig.align="center",  out.width="66%", fig.cap='(ref:thames-caption)'} 
 knitr::include_graphics('Figures/JohnSnowRiver.png')
 ```
 
@@ -266,7 +399,7 @@ In consequence, districts supplied by the Southwark and Vauxhall Company had a d
 knitr::include_graphics('Figures/SnowDiagramA.png')
 ```
 
-Then, Snow noted that in some districts water was served by both companies (see Fig. \@ref(fig:snow-map)), and even there, the death rate was still higher in the houses where water was supplied by the Southwark and Vauxhall Company. Those households did not showcase any difference in terms of poverty or miasma. Snow wrote: "each company supplies [water] to both rich and poor, both large houses and small; there is no difference either in the condition or occupation of the persons receiving the water of the different companies." [@book-of-why]. 
+Then, Snow noted that in some districts water was served by both companies (see Fig. \@ref(fig:snow-map)), and even there, the death rate was still higher in the houses where water was supplied by the Southwark and Vauxhall Company. Those households did not showcase any difference in terms of poverty or miasma. Snow wrote: "each company supplies to both rich and poor, both large houses and small; there is no difference either in the condition or occupation of the persons receiving the water of the different companies." [@book-of-why]. 
 
 Table: Relation of the household water source and deaths
 
@@ -287,7 +420,7 @@ knitr::include_graphics('Figures/SnowDiagramB.png')
 
 The observations of John Snow introduced a new variable into the causal diagram (see Fig. \@ref(fig:snow-dia-B)), the **Water Company**. In this new diagram we can see that there is no arrow between Miasma and Water Company, therefore both variables are independent. Moreover, we can note the presence of an arrow between Water Company and Water Purity. Finally, the diagram depicts a third assumption. There is no direct arrow from Water Company to Cholera, i.e. water companies do not deliver cholera to their customers in any other way. 
 
-A variable that satisfies these properties is called an **instrumental variable**. See [@pokropek2016introduction] for examples of valid and invalid instrumental variables. **Since there are no confounders of the relation between Water Company and Cholera, any observed association must be causal**. Similarly, the association between Water Purity and Cholera is also causal [@book-of-why]. 
+A variable that satisfies these properties is called an **instrumental variable**. See [@pokropek2016introduction] for examples of valid and invalid instrumental variables. **Since there are no confounders of the relation between Water Company and Cholera, any observed association must be causal**. Similarly, the association between Water Purity and Cholera is also causal. 
 
 > Specifically, an instrumental variable Z is an additional variable used to estimate the causal effect of variable X on Y. The traditional definition qualifies a variable Z as an instrumental (relative to the pair (X, Y)) if (i) Z is independent of all variables (including error terms) that have an influence on Y that is not mediated by X and (ii) Z is not independent of X. --- [@pearl2000causality]
 
@@ -297,10 +430,9 @@ One of the main innovations of John Snow approach was to focus on death rates in
 
 > A transitional period began in the late 1850s with the work of Louis Pasteur. This work was later extended by Robert Koch in the 1880s. By the end of that decade, the miasma theory was struggling to compete with the germ theory of disease. Viruses were initially discovered in the 1890s. Eventually, a "golden era" of bacteriology ensued, during which the germ theory quickly led to the identification of the actual organisms that cause many diseases. --- Wikipedia, [Germ theory of disease](https://en.wikipedia.org/wiki/Germ_theory_of_disease).
 
-```{r snow-map, echo=F, fig.align="center",  out.width="100%", fig.cap='Detail of John Snow’s map of Cholera in the Broad Street outbreak in 1854. Each bar represents one death in a topography that attempted to relate the water source (“Pump”) to pattern of cases in the neighborhood outbreak.'} 
+```{r snow-map, echo=F, fig.align="center",  out.width="100%", fig.cap='Detail of John Snow’s map of Cholera in the Broad Street outbreak in 1854. Each bar represents one death in a topography that attempted to relate the water source (“Pump”) to pattern of cases in the neighborhood outbreak.', fig.pos = "htbp"} 
 knitr::include_graphics('Figures/snow-cholera-map-crop.jpg')
 ```
-
 
 <!-- [write]
 

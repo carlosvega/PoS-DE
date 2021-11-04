@@ -17,3 +17,5 @@ bookdown::pdf_book:
   latex_engine: xelatex
   citation_package: natbib
   keep_tex: yes
+  extra_dependencies: ["float", "wrapfig", "caption"]
+

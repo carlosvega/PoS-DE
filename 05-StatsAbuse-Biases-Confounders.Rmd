@@ -71,6 +71,17 @@ cat(
 )
 ```
 
+```{r, include=knitr::is_latex_output(), echo = F}
+knitr::asis_output('\\begin{wrapfigure}{R}{.25\\textwidth}  
+ \\begin{center}
+    \\includegraphics[width=.22\\textwidth]{Figures/RAFisher.jpeg}  
+  \\captionsetup{labelformat=empty}
+  \\caption{Ronald Aylmer Fisher in 1913} 
+\\end{center}
+\\end{wrapfigure}
+\\addtocounter{figure}{-1}')
+```
+
 ### Origins of RCTs
 
 R.A. Fisher (1890-1962) conceived the RCTs in the 1930s. Fisher designed intricate approaches to disentangle the effects of fertiliser from other variables. Using the *Latin square*, he would divide the field into a grid of subplots to test each fertiliser with each combination of soil type and plant. However, in this scenario the experimenter would observe the effects of the fertiliser *mixed* (i.e. *confounded*) with a variety of other things (e.g. soil fertility, drainage, microflora). Fischer realised that the only design that would "*trick nature*" is one where the fertilisers are assigned randomly to the subplots. Of course, sometimes you might be unlucky and assign a certain fertiliser to the least fertile subplots, but other times you might get the opposite assignment. A new random allocation is generated each time the experiment is conducted. By running the experiment multiple times the luck of each fertiliser is *averaged*. 
