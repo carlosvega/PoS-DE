@@ -18,6 +18,8 @@ For the Abuse of event space: If we shrink the hypothesis space, the bound impro
 
 https://catalogofbias.org/biases/collider-bias/#:~:text=The%20collider%20bias%20occurs%20when,effect%20of%20obesity%20on%20mortality.
 
+Include continuation from smoke debate
+
 -->
 
 ## Experimental Control
@@ -270,6 +272,9 @@ knitr::include_graphics('Figures/hurricane-forecast-heat-map.png')
 ### The smoke debate (part II)
 
 <!--
+
+start from "Nevertheless, sceptics like Fisher and Yerushalmy".
+
 ## Takeaway Messages
 
 -->
