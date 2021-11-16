@@ -1328,17 +1328,6 @@ In the case of Amazon the false hypothesis and background assumptions were found
 \hypertarget{empirical-practices}{%
 \chapter{Empirical Practices and Models}\label{empirical-practices}}
 
-\begin{notebox}
-
-\begin{center}
-\textbf{Course Note:}
-
-\end{center}
-
-This chapter is under construction. Some content is hidden.
-
-\end{notebox}
-
 \hypertarget{overview-1}{%
 \section{Overview}\label{overview-1}}
 
@@ -1796,7 +1785,7 @@ The employment of the balance during van Helmont's experiment was an important i
 The birth of epidemiology and public health is often attributed to the Natural Experiment described by Dr.~John Snow in the mid-1800s when he investigated the relationship between drinking contaminated water and the incidence of cholera \citep{applied_stats_healthcare}. The case of Dr.~Snow is very popular in public health science and can be found in several books and posts on-line but I recommend the explanation given in Chapter 7 from The Book of Why \citep{book-of-why} as the authors also re-formulate the case in causal terms, using concepts that were not available in the mid-1800s. Below, I give a summarised account of this study.
 
 \begin{quote}
-\emph{Miasma}: ``A vaporous exhalation formerly believed to cause disease.'' --- Merriam-Webster dictionary.
+\emph{Miasma}: ``A vaporous exhalation formerly believed to cause disease.''
 \end{quote}
 
 Since the 1830s, various epidemics spread across Europe but were often attributed to social unrest and political upheaval. During the 1850s, there were several theories and misconceptions about the causes of cholera outbreaks. The miasma theory attempted to explain outbreaks of bubonic plague and cholera, stating that they were caused by a form of ``bad air''. According to the competing theory, i.e.~the germ theory of disease, the cause of the outbreak was a yet unknown germ. However, in 1853, disease-causing germs had not yet been observed under a microscope and the germ theory of disease was not established yet. Louis Pasteur did not demonstrate the relationship between germ and disease until the 1860s. Therefore, the prevailing theory was that a miasma of unhealthy air caused cholera.
@@ -1850,7 +1839,9 @@ Unknown & 4 \\
 
 \textbf{It is precisely at this point where the natural experiment takes all its strength.} Around 300 people of both sexes, every age, and socio-economic class were naturally divided into two groups without them to know. One group received pure water, whereas the other received water mixed with sewage.
 
-\begin{figure}
+The observations of John Snow introduced a new variable into the causal diagram (see Fig. \ref{fig:snow-dia-B}), the \textbf{Water Company}. In this new diagram we can see that there is no arrow between Miasma and Water Company, therefore both variables are independent. Moreover, we can note the presence of an arrow between Water Company and Water Purity. Finally, the diagram depicts a third assumption. There is no direct arrow from Water Company to Cholera, i.e.~water companies do not deliver cholera to their customers in any other way.
+
+\begin{figure}[htb]
 
 {\centering \includegraphics[width=0.5\linewidth]{Figures/SnowDiagramB} 
 
@@ -1858,8 +1849,6 @@ Unknown & 4 \\
 
 \caption{Causal diagram after the introduction of an instrumental variable.}\label{fig:snow-dia-B}
 \end{figure}
-
-The observations of John Snow introduced a new variable into the causal diagram (see Fig. \ref{fig:snow-dia-B}), the \textbf{Water Company}. In this new diagram we can see that there is no arrow between Miasma and Water Company, therefore both variables are independent. Moreover, we can note the presence of an arrow between Water Company and Water Purity. Finally, the diagram depicts a third assumption. There is no direct arrow from Water Company to Cholera, i.e.~water companies do not deliver cholera to their customers in any other way.
 
 A variable that satisfies these properties is called an \textbf{instrumental variable}. See \citep{pokropek2016introduction} for examples of valid and invalid instrumental variables. \textbf{Since there are no confounders of the relation between Water Company and Cholera, any observed association must be causal}. Similarly, the association between Water Purity and Cholera is also causal.
 
@@ -1885,7 +1874,7 @@ A transitional period began in the late 1850s with the work of Louis Pasteur. Th
 \end{figure}
 
 \hypertarget{stats-abuse}{%
-\chapter{Experimental control, Statistical abuse, Biases and Confounders}\label{stats-abuse}}
+\chapter{Experimental Control and Statistical Abuse}\label{stats-abuse}}
 
 \begin{notebox}
 

@@ -1,4 +1,4 @@
-# Experimental control, Statistical abuse, Biases and Confounders {#stats-abuse}
+# Experimental Control and Statistical Abuse {#stats-abuse}
 
 :::: {.notebox data-latex=""}
 ::: {.center data-latex=""}
@@ -324,6 +324,8 @@ knitr::include_graphics('Figures/hurricane-forecast-heat-map.png')
 https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing
 
 https://en.wikipedia.org/wiki/List_of_cognitive_biases
+
+### Study about honesty is retracted over fake data
 
 https://www.buzzfeednews.com/article/stephaniemlee/dan-ariely-honesty-study-retraction
 

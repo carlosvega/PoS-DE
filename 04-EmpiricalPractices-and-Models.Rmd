@@ -1,13 +1,5 @@
 # Empirical Practices and Models {#empirical-practices}
 
-:::: {.notebox data-latex=""}
-::: {.center data-latex=""}
-**Course Note:**
-:::
-
-This chapter is under construction. Some content is hidden.
-::::
-
 ## Overview
 
 > *Empirical*: based on, concerned with, or verifiable by observation or experience rather than theory or pure logic.
@@ -379,7 +371,7 @@ knitr::asis_output('\\begin{wrapfigure}{R}{.25\\textwidth}
 
 The birth of epidemiology and public health is often attributed to the Natural Experiment described by Dr. John Snow in the mid-1800s when he investigated the relationship between drinking contaminated water and the incidence of cholera [@applied_stats_healthcare]. The case of Dr. Snow is very popular in public health science and can be found in several books and posts on-line but I recommend the explanation given in Chapter 7 from The Book of Why [@book-of-why] as the authors also re-formulate the case in causal terms, using concepts that were not available in the mid-1800s. Below, I give a summarised account of this study.
 
-> *Miasma*: "A vaporous exhalation formerly believed to cause disease." --- Merriam-Webster dictionary.
+> *Miasma*: "A vaporous exhalation formerly believed to cause disease." 
 
 Since the 1830s, various epidemics spread across Europe but were often attributed to social unrest and political upheaval. During the 1850s, there were several theories and misconceptions about the causes of cholera outbreaks.  The miasma theory attempted to explain outbreaks of bubonic plague and cholera, stating that they were caused by a form of “bad air”. According to the competing theory, i.e. the germ theory of disease, the cause of the outbreak was a yet unknown germ. However, in 1853, disease-causing germs had not yet been observed under a microscope and the germ theory of disease was not established yet. Louis Pasteur did not demonstrate the relationship between germ and disease until the 1860s. Therefore, the prevailing theory was that a miasma of unhealthy air caused cholera. 
 
@@ -414,11 +406,11 @@ Unknown                                    4
 
 **It is precisely at this point where the natural experiment takes all its strength.** Around 300 people of both sexes, every age, and socio-economic class were naturally divided into two groups without them to know. One group received pure water, whereas the other received water mixed with sewage. 
 
-```{r snow-dia-B, echo=F, fig.align="center",  out.width="50%", fig.cap='Causal diagram after the introduction of an instrumental variable.'} 
+The observations of John Snow introduced a new variable into the causal diagram (see Fig. \@ref(fig:snow-dia-B)), the **Water Company**. In this new diagram we can see that there is no arrow between Miasma and Water Company, therefore both variables are independent. Moreover, we can note the presence of an arrow between Water Company and Water Purity. Finally, the diagram depicts a third assumption. There is no direct arrow from Water Company to Cholera, i.e. water companies do not deliver cholera to their customers in any other way. 
+
+```{r snow-dia-B, echo=F, fig.align="center",  out.width="50%", fig.cap='Causal diagram after the introduction of an instrumental variable.', fig.pos = "htb"} 
 knitr::include_graphics('Figures/SnowDiagramB.png')
 ```
-
-The observations of John Snow introduced a new variable into the causal diagram (see Fig. \@ref(fig:snow-dia-B)), the **Water Company**. In this new diagram we can see that there is no arrow between Miasma and Water Company, therefore both variables are independent. Moreover, we can note the presence of an arrow between Water Company and Water Purity. Finally, the diagram depicts a third assumption. There is no direct arrow from Water Company to Cholera, i.e. water companies do not deliver cholera to their customers in any other way. 
 
 A variable that satisfies these properties is called an **instrumental variable**. See [@pokropek2016introduction] for examples of valid and invalid instrumental variables. **Since there are no confounders of the relation between Water Company and Cholera, any observed association must be causal**. Similarly, the association between Water Purity and Cholera is also causal. 
 
@@ -436,8 +428,6 @@ knitr::include_graphics('Figures/snow-cholera-map-crop.jpg')
 
 <!-- [write]
 
-
-### Study about honesty is retracted over fake data
 
 <!--
 [write]

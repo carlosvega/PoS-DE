@@ -203,7 +203,7 @@ div.csl-indent {
 <li class="chapter" data-level="3.4.2" data-path="empirical-practices.html"><a href="empirical-practices.html#john-snow"><i class="fa fa-check"></i><b>3.4.2</b> 1854 Broad Street cholera outbreak</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="stats-abuse.html"><a href="stats-abuse.html"><i class="fa fa-check"></i><b>4</b> Experimental control, Statistical abuse, Biases and Confounders</a>
+<li class="chapter" data-level="4" data-path="stats-abuse.html"><a href="stats-abuse.html"><i class="fa fa-check"></i><b>4</b> Experimental Control and Statistical Abuse</a>
 <ul>
 <li class="chapter" data-level="4.1" data-path="stats-abuse.html"><a href="stats-abuse.html#overview-2"><i class="fa fa-check"></i><b>4.1</b> Overview</a>
 <ul>
@@ -257,12 +257,6 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="empirical-practices" class="section level1" number="3">
 <h1><span class="header-section-number">Chapter 3</span> Empirical Practices and Models</h1>
-<div class="notebox">
-<div class="center">
-<p><strong>Course Note:</strong></p>
-</div>
-<p>This chapter is under construction. Some content is hidden.</p>
-</div>
 <div id="overview-1" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Overview</h2>
 <blockquote>
@@ -573,7 +567,7 @@ Dr. John Snow (1813-1858), British physician.
 </figure>
 <p>The birth of epidemiology and public health is often attributed to the Natural Experiment described by Dr. John Snow in the mid-1800s when he investigated the relationship between drinking contaminated water and the incidence of cholera <span class="citation">(<a href="#ref-applied_stats_healthcare" role="doc-biblioref">Montelpare 2021</a>)</span>. The case of Dr. Snow is very popular in public health science and can be found in several books and posts on-line but I recommend the explanation given in Chapter 7 from The Book of Why <span class="citation">(<a href="#ref-book-of-why" role="doc-biblioref">Pearl and Mackenzie 2018</a>)</span> as the authors also re-formulate the case in causal terms, using concepts that were not available in the mid-1800s. Below, I give a summarised account of this study.</p>
 <blockquote>
-<p><em>Miasma</em>: “A vaporous exhalation formerly believed to cause disease.” — Merriam-Webster dictionary.</p>
+<p><em>Miasma</em>: “A vaporous exhalation formerly believed to cause disease.”</p>
 </blockquote>
 <p>Since the 1830s, various epidemics spread across Europe but were often attributed to social unrest and political upheaval. During the 1850s, there were several theories and misconceptions about the causes of cholera outbreaks. The miasma theory attempted to explain outbreaks of bubonic plague and cholera, stating that they were caused by a form of “bad air”. According to the competing theory, i.e. the germ theory of disease, the cause of the outbreak was a yet unknown germ. However, in 1853, disease-causing germs had not yet been observed under a microscope and the germ theory of disease was not established yet. Louis Pasteur did not demonstrate the relationship between germ and disease until the 1860s. Therefore, the prevailing theory was that a miasma of unhealthy air caused cholera.</p>
 <p>In August 1854, a major outbreak of cholera occurred in Soho, London (United Kingdom). In just three days, 127 people died in Broad Street. By September, 500 people had died. John Snow was skeptical of the prevailing miasma theory and theorized that the cause was the presence of an agent in the contaminated water source from certain water supplying companies <span class="citation">(<a href="#ref-applied_stats_healthcare" role="doc-biblioref">Montelpare 2021</a>)</span>. Namely, the Southwark and Vauxhall Company and the Lambeth Waterworks Company. The main difference between the two companies was that the former drew its water from London Bridge, which was downstream from London’s sewers. Years earlier, Lambeth had moved its water intake so that it would be upstream of the sewers.</p>
@@ -629,13 +623,13 @@ Figure 3.15: Causal diagram for cholera for the case of John Snow.
 </tbody>
 </table>
 <p><strong>It is precisely at this point where the natural experiment takes all its strength.</strong> Around 300 people of both sexes, every age, and socio-economic class were naturally divided into two groups without them to know. One group received pure water, whereas the other received water mixed with sewage.</p>
+<p>The observations of John Snow introduced a new variable into the causal diagram (see Fig. <a href="empirical-practices.html#fig:snow-dia-B">3.16</a>), the <strong>Water Company</strong>. In this new diagram we can see that there is no arrow between Miasma and Water Company, therefore both variables are independent. Moreover, we can note the presence of an arrow between Water Company and Water Purity. Finally, the diagram depicts a third assumption. There is no direct arrow from Water Company to Cholera, i.e. water companies do not deliver cholera to their customers in any other way.</p>
 <div class="figure" style="text-align: center"><span id="fig:snow-dia-B"></span>
 <img src="Figures/SnowDiagramB.png" alt="Causal diagram after the introduction of an instrumental variable." width="50%" />
 <p class="caption">
 Figure 3.16: Causal diagram after the introduction of an instrumental variable.
 </p>
 </div>
-<p>The observations of John Snow introduced a new variable into the causal diagram (see Fig. <a href="empirical-practices.html#fig:snow-dia-B">3.16</a>), the <strong>Water Company</strong>. In this new diagram we can see that there is no arrow between Miasma and Water Company, therefore both variables are independent. Moreover, we can note the presence of an arrow between Water Company and Water Purity. Finally, the diagram depicts a third assumption. There is no direct arrow from Water Company to Cholera, i.e. water companies do not deliver cholera to their customers in any other way.</p>
 <p>A variable that satisfies these properties is called an <strong>instrumental variable</strong>. See <span class="citation">(<a href="#ref-pokropek2016introduction" role="doc-biblioref">Pokropek 2016</a>)</span> for examples of valid and invalid instrumental variables. <strong>Since there are no confounders of the relation between Water Company and Cholera, any observed association must be causal</strong>. Similarly, the association between Water Purity and Cholera is also causal.</p>
 <blockquote>
 <p>Specifically, an instrumental variable Z is an additional variable used to estimate the causal effect of variable X on Y. The traditional definition qualifies a variable Z as an instrumental (relative to the pair (X, Y)) if (i) Z is independent of all variables (including error terms) that have an influence on Y that is not mediated by X and (ii) Z is not independent of X. — <span class="citation">(<a href="#ref-pearl2000causality" role="doc-biblioref">Pearl 2000</a>)</span></p>
@@ -653,8 +647,6 @@ Figure 3.17: Detail of John Snow’s map of Cholera in the Broad Street outbreak
 </div>
 <!-- [write]
 
-
-### Study about honesty is retracted over fake data
 
 <!--
 [write]
