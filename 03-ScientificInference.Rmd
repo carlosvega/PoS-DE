@@ -428,7 +428,7 @@ Defeasible reasoning deals with tentative relationships between premises and con
 cat(
 '<figure class="wrap-figure">
 <img src="Figures/Carl_Gustav_Hempel.jpg">
-<figcaption>Carl Hempel\\\\(1905 - 1997).</figcaption>
+<figcaption>Carl Hempel (1905 - 1997).</figcaption>
 </figure>'
 )
 ```
