@@ -124,7 +124,7 @@
 
 \title{Applied Philosophy of Science and Data Ethics}
 \author{Dr.~Carlos Vega}
-\date{2021: Last compiled: 2021-11-10}
+\date{2021: Last compiled: 2021-11-16}
 
 \begin{document}
 \maketitle
@@ -1348,7 +1348,7 @@ This chapter is under construction. Some content is hidden.
 
 I would like to introduce this chapter in the same way the Book of Why \citep{book-of-why} introduces its fourth chapter ``Slaying the lurking variable''. During the times of Babylonian King Nebuchadnezzar (642 BC - 562 BC), one captive -- Daniel -- refused to eat royal meat offered by the King as part of their education and service in the court since it did not comply with his religious beliefs. Instead, Daniel asked to be fed on a vegetable diet. The overseer was reluctant as he thought the servants would lose weight and become weaker. Daniel proposed an experiment to convince his overseer. For ten days, one group of servants would be given a vegetable diet, while another group of servants would eat the king's meat. Then, the overseer would compare both groups and see that the vegetable diet did not reduce their strength. Of course, the experiment was a success, and the king was so impressed that he granted Daniel a favoured place in the court.
 
-This example synthesizes the process of controlled experiments employed nowadays in experimental science. The overseer poses a question, \emph{will the vegetarian diet cause my servants to lose weight?}. There it is our hypothesis. To address the question, Daniel proposed a methodology. Divide the servants in two identical groups. Give one group a new treatment (e.g.~diet or a drug), while another group (control) remains under no special treatment. Of course, the two groups should be comparable and representative of some population in order to transfer the conclusions to the population at large. This process allowed Daniel to show the \emph{causal effect} (beware, we will tackle this in Chapter \ref{stats-abuse}) of the diet. Moreover, Daniel's experiment was prospective (in contrast to retrospective studies) as the groups were chosen in advance. Prospective controlled trials are a common characteristic of sound science. Still, Daniel didn't think of everything, but we will see that in Chapter \ref{stats-abuse}.
+This example synthesizes the process of controlled experiments employed nowadays in experimental science. The overseer poses a question, \emph{will the vegetarian diet cause my servants to lose weight?}. There it is our hypothesis. To address the question, Daniel proposed a methodology. Divide the servants in two identical groups. Give one group a new treatment (e.g.~diet or a drug), while another group (control) remains under no special treatment. Of course, the two groups should be comparable and representative of some population in order to transfer the conclusions to the population at large. This process allowed Daniel to show the \emph{causal effect} (beware, we will tackle this in Chapter \ref{stats-abuse}) of the diet. Moreover, Daniel's experiment was prospective (in contrast to retrospective studies) as the groups were chosen in advance. Prospective controlled trials are a common characteristic of sound science. Still, Daniel did not think of everything, but we will see that in Chapter \ref{stats-abuse}.
 
 \hypertarget{what-is-an-experiment}{%
 \section{What is an experiment?}\label{what-is-an-experiment}}
@@ -1885,7 +1885,7 @@ A transitional period began in the late 1850s with the work of Louis Pasteur. Th
 \end{figure}
 
 \hypertarget{stats-abuse}{%
-\chapter{Statistical abuse, Biases and Confounders}\label{stats-abuse}}
+\chapter{Experimental control, Statistical abuse, Biases and Confounders}\label{stats-abuse}}
 
 \begin{notebox}
 
@@ -1900,6 +1900,45 @@ This chapter is under construction. Content is hidden.
 
 \hypertarget{overview-2}{%
 \section{Overview}\label{overview-2}}
+
+Daniel did not think of everything when designing his experiment. He did not take confounding bias into account. For instance, Daniel and his friends could have been healthier than the control group. Under such supposition, their strong appearance after ten days of a vegetarian diet may have nothing to do with the diet itself. Perhaps, they would have become even stronger if they had eaten the meat from the king. As we have seen in previous examples presented in this book, confounding bias happens when a variable influences both who is chosen for the treatment group as well as the experiment outcome. These variables might be known variables or act as a lurking third variable we are not aware of. Such variables are easy to spot in causal diagrams.
+
+The term \emph{``confounding''} means \emph{``to pour, mingle, or mix together''}, and Figure \ref{fig:confounder-simple} illustrates why such name was chosen to denominate these situations. The true causal effect \(X -> Y\) is \emph{mixed} with the spurious correlation between \(X\) and \(Y\) induced by the fork \(X <- Z -> Y\) \citep{book-of-why}.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.33\linewidth]{Figures/causal_diagram_confounder_simple} 
+
+}
+
+\caption{Most basic version of confounding situation: Z is a confounder of the proposed causal relationship between X and Y.}\label{fig:confounder-simple}
+\end{figure}
+
+\hypertarget{the-smoke-debate---part-ii}{%
+\subsection{The smoke debate - Part II}\label{the-smoke-debate---part-ii}}
+
+Many famous cases present these confounding situations. For instance, this book previously tackled the debate around smoking and lung cancer. Austin B. Hill and Richard Doll noticed that hidden biases could be present in their previous case-control studies, and the replication of the studies would not be enough to overcome them. In consequence, they began a prospective study (1951) in which they considered 60.000 physicians from United Kingdom consisting of questionnaires tackling their smoking habits. These physicians were followed over time. In just five years, heavy smokers showed a death rate from lung cancer 24 times higher than non-smokers. A similar study conducted in the United States showed that smokers died from lung cancer 29 times more often than non-smokers while heavy smokers died 90 times more frequently. However, former smokers reduced their risk by a factor of two. This behaviour is often called the ``dose-response effect'', indicating that a prolonged dose of a drug causes a stronger response.
+
+Still, R. A. Fischer and Jacob Yerushalmy remained sceptical, stating that such prospective studies failed to compare smokers to non-smokers, arguing that they were not identical groups. The rationale of the critic is that smokers in the study are self-chosen. Moreover, there might be a constitutional difference between smokers and non-smokers. For instance, smokers might be more risk-taking, or more prone to be alcoholics, which might cause adverse health effects which are then wrongly attributed to smoking by Hill and Doll studies. Another possibility they appealed to is the existence of a smoking gene that caused people to become smokers and made them more likely to develop lung cancer.
+
+The \emph{constitutional hypothesis} was almost impossible to test. In 2000, the sequencing of the human genome became real and with it the possibility to study links between genes and lung cancer. Actually, such genes do exist, as with breast cancer that make people more prone to develop certain types of cancer. In 1959, a couple of researchers published a rebuttal of Fischer's arguments that settled the debate. One of the researchers, Cornfield, was not a statistician, nor a biologist, but instead, a historian with statistical knowledge who worked in the department of agriculture (this is of course not a cause of his family name). Cornfield aimed to debunk such constitutional hypothesis with the following reasoning: suppose the possibility of a confounding factor (e.g.~smoking gene) that would fully explain the cancer risk of smokers. If smokers have 9 times the risk of developing lung cancer, the supposed confounding factor ought to be at least nine times more common in smokers to account for such risk difference. Let's exemplify this. If 11\% of non-smokers have such a gene, then 99\% (since they have 9 times more risk: 11 x 9) of smokers would have to have the gene. But if 12\% of non-smokers would have the smoking gene, then it is not mathematically possible for the cancer gene to fully explain the association between smoking and lung cancer. This is none as Cornfield's inequality, and led to the development of sensitivity analysis.
+
+The above's explanation shows that the association between smoking and lung cancer is too strong to be explained by appeal to a smoking gene (or any other constitutional hypothesis). In essence, Cornfield's rationale gives us a way to choose between both causal diagrams. Once it becomes evident that such constitutional hypothesis is not able to fully explain the association, the relationship between smoking and lung cancer (left diagram) becomes apparent.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{Figures/SmokeDebate_diagram} 
+
+}
+
+\caption{The causal diagram on the left presents the situation in which the constitutional hypothesis is insufficient to explain the association between smoking and lung cancer. The diagram on the right side depicts the alternative situation in which the smoking gene fully explains the observed association.}\label{fig:smoke-debate-dia}
+\end{figure}
+
+The tobacco industry magnified any bit of controversy they could find on the scientific studies. Such organised denialism explains why the link between smoking and cancer remained so controversial in the public long after the debate was settled among epidemiologists.
+
+\begin{quote}
+Remarkably, even researchers at the tobacco companies were convinced---a fact that stayed deeply hidden until the 1990s, when litigation and whistle-blowers forced tobacco companies to release many thousands of previously secret documents. In 1953, for example, a chemist at R.J. Reynolds, Claude Teague, had written to the company's upper management that tobacco was ``an important etiologic factor in the induction of primary cancer of the lung,'' nearly a word-for-word repetition of Hill and Doll's conclusion. --- The Book of Why \citep{book-of-why}.
+\end{quote}
 
 \hypertarget{experimental-control}{%
 \section{Experimental Control}\label{experimental-control}}
@@ -1930,6 +1969,8 @@ There are multiple strategies for experimental control. We have previously seen 
 \hypertarget{randomised-control-trials}{%
 \section{Randomised Control Trials}\label{randomised-control-trials}}
 
+The fundamental problem of causal inference tell us that it is impossible, by definition, to observe the effect of more than one treatment on a subject over a specific time period. A study participant cannot both take the pill and not take the pill at the same time. Directly observing causal effects is impossible. Nonetheless, this does not make causal inference impossible. There are certain techniques and assumptions that allow to circumvent the fundamental problem. In this context, randomized experiments allow for the estimation of population-level causal effects.
+
 Randomisation offers a systematic solution for the division of participants (or sampling units) into two groups. In particular, RCTs are frequently regarded as a gold standard for clinical trials and among the highest quality evidence available (see Figure \ref{fig:pyramid-eviodence}). However, as with every method, it will only yield fruitful results if applied correctly, and its sole employment does not warrant against other errors.
 
 There are different types of randomisation. In \textbf{simple randomisation}, subjects are assigned into two groups purely randomly but in small samples, we risk creating uneven groups. \textbf{Block randomisation} works by randomising participants within blocks such that an equal number are assigned to each treatment. For example, given a block size of 4, there are 6 possible ways to equally assign participants to a block (AABB, ABAB, ABBA, BAAB, BABA, BBAA). Allocation proceeds by randomly selecting one of the orderings and assigning the next block of participants to study groups according to the specified sequence. A major disadvantage of this method is that it might be possible to predict the next sequence. \textbf{Stratified randomisation} is crucial whenever all other properties (except for the factors of interest) need to be assigned equally. The study population is first stratified into subgroups (i.e.~\emph{stratas}) sharing attributes, then followed by simple or block random sampling from the subgroups.
@@ -1949,6 +1990,10 @@ By ``allocation bias'' we understand the bias caused by allocating patients with
 \end{tipbox}
 
 However, RCTs do not necessarily ensure that background factors are equally distributed in the treatment and control groups. For small samples randomisation can provide unequal distributions. The average number after rolling a dice an infinite amount of times will converge to 3.5, but we should not be surprised if we roll a dice 10 or 20 times obtaining considerably more occurrences of the number 6 than the other numbers. The danger of relying on pure randomisation to balance covariates has been described in \citep{krause2003random} \citep{morgan2012rerandomization}. For this reason is essential to check for imbalances in known factors after randomisation. Stratified randomisation also helps balancing known factors. Nonetheless, randomisation does not necessarily guarantee full control of unknown factors but \emph{on average} their effect should be significantly smaller than the treatment applied \citep{deaton2018understanding}.
+
+\begin{quote}
+When we use an RCT to evaluate an intervention, we do so with respect to one or more endpoints (or outcomes) that will be measured in the future, after the period of intervention. It could be blood pressure, death, quality of life, etc. We want to understand the causal effect of the intervention on that outcome, but this is tricky. That's because to really understand the effect of the intervention, we would need to give it to someone and measure the outcome to see what happened. Then we would need to reset the universe back to the exact point when the intervention was given, withhold it this time, and see what happened when they were left untreated. The difference in the outcomes between the two scenarios would be our estimate of the causal effect of the intervention. This is clearly a fantasy, but hope is not lost. Thankfully we can mimic this counterfactual situation by randomizing people into groups, and since we are now talking about groups, we have to start talking about distributions of future outcomes. --- \href{https://statsepi.substack.com/p/out-of-balance}{Darren Dahly, PhD}
+\end{quote}
 
 Although RCTs are still preferred to observational studies, there are scenarios in which intervention is not possible. For instance, we cannot assign participants to be obese or not in order to study the effect of obesity on heart diseases.
 
@@ -2076,48 +2121,43 @@ Similar to RTC internal validity, cross-validation does not ensure transferabili
 
 The confirmation of a hypothesis is often considered to increase as the number of favourable test findings grows, but the increase in confirmation, produced by one new favourable instance, will generally become smaller as the number of previously established favourable instances grows \citep{hempel-pos}. Many researchers and data scientists blindly rely on the dogma \emph{the more data, the merrier} but the addition of one more favourable finding raises the hypothesis confirmation but little. The confirmation of a hypothesis depends not only on the quantity of the favourable evidence available but also on its variety.
 
-\begin{tipbox}
-
-\textbf{Note for data scientists!}
-
-As he have seen, data alone is not enough. Note that this is a problem for solutions based on Machine Learning, since domain knowledge or \emph{context} should be introduced somehow to \emph{direct} the model in the desired direction.
+As he have seen during this course, data alone is not enough. Note that this is especially a problem for solutions based on Machine Learning, since domain knowledge or \emph{context} should be introduced somehow to \emph{direct} the model in the desired direction.
 
 \begin{quote}
 ``There is no learning without bias, there is no learning without knowledge'' --- \citep{skansi2020guide} \citep{domingos2015master}.
 \end{quote}
 
-An example of how data depends on its context is user ratings or opinions. For instance, the meaning of \emph{fashionable clothes} changes over time, as do political terms. This issue is known as \emph{concept drift} \citep{kubat2017introduction}. Similarly, a text-mining engine to tag biology terms with the corresponding ontology terms may confuse elements between species, as several entities appear in multiple animals or organisms.
+An example of how data depends on its context is user ratings or opinions. For instance, the meaning of \emph{fashionable clothes} changes over time, as do political terms. This issue is known as \emph{concept drift} \citep{kubat2017introduction}. Similarly, a text-mining engine to tag biology terms with the corresponding ontology terms may confuse elements between species, as several entities appear in multiple animals or organisms. Context is crucial for external validation and translation of solutions into real-world settings. A system for clothes recommendation should adapt to countries, cultures or ages. Similarly, a health system to predict patient risk based on disease comorbidities must be \emph{calibrated} for each country or region (e.g.~Diabetes treatment is often affordable in the EU, but an expensive treatment in the USA, which increases its mortality rate).
 
-Finally, context is crucial for external validation and translation of solutions into real-world settings. A system for clothes recommendation should adapt to countries, cultures or ages. Similarly, a health system to predict patient risk based on disease comorbidities must be \emph{calibrated} for each country or region (e.g.~Diabetes treatment is often affordable in the EU, but an expensive treatment in the USA, which increases its mortality rate).
+\begin{figure}
 
-\end{tipbox}
+{\centering \includegraphics[width=0.9\linewidth]{Figures/jpearl_inference_engine} 
 
-\hypertarget{bias-and-confounders}{%
-\section{Bias and Confounders}\label{bias-and-confounders}}
+}
 
-\hypertarget{confirmation-bias}{%
-\subsubsection{Confirmation bias}\label{confirmation-bias}}
+\caption{Diagram extracted from The Book of Why. The diagram depicts a hypothetical inference engine that combines data and causal knowledge to produce answers to questions of interest. Knowledge (dashed) is not part of the engine but required for its construction. Boxes 4 (testable implications) and 9 (estimate) could also feedback such knowledge to incrementally improve the engine.}\label{fig:inference-engine}
+\end{figure}
 
-\hypertarget{selection-bias}{%
-\subsubsection{Selection bias}\label{selection-bias}}
+Figure \ref{fig:inference-engine} represents an ideal causal inference engine for scientific questions. Today, causal models for scientific applications are based on a similar design. It is important to notice how this diagram showcases the importance of extra-observational information (i.e.~information other than data) such as \textbf{assumptions}, which derive from the available \textbf{knowledge}. With them, a \textbf{causal model} is built in any of its different forms, e.g.~logical statements, structural equations, causal diagrams, etc. Causation (or a causation assumption) can be defined from the following analogy, \(X\) is a cause of \(Y\) if \(Y\) \emph{listens} to \(X\) and determines its value in response to what it hears. For instance, the patient's lifespan \(L\) is determined by the intake of drug \(D\). In this case, \(D\) acts as a cause of \(L\) (although it might not be the only cause), which is represented by an arrow from \(D\) to \(L\) in a causal diagram (see Figure \ref{fig:blueprint}). For the sake of simplicity the other causes of \(L\) can be grouped in an additional variable \(Z\).
 
-Women and Health Research: Ethical and Legal Issues of Including Women in Clinical Studies
+In box \(4\) the patterns encoded in the paths of the causal model yields a series of observable consequences (or data dependencies), that we know as \textbf{testable implications} (remember the hypothetico-deductive method?). These implications can be used to test the model. For instance, the lack of path between \(D\) and \(L\) implies that \(D\) and \(L\) are independent, meaning that a variation of \(D\) will not alter \(L\). If such implication is contradicted by the data, the model should be revised bearing in mind this new knowledge. The box \(5\) is in charge of the scientific \textbf{query} which must be encoded in causal vocabulary, e.g.~\(P(L | do(D))\), i.e.~what is the probability that a typical patient would live \(L\) years given that it takes the drug \(D\)?.
 
-\url{https://www.ncbi.nlm.nih.gov/books/NBK236575/}
+\begin{figure}
 
-\hypertarget{visualizations-can-lie}{%
-\section{Visualizations can lie}\label{visualizations-can-lie}}
+{\centering \includegraphics[width=0.7\linewidth]{Figures/blueprint} 
 
-\begin{itemize}
-\tightlist
-\item
-  Ref. How charts lie from Alberto Cairo. \url{https://www.newyorker.com/magazine/2021/06/21/when-graphs-are-a-matter-of-life-and-death}
-\end{itemize}
+}
 
-Example from § \ref{viz-hurricane}.
+\caption{Diagram depicting two different scenarios: before, and after an intervention.}\label{fig:blueprint}
+\end{figure}
 
-\hypertarget{more}{%
-\section{More\ldots{}}\label{more}}
+The \(do()\) operator represents an intervention in the system, in contrast to an observation \(P(L|D)\). An instance of the latter would entail letting the patient decide between taking or not the drug (see left side of Figure \ref{fig:blueprint}). Such decision might be affected by other variables we are not aware, like the patient's education, family, etc. However, when we make an intervention and assume that we are giving the drug to the patient, the arrow illustrating the patient's decision disappears (right side of Figure \ref{fig:blueprint}).
+
+The \textbf{\emph{estimand}} is the recipe to answer the scientific query, written as a probability formula, such as \(P(L | D, Z) \times P(Z)\). Once the \textbf{data} is introduced, an \textbf{estimate} can be calculated. Importantly, some queries may not be answerable regardless of the amount of data collected. For instance, our causal model could indicate that both \(D\) and \(L\) depend upon a third variable \(Z\). If there would not be any way to measure \(Z\), the query \(P(L | do(D))\) would be unanswerable. Collecting data for this question would be worthless. Under such a scenario, the causal model needs to be reviewed. Either to introduce new knowledge to enable estimating \(Z\), or to simplify the previous assumptions, potentially increasing the risk of wrong answers, e.g.~stating that \(Z\) has a negligible effect on \(D\).
+
+Following the analogy, the data acts as the ingredients of the recipe provided by the \emph{estimand}. Our estimate (box \(9\)) represents an approximate answer to the query. Such an answer is approximate because data always represents a finite sample from a theoretically infinite population \citep{book-of-why}. An example of answer in this case could be that drug \(D\) increases lifespan \(L\) of diabetic patients by \(30\% \pm 10\%\).
+
+The most important fact about the diagram in Figure \ref{fig:inference-engine} is that data and causal model are two independent pieces of the puzzle that later work together. Data is collected after the causal model and stating that the scientific query can be answered. The \emph{estimand} computation does not require any data. Comparing this to conventional machine learning (ML) systems, an ML solution would have to be re-trained when moved from one hospital to another since such model just fitted a function to data, without levering from any causal model.
 
 \hypertarget{examples-3}{%
 \section{Examples}\label{examples-3}}
@@ -2209,9 +2249,6 @@ From a \href{https://www.nytimes.com/interactive/2019/08/29/opinion/hurricane-do
 
 \caption{Other graphics designed by USA National Hurricane Center.}\label{fig:hurricane-heatmap}
 \end{figure}
-
-\hypertarget{the-smoke-debate-part-ii}{%
-\subsection{The smoke debate (part II)}\label{the-smoke-debate-part-ii}}
 
 \hypertarget{ethics-and-responsibility}{%
 \chapter{Ethics and Responsibility}\label{ethics-and-responsibility}}

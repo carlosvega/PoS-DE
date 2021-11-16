@@ -1,4 +1,4 @@
-# Statistical abuse, Biases and Confounders {#stats-abuse}
+# Experimental control, Statistical abuse, Biases and Confounders {#stats-abuse}
 
 :::: {.notebox data-latex=""}
 ::: {.center data-latex=""}
@@ -9,6 +9,34 @@ This chapter is under construction. Content is hidden.
 ::::
 
 ## Overview
+
+Daniel did not think of everything when designing his experiment. He did not take confounding bias into account. For instance, Daniel and his friends could have been healthier than the control group. Under such supposition, their strong appearance after ten days of a vegetarian diet may have nothing to do with the diet itself. Perhaps, they would have become even stronger if they had eaten the meat from the king. As we have seen in previous examples presented in this book, confounding bias happens when a variable influences both who is chosen for the treatment group as well as the experiment outcome. These variables might be known variables or act as a lurking third variable we are not aware of. Such variables are easy to spot in causal diagrams.
+
+The term *"confounding"* means *"to pour, mingle, or mix together"*, and Figure \@ref(fig:confounder-simple) illustrates why such name was chosen to denominate these situations. The true causal effect $X -> Y$ is *mixed* with the spurious correlation between $X$ and $Y$ induced by the fork $X <- Z -> Y$ [@book-of-why].
+
+```{r confounder-simple, echo=F, out.width="33%", fig.align="center", fig.cap='Most basic version of confounding situation: Z is a confounder of the proposed causal relationship between X and Y.'}
+knitr::include_graphics('Figures/causal_diagram_confounder_simple.png')
+```
+
+### The smoke debate - Part II
+
+Many famous cases present these confounding situations. For instance, this book previously tackled the debate around smoking and lung cancer. Austin B. Hill and Richard Doll noticed that hidden biases could be present in their previous case-control studies, and the replication of the studies would not be enough to overcome them. In consequence, they began a prospective study (1951) in which they considered 60.000 physicians from United Kingdom consisting of questionnaires tackling their smoking habits. These physicians were followed over time. In just five years, heavy smokers showed a death rate from lung cancer 24 times higher than non-smokers. A similar study conducted in the United States showed that smokers died from lung cancer 29 times more often than non-smokers while heavy smokers died 90 times more frequently. However, former smokers reduced their risk by a factor of two. This behaviour is often called the “dose-response effect”, indicating that a prolonged dose of a drug causes a stronger response.
+
+Still, R. A. Fischer and Jacob Yerushalmy remained sceptical, stating that such prospective studies failed to compare smokers to non-smokers, arguing that they were not identical groups. The rationale of the critic is that smokers in the study are self-chosen. Moreover, there might be a constitutional difference between smokers and non-smokers. For instance, smokers might be more risk-taking, or more prone to be alcoholics, which might cause adverse health effects which are then wrongly attributed to smoking by Hill and Doll studies. Another possibility they appealed to is the existence of a smoking gene that caused people to become smokers and made them more likely to develop lung cancer. 
+
+The *constitutional hypothesis* was almost impossible to test. In 2000, the sequencing of the human genome became real and with it the possibility to study links between genes and lung cancer. Actually, such genes do exist, as with breast cancer that make people more prone to develop certain types of cancer. In 1959, a couple of researchers published a rebuttal of Fischer's arguments that settled the debate. One of the researchers, Cornfield, was not a statistician, nor a biologist, but instead, a historian with statistical knowledge who worked in the department of agriculture (this is of course not a cause of his family name). Cornfield aimed to debunk such constitutional hypothesis with the following reasoning: suppose the possibility of a confounding factor (e.g. smoking gene) that would fully explain the cancer risk of smokers. If smokers have 9 times the risk of developing lung cancer, the supposed confounding factor ought to be at least nine times more common in smokers to account for such risk difference. Let's exemplify this. If 11% of non-smokers have such a gene, then 99% (since they have 9 times more risk: 11 x 9) of smokers would have to have the gene. But if 12% of non-smokers would have the smoking gene, then it is not mathematically possible for the cancer gene to fully explain the association between smoking and lung cancer. This is none as Cornfield's inequality, and led to the development of sensitivity analysis.
+
+The above's explanation shows that the association between smoking and lung cancer is too strong to be explained by appeal to a smoking gene (or any other constitutional hypothesis). In essence, Cornfield's rationale gives us a way to choose between both causal diagrams. Once it becomes evident that such constitutional hypothesis is not able to fully explain the association, the relationship between smoking and lung cancer (left diagram) becomes apparent.
+
+```{r smoke-debate-dia, echo=F, out.width="70%", fig.align="center", fig.cap='The causal diagram on the left presents the situation in which the constitutional hypothesis is insufficient to explain the association between smoking and lung cancer. The diagram on the right side depicts the alternative situation in which the smoking gene fully explains the observed association.'}
+knitr::include_graphics('Figures/SmokeDebate_diagram.png')
+```
+
+The tobacco industry magnified any bit of controversy they could find on the scientific studies. Such organised denialism explains why the link between smoking and cancer remained so controversial in the public long after the debate was settled among epidemiologists.
+
+> Remarkably, even researchers at the tobacco companies were convinced—a fact that stayed deeply hidden until the 1990s, when litigation and whistle-blowers forced tobacco companies to release many thousands of previously secret documents. In 1953, for example, a chemist at R.J. Reynolds, Claude Teague, had written to the company’s upper management that tobacco was “an important etiologic factor in the induction of primary cancer of the lung,” nearly a word-for-word repetition of Hill and Doll’s conclusion. --- The Book of Why [@book-of-why].
+
+
 
 
 <!--
@@ -43,6 +71,9 @@ knitr::include_graphics('Figures/pyramid-evidence.png')
 
 ## Randomised Control Trials
 
+The fundamental problem of causal inference tell us that it is impossible, by definition, to observe the effect of more than one treatment on a subject over a specific time period. A study participant cannot both take the pill and not take the pill at the same time. Directly observing causal effects is impossible. Nonetheless, this does not make causal inference impossible. There are certain techniques and assumptions that allow to circumvent the fundamental problem. In this context, randomized experiments allow for the estimation of population-level causal effects. 
+<!--- https://en.wikipedia.org/wiki/Rubin_causal_model#The_fundamental_problem_of_causal_inference https://www.youtube.com/watch?v=dSOjpxo1UX0 -->
+
 Randomisation offers a systematic solution for the division of participants (or sampling units) into two groups. In particular, RCTs are frequently regarded as a gold standard for clinical trials and among the highest quality evidence available (see Figure \@ref(fig:pyramid-eviodence)). However, as with every method, it will only yield fruitful results if applied correctly, and its sole employment does not warrant against other errors.
 
 There are different types of randomisation. In **simple randomisation**, subjects are assigned into two groups purely randomly but in small samples, we risk creating uneven groups. **Block randomisation** works by randomising participants within blocks such that an equal number are assigned to each treatment. For example, given a block size of 4, there are 6 possible ways to equally assign participants to a block (AABB, ABAB, ABBA, BAAB, BABA, BBAA). Allocation proceeds by randomly selecting one of the orderings and assigning the next block of participants to study groups according to the specified sequence. A major disadvantage of this method is that it might be possible to predict the next sequence. **Stratified randomisation** is crucial whenever all other properties (except for the factors of interest) need to be assigned equally. The study population is first stratified into subgroups (i.e. *stratas*) sharing attributes, then followed by simple or block random sampling from the subgroups.
@@ -61,6 +92,8 @@ Very often terms are used interchangeably in many domain but they can also mean 
 ::::
 
 However, RCTs do not necessarily ensure that background factors are equally distributed in the treatment and control groups. For small samples randomisation can provide unequal distributions. The average number after rolling a dice an infinite amount of times will converge to 3.5, but we should not be surprised if we roll a dice 10 or 20 times obtaining considerably more occurrences of the number 6 than the other numbers. The danger of relying on pure randomisation to balance covariates has been described in [@krause2003random] [@morgan2012rerandomization]. For this reason is essential to check for imbalances in known factors after randomisation. Stratified randomisation also helps balancing known factors. Nonetheless, randomisation does not necessarily guarantee full control of unknown factors but *on average* their effect should be significantly smaller than the treatment applied [@deaton2018understanding].
+
+> When we use an RCT to evaluate an intervention, we do so with respect to one or more endpoints (or outcomes) that will be measured in the future, after the period of intervention. It could be blood pressure, death, quality of life, etc. We want to understand the causal effect of the intervention on that outcome, but this is tricky. That’s because to really understand the effect of the intervention, we would need to give it to someone and measure the outcome to see what happened. Then we would need to reset the universe back to the exact point when the intervention was given, withhold it this time, and see what happened when they were left untreated. The difference in the outcomes between the two scenarios would be our estimate of the causal effect of the intervention. This is clearly a fantasy, but hope is not lost. Thankfully we can mimic this counterfactual situation by randomizing people into groups, and since we are now talking about groups, we have to start talking about distributions of future outcomes. --- [Darren Dahly, PhD](https://statsepi.substack.com/p/out-of-balance)
 
 Although RCTs are still preferred to observational studies, there are scenarios in which intervention is not possible. For instance, we cannot assign participants to be obese or not in order to study the effect of obesity on heart diseases.
 
@@ -170,22 +203,37 @@ Similar to RTC internal validity, cross-validation does not ensure transferabili
 
 The confirmation of a hypothesis is often considered to increase as the number of favourable test findings grows, but the increase in confirmation, produced by one new favourable instance, will generally become smaller as the number of previously established favourable instances grows [@hempel-pos]. Many researchers and data scientists blindly rely on the dogma *the more data, the merrier* but the addition of one more favourable finding raises the hypothesis confirmation but little. The confirmation of a hypothesis depends not only on the quantity of the favourable evidence available but also on its variety.
 
-:::: {.tipbox data-latex=""}
-::: { data-latex=""}
-**Note for data scientists!**
-:::
-
-As he have seen, data alone is not enough. Note that this is a problem for solutions based on Machine Learning, since domain knowledge or *context* should be introduced somehow to *direct* the model in the desired direction. 
+As he have seen during this course, data alone is not enough. Note that this is especially a problem for solutions based on Machine Learning, since domain knowledge or *context* should be introduced somehow to *direct* the model in the desired direction. 
 
 > "There is no learning without bias, there is no learning without knowledge" --- [@skansi2020guide] [@domingos2015master].
 
-An example of how data depends on its context is user ratings or opinions. For instance, the meaning of *fashionable clothes* changes over time, as do political terms. This issue is known as *concept drift* [@kubat2017introduction]. Similarly, a text-mining engine to tag biology terms with the corresponding ontology terms may confuse elements between species, as several entities appear in multiple animals or organisms.
+An example of how data depends on its context is user ratings or opinions. For instance, the meaning of *fashionable clothes* changes over time, as do political terms. This issue is known as *concept drift* [@kubat2017introduction]. Similarly, a text-mining engine to tag biology terms with the corresponding ontology terms may confuse elements between species, as several entities appear in multiple animals or organisms. Context is crucial for external validation and translation of solutions into real-world settings. A system for clothes recommendation should adapt to countries, cultures or ages. Similarly, a health system to predict patient risk based on disease comorbidities must be *calibrated* for each country or region (e.g. Diabetes treatment is often affordable in the EU, but an expensive treatment in the USA, which increases its mortality rate).
 
-Finally, context is crucial for external validation and translation of solutions into real-world settings. A system for clothes recommendation should adapt to countries, cultures or ages. Similarly, a health system to predict patient risk based on disease comorbidities must be *calibrated* for each country or region (e.g. Diabetes treatment is often affordable in the EU, but an expensive treatment in the USA, which increases its mortality rate).
+```{r inference-engine, echo=F, fig.align="center",  out.width="90%", fig.cap='Diagram extracted from The Book of Why. The diagram depicts a hypothetical inference engine that combines data and causal knowledge to produce answers to questions of interest. Knowledge (dashed) is not part of the engine but required for its construction. Boxes 4 (testable implications) and 9 (estimate) could also feedback such knowledge to incrementally improve the engine.'}
+knitr::include_graphics('Figures/jpearl_inference_engine.png')
+```
 
-::::
+Figure \@ref(fig:inference-engine) represents an ideal causal inference engine for scientific questions. Today, causal models for scientific applications are based on a similar design. It is important to notice how this diagram showcases the importance of extra-observational information (i.e. information other than data) such as **assumptions**, which derive from the available **knowledge**. With them, a **causal model** is built in any of its different forms, e.g. logical statements, structural equations, causal diagrams, etc. Causation (or a causation assumption) can be defined from the following analogy, $X$ is a cause of $Y$ if $Y$ *listens* to $X$ and determines its value in response to what it hears. For instance, the patient's lifespan $L$ is determined by the intake of drug $D$. In this case, $D$ acts as a cause of $L$ (although it might not be the only cause), which is represented by an arrow from $D$ to $L$ in a causal diagram (see Figure \@ref(fig:blueprint)). For the sake of simplicity the other causes of $L$ can be grouped in an additional variable $Z$. 
+
+In box $4$ the patterns encoded in the paths of the causal model yields a series of observable consequences (or data dependencies), that we know as **testable implications** (remember the hypothetico-deductive method?). These implications can be used to test the model. For instance, the lack of path between $D$ and $L$ implies that $D$ and $L$ are independent, meaning that a variation of $D$ will not alter $L$. If such implication is contradicted by the data, the model should be revised bearing in mind this new knowledge. The box $5$ is in charge of the scientific **query** which must be encoded in causal vocabulary, e.g. $P(L | do(D))$, i.e. what is the probability that a typical patient would live $L$ years given that it takes the drug $D$?. 
+
+```{r blueprint, echo=F, fig.align="center",  out.width="70%", fig.cap='Diagram depicting two different scenarios: before, and after an intervention.'}
+knitr::include_graphics('Figures/blueprint.png')
+```
+
+The $do()$ operator represents an intervention in the system, in contrast to an observation $P(L|D)$. An instance of the latter would entail letting the patient decide between taking or not the drug (see left side of Figure \@ref(fig:blueprint)). Such decision might be affected by other variables we are not aware, like the patient's education, family, etc. However, when we make an intervention and assume that we are giving the drug to the patient, the arrow illustrating the patient's decision disappears (right side of Figure \@ref(fig:blueprint)).
+
+The ***estimand*** is the recipe to answer the scientific query, written as a probability formula, such as $P(L | D, Z) \times P(Z)$. Once the **data** is introduced, an **estimate** can be calculated. Importantly, some queries may not be answerable regardless of the amount of data collected. For instance, our causal model could indicate that both $D$ and $L$ depend upon a third variable $Z$. If there would not be any way to measure $Z$, the query $P(L | do(D))$ would be unanswerable. Collecting data for this question would be worthless. Under such a scenario, the causal model needs to be reviewed. Either to introduce new knowledge to enable estimating $Z$, or to simplify the previous assumptions, potentially increasing the risk of wrong answers, e.g. stating that $Z$ has a negligible effect on $D$.
+
+Following the analogy, the data acts as the ingredients of the recipe provided by the *estimand*. Our estimate (box $9$) represents an approximate answer to the query. Such an answer is approximate because data always represents a finite sample from a theoretically infinite population [@book-of-why]. An example of answer in this case could be that drug $D$ increases lifespan $L$ of diabetic patients by $30\% \pm 10\%$.
+
+The most important fact about the diagram in Figure \@ref(fig:inference-engine) is that data and causal model are two independent pieces of the puzzle that later work together. Data is collected after the causal model and stating that the scientific query can be answered. The *estimand* computation does not require any data. Comparing this to conventional machine learning (ML) systems, an ML solution would have to be re-trained when moved from one hospital to another since such model just fitted a function to data, without levering from any causal model.
+
+<!--
 
 ## Bias and Confounders
+
+difference between both? 
 
 #### Confirmation bias
 
@@ -195,15 +243,17 @@ Women and Health Research: Ethical and Legal Issues of Including Women in Clinic
 
 https://www.ncbi.nlm.nih.gov/books/NBK236575/
 
+
 ## Visualizations can lie
 
 - Ref. How charts lie from Alberto Cairo. https://www.newyorker.com/magazine/2021/06/21/when-graphs-are-a-matter-of-life-and-death
 
 Example from § \@ref(viz-hurricane).
 
+
 ## More...
 
-<!-- something as simple as median vs mean (breakdown point)
+ something as simple as median vs mean (breakdown point)
 - how to lie with statistics
 - statistical abuse: take a partial representation of the sample space increases its relative probability in the event space of the model
 - presume normality: e.g. use a statistical test suited for gaussian distributions
@@ -269,12 +319,30 @@ knitr::include_graphics('Figures/hurricane-forecast-heat-map.png')
 ```
 
 
-### The smoke debate (part II)
-
 <!--
 
-start from "Nevertheless, sceptics like Fisher and Yerushalmy".
+https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing
 
-## Takeaway Messages
+https://en.wikipedia.org/wiki/List_of_cognitive_biases
+
+https://www.buzzfeednews.com/article/stephaniemlee/dan-ariely-honesty-study-retraction
+
+https://twitter.com/jpsimmon/status/1427628315939049491
+
+
+Women in Data Science
+
+We have seen the contributions of **Mary Hesse** to different concepts of Philosophy of Science. [...]
+
+Elisabeth Bik --- Dutch microbiologist and scientific integrity consultant. She is known for her work detecting photo manipulation in scientific publications, and identifying over 4,000 potential cases of improper research conduct, including 400 research papers published by authors in China from a "paper mill" company.
+
+https://www.newyorker.com/science/elements/how-a-sharp-eyed-scientist-became-biologys-image-detective
+
+Kate Crawford --- Principal researcher at Microsoft Research, co-founder and director of research at the AI Now Institute at NYU, a visiting professor at the MIT Center for Civic Media, a senior fellow at the Information Law Institute at NYU, and an associate professor in the Journalism and Media Research Centre at the University of New South Wales. She is the author of "Atlas of AI: Power, Politics, and the Planetary Costs of Artificial".
+
+Rachel Thomas --- Co-founder of fast.ai. Thomas was selected by Forbes magazine as one of the 20 most incredible women in artificial intelligence.
+Thomas is concerned about the lack of diversity in AI, and believes that there are a lot of qualified people out there who are not getting hired. She has particularly focused on the problem of poor retention of women in tech, noting that "41% of women working in tech leave within 10 years. That's over twice the attrition rate for men. And those with advanced degrees, who presumably have more options, are 176% more likely to leave." Thomas believes AI's "cool and exclusive aura" needs to be broken in order to unlock it for outsiders, and to make it accessible to those with non-traditional and non-elite backgrounds.
+
+
 
 -->
