@@ -36,11 +36,7 @@ The tobacco industry magnified any bit of controversy they could find on the sci
 
 > Remarkably, even researchers at the tobacco companies were convinced—a fact that stayed deeply hidden until the 1990s, when litigation and whistle-blowers forced tobacco companies to release many thousands of previously secret documents. In 1953, for example, a chemist at R.J. Reynolds, Claude Teague, had written to the company’s upper management that tobacco was “an important etiologic factor in the induction of primary cancer of the lung,” nearly a word-for-word repetition of Hill and Doll’s conclusion. --- The Book of Why [@book-of-why].
 
-
-
-
 <!--
-Continue on the example from chapter \@ref(empirical-practices) from Chapter 4 from the Book of Why.
 
 For the Abuse of event space: If we shrink the hypothesis space, the bound improves, but the chances that it contains the true classifier shrink also. (pedro domingos)
 
@@ -119,7 +115,7 @@ knitr::asis_output('\\begin{wrapfigure}{R}{.25\\textwidth}
 
 ### Origins of RCTs
 
-R.A. Fisher (1890-1962) conceived the RCTs in the 1930s. Fisher designed intricate approaches to disentangle the effects of fertiliser from other variables. Using the *Latin square*, he would divide the field into a grid of subplots to test each fertiliser with each combination of soil type and plant. However, in this scenario the experimenter would observe the effects of the fertiliser *mixed* (i.e. *confounded*) with a variety of other things (e.g. soil fertility, drainage, microflora). Fischer realised that the only design that would "*trick nature*" is one where the fertilisers are assigned randomly to the subplots. Of course, sometimes you might be unlucky and assign a certain fertiliser to the least fertile subplots, but other times you might get the opposite assignment. A new random allocation is generated each time the experiment is conducted. By running the experiment multiple times the luck of each fertiliser is *averaged*. 
+R.A. Fisher (1890-1962) conceived the RCTs in the 1930s for its employment in agriculture experiments. Fisher designed intricate approaches to disentangle the effects of fertiliser from other variables. Using the *Latin Square*, he would divide the field into a grid of subplots to test each fertiliser with each combination of soil type and plant. However, in this scenario the experimenter would observe the effects of the fertiliser *mixed* (i.e. *confounded*) with a variety of other things (e.g. soil fertility, drainage, microflora). Fischer realised that the only design that would "*trick nature*" is one where the fertilisers are assigned randomly to the subplots. Of course, sometimes you might be unlucky and assign a certain fertiliser to the least fertile subplots, but other times you might get the opposite assignment. A new random allocation is generated each time the experiment is conducted. By running the experiment multiple times the luck of each allocation is *averaged*. 
 
 > But Fisher realized that an uncertain answer to the right question is much better than a highly certain answer to the wrong question. [...] If you ask the right question, getting an answer that is occasionally wrong is much less of a problem. You can still estimate the amount of uncertainty in your answer, because the uncertainty comes from the randomization procedure (which is known) rather than the characteristics of the soil (which are unknown). --- Section "Why RCTs work" in Chapter 4 from [@book-of-why]
 
@@ -154,7 +150,7 @@ Transferring RCTs results to other scenarios is not trivial. All in all, RCTs re
 
 > Of 2,347 articles reviewed, 618 included animals and/or cells. For animal research, 22% of the publications did not specify the sex of the animals. Of the reports that did specify the sex, 80% of publications included only males, 17% only females, and 3% both sexes. A greater disparity existed in the number of animals studied: 16,152 (84%) male and 3,173 (16%) female. --- [@yoon2014sex]
 
-Therefore, RCTs must be internally valid, --- i.e. the design must eliminate the possibility of bias --- but to be clinically useful the result must also be relevant to a well-defined group of patients (i.e. external validity). Differences between trial protocol and routine practice also affect the external validity of RCTs. In [@rothwell2006factors], the authors list some of the most important potential determinants of external validity.
+Therefore, RCTs must be internally valid, --- i.e. the design must eliminate the possibility of bias --- but to be clinically useful the result must also be relevant to a well-defined group of patients in a particular clinical setting (i.e. external validity). Differences between trial protocol and routine practice also affect the external validity of RCTs. In [@rothwell2006factors], the authors list some of the most important potential determinants of external validity.
 
 ## Cross-validation in Machine Learning
 
@@ -215,7 +211,7 @@ knitr::include_graphics('Figures/jpearl_inference_engine.png')
 
 Figure \@ref(fig:inference-engine) represents an ideal causal inference engine for scientific questions. Today, causal models for scientific applications are based on a similar design. It is important to notice how this diagram showcases the importance of extra-observational information (i.e. information other than data) such as **assumptions**, which derive from the available **knowledge**. With them, a **causal model** is built in any of its different forms, e.g. logical statements, structural equations, causal diagrams, etc. Causation (or a causation assumption) can be defined from the following analogy, $X$ is a cause of $Y$ if $Y$ *listens* to $X$ and determines its value in response to what it hears. For instance, the patient's lifespan $L$ is determined by the intake of drug $D$. In this case, $D$ acts as a cause of $L$ (although it might not be the only cause), which is represented by an arrow from $D$ to $L$ in a causal diagram (see Figure \@ref(fig:blueprint)). For the sake of simplicity the other causes of $L$ can be grouped in an additional variable $Z$. 
 
-In box $4$ the patterns encoded in the paths of the causal model yields a series of observable consequences (or data dependencies), that we know as **testable implications** (remember the hypothetico-deductive method?). These implications can be used to test the model. For instance, the lack of path between $D$ and $L$ implies that $D$ and $L$ are independent, meaning that a variation of $D$ will not alter $L$. If such implication is contradicted by the data, the model should be revised bearing in mind this new knowledge. The box $5$ is in charge of the scientific **query** which must be encoded in causal vocabulary, e.g. $P(L | do(D))$, i.e. what is the probability that a typical patient would live $L$ years given that it takes the drug $D$?. 
+In box $4$ the patterns encoded in the paths of the causal model yield a series of observable consequences (or data dependencies), that we know as **testable implications** (remember the hypothetico-deductive method?). These implications can be used to test the model. For instance, the lack of path between $D$ and $L$ would imply that $D$ and $L$ are independent, meaning that a variation of $D$ will not alter $L$. If such implication is contradicted by the data, the model should be revised bearing in mind this new knowledge. The box $5$ is in charge of the scientific **query** which must be encoded in causal vocabulary, e.g. $P(L | do(D))$, i.e. what is the probability that a typical patient would live $L$ years given that it takes the drug $D$?. 
 
 ```{r blueprint, echo=F, fig.align="center",  out.width="70%", fig.cap='Diagram depicting two different scenarios: before, and after an intervention.'}
 knitr::include_graphics('Figures/blueprint.png')
@@ -344,6 +340,9 @@ Kate Crawford --- Principal researcher at Microsoft Research, co-founder and dir
 
 Rachel Thomas --- Co-founder of fast.ai. Thomas was selected by Forbes magazine as one of the 20 most incredible women in artificial intelligence.
 Thomas is concerned about the lack of diversity in AI, and believes that there are a lot of qualified people out there who are not getting hired. She has particularly focused on the problem of poor retention of women in tech, noting that "41% of women working in tech leave within 10 years. That's over twice the attrition rate for men. And those with advanced degrees, who presumably have more options, are 176% more likely to leave." Thomas believes AI's "cool and exclusive aura" needs to be broken in order to unlock it for outsiders, and to make it accessible to those with non-traditional and non-elite backgrounds.
+
+# model, concept and data drift 
+https://evidentlyai.com/blog/machine-learning-monitoring-data-and-concept-drift
 
 
 
