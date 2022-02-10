@@ -12,8 +12,10 @@ bookdown::gitbook:
     download: ["pdf"]
 bookdown::pdf_book:
   toc_depth: 4
+  papersize: a4
   includes:
     in_header: preamble.tex
+    before_body: before_body.tex
   latex_engine: xelatex
   citation_package: natbib
   keep_tex: yes

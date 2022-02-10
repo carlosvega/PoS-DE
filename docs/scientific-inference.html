@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 Scientific Inference | Applied Philosophy of Science and Data Ethics</title>
   <meta name="description" content="A tutorial and working resources for writing open-source textbooks using open-source tools" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 Scientific Inference | Applied Philosophy of Science and Data Ethics" />
   <meta property="og:type" content="book" />
@@ -32,8 +32,9 @@
   
 <link rel="prev" href="scientific-goals-methods-and-knowledge.html"/>
 <link rel="next" href="empirical-practices.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -41,7 +42,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -528,7 +528,7 @@ I have a pancreas
 I have pancreas cancer</code></pre>
 <p>A clear deductive consequence from this example is that indeed I have a pancreas. However, observing that I do have a pancreas should not confirm the claim that I have pancreas cancer. To solve this issue we should introduce a criteria for relevance to make sure that the chosen implications are relevant to the question. This is key part of the scientific process as this often depends on the domain knowledge we have about the matter we are investigating.</p>
 <p>An additional problem to the compatibility issue, is that very many hypotheses are compatible with any given observation. This is called the problem of underdetermination.</p>
-<div class="figure" style="text-align: center"><span id="fig:chart-underdetermination"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:chart-underdetermination"></span>
 <img src="Figures/underdetermination_small.png" alt="The problem of underdetermination illustrated with a chart." width="75%" />
 <p class="caption">
 Figure 2.1: The problem of underdetermination illustrated with a chart.
@@ -572,7 +572,7 @@ Mention non-monotonic logic, defeasible reasoning and tweety.
 <div id="non-monotonic-logic-and-defeasible-reasoning" class="section level2" number="2.6">
 <h2><span class="header-section-number">2.6</span> Non-Monotonic logic and defeasible reasoning</h2>
 <p>In its epistemic sense, monotonicity expresses the fact that adding more premises to an argument allows you to derive all the same conclusions as you could with fewer <span class="citation">(<a href="#ref-sep-logic-nonmonotonic" role="doc-biblioref">Strasser and Antonelli 2019</a>)</span>. Specifically, under monotonic reasoning, if a conclusion <span class="math inline">\(p\)</span> follows from a set of premises <span class="math inline">\(A\)</span>, (denoted as <span class="math inline">\(A\)</span> <span class="math inline">\(p\)</span>), adding another set of premises <span class="math inline">\(B\)</span> doesn’t alter the conclusion (i.e. <span class="math inline">\(A ∧ B \vdash p\)</span> also holds). Therefore, reasoning is <a href="https://plato.stanford.edu/entries/logic-nonmonotonic/">non-monotonic</a> when a conclusion supported by a set of premises can be retracted in the light of new information. Or in other words, we can infer certain conclusions from a subset of a set <span class="math inline">\(S\)</span> of premises which cannot be inferred from <span class="math inline">\(S\)</span> as a whole. Medical diagnosis fits very well under such definition.</p>
-<div class="figure" style="text-align: center"><span id="fig:tweety"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:tweety"></span>
 <img src="Figures/PenguinFlies.png" alt="Double arrows indicate non-defeasible inferences (hard fact), single arrows depict defeasible inferences, and strikethrough arrows denote a negation. It can be read as: Penguins are birds (no exceptions); Birds usually fly; and Penguins usually don’t fly." width="33%" />
 <p class="caption">
 Figure 2.2: Double arrows indicate non-defeasible inferences (hard fact), single arrows depict defeasible inferences, and strikethrough arrows denote a negation. It can be read as: Penguins are birds (no exceptions); Birds usually fly; and Penguins usually don’t fly.
@@ -609,7 +609,7 @@ Particular Facts (explanans)
 Phenomenon to be explained (explanandum)</code></pre>
 <p>An interesting consequence of this model lays in the relationship between explanation and prediction. Hempel argued that these are two sides of the same coin. Whenever a phenomenon is explained with the help of a covering law, the laws and the particular facts we use could have allowed us to predict the occurrence of the phenomenon. Hempel expressed this by saying that every scientific explanation is potentially a prediction. Hempel argued that the opposite is also true: every prediction is potentially an explanation. <strong>For Hempel, explanation and prediction are structurally symmetric</strong>. For instance, the same information we could use to predict an animal species extinction before it happened will serve to explain that very same fact after it has happened.</p>
 
-<div class="figure" style="text-align: center"><span id="fig:flagpole"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:flagpole"></span>
 <img src="Figures/flagpole.png" alt="A 15-metre flagpole casts a shadow of 20 metres when the sun is 37° overhead. Figure from (Okasha 2016)." width="75%" />
 <p class="caption">
 Figure 2.3: A 15-metre flagpole casts a shadow of 20 metres when the sun is 37° overhead. Figure from <span class="citation">(<a href="#ref-okasha-pos" role="doc-biblioref">Okasha 2016</a>)</span>.
@@ -706,7 +706,7 @@ H is true.</code></pre>
 </div>
 <div id="wason" class="section level3" number="2.8.2">
 <h3><span class="header-section-number">2.8.2</span> Wason selection task</h3>
-<div class="figure" style="text-align: center"><span id="fig:wason-cards"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:wason-cards"></span>
 <img src="Figures/wason_cards.png" alt="Wason selection task or four-card problem." width="25%" />
 <p class="caption">
 Figure 2.4: Wason selection task or four-card problem.
@@ -775,7 +775,7 @@ Therefore, not even (conclusion)</code></pre>
 </div>
 <div id="u.s.a.-presidents" class="section level3" number="2.8.3">
 <h3><span class="header-section-number">2.8.3</span> U.S.A. Presidents</h3>
-<div class="figure" style="text-align: center"><span id="fig:us-presidents"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:us-presidents"></span>
 <img src="Figures/usa_presidents.jpeg" alt="Presidents of the United States of America as of 2021." width="100%" />
 <p class="caption">
 Figure 2.5: Presidents of the United States of America as of 2021.
@@ -931,7 +931,6 @@ Vega, Carlos. 2021. <span>“From Hume to Wuhan: An Epistemological Journey on t
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -961,6 +960,10 @@ gitbook.start({
 "text": null
 },
 "download": ["POSDE_bookdown.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection",
 "scroll_highlight": true

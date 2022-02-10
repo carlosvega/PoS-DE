@@ -73,6 +73,8 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
+\usepackage{pdfpages}
+
 \usepackage{booktabs}
 \usepackage{amsthm}
 \usepackage{float}
@@ -113,6 +115,9 @@
 \newenvironment{rnote}{\par\raggedleft}{\par}
 
 \makeatother
+
+\let\oldmaketitle\maketitle
+\AtBeginDocument{\let\maketitle\relax}
 \usepackage{float}
 \usepackage{wrapfig}
 \usepackage{caption}
@@ -124,9 +129,15 @@
 
 \title{Applied Philosophy of Science and Data Ethics}
 \author{Dr.~Carlos Vega}
-\date{2021: Last compiled: 2021-11-30}
+\date{2021: Last compiled: 2022-02-10}
 
 \begin{document}
+\maketitle
+
+\thispagestyle{empty}
+\includepdf{cover.pdf}
+
+\let\maketitle\oldmaketitle
 \maketitle
 
 {
@@ -2055,7 +2066,7 @@ Therefore, RCTs must be internally valid, --- i.e.~the design must eliminate the
 \hypertarget{cross-validation-in-machine-learning}{%
 \section{Cross-validation in Machine Learning}\label{cross-validation-in-machine-learning}}
 
-As data scientists, you may wonder why the previous practices are relevant to your job. In this section I want to show how similar control measures must be considered regarding machine learning (ML). When applying supervised ML methods, is important to prevent over-fitting and under-fitting situations. In particular, over-fitting occurs when a model begins to \emph{memorize} training data rather than \emph{learning} to generalize from a trend (see Figure \ref{fig:overfitting}). One of the techniques to detect or lessen the change of over-fitting includes cross-validation. The basis of this technique is to test the generalization power of the model by evaluating its performance on a set of data not used during the training stage.
+As data scientists, you may wonder why the previous practices are relevant to your job. In this section I want to show how similar control measures must be considered regarding machine learning (ML). When applying supervised ML methods, is important to prevent over-fitting and under-fitting situations. In particular, over-fitting occurs when a model begins to \emph{memorize} training data rather than \emph{learning} to generalize from a trend (see Figure \ref{fig:overfitting}). One of the techniques to detect or lessen the effect of over-fitting includes cross-validation. The basis of this technique is to test the generalization power of the model by evaluating its performance on a set of data not used during the training stage.
 
 
 
@@ -2116,7 +2127,7 @@ One strong assumption of machine learning theory is that data is Independent and
 
 }
 
-\caption{Source: Scikit-Learn. Other K-fold CV strategies. \href{https://scikit-learn.org/stable/modules/cross_validation.html\#group-k-fold}{\textbf{GroupKFold}} is a variation of K-fold which ensures that the same group is not represented in both testing and training sets. \href{https://scikit-learn.org/stable/modules/cross_validation.html\#stratified-k-fold}{\textbf{StratifiedKFold}} is a variation of K-fold which returns stratified folds: each set contains approximately the same percentage of samples of each target class as the complete set..}\label{fig:k-fold-strategies}
+\caption{Source: Scikit-Learn. Other K-fold CV strategies. \href{https://scikit-learn.org/stable/modules/cross_validation.html\#group-k-fold}{\textbf{GroupKFold}} is a variation of K-fold which ensures that the same group is not represented in both testing and training sets. \href{https://scikit-learn.org/stable/modules/cross_validation.html\#stratified-k-fold}{\textbf{StratifiedKFold}} is a variation of K-fold which returns stratified folds: each set contains approximately the same percentage of samples of each target class as the complete set.}\label{fig:k-fold-strategies}
 \end{figure}
 
 Similar to RTC internal validity, cross-validation does not ensure transferability to other scenarios. External validation must be performed with independent datasets to ensure robustness against new scenarios. Consider a deep-learning algorithm trained to predict the number of years a patient will survive based on its characteristics and the medication administrated. This system could be then transferred to a different hospital, in another country, region, or city where the population characteristics (diet, hygiene, professions) are different. The model will require undertaking a certain recalibration process to learn the new conditions.
@@ -2162,7 +2173,7 @@ The \textbf{\emph{estimand}} is the recipe to answer the scientific query, writt
 
 Following the analogy, the data acts as the ingredients of the recipe provided by the \emph{estimand}. Our estimate (box \(9\)) represents an approximate answer to the query. Such an answer is approximate because data always represents a finite sample from a theoretically infinite population \citep{book-of-why}. An example of answer in this case could be that drug \(D\) increases lifespan \(L\) of diabetic patients by \(30\% \pm 10\%\).
 
-The most important fact about the diagram in Figure \ref{fig:inference-engine} is that data and causal model are two independent pieces of the puzzle that later work together. Data is collected after the causal model and stating that the scientific query can be answered. The \emph{estimand} computation does not require any data. Comparing this to conventional machine learning (ML) systems, an ML solution would have to be re-trained when moved from one hospital to another since such model just fitted a function to data, without levering from any causal model.
+The most important fact about the diagram in Figure \ref{fig:inference-engine} is that data and causal model are two independent pieces of the puzzle that later work together. Data is collected after the causal model and stating that the scientific query can be answered. The \emph{estimand} computation does not require any data. Comparing this to conventional machine learning (ML) systems, a ML solution would have to be re-trained when moved from one hospital to another since such model just fitted a function to data, without levering from any causal model.
 
 \hypertarget{examples-3}{%
 \section{Examples}\label{examples-3}}

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 3 Empirical Practices and Models | Applied Philosophy of Science and Data Ethics</title>
   <meta name="description" content="A tutorial and working resources for writing open-source textbooks using open-source tools" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 3 Empirical Practices and Models | Applied Philosophy of Science and Data Ethics" />
   <meta property="og:type" content="book" />
@@ -32,8 +32,9 @@
   
 <link rel="prev" href="scientific-inference.html"/>
 <link rel="next" href="stats-abuse.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -41,7 +42,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -287,7 +287,7 @@ div.csl-indent {
 <p>Quasi-experiment: A quasi-experiment is an empirical interventional study used to estimate the causal impact of an intervention on target population without random assignment. Quasi-experimental research shares similarities with the traditional experimental design or randomized controlled trial, but it specifically lacks the element of random assignment to treatment or control. Instead, quasi-experimental designs typically allow the researcher to control the assignment to the treatment condition, but using some criterion other than random assignment. Quasi-experiments are subject to concerns regarding internal validity, because the treatment and control groups may not be comparable at baseline. In other words, it may not be possible to convincingly demonstrate a causal link between the treatment condition and observed outcomes. This is particularly true if there are confounding variables that cannot be controlled or accounted for. — Wikipedia on <span class="citation">(<a href="#ref-rossi1985evaluation" role="doc-biblioref">Rossi, Freeman, and Wright 1985</a>)</span> and <span class="citation">(<a href="#ref-dinardo2010natural" role="doc-biblioref">DiNardo 2010</a>)</span>.</p>
 </blockquote>
 
-<div class="figure" style="text-align: center"><span id="fig:diagram-experiments"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:diagram-experiments"></span>
 <img src="Figures/natural-experiments.png" alt="Diagram depicting the conceptualisation of natural and quasi-experiments within the evaluation framework of Thad Dunning. Re-drawn from (Vocht et al. 2021). Note that the same article provides three additional conceptualisations from different frameworks. For example, a different conceptualisation makes a distinction between quasi and natural experiments, arguing that natural experiments describe unplanned events whereas quasi-experiments describe events that are planned (but not controlled by the researcher)." width="100%" />
 <p class="caption">
 Figure 3.1: Diagram depicting the conceptualisation of natural and quasi-experiments within the evaluation framework of Thad Dunning. Re-drawn from <span class="citation">(<a href="#ref-de2021conceptualising" role="doc-biblioref">Vocht et al. 2021</a>)</span>. Note that the same article provides three additional conceptualisations from different frameworks. For example, a different conceptualisation makes a distinction between quasi and natural experiments, arguing that natural experiments describe unplanned events whereas quasi-experiments describe events that are planned (but not controlled by the researcher).
@@ -315,7 +315,7 @@ Figure 3.1: Diagram depicting the conceptualisation of natural and quasi-experim
 <h4><span class="header-section-number">3.2.1.3</span> Indicators</h4>
 <p>Most facts we know about are indirectly observable, i.e. we infer them through an intermediary. For instance, the wind is not directly observable but inferred from bodies apparently moved by it. We <em>objectify</em> an unobservable fact by establishing its relationship to some perceptible fact(s) that serve us as an <em>indicator</em> of the fact. In other words, hypotheses are made concerning unperceived facts and tested through evidence consisting of data about other directly observable facts, assuming that the latter are <strong>collaterally connected with</strong> or <strong>effects</strong> of the former. Of course, that such relationship should hold is as well a hypothesis (see Figure <a href="empirical-practices.html#fig:indicator">3.2</a>).</p>
 
-<div class="figure" style="text-align: center"><span id="fig:indicator"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:indicator"></span>
 <img src="Figures/indicator.png" alt="The physical object-indicator relation, is expressed by a hypothesis enabling us to infer the object from observations made on its indicator. Figure extracted from (Bunge 2017)." width="50%" />
 <p class="caption">
 Figure 3.2: The physical object-indicator relation, is expressed by a hypothesis enabling us to infer the object from observations made on its indicator. Figure extracted from <span class="citation">(<a href="#ref-bunge2017philosophy" role="doc-biblioref">Bunge 2017</a>)</span>.
@@ -342,7 +342,7 @@ Figure 3.2: The physical object-indicator relation, is expressed by a hypothesis
 <li>Control for the background variable (but not through manipulation).</li>
 </ul>
 <p>In the example (see Figure <a href="empirical-practices.html#fig:fertiliser">3.3</a>), the background variables are controlled, we do not alter the soil, the number of hours of sun light received by the two groups of plants, nor the watering conditions. The only intervention is giving fertiliser to one side of the field. In this case, the seeds can be randomly assigned the treatment (fertiliser) or control groups.</p>
-<div class="figure" style="text-align: center"><span id="fig:fertiliser"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fertiliser"></span>
 <img src="Figures/crop.jpeg" alt="Fertiliser experiment." width="66%" />
 <p class="caption">
 Figure 3.3: Fertiliser experiment.
@@ -391,7 +391,7 @@ Figure 3.3: Fertiliser experiment.
 <blockquote>
 <p>Typically models are representations in which details, that appear inessential for intended uses, are omitted. A model is intended to represent the real thing in certain significant aspects. — Guy Orcutt</p>
 </blockquote>
-<div class="figure" style="text-align: center"><span id="fig:sbml-model"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:sbml-model"></span>
 <img src="Figures/sbml_model.png" alt="Different representations of a biological process. On the right side, the process is encoded in a XML file in Systems Biology Markup Language (SBML) format. " width="100%" />
 <p class="caption">
 Figure 3.4: Different representations of a biological process. On the right side, the process is encoded in a XML file in Systems Biology Markup Language (SBML) format.
@@ -419,7 +419,7 @@ Figure 3.4: Different representations of a biological process. On the right side
 <h3><span class="header-section-number">3.3.1</span> The models of the atom</h3>
 <p>For example, Bohr’s model of the atom assumes that electrons orbit the atomic nucleus in circles. The success of such a model relied that the Bohr assumptions reproduced the series that fitted the hydrogen emission spectra. In 1913 it predicted the correct frequencies of the specific colours of light absorbed and emitted by ionised helium. One could say that Bohr was very lucky as despite his model is wrong in some ways, it also has some bits of truth, enough for his predictions about ionised helium to work out.</p>
 
-<div class="figure" style="text-align: center"><span id="fig:bohr-model"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:bohr-model"></span>
 <img src="Figures/bohr-atom-model.png" alt="Illustration of bound-bound transition in the Bohr atomic model. Source: Wikipedia Commons." width="33%" />
 <p class="caption">
 Figure 3.5: Illustration of bound-bound transition in the Bohr atomic model. Source: <a href="https://commons.wikimedia.org/wiki/File:Bohr_atom_model.svg">Wikipedia Commons</a>.
@@ -431,14 +431,14 @@ Figure 3.5: Illustration of bound-bound transition in the Bohr atomic model. Sou
 <h3><span class="header-section-number">3.3.2</span> The models of benzene</h3>
 <p><strong>Models are as well purpose-dependent</strong>. Suppose the next question. Which benzene model is better? A quantum mechanic model, or a structural formula?. On one side, the quantum mechanic model is more precise about the potential position of electrons. Additionally, is more similar to the target as it represents better its relevant properties. The structural model is simpler and easier to work with. In this case, theoretically tractable models such as structural models allow for functional group analysis in chemistry.</p>
 
-<div class="figure" style="text-align: center"><span id="fig:benzene-model"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:benzene-model"></span>
 <img src="Figures/Benzene_Representations.png" alt="Various representations of Benzene. Source: Wikipedia Commons." width="90%" />
 <p class="caption">
 Figure 3.6: Various representations of Benzene. Source: <a href="https://en.wikipedia.org/wiki/File:Benzene_Representations.svg">Wikipedia Commons</a>.
 </p>
 </div>
 
-<div class="figure" style="text-align: center"><span id="fig:benzene-model-evolution"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:benzene-model-evolution"></span>
 <img src="Figures/Historic_Benzene_Formulae.png" alt="Historic benzene structures (from left to right) by Claus (1867), Dewar (1867), Ladenburg (1869), Armstrong (1887), Thiele (1899) and Kekulé (1865). Dewar benzene and prismane are distinct molecules that have Dewar’s and Ladenburg’s structures. Thiele and Kekulé’s structures are used today." width="90%" />
 <p class="caption">
 Figure 3.7: Historic benzene structures (from left to right) by Claus (1867), Dewar (1867), Ladenburg (1869), Armstrong (1887), Thiele (1899) and Kekulé (1865). Dewar benzene and prismane are distinct molecules that have Dewar’s and Ladenburg’s structures. Thiele and Kekulé’s structures are used today.
@@ -463,7 +463,7 @@ Prof. Mary Hesse (1924-2016), by Peter Mennim.
 </blockquote>
 <p>Consider again the Michelson and Morley experiment. Before the XX century, most physicists considered light as a wave. Their beliefs were justified on the many positive analogies between light, water and sound waves. For instance, light produces a diffraction pattern when encountering an obstacle, just as water and sound waves do. With this model in mind, physicists inferred a neutral analogy, namely, that light needs a medium to travel, as other waves require. They called this medium: luminiferous aether. The experiment from Michelson and Morley is a consequence of such model. However, the experiment revealed that such analogy was indeed a negative analogy, an idealisation. This discovery led people to replace the model of light for more precise models. Therefore, model manipulation allows discovering the effects of neutral analogies.</p>
 
-<div class="figure" style="text-align: center"><span id="fig:aether"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:aether"></span>
 <img src="Figures/luminiferous_aether.png" alt="The luminiferous aether: it was hypothesised that the Earth moves through a &quot;medium&quot; of aether that carries light. Source: Wikipedia Commons." width="50%" />
 <p class="caption">
 Figure 3.8: The luminiferous aether: it was hypothesised that the Earth moves through a “medium” of aether that carries light. Source: <a href="https://commons.wikimedia.org/wiki/File:AetherWind.svg">Wikipedia Commons</a>.
@@ -482,7 +482,7 @@ Figure 3.8: The luminiferous aether: it was hypothesised that the Earth moves th
 <p>The <strong>similarity</strong> criterion can for example assess physical resemblance. More generally, we could say that a model <span class="math inline">\(M\)</span> is similar to target <span class="math inline">\(X\)</span> if and only if <span class="math inline">\(M\)</span> is similar to <span class="math inline">\(X\)</span> with respect to the set of properties <span class="math inline">\(P\)</span> to a certain degree. However, this definition does not tell us which properties should be optimised. For instance, for a scale model of an air plane aimed at aerodynamic studies, it might be more justified to maximise the similarities of geometric properties over the interior design (e.g. the number of seats might not be relevant since the cabin is closed). Therefore, the purpose of the model justifies maximising one set of properties over another, in particular, the properties that are relevant for the research purpose.</p>
 <p><strong>Robustness</strong> expresses how model results are affected by condition changes. Therefore, a model result is robust (w.r.t. some condition) if changing such condition does not alter the result. For example, all properties except one (e.g. plane hull colour) can be kept fixed to test whether painting the plane with a different colour might affect its aerodynamic properties. If the result remains equal, we can say the model is robust with respect to the hull colour. Perhaps such property is not relevant to the research purpose, but that is not enough to justify removing the property.</p>
 
-<div class="figure" style="text-align: center"><span id="fig:prec-vs-acc"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:prec-vs-acc"></span>
 <img src="Figures/prec_vs_acc.png" alt="Accuracy consists of trueness (proximity of measurement results to the true value) and precision (repeatability or reproducibility of the measurement). Source: St. Olaf College." width="66%" />
 <p class="caption">
 Figure 3.9: Accuracy consists of trueness (proximity of measurement results to the true value) and precision (repeatability or reproducibility of the measurement). Source: <a href="https://wp.stolaf.edu/it/gis-precision-accuracy/">St. Olaf College</a>.
@@ -512,7 +512,7 @@ Figure 3.9: Accuracy consists of trueness (proximity of measurement results to t
 <h3><span class="header-section-number">3.3.6</span> Models as mirrors</h3>
 <p>A common way to consider models is as mirrors of the real world. Very often, models are built to be as similar as possible to the target. This is common in highly complex projects such as brain simulations of the neural networks that represent human brain activity or epidemic simulations in which all the available demographic information (e.g. transportation, habits) is considered. The aim of such complex projects is to build a model as a replacement of the actual target system. In the case of epidemic simulations, it is clear that is not feasible to conduct real-world experiments, but the simulation can serve as a way to try different vaccination strategies that might, for instance, prioritise the vaccination of potential super spreaders, i.e. people who are in contact with many people during their daily routine (e.g. supermarket cashiers, waiters). In this sense, we say that the simulation is <em>mirroring</em> the world. Another example from engineering includes finite element analysis (FEA) which is used to divide a complex problem into smaller elements to facilitate calculations.</p>
 <p>This type of model is very similar to the target and require high precision modelling. However, these advantages come at a cost. For instance, they compromise the simplicity, transparency and sometimes the tractability of the models. Despite the high similarity of the models to their target systems, it is not enough to avoid external validity issues. For example, FEA employs a mesh consisting of millions of small elements that mould the physical shape of the analysed structure. Then, calculations are made for each element. Such approximations are usually polynomial, which means that the structural elements have been interpolated, and their precision is bounded to the mesh size. Therefore, the accuracy depends on the purpose of the analysis (e.g. car, hardware tools, camera).</p>
-<div class="figure" style="text-align: center"><span id="fig:fea"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fea"></span>
 <img src="Figures/FAE_visualization.jpg" alt="A visualization of an asymmetrical collision analysis using the finite element analysis method." width="50%" />
 <p class="caption">
 Figure 3.10: A visualization of an asymmetrical collision analysis using the finite element analysis method.
@@ -522,7 +522,7 @@ Figure 3.10: A visualization of an asymmetrical collision analysis using the fin
 <div id="models-as-isolations" class="section level3" number="3.3.7">
 <h3><span class="header-section-number">3.3.7</span> Models as isolations</h3>
 <p>An alternative perspective is to consider models as isolations of particular features of the complex world. This consideration is motivated by the following question. Can models be similar to their target systems and still be simple? We have previously seen that these two factors are very often inversely related. Isolated models choose a particular aspect of the target, disregarding all the rest. Then, a model is built to represent the behaviour of such factors as accurately as possible.</p>
-<div class="figure" style="text-align: center"><span id="fig:lift"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:lift"></span>
 <img src="Figures/lift.jpg" alt="Reproduction of lift balance used in 1901 wind tunnel; model airfoil in testing position. Source: NPS." width="50%" />
 <p class="caption">
 Figure 3.11: Reproduction of lift balance used in 1901 wind tunnel; model airfoil in testing position. Source: NPS.
@@ -531,7 +531,7 @@ Figure 3.11: Reproduction of lift balance used in 1901 wind tunnel; model airfoi
 <p>During the development of the airplane. George Cayley (1773 - 1857) proposed to separate the airplane system into 3 subsystems: Lift, Propulsion, Control. After this, the problem is divided into three problems, i.e. how to obtain lift, how to provide propulsion, and how to offer control. The Wright Brothers developed a separate model for each of this subsystems. As can be observed in Figure <a href="empirical-practices.html#fig:lift">3.11</a>, the lift balance model does not resemble an airplane. Similarly, their propeller model was not attached to the airplane. Likewise, they employed gliders to test their control systems. This contrast with the approach of other inventors, such as Hiram Maxim, who attempted to build a full scale from scratch.
 An overview of the Wright Brothers Invention Process can be found at <a href="https://wright.nasa.gov/overview.htm">NASA’s website</a>.</p>
 
-<div class="figure" style="text-align: center"><span id="fig:brothers"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:brothers"></span>
 <img src="Figures/Wright_Brothers.jpg" alt="Historic photo of the Wright brothers’ third test glider being launched at Kill Devil Hills, North Carolina, on October 10, 1902. Wilbur Wright is at the controls, Orville Wright is at left, and Dan Tate (a local resident and friend of the Wright brothers) is at right." width="50%" />
 <p class="caption">
 Figure 3.12: Historic photo of the Wright brothers’ third test glider being launched at Kill Devil Hills, North Carolina, on October 10, 1902. Wilbur Wright is at the controls, Orville Wright is at left, and Dan Tate (a local resident and friend of the Wright brothers) is at right.
@@ -562,7 +562,7 @@ In 1634, Jan Baptist was arrested by agents of the Spanish Inquisition for the c
 <p>Jan Baptist did not know anything about photosynthesis. During the photosynthesis, carbon from the air and minerals from the soil are used to generate new plant tissue. Ironically, Helmont has been credited with discovering carbon dioxide <span class="citation">(<a href="#ref-hershey1991digging" role="doc-biblioref">Hershey 1991</a>)</span>.</p>
 <p>The employment of the balance during van Helmont’s experiment was an important improvement; Jan Baptist believed that the mass of materials had to be accounted for during the study of chemical processes. This experiment is considered the first quantitative experiment in plant nutrition. It is also a great example of how firm conclusions can be misled by lack of knowledge of the studied system. Jan Baptist failed to control for an important background factor.</p>
 
-<div class="figure" style="text-align: center"><span id="fig:van-helmont"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:van-helmont"></span>
 <img src="Figures/Van_Helmont_Experiment.jpg" alt="Illustration of the willow tree experiment. By Lars Ebbersmeyer." width="70%" />
 <p class="caption">
 Figure 3.13: Illustration of the willow tree experiment. By <a href="https://commons.wikimedia.org/wiki/File:Van_Helmont_Experiment.jpg">Lars Ebbersmeyer</a>.
@@ -584,7 +584,7 @@ Dr. John Snow (1813-1858), British physician.
 <p>Since the 1830s, various epidemics spread across Europe but were often attributed to social unrest and political upheaval. During the 1850s, there were several theories and misconceptions about the causes of cholera outbreaks. The miasma theory attempted to explain outbreaks of bubonic plague and cholera, stating that they were caused by a form of “bad air”. According to the competing theory, i.e. the germ theory of disease, the cause of the outbreak was a yet unknown germ. However, in 1853, disease-causing germs had not yet been observed under a microscope and the germ theory of disease was not established yet. Louis Pasteur did not demonstrate the relationship between germ and disease until the 1860s. Therefore, the prevailing theory was that a miasma of unhealthy air caused cholera.</p>
 <p>In August 1854, a major outbreak of cholera occurred in Soho, London (United Kingdom). In just three days, 127 people died in Broad Street. By September, 500 people had died. John Snow was skeptical of the prevailing miasma theory and theorized that the cause was the presence of an agent in the contaminated water source from certain water supplying companies <span class="citation">(<a href="#ref-applied_stats_healthcare" role="doc-biblioref">Montelpare 2021</a>)</span>. Namely, the Southwark and Vauxhall Company and the Lambeth Waterworks Company. The main difference between the two companies was that the former drew its water from London Bridge, which was downstream from London’s sewers. Years earlier, Lambeth had moved its water intake so that it would be upstream of the sewers.</p>
 
-<div class="figure" style="text-align: center"><span id="fig:thames"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:thames"></span>
 <img src="Figures/JohnSnowRiver.png" alt="Water distribution by the Lambeth Water and the Southwark &amp; Vauxhall Companies." width="66%" />
 <p class="caption">
 Figure 3.14: Water distribution by the Lambeth Water and the Southwark &amp; Vauxhall Companies.
@@ -592,7 +592,7 @@ Figure 3.14: Water distribution by the Lambeth Water and the Southwark &amp; Vau
 </div>
 <p>Therefore, the customers of the Southwark and Vauxhall Company were getting water contaminated by the excrements of cholera victims, whereas Lambeth users were drinking uncontaminated water.</p>
 <p>In consequence, districts supplied by the Southwark and Vauxhall Company had a death rate eight times higher than other districts. At this point, the evidence supporting the hypothesis of water contamination is just circumstantial. The causal diagram from Figure <a href="empirical-practices.html#fig:snow-dia-A">3.15</a> depicts the situation. A proponent of the miasma theory could argue that the effect of miasma was strongest in those districts <span class="citation">(<a href="#ref-book-of-why" role="doc-biblioref">Pearl and Mackenzie 2018</a>)</span>.</p>
-<div class="figure" style="text-align: center"><span id="fig:snow-dia-A"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:snow-dia-A"></span>
 <img src="Figures/SnowDiagramA.png" alt="Causal diagram for cholera for the case of John Snow." width="33%" />
 <p class="caption">
 Figure 3.15: Causal diagram for cholera for the case of John Snow.
@@ -636,7 +636,7 @@ Figure 3.15: Causal diagram for cholera for the case of John Snow.
 </table>
 <p><strong>It is precisely at this point where the natural experiment takes all its strength.</strong> Around 300 people of both sexes, every age, and socio-economic class were naturally divided into two groups without them to know. One group received pure water, whereas the other received water mixed with sewage.</p>
 <p>The observations of John Snow introduced a new variable into the causal diagram (see Fig. <a href="empirical-practices.html#fig:snow-dia-B">3.16</a>), the <strong>Water Company</strong>. In this new diagram we can see that there is no arrow between Miasma and Water Company, therefore both variables are independent. Moreover, we can note the presence of an arrow between Water Company and Water Purity. Finally, the diagram depicts a third assumption. There is no direct arrow from Water Company to Cholera, i.e. water companies do not deliver cholera to their customers in any other way.</p>
-<div class="figure" style="text-align: center"><span id="fig:snow-dia-B"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:snow-dia-B"></span>
 <img src="Figures/SnowDiagramB.png" alt="Causal diagram after the introduction of an instrumental variable." width="50%" />
 <p class="caption">
 Figure 3.16: Causal diagram after the introduction of an instrumental variable.
@@ -651,7 +651,7 @@ Figure 3.16: Causal diagram after the introduction of an instrumental variable.
 <blockquote>
 <p>A transitional period began in the late 1850s with the work of Louis Pasteur. This work was later extended by Robert Koch in the 1880s. By the end of that decade, the miasma theory was struggling to compete with the germ theory of disease. Viruses were initially discovered in the 1890s. Eventually, a “golden era” of bacteriology ensued, during which the germ theory quickly led to the identification of the actual organisms that cause many diseases. — Wikipedia, <a href="https://en.wikipedia.org/wiki/Germ_theory_of_disease">Germ theory of disease</a>.</p>
 </blockquote>
-<div class="figure" style="text-align: center"><span id="fig:snow-map"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:snow-map"></span>
 <img src="Figures/snow-cholera-map-crop.jpg" alt="Detail of John Snow’s map of Cholera in the Broad Street outbreak in 1854. Each bar represents one death in a topography that attempted to relate the water source (“Pump”) to pattern of cases in the neighborhood outbreak." width="100%" />
 <p class="caption">
 Figure 3.17: Detail of John Snow’s map of Cholera in the Broad Street outbreak in 1854. Each bar represents one death in a topography that attempted to relate the water source (“Pump”) to pattern of cases in the neighborhood outbreak.
@@ -727,7 +727,6 @@ Vocht, Frank de, Srinivasa Vittal Katikireddi, Cheryl McQuire, Kate Tilling, Mat
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -757,6 +756,10 @@ gitbook.start({
 "text": null
 },
 "download": ["POSDE_bookdown.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection",
 "scroll_highlight": true

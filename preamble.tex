@@ -1,3 +1,5 @@
+\usepackage{pdfpages}
+
 \usepackage{booktabs}
 \usepackage{amsthm}
 \usepackage{float}
@@ -38,3 +40,6 @@
 \newenvironment{rnote}{\par\raggedleft}{\par}
 
 \makeatother
+
+\let\oldmaketitle\maketitle
+\AtBeginDocument{\let\maketitle\relax}

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 1 Scientific Goals, Methods and Knowledge | Applied Philosophy of Science and Data Ethics</title>
   <meta name="description" content="A tutorial and working resources for writing open-source textbooks using open-source tools" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 1 Scientific Goals, Methods and Knowledge | Applied Philosophy of Science and Data Ethics" />
   <meta property="og:type" content="book" />
@@ -32,8 +32,9 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="scientific-inference.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -41,7 +42,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -305,7 +305,7 @@ Clip from the last lecture of a series of 7 special Messenger Lectures given by 
 </figcaption>
 </figure>
 <p>While is relatively easy to determine cases of failed justification, is much harder to identify what suffices to justify a belief. Few claims can be conclusively proven so that no doubt remains. An ideal justification of a belief would consider all relevant reasons for and against believing a statement. This is why science is a human enterprise where justifications, hypotheses and experiments are made public for review, replication or rebuttal.</p>
-<div class="figure" style="text-align: center"><span id="fig:plato-knowledge"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:plato-knowledge"></span>
 <img src="Figures/knowledge.png" alt="A Venn diagram illustrating the classical theory of knowledge." width="100%" />
 <p class="caption">
 Figure 1.1: A Venn diagram illustrating the classical theory of knowledge.
@@ -421,7 +421,7 @@ English astrophysicist Sir Arthur Stanley Eddington (1882–1944).
 <blockquote>
 <p>Einstein’s theory made a clear prediction: light rays from distant stars would be deflected by the gravitational field of the sun. Normally this effect would be impossible to observe — except during a solar eclipse. In 1919 the English astrophysicist Sir Arthur Eddington organized two expeditions to observe the solar eclipse of that year, one to Brazil and one to the island of Principe off the Atlantic coast of Africa, with the aim of testing Einstein’s prediction. The expeditions found that starlight was indeed deflected by the sun, by almost exactly the amount Einstein had predicted. Popper was very impressed by this. Einstein’s theory had made a definite, precise prediction, which was confirmed by observations. Had it turned out that starlight was not deflected by the sun, this would have shown that Einstein was wrong. So Einstein’s theory satisfies the criterion of falsifiability. — <span class="citation">(<a href="#ref-okasha-pos" role="doc-biblioref">Okasha 2016</a>)</span></p>
 </blockquote>
-<div class="figure" style="text-align: center"><span id="fig:eddington-instruments"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:eddington-instruments"></span>
 <img src="Figures/eddington-instruments.jpg" alt="Instruments used in the 1919 observations to test Einstein's predictions about warped spacetime. Credit: Getty Images" width="50%" />
 <p class="caption">
 Figure 1.2: Instruments used in the 1919 observations to test Einstein’s predictions about warped spacetime. Credit: Getty Images
@@ -430,7 +430,7 @@ Figure 1.2: Instruments used in the 1919 observations to test Einstein’s predi
 <blockquote>
 <p>Einstein published his general theory of relativity in 1915. The total solar eclipse of 1919 offered the perfect opportunity to test it experimentally, by exploring whether — and how — the immense gravity of the Sun bends and distorts incoming light from more distant stars, as predicted by Einstein’s theory. For a brief moment during the eclipse, the Moon would block the Sun’s light in the sky and make visible some of the stars that lie close to the line of sight of the Sun, not normally visible during the daytime. By measuring the positions of these stars during the eclipse and comparing them to their positions at night, when the sun is not in the field of view, it would be possible to determine whether their light rays bends while passing close to the Sun. — European Southern Observatory</p>
 </blockquote>
-<div class="figure" style="text-align: center"><span id="fig:eddington-eclipse"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:eddington-eclipse"></span>
 <img src="Figures/solar_eclipse.jpg" alt="Eddington and Crommelin imaged the eclipse using the technology of the time: photographic plates made of glass. Sadly, the original plates from the 1919 expedition have been lost — but, luckily, copies of one of the plates were made and sent to observatories around the world to allow scientists everywhere to see the evidence in support of relativity with their own eyes. Source: European Southern Observatory." width="100%" />
 <p class="caption">
 Figure 1.3: Eddington and Crommelin imaged the eclipse using the technology of the time: photographic plates made of glass. Sadly, the original plates from the 1919 expedition have been lost — but, luckily, copies of one of the plates were made and sent to observatories around the world to allow scientists everywhere to see the evidence in support of relativity with their own eyes. Source: <a href="https://www.eso.org/public/images/potw1926a/">European Southern Observatory</a>.
@@ -445,7 +445,7 @@ Figure 1.3: Eddington and Crommelin imaged the eclipse using the technology of t
 <p>In the mid-1700s, James Lind discovered that citrus fruits prevent scurvy, while in the mid-1800s, John Snow figured out that water contaminated with faecal matter caused cholera. These two examples share a common fortunate one-to-one relation between cause and effect. Deficiency of vitamin C is necessary to produce scurvy. Similarly, cholera bacillus is the only cause of cholera.</p>
 <p>However, during the late 1950s and early 1960s, whether or not smoking caused lung cancer was not clear. The subject of the debate wasn’t tobacco or cancer but rather the word <em>caused</em> as one of the most important arguments against the smoking-cancer hypothesis was the possible existence of confounding factors that may cause lung cancer and nicotine dependency. Many smokers live long lives without getting lung cancer while others develop cancer without ever smoking. Plotting the rates of lung cancer and tobacco consumption makes the connection impossible to miss (See Figure <a href="scientific-goals-methods-and-knowledge.html#fig:smoke-ts">1.4</a>). However, time-series data are poor evidence for causality. Researchers already knew about RCT though its use was unethical in this case.</p>
 
-<div class="figure" style="text-align: center"><span id="fig:smoke-ts"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:smoke-ts"></span>
 <img src="Figures/Smoking-and-lung-cancer-mortality-US-only.png" alt="Source: Our World in Data." width="75%" />
 <p class="caption">
 Figure 1.4: Source: <a href="https://ourworldindata.org/smoking-big-problem-in-brief">Our World in Data</a>.
@@ -460,7 +460,7 @@ Figure 1.4: Source: <a href="https://ourworldindata.org/smoking-big-problem-in-b
 <h3><span class="header-section-number">1.4.5</span> Kekulé’s dream</h3>
 <p>The third step of the scientific method (see § <a href="scientific-goals-methods-and-knowledge.html#sci-method">1.2</a>) requires guessing an answer (or hypothesis) to a previously determined question. There is no clear method to arrive at a hypothesis. Experience, historical context, and previously failed hypothesis condition how a hypothesis is conceived. But sometimes hypotheses can be reached in the most unlikely and unconventional of ways. It makes no difference as long as the hypothesis is then scientifically tested before its acceptance. One of the most famous examples is the structural model of the benzene molecule. In 1865 the chemist August Kekulé hit on the hypothesis of the structure after dreaming of a snake trying to bite its tail (See Figure <a href="scientific-goals-methods-and-knowledge.html#fig:ouroboros">1.5</a>).</p>
 
-<div class="figure" style="text-align: center"><span id="fig:ouroboros"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ouroboros"></span>
 <img src="Figures/Ouroboros-benzene.png" alt="Source and credits to: Haltopub, from Wikimedia." width="25%" />
 <p class="caption">
 Figure 1.5: Source and credits to: Haltopub, from <a href="https://en.wikipedia.org/wiki/File:Ouroboros-benzene.svg">Wikimedia</a>.
@@ -506,7 +506,6 @@ Russell, Bertrand. 1912. <em>The Problems of Philosophy</em>.
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -536,6 +535,10 @@ gitbook.start({
 "text": null
 },
 "download": ["POSDE_bookdown.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection",
 "scroll_highlight": true

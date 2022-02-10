@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 4 Experimental Control and Statistical Abuse | Applied Philosophy of Science and Data Ethics</title>
   <meta name="description" content="A tutorial and working resources for writing open-source textbooks using open-source tools" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 4 Experimental Control and Statistical Abuse | Applied Philosophy of Science and Data Ethics" />
   <meta property="og:type" content="book" />
@@ -32,8 +32,9 @@
   
 <link rel="prev" href="empirical-practices.html"/>
 <link rel="next" href="ethics-and-responsibility.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -41,7 +42,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -267,7 +267,7 @@ div.csl-indent {
 <h2><span class="header-section-number">4.1</span> Overview</h2>
 <p>Daniel did not think of everything when designing his experiment. He did not take confounding bias into account. For instance, Daniel and his friends could have been healthier than the control group. Under such supposition, their strong appearance after ten days of a vegetarian diet may have nothing to do with the diet itself. Perhaps, they would have become even stronger if they had eaten the meat from the king. As we have seen in previous examples presented in this book, confounding bias happens when a variable influences both who is chosen for the treatment group as well as the experiment outcome. These variables might be known variables or act as a lurking third variable we are not aware of. Such variables are easy to spot in causal diagrams.</p>
 <p>The term <em>“confounding”</em> means <em>“to pour, mingle, or mix together”</em>, and Figure <a href="stats-abuse.html#fig:confounder-simple">4.1</a> illustrates why such name was chosen to denominate these situations. The true causal effect <span class="math inline">\(X -&gt; Y\)</span> is <em>mixed</em> with the spurious correlation between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> induced by the fork <span class="math inline">\(X &lt;- Z -&gt; Y\)</span> <span class="citation">(<a href="#ref-book-of-why" role="doc-biblioref">Pearl and Mackenzie 2018</a>)</span>.</p>
-<div class="figure" style="text-align: center"><span id="fig:confounder-simple"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:confounder-simple"></span>
 <img src="Figures/causal_diagram_confounder_simple.png" alt="Most basic version of confounding situation: Z is a confounder of the proposed causal relationship between X and Y." width="33%" />
 <p class="caption">
 Figure 4.1: Most basic version of confounding situation: Z is a confounder of the proposed causal relationship between X and Y.
@@ -279,7 +279,7 @@ Figure 4.1: Most basic version of confounding situation: Z is a confounder of th
 <p>Still, R. A. Fischer and Jacob Yerushalmy remained sceptical, stating that such prospective studies failed to compare smokers to non-smokers, arguing that they were not identical groups. The rationale of the critic is that smokers in the study are self-chosen. Moreover, there might be a constitutional difference between smokers and non-smokers. For instance, smokers might be more risk-taking, or more prone to be alcoholics, which might cause adverse health effects which are then wrongly attributed to smoking by Hill and Doll studies. Another possibility they appealed to is the existence of a smoking gene that caused people to become smokers and made them more likely to develop lung cancer.</p>
 <p>The <em>constitutional hypothesis</em> was almost impossible to test. In 2000, the sequencing of the human genome became real and with it the possibility to study links between genes and lung cancer. Actually, such genes do exist, as with breast cancer that make people more prone to develop certain types of cancer. In 1959, a couple of researchers published a rebuttal of Fischer’s arguments that settled the debate. One of the researchers, Cornfield, was not a statistician, nor a biologist, but instead, a historian with statistical knowledge who worked in the department of agriculture (this is of course not a cause of his family name). Cornfield aimed to debunk such constitutional hypothesis with the following reasoning: suppose the possibility of a confounding factor (e.g. smoking gene) that would fully explain the cancer risk of smokers. If smokers have 9 times the risk of developing lung cancer, the supposed confounding factor ought to be at least nine times more common in smokers to account for such risk difference. Let’s exemplify this. If 11% of non-smokers have such a gene, then 99% (since they have 9 times more risk: 11 x 9) of smokers would have to have the gene. But if 12% of non-smokers would have the smoking gene, then it is not mathematically possible for the cancer gene to fully explain the association between smoking and lung cancer. This is known as Cornfield’s inequality, and led to the development of sensitivity analysis.</p>
 <p>The above’s explanation shows that the association between smoking and lung cancer is too strong to be explained by appeal to a smoking gene (or any other constitutional hypothesis). In essence, Cornfield’s rationale gives us a way to choose between both causal diagrams. Once it becomes evident that such constitutional hypothesis is not able to fully explain the association, the relationship between smoking and lung cancer (left diagram) becomes apparent.</p>
-<div class="figure" style="text-align: center"><span id="fig:smoke-debate-dia"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:smoke-debate-dia"></span>
 <img src="Figures/SmokeDebate_diagram.png" alt="The causal diagram on the left presents the situation in which the constitutional hypothesis is insufficient to explain the association between smoking and lung cancer. The diagram on the right side depicts the alternative situation in which the smoking gene fully explains the observed association." width="70%" />
 <p class="caption">
 Figure 4.2: The causal diagram on the left presents the situation in which the constitutional hypothesis is insufficient to explain the association between smoking and lung cancer. The diagram on the right side depicts the alternative situation in which the smoking gene fully explains the observed association.
@@ -310,7 +310,7 @@ Therefore, the control and experimental groups must be <em>homogeneous</em> in a
 <p>There are multiple strategies for experimental control. We have previously seen the method of division into treatment and control groups. The control and treatment groups can entail two moments in <strong>time</strong>, with the initial setting being the control scenario which is later on manipulated through the intervention of certain variables (e.g. measure noise from bats in a dark chamber before and after turning a light). Another technique requires <strong>holding certain factors constant</strong> or finding scenarios (like in a field experiment) with the same background conditions. Nonetheless, constructing such conditions in a laboratory can also achieve this goal. In an <strong>elimination</strong> strategy some factors are removed to simplify study conditions, such as air resistance in a vacuum chamber or <a href="https://en.wikipedia.org/wiki/Drop_tube">drop tower</a>, radio waves in a Faraday cage, or gravity in space experiments. A common case of elimination is <strong>blinding</strong>, where subjects do not know which group they are assigned to (single blinding). Moreover, double-blinding implies hiding this information from the experimenter and/or the data analyst. Finally, we can <strong>separate factors</strong> by measuring their effect and correcting for it. For example, the measurements of time dilation require taking into account the Doppler effect caused by the changing distance between the observer and the moving clock. GPS systems perform adjustments due to the effects of time dilation and gravitational frequency shifts. Another example, missile trajectories are often adjusted for the effect of <a href="https://en.wikipedia.org/wiki/Coriolis_force">Coriolis force</a>.</p>
 <hr />
 
-<div class="figure" style="text-align: center"><span id="fig:pyramid-eviodence"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:pyramid-eviodence"></span>
 <img src="Figures/pyramid-evidence.png" alt="Figure from Wikimedia by CFCF. Keep in mind that this hierarchy is not free from criticism and take it just as a useful simplification." width="70%" />
 <p class="caption">
 Figure 4.3: Figure from <a href="https://commons.wikimedia.org/wiki/File:Research_design_and_evidence_-_Capho.svg">Wikimedia</a> by CFCF. Keep in mind that this hierarchy is not free from <a href="https://en.wikipedia.org/wiki/Hierarchy_of_evidence#Criticism">criticism</a> and take it just as a useful simplification.
@@ -352,7 +352,7 @@ Ronald Aylmer Fisher in 1913
 <p>But Fisher realized that an uncertain answer to the right question is much better than a highly certain answer to the wrong question. […] If you ask the right question, getting an answer that is occasionally wrong is much less of a problem. You can still estimate the amount of uncertainty in your answer, because the uncertainty comes from the randomization procedure (which is known) rather than the characteristics of the soil (which are unknown). — Section “Why RCTs work” in Chapter 4 from <span class="citation">(<a href="#ref-book-of-why" role="doc-biblioref">Pearl and Mackenzie 2018</a>)</span></p>
 </blockquote>
 <p>The Book of Why describes the aforementioned experiment in causal terms <span class="citation">(<a href="#ref-book-of-why" role="doc-biblioref">Pearl and Mackenzie 2018</a>)</span>. The causal diagram from Figure <a href="stats-abuse.html#fig:rct-diagram">4.4</a> depicts a model describing how the yield of each plot is determined by both the fertiliser and other variables, but the effect of the fertiliser is also affected by the same variables (red arrows). The experimenter aims to know about the effect of the fertiliser controlling for the latter effects. In other words, a model in which the effects represented by the red arrows are controlled. In this second scenario, the relation between Fertilizer and Yield is <em>unconfounded</em> since there is no common cause of Fertiliser and Yield.</p>
-<div class="figure" style="text-align: center"><span id="fig:rct-diagram"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:rct-diagram"></span>
 <img src="Figures/RCT-causal-diagram.png" alt="Causal diagram depicting an improperly controlled experiment." width="100%" />
 <p class="caption">
 Figure 4.4: Causal diagram depicting an improperly controlled experiment.
@@ -389,9 +389,9 @@ Example from § \@ref(covid-israel).
 </div>
 <div id="cross-validation-in-machine-learning" class="section level2" number="4.4">
 <h2><span class="header-section-number">4.4</span> Cross-validation in Machine Learning</h2>
-<p>As data scientists, you may wonder why the previous practices are relevant to your job. In this section I want to show how similar control measures must be considered regarding machine learning (ML). When applying supervised ML methods, is important to prevent over-fitting and under-fitting situations. In particular, over-fitting occurs when a model begins to <em>memorize</em> training data rather than <em>learning</em> to generalize from a trend (see Figure <a href="stats-abuse.html#fig:overfitting">4.5</a>). One of the techniques to detect or lessen the change of over-fitting includes cross-validation. The basis of this technique is to test the generalization power of the model by evaluating its performance on a set of data not used during the training stage.</p>
+<p>As data scientists, you may wonder why the previous practices are relevant to your job. In this section I want to show how similar control measures must be considered regarding machine learning (ML). When applying supervised ML methods, is important to prevent over-fitting and under-fitting situations. In particular, over-fitting occurs when a model begins to <em>memorize</em> training data rather than <em>learning</em> to generalize from a trend (see Figure <a href="stats-abuse.html#fig:overfitting">4.5</a>). One of the techniques to detect or lessen the effect of over-fitting includes cross-validation. The basis of this technique is to test the generalization power of the model by evaluating its performance on a set of data not used during the training stage.</p>
 
-<div class="figure" style="text-align: center"><span id="fig:overfitting"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:overfitting"></span>
 <img src="Figures/Overfitting.png" alt="Source: Wikimedia. The green line represents an overfitted model and the black line represents a regularized model. While the green line best follows the training data, it is too dependent on that data and it is likely to have a higher error rate on new unseen data, compared to the black line." width="45%" />
 <p class="caption">
 Figure 4.5: Source: <a href="https://en.wikipedia.org/wiki/File:Overfitting.svg">Wikimedia</a>. The green line represents an overfitted model and the black line represents a regularized model. While the green line best follows the training data, it is too dependent on that data and it is likely to have a higher error rate on new unseen data, compared to the black line.
@@ -405,14 +405,14 @@ Figure 4.5: Source: <a href="https://en.wikipedia.org/wiki/File:Overfitting.svg"
 </ul>
 <p>The performance measure reported by K-fold CV is then the average of the values computed in the loop. This approach can be computationally expensive, but does not waste too much data <span class="citation">(<a href="#ref-scikit-learn" role="doc-biblioref">Pedregosa et al. 2011</a>)</span>.</p>
 
-<div class="figure" style="text-align: center"><span id="fig:cross-validation"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:cross-validation"></span>
 <img src="Figures/grid_search_cross_validation.png" alt="Source: Scikit-Learn. A test set should still be held out for final evaluation, but the validation set is no longer needed when doing CV. In the basic approach, called K-fold CV, the training set is split into k smaller sets (Pedregosa et al. 2011)." width="75%" />
 <p class="caption">
 Figure 4.6: Source: <a href="https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation">Scikit-Learn</a>. A test set should still be held out for final evaluation, but the validation set is no longer needed when doing CV. In the basic approach, called K-fold CV, the training set is split into k smaller sets <span class="citation">(<a href="#ref-scikit-learn" role="doc-biblioref">Pedregosa et al. 2011</a>)</span>.
 </p>
 </div>
 <p>However, the vanilla approach to K-fold CV does not consider certain properties of the dataset. In particular, K-fold CV is not affected by classes or groups. For instance, the training set of the first CV iteration in Figure <a href="stats-abuse.html#fig:k-fold-vis">4.7</a> does not contain one of the classes.</p>
-<div class="figure" style="text-align: center"><span id="fig:k-fold-vis"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:k-fold-vis"></span>
 <img src="Figures/k-fold-vis.png" alt="Source: Scikit-Learn. K-fold CV is not affected by classes or groups." width="63%" />
 <p class="caption">
 Figure 4.7: Source: Scikit-Learn. K-fold CV is not affected by classes or groups.
@@ -421,10 +421,10 @@ Figure 4.7: Source: Scikit-Learn. K-fold CV is not affected by classes or groups
 <p>Issues similar to the ones previously studied regarding RCTs can arise when conducting cross-validation. Some problems exhibit a large imbalance in the distribution of the target classes. For example, the negative class can be more representative than the positive class. In such cases, stratified sampling is recommended (see Figure <a href="stats-abuse.html#fig:k-fold-strategies">4.8</a>) to preserve relative class frequencies in each train and validation fold.</p>
 <p>One strong assumption of machine learning theory is that data is Independent and Identically Distributed (i.i.d.), i.e. that all samples stem from the same generative process and that such process is assumed to have no memory regarding past samples. For example, a succession of throws of a fair coin is i.i.d. since the coin has no memory, so all the throws are independent. In this sense, if we know that the generative process has a group structure (e.g. samples collected from different subjects, experiments, measurement devices) we should use group-wise CV. The grouping of data depends on the context. For instance, in medical data, we can find multiple samples for each patient, so it makes sense to group the samples by patient to prevent any <a href="https://scikit-learn.org/0.24/common_pitfalls.html#data-leakage"><em>data leakage</em></a>. Similarly, problems where the samples have been generated using a time-dependent process call for <a href="https://scikit-learn.org/stable/modules/cross_validation.html#timeseries-cv">time-series aware CV schemes</a>.</p>
 
-<div class="figure" style="text-align: center"><span id="fig:k-fold-strategies"></span>
-<img src="Figures/kfold-strategies.png" alt="Source: Scikit-Learn. Other K-fold CV strategies. GroupKFold is a variation of K-fold which ensures that the same group is not represented in both testing and training sets. StratifiedKFold is a variation of K-fold which returns stratified folds: each set contains approximately the same percentage of samples of each target class as the complete set.." width="100%" />
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:k-fold-strategies"></span>
+<img src="Figures/kfold-strategies.png" alt="Source: Scikit-Learn. Other K-fold CV strategies. GroupKFold is a variation of K-fold which ensures that the same group is not represented in both testing and training sets. StratifiedKFold is a variation of K-fold which returns stratified folds: each set contains approximately the same percentage of samples of each target class as the complete set." width="100%" />
 <p class="caption">
-Figure 4.8: Source: Scikit-Learn. Other K-fold CV strategies. <a href="https://scikit-learn.org/stable/modules/cross_validation.html#group-k-fold"><strong>GroupKFold</strong></a> is a variation of K-fold which ensures that the same group is not represented in both testing and training sets. <a href="https://scikit-learn.org/stable/modules/cross_validation.html#stratified-k-fold"><strong>StratifiedKFold</strong></a> is a variation of K-fold which returns stratified folds: each set contains approximately the same percentage of samples of each target class as the complete set..
+Figure 4.8: Source: Scikit-Learn. Other K-fold CV strategies. <a href="https://scikit-learn.org/stable/modules/cross_validation.html#group-k-fold"><strong>GroupKFold</strong></a> is a variation of K-fold which ensures that the same group is not represented in both testing and training sets. <a href="https://scikit-learn.org/stable/modules/cross_validation.html#stratified-k-fold"><strong>StratifiedKFold</strong></a> is a variation of K-fold which returns stratified folds: each set contains approximately the same percentage of samples of each target class as the complete set.
 </p>
 </div>
 <p>Similar to RTC internal validity, cross-validation does not ensure transferability to other scenarios. External validation must be performed with independent datasets to ensure robustness against new scenarios. Consider a deep-learning algorithm trained to predict the number of years a patient will survive based on its characteristics and the medication administrated. This system could be then transferred to a different hospital, in another country, region, or city where the population characteristics (diet, hygiene, professions) are different. The model will require undertaking a certain recalibration process to learn the new conditions.</p>
@@ -437,7 +437,7 @@ Figure 4.8: Source: Scikit-Learn. Other K-fold CV strategies. <a href="https://s
 <p>“There is no learning without bias, there is no learning without knowledge” — <span class="citation">(<a href="#ref-skansi2020guide" role="doc-biblioref">Skansi 2020</a>)</span> <span class="citation">(<a href="#ref-domingos2015master" role="doc-biblioref">Domingos 2015</a>)</span>.</p>
 </blockquote>
 <p>An example of how data depends on its context is user ratings or opinions. For instance, the meaning of <em>fashionable clothes</em> changes over time, as do political terms. This issue is known as <em>concept drift</em> <span class="citation">(<a href="#ref-kubat2017introduction" role="doc-biblioref">Kubat 2017</a>)</span>. Similarly, a text-mining engine to tag biology terms with the corresponding ontology terms may confuse elements between species, as several entities appear in multiple animals or organisms. Context is crucial for external validation and translation of solutions into real-world settings. A system for clothes recommendation should adapt to countries, cultures or ages. Similarly, a health system to predict patient risk based on disease comorbidities must be <em>calibrated</em> for each country or region (e.g. Diabetes treatment is often affordable in the EU, but an expensive treatment in the USA, which increases its mortality rate).</p>
-<div class="figure" style="text-align: center"><span id="fig:inference-engine"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:inference-engine"></span>
 <img src="Figures/jpearl_inference_engine.png" alt="Diagram extracted from The Book of Why. The diagram depicts a hypothetical inference engine that combines data and causal knowledge to produce answers to questions of interest. Knowledge (dashed) is not part of the engine but required for its construction. Boxes 4 (testable implications) and 9 (estimate) could also feedback such knowledge to incrementally improve the engine." width="90%" />
 <p class="caption">
 Figure 4.9: Diagram extracted from The Book of Why. The diagram depicts a hypothetical inference engine that combines data and causal knowledge to produce answers to questions of interest. Knowledge (dashed) is not part of the engine but required for its construction. Boxes 4 (testable implications) and 9 (estimate) could also feedback such knowledge to incrementally improve the engine.
@@ -445,7 +445,7 @@ Figure 4.9: Diagram extracted from The Book of Why. The diagram depicts a hypoth
 </div>
 <p>Figure <a href="stats-abuse.html#fig:inference-engine">4.9</a> represents an ideal causal inference engine for scientific questions. Today, causal models for scientific applications are based on a similar design. It is important to notice how this diagram showcases the importance of extra-observational information (i.e. information other than data) such as <strong>assumptions</strong>, which derive from the available <strong>knowledge</strong>. With them, a <strong>causal model</strong> is built in any of its different forms, e.g. logical statements, structural equations, causal diagrams, etc. Causation (or a causation assumption) can be defined from the following analogy, <span class="math inline">\(X\)</span> is a cause of <span class="math inline">\(Y\)</span> if <span class="math inline">\(Y\)</span> <em>listens</em> to <span class="math inline">\(X\)</span> and determines its value in response to what it hears. For instance, the patient’s lifespan <span class="math inline">\(L\)</span> is determined by the intake of drug <span class="math inline">\(D\)</span>. In this case, <span class="math inline">\(D\)</span> acts as a cause of <span class="math inline">\(L\)</span> (although it might not be the only cause), which is represented by an arrow from <span class="math inline">\(D\)</span> to <span class="math inline">\(L\)</span> in a causal diagram (see Figure <a href="stats-abuse.html#fig:blueprint">4.10</a>). For the sake of simplicity the other causes of <span class="math inline">\(L\)</span> can be grouped in an additional variable <span class="math inline">\(Z\)</span>.</p>
 <p>In box <span class="math inline">\(4\)</span> the patterns encoded in the paths of the causal model yield a series of observable consequences (or data dependencies), that we know as <strong>testable implications</strong> (remember the hypothetico-deductive method?). These implications can be used to test the model. For instance, the lack of path between <span class="math inline">\(D\)</span> and <span class="math inline">\(L\)</span> would imply that <span class="math inline">\(D\)</span> and <span class="math inline">\(L\)</span> are independent, meaning that a variation of <span class="math inline">\(D\)</span> will not alter <span class="math inline">\(L\)</span>. If such implication is contradicted by the data, the model should be revised bearing in mind this new knowledge. The box <span class="math inline">\(5\)</span> is in charge of the scientific <strong>query</strong> which must be encoded in causal vocabulary, e.g. <span class="math inline">\(P(L | do(D))\)</span>, i.e. what is the probability that a typical patient would live <span class="math inline">\(L\)</span> years given that it takes the drug <span class="math inline">\(D\)</span>?.</p>
-<div class="figure" style="text-align: center"><span id="fig:blueprint"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:blueprint"></span>
 <img src="Figures/blueprint.png" alt="Diagram depicting two different scenarios: before, and after an intervention." width="70%" />
 <p class="caption">
 Figure 4.10: Diagram depicting two different scenarios: before, and after an intervention.
@@ -454,7 +454,7 @@ Figure 4.10: Diagram depicting two different scenarios: before, and after an int
 <p>The <span class="math inline">\(do()\)</span> operator represents an intervention in the system, in contrast to an observation <span class="math inline">\(P(L|D)\)</span>. An instance of the latter would entail letting the patient decide between taking or not the drug (see left side of Figure <a href="stats-abuse.html#fig:blueprint">4.10</a>). Such decision might be affected by other variables we are not aware, like the patient’s education, family, etc. However, when we make an intervention and assume that we are giving the drug to the patient, the arrow illustrating the patient’s decision disappears (right side of Figure <a href="stats-abuse.html#fig:blueprint">4.10</a>).</p>
 <p>The <strong><em>estimand</em></strong> is the recipe to answer the scientific query, written as a probability formula, such as <span class="math inline">\(P(L | D, Z) \times P(Z)\)</span>. Once the <strong>data</strong> is introduced, an <strong>estimate</strong> can be calculated. Importantly, some queries may not be answerable regardless of the amount of data collected. For instance, our causal model could indicate that both <span class="math inline">\(D\)</span> and <span class="math inline">\(L\)</span> depend upon a third variable <span class="math inline">\(Z\)</span>. If there would not be any way to measure <span class="math inline">\(Z\)</span>, the query <span class="math inline">\(P(L | do(D))\)</span> would be unanswerable. Collecting data for this question would be worthless. Under such a scenario, the causal model needs to be reviewed. Either to introduce new knowledge to enable estimating <span class="math inline">\(Z\)</span>, or to simplify the previous assumptions, potentially increasing the risk of wrong answers, e.g. stating that <span class="math inline">\(Z\)</span> has a negligible effect on <span class="math inline">\(D\)</span>.</p>
 <p>Following the analogy, the data acts as the ingredients of the recipe provided by the <em>estimand</em>. Our estimate (box <span class="math inline">\(9\)</span>) represents an approximate answer to the query. Such an answer is approximate because data always represents a finite sample from a theoretically infinite population <span class="citation">(<a href="#ref-book-of-why" role="doc-biblioref">Pearl and Mackenzie 2018</a>)</span>. An example of answer in this case could be that drug <span class="math inline">\(D\)</span> increases lifespan <span class="math inline">\(L\)</span> of diabetic patients by <span class="math inline">\(30\% \pm 10\%\)</span>.</p>
-<p>The most important fact about the diagram in Figure <a href="stats-abuse.html#fig:inference-engine">4.9</a> is that data and causal model are two independent pieces of the puzzle that later work together. Data is collected after the causal model and stating that the scientific query can be answered. The <em>estimand</em> computation does not require any data. Comparing this to conventional machine learning (ML) systems, an ML solution would have to be re-trained when moved from one hospital to another since such model just fitted a function to data, without levering from any causal model.</p>
+<p>The most important fact about the diagram in Figure <a href="stats-abuse.html#fig:inference-engine">4.9</a> is that data and causal model are two independent pieces of the puzzle that later work together. Data is collected after the causal model and stating that the scientific query can be answered. The <em>estimand</em> computation does not require any data. Comparing this to conventional machine learning (ML) systems, a ML solution would have to be re-trained when moved from one hospital to another since such model just fitted a function to data, without levering from any causal model.</p>
 <!--
 
 ## Bias and Confounders
@@ -497,14 +497,14 @@ Example from § \@ref(viz-hurricane).
 <p><em>There are three kinds of lies: Lies, damned lies, and statistics</em></p>
 </div>
 <p>In this <a href="https://www.covid-datascience.com/post/israeli-data-how-can-efficacy-vs-severe-disease-be-strong-when-60-of-hospitalized-are-vaccinated">blog post</a>, biostatistics Professor Jeffrey Morris demonstrates how without properly controlling for age, efficacy against severe disease in Israel may appear weak when in fact within each age-group it is extremely strong. Consider the table from Figure <a href="stats-abuse.html#fig:vaccine-rates-a">4.11</a> and the following data from the the Israeli government. As of August 15, 2021 nearly 60% of all patients currently hospitalized for COVID-19 are vaccinated. Out of 515 patients currently hospitalized with severe cases in Israel, 301 (58.4%) of these cases were fully vaccinated.</p>
-<div class="figure" style="text-align: center"><span id="fig:vaccine-rates-a"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:vaccine-rates-a"></span>
 <img src="Figures/vaccines-ex-fig1.png" alt="Misleading table. This kind of tables have been used to claim that vaccines do not work or that its efectiveness reduces over time." width="70%" />
 <p class="caption">
 Figure 4.11: Misleading table. This kind of tables have been used to claim that vaccines do not work or that its efectiveness reduces over time.
 </p>
 </div>
 <p>The numbers are true, but we need more than that to draw a proper conclusion about vaccine efficacy. Consider the following extreme scenarios. If the number of vaccinated people would be 0 we would expect all severe cases to be not vaccinated (obviously). On the other hand, if 100% of people would have been vaccinated, we would expect all severe cases to proceed from vaccinated people and 0 from non vaccinated. In this case, we have an in-between situation where 80% of residents (older than 12 years) have been vaccinated. Therefore, since the group of vaccinated people is larger than the non-vaccinated, we can expect more severe cases in absolute numbers. However, once we adjust for vaccination rates and normalise the counts, the story changes. The rate of severe cases is three times higher in unvaccinated individuals.</p>
-<div class="figure" style="text-align: center"><span id="fig:vaccine-rates-b"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:vaccine-rates-b"></span>
 <img src="Figures/vaccines-ex-fig2.png" alt="Table adjusted for vaccination rates." width="70%" />
 <p class="caption">
 Figure 4.12: Table adjusted for vaccination rates.
@@ -523,7 +523,7 @@ The interpretation of this number is that the vaccines are preventing &gt;2/3 of
 <div id="viz-hurricane" class="section level3" number="4.6.2">
 <h3><span class="header-section-number">4.6.2</span> Misinterpretations of hurricane forecast maps</h3>
 <p>The <a href="https://www.nytimes.com/interactive/2019/08/29/opinion/hurricane-dorian-forecast-map.html">following article</a> by Alberto Cairo published in The New York Times explains how hurricane cone forecast maps can mislead the public and produce real-world consequences.</p>
-<div class="figure" style="text-align: center"><span id="fig:hurricane-tv"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:hurricane-tv"></span>
 <img src="Figures/hurricane-forecast-maps-tv.png" alt="Example of hurricane forecast cone graphic in TV." width="66%" />
 <p class="caption">
 Figure 4.13: Example of hurricane forecast cone graphic in TV.
@@ -531,7 +531,7 @@ Figure 4.13: Example of hurricane forecast cone graphic in TV.
 </div>
 <p><a href="https://www.semanticscholar.org/paper/Misinterpretations-of-the-%E2%80%9CCone-of-Uncertainty%E2%80%9D-in-Broad-Leiserowitz/f7c04b6eb883cf7d7fdee007cda056ed18182829">Studies</a> show that people can misinterpret this type of map as indicating that the hurricane will get bigger over time. Others think it shows areas under threat. Recent <a href="https://interactive.miami.edu/hurakan/">research</a> suggests that 40% of people would not feel threatened if they lived just outside of the cone. Moreover, people who live inside the cone, but far from the center, take less precautions than those closer to the central line. These misunderstandings have real-world consequences. Actually, the cone represents a range of possible positions and paths for the storm’s center. The dots in the middle of the cone correspond to the forecast of where the hurricane’s center could be in the following five days. But there’s a good chance that the actual center of the storm will not end up being at those positions.</p>
 <p>To create the cone, the National Hurricane Center (N.H.C.) surrounds each estimated position of the storm center with circles of increasing size. <strong>These circles represent uncertainty</strong>, meaning that the storm center may end up being anywhere inside the circles — or even outside of them. The uncertainty circles grow over time because it is more difficult to to predict what will happen in five days from now than in one day. Finally, a curve connects the circles, resulting in what is popularly known as the ‘cone of uncertainty’.</p>
-<div class="figure" style="text-align: center"><span id="fig:hurricane-map"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:hurricane-map"></span>
 <img src="Figures/hurricane-forecast-maps.png" alt="Cone of uncertainty." width="66%" />
 <p class="caption">
 Figure 4.14: Cone of uncertainty.
@@ -543,7 +543,7 @@ Figure 4.14: Cone of uncertainty.
 <div class="rnote">
 <p>From a <a href="https://www.nytimes.com/interactive/2019/08/29/opinion/hurricane-dorian-forecast-map.html">NYT article</a> by Alberto Cairo</p>
 </div>
-<div class="figure" style="text-align: center"><span id="fig:hurricane-heatmap"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:hurricane-heatmap"></span>
 <img src="Figures/hurricane-forecast-heat-map.png" alt="Other graphics designed by USA National Hurricane Center." width="66%" />
 <p class="caption">
 Figure 4.15: Other graphics designed by USA National Hurricane Center.
@@ -640,7 +640,6 @@ Yoon, Dustin Y, Neel A Mansukhani, Vanessa C Stubbs, Irene B Helenowski, Teresa 
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -670,6 +669,10 @@ gitbook.start({
 "text": null
 },
 "download": ["POSDE_bookdown.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection",
 "scroll_highlight": true
