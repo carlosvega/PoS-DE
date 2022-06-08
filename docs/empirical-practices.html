@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 3 Empirical Practices and Models | Applied Philosophy of Science and Data Ethics</title>
   <meta name="description" content="A tutorial and working resources for writing open-source textbooks using open-source tools" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 3 Empirical Practices and Models | Applied Philosophy of Science and Data Ethics" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="A tutorial and working resources for writing open-source textbooks using open-source tools" />
   <meta name="github-repo" content="carlosvega/PoS-DE" />
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="scientific-inference.html"/>
 <link rel="next" href="stats-abuse.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,8 +48,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-79429674-2"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -255,29 +254,29 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="empirical-practices" class="section level1" number="3">
-<h1><span class="header-section-number">Chapter 3</span> Empirical Practices and Models</h1>
-<div id="overview-1" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> Overview</h2>
+<div id="empirical-practices" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Empirical Practices and Models<a href="empirical-practices.html#empirical-practices" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="overview-1" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Overview<a href="empirical-practices.html#overview-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <blockquote>
 <p><em>Empirical</em>: based on, concerned with, or verifiable by observation or experience rather than theory or pure logic.</p>
 </blockquote>
 <p>I would like to introduce this chapter in the same way the Book of Why <span class="citation">(<a href="#ref-book-of-why" role="doc-biblioref">Pearl and Mackenzie 2018</a>)</span> introduces its fourth chapter “Slaying the lurking variable”. During the times of Babylonian King Nebuchadnezzar (642 BC - 562 BC), one captive – Daniel – refused to eat royal meat offered by the King as part of their education and service in the court since it did not comply with his religious beliefs. Instead, Daniel asked to be fed on a vegetable diet. The overseer was reluctant as he thought the servants would lose weight and become weaker. Daniel proposed an experiment to convince his overseer. For ten days, one group of servants would be given a vegetable diet, while another group of servants would eat the king’s meat. Then, the overseer would compare both groups and see that the vegetable diet did not reduce their strength. Of course, the experiment was a success, and the king was so impressed that he granted Daniel a favoured place in the court.</p>
 <p>This example synthesizes the process of controlled experiments employed nowadays in experimental science. The overseer poses a question, <em>will the vegetarian diet cause my servants to lose weight?</em>. There it is our hypothesis. To address the question, Daniel proposed a methodology. Divide the servants in two identical groups. Give one group a new treatment (e.g. diet or a drug), while another group (control) remains under no special treatment. Of course, the two groups should be comparable and representative of some population in order to transfer the conclusions to the population at large. This process allowed Daniel to show the <em>causal effect</em> (beware, we will tackle this in Chapter <a href="stats-abuse.html#stats-abuse">4</a>) of the diet. Moreover, Daniel’s experiment was prospective (in contrast to retrospective studies) as the groups were chosen in advance. Prospective controlled trials are a common characteristic of sound science. Still, Daniel did not think of everything, but we will see that in Chapter <a href="stats-abuse.html#stats-abuse">4</a>.</p>
 </div>
-<div id="what-is-an-experiment" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> What is an experiment?</h2>
+<div id="what-is-an-experiment" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> What is an experiment?<a href="empirical-practices.html#what-is-an-experiment" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Many data scientists believe their role should be limited to data analysis, but experiment design is fundamental for data collection, which conditions how the data must be analysed. Conclusions drawn from data can be biased or determined by decisions and errors taken during experiment design. Understanding this can help you spot issues during the data analysis and ask the right questions to your colleagues in charge of the experiments.</p>
 <p>An experiment is an observation process in which we control background variables through manipulation, intervene on target variable (through manipulation) and observe the difference produced by such intervention thanks to measurements.</p>
 <blockquote>
 <p>Experiment is the kind of scientific experience in which some change is deliberately provoked, and its outcome observed, recorded and interpreted with a cognitive aim. — <span class="citation">(<a href="#ref-bunge2017philosophy" role="doc-biblioref">Bunge 2017</a>)</span></p>
 </blockquote>
 <!-- consider adding mill's method of difference -->
-<div id="observational-studies" class="section level3" number="3.2.1">
-<h3><span class="header-section-number">3.2.1</span> Observational studies</h3>
+<div id="observational-studies" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Observational studies<a href="empirical-practices.html#observational-studies" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>However, there are whole research areas were scientists cannot make experiments. For instance, astrophysics is mainly observational and theoretical as is not possible to manipulate the observed entities (e.g. stars). It aims to find out measurable implications of physical models. Sometimes is not feasible, legal or ethical to conduct certain types of experiments, conducting observational studies instead. So, in <strong>observational studies</strong> there is no manipulation, no intervention on the target variable, neither control of background variables.</p>
-<div id="natural-experiments" class="section level4" number="3.2.1.1">
-<h4><span class="header-section-number">3.2.1.1</span> Natural experiments</h4>
+<div id="natural-experiments" class="section level4 hasAnchor" number="3.2.1.1">
+<h4><span class="header-section-number">3.2.1.1</span> Natural experiments<a href="empirical-practices.html#natural-experiments" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p><a href="https://en.wikipedia.org/wiki/Natural_experiment"><strong>Natural experiments</strong></a> on the other side share the first two characteristics but is possible to control background variables (but not through manipulation though). See § <a href="empirical-practices.html#john-snow">3.4.2</a> for an example. A major limitation of natural experiments when inferring causation is the presence of unmeasured confounding factors. Natural experiments are appealing for public health research because they enable the evaluation of events or interventions that are difficult or impossible to manipulate experimentally, such as many policy and health system reforms <span class="citation">(<a href="#ref-de2021conceptualising" role="doc-biblioref">Vocht et al. 2021</a>)</span>.</p>
 <blockquote>
 <p>For example the Canterbury earthquakes in 2010-2011 could be used to study the impact of such disasters because about half of a well-studied birth cohort lived in the affected area with the remainder living outside. […] More recently, the use of the term ‘natural’ has been understood more broadly as an event which did not involve the deliberate manipulation of exposure for research purposes, even if human agency was involved. […] Natural experiments describing the study of an event which did not involve the deliberate manipulation of an exposure but involved human agency, such as the impact of a new policy, are the mainstay of ‘natural experimental research’ in public health. — <span class="citation">(<a href="#ref-de2021conceptualising" role="doc-biblioref">Vocht et al. 2021</a>)</span></p>
@@ -306,13 +305,13 @@ Figure 3.1: Diagram depicting the conceptualisation of natural and quasi-experim
 </div>
 <p>We can recognise five elements in the observation process: the <em>object</em> of observation; the <em>subject</em> (or observer) and its perceptions; the <em>circumstances</em> of observation (e.g. environment of object and subject); the observation <em>media</em> (e.g. senses, instruments, procedures); and the body of <em>knowledge</em> used to relate all the previous elements. The last two can be grouped into <em>tools</em> (concrete and conceptual). So, an observation statement has the form “<span class="math inline">\(w\)</span> observes <span class="math inline">\(x\)</span> under <span class="math inline">\(y\)</span> with the help of <span class="math inline">\(z\)</span>”. <span class="citation">(<a href="#ref-bunge2017philosophy" role="doc-biblioref">Bunge 2017</a>)</span></p>
 </div>
-<div id="observability" class="section level4" number="3.2.1.2">
-<h4><span class="header-section-number">3.2.1.2</span> Observability</h4>
+<div id="observability" class="section level4 hasAnchor" number="3.2.1.2">
+<h4><span class="header-section-number">3.2.1.2</span> Observability<a href="empirical-practices.html#observability" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>We can try to define observability by stating that a fact is <em>observable</em> “only if there exists at least one subject, one set of circumstances, and one set of observation tools, such that the fact can appear to the subject armed with those tools under those circumstances” <span class="citation">(<a href="#ref-bunge2017philosophy" role="doc-biblioref">Bunge 2017</a>)</span>. This definition is rather unsatisfactory since someone could claim the existence of ghosts or aliens. We should define what is objectively observable. Then, <span class="math inline">\(x\)</span> is observable only if there exist at least one recording instrument <span class="math inline">\(w\)</span>, one set of circumstances <span class="math inline">\(Y\)</span>, and one set of observation tools <span class="math inline">\(Z\)</span>, such that <span class="math inline">\(w\)</span> can register <span class="math inline">\(x\)</span> under <span class="math inline">\(y\)</span> helped by <span class="math inline">\(z\)</span>. Here we have eliminated the possibility of the subject’s perceptual delusions, but devices (e.g. a camera) have limitations too.</p>
 <p>Observations are often expressed in the form of a rule so that other researchers can reproduce their results under similar conditions. Some facts cannot be repeated, such as the eruption of a volcano or a supernova. So very often, we expect results of the same kind to be reproducible by observers. Exact duplication is desirable but not always achievable. Even independent observers may make the same wrong observations due to faulty equipment or false hypotheses.</p>
 </div>
-<div id="indicators" class="section level4" number="3.2.1.3">
-<h4><span class="header-section-number">3.2.1.3</span> Indicators</h4>
+<div id="indicators" class="section level4 hasAnchor" number="3.2.1.3">
+<h4><span class="header-section-number">3.2.1.3</span> Indicators<a href="empirical-practices.html#indicators" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Most facts we know about are indirectly observable, i.e. we infer them through an intermediary. For instance, the wind is not directly observable but inferred from bodies apparently moved by it. We <em>objectify</em> an unobservable fact by establishing its relationship to some perceptible fact(s) that serve us as an <em>indicator</em> of the fact. In other words, hypotheses are made concerning unperceived facts and tested through evidence consisting of data about other directly observable facts, assuming that the latter are <strong>collaterally connected with</strong> or <strong>effects</strong> of the former. Of course, that such relationship should hold is as well a hypothesis (see Figure <a href="empirical-practices.html#fig:indicator">3.2</a>).</p>
 
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:indicator"></span>
@@ -322,8 +321,8 @@ Figure 3.2: The physical object-indicator relation, is expressed by a hypothesis
 </p>
 </div>
 </div>
-<div id="data-and-evidence" class="section level4" number="3.2.1.4">
-<h4><span class="header-section-number">3.2.1.4</span> Data and Evidence</h4>
+<div id="data-and-evidence" class="section level4 hasAnchor" number="3.2.1.4">
+<h4><span class="header-section-number">3.2.1.4</span> Data and Evidence<a href="empirical-practices.html#data-and-evidence" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Every evidence is a <em>datum</em> but not every datum constitutes <em>evidence</em>. What turns a datum into evidence is that is relevant to some idea, that it makes sense under some theory or body of knowledge. In particular, we believe a datum constitutes an evidence in favour of a theory and assign the theory some <em>credence</em> because it justifies or predicts that evidence. The evidence must be related to a specific hypothesis, and this relationship is justified because of a body of theoretical knowledge. In fact, no evidence is absolute. Consider the following example from <span class="citation">(<a href="#ref-bunge2017philosophy" role="doc-biblioref">Bunge 2017</a>)</span>:</p>
 <blockquote>
 <p>The observed deviation of a magnetic needle in the vicinity of an electric circuit (datum <span class="math inline">\(e\)</span>) supports the hypothesis <span class="math inline">\(h_x\)</span> that electricity is flowing through the circuit, on the theory <span class="math inline">\(⊤_1\)</span> that electric currents produce magnetic fields which in turn interact with the fields of magnetic needles. But exactly the same datum <span class="math inline">\(e\)</span> might be taken as an evidence in favour of the rival hypothesis <span class="math inline">\(h_2\)</span> that a big magnet somewhere nearby has been switched on, on the theory <span class="math inline">\(⊤_2\)</span> that magnets can interact directly with one another. The given datum is then <em>ambiguous</em> and only an independent checking of <span class="math inline">\(h_x\)</span> and <span class="math inline">\(h_2\)</span>, i.e. a test independent of <span class="math inline">\(e\)</span>, will enable us to reach a decision between the two rivals.</p>
@@ -331,10 +330,10 @@ Figure 3.2: The physical object-indicator relation, is expressed by a hypothesis
 <p>Importantly, the characteristics that make data count as evidence must be agreed prior to observation and on the basis of theory. Sometimes a scientist may obtain data that seems incompatible with a theory. Instead of getting rid of such data (or the theory), the scientist will attempt to reproduce the data and assess whether is anomalous data (e.g. due to a faulty instrument) or not. The <em>raw</em> data may contain any information, but <em>refined</em> data should express only relevant and useful information for the problem at hand. Of course, some information is always lost in the process. In consequence, the refinement process is irreversible. Data are <em>means</em> rather than <em>ends</em> and we aim to systematise data in order to disclose patterns on it. For this reason <em>noise</em> must be removed. The systematization of refined data may involve displaying information in graphs or tables as well as arranging information in data structures such as matrices.</p>
 </div>
 </div>
-<div id="field-laboratory-and-simulation-experiments" class="section level3" number="3.2.2">
-<h3><span class="header-section-number">3.2.2</span> Field, laboratory and simulation experiments</h3>
-<div id="field-experiments" class="section level4" number="3.2.2.1">
-<h4><span class="header-section-number">3.2.2.1</span> Field experiments</h4>
+<div id="field-laboratory-and-simulation-experiments" class="section level3 hasAnchor" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Field, laboratory and simulation experiments<a href="empirical-practices.html#field-laboratory-and-simulation-experiments" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="field-experiments" class="section level4 hasAnchor" number="3.2.2.1">
+<h4><span class="header-section-number">3.2.2.1</span> Field experiments<a href="empirical-practices.html#field-experiments" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>In contrast to observational experiments, <strong>field experiments</strong> randomly assign the sampling units (e.g. study participants) into two groups (treatment and control) to test causal relationships. The same conditions are maintained for both groups only varying the intervention on the factor of interest (e.g. two parts of soil (fertilized/unfertilized)). The background variables are considered as given and not manipulated.</p>
 <ul>
 <li>No manipulation.</li>
@@ -355,16 +354,16 @@ Figure 3.3: Fertiliser experiment.
 <li><p>Attrition: Attrition occurs when outcome data are missing. Attrition becomes a problem for causal inference when two conditions are present: (1) units with missing outcomes differ systematically on the outcome from those that are not missing and (2) attrition is different in experimental groups. There is greater potential for attrition in field experiments than in laboratory experiments because field experiments confer less control <span class="citation">(<a href="#ref-hansen2020systematic" role="doc-biblioref">Hansen and Tummers 2020</a>)</span>. For instance, some participants may leave a study if they do not get any improvement.</p></li>
 </ul>
 </div>
-<div id="laboratory-experiments" class="section level4" number="3.2.2.2">
-<h4><span class="header-section-number">3.2.2.2</span> Laboratory experiments</h4>
+<div id="laboratory-experiments" class="section level4 hasAnchor" number="3.2.2.2">
+<h4><span class="header-section-number">3.2.2.2</span> Laboratory experiments<a href="empirical-practices.html#laboratory-experiments" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>On the other side, <strong>laboratory experiments</strong> construct the same background conditions in both groups manipulating the environment (lab settings) and varying the intervention on the factor of interest. Background conditions are controlled through manipulation. For instance, temperature, pressure, humidity can be controlled for a fertiliser trial. Laboratory experiments tend to have higher internal validity, but at the cost of lower external validity (generalistation), owing to the artificial setting in which the study is conducted may not reflect the real world.</p>
 </div>
-<div id="simulation-experiments" class="section level4" number="3.2.2.3">
-<h4><span class="header-section-number">3.2.2.3</span> Simulation experiments</h4>
+<div id="simulation-experiments" class="section level4 hasAnchor" number="3.2.2.3">
+<h4><span class="header-section-number">3.2.2.3</span> Simulation experiments<a href="empirical-practices.html#simulation-experiments" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Finally, <strong>simulation experiments</strong> are constructions representing a real system on a computer to perform interventions. This type of experiments are done when it is not feasible to experiment on the real entities (e.g. climate simulations or geological simulations). The important consideration is that all interventions and manipulations are performed on the computer representation instead of the real target itself.</p>
 </div>
-<div id="wrap-up" class="section level4" number="3.2.2.4">
-<h4><span class="header-section-number">3.2.2.4</span> Wrap-up</h4>
+<div id="wrap-up" class="section level4 hasAnchor" number="3.2.2.4">
+<h4><span class="header-section-number">3.2.2.4</span> Wrap-up<a href="empirical-practices.html#wrap-up" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Therefore, an experiment is a controlled observation in which the observer manipulates the real variables (independent variables) that are believed to influence the outcome (dependent variable), both for the purpose of intervention and control. The following article provides a good description of the <a href="https://opentextbc.ca/researchmethods/chapter/experiment-basics/">basics of experiments</a>.</p>
 <p>In Chapter <a href="stats-abuse.html#stats-abuse">4</a> we will see some examples of experimental errors (e.g. confirmation bias, selection bias, etc) as well as examples of statistical abuse. All in all, the experiment process is also a craft which entails learning from previous experiments (ours and others), as well as applying all available knowledge (theoretical and experimental) for the design of experiments.</p>
 <div class="tipbox">
@@ -377,16 +376,16 @@ Figure 3.3: Fertiliser experiment.
 </div>
 </div>
 </div>
-<div id="how-to-evaluate-experiment-success" class="section level3" number="3.2.3">
-<h3><span class="header-section-number">3.2.3</span> How to evaluate experiment success</h3>
+<div id="how-to-evaluate-experiment-success" class="section level3 hasAnchor" number="3.2.3">
+<h3><span class="header-section-number">3.2.3</span> How to evaluate experiment success<a href="empirical-practices.html#how-to-evaluate-experiment-success" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Very often, success is not defined by a single goal or metric. For instance, the best car is not always the fastest car. In fact, there are many other values to bear in mind, such as gasoline consumption, pollution, ease of manufacture, etc. Similarly an experiment success is rarely assessed with a single metric in mind.</p>
 <p>Moreover, some metrics must not be degraded, often called <strong>guardrail metrics</strong>. This type of metrics can include security, speed, robustness, etc. But very often include <em>non-epistemic values</em> too. In this context, non-epistemic values are metrics not directly related to the instance to be designed, such as fairness, justice, or making money (or saving it), in contrast to metrics that make the instance at issue <em>internally</em> or <em>intrinsically</em> better (e.g. speed). For instance, a car is not necessarily a better car depending on its price if what is judged is the <em>car itself</em> in isolation, but a low price might make it easier to sell. In another example, the fastest data processing system might not necessarily be the best choice since other requirements must be considered too (e.g. ease of use).</p>
 <p>A non-epistemic value that is always at stake is money, or in a different shape, OPEX (operational expenditure) and CAPEX (capital expenditure). Very often, they condition other metrics, such as performance (e.g. use less/worse resources) or safety (e.g. employ less/worse materials). For example, I had the opportunity to work on the design of enterprise log processing systems. In this case, we wanted to maximise speed while reducing resources, as mid-sized companies often wish to reduce the number of servers deployed, which ultimately affects their operational costs (e.g. space and electricity). Most commercial solutions scale horizontally, requiring the use of on-site server clusters to handle large amounts of data (at prohibitively high prices) or cloud-hosted clusters (impractical due to data protection). Our proposal optimised vertical scalability and coped with tens of millions of events per second with a single server. But of course, such an approach was specifically designed for a particular task, in contrast to the flexibility offered by commercial alternatives.</p>
 <p>In data science, success should be defined by how well the analysis answers the research questions. For this reason, setting the research questions at the very beginning of the process remains crucial. They not only determine the data analysis but, more importantly, the data collection design. However, very frequently, the data science process starts with a given dataset. Still, it is essential to assess if the collected data can answer the posed questions.</p>
 </div>
 </div>
-<div id="scientific-models" class="section level2" number="3.3">
-<h2><span class="header-section-number">3.3</span> Scientific models</h2>
+<div id="scientific-models" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Scientific models<a href="empirical-practices.html#scientific-models" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Scientific models are widespread and varied. These include scale models (e.g. plane models for aerodynamic studies), laboratory animals (e.g. mice for drug trials), simulation models (e.g. computational model for weather forecast). In all the previous cases, a model is made to replace or to stand in for what we are ultimately interested in. Models are characterised by being <strong>representations</strong>, containing <strong>idealisations</strong>, being <strong>purpose dependent</strong>, and <strong>ready to be manipulated</strong>.</p>
 <blockquote>
 <p>Typically models are representations in which details, that appear inessential for intended uses, are omitted. A model is intended to represent the real thing in certain significant aspects. — Guy Orcutt</p>
@@ -415,8 +414,8 @@ Figure 3.4: Different representations of a biological process. On the right side
 — <span class="citation">(<a href="#ref-sep-models-science" role="doc-biblioref">Frigg and Hartmann 2020</a>)</span></li>
 </ul>
 </blockquote>
-<div id="the-models-of-the-atom" class="section level3" number="3.3.1">
-<h3><span class="header-section-number">3.3.1</span> The models of the atom</h3>
+<div id="the-models-of-the-atom" class="section level3 hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> The models of the atom<a href="empirical-practices.html#the-models-of-the-atom" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>For example, Bohr’s model of the atom assumes that electrons orbit the atomic nucleus in circles. The success of such a model relied that the Bohr assumptions reproduced the series that fitted the hydrogen emission spectra. In 1913 it predicted the correct frequencies of the specific colours of light absorbed and emitted by ionised helium. One could say that Bohr was very lucky as despite his model is wrong in some ways, it also has some bits of truth, enough for his predictions about ionised helium to work out.</p>
 
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:bohr-model"></span>
@@ -427,8 +426,8 @@ Figure 3.5: Illustration of bound-bound transition in the Bohr atomic model. Sou
 </div>
 <p>However, other predictions about the properties of the atom were wrong, and its implications were not observed in experiments. In the Schrödinger model, the electron of a one-electron atom, rather than travelling in fixed orbits around the nucleus, has a probability distribution allowing the electron to be at almost all locations in space, some being much more likely than others. Bohr theory (1913) was rejected in 1925 after the advent of quantum mechanics, but its model remains because despite its flaws and idealisations, <a href="https://blogs.scientificamerican.com/guest-blog/why-it-s-okay-to-teach-wrong-ideas-in-physics/">Bohr’s model is useful for education</a>.</p>
 </div>
-<div id="the-models-of-benzene" class="section level3" number="3.3.2">
-<h3><span class="header-section-number">3.3.2</span> The models of benzene</h3>
+<div id="the-models-of-benzene" class="section level3 hasAnchor" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> The models of benzene<a href="empirical-practices.html#the-models-of-benzene" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Models are as well purpose-dependent</strong>. Suppose the next question. Which benzene model is better? A quantum mechanic model, or a structural formula?. On one side, the quantum mechanic model is more precise about the potential position of electrons. Additionally, is more similar to the target as it represents better its relevant properties. The structural model is simpler and easier to work with. In this case, theoretically tractable models such as structural models allow for functional group analysis in chemistry.</p>
 
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:benzene-model"></span>
@@ -445,8 +444,8 @@ Figure 3.7: Historic benzene structures (from left to right) by Claus (1867), De
 </p>
 </div>
 </div>
-<div id="models-as-analogies" class="section level3" number="3.3.3">
-<h3><span class="header-section-number">3.3.3</span> Models as analogies</h3>
+<div id="models-as-analogies" class="section level3 hasAnchor" number="3.3.3">
+<h3><span class="header-section-number">3.3.3</span> Models as analogies<a href="empirical-practices.html#models-as-analogies" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <figure class="wrap-figure">
 <img src="Figures/mary-hesse.jpeg">
 <figcaption>
@@ -470,14 +469,14 @@ Figure 3.8: The luminiferous aether: it was hypothesised that the Earth moves th
 </p>
 </div>
 </div>
-<div id="differences-between-models-and-experiments" class="section level3" number="3.3.4">
-<h3><span class="header-section-number">3.3.4</span> Differences between Models and Experiments</h3>
+<div id="differences-between-models-and-experiments" class="section level3 hasAnchor" number="3.3.4">
+<h3><span class="header-section-number">3.3.4</span> Differences between Models and Experiments<a href="empirical-practices.html#differences-between-models-and-experiments" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>There are several commonalities between models and experiments. Setting parameters and variables in models resembles experimental control. In the same way, model manipulation is akin to experimental manipulation. Moreover, model manipulation yields results that are observed, just as in experimental observations.</p>
 <p>Notwithstanding, there are also important differences to bear in mind, which mainly concern the source of errors. For instance, the most troubling experimental errors concern internal validity questions, i.e. the degree of confidence that the causal relationship put to test is not influenced by other factors or variables. For these reasons, researchers require careful design and control of experiments. Nonetheless, models are generally less sensitive to these issues since the modeller is aware of the idealisations and mechanisms of its models.</p>
 <p>For modelling, the key concern is whether the relevant analogies between model and target hold. Such concern is usually not a problem for experiments, especially those conducted directly on the target. Once internal validity is assessed, researchers are confident that the inferences drawn from the experiment refer to the target. However, inferences drawn from model manipulation constitute neutral analogies considered as hypotheses regarding the target, requiring further testing and justification. This last step is error-prone.</p>
 </div>
-<div id="what-makes-a-good-model" class="section level3" number="3.3.5">
-<h3><span class="header-section-number">3.3.5</span> What makes a good model?</h3>
+<div id="what-makes-a-good-model" class="section level3 hasAnchor" number="3.3.5">
+<h3><span class="header-section-number">3.3.5</span> What makes a good model?<a href="empirical-practices.html#what-makes-a-good-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Since models are purpose dependent, there is no exhaustive set of sufficient and necessary conditions to define what a good model is. Nonetheless, there are some common criteria (e.g. robustness, simplicity, tractability) that can be balanced, but is often impossible to optimise all criteria at the same because some criteria are complements of each other.</p>
 <p>The <strong>similarity</strong> criterion can for example assess physical resemblance. More generally, we could say that a model <span class="math inline">\(M\)</span> is similar to target <span class="math inline">\(X\)</span> if and only if <span class="math inline">\(M\)</span> is similar to <span class="math inline">\(X\)</span> with respect to the set of properties <span class="math inline">\(P\)</span> to a certain degree. However, this definition does not tell us which properties should be optimised. For instance, for a scale model of an air plane aimed at aerodynamic studies, it might be more justified to maximise the similarities of geometric properties over the interior design (e.g. the number of seats might not be relevant since the cabin is closed). Therefore, the purpose of the model justifies maximising one set of properties over another, in particular, the properties that are relevant for the research purpose.</p>
 <p><strong>Robustness</strong> expresses how model results are affected by condition changes. Therefore, a model result is robust (w.r.t. some condition) if changing such condition does not alter the result. For example, all properties except one (e.g. plane hull colour) can be kept fixed to test whether painting the plane with a different colour might affect its aerodynamic properties. If the result remains equal, we can say the model is robust with respect to the hull colour. Perhaps such property is not relevant to the research purpose, but that is not enough to justify removing the property.</p>
@@ -508,8 +507,8 @@ Figure 3.9: Accuracy consists of trueness (proximity of measurement results to t
 <p>Finally, <strong>transparency</strong> is an epistemic value that assesses the degree to which the model user can cognitively understand how the model result is produced. This criterion is known in artificial intelligence as interpretability and/or explainability. For example, a decision tree is often human-readable while the nature of neural networks creates obfuscated models difficult to interpret. Transparent models allow to back-track the result and understand how it was produced from a given input. A transparent model enables the scientist to check the correctness of the results, which is especially important when employing models developed by third parties.</p>
 <p>Again, most of the previous virtues will require certain trade-off. Increasing an epistemic value often entails decreasing another one. Therefore, building or choosing a model requires finding the best trade-off for the model’s purpose.</p>
 </div>
-<div id="models-as-mirrors" class="section level3" number="3.3.6">
-<h3><span class="header-section-number">3.3.6</span> Models as mirrors</h3>
+<div id="models-as-mirrors" class="section level3 hasAnchor" number="3.3.6">
+<h3><span class="header-section-number">3.3.6</span> Models as mirrors<a href="empirical-practices.html#models-as-mirrors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A common way to consider models is as mirrors of the real world. Very often, models are built to be as similar as possible to the target. This is common in highly complex projects such as brain simulations of the neural networks that represent human brain activity or epidemic simulations in which all the available demographic information (e.g. transportation, habits) is considered. The aim of such complex projects is to build a model as a replacement of the actual target system. In the case of epidemic simulations, it is clear that is not feasible to conduct real-world experiments, but the simulation can serve as a way to try different vaccination strategies that might, for instance, prioritise the vaccination of potential super spreaders, i.e. people who are in contact with many people during their daily routine (e.g. supermarket cashiers, waiters). In this sense, we say that the simulation is <em>mirroring</em> the world. Another example from engineering includes finite element analysis (FEA) which is used to divide a complex problem into smaller elements to facilitate calculations.</p>
 <p>This type of model is very similar to the target and require high precision modelling. However, these advantages come at a cost. For instance, they compromise the simplicity, transparency and sometimes the tractability of the models. Despite the high similarity of the models to their target systems, it is not enough to avoid external validity issues. For example, FEA employs a mesh consisting of millions of small elements that mould the physical shape of the analysed structure. Then, calculations are made for each element. Such approximations are usually polynomial, which means that the structural elements have been interpolated, and their precision is bounded to the mesh size. Therefore, the accuracy depends on the purpose of the analysis (e.g. car, hardware tools, camera).</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:fea"></span>
@@ -519,8 +518,8 @@ Figure 3.10: A visualization of an asymmetrical collision analysis using the fin
 </p>
 </div>
 </div>
-<div id="models-as-isolations" class="section level3" number="3.3.7">
-<h3><span class="header-section-number">3.3.7</span> Models as isolations</h3>
+<div id="models-as-isolations" class="section level3 hasAnchor" number="3.3.7">
+<h3><span class="header-section-number">3.3.7</span> Models as isolations<a href="empirical-practices.html#models-as-isolations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>An alternative perspective is to consider models as isolations of particular features of the complex world. This consideration is motivated by the following question. Can models be similar to their target systems and still be simple? We have previously seen that these two factors are very often inversely related. Isolated models choose a particular aspect of the target, disregarding all the rest. Then, a model is built to represent the behaviour of such factors as accurately as possible.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:lift"></span>
 <img src="Figures/lift.jpg" alt="Reproduction of lift balance used in 1901 wind tunnel; model airfoil in testing position. Source: NPS." width="50%" />
@@ -545,10 +544,10 @@ Models as mirrors. Models as isolations.
 --->
 </div>
 </div>
-<div id="examples-2" class="section level2" number="3.4">
-<h2><span class="header-section-number">3.4</span> Examples</h2>
-<div id="willow" class="section level3" number="3.4.1">
-<h3><span class="header-section-number">3.4.1</span> Willow tree experiment</h3>
+<div id="examples-2" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Examples<a href="empirical-practices.html#examples-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="willow" class="section level3 hasAnchor" number="3.4.1">
+<h3><span class="header-section-number">3.4.1</span> Willow tree experiment<a href="empirical-practices.html#willow" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <figure class="wrap-figure">
 <img src="Figures/Jan_Baptist_van_Helmont_portrait.jpg">
 <figcaption>
@@ -569,8 +568,8 @@ Figure 3.13: Illustration of the willow tree experiment. By <a href="https://com
 </p>
 </div>
 </div>
-<div id="john-snow" class="section level3" number="3.4.2">
-<h3><span class="header-section-number">3.4.2</span> 1854 Broad Street cholera outbreak</h3>
+<div id="john-snow" class="section level3 hasAnchor" number="3.4.2">
+<h3><span class="header-section-number">3.4.2</span> 1854 Broad Street cholera outbreak<a href="empirical-practices.html#john-snow" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <figure class="wrap-figure">
 <img src="Figures/John_Snow.jpg">
 <figcaption>
@@ -675,7 +674,7 @@ https://www.technologyreview.com/2019/02/04/137602/this-is-how-ai-bias-really-ha
 </div>
 </div>
 </div>
-<h3> References</h3>
+<h3> References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-bunge2012method" class="csl-entry">
 Bunge, Mario. 2012. <em>Method, Model and Matter</em>. Vol. 44. Springer Science &amp; Business Media.
@@ -690,7 +689,7 @@ DiNardo, John. 2010. <span>“Natural Experiments and Quasi-Natural Experiments.
 Domingos, Pedro. 2012. <span>“A Few Useful Things to Know about Machine Learning.”</span> <em>Communications of the ACM</em> 55 (10): 78–87.
 </div>
 <div id="ref-sep-models-science" class="csl-entry">
-Frigg, Roman, and Stephan Hartmann. 2020. <span>“<span class="nocase">Models in Science</span>.”</span> In <em>The <span>Stanford</span> Encyclopedia of Philosophy</em>, edited by Edward N. Zalta, <span>S</span>pring 2020. <a href="https://plato.stanford.edu/archives/spr2020/entries/models-science/">https://plato.stanford.edu/archives/spr2020/entries/models-science/</a>; Metaphysics Research Lab, Stanford University.
+Frigg, Roman, and Stephan Hartmann. 2020. <span>“<span class="nocase">Models in Science</span>.”</span> In <em>The <span>Stanford</span> Encyclopedia of Philosophy</em>, edited by Edward N. Zalta, <span>S</span>pring 2020. <a href="https://plato.stanford.edu/archives/spr2020/entries/models-science/" class="uri">https://plato.stanford.edu/archives/spr2020/entries/models-science/</a>; Metaphysics Research Lab, Stanford University.
 </div>
 <div id="ref-hansen2020systematic" class="csl-entry">
 Hansen, Jesper Asring, and Lars Tummers. 2020. <span>“A Systematic Review of Field Experiments in Public Administration.”</span> <em>Public Administration Review</em> 80 (6): 921–31.

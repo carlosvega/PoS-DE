@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 4 Experimental Control and Statistical Abuse | Applied Philosophy of Science and Data Ethics</title>
   <meta name="description" content="A tutorial and working resources for writing open-source textbooks using open-source tools" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 4 Experimental Control and Statistical Abuse | Applied Philosophy of Science and Data Ethics" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="A tutorial and working resources for writing open-source textbooks using open-source tools" />
   <meta name="github-repo" content="carlosvega/PoS-DE" />
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="empirical-practices.html"/>
 <link rel="next" href="ethics-and-responsibility.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,8 +48,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-79429674-2"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -255,16 +254,16 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="stats-abuse" class="section level1" number="4">
-<h1><span class="header-section-number">Chapter 4</span> Experimental Control and Statistical Abuse</h1>
+<div id="stats-abuse" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Experimental Control and Statistical Abuse<a href="stats-abuse.html#stats-abuse" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div class="notebox">
 <div class="center">
 <p><strong>Course Note:</strong></p>
 </div>
 <p>This chapter is under construction. Some content is hidden.</p>
 </div>
-<div id="stats-overview" class="section level2" number="4.1">
-<h2><span class="header-section-number">4.1</span> Overview</h2>
+<div id="stats-overview" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Overview<a href="stats-abuse.html#stats-overview" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Daniel did not think of everything when designing his experiment. He did not take confounding bias into account. For instance, Daniel and his friends could have been healthier than the control group. Under such supposition, their strong appearance after ten days of a vegetarian diet may have nothing to do with the diet itself. Perhaps, they would have become even stronger if they had eaten the meat from the king. As we have seen in previous examples presented in this book, confounding bias happens when a variable influences both who is chosen for the treatment group as well as the experiment outcome. These variables might be known variables or act as a lurking third variable we are not aware of. Such variables are easy to spot in causal diagrams.</p>
 <p>The term <em>“confounding”</em> means <em>“to pour, mingle, or mix together”</em>, and Figure <a href="stats-abuse.html#fig:confounder-simple">4.1</a> illustrates why such name was chosen to denominate these situations. The true causal effect <span class="math inline">\(X -&gt; Y\)</span> is <em>mixed</em> with the spurious correlation between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> induced by the fork <span class="math inline">\(X &lt;- Z -&gt; Y\)</span> <span class="citation">(<a href="#ref-book-of-why" role="doc-biblioref">Pearl and Mackenzie 2018</a>)</span>.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:confounder-simple"></span>
@@ -273,8 +272,8 @@ div.csl-indent {
 Figure 4.1: Most basic version of confounding situation: Z is a confounder of the proposed causal relationship between X and Y.
 </p>
 </div>
-<div id="the-smoke-debate---part-ii" class="section level3" number="4.1.1">
-<h3><span class="header-section-number">4.1.1</span> The smoke debate - Part II</h3>
+<div id="the-smoke-debate---part-ii" class="section level3 hasAnchor" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> The smoke debate - Part II<a href="stats-abuse.html#the-smoke-debate---part-ii" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Many famous cases present these confounding situations. For instance, this book previously tackled the debate around smoking and lung cancer. Austin B. Hill and Richard Doll noticed that hidden biases could be present in their previous case-control studies, and the replication of the studies would not be enough to overcome them. In consequence, they began a prospective study (1951) in which they considered 60.000 physicians from United Kingdom consisting of questionnaires tackling their smoking habits. These physicians were followed over time. In just five years, heavy smokers showed a death rate from lung cancer 24 times higher than non-smokers. A similar study conducted in the United States showed that smokers died from lung cancer 29 times more often than non-smokers while heavy smokers died 90 times more frequently. However, former smokers reduced their risk by a factor of two. This behaviour is often called the “dose-response effect”, indicating that a prolonged dose of a drug causes a stronger response.</p>
 <p>Still, R. A. Fischer and Jacob Yerushalmy remained sceptical, stating that such prospective studies failed to compare smokers to non-smokers, arguing that they were not identical groups. The rationale of the critic is that smokers in the study are self-chosen. Moreover, there might be a constitutional difference between smokers and non-smokers. For instance, smokers might be more risk-taking, or more prone to be alcoholics, which might cause adverse health effects which are then wrongly attributed to smoking by Hill and Doll studies. Another possibility they appealed to is the existence of a smoking gene that caused people to become smokers and made them more likely to develop lung cancer.</p>
 <p>The <em>constitutional hypothesis</em> was almost impossible to test. In 2000, the sequencing of the human genome became real and with it the possibility to study links between genes and lung cancer. Actually, such genes do exist, as with breast cancer that make people more prone to develop certain types of cancer. In 1959, a couple of researchers published a rebuttal of Fischer’s arguments that settled the debate. One of the researchers, Cornfield, was not a statistician, nor a biologist, but instead, a historian with statistical knowledge who worked in the department of agriculture (this is of course not a cause of his family name). Cornfield aimed to debunk such constitutional hypothesis with the following reasoning: suppose the possibility of a confounding factor (e.g. smoking gene) that would fully explain the cancer risk of smokers. If smokers have 9 times the risk of developing lung cancer, the supposed confounding factor ought to be at least nine times more common in smokers to account for such risk difference. Let’s exemplify this. If 11% of non-smokers have such a gene, then 99% (since they have 9 times more risk: 11 x 9) of smokers would have to have the gene. But if 12% of non-smokers would have the smoking gene, then it is not mathematically possible for the cancer gene to fully explain the association between smoking and lung cancer. This is known as Cornfield’s inequality, and led to the development of sensitivity analysis.</p>
@@ -300,13 +299,13 @@ Include continuation from smoke debate
 -->
 </div>
 </div>
-<div id="experimental-control" class="section level2" number="4.2">
-<h2><span class="header-section-number">4.2</span> Experimental Control</h2>
+<div id="experimental-control" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Experimental Control<a href="stats-abuse.html#experimental-control" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Experimental control entails a series of procedures for experiment and observation design aimed at minimising the effects of extraneous variables (i.e. confounding factors) other than the manipulated variables (i.e. independent variable) to ensure that the measured variable (i.e. dependent variable) is only affected by the independent variables. To evaluate the effects of manipulating the independent variables, some control system is needed in which no such deliberate changes are introduced. As we have seen, sampling units (e.g. study participants) are often divided into two groups (the experimental group and the control group) in a way that the only noticeable (or significant) difference between them lies in the stimuli exerted by the experiment.
 Therefore, the control and experimental groups must be <em>homogeneous</em> in all relevant factors.</p>
 <p>In general, there are two techniques for the formation of such homogeneous groups: individual and collective control <span class="citation">(<a href="#ref-bunge2017philosophy" role="doc-biblioref">Bunge 2017</a>)</span>. <strong>Individual control</strong> requires simultaneous pairing of individuals in both groups, i.e. every member of the experimental group has a corresponding equivalent member in the control group. For instance, for every thirty years old Asian man in the control group another thirty years old Asian man is assigned to the experimental group. Simultaneous pairing is complex and expensive. <strong>Statistical control</strong> has two main types. On one side, the <em>control of distributions</em> should be performed to equate certain parameters such as averages, spreads (i.e. std. dev.) and other collective properties (e.g. medians). This technique is more flexible as only some properties are kept under control. In this case, we would take two samples of people with the same age and height distributions. Both simultaneous pairing and distribution control share a common disadvantage regarding the formation of the groups, which could be unintentionally biased. For instance, we could assign the strongest people to the treatment (or experimental) group to make sure they bear the treatment. To prevent this issue the two groups are usually formed at random. Thanks to <strong>randomisation</strong>, all variables (including most unknown factors) that were not previously controlled become randomly distributed, minimising their effect on the dependent variables. However, randomisation is not an alternative to other techniques, but rather a complement.</p>
-<div id="other-experimental-control-techniques" class="section level3" number="4.2.1">
-<h3><span class="header-section-number">4.2.1</span> Other experimental control techniques</h3>
+<div id="other-experimental-control-techniques" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Other experimental control techniques<a href="stats-abuse.html#other-experimental-control-techniques" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>There are multiple strategies for experimental control. We have previously seen the method of division into treatment and control groups. The control and treatment groups can entail two moments in <strong>time</strong>, with the initial setting being the control scenario which is later on manipulated through the intervention of certain variables (e.g. measure noise from bats in a dark chamber before and after turning a light). Another technique requires <strong>holding certain factors constant</strong> or finding scenarios (like in a field experiment) with the same background conditions. Nonetheless, constructing such conditions in a laboratory can also achieve this goal. In an <strong>elimination</strong> strategy some factors are removed to simplify study conditions, such as air resistance in a vacuum chamber or <a href="https://en.wikipedia.org/wiki/Drop_tube">drop tower</a>, radio waves in a Faraday cage, or gravity in space experiments. A common case of elimination is <strong>blinding</strong>, where subjects do not know which group they are assigned to (single blinding). Moreover, double-blinding implies hiding this information from the experimenter and/or the data analyst. Finally, we can <strong>separate factors</strong> by measuring their effect and correcting for it. For example, the measurements of time dilation require taking into account the Doppler effect caused by the changing distance between the observer and the moving clock. GPS systems perform adjustments due to the effects of time dilation and gravitational frequency shifts. Another example, missile trajectories are often adjusted for the effect of <a href="https://en.wikipedia.org/wiki/Coriolis_force">Coriolis force</a>.</p>
 <hr />
 
@@ -318,8 +317,8 @@ Figure 4.3: Figure from <a href="https://commons.wikimedia.org/wiki/File:Researc
 </div>
 </div>
 </div>
-<div id="randomised-control-trials" class="section level2" number="4.3">
-<h2><span class="header-section-number">4.3</span> Randomised Control Trials</h2>
+<div id="randomised-control-trials" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Randomised Control Trials<a href="stats-abuse.html#randomised-control-trials" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The fundamental problem of causal inference tell us that it is impossible, by definition, to observe the effect of more than one treatment on a subject over a specific time period. A study participant cannot both take the pill and not take the pill at the same time. Directly observing causal effects is impossible. Nonetheless, this does not make causal inference impossible. There are certain techniques and assumptions that allow to circumvent the fundamental problem. In this context, randomized experiments allow for the estimation of population-level causal effects.
 <!--- https://en.wikipedia.org/wiki/Rubin_causal_model#The_fundamental_problem_of_causal_inference https://www.youtube.com/watch?v=dSOjpxo1UX0 --></p>
 <p>Randomisation offers a systematic solution for the division of participants (or sampling units) into two groups. In particular, RCTs are frequently regarded as a gold standard for clinical trials and among the highest quality evidence available (see Figure <a href="stats-abuse.html#fig:pyramid-eviodence">4.3</a>). However, as with every method, it will only yield fruitful results if applied correctly, and its sole employment does not warrant against other errors.</p>
@@ -345,8 +344,8 @@ Figure 4.3: Figure from <a href="https://commons.wikimedia.org/wiki/File:Researc
 Ronald Aylmer Fisher in 1913
 </figcaption>
 </figure>
-<div id="origins-of-rcts" class="section level3" number="4.3.1">
-<h3><span class="header-section-number">4.3.1</span> Origins of RCTs</h3>
+<div id="origins-of-rcts" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Origins of RCTs<a href="stats-abuse.html#origins-of-rcts" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>R.A. Fisher (1890-1962) conceived the RCTs in the 1930s for its employment in agriculture experiments. Fisher designed intricate approaches to disentangle the effects of fertiliser from other variables. Using the <em>Latin Square</em>, he would divide the field into a grid of subplots to test each fertiliser with each combination of soil type and plant. However, in this scenario the experimenter would observe the effects of the fertiliser <em>mixed</em> (i.e. <em>confounded</em>) with a variety of other things (e.g. soil fertility, drainage, microflora). Fischer realised that the only design that would “<em>trick nature</em>” is one where the fertilisers are assigned randomly to the subplots. Of course, sometimes you might be unlucky and assign a certain fertiliser to the least fertile subplots, but other times you might get the opposite assignment. A new random allocation is generated each time the experiment is conducted. By running the experiment multiple times the luck of each allocation is <em>averaged</em>.</p>
 <blockquote>
 <p>But Fisher realized that an uncertain answer to the right question is much better than a highly certain answer to the wrong question. […] If you ask the right question, getting an answer that is occasionally wrong is much less of a problem. You can still estimate the amount of uncertainty in your answer, because the uncertainty comes from the randomization procedure (which is known) rather than the characteristics of the soil (which are unknown). — Section “Why RCTs work” in Chapter 4 from <span class="citation">(<a href="#ref-book-of-why" role="doc-biblioref">Pearl and Mackenzie 2018</a>)</span></p>
@@ -359,8 +358,8 @@ Figure 4.4: Causal diagram depicting an improperly controlled experiment.
 </p>
 </div>
 </div>
-<div id="validity" class="section level3" number="4.3.2">
-<h3><span class="header-section-number">4.3.2</span> Validity</h3>
+<div id="validity" class="section level3 hasAnchor" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Validity<a href="stats-abuse.html#validity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <!---
 
 Example from § \@ref(covid-israel).
@@ -387,8 +386,8 @@ Example from § \@ref(covid-israel).
 <p>Therefore, RCTs must be internally valid, — i.e. the design must eliminate the possibility of bias — but to be clinically useful the result must also be relevant to a well-defined group of patients in a particular clinical setting (i.e. external validity). Differences between trial protocol and routine practice also affect the external validity of RCTs. In <span class="citation">(<a href="#ref-rothwell2006factors" role="doc-biblioref">Rothwell 2006</a>)</span>, the authors list some of the most important potential determinants of external validity.</p>
 </div>
 </div>
-<div id="cross-validation-in-machine-learning" class="section level2" number="4.4">
-<h2><span class="header-section-number">4.4</span> Cross-validation in Machine Learning</h2>
+<div id="cross-validation-in-machine-learning" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Cross-validation in Machine Learning<a href="stats-abuse.html#cross-validation-in-machine-learning" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>As data scientists, you may wonder why the previous practices are relevant to your job. In this section I want to show how similar control measures must be considered regarding machine learning (ML). When applying supervised ML methods, is important to prevent over-fitting and under-fitting situations. In particular, over-fitting occurs when a model begins to <em>memorize</em> training data rather than <em>learning</em> to generalize from a trend (see Figure <a href="stats-abuse.html#fig:overfitting">4.5</a>). One of the techniques to detect or lessen the effect of over-fitting includes cross-validation. The basis of this technique is to test the generalization power of the model by evaluating its performance on a set of data not used during the training stage.</p>
 
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:overfitting"></span>
@@ -429,8 +428,8 @@ Figure 4.8: Source: Scikit-Learn. Other K-fold CV strategies. <a href="https://s
 </div>
 <p>Similar to RTC internal validity, cross-validation does not ensure transferability to other scenarios. External validation must be performed with independent datasets to ensure robustness against new scenarios. Consider a deep-learning algorithm trained to predict the number of years a patient will survive based on its characteristics and the medication administrated. This system could be then transferred to a different hospital, in another country, region, or city where the population characteristics (diet, hygiene, professions) are different. The model will require undertaking a certain recalibration process to learn the new conditions.</p>
 </div>
-<div id="data-is-not-enough" class="section level2" number="4.5">
-<h2><span class="header-section-number">4.5</span> Data alone is not enough</h2>
+<div id="data-is-not-enough" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Data alone is not enough<a href="stats-abuse.html#data-is-not-enough" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The confirmation of a hypothesis is often considered to increase as the number of favourable test findings grows, but the increase in confirmation, produced by one new favourable instance, will generally become smaller as the number of previously established favourable instances grows <span class="citation">(<a href="#ref-hempel-pos" role="doc-biblioref">Hempel 1966</a>)</span>. Many researchers and data scientists blindly rely on the dogma <em>the more data, the merrier</em> but the addition of one more favourable finding raises the hypothesis confirmation but little. The confirmation of a hypothesis depends not only on the quantity of the favourable evidence available but also on its variety.</p>
 <p>As he have seen during this course, data alone is not enough. Note that this is especially a problem for solutions based on Machine Learning, since domain knowledge or <em>context</em> should be introduced somehow to <em>direct</em> the model in the desired direction.</p>
 <blockquote>
@@ -489,10 +488,10 @@ Example from § \@ref(viz-hurricane).
 - quantify error H & HA example of amyloid plaque as cause of Alzheimer
 -->
 </div>
-<div id="examples-3" class="section level2" number="4.6">
-<h2><span class="header-section-number">4.6</span> Examples</h2>
-<div id="covid-israel" class="section level3" number="4.6.1">
-<h3><span class="header-section-number">4.6.1</span> Covid-19: How can efficacy versus severe disease be strong when 60% of hospitalized are vaccinated?</h3>
+<div id="examples-3" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> Examples<a href="stats-abuse.html#examples-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="covid-israel" class="section level3 hasAnchor" number="4.6.1">
+<h3><span class="header-section-number">4.6.1</span> Covid-19: How can efficacy versus severe disease be strong when 60% of hospitalized are vaccinated?<a href="stats-abuse.html#covid-israel" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="rnote">
 <p><em>There are three kinds of lies: Lies, damned lies, and statistics</em></p>
 </div>
@@ -520,8 +519,8 @@ The interpretation of this number is that the vaccines are preventing &gt;2/3 of
 <p>In conclusion, as long as there is a major age disparity in vaccination rates, with older individuals being more highly vaccinated, then the fact that older people have an inherently higher risk of hospitalization when infected with a respiratory virus means that it is always important to stratify results by age; Even more fundamentally, it is important to use infection and disease rates (per 100k, e.g.) and not raw counts to compare unvaccinated and vaccinated groups to adjust for the proportion vaccinated. Use of raw counts exaggerates the vaccine efficacy when vaccinated proportion is low and attenuates the vaccine efficacy when, like in Israel, vaccines proportions are high.</p>
 </blockquote>
 </div>
-<div id="viz-hurricane" class="section level3" number="4.6.2">
-<h3><span class="header-section-number">4.6.2</span> Misinterpretations of hurricane forecast maps</h3>
+<div id="viz-hurricane" class="section level3 hasAnchor" number="4.6.2">
+<h3><span class="header-section-number">4.6.2</span> Misinterpretations of hurricane forecast maps<a href="stats-abuse.html#viz-hurricane" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The <a href="https://www.nytimes.com/interactive/2019/08/29/opinion/hurricane-dorian-forecast-map.html">following article</a> by Alberto Cairo published in The New York Times explains how hurricane cone forecast maps can mislead the public and produce real-world consequences.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:hurricane-tv"></span>
 <img src="Figures/hurricane-forecast-maps-tv.png" alt="Example of hurricane forecast cone graphic in TV." width="66%" />
@@ -585,7 +584,7 @@ https://evidentlyai.com/blog/machine-learning-monitoring-data-and-concept-drift
 </div>
 </div>
 </div>
-<h3> References</h3>
+<h3> References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-bunge2017philosophy" class="csl-entry">
 ———. 2017. <em>Philosophy of Science: Volume 2, from Explanation to Justification</em>. Routledge.
