@@ -14,6 +14,18 @@ In the philosophy of science, observations are said to be "theory-laden" when th
 
 > The question then arises: is it just as easy to distinguish between theoretical statements and observational statements? The answer is no, as can be seen from the previous examples regarding how unconscious background beliefs can affect what is observed and reported even a in a very simple tasks such as time measurements. -- [johansson2016philosophy].
 
+## Thomas Kuhn and the idea of scientific revolutions
+
+The Duhem problem points out that neither the confirmation nor falsification of a single hypothesis is as clear and unequivocal as it might be supposed to.
+Accounts of the nature of science, such as Thomas Kuhn's view, diverge from inductivism and falsificationism, suggesting that the progress of science is not a continuous accumulation of knowledge imposed by observational evidence. They deny as well that scientists are purely critical rationalists prepared to renounce to their theoretical commitments when experiments contradict them.
+
+Thomas Kuhn describes the history of science as periods of conservative scientific activity disrupted by revolutions, highlight the role of social factors in this process. 
+
+Many scholars see Kuhn’s view as motivating "social constructivism", which understands scientific knowledge as a cultural product instead of the pure discovery of better and better approximation to the truth. According to the view of Thomas Kuhn, scientific theories are socially negotiated instead of purely determined by nature and experiments. 
+
+The strength of social constrictivism depends, therefore, on how much freedom is allowed for the construction of theories by the social factors affecting science. Social constructivists appeal to the underdetermination argument, as it shows that evidence is always compatible with multiple theories.
+
+
 ## Gettier problems
 
 The definition of knowledge is an ongoing debate among epistemologists. Although the three criteria from Plato are necessary conditions, they are not sufficient as there are situations that satisfy all these conditions and yet don't constitute knowledge (see [Gettier cases](https://en.wikipedia.org/wiki/Gettier_case)) but such cases are rather philosophical and will not be discussed during this course.
@@ -22,3 +34,13 @@ The definition of knowledge is an ongoing debate among epistemologists. Although
 ## Realism and anti-realism {#realism}
 
 For now this will not be included as part of the course curriculum. For a short account of this topic, read Chapter 4 from [@okasha-pos]. <!-- However, I include few sentences that might be useful regarding content already covered in the course -->
+
+
+## Pessimistic meta-induction
+
+One of the most compelling arguments against scientific realisms is the 'Pessimistic meta-induction' argument, by Larry Laudan. Instead of appealing to the undertermination argument, it appeals to history. Recalling Induction to the Best Explanation (IBE), there is a connection between the success of scientific theories and their truth, for which scientific realism offers the only, or the best, explanation of the progress of science. However, Laudan turns this argument around and argues that we have good reasons, by induction, for not believing in the existence of the theoretical entities described by our current theories [@ladyman2012understanding]. Laudan then proceeds to enumerate a number of now abandoned theories that once had predictive and explanatory success (e.g. phlogiston, ether...).
+
+> "Therefore, we should not believe in the approximate truth or the successful reference of the theoretical terms of our best current theories". 
+
+My personal take on this, is as follows: It is argued that from a future perspective we will criticise and debunk our current theories as we now do with past theories. However, for this to be true, we must necessarily assume that we will gain knowledge over time. Such knowledge will be used to debunk, improve or replace the previous theories. Notably, this knowledge will mostly be obtained thanks to prior theories. For instance, the rejection of luminiferous aether theory happened thanks to an experiment that was designed with the help of previous theories. Scientists follow their theories to their limits, and when found, they require theory reformulation or replacement. In the same way the Americas were found on the assumption that they would reach East Indies. Failures lead to new discoveries and theories are always under development, is not just theories what realists use as truth but rather all the knowledge that transcends in the process of developing theories, including, of course, the theories themselves.
+
