@@ -129,7 +129,7 @@
 
 \title{Applied Philosophy of Science and Data Ethics}
 \author{Dr.~Carlos Vega}
-\date{2021: Last compiled: 2022-06-08}
+\date{2021: Last compiled: 2022-07-18}
 
 \begin{document}
 \maketitle
@@ -222,7 +222,12 @@ Under the following terms:
 \hypertarget{what-is-science}{%
 \section{What is Science?}\label{what-is-science}}
 
-This question attempts to answer what common features share subjects such as physics or biology to be called sciences, i.e.~what it is that which \emph{makes} something a science. Among other things, science aims to understand, explain and predict the world we live in. But also religions, astrology or alchemy attempt to understand, explain or predict our world. What makes them different from science?
+\begin{quote}
+{[}\ldots{]} questions about scientific methodology and knowledge in philosophy of science are really continuous with questions in cognitive science about how human beings reason and form beliefs. However, one need not imagine an absolute distinction between philosophy and empirical forms of inquiry to appreciate the broad differences between the latter and the study of philosophical questions that arise when we reflect on science.
+Of course, this characterisation is of little use unless we know what science is, so perhaps the most fundamental task for the philosophy of science is to answer the question, `what is science?'. --- \citep{ladyman2012understanding}
+\end{quote}
+
+This question attempts to answer what common features share subjects such as physics or biology to be called sciences, i.e.~what it is that which \emph{makes} something a science. The problem of saying what is scientific and what is not is called \textbf{the demarcation problem}. Among other things, science aims to understand, explain and predict the world we live in. But also religions, astrology or alchemy attempt to understand, explain or predict our world. What makes them different from science?
 
 Four historical elements are essential for the development of a scientific approach. Namely: to seek explanations of natural phenomena; to argue; to investigate the rules of argumentation and logical validity; to build them into a logically consistent system. \citep{johansson2016philosophy}
 
@@ -289,6 +294,10 @@ As another example, the first astronomers who lacked the telescope believed on t
 
 In the next chapter we will see how knowledge is obtained.
 
+\begin{quote}
+One {[}fundamental question of philosophy of science{]} is `how can we have knowledge as opposed to mere belief or opinion?', and one very general answer to it is \textbf{`follow the scientific method'}. {[}\ldots{]} The branch of philosophy that inquires into knowledge and justification is called epistemology. The central questions of epistemology include: what is knowledge as opposed to mere belief?; can we be sure that we have any knowledge?; what things do we in fact know?. --- \citep{ladyman2012understanding}
+\end{quote}
+
 \hypertarget{data-information-and-knowledge}{%
 \subsubsection{Data, information and knowledge}\label{data-information-and-knowledge}}
 
@@ -336,6 +345,10 @@ One of the tasks of philosophy of science is to question assumptions that scient
 Therefore, one of the main objectives of philosophy of science is to study the methods and methodologies of enquiry used in the sciences, understanding how techniques like experimentation, observation and theory building enable scientists to reveal new knowledge. Philosophy of science asks questions such as: What is knowledge? What is a scientifically acceptable observation? What makes an explanation scientific? What is a scientific theory?
 
 Finally, the philosophy of science tackles a wide range of topics that would require its own master. Moreover, not all topics are directly related to the aims of this course and the scope of the master. For this reason, a brief summary of the topics left behind is included in § \ref{wont-fix}. Of course, the curriculum is subject to change in the future and the list might change too.
+
+\begin{quote}
+It is usually thought that if there is anything of which science consists it is a method or set of methods, so the study of scientific method (known as methodology of science) is at the centre of the philosophy of science. --- \citep{ladyman2012understanding}
+\end{quote}
 
 \hypertarget{sci-method}{%
 \section{The scientific method}\label{sci-method}}
@@ -478,6 +491,45 @@ The third step of the scientific method (see § \ref{sci-method}) requires guess
 
 \caption{Source and credits to: Haltopub, from \href{https://en.wikipedia.org/wiki/File:Ouroboros-benzene.svg}{Wikimedia}.}\label{fig:ouroboros}
 \end{figure}
+
+First, let us define bias as the combination of various design, data, analysis, and presentation factors that tend to produce research findings when they should not be produced. Bias can entail manipulation in the analysis or reporting of findings. Selective or distorted reporting is a typical form of such bias.
+
+\hypertarget{why-most-published-research-findings-are-false}{%
+\subsection{Why Most Published Research Findings Are False}\label{why-most-published-research-findings-are-false}}
+
+In his work \href{https://doi.org/10.1371/journal.pmed.0020124}{Why Most Published Research Findings Are False}, John P. A. Ioannidis (professor at the Stanford School of Medicine) argues that ``the probability that a research claim is true may depend on study power (see note) and bias, the number of other studies on the same question, and, importantly, the ratio of true to no relationships among the relationships probed in each scientific field'' \citep{ioannidis2005most}.
+
+In the form of corollaries, the author enumerates several factors making a paper with a positive result more likely to enter the literature and suppress negative-result papers. For instance, the popularity of a field or a trendy topic has more chances to have more publications about. Financial or political interests can act as prejudices affecting research and publication. Other factors such as sample size and effect sizes (e.g.~the strength of the relationship between two variables in a population), experimenter bias, white hat bias (e.g.~cherry picking the evidence and publication bias); flexibility in designs, definitions, outcomes, and analytical modes.
+
+\begin{quote}
+These corollaries consider each factor separately, but these factors often influence each other. For example, investigators working in fields where true effect sizes are perceived to be small may be more likely to perform large studies than investigators working in fields where true effect sizes are perceived to be large. --- \citep{ioannidis2005most}
+\end{quote}
+
+In summary, the problem is that researchers and institutions tend to value and promote ``positive results'' and discard negative results as not interesting to be published. This creates a bias in the scientific literature towards certain topics, designs and knowledge.
+
+\begin{quote}
+Thus, each team may prioritize on pursuing and disseminating its most impressive ``positive'' results. ``Negative'' results may become attractive for dissemination only if some other team has found a ``positive'' association on the same question. In that case, it may be attractive to refute a claim made in some prestigious journal. --- \citep{ioannidis2005most}
+\end{quote}
+
+Consider the following example provided by the author. Let \(R\) be the ratio of the number of ``true relationships'' to ``no relationships'' among those tested in the field. Let \(u\) be the proportion of probed analyses that would not have been ``research findings,'' but nevertheless end up presented and reported as such, because of bias. Importantly, ``Bias should not be confused with chance variability that causes some findings to be false by chance even though the study design, data, analysis, and presentation are perfect''.
+
+\begin{quote}
+Let us assume that a team of investigators performs a whole genome association study to test whether any of 100,000 gene polymorphisms are associated with susceptibility to schizophrenia. Based on what we know about the extent of heritability of the disease, it is reasonable to expect that probably around ten gene polymorphisms among those tested would be truly associated with schizophrenia, with relatively similar odds ratios around 1.3 for the ten or so polymorphisms and with a fairly similar power to identify any of them. Then \(R = 10/100,000 = 10^{−4}\), and the pre-study probability for any polymorphism to be associated with schizophrenia is also \(R/(R + 1) = 10^{−4}\). Let us also suppose that the study has 60\% power to find an association with an odds ratio of 1.3 at \(\alpha = 0.05\). Then it can be estimated that if a statistically significant association is found with the \(p\)-value barely crossing the 0.05 threshold, the post-study probability that this is true increases about 12-fold compared with the pre-study probability, but it is still only \(12 × 10^{−4}\).
+
+Now let us suppose that the investigators manipulate their design, analyses, and reporting so as to make more relationships cross the \(p = 0.05\) threshold even though this would not have been crossed with a perfectly adhered to design and analysis and with perfect comprehensive reporting of the results, strictly according to the original study plan. Such manipulation could be done, for example, with serendipitous inclusion or exclusion of certain patients or controls, post hoc subgroup analyses, investigation of genetic contrasts that were not originally specified, changes in the disease or control definitions, and various combinations of selective or distorted reporting of the results. Commercially available ``data mining'' packages actually are proud of their ability to yield statistically significant results through data dredging. In the presence of bias with \(u = 0.10\), the post-study probability that a research finding is true is only \(4.4 × 10^{−4}\). Furthermore, even in the absence of any bias, when ten independent research teams perform similar experiments around the world, if one of them finds a formally statistically significant association, the probability that the research finding is true is only. \(1.5 × 10^{-4}\), hardly any higher than the probability we had before any of this extensive research was undertaken! --- \citep{ioannidis2005most}
+\end{quote}
+
+Although most of the arguments and warnings of the paper are shared by most researchers, the work of Ioannidis is not exempt from critics. Researchers Steven Goodman and Sander Greenland published an analysis of Ioannidis' approach \citep{goodman2007most}. Ironically, this latter work is much less cited that the original work. Goodman and Greenland agree on the conclusions and recommendations but reject the exaggerated language of the paper regarding the falsity of most published research. Researchers Jager and Leek criticized the model as being based on justifiable but arbitrary assumptions rather than empirical data. They calculated that the false positive rate in biomedical studies was estimated to be around 14\% instead of over 50\% as Ioannidis asserted \citep{jager2014estimate}.
+
+Whether the model is correct or not, Ioannidis' claims are reasonable meta-scientific research continues to increase, providing stronger knowledge and more credible scientific literature.
+
+\begin{tipbox}
+
+\textbf{Note for data scientists!}
+
+The \textbf{study power} is defined as ``the ability of a study to detect an effect or association if one really exists in a wider population''. Clinical studies are conducted on a subset of the patient population because it is not possible to measure a characteristic in the entire population. Whenever a statistical inference is made from a sample, it is subject to some error. Researchers attempt to reduce systematic errors through proper design so that only random errors remain. There are two types of random errors to be considered before making inferences about the studied population: \textbf{type I and type II errors}. To make a statistical inference, 2 hypotheses must be set: the \textbf{null hypothesis} (there is no difference) and \textbf{alternate hypothesis} (there is a difference). The probability of reaching a statistically significant result if in truth there is no difference or of rejecting the null hypothesis when it should have been accepted is denoted as \(\alpha\), or the \textbf{probability of type I error}. It is similar to the false positive result of a clinical test. The probability of not detecting a minimum clinically important difference if in truth there is a difference or of accepting the null hypothesis when it should have been rejected is denoted as \(\beta\), or the \textbf{probability of type II error}. It is similar to the false negative result of a clinical test. Properly, researchers choose the size of \(\alpha\) and \(\beta\) before gathering data so that their choices cannot be influenced by study results. The typical value of \(\alpha\) is set at 0.05, and the significance level (\(p\) value) determined from the data is compared with \(\alpha\) to decide on statistical significance. The typical value of \(\beta\) is set at 0.2. The power of the study, its complement, is \(1-\beta\) and is commonly reported as a percentage. --- Adapted from \citep{cadeddu2008users}
+
+\end{tipbox}
 
 \hypertarget{scientific-inference}{%
 \chapter{Scientific Inference}\label{scientific-inference}}
@@ -773,6 +825,15 @@ There are though some criteria for a \href{https://opentext.wsu.edu/carriecuttle
 \item
   Finally, it should have some generality (e.g.~``things of certain type\ldots{}'') or be about some non-directly observable property of a particular.
 \end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.66\linewidth]{Figures/hypothesis_generation} 
+
+}
+
+\caption{The key aspect being conveyed in this simple exchange is that one of the many good practices in science (no matter the aspect, though the specifics may change according to the precise field of study) is that one should first have an idea of what you can test and then perform the test to confirm (or rule out) your idea. Title text: "Frazzled scientists are requesting that everyone please stop generating hypotheses for a little bit while they work through the backlog". Source: xkcd.com.}\label{fig:xkcd-hypothesis}
+\end{figure}
 
 \hypertarget{falsification}{%
 \subsection{Falsification}\label{falsification}}
@@ -2303,6 +2364,18 @@ In the philosophy of science, observations are said to be ``theory-laden'' when 
 The question then arises: is it just as easy to distinguish between theoretical statements and observational statements? The answer is no, as can be seen from the previous examples regarding how unconscious background beliefs can affect what is observed and reported even a in a very simple tasks such as time measurements. -- {[}johansson2016philosophy{]}.
 \end{quote}
 
+\hypertarget{thomas-kuhn-and-the-idea-of-scientific-revolutions}{%
+\section{Thomas Kuhn and the idea of scientific revolutions}\label{thomas-kuhn-and-the-idea-of-scientific-revolutions}}
+
+The Duhem problem points out that neither the confirmation nor falsification of a single hypothesis is as clear and unequivocal as it might be supposed to.
+Accounts of the nature of science, such as Thomas Kuhn's view, diverge from inductivism and falsificationism, suggesting that the progress of science is not a continuous accumulation of knowledge imposed by observational evidence. They deny as well that scientists are purely critical rationalists prepared to renounce to their theoretical commitments when experiments contradict them.
+
+Thomas Kuhn describes the history of science as periods of conservative scientific activity disrupted by revolutions, highlight the role of social factors in this process.
+
+Many scholars see Kuhn's view as motivating ``social constructivism'', which understands scientific knowledge as a cultural product instead of the pure discovery of better and better approximation to the truth. According to the view of Thomas Kuhn, scientific theories are socially negotiated instead of purely determined by nature and experiments.
+
+The strength of social constrictivism depends, therefore, on how much freedom is allowed for the construction of theories by the social factors affecting science. Social constructivists appeal to the underdetermination argument, as it shows that evidence is always compatible with multiple theories.
+
 \hypertarget{gettier-problems}{%
 \section{Gettier problems}\label{gettier-problems}}
 
@@ -2312,6 +2385,17 @@ The definition of knowledge is an ongoing debate among epistemologists. Although
 \section{Realism and anti-realism}\label{realism}}
 
 For now this will not be included as part of the course curriculum. For a short account of this topic, read Chapter 4 from \citep{okasha-pos}.
+
+\hypertarget{pessimistic-meta-induction}{%
+\section{Pessimistic meta-induction}\label{pessimistic-meta-induction}}
+
+One of the most compelling arguments against scientific realisms is the `Pessimistic meta-induction' argument, by Larry Laudan. Instead of appealing to the undertermination argument, it appeals to history. Recalling Induction to the Best Explanation (IBE), there is a connection between the success of scientific theories and their truth, for which scientific realism offers the only, or the best, explanation of the progress of science. However, Laudan turns this argument around and argues that we have good reasons, by induction, for not believing in the existence of the theoretical entities described by our current theories \citep{ladyman2012understanding}. Laudan then proceeds to enumerate a number of now abandoned theories that once had predictive and explanatory success (e.g.~phlogiston, ether\ldots).
+
+\begin{quote}
+``Therefore, we should not believe in the approximate truth or the successful reference of the theoretical terms of our best current theories''.
+\end{quote}
+
+My personal take on this, is as follows: It is argued that from a future perspective we will criticise and debunk our current theories as we now do with past theories. However, for this to be true, we must necessarily assume that we will gain knowledge over time. Such knowledge will be used to debunk, improve or replace the previous theories. Notably, this knowledge will mostly be obtained thanks to prior theories. For instance, the rejection of luminiferous aether theory happened thanks to an experiment that was designed with the help of previous theories. Scientists follow their theories to their limits, and when found, they require theory reformulation or replacement. In the same way the Americas were found on the assumption that they would reach East Indies. Failures lead to new discoveries and theories are always under development, is not just theories what realists use as truth but rather all the knowledge that transcends in the process of developing theories, including, of course, the theories themselves.
 
   \bibliography{book.bib,packages.bib}
 
