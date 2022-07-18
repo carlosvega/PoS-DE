@@ -250,6 +250,10 @@ There are though some criteria for a [good hypothesis](https://opentext.wsu.edu/
 
 - Finally, it should have some generality (e.g. "things of certain type...") or be about some non-directly observable property of a particular.
 
+```{r xkcd-hypothesis, echo=F, fig.align="center", out.width="66%", fig.cap='The key aspect being conveyed in this simple exchange is that one of the many good practices in science (no matter the aspect, though the specifics may change according to the precise field of study) is that one should first have an idea of what you can test and then perform the test to confirm (or rule out) your idea. Title text: "Frazzled scientists are requesting that everyone please stop generating hypotheses for a little bit while they work through the backlog". Source: xkcd.com.'}
+knitr::include_graphics('Figures/hypothesis_generation.png')
+```
+
 ### Falsification {#falsification}
 
 ```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
