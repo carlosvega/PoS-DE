@@ -11,7 +11,10 @@
 
 ## What is Science?
 
-This question attempts to answer what common features share subjects such as physics or biology to be called sciences, i.e. what it is that which *makes* something a science. Among other things, science aims to understand, explain and predict the world we live in. But also religions, astrology or alchemy attempt to understand, explain or predict our world. What makes them different from science?
+> [...] questions about scientific methodology and knowledge in philosophy of science are really continuous with questions in cognitive science about how human beings reason and form beliefs. However, one need not imagine an absolute distinction between philosophy and empirical forms of inquiry to appreciate the broad differences between the latter and the study of philosophical questions that arise when we reflect on science.
+Of course, this characterisation is of little use unless we know what science is, so perhaps the most fundamental task for the philosophy of science is to answer the question, ‘what is science?’. --- [@ladyman2012understanding]
+
+This question attempts to answer what common features share subjects such as physics or biology to be called sciences, i.e. what it is that which *makes* something a science. The problem of saying what is scientific and what is not is called **the demarcation problem**. Among other things, science aims to understand, explain and predict the world we live in. But also religions, astrology or alchemy attempt to understand, explain or predict our world. What makes them different from science?
 
 Four historical elements are essential for the development of a scientific approach. Namely: to seek explanations of natural phenomena; to argue; to investigate the rules of argumentation and logical validity; to build them into a logically consistent system. [@johansson2016philosophy] 
 
@@ -63,6 +66,8 @@ As another example, the first astronomers who lacked the telescope believed on t
 
 In the next chapter we will see how knowledge is obtained.
 
+> One [fundamental question of philosophy of science] is ‘how can we have knowledge as opposed to mere belief or opinion?’, and one very general answer to it is **‘follow the scientific method’**. [...] The branch of philosophy that inquires into knowledge and justification is called epistemology. The central questions of epistemology include: what is knowledge as opposed to mere belief?; can we be sure that we have any knowledge?; what things do we in fact know?. --- [@ladyman2012understanding]
+
 #### Data, information and knowledge
 
 Nowadays, technology allows us to collect data into datasets, transform datasets into information and arrive at new knowledge. Such processes have always been crucial in science but computer science comes to question concepts such as data, information and knowledge. [@johansson2016philosophy]
@@ -96,6 +101,8 @@ One of the tasks of philosophy of science is to question assumptions that scient
 Therefore, one of the main objectives of philosophy of science is to study the methods and methodologies of enquiry used in the sciences, understanding how techniques like experimentation, observation and theory building enable scientists to reveal new knowledge. Philosophy of science asks questions such as: What is knowledge? What is a scientifically acceptable observation? What makes an explanation scientific? What is a scientific theory?
 
 Finally, the philosophy of science tackles a wide range of topics that would require its own master. Moreover, not all topics are directly related to the aims of this course and the scope of the master. For this reason, a brief summary of the topics left behind is included in § \@ref(wont-fix). Of course, the curriculum is subject to change in the future and the list might change too.
+
+> It is usually thought that if there is anything of which science consists it is a method or set of methods, so the study of scientific method (known as methodology of science) is at the centre of the philosophy of science. --- [@ladyman2012understanding]
 
 ## The scientific method {#sci-method}
 
@@ -256,6 +263,35 @@ The third step of the scientific method (see § \@ref(sci-method)) requires gues
 knitr::include_graphics('Figures/Ouroboros-benzene.png')
 ```
 
+### Why Most Published Research Findings Are False
+
+In his work [Why Most Published Research Findings Are False](https://doi.org/10.1371/journal.pmed.0020124), John P. A. Ioannidis (professor at the Stanford School of Medicine) argues that "the probability that a research claim is true may depend on study power (see note) and bias, the number of other studies on the same question, and, importantly, the ratio of true to no relationships among the relationships probed in each scientific field" [@ioannidis2005most]. 
+
+In the form of corollaries, the author enumerates several factors making a paper with a positive result more likely to enter the literature and suppress negative-result papers. For instance, the popularity of a field or a trendy topic has more chances to have more publications about. Financial or political interests can act as prejudices affecting research and publication. Other factors such as sample size and effect sizes (e.g. the strength of the relationship between two variables in a population),  experimenter bias, white hat bias (e.g. cherry picking the evidence and publication bias); flexibility in designs, definitions, outcomes, and analytical modes. 
+
+> These corollaries consider each factor separately, but these factors often influence each other. For example, investigators working in fields where true effect sizes are perceived to be small may be more likely to perform large studies than investigators working in fields where true effect sizes are perceived to be large. --- [@ioannidis2005most]
+
+In summary, the problem is that researchers and institutions tend to value and promote "positive results" and discard negative results as not interesting to be published. This creates a bias in the scientific literature towards certain topics, designs and knowledge.
+
+> Thus, each team may prioritize on pursuing and disseminating its most impressive “positive” results. “Negative” results may become attractive for dissemination only if some other team has found a “positive” association on the same question. In that case, it may be attractive to refute a claim made in some prestigious journal. --- [@ioannidis2005most]
+
+Consider the following example provided by the author. Let $R$ be the ratio of the number of “true relationships” to “no relationships” among those tested in the field. Let $u$ be the proportion of probed analyses that would not have been “research findings”, but nevertheless end up presented and reported as such, because of bias. Importantly, "Bias should not be confused with chance variability that causes some findings to be false by chance even though the study design, data, analysis, and presentation are perfect. Bias can entail manipulation in the analysis or reporting of findings. Selective or distorted reporting is a typical form of such bias" [@ioannidis2005most].
+
+> Let us assume that a team of investigators performs a whole genome association study to test whether any of 100,000 gene polymorphisms are associated with susceptibility to schizophrenia. Based on what we know about the extent of heritability of the disease, it is reasonable to expect that probably around ten gene polymorphisms among those tested would be truly associated with schizophrenia, with relatively similar odds ratios around 1.3 for the ten or so polymorphisms and with a fairly similar power to identify any of them. Then $R = 10/100,000 = 10^{−4}$, and the pre-study probability for any polymorphism to be associated with schizophrenia is also $R/(R + 1) = 10^{−4}$. Let us also suppose that the study has 60% power to find an association with an odds ratio of 1.3 at $\alpha = 0.05$. Then it can be estimated that if a statistically significant association is found with the $p$-value barely crossing the 0.05 threshold, the post-study probability that this is true increases about 12-fold compared with the pre-study probability, but it is still only $12 × 10^{−4}$.
+> 
+> Now let us suppose that the investigators manipulate their design, analyses, and reporting so as to make more relationships cross the $p = 0.05$ threshold even though this would not have been crossed with a perfectly adhered to design and analysis and with perfect comprehensive reporting of the results, strictly according to the original study plan. Such manipulation could be done, for example, with serendipitous inclusion or exclusion of certain patients or controls, post hoc subgroup analyses, investigation of genetic contrasts that were not originally specified, changes in the disease or control definitions, and various combinations of selective or distorted reporting of the results. Commercially available “data mining” packages actually are proud of their ability to yield statistically significant results through data dredging. In the presence of bias with $u = 0.10$, the post-study probability that a research finding is true is only $4.4 × 10^{−4}$. Furthermore, even in the absence of any bias, when ten independent research teams perform similar experiments around the world, if one of them finds a formally statistically significant association, the probability that the research finding is true is only. $1.5 × 10^{-4}$, hardly any higher than the probability we had before any of this extensive research was undertaken! --- [@ioannidis2005most]
+
+Although most of the arguments and warnings of the paper are shared by most researchers, the work of Ioannidis is not exempt from critics. Researchers Steven Goodman and Sander Greenland published an analysis of Ioannidis' approach [@goodman2007most]. Ironically, this latter work is much less cited that the original work. Goodman and Greenland agree on the conclusions and recommendations but reject the exaggerated language of the paper regarding the falsity of most published research. Researchers Jager and Leek criticized the model as being based on justifiable but arbitrary assumptions rather than empirical data. They calculated that the false positive rate in biomedical studies was estimated to be around 14% instead of over 50% as Ioannidis asserted [@jager2014estimate].
+
+Whether the model is correct or not, Ioannidis' claims are reasonable meta-scientific research continues to increase, providing stronger knowledge and more credible scientific literature.
+
+:::: {.tipbox data-latex=""}
+::: { data-latex=""}
+**Note for data scientists!**
+:::
+
+The **study power** is defined as "the ability of a study to detect an effect or association if one really exists in a wider population". Clinical studies are conducted on a subset of the patient population because it is not possible to measure a characteristic in the entire population. Whenever a statistical inference is made from a sample, it is subject to some error. Researchers attempt to reduce systematic errors through proper design so that only random errors remain. There are two types of random errors to be considered before making inferences about the studied population: **type I and type II errors**. To make a statistical inference, 2 hypotheses must be set: the **null hypothesis** (there is no difference) and **alternate hypothesis** (there is a difference). The probability of reaching a statistically significant result if in truth there is no difference or of rejecting the null hypothesis when it should have been accepted is denoted as $\alpha$, or the **probability of type I error**. It is similar to the false positive result of a clinical test. The probability of not detecting a minimum clinically important difference if in truth there is a difference or of accepting the null hypothesis when it should have been rejected is denoted as $\beta$, or the **probability of type II error**. It is similar to the false negative result of a clinical test. Properly, researchers choose the size of $\alpha$ and $\beta$ before gathering data so that their choices cannot be influenced by study results. The typical value of $\alpha$ is set at 0.05, and the significance level ($p$ value) determined from the data is compared with $\alpha$ to decide on statistical significance. The typical value of $\beta$ is set at 0.2. The power of the study, its complement, is $1-\beta$ and is commonly reported as a percentage. --- Adapted from [@cadeddu2008users]
+::::
 
 <!--
 
