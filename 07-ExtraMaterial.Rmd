@@ -10,9 +10,9 @@ Although many historical examples are given to the students to illustrate the di
 
 In the philosophy of science, observations are said to be "theory-laden" when they are affected by the theoretical presuppositions held by the investigator. This thesis of theory-ladenness is associated with the works of Thomas Kuhn and perhaps first put forth by Pierre Duheem [@sep-science-theory-observation].
 
-> "A related topic is the theory-relatedness of observations; some have claimed that there are no such things as fully theory-independent observations. If true, it would undermine the possibility of objectivity of science and force us to accept strong relativism. I believe that this disastrous consequence can be avoided and that there really is a basis of theory-neutral data, also in the humanities." -- [johansson2016philosophy].
+> "A related topic is the theory-relatedness of observations; some have claimed that there are no such things as fully theory-independent observations. If true, it would undermine the possibility of objectivity of science and force us to accept strong relativism. I believe that this disastrous consequence can be avoided and that there really is a basis of theory-neutral data, also in the humanities." -- [@johansson2016philosophy].
 
-> The question then arises: is it just as easy to distinguish between theoretical statements and observational statements? The answer is no, as can be seen from the previous examples regarding how unconscious background beliefs can affect what is observed and reported even a in a very simple tasks such as time measurements. -- [johansson2016philosophy].
+> The question then arises: is it just as easy to distinguish between theoretical statements and observational statements? The answer is no, as can be seen from the previous examples regarding how unconscious background beliefs can affect what is observed and reported even a in a very simple tasks such as time measurements. -- [@johansson2016philosophy].
 
 ## Thomas Kuhn and the idea of scientific revolutions
 
