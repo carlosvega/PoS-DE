@@ -317,6 +317,8 @@ knitr::include_graphics('Figures/hurricane-forecast-heat-map.png')
 
 <!--
 
+to be included (is already included in the course ppt though)
+
 https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing
 
 https://en.wikipedia.org/wiki/List_of_cognitive_biases
