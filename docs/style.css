@@ -17,6 +17,7 @@ figure{
   margin-bottom: 10px;
 }
 
+a.anchor-section::before {content: '\01F517\00FE0E';}
 
 .csl-entry {
   display: list-item;

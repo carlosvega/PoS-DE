@@ -129,7 +129,7 @@
 
 \title{Applied Philosophy of Science and Data Ethics}
 \author{Dr.~Carlos Vega}
-\date{2021: Last compiled: 2022-07-29}
+\date{2021 - 2022: Last compiled: 2022-08-08}
 
 \begin{document}
 \maketitle
@@ -149,28 +149,25 @@
 \chapter*{Preface}\label{preface}}
 \addcontentsline{toc}{chapter}{Preface}
 
-\begin{notebox}
+This class book gathers the contents addressed in the course \textbf{Applied Philosophy of Science and Data Ethics} from the \href{https://wwwfr.uni.lu/formations/fstm/master_of_data_science}{Master of Data Science} at the University of Luxembourg (UL). This course will introduce basic philosophical and scientific concepts supported by examples and discussion. The course expects pro-active participation from the students in the form of presentations and essays as well as open debates.
 
-\begin{center}
-\textbf{Course Note:}
+\hypertarget{course-at-ul}{%
+\section*{Course at UL}\label{course-at-ul}}
+\addcontentsline{toc}{section}{Course at UL}
 
-\end{center}
-
-This class book is still under construction. There are more chapters coming. The current published version is a test to check serving the contents through GitHub.
-
-\end{notebox}
-
-This class book gathers the contents addressed in the course \textbf{Applied Philosophy of Science and Data Ethics} from the \href{https://wwwfr.uni.lu/formations/fstm/master_of_data_science}{Master of Data Science} at the University of Luxembourg. This course will introduce basic philosophical and scientific concepts supported by examples and discussion. The course expects pro-active participation from the students in the form of presentations and essays as well as open debates.
-
-This course aims to provide the students with guidelines and methodologies to identify epistemic and ethical issues present in data science. We expect the students to develop a critical eye that helps them mitigate such problems in their daily work as data scientists.
+The course related to this class book aims to provide the students with guidelines and methodologies to identify epistemic and ethical issues present in data science. We expect the students to develop a critical eye that helps them mitigate such problems in their daily work as data scientists.
 
 During this course, students will learn by example different layers of the scientific method and how they relate to data science and data ethics. In particular, they will learn how the mechanisms behind the data affect the data analysis, and how the different types of scientific inference condition method choice and affect the conclusions drawn from the analysis. In this sense, examples of statistical abuse, misconduct and bad visualization will be shown together with their, sometimes catastrophic, collateral consequences.
 
-\textbf{Disclaimer}
+\hypertarget{disclaimer}{%
+\section*{Disclaimer}\label{disclaimer}}
+\addcontentsline{toc}{section}{Disclaimer}
 
-Although the impact and extension of the topics addressed in this course are broad and diverse, its duration is limited. Hence the scope and depth of the contents are restricted. Consequently, several topics on Philosophy of Science are tackled superficially while some others are completely ignored. Such philosophical questions are handled from a practical data science point of view. Similarly, Data Ethics is a relatively new matter in continuous evolution. Therefore we will try to cope with the main issues in the most practical way.
+Although the impact and extension of the topics addressed in this class book (and the course) are broad and diverse, its length is limited. Hence the scope and depth of the contents are restricted. Consequently, several topics on Philosophy of Science are tackled superficially while some others are completely ignored. Such philosophical questions are handled from a practical data science point of view. Similarly, Data Ethics is a relatively new matter in continuous evolution. Therefore we will try to cope with the main issues in the most practical way.
 
-\textbf{Learning outcomes}
+\hypertarget{learning-outcomes}{%
+\section*{Learning outcomes}\label{learning-outcomes}}
+\addcontentsline{toc}{section}{Learning outcomes}
 
 In line with the European Qualitity Framework, Bachelor degrees require a critical understanding of theories and principles, while Master degrees involve higher specialised knowledge and critical awareness of knowledge issues in a field. In this case, the field at issue is data science and the contents will tackle philosophical and ethical issues concerning data science. Therefore, the aim is to provide students with a better understanding of method justification, to increase their knowledge about such methods, their scope, purpose and relation to other practices.
 
@@ -184,24 +181,30 @@ In line with the European Qualitity Framework, Bachelor degrees require a critic
   Critically evaluate ethical issues and method choice.
 \end{itemize}
 
-\textbf{About this course}
+\hypertarget{about-this-course}{%
+\section*{About this course}\label{about-this-course}}
+\addcontentsline{toc}{section}{About this course}
 
 A considerable part of the first chapters of this course is inspired by the book from Prof.~Dr Lars-Göran Johansson \citep{johansson2016philosophy} and the educational works of Prof.~Dr Till Grüne-Yanoff \citep{grune2014teaching}, such as his great course at EDX on ``Philosophy of Science for Engineers and Scientists''. Regarding the second part of the course, which covers data ethics, I would like to thank the Univerisity of Michigan, for its online courses (from which I was already a fan during my PhD, especially Applied Data Science) and especially Prof.~Dr H. V. Jagadish for its course on Data Science Ethics which inspired me on the contents and examples of this course. Moreover, this last part of the course would not have been possible without many relevant books on the topics tackled in this course (see References). Including The Book of Why \citep{book-of-why}; Ethics and Data Science \citep{loukides2018ethics}; Philosophy of Natural Science \citep{hempel-pos}; How charts lie \citep{cairo2019charts}; Automating inequality \citep{eubanks2018automating}. I hope any resemblance or imitation is seen as an act of flattery.
 
-\textbf{About this class book}
+\hypertarget{about-this-class-book}{%
+\section*{About this class book}\label{about-this-class-book}}
+\addcontentsline{toc}{section}{About this class book}
 
 This class book was made thanks to the great tutorial available on the book \href{https://www.crumplab.com/OER_bookdown}{``Open tools for writing open interactive textbooks (and more)''}.
 
-\textbf{Licensed under CC BY-NC-SA 4.0}
+\hypertarget{license}{%
+\subsection*{License}\label{license}}
+\addcontentsline{toc}{subsection}{License}
 
-The book is released under \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{CC BY-NC-SA 4.0} license. This means that you are free to:
+\textbf{Licensed under CC BY-NC-ND 4.0}
+
+The book is released under \href{https://creativecommons.org/licenses/by-nc-nd/4.0/}{CC BY-NC-ND 4.0} license. This means that you are free to:
 
 \begin{itemize}
 \tightlist
 \item
   \textbf{Share}: copy and redistribute the material in any medium or format.
-\item
-  \textbf{Adapt}: remix, transform, and build upon the material.
 \end{itemize}
 
 Under the following terms:
@@ -213,8 +216,26 @@ Under the following terms:
 \item
   \textbf{Non-Commercial}: You may not use the material for commercial purposes.
 \item
-  \textbf{Share-A-like}: If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+  \textbf{No Derivatives}: If you remix, transform, or build upon the material, you may not distribute the modified material.
+\item
+  \textbf{No additional restrictions}: You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
 \end{itemize}
+
+\hypertarget{about-the-author}{%
+\section*{About the author}\label{about-the-author}}
+\addcontentsline{toc}{section}{About the author}
+
+Since September 2018, \href{https://wwwen.uni.lu/lcsb/people/carlos_vega_moreno}{Dr Carlos Vega works as a postdoctoral researcher} in the Bioinformatics Core Group led by Prof.~Dr Reinhard Schneider at the Luxembourg Centre for Systems Biomedicine (L.C.S.B) at the University of Luxembourg.
+
+Previously, Dr Vega worked at the Autonomous University of Madrid (UAM) researching high-performance solutions for big data analysis as well as anomaly detection methodologies. He received his B.Sc (2013), M.Sc (2014) and PhD (2018 with \emph{cum laude} and industrial mentions) degrees in Computer Science Engineering from UAM. In 2012 he joined the High-Performance Computing and Networking Research Group (HPCN) led by Prof.~Dr Javier Aracil, first as a student and later as a researcher as part of the Network of Excellence InterNet Science European project. During his PhD, he continued his work at the HPCN group as a technical researcher for the project TRÁFICA and the European projects Fed4Fire and dReDBox, among others. At the same time, he worked at Naudit applying his research to projects with different enterprises.
+
+Additionally, Carlos has taught several courses at UAM, including Multimedia Networking, Network Planning and Network Management. Currently, it is the main teacher of the course ``Applied Philosophy of Science and Data Ethics'' at the Faculty of Science, Technology and Medicine (FSTM) of the University of Luxembourg. Since 2022, he is a senior member of the Institute of Electrical and Electronics Engineers (IEEE).
+
+\hypertarget{contributing-to-the-book}{%
+\subsection*{Contributing to the book}\label{contributing-to-the-book}}
+\addcontentsline{toc}{subsection}{Contributing to the book}
+
+Contributions are welcomed, feel free to open a pull-request in github for small changes and it will be reviewed as soon as possible. However, for larger contributions (e.g.~sections, chapters) please contact the main author at carlos.vega {[}at{]} uni.lu .
 
 \hypertarget{scientific-goals-methods-and-knowledge}{%
 \chapter{Scientific Goals, Methods and Knowledge}\label{scientific-goals-methods-and-knowledge}}
@@ -1018,7 +1039,7 @@ Is also important to notice how the problem of underdetermination relates to the
 
 \end{center}
 
-The following content is under construction but might as well be taught during the course. I hope to complete it on time.
+The following content is under construction but might as well be taught during the course.
 This section will superficially tackle abduction and causal inferences and its relation to data science regarding non-monotonic logic.
 
 \end{notebox}
@@ -2196,13 +2217,13 @@ Similar to RTC internal validity, cross-validation does not ensure transferabili
 
 The confirmation of a hypothesis is often considered to increase as the number of favourable test findings grows, but the increase in confirmation, produced by one new favourable instance, will generally become smaller as the number of previously established favourable instances grows \citep{hempel-pos}. Many researchers and data scientists blindly rely on the dogma \emph{the more data, the merrier} but the addition of one more favourable finding raises the hypothesis confirmation but little. The confirmation of a hypothesis depends not only on the quantity of the favourable evidence available but also on its variety.
 
-As he have seen during this course, data alone is not enough. Note that this is especially a problem for solutions based on Machine Learning, since domain knowledge or \emph{context} should be introduced somehow to \emph{direct} the model in the desired direction.
+As we have seen during this course, data alone is not enough. Note that this is especially a problem for solutions based on Machine Learning, since domain knowledge or \emph{context} should be introduced somehow to \emph{direct} the model in the desired direction.
 
 \begin{quote}
 ``There is no learning without bias, there is no learning without knowledge'' --- \citep{skansi2020guide} \citep{domingos2015master}.
 \end{quote}
 
-An example of how data depends on its context is user ratings or opinions. For instance, the meaning of \emph{fashionable clothes} changes over time, as do political terms. This issue is known as \emph{concept drift} \citep{kubat2017introduction}. Similarly, a text-mining engine to tag biology terms with the corresponding ontology terms may confuse elements between species, as several entities appear in multiple animals or organisms. Context is crucial for external validation and translation of solutions into real-world settings. A system for clothes recommendation should adapt to countries, cultures or ages. Similarly, a health system to predict patient risk based on disease comorbidities must be \emph{calibrated} for each country or region (e.g.~Diabetes treatment is often affordable in the EU, but an expensive treatment in the USA, which increases its mortality rate).
+A relevant example on how data depends on its context is user ratings or opinions. For instance, the meaning of \emph{fashionable clothes} changes over time, as do political terms. This issue is known as \emph{concept drift} \citep{kubat2017introduction}. Similarly, a text-mining engine to tag biology terms with the corresponding ontology terms may confuse elements between species, as several entities appear in multiple animals or organisms. Context is crucial for external validation and translation of solutions into real-world settings. A system for clothes recommendation should adapt to countries, cultures or ages. Similarly, a health system to predict patient risk based on disease comorbidities must be \emph{calibrated} for each country or region (e.g.~Diabetes treatment is often affordable in the EU, but an expensive treatment in the USA, which increases its mortality rate).
 
 \begin{figure}
 
@@ -2357,6 +2378,8 @@ Similarly, we live in the information revolution, which has transformed the way 
 
 In this chapter, we will not address all the philosophical questions regarding ethics, which are \href{https://en.wikipedia.org/wiki/Ethics}{lengthy} but will try to focus on the ethical practice of data science. Many ethical questions affecting data ethics have already been tackled during this book. Such questions have been interleaved during this book together with other topics, e.g., algorithmic fairness, validity issues and their consequences. Therefore, this book provides a utilitarian framework of ethics. This chapter describes how ethical values, regardless of which they may be, affect the practice of data science, either because of the lack of commitment to them or to how data science is conditioned when abiding by them.
 
+This chapter begins by delving into the definitions of ethics, some ethical frameworks and the values of science. Next, it will describe how ethics are meant to be articulated. Aferwards we will be ready to tackle data ethics and the topics affecting it. Finally, a short summary of the GDPR and examples affecting data ethics are provided to illustrate the impact and significance of this new field.
+
 \hypertarget{morality-and-ethics}{%
 \section{Morality and Ethics}\label{morality-and-ethics}}
 
@@ -2383,7 +2406,7 @@ All ethics groups aim to understand, criticise and correct how certain actions i
 
 Descriptively, \emph{morality} refers to a code of conduct that is put forward by a society or group (e.g.~a religion), or accepted by an individual. In a normative sense, \emph{morality} refers to a code of conduct that would be accepted by anyone who meets certain intellectual conditions (e.g.~being rational) \citep{sep-morality-definition}. For example, a company is not a \emph{moral agent} but it can encourage a certain \emph{code of conduct} to their workers. Even though \emph{morality} is the subject matter of ethics, it is most often used interchangeably with \emph{ethics}. Finally, ethics are not laws but laws are often used to enforce certain shared social values.
 
-In essence, ethics tell us about what is right and wrong. They are the cornerstone of civilisation and no human practice is foreign to ethical values, although these may vary from region to region or over time. For many, their moral principles stem from religious teachings, ideologies, philosophies, etc. These can promote ethical behaviour, but it does not mean that ethics should necessarily stem from a religion or belong to a particular ideology or philosophy.
+In essence, ethics tell us about what is right and wrong. They are the cornerstone of civilisation and no human practice is foreign to ethical values, although these may vary from region to region or over time. Therefore, ethics are context dependent. For many, their moral principles stem from religious teachings, ideologies, philosophies, etc. These can promote ethical behaviour, but it does not mean that ethics should necessarily stem from a religion or belong to a particular ideology or philosophy.
 
 Finally, ethics are not laws but very often laws reflect the societal ethical consensus. Progress brings new ethical questions, resulting in a changing societal consensus that eventually translates into new laws. A notable example is the advent of the industrial era which radically reshaped the working methods. Workers fought to claim certain rights (e.g.~have a place to have lunch, time to have lunch, toilets, etc.). However, ethical changes may not always imply \emph{replacing} a set of rules by another set, or \emph{replacing} a code of conduct for another code of conduct. Back then when western countries forbid women from showing their bare legs, many women defended their right to wear whatever clothes they wanted and as short as they wanted. Clothes like the mini-skirt became a symbol because it challenged the established code of conduct. In the same way, trousers also were a symbol for women empowerment in the 1850s (see bloomers), also to show that they could also be part of the workforce. Nevertheless, \textbf{what is important about this} kind of changes is not that they were replacing their clothes for another set of clothes. They wanted to have the choice, to have control over their clothes. All in all, just because people could wear whatever they wanted it does not mean that they will wear it. But people now have the choice.
 
@@ -2466,7 +2489,7 @@ Regardless of the \href{https://plato.stanford.edu/entries/hume-moral/\#io}{inte
 Consider the following quotes regarding value-free and value-laden science.
 
 \begin{quote}
-Everybody would agree that scientific knowledge has sometimes been used for unethical ends --- to make nuclear and chemical weapons, for example. But such cases do not show that there is something ethically objectionable about scientific knowledge itself. It is the \emph{use} to which that knowledge is put that is unethical. Indeed many philosophers would say that it makes no sense to talk about science or scientific knowledge being ethical or unethical per se. For science is concerned with facts, and facts in themselves have no ethical significance. It is what we do with those facts that is right or wrong, moral or immoral. On this view, science is essentially a \emph{value-free} activity. --- \citep{okasha-pos}
+Everybody would agree that scientific knowledge has sometimes been used for unethical ends --- to make nuclear and chemical weapons, for example. But such cases do not show that there is something ethically objectionable about scientific knowledge itself. It is the \emph{use} to which that knowledge is put that is unethical. Indeed many philosophers would say that it makes no sense to talk about science or scientific knowledge being ethical or unethical \emph{per se}. For science is concerned with facts, and facts in themselves have no ethical significance. It is what we do with those facts that is right or wrong, moral or immoral. On this view, science is essentially a \emph{value-free} activity. --- \citep{okasha-pos}
 \end{quote}
 
 \begin{quote}
@@ -2475,9 +2498,9 @@ Research aimed at finding better treatment for diseases are certainly value-lade
 
 One takeaway message from this section is that science is driven by values. Science is, therefore, value-laden, but its results can, and should, be value-free. Whether a researcher comes to a conclusion that stands in line or that undermines the researcher's non-scientific interests, one must, under all circumstances, evaluate the matter itself, as such considerations are not relevant arguments for or against the scientific work at issue.
 
-A relevant example is the feminist critique of science \citep{sep-feminist-science} and the existence of certain unconscious assumptions from which researchers might be unaware until recently. A notable example includes the research on \href{https://en.wikipedia.org/wiki/Cardiovascular_disease_in_women\#History}{myocardial infarction}, which was mainly conducted on men. Today we understand symptoms vary between women and men. This issue resulted in underdiagnosis and mistreatment of infarction in women. Similarly, some assumptions derived from the modern state of society, were employed to describe social patterns in prehistory. For instance, the division of labour between sexes with men dedicated to outdoor activities and women dedicated to home activities has conditioned the research about prehistoric humans. Recent studies \href{https://www.nationalgeographic.com/science/article/prehistoric-female-hunter-discovery-upends-gender-role-assumptions}{challenge the common assumption that prehistoric men hunted while women gathered}. The relevant conclusion is not whether the previous research is false but that unconscious norms regarding what we consider `normal' may affect our criteria to focus on some circumstances and ignore others. What we consider `normal' or `common' may vary across regions and over time. All in all, humans are not neutral observers of the external world.
+A relevant example is the feminist critique of science \citep{sep-feminist-science} and the existence of certain unconscious assumptions from which researchers might be unaware until recently. A notable example includes the research on \href{https://en.wikipedia.org/wiki/Cardiovascular_disease_in_women\#History}{myocardial infarction}, which was mainly conducted on men. Today we understand symptoms vary between women and men. This issue resulted in underdiagnosis and mistreatment of infarction in women. Similarly, some assumptions derived from the modern state of society, have been employed to describe social patterns in prehistory in research. For instance, the division of labour between sexes with men dedicated to outdoor activities and women dedicated to home activities has conditioned the research about prehistoric humans. Recent studies \href{https://www.nationalgeographic.com/science/article/prehistoric-female-hunter-discovery-upends-gender-role-assumptions}{challenge the common assumption that prehistoric men hunted while women gathered}. The relevant conclusion is not whether the previous research is false but that unconscious norms regarding what we consider `normal' may affect our criteria to focus on some circumstances and ignore others. What we consider `normal' or `common' may vary across regions and over time. All in all, humans are not neutral observers of the external world.
 
-Sorting phenomena into categories is an interest-related task \citep{johansson2016philosophy} but is also unavoidable. Nevertheless, is important to make such interests explicit. An example of such categories defined by humans is diseases, which are progressively updated, hierarchized or redefined according to new knowledge. Diseases are not found in nature as entities per se; they refer to a definable deviation from a normal phenotype evident via symptoms and/or signs. The different sets of symptoms, pathologies and signs are grouped into diseases, and likewise diseases are grouped into categories, all of them organised into disease taxonomies (e.g.~International Classification of Diseases). Thus, one disease can have more than one etiology, and one etiology can lead to more than one disease \citep{vega2021hume}.
+Sorting phenomena into categories is an interest-related task \citep{johansson2016philosophy} but is also unavoidable. Nevertheless, is important to make such interests explicit. An example of such categories defined by humans is diseases, which are progressively updated, hierarchized or redefined according to new knowledge. Diseases are not found in nature as entities \emph{per se}; they refer to a definable deviation from a normal phenotype evident via symptoms and/or signs. The different sets of symptoms, pathologies and signs are grouped into diseases, and likewise diseases are grouped into categories, all of them organised into disease taxonomies (e.g.~International Classification of Diseases). Thus, one disease can have more than one etiology, and one etiology can lead to more than one disease \citep{vega2021hume}.
 
 \begin{tipbox}
 
@@ -2517,6 +2540,8 @@ Other actions that may help to prevent bias and/or external validation issues in
 
 We often face situations where we care about the privacy of our data, e.g., we do not want our location to be shared with certain companies, but we wish to benefit from the same data to see if the road is jammed on our way to work. Similarly, we want our medical records to remain private but also wish to benefit from the analysis of medical records to improve the care and treatment that we receive. Moreover, we aim to automate and ease decisions thanks to data-driven algorithms but we also worry about unintended bias. Getting to know the consequences of our actions make us aware of what is right or wrong. Without that, we lack any motivation to fix potential problems. Data science is a new field and we are still defining what is right and wrong. We are starting to experience certain consequences regarding privacy, fairness, equity, etc. In this sense, a social consensus is growing, with laws and regulations enacted to enforce such values.
 
+In this section we will tackle the origins, and the specifics of data ethics, including topics such as informed consent, data ownership and privacy. They all affect anonymity of individuals, the validity of experiments as well as the algorithmic fairness of the developed solutions.
+
 \hypertarget{origins}{%
 \subsection{Origins}\label{origins}}
 
@@ -2544,10 +2569,60 @@ Although these two branches of ethics are not handled in this course, they are t
 Data ethics builds on the foundation provided by computer and information ethics but, at the same time, it refines the approach endorsed so far in this research field, by shifting the level of abstraction of ethical enquiries, from being information-centric to being data-centric. This shift brings into focus the different moral dimensions of all kinds of data, even data that never translate directly into information but can be used to support actions or generate behaviours, for example. It highlights the need for ethical analyses to concentrate on the content and nature of computational operations---the interactions among hardware, software and data---rather than on the variety of digital technologies that enable them. --- \citep{luciano2016data}
 \end{quote}
 
-\hypertarget{what-is-data-ethics}{%
-\subsection{What is data ethics?}\label{what-is-data-ethics}}
+\hypertarget{what-are-data-ethics}{%
+\subsection{What are data ethics?}\label{what-are-data-ethics}}
 
-As seen in the previous section, data ethics is tightly related to computer ethics and information ethics. Data ethics may be as well be found termed as \href{https://en.wikipedia.org/wiki/Big_data_ethics}{big data ethics} which tackles data ownership, consent, privacy, and openness among other principles.
+As seen in the previous section, data ethics are tightly related to computer ethics and information ethics. Data ethics may be as well be found termed as \href{https://en.wikipedia.org/wiki/Big_data_ethics}{big data ethics} which tackles data ownership, consent, privacy, and openness among other principles. To answer this question, we need to clarify what is data science. I like the answer given by Rachel Schutt and Cathy O'Neil in their book ``Doing data science: Straight talk from the frontline'' \citep{o2013doing} in which a list of data science tasks is given (see some below). However, it is important to remember some lessons from previous chapters when we address this question. \textbf{Data science is not just to solve problems using data}, but rather to solve problems \emph{through} data by employing a series of guidelines, practices, methods and knowledge. Consider cooking, which may look as a series of ingredients and instructions. We need the ingredients, the tools, the recipe, but in order to come up with new recipes, or to understand previous recipes, we need knowledge.
+
+\begin{itemize}
+\tightlist
+\item
+  Exploratory data analysis
+\item
+  Visualization
+\item
+  Dashboards and metrics
+\item
+  Find business insights
+\item
+  Data-driven decision making
+\item
+  Data engineering / Big Data
+\item
+  Get the data themselves
+\item
+  Build data pipelines
+\item
+  Build products instead of describing existing product usage
+\item
+  Patent writing
+\item
+  Detective work, ask good questions, make hypothesis, research
+\item
+  Predict future behaviour or performance
+\item
+  Write up findings in reports, presentations, and journals
+\item
+  Programming (proficiency in R, Python, C, Java, etc.)
+\item
+  Conditional probability, optimization, algorithms, statistical models, and machine learning
+\item
+  Make inferences from data
+\item
+  Build data products
+\item
+  Find ways to do data processing, munging, and analysis at scale
+\item
+  Sanity checking
+\item
+  Interact with domain experts (or be a domain expert)
+\item
+  Design and analyse experiments
+\item
+  Find correlation in data, and try to establish causality
+\end{itemize}
+
+Data science is not limited to big technological companies, it affects other domains such as neuroscience, medicine, environmental sciences, and so on. This broad impact comes with ethical challenges that need to be addressed.
 
 \begin{quote}
 Data ethics can be defined as the branch of ethics that studies and evaluates moral problems related to data (including generation, recording, curation, processing, dissemination, sharing and use), algorithms (including artificial intelligence, artificial agents, machine learning and robots) and corresponding practices (including responsible innovation, programming, hacking and professional codes), in order to formulate and support morally good solutions (e.g.~right conducts or right values). This means that the ethical challenges posed by data science can be mapped within the conceptual space delineated by three axes of research: the ethics of data, the ethics of algorithms and the ethics of practices. --- \citep{luciano2016data}

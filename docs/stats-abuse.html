@@ -5,19 +5,19 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 4 Experimental Control and Statistical Abuse | Applied Philosophy of Science and Data Ethics</title>
-  <meta name="description" content="A tutorial and working resources for writing open-source textbooks using open-source tools" />
+  <meta name="description" content="This class book gathers the contents addressed in the course Applied Philosophy of Science and Data Ethics from the Master of Data Science at the University of Luxembourg. This class book will introduce basic philosophical and scientific concepts supported by examples and discussion." />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 4 Experimental Control and Statistical Abuse | Applied Philosophy of Science and Data Ethics" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="A tutorial and working resources for writing open-source textbooks using open-source tools" />
+  <meta property="og:description" content="This class book gathers the contents addressed in the course Applied Philosophy of Science and Data Ethics from the Master of Data Science at the University of Luxembourg. This class book will introduce basic philosophical and scientific concepts supported by examples and discussion." />
   <meta name="github-repo" content="carlosvega/PoS-DE" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 4 Experimental Control and Statistical Abuse | Applied Philosophy of Science and Data Ethics" />
   
-  <meta name="twitter:description" content="A tutorial and working resources for writing open-source textbooks using open-source tools" />
+  <meta name="twitter:description" content="This class book gathers the contents addressed in the course Applied Philosophy of Science and Data Ethics from the Master of Data Science at the University of Luxembourg. This class book will introduce basic philosophical and scientific concepts supported by examples and discussion." />
   
 
 <meta name="author" content="Dr. Carlos Vega" />
@@ -104,10 +104,24 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Applied Philosophy of Science and Data Ethics</a></li>
+<li><a href="./"><strong>Applied Philosophy of Science and Data Ethics</strong><br>by Carlos Vega</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-at-ul"><i class="fa fa-check"></i>Course at UL</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#disclaimer"><i class="fa fa-check"></i>Disclaimer</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#learning-outcomes"><i class="fa fa-check"></i>Learning outcomes</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-this-course"><i class="fa fa-check"></i>About this course</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-this-class-book"><i class="fa fa-check"></i>About this class book</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-author"><i class="fa fa-check"></i>About the author</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributing-to-the-book"><i class="fa fa-check"></i>Contributing to the book</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="1" data-path="scientific-goals-methods-and-knowledge.html"><a href="scientific-goals-methods-and-knowledge.html"><i class="fa fa-check"></i><b>1</b> Scientific Goals, Methods and Knowledge</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="scientific-goals-methods-and-knowledge.html"><a href="scientific-goals-methods-and-knowledge.html#what-is-science"><i class="fa fa-check"></i><b>1.1</b> What is Science?</a>
@@ -241,7 +255,7 @@ div.csl-indent {
 <li class="chapter" data-level="5.6" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#data-ethics"><i class="fa fa-check"></i><b>5.6</b> Data Ethics</a>
 <ul>
 <li class="chapter" data-level="5.6.1" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#origins"><i class="fa fa-check"></i><b>5.6.1</b> Origins</a></li>
-<li class="chapter" data-level="5.6.2" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#what-is-data-ethics"><i class="fa fa-check"></i><b>5.6.2</b> What is data ethics?</a></li>
+<li class="chapter" data-level="5.6.2" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#what-are-data-ethics"><i class="fa fa-check"></i><b>5.6.2</b> What are data ethics?</a></li>
 </ul></li>
 <li class="chapter" data-level="5.7" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#ethic-examples"><i class="fa fa-check"></i><b>5.7</b> Examples</a>
 <ul>
@@ -259,7 +273,8 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="7" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>7</b> References</a></li>
 <li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+<li><a href="https://bookdown.org" target="_blank">Built with Bookdown + RStudio</a></li>
+<li><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a></li>
 
 </ul>
 
@@ -455,11 +470,11 @@ Figure 4.8: Source: Scikit-Learn. Other K-fold CV strategies. <a href="https://s
 <div id="data-is-not-enough" class="section level2 hasAnchor" number="4.5">
 <h2><span class="header-section-number">4.5</span> Data alone is not enough<a href="stats-abuse.html#data-is-not-enough" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The confirmation of a hypothesis is often considered to increase as the number of favourable test findings grows, but the increase in confirmation, produced by one new favourable instance, will generally become smaller as the number of previously established favourable instances grows <span class="citation">(<a href="#ref-hempel-pos" role="doc-biblioref">Hempel 1966</a>)</span>. Many researchers and data scientists blindly rely on the dogma <em>the more data, the merrier</em> but the addition of one more favourable finding raises the hypothesis confirmation but little. The confirmation of a hypothesis depends not only on the quantity of the favourable evidence available but also on its variety.</p>
-<p>As he have seen during this course, data alone is not enough. Note that this is especially a problem for solutions based on Machine Learning, since domain knowledge or <em>context</em> should be introduced somehow to <em>direct</em> the model in the desired direction.</p>
+<p>As we have seen during this course, data alone is not enough. Note that this is especially a problem for solutions based on Machine Learning, since domain knowledge or <em>context</em> should be introduced somehow to <em>direct</em> the model in the desired direction.</p>
 <blockquote>
 <p>“There is no learning without bias, there is no learning without knowledge” — <span class="citation">(<a href="#ref-skansi2020guide" role="doc-biblioref">Skansi 2020</a>)</span> <span class="citation">(<a href="#ref-domingos2015master" role="doc-biblioref">Domingos 2015</a>)</span>.</p>
 </blockquote>
-<p>An example of how data depends on its context is user ratings or opinions. For instance, the meaning of <em>fashionable clothes</em> changes over time, as do political terms. This issue is known as <em>concept drift</em> <span class="citation">(<a href="#ref-kubat2017introduction" role="doc-biblioref">Kubat 2017</a>)</span>. Similarly, a text-mining engine to tag biology terms with the corresponding ontology terms may confuse elements between species, as several entities appear in multiple animals or organisms. Context is crucial for external validation and translation of solutions into real-world settings. A system for clothes recommendation should adapt to countries, cultures or ages. Similarly, a health system to predict patient risk based on disease comorbidities must be <em>calibrated</em> for each country or region (e.g. Diabetes treatment is often affordable in the EU, but an expensive treatment in the USA, which increases its mortality rate).</p>
+<p>A relevant example on how data depends on its context is user ratings or opinions. For instance, the meaning of <em>fashionable clothes</em> changes over time, as do political terms. This issue is known as <em>concept drift</em> <span class="citation">(<a href="#ref-kubat2017introduction" role="doc-biblioref">Kubat 2017</a>)</span>. Similarly, a text-mining engine to tag biology terms with the corresponding ontology terms may confuse elements between species, as several entities appear in multiple animals or organisms. Context is crucial for external validation and translation of solutions into real-world settings. A system for clothes recommendation should adapt to countries, cultures or ages. Similarly, a health system to predict patient risk based on disease comorbidities must be <em>calibrated</em> for each country or region (e.g. Diabetes treatment is often affordable in the EU, but an expensive treatment in the USA, which increases its mortality rate).</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:inference-engine"></span>
 <img src="Figures/jpearl_inference_engine.png" alt="Diagram extracted from The Book of Why. The diagram depicts a hypothetical inference engine that combines data and causal knowledge to produce answers to questions of interest. Knowledge (dashed) is not part of the engine but required for its construction. Boxes 4 (testable implications) and 9 (estimate) could also feedback such knowledge to incrementally improve the engine." width="90%" />
 <p class="caption">
@@ -574,6 +589,8 @@ Figure 4.15: Other graphics designed by USA National Hurricane Center.
 </div>
 <!--
 
+to be included (is already included in the course ppt though)
+
 https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing
 
 https://en.wikipedia.org/wiki/List_of_cognitive_biases
@@ -673,7 +690,17 @@ Yoon, Dustin Y, Neel A Mansukhani, Vanessa C Stubbs, Irene B Helenowski, Teresa 
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": null,
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
 "fontsettings": {
 "theme": "white",
 "family": "sans",
