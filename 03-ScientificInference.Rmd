@@ -391,7 +391,7 @@ Is also important to notice how the problem of underdetermination relates to the
 **Course Note:**
 :::
 
-The following content is under construction but might as well be taught during the course. I hope to complete it on time.
+The following content is under construction but might as well be taught during the course. 
 This section will superficially tackle abduction and causal inferences and its relation to data science regarding non-monotonic logic. 
 ::::
 
