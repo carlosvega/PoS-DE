@@ -42,6 +42,8 @@ Similarly, we live in the information revolution, which has transformed the way 
 
 In this chapter, we will not address all the philosophical questions regarding ethics, which are [lengthy](https://en.wikipedia.org/wiki/Ethics) but will try to focus on the ethical practice of data science. Many ethical questions affecting data ethics have already been tackled during this book. Such questions have been interleaved during this book together with other topics, e.g., algorithmic fairness, validity issues and their consequences. Therefore, this book provides a utilitarian framework of ethics. This chapter describes how ethical values, regardless of which they may be, affect the practice of data science, either because of the lack of commitment to them or to how data science is conditioned when abiding by them.
 
+This chapter begins by delving into the definitions of ethics, some ethical frameworks and the values of science. Next, it will describe how ethics are meant to be articulated. Aferwards we will be ready to tackle data ethics and the topics affecting it. Finally, a short summary of the GDPR and examples affecting data ethics are provided to illustrate the impact and significance of this new field.
+
 ## Morality and Ethics
 
 ```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
@@ -73,7 +75,7 @@ All ethics groups aim to understand, criticise and correct how certain actions i
 
 Descriptively, *morality* refers to a code of conduct that is put forward by a society or group (e.g. a religion), or accepted by an individual. In a normative sense, *morality* refers to a code of conduct that would be accepted by anyone who meets certain intellectual conditions (e.g. being rational) [@sep-morality-definition]. For example, a company is not a *moral agent* but it can encourage a certain *code of conduct* to their workers. Even though *morality* is the subject matter of ethics, it is most often used interchangeably with *ethics*. Finally, ethics are not laws but laws are often used to enforce certain shared social values.
 
-In essence, ethics tell us about what is right and wrong. They are the cornerstone of civilisation and no human practice is foreign to ethical values, although these may vary from region to region or over time. For many, their moral principles stem from religious teachings, ideologies, philosophies, etc. These can promote ethical behaviour, but it does not mean that ethics should necessarily stem from a religion or belong to a particular ideology or philosophy. 
+In essence, ethics tell us about what is right and wrong. They are the cornerstone of civilisation and no human practice is foreign to ethical values, although these may vary from region to region or over time. Therefore, ethics are context dependent. For many, their moral principles stem from religious teachings, ideologies, philosophies, etc. These can promote ethical behaviour, but it does not mean that ethics should necessarily stem from a religion or belong to a particular ideology or philosophy. 
 
 Finally, ethics are not laws but very often laws reflect the societal ethical consensus. Progress brings new ethical questions, resulting in a changing societal consensus that eventually translates into new laws. A notable example is the advent of the industrial era which radically reshaped the working methods. Workers fought to claim certain rights (e.g. have a place to have lunch, time to have lunch, toilets, etc.). However, ethical changes may not always imply *replacing* a set of rules by another set, or *replacing* a code of conduct for another code of conduct. Back then when western countries forbid women from showing their bare legs, many women defended their right to wear whatever clothes they wanted and as short as they wanted. Clothes like the mini-skirt became a symbol because it challenged the established code of conduct. In the same way, trousers also were a symbol for women empowerment in the 1850s (see bloomers), also to show that they could also be part of the workforce. Nevertheless, **what is important about this** kind of changes is not that they were replacing their clothes for another set of clothes. They wanted to have the choice, to have control over their clothes. All in all, just because people could wear whatever they wanted it does not mean that they will wear it. But people now have the choice.
 
@@ -134,15 +136,15 @@ Regardless of the [interpretation debate](https://plato.stanford.edu/entries/hum
 
 Consider the following quotes regarding value-free and value-laden science.
 
-> Everybody would agree that scientific knowledge has sometimes been used for unethical ends — to make nuclear and chemical weapons, for example. But such cases do not show that there is something ethically objectionable about scientific knowledge itself. It is the *use* to which that knowledge is put that is unethical. Indeed many philosophers would say that it makes no sense to talk about science or scientific knowledge being ethical or unethical per se. For science is concerned with facts, and facts in themselves have no ethical significance. It is what we do with those facts that is right or wrong, moral or immoral. On this view, science is essentially a *value-free* activity. --- [@okasha-pos]
+> Everybody would agree that scientific knowledge has sometimes been used for unethical ends — to make nuclear and chemical weapons, for example. But such cases do not show that there is something ethically objectionable about scientific knowledge itself. It is the *use* to which that knowledge is put that is unethical. Indeed many philosophers would say that it makes no sense to talk about science or scientific knowledge being ethical or unethical *per se*. For science is concerned with facts, and facts in themselves have no ethical significance. It is what we do with those facts that is right or wrong, moral or immoral. On this view, science is essentially a *value-free* activity. --- [@okasha-pos]
 
 > Research aimed at finding better treatment for diseases are certainly value-laden; we would give very high value to positive results in this area. But, of course, reports of such results, if they are found, should be value-free; we want objective knowledge about what to do for curing and/or preventing severe diseases. That is to say, scientific activity can be value-laden and value-free at the same time. --- [@johansson2016philosophy]
 
 One takeaway message from this section is that science is driven by values. Science is, therefore, value-laden, but its results can, and should, be value-free. Whether a researcher comes to a conclusion that stands in line or that undermines the researcher's non-scientific interests, one must, under all circumstances, evaluate the matter itself, as such considerations are not relevant arguments for or against the scientific work at issue.
 
-A relevant example is the feminist critique of science [@sep-feminist-science] and the existence of certain unconscious assumptions from which researchers might be unaware until recently. A notable example includes the research on [myocardial infarction](https://en.wikipedia.org/wiki/Cardiovascular_disease_in_women#History), which was mainly conducted on men. Today we understand symptoms vary between women and men. This issue resulted in underdiagnosis and mistreatment of infarction in women. Similarly, some assumptions derived from the modern state of society, were employed to describe social patterns in prehistory. For instance, the division of labour between sexes with men dedicated to outdoor activities and women dedicated to home activities has conditioned the research about prehistoric humans. Recent studies [challenge the common assumption that prehistoric men hunted while women gathered](https://www.nationalgeographic.com/science/article/prehistoric-female-hunter-discovery-upends-gender-role-assumptions). The relevant conclusion is not whether the previous research is false but that unconscious norms regarding what we consider 'normal' may affect our criteria to focus on some circumstances and ignore others. What we consider 'normal' or 'common' may vary across regions and over time. All in all, humans are not neutral observers of the external world.
+A relevant example is the feminist critique of science [@sep-feminist-science] and the existence of certain unconscious assumptions from which researchers might be unaware until recently. A notable example includes the research on [myocardial infarction](https://en.wikipedia.org/wiki/Cardiovascular_disease_in_women#History), which was mainly conducted on men. Today we understand symptoms vary between women and men. This issue resulted in underdiagnosis and mistreatment of infarction in women. Similarly, some assumptions derived from the modern state of society, have been employed to describe social patterns in prehistory in research. For instance, the division of labour between sexes with men dedicated to outdoor activities and women dedicated to home activities has conditioned the research about prehistoric humans. Recent studies [challenge the common assumption that prehistoric men hunted while women gathered](https://www.nationalgeographic.com/science/article/prehistoric-female-hunter-discovery-upends-gender-role-assumptions). The relevant conclusion is not whether the previous research is false but that unconscious norms regarding what we consider 'normal' may affect our criteria to focus on some circumstances and ignore others. What we consider 'normal' or 'common' may vary across regions and over time. All in all, humans are not neutral observers of the external world.
 
-Sorting phenomena into categories is an interest-related task [@johansson2016philosophy] but is also unavoidable. Nevertheless, is important to make such interests explicit. An example of such categories defined by humans is diseases, which are progressively updated, hierarchized or redefined according to new knowledge. Diseases are not found in nature as entities per se; they refer to a definable deviation from a normal phenotype evident via symptoms and/or signs. The different sets of symptoms, pathologies and signs are grouped into diseases, and likewise diseases are grouped into categories, all of them organised into disease taxonomies (e.g. International Classification of Diseases). Thus, one disease can have more than one etiology, and one etiology can lead to more than one disease [@vega2021hume].
+Sorting phenomena into categories is an interest-related task [@johansson2016philosophy] but is also unavoidable. Nevertheless, is important to make such interests explicit. An example of such categories defined by humans is diseases, which are progressively updated, hierarchized or redefined according to new knowledge. Diseases are not found in nature as entities *per se*; they refer to a definable deviation from a normal phenotype evident via symptoms and/or signs. The different sets of symptoms, pathologies and signs are grouped into diseases, and likewise diseases are grouped into categories, all of them organised into disease taxonomies (e.g. International Classification of Diseases). Thus, one disease can have more than one etiology, and one etiology can lead to more than one disease [@vega2021hume].
 
 :::: {.tipbox data-latex=""}
 ::: { data-latex=""}
@@ -179,6 +181,8 @@ Other actions that may help to prevent bias and/or external validation issues in
 
 We often face situations where we care about the privacy of our data, e.g., we do not want our location to be shared with certain companies, but we wish to benefit from the same data to see if the road is jammed on our way to work. Similarly, we want our medical records to remain private but also wish to benefit from the analysis of medical records to improve the care and treatment that we receive. Moreover, we aim to automate and ease decisions thanks to data-driven algorithms but we also worry about unintended bias. Getting to know the consequences of our actions make us aware of what is right or wrong. Without that, we lack any motivation to fix potential problems. Data science is a new field and we are still defining what is right and wrong. We are starting to experience certain consequences regarding privacy, fairness, equity, etc. In this sense, a social consensus is growing, with laws and regulations enacted to enforce such values.
 
+In this section we will tackle the origins, and the specifics of data ethics, including topics such as informed consent, data ownership and privacy. They all affect anonymity of individuals, the validity of experiments as well as the algorithmic fairness of the developed solutions.
+
 ### Origins
 
 ```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
@@ -212,9 +216,34 @@ Although these two branches of ethics are not handled in this course, they are t
 
 > Data ethics builds on the foundation provided by computer and information ethics but, at the same time, it refines the approach endorsed so far in this research field, by shifting the level of abstraction of ethical enquiries, from being information-centric to being data-centric. This shift brings into focus the different moral dimensions of all kinds of data, even data that never translate directly into information but can be used to support actions or generate behaviours, for example. It highlights the need for ethical analyses to concentrate on the content and nature of computational operations—the interactions among hardware, software and data—rather than on the variety of digital technologies that enable them. --- [@luciano2016data]
 
-### What is data ethics?
+### What are data ethics?
 
-As seen in the previous section, data ethics is tightly related to computer ethics and information ethics. Data ethics may be as well be found termed as [big data ethics](https://en.wikipedia.org/wiki/Big_data_ethics) which tackles data ownership, consent, privacy, and openness among other principles.
+As seen in the previous section, data ethics are tightly related to computer ethics and information ethics. Data ethics may be as well be found termed as [big data ethics](https://en.wikipedia.org/wiki/Big_data_ethics) which tackles data ownership, consent, privacy, and openness among other principles. To answer this question, we need to clarify what is data science. I like the answer given by Rachel Schutt and Cathy O'Neil in their book "Doing data science: Straight talk from the frontline" [@o2013doing] in which a list of data science tasks is given (see some below). However, it is important to remember some lessons from previous chapters when we address this question. **Data science is not just to solve problems using data**, but rather to solve problems *through* data by employing a series of guidelines, practices, methods and knowledge. Consider cooking, which may look as a series of ingredients and instructions. We need the ingredients, the tools, the recipe, but in order to come up with new recipes, or to understand previous recipes, we need knowledge.
+
+- Exploratory data analysis
+- Visualization
+- Dashboards and metrics
+- Find business insights
+- Data-driven decision making
+- Data engineering / Big Data 
+- Get the data themselves
+- Build data pipelines
+- Build products instead of describing existing product usage
+- Patent writing
+- Detective work, ask good questions, make hypothesis, research
+- Predict future behaviour or performance
+- Write up findings in reports, presentations, and journals
+- Programming (proficiency in R, Python, C, Java, etc.)
+- Conditional probability, optimization, algorithms, statistical models, and machine learning
+- Make inferences from data
+- Build data products
+- Find ways to do data processing, munging, and analysis at scale
+- Sanity checking
+- Interact with domain experts (or be a domain expert)
+- Design and analyse experiments
+- Find correlation in data, and try to establish causality
+
+Data science is not limited to big technological companies, it affects other domains such as neuroscience, medicine, environmental sciences, and so on. This broad impact comes with ethical challenges that need to be addressed.
 
 > Data ethics can be defined as the branch of ethics that studies and evaluates moral problems related to data (including generation, recording, curation, processing, dissemination, sharing and use), algorithms (including artificial intelligence, artificial agents, machine learning and robots) and corresponding practices (including responsible innovation, programming, hacking and professional codes), in order to formulate and support morally good solutions (e.g. right conducts or right values). This means that the ethical challenges posed by data science can be mapped within the conceptual space delineated by three axes of research: the ethics of data, the ethics of algorithms and the ethics of practices. --- [@luciano2016data]
 
@@ -233,12 +262,150 @@ For data science, data ethics asks questions such as:
 - From what sample of people? 
 
 <!-- http://theodi.org/wp-content/uploads/2021/07/Data-Ethics-Canvas-English-Colour.pdf -->
+<!--
+### Informed consent
 
+Some of the issues affecting data ethics are not new or exclusive of this branch of ethics. An important one is informed consent which is of paramount importance in general science.
 
+- History
+- review board
+- right to be informed
+- must consent
+- right to withdraw
+- before things need to be implemented (a way to remove data, etc)
+- IC Exceptions
+- IC Limitations
+
+### Data Ownership
+
+Data ownership is the act of having legal rights and complete control over a single piece or set of data elements.
+
+- Nature paper on data ownership
+- github copilot and code ownership
+- recording limits
+- data destruction (data as an asset)
+- GPDR note (backups?)
+
+### Privacy
+
+- human right (e.g. voting in elections)
+- zero privacy
+- sense of privacy
+- degrees of privacy (DNA)
+- collection vs use
+- amazon vs correos
+
+### Anonymity
+
+- de-identification (limits)
+- potential issues (agg. data)
+- examples : credit card statements
+
+### Validity
+
+- consequences of errors (deny a loan, misdiagnose)
+- soruces of error
+  - choice of a representative sample
+    - balance important attributes (race, age, gender)
+    - project future population
+    - gradual drift
+  - choice of attributes and measures
+    - limited to what's available
+    - leavce out attrs
+  - errors in data processing
+    - first party error during processing
+    - ...
+  - errors in model design
+    - model structure
+    - extrapolation
+    - ecological fallacy
+    - simpson's paradox
+  - managing change
+    - google flu
+    - campbell's law
+    - studies balanced on gender
+
+### Algorithmic Fairness
+
+- p-hacking
+- ex: high throughput biology
+- geopricing
+- your safety, my lost income
+- correlated attributes
+- correct but misleading results
+
+### Reproducibility and FAIR Data
+
+## Data Ownership and the Dilution of Responsibility
+
+## GDPR
+
+ETHICS GUIDELINES FOR TRUSTWORTHY AI
+High-Level Expert Group on Artificial Intelligence
+https://www.aepd.es/sites/default/files/2019-12/ai-ethics-guidelines.pdf 
+
+ai2019high
+-->
 ## Examples {#ethic-examples}
+<!--
+### Tuskegee Tragedy
 
+Before getting into the examples that affect the employment of data is important to tackle 
 
+```{r tuskegee, echo=F, fig.align="center", out.width="80%", fig.cap='Doctor drawing blood from a patient as part of the Tuskegee Syphilis Study.'}
+knitr::include_graphics('Figures/Tuskegee-syphilis-study.jpeg')
+```
 
+### The case of OkCupid
+
+### Facebook Knew Instagram was Toxic for Teenager Girls
+
+```{r fb-toxic, echo=F, fig.align="center",  out.width="80%", fig.cap='Headline of the article published in The Wall Street Journal regarding the impact of instagram recommendations on teenager girls.'}
+knitr::include_graphics('Figures/fbtoxic.jpg')
+```
+
+### A Genocide Incided on Facebook
+
+```{r fb-genocide, echo=F, fig.align="center",  out.width="80%", fig.cap='Headline of the article published in The Ney York Times regarding the genocide of Rohingya people in Myanmar.'}
+knitr::include_graphics('Figures/fb-genocide.jpg')
+```
+
+### Bad practices can kill too
+
+> Data glitch 'may have led to more than 1500 deaths in England
+
+### Sharing your DNA
+
+NYT article
+
+### TikTok sued
+
+https://www.theguardian.com/technology/2022/jul/05/tiktok-girls-dead-blackout-challenge
+
+### DOME: recommendations for supervised machine learning validation in biology
+
+[@walsh2021dome]
+
+```{r dome-recommendations, echo=F, fig.align="center",  out.width="100%", fig.cap='Extracted from DOME paper. Supervised ML in biology: concerns, the consequences they impart and recommendations'}
+knitr::include_graphics('Figures/dome_table.png')
+```
+
+### Evidence of Fraud in an Influential Field Experiment About Dishonesty
+
+Renowned psychologist Dan Ariely literally wrote the book on dishonesty. Now some are questioning whether the scientist himself is being dishonest. Answer in your own words the following questions regarding the articles.
+“A Famous Honesty Researcher Is Retracting A Study Over Fake Data”.
+https://www.buzzfeednews.com/article/stephaniemlee/dan-ariely-honesty-study-retraction
+“Evidence of Fraud in an Influential Field Experiment About Dishonesty”.
+https://datacolada.org/98
+
+### COMPAS case: Software to predict future criminals is biased against blacks.
+
+2.	Consider the following article: “Machine Bias. There’s software used across the country to predict future criminals. And it’s biased against blacks.”. Answer in your own words the following questions regarding the article. https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing
+
+response to propublica https://www.equivant.com/response-to-propublica-demonstrating-accuracy-equity-and-predictive-parity/
+
+> We show, however, that the widely used commercial risk assessment software COMPAS is no more accurate or fair than predictions made by people with little or no criminal justice expertise. In addition, despite COMPAS’s collection of 137 features, the same accuracy can be achieved with a simple linear classifier with only two features. --- [@dressel2018accuracy]
+-->
 ### The Theranos scandal - A drop of blood for hundreds of different assays
 
 ```{r theranos, echo=F, fig.align="center",  out.width="100%", fig.cap='Examples of news coverage and media praising.'}
