@@ -1,9 +1,14 @@
-Carlos Vega. (2021). Applied Philosophy of Science and Data Ethics. 
-https://github.com/carlosvega/PoS-DE publicly available at https://carlosvega.github.io/PoS-DE/
+Carlos Vega. (2021 - 2022). Applied Philosophy of Science and Data Ethics.
 
-This is a tutorial and set of working examples for creating web-based textbooks using a collection of open-source tools.
+<p align="right">
+    Also available at: <a href="https://carlosvega.github.io/PoS-DE//">https://carlosvega.github.io/PoS-DE//</a>
+</p>
 
-This book gathers the contents addressed in the course **Applied Philosophy of Science and Data Ethics** from the [Master of Data Science](https://wwwfr.uni.lu/formations/fstm/master_of_data_science) at the University of Luxembourg. This course will introduce basic philosophical and scientific concepts supported by examples and discussion. The course expects pro-active participation from the students in the form of presentations and essays as well as open debates. 
+# Description
+
+This class book gathers the contents addressed in the course Applied Philosophy of Science and Data Ethics from the Master of Data Science at the University of Luxembourg (UL). This course will introduce basic philosophical and scientific concepts supported by examples and discussion. The course expects pro-active participation from the students in the form of presentations and essays as well as open debates.
+
+# Lincese
 
 [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
