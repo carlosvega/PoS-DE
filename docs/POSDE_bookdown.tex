@@ -970,7 +970,7 @@ The take-away message from falsification is that despite proposing an unrealisti
 \subsection{Confirmation}\label{confirmation}}
 
 Confirmation is the act of using evidence to justify increasing the confidence in the hypothesis.
-Confirmation is not based on deductively valid inferences. For instance, in the \textbf{H-D method} we identify some \(C\) that is an implication of \(H\). \(H\) implies \(C\), then if \(H\) is true we conclude (by \emph{modus ponens}) that \(C\) is also true. Moreover, if we observe than \(C\) is false, then we conclude (by \emph{modus tollens}) that \(H\) is false as well. While these two inference rules are deductively valid, they do not tell us what to conclude if the implication \(C\) is true. There is no valid deductive rule that can be used for the case where \(H\) implies \(C\) and \(C\) is true. We cannot deduce anything from that.
+Confirmation is not based on deductively valid inferences. For instance, in the \textbf{H-D method} we identify some \(C\) that is an implication of \(H\). \(H\) implies \(C\), then if \(H\) is true we conclude (by \emph{modus ponens}) that \(C\) is also true. Moreover, if we observe than \(C\) is false, then we conclude (by \emph{modus tollens}) that \(H\) is false as well.
 
 \begin{verbatim}
 Modus ponens     Modus tollens    Induction
@@ -980,6 +980,8 @@ H                not C            C
 -----------      -----------      =========
 C                not H            H 
 \end{verbatim}
+
+While these two inference rules are deductively valid, they do not tell us what to conclude if the implication \(C\) is true. There is no valid deductive rule that can be used for the case where \(H\) implies \(C\) and \(C\) is true. We cannot deduce anything from that.
 
 Instead, any rule used here must amplify the information contained in the premises to infer the conclusions. Therefore we must make use of inductive inferences. Inductive inferences are fallible (inductions that fail are common e.g.~predicting the weather, stock investing). But fallibility comes in degrees and this degree is affected by the kind and quality of the evidence as well as the inference rule employed. Scientists have attempted to quantify confidence, most prominently by using probabilities. For instance, if an observation \(O\) confirms hypothesis \(H\), therefore we say that \(P(H|O)\) is greater than \(P(H|\lnot O)\) where \(P(H|O)\) means ``the probability of \(H\) given \(O\)''.
 
