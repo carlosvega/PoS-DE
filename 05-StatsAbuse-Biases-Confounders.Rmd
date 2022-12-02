@@ -1,4 +1,5 @@
 # Experimental Control and Statistical Abuse {#stats-abuse}
+\chaptermark{Exp. Ctrl. and Stats. Abuse}
 
 :::: {.notebox data-latex=""}
 ::: {.center data-latex=""}
@@ -10,7 +11,11 @@ This chapter is under construction. Some content is hidden.
 
 ## Overview {#stats-overview}
 
-Daniel did not think of everything when designing his experiment. He did not take confounding bias into account. For instance, Daniel and his friends could have been healthier than the control group. Under such supposition, their strong appearance after ten days of a vegetarian diet may have nothing to do with the diet itself. Perhaps, they would have become even stronger if they had eaten the meat from the king. As we have seen in previous examples presented in this book, confounding bias happens when a variable influences both who is chosen for the treatment group as well as the experiment outcome. These variables might be known variables or act as a lurking third variable we are not aware of. Such variables are easy to spot in causal diagrams.
+```{r daniel-part-two, echo=F, out.width="33%", fig.align="center", fig.cap='Daniel interprets Nebuchadnezzar\'s Dream.'}
+knitr::include_graphics('Figures/daniel_part_2.png')
+```
+
+Chapter \@ref(empirical-practices) started with an account of an experiment from the times of Babylonian King Nebuchadnezzar, in which Daniel proposed to feed a group with a vegetable diet whilst another group continued eating the King's royal meat. However, Daniel did not think of everything when designing his experiment. He did not take confounding bias into account. For instance, Daniel and his friends could have been healthier than the control group. Under such supposition, their strong appearance after ten days of a vegetarian diet may have nothing to do with the diet itself. Perhaps, they would have become even stronger if they had eaten the meat from the king. As we have seen in previous examples presented in this book, confounding bias happens when a variable influences both who is chosen for the treatment group as well as the experiment outcome. These variables might be known variables or act as a lurking third variable we are not aware of. Such variables are easy to spot in causal diagrams.
 
 The term *"confounding"* means *"to pour, mingle, or mix together"*, and Figure \@ref(fig:confounder-simple) illustrates why such name was chosen to denominate these situations. The true causal effect $X -> Y$ is *mixed* with the spurious correlation between $X$ and $Y$ induced by the fork $X <- Z -> Y$ [@book-of-why].
 
@@ -19,6 +24,13 @@ knitr::include_graphics('Figures/causal_diagram_confounder_simple.png')
 ```
 
 ### The smoke debate - Part II
+
+
+(ref:smoke-debate-caption) Source: [Tobacco Ads](https://tobacco.stanford.edu/cigarettes/doctors-smoking/more-doctors-smoke-camels/).
+
+```{r smoke-debate-part-two, echo=F, out.width="33%", fig.align="center", fig.cap='1946 cigarette advertisement launched by R.J. Reynolds Tobacco Company. (ref:smoke-debate-caption)'}
+knitr::include_graphics('Figures/smoke_debate_part2.png')
+```
 
 Many famous cases present these confounding situations. For instance, this book previously tackled the debate around smoking and lung cancer. Austin B. Hill and Richard Doll noticed that hidden biases could be present in their previous case-control studies, and the replication of the studies would not be enough to overcome them. In consequence, they began a prospective study (1951) in which they considered 60.000 physicians from United Kingdom consisting of questionnaires tackling their smoking habits. These physicians were followed over time. In just five years, heavy smokers showed a death rate from lung cancer 24 times higher than non-smokers. A similar study conducted in the United States showed that smokers died from lung cancer 29 times more often than non-smokers while heavy smokers died 90 times more frequently. However, former smokers reduced their risk by a factor of two. This behaviour is often called the “dose-response effect”, indicating that a prolonged dose of a drug causes a stronger response.
 
@@ -194,6 +206,58 @@ knitr::include_graphics('Figures/kfold-strategies.png')
 ```
 
 Similar to RTC internal validity, cross-validation does not ensure transferability to other scenarios. External validation must be performed with independent datasets to ensure robustness against new scenarios. Consider a deep-learning algorithm trained to predict the number of years a patient will survive based on its characteristics and the medication administrated. This system could be then transferred to a different hospital, in another country, region, or city where the population characteristics (diet, hygiene, professions) are different. The model will require undertaking a certain recalibration process to learn the new conditions. 
+
+## Surrogates, Proxies, Confounders and Colliders
+
+In this section we address certain induced biases that may affect many data scientist tasks, including data analysis and machine learning solutions. Induced biases often arise during the design and data collection process, but they can also arise during the data analysis step.
+
+### Surrogates and Proxies
+
+During this course we may have seen the term surrogate and proxy many times in the context of particular examples. These terms can be used interchangeably. In general, surrogates and proxies are variables that can be measured and employed in place of some other variable that cannot be measured. This impediment may be related to legal, ethical restrictions or technical difficulties. Of course, the employment of such surrogate metric or variable depends upon the assumption that such relationship with the true variable holds for our purposes. For instance, it may not hold for the general population and just for the acquired sample, therefore this surrogate may present external validity issues.
+
+The employment of surrogate metrics may seem attractive for certain purposes but is a source of problems when they are employed inadvertently when employing machine learning solutions or any other modelling approach. 
+
+For instance, the ZIP code is a widely accepted proxy that can often reveal race, ethnicity, or age. From an ethical point of view, such proxies can be employed for the good or the bad. In the United States of America, it is forbidden by law from considering race in admissions. However, consider that a campus may want to ensure certain diversity or lack of it. In Texas, the "Top 10 Percent Law" is the common name for the state law passed in 1997 that guarantees Texas students who graduated in the top ten percent of their high school class automatic admission to all state-funded universities. The goal was to find a way to increase the enrollment of black and Latino students after a federal court banned race-based affirmative action in the state. Without entering into the fairness and impact of the law, which is still open to debate, it is clear that in scenarios where most high schools have a majority of a certain race, such a race will be favoured over the rest. Therefore, such rules may have a racial or discriminatory impact on university admissions. However, in this case, there may be other factors in place, since being granted access does not mean that you can, for instance, assume the costs of university tuition and so on.
+
+Similarly, say lenders would like to exclude borrowers of certain race. Despite the law prohibiting from doing this, the lenders could find a proxy or surrogate such as neighborhood to continue excluding by race by benefiting from knowing that certain districts or areas are populated by racialised citizens.
+
+Importantly, should the underlying association change, the proxy or surragate would have to be re-calibrated.
+
+### Confounding factors
+
+Related to this, we can find confounding variables. Confounders (see age in Fig. \@ref(fig:cibb-confounding)) are variables that affect both the potential predictor variable (physical activity) and the outcome (cardiac problems). When the presence of confounders is unknown and in lack of experiments specifically designed to minimise them (e.g., randomised controlled trials), we cannot control for them. Uncontrolled confounders may lead to wrongly conclude that a given feature is a strong predictor of the outcome when in reality the association is spurious. 
+
+```{r cibb-confounding, echo=F, out.width="50%", fig.align="center", fig.cap='DAG depicting a scenario with a confounding factor (age) acting (solid lines) in both the predictor and outcome (relationship depicted with a dashed line).'}
+knitr::include_graphics('Figures/CIBB_confounding.png')
+```
+
+Importantly, such associations may not hold anymore when the sample comes from a different setting where the confounder is differently expressed, e.g. income level may play a different role on diabetes treatment depending on the country. In the context of machine learning, when a model learns spurious associations between predictors and outcomes, an undetected overfitted model is produced, resulting in poor generalisation capabilities that eventually unveil during its translation into real-world settings [@garcia2021need].
+
+### Collider bias and M-bias
+
+```{r cibb-collider, echo=F, out.width="90%", fig.align="center", fig.cap='Directed arrows indicate causal effects and dotted lines indicate induced associations. (a) shows a scenario in which collider bias could distort the estimate of the causal effect of sporting activity on the academic ability. As shown in (b), the relation between the two associated variables can be indirect, with the risk factor and the outcome being indirectly associated with sample selection through unmeasured confounding variables (U and V).'}
+knitr::include_graphics('Figures/collider_and_m_bias.png')
+```
+
+A collider entails a variable that is influenced by two other variables, i.e. collider bias occurs when an exposure and outcome (or factors causing these) each influence a common third variable. The associations induced by collider bias are properties of the sample, rather than the individuals that comprise such a sample. Thus, such associations fail to generalise beyond the sample and may be inaccurate even within the sample, threatening validity [@garcia2021need]. Figure \@ref(fig:cibb-collider) (a) shows how academic and sporting abilities can influence selection into a prestigious school. These two factors are barely correlated in the general population, but they become strongly correlated in the sample because the school enrolment depends on them (see Figure \@ref(fig:cibb-academic-corr)). Figure \@ref(fig:cibb-collider) (b) shows that the association of interest can be distorted without their variables being directly influencing the collider. Factors affecting the sample selection can themselves influence the variables of interest, distorting the relationship between them [@griffith2020collider]. This effect is known as **M-bias**.
+
+
+(ref:academic-corr-caption) These traits are negligibly correlated in the general population (blue), but because they are selected for enrolment they become strongly correlated when analysing only the selected individuals (red). Extracted from [@griffith2020collider].
+
+```{r cibb-academic-corr, echo=F, out.width="75%", fig.align="center", fig.cap='(ref:academic-corr-caption)'}
+knitr::include_graphics('Figures/fig_nature_academic_ability.png')
+```
+
+> "If we assume that a given **covariate** influences both the hypothesised risk factor and the outcome (a confounder), it is appropriate to condition on that covariate to remove bias induced by the confounding structure. However, if the covariate is a consequence of either or both the exposure and the outcome (a collider), rather than a common cause (a confounder), then conditioning on the covariate can induce, rather than reduce bias. That is, **collider bias can also be introduced when making statistical adjustments for variables that lie on the causal pathway between risk factor and outcome**. A priori knowledge of the underlying causal structure of variables and whether they function as a common cause or common consequence of risk factor and outcome in the data generating process can be hard to infer. Therefore, it is appropriate to treat collider bias with a similar level of caution to confounding bias." --- [@griffith2020collider]
+
+:::: {.tipbox data-latex=""}
+::: { data-latex=""}
+**Note for data scientists!**
+:::
+
+Covariate: An independent variable that can influence the outcome of a given statistical trial, but which is not of direct interest. A covariate is a continuous variable that is expected to change ("vary") with ("co") the outcome variable of a study.
+
+::::
 
 ## Data alone is not enough {#data-is-not-enough}
 
