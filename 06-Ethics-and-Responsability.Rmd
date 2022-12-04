@@ -13,8 +13,8 @@ This chapter is under construction. Some sections and content are hidden.
 
 <!--
 
-- What are ethics
-- Ethical Frameworks
+- What are ethics (done)
+- Ethical Frameworks (done)
 - Informed Consent
 - Data Repurposing
 - Data Ownership
@@ -364,12 +364,6 @@ knitr::include_graphics('Figures/Tuskegee-syphilis-study.jpeg')
 knitr::include_graphics('Figures/fbtoxic.jpg')
 ```
 
-### A Genocide Incided on Facebook
-
-```{r fb-genocide, echo=F, fig.align="center",  out.width="80%", fig.cap='Headline of the article published in The Ney York Times regarding the genocide of Rohingya people in Myanmar.'}
-knitr::include_graphics('Figures/fb-genocide.jpg')
-```
-
 ### Bad practices can kill too
 
 > Data glitch 'may have led to more than 1500 deaths in England
@@ -406,6 +400,17 @@ response to propublica https://www.equivant.com/response-to-propublica-demonstra
 
 > We show, however, that the widely used commercial risk assessment software COMPAS is no more accurate or fair than predictions made by people with little or no criminal justice expertise. In addition, despite COMPAS’s collection of 137 features, the same accuracy can be achieved with a simple linear classifier with only two features. --- [@dressel2018accuracy]
 -->
+
+### A Genocide Incited on Facebook
+
+```{r fb-genocide, echo=F, fig.align="center",  out.width="80%", fig.cap='Headline of the article published in The New York Times regarding the genocide of Rohingya people in Myanmar.'}
+knitr::include_graphics('Figures/fb-genocide.jpg')
+```
+
+In 2018, a planned campaign from Myanmar military personnel turned the social network Facebook into a tool for encouraging ethnic cleansing and systematic targeting of the Muslim Rohingya minority group. The military exploited the wide reach of Facebook among Myanmar's internet users to propagate anty-Rohingya propaganda, inciting murders, rapes. In turn, this translated into the largest forced human migration events in recent history [@nytimesGenocideIncited]. 700.000 Rohingya fled the country in a year.
+
+The chairman of the U.N. Independent International Fact-Finding Mission on Myanmar stated that Facebook played a "determining role" in the Rohingya genocide, and Facebook has been accused of enabling the spread of Islamophobic content which targets the Rohingya people [@reutersUNInvestigators]. In 2021, Facebook removed accounts which were owned by the Myanmar Armed Forces and banned the account from Myanmar military from their platform. In December 2021, a group of around one hundred Rohingya refugees launched a lawsuit against Facebook.
+
 ### The Theranos scandal - A drop of blood for hundreds of different assays
 
 ```{r theranos, echo=F, fig.align="center",  out.width="100%", fig.cap='Examples of news coverage and media praising.'}
