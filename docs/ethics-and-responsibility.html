@@ -265,7 +265,8 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="5.7" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#ethic-examples"><i class="fa fa-check"></i><b>5.7</b> Examples</a>
 <ul>
-<li class="chapter" data-level="5.7.1" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#the-theranos-scandal---a-drop-of-blood-for-hundreds-of-different-assays"><i class="fa fa-check"></i><b>5.7.1</b> The Theranos scandal - A drop of blood for hundreds of different assays</a></li>
+<li class="chapter" data-level="5.7.1" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#a-genocide-incited-on-facebook"><i class="fa fa-check"></i><b>5.7.1</b> A Genocide Incited on Facebook</a></li>
+<li class="chapter" data-level="5.7.2" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#the-theranos-scandal---a-drop-of-blood-for-hundreds-of-different-assays"><i class="fa fa-check"></i><b>5.7.2</b> The Theranos scandal - A drop of blood for hundreds of different assays</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="wont-fix.html"><a href="wont-fix.html"><i class="fa fa-check"></i><b>6</b> Extra Material</a>
@@ -310,8 +311,8 @@ div.csl-indent {
 <!-- REPLACE WITH LOCAL FILE -->
 <!--
 
-- What are ethics
-- Ethical Frameworks
+- What are ethics (done)
+- Ethical Frameworks (done)
 - Informed Consent
 - Data Repurposing
 - Data Ownership
@@ -432,7 +433,7 @@ Figure 5.2: Ethics guide the creation of laws. Progress brings new ethical quest
 <p>In this sense, <strong>ethics are intended to be actionable</strong>. For instance, environmental ethics <span class="citation">(<a href="#ref-sep-ethics-environmental" role="doc-biblioref">Brennan and Lo 2022</a>)</span> make considerations about the moral relationship of human beings to the environment and its non-human contents, e.g., “is it morally acceptable to pollute a river for the production of energy?”. Once we answer such questions, actions need to <em>make a difference</em>, e.g., translating the answer into rules, laws or regulations to either allow, forbid or limit such practice. Answering ethical questions or showcasing a position to them is not enough. For example, if the societal consensus (either at a company level or country level) agrees on the need for toilets in the workplace (or kitchens), the next step is to provide such spaces to <em>make a change</em>.</p>
 <p>However, it is not always clear how to articulate certain ethical positions. Consider the following ethical goal: “artificial intelligence models should be equally fair for everybody disregarding of their demographic characteristics”. Then consider the following issue: “does preventing any data collection of demographic information avoid the development of biased machine learning models?”. How do we test if the model is fair against different population groups (e.g. minorities) if we did not collect information that let us conduct such tests?</p>
 <p>Sometimes it may be impossible to act according to some ethical values. For instance, you may want to buy a t-shirt manufactured under some specific conditions that you find ethical, but you may find none. Therefore you are forced to take an unethical decision according to your values. Similarly, you may need your data to meet some conditions or requirements to avoid producing a biased output (such as an analysis or an ML model). But sometimes, such data might not exist or proving such an assumption becomes challenging. Garcia et al. showcase an example of this issue in their work addressing public Covid-19 X-Ray datasets. The authors highlight that the most popular datasets were found to have a very high risk of inducing bias in models. Importantly, some solutions employed datasets containing adult individuals for the unhealthy group and a paediatric population as the control group <span class="citation">(<a href="#ref-santa2021public" role="doc-biblioref">Santa Cruz et al. 2021</a>)</span>. Such an approach raises ethical concerns regarding the risk of harmful outcomes deriving from working with poor data. In this case, new data acquisition would be needed to improve data quality and reduce the risk of producing a biased solution.</p>
-<p>Preventing issues such as data drift and concept drift require constant monitoring of the models. Unsurprisingly, any intelligent entity interacting with a changing world requires frequent re-training and re-education. Any job requires a similar knowledge update process, from medical doctors to computer scientists or pilots. Such jobs require learning new diseases, treatments, regulations, protocols, devices, technologies, etc. Similarly, constant model evaluation is paramount to maintain the appropriate performance and fairness. Regulations and guidelines help to operate ethical considerations. For instance, the recent document “Ethics Guidelines for Trustworthy AI” published by the “high-level expert group on artificial intelligence” group from the European Commission presents transparency as a requirement for trustworthy AI. This document recommends transparency of all elements relevant to an AI system: the data, the system and the business models <span class="citation">(<a href="#ref-ai2019high" role="doc-biblioref">AI 2019</a>)</span>. Abiding to this requirement entails designing solutions with traceability and explainability in mind (among other features) so that models can be properly audited and their decisions thoroughly traced.</p>
+<p>Preventing issues such as <strong>data drift</strong> and <strong>concept drift</strong> require constant monitoring of the models. Unsurprisingly, any intelligent entity interacting with a changing world requires frequent re-training and re-education. Any job requires a similar knowledge update process, from medical doctors to computer scientists or pilots. Such jobs require learning new diseases, treatments, regulations, protocols, devices, technologies, etc. Similarly, constant model evaluation is paramount to maintain the appropriate performance and fairness. Regulations and guidelines help to operate ethical considerations. For instance, the recent document “Ethics Guidelines for Trustworthy AI” published by the “high-level expert group on artificial intelligence” group from the European Commission presents transparency as a requirement for trustworthy AI. This document recommends transparency of all elements relevant to an AI system: the data, the system and the business models <span class="citation">(<a href="#ref-ai2019high" role="doc-biblioref">AI 2019</a>)</span>. Abiding to this requirement entails designing solutions with traceability and explainability in mind (among other features) so that models can be properly audited and their decisions thoroughly traced.</p>
 <p>Other actions that may help to prevent bias and/or external validation issues include accompanying the data with metadata describing acquisition details, causal models describing the assumptions taken during the design stages, and documentation, among others <span class="citation">(<a href="#ref-garcia2021need" role="doc-biblioref">Garcia, Vega, and Hertel 2022</a>)</span>.</p>
 <blockquote>
 <p>“In many product design (and other) endeavors, there often comes a moment when the question is asked, “Are we doing the right thing?” or “Is this the right solution?” In this context, the word right can mean many things. It can mean: Are we meeting the customer’s expectations? Is the design solution appropriate to the problem? Are we honoring the scope of the work? Is this a profitable feature to add to our product? Will people buy this? It can also mean: Do we agree that this action is acceptable to perform based on our values?” — <span class="citation">(<a href="#ref-davis2012ethics" role="doc-biblioref">Davis 2012</a>)</span></p>
@@ -614,13 +615,6 @@ Before getting into the examples that affect the employment of data is important
 <p class="caption">(\#fig:fb-toxic)Headline of the article published in The Wall Street Journal regarding the impact of instagram recommendations on teenager girls.</p>
 </div>
 
-### A Genocide Incided on Facebook
-
-<div class="figure" style="text-align: center">
-<img src="Figures/fb-genocide.jpg" alt="Headline of the article published in The Ney York Times regarding the genocide of Rohingya people in Myanmar." width="80%" />
-<p class="caption">(\#fig:fb-genocide)Headline of the article published in The Ney York Times regarding the genocide of Rohingya people in Myanmar.</p>
-</div>
-
 ### Bad practices can kill too
 
 > Data glitch 'may have led to more than 1500 deaths in England
@@ -658,12 +652,23 @@ response to propublica https://www.equivant.com/response-to-propublica-demonstra
 
 > We show, however, that the widely used commercial risk assessment software COMPAS is no more accurate or fair than predictions made by people with little or no criminal justice expertise. In addition, despite COMPAS’s collection of 137 features, the same accuracy can be achieved with a simple linear classifier with only two features. --- [@dressel2018accuracy]
 -->
-<div id="the-theranos-scandal---a-drop-of-blood-for-hundreds-of-different-assays" class="section level3 hasAnchor" number="5.7.1">
-<h3><span class="header-section-number">5.7.1</span> The Theranos scandal - A drop of blood for hundreds of different assays<a href="ethics-and-responsibility.html#the-theranos-scandal---a-drop-of-blood-for-hundreds-of-different-assays" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="a-genocide-incited-on-facebook" class="section level3 hasAnchor" number="5.7.1">
+<h3><span class="header-section-number">5.7.1</span> A Genocide Incited on Facebook<a href="ethics-and-responsibility.html#a-genocide-incited-on-facebook" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fb-genocide"></span>
+<img src="Figures/fb-genocide.jpg" alt="Headline of the article published in The New York Times regarding the genocide of Rohingya people in Myanmar." width="80%" />
+<p class="caption">
+Figure 5.3: Headline of the article published in The New York Times regarding the genocide of Rohingya people in Myanmar.
+</p>
+</div>
+<p>In 2018, a planned campaign from Myanmar military personnel turned the social network Facebook into a tool for encouraging ethnic cleansing and systematic targeting of the Muslim Rohingya minority group. The military exploited the wide reach of Facebook among Myanmar’s internet users to propagate anty-Rohingya propaganda, inciting murders, rapes. In turn, this translated into the largest forced human migration events in recent history <span class="citation">(<a href="#ref-nytimesGenocide2018" role="doc-biblioref">Mozur 2018</a>)</span>. 700.000 Rohingya fled the country in a year.</p>
+<p>The chairman of the U.N. Independent International Fact-Finding Mission on Myanmar stated that Facebook played a “determining role” in the Rohingya genocide, and Facebook has been accused of enabling the spread of Islamophobic content which targets the Rohingya people <span class="citation">(<a href="#ref-reutersUN2018" role="doc-biblioref">Miles 2018</a>)</span>. In 2021, Facebook removed accounts which were owned by the Myanmar Armed Forces and banned the account from Myanmar military from their platform. In December 2021, a group of around one hundred Rohingya refugees launched a lawsuit against Facebook.</p>
+</div>
+<div id="the-theranos-scandal---a-drop-of-blood-for-hundreds-of-different-assays" class="section level3 hasAnchor" number="5.7.2">
+<h3><span class="header-section-number">5.7.2</span> The Theranos scandal - A drop of blood for hundreds of different assays<a href="ethics-and-responsibility.html#the-theranos-scandal---a-drop-of-blood-for-hundreds-of-different-assays" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:theranos"></span>
 <img src="Figures/theranos.jpg" alt="Examples of news coverage and media praising." width="100%" />
 <p class="caption">
-Figure 5.3: Examples of news coverage and media praising.
+Figure 5.4: Examples of news coverage and media praising.
 </p>
 </div>
 <p>Theranos’ goal was to quickly conduct several disease tests with a single drop of blood in a way that could be done at a fraction of the costs and with unrivalled ubiquity levering the spread of pharmacies and supermarkets.
@@ -733,6 +738,12 @@ Luciano, Floridi, and Taddeo Mariarosaria. 2016. <span>“What Is Data Ethics.�
 </div>
 <div id="ref-metcalfe2013metcalfe" class="csl-entry">
 Metcalfe, Bob. 2013. <span>“Metcalfe’s Law After 40 Years of Ethernet.”</span> <em>Computer</em> 46 (12): 26–31.
+</div>
+<div id="ref-reutersUN2018" class="csl-entry">
+Miles, Tom. 2018. <span>“<span>U</span>.<span>N</span>. Investigators Cite <span>F</span>acebook Role in <span>M</span>yanmar Crisis.”</span> <em>Reuters</em>. <a href="https://www.reuters.com/article/us-myanmar-rohingya-facebook-idUKKCN1GO2PN">https://www.reuters.com/article/us-myanmar-rohingya-facebook-idUKKCN1GO2PN</a>.
+</div>
+<div id="ref-nytimesGenocide2018" class="csl-entry">
+Mozur, Paul. 2018. <span>“<span>A</span> <span>G</span>enocide <span>I</span>ncited on <span>F</span>acebook, <span>W</span>ith <span>P</span>osts <span>F</span>rom <span>M</span>yanmar’s <span>M</span>ilitary.”</span> <em>New York Times</em>. <a href="https://www.nytimes.com/2018/10/15/technology/myanmar-facebook-genocide.html">https://www.nytimes.com/2018/10/15/technology/myanmar-facebook-genocide.html</a>.
 </div>
 <div id="ref-sep-feminism-ethics" class="csl-entry">
 Norlock, Kathryn. 2019. <span>“<span>Feminist Ethics</span>.”</span> In <em>The <span>Stanford</span> Encyclopedia of Philosophy</em>, edited by Edward N. Zalta, <span>S</span>ummer 2019. <a href="https://plato.stanford.edu/archives/sum2019/entries/feminism-ethics/" class="uri">https://plato.stanford.edu/archives/sum2019/entries/feminism-ethics/</a>; Metaphysics Research Lab, Stanford University.
