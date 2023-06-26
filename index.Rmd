@@ -21,6 +21,11 @@ linkcolor: red
 
 This class book gathers the contents addressed in the course **Applied Philosophy of Science and Data Ethics** from the [Master of Data Science](https://wwwfr.uni.lu/formations/fstm/master_of_data_science) at the University of Luxembourg (UL). This course will introduce basic philosophical and scientific concepts supported by examples and discussion. The course expects pro-active participation from the students in the form of presentations and essays as well as open debates. 
 
+```{r book-cover, eval=knitr::is_html_output(excludes = "epub"), echo=F, out.width="400px", fig.align="center", fig.cap=''}
+knitr::include_graphics('Figures/POSDE_bookdown_cover.jpg')
+```
+
+
 ## Course at UL {-}
 
 The course related to this class book aims to provide the students with guidelines and methodologies to identify epistemic and ethical issues present in data science. We expect the students to develop a critical eye that helps them mitigate such problems in their daily work as data scientists.
