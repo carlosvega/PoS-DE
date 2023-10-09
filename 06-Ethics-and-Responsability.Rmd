@@ -338,14 +338,97 @@ Data ownership is the act of having legal rights and complete control over a sin
 
 ## Data Ownership and the Dilution of Responsibility
 
-## GDPR
-
 ETHICS GUIDELINES FOR TRUSTWORTHY AI
 High-Level Expert Group on Artificial Intelligence
 https://www.aepd.es/sites/default/files/2019-12/ai-ethics-guidelines.pdf 
 
 ai2019high
 -->
+
+## General Data Protection Regulation (GDPR)  {#gdpr}
+
+The General Data Protection Regulation (GDPR) represents an inflexion point in the way organizations handle personal data. This regulation represents an intersection between legal frameworks and the current societal consensus regarding moral values in the digital age. At its core, GDPR represents a commitment to safeguarding individual privacy and promoting transparency, principles that align closely with the  ethical values of autonomy, dignity, and personal rights. This regulation is a powerful reminder that in our increasingly data-driven society, ethics and data protection are inseparably linked, highlighting the need to consider the rights of data subjects in the digital realm.
+
+The GDPR emphasizes individuals' rights to control their personal data, sets principles for lawful data processing, demands strong data security and accountability, regulates data transfers across borders, specifies the conditions to appoint Data Protection Officers, mandates reporting of data breaches, encourages privacy integration into system design, enforces accountability and governance through documentation and audits, imposes penalties for non-compliance, and emphasises the importance of obtaining clear consent for data processing. These pillars collectively form a robust framework aimed at safeguarding personal data and upholding individuals' privacy rights.
+
+Here we will summarise some important aspects.
+
+### Personal data
+
+Any data containing any identifiable datum. It is also referred as **personal identifiable information** (PII).
+Personal data is any data able to directly or indirectly (combined with other information) point to the individual. 
+For instance, individually, information like university, date of birth or hair colour are not enough to directly identify anyone by themselves. But used in combination it is easily possible to find someone on social media, i.e., in combination with other databases, in this case, social media. It is difficult to provide a complete list and GDPR avoids doing so. However, some common examples include: on-line ids (e.g., IP address), names, addresses, e-mail, location information, etc. For more information, see definitions under [Art. 4 of the GDPR](https://gdpr-info.eu/art-4-gdpr/).
+
+#### Special Category Data 
+
+Some types of information require extra protection under GDPR. For instance, racial information, ethnic origin, political opinions, religious and philosophical beliefs, trade union membership, genetic and biometric data, health data, etc.
+
+Apart from the lawful bases, 1 condition out of the following 10 must be met to process this type of data. (a) Explicit consent. (b) Employment, social security, and social protection. (c) vital interests. (d) Not for profit bodies. (e) Made public by the data subject. (f) Legal claims or judicial acts. (g) Reasons of substantial public interest. (h) Health or social care. (i) Public health. (j) Archiving, research and statistics. For example, we may need to collect ethnic data to ensure that an artificial intelligence solution has a similarly good performance across different subgroups (stratified performance assessment). This data will not be used to train the model, but rather for its evaluation. For more information see [Art. 9 of the GDPR](https://gdpr-info.eu/art-9-gdpr/).
+
+#### Children’s data 
+
+This kind of data is common in schools, hospitals, etc. Collection of children's data generally entails writing a privacy notice which can be understood by a child. Some additional steps may be needed to prove a person's age. For more information see [Art. 8 of the GDPR](https://gdpr-info.eu/art-8-gdpr/). 
+
+### Principles GDPR
+
+The following section is a very short summary from [Chapter 2 of the GDPR](https://gdpr-info.eu/chapter-2/).
+
+#### Lawfulness, Fairness and Transparency
+
+All data must be processed lawfully, fairly and transparently. **Lawfulness** means following the law (this may include other local or institutional laws apart from GDPR) and making sure that you have a lawful basis to process data. **Fairness** means that data was used as intended and expected by the data subject (an unfair use is to do SPAM without consent). **Transparency** entails honesty with the data subject by informing them (via Privacy Policy) who the data collector is, why data is needed, how it is processed, where it is stored, how it is kept safe, whether other organizations have access to the data and the rights of the data subjects.
+
+The six lawful reasons included in the GDPR are: Consent. Necessary for contract. Legal obligation. Vital interest. Public Interest. Legitimate Interest.
+
+#### Purpose Limitation 
+
+The data controller must be clear and open about the purpose and not use it for anything else. It is key to plan and understand why people’s data is required. Under GDPR there is no “just in case” data collection. This helps avoiding function creep, i.e., when small changes add up over time until the way data is used changes from one purpose to another. Regular reviews. New purposes must be compatible with old ones. Three of them are automatically compatible: Archiving, scientific or historical research and statistical purposes.
+
+#### Data Minimization
+
+Adequate, relevant and limited. Only collect data necessarily for the purpose. E.g. Collect health data for job positions with both positions with added health risks and jobs without, goes against data minimization.
+Accuracy: Data must be accurate and kept up to date. (The most recent address, or conditions such as allergies etc). But only if it helps to ensure the rights of the data subject. Otherwise pooling the data subject too frequently may result in annoyance.
+
+
+#### Storage Limitation
+
+Only keep data as long as needed for a purpose. For instance, the length of a study. For this we need to consider what the data is used for, under what lawful basis, its sensitivity and the safeguards taken to protect the data in the long term. Other reasons like accountability or legal requirements may justify storing data for longer. If data is kept for longer with the purpose of archiving, research or statistics, then this data cannot be used for other purposes than those. Once the limit is reached, data must be removed or anonymised. 
+
+#### Integrity and Confidentiality
+
+Data should be processed in a way that ensures appropriate security of the data (see AI examples). It is key to make sure that only authorized people can access data. Documentation regarding who has access to the systems with PII is advised. Similarly, procedures for removing users, updating passwords or expiration of permissions must be in place. Importantly, this also applies for physical security.
+
+#### Accountability
+
+This principle relates to demonstrating compliance with the other principles. It is also a way to avoid high penalties in case something goes wrong as it serves to demonstrate that best efforts were in place. Policies, guidelines, dedicated jobs (data stewards), training and tools like data catalogues help achieve high accountability. See the list of sanctions from the French organisation "Commission Nationale de l’Informatique et des Libertés" [CNIL](https://www.cnil.fr/en/sanctions-issued-cnil) for examples on penalties and their reasons.
+
+
+### Controllers, Processors and Subjects. 
+
+If a company is the main data decision making, when to collect data, what data to collect and how it should be processed, then this company is acting as **data controller**. Two companies sharing the same data for the same purposes are called **joint controllers** (e.g. two auditing companies). If a company processes data on behalf of another organization and acts under their instructions, then the company is acting as a **data processor**. Last, **data subjects** are physical living people, i.e., the person identified by personal data.
+
+Data controllers bear the higher responsibility. They must comply with the regulation, demonstrate and document their compliance and ensure compliance of the data processors. Data processors must follow data controllers instructions and help the controller comply with the regulation and provide them with all necessary information. Ensure all sub-processors comply with GDPR.
+
+### Rights of the data subject
+
+The following is a very short summary of [Chapter 3 from the GDPR](https://gdpr-info.eu/chapter-3/).
+
+- **Right to be informed**: The data subjects have the right to know what happens with their data, how is collected, etc. This should be found in the privacy policy.
+- **Right to access**: Data subjects have the right to request a copy of their data held by the company. For exceptions, see Recital 73 of GDPR tackling restrictions of rights and principles.
+- **Rectification**: This allows data subjects to correct their data and improves data accuracy. However, data subjects may be required to provide justification and proof before making changes so that mistakes are not made upon rectification. 
+- **Erasure**: This right is also known as the right to be forgotten. This right has limitations. For instance, removing a data subject from all backups retrospectively. Should this be done they would not be backups any more. Therefore, a best effort must be made and in the case of backups, we should keep a list of removed data subjects to erase their records upon recovery should we need to restore a backup.
+- **Right to restrict processing**: Data subjects can temporarily limit how their data is used.
+- **Data portability**: Data subjects have the right to receive their data in a structured, common and machine readable format. They can also request to move their data from one data controller to another.
+- **Right to object**: Allows data subject to object the processing of their data on the grounds that it is being done unlawfully.
+- **Rights related to automated decision making**: Data subjects can contest automated decisions that did not involve humans with some exceptions.
+
+### International transfers
+
+The regulations regarding international transfers can be regarded as a 3 stage hierarchy listing the ways to safely transfer data. As a previous step, we need to consider whether we actually need to transfer data, e.g., can we transfer the computation instead? (1) The first stage is to find if the destination country is covered by an **adequacy decision** (check [EU list](https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/adequacy-decisions_en)). If there is no adequacy decision, then stage (2) asks whether there are **appropriate safeguards** in place such as legally binding instruments, clauses, etc. (see GDPR Art 46). Stage 3 asks whether there is an **exemption** (e.g., explicit consent from data subject) in place which could allow you to transfer data but this is not suitable for regular data transfers. For more information see [Chapter 5 of the GDPR](https://gdpr-info.eu/chapter-5/).
+
+### Data breaches
+
+A breach does not only occur in the event of lost or stolen data. If data is lost, stolen, corrupted, destroyed, accessed without permission, sent to the wrong person or it becomes unavailable or unusable in any way, then we can say there has been a data breach. Under GDPR in case of a data breach, organisations must **notify** their supervisory authority (data protection officer or authority) within 72 hours. They should **communicate** to the data subjects in case the breach may result in a high risk to individuals' rights and freedoms. Finally, they should **keep record** of the breaches. Of course, they must **investigate and remediate** the root cause of the data breach.
+
 ## Examples {#ethic-examples}
 <!--
 ### Tuskegee Tragedy
