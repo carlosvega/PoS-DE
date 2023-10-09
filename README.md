@@ -1,4 +1,4 @@
-Carlos Vega. (2021 - 2022). Applied Philosophy of Science and Data Ethics.
+Carlos Vega. (2021 - 2023). Applied Philosophy of Science and Data Ethics.
 
 <p align="right">
     Also available at: <a href="https://carlosvega.github.io/PoS-DE//">https://carlosvega.github.io/PoS-DE/</a>
