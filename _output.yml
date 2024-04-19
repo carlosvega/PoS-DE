@@ -24,5 +24,13 @@ bookdown::pdf_book:
   latex_engine: xelatex
   citation_package: natbib
   keep_tex: yes
+  pandoc_args: [
+  "--variable=margin-right:3cm",
+  "--variable=margin-left:4cm",
+  "--variable=margin-bottom:3cm",
+  "--variable=fontsize:12pt",
+  "--variable=links-as-notes:true",
+  "--variable=linestretch:1.1"
+  ]
   extra_dependencies: ["float", "wrapfig", "caption"]
 

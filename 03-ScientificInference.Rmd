@@ -694,6 +694,9 @@ We can identify two issues in the first approach of our example: First, partial 
 From [@vega2021hume].
 :::
 
+```{r, include=knitr::is_latex_output(), echo = F}
+knitr::asis_output('\\newpage')
+```
 
 ### Yersinia pestis
 
