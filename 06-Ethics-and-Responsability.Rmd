@@ -1,13 +1,5 @@
 # Ethics and Responsibility
 
-:::: {.notebox data-latex=""}
-::: {.center data-latex=""}
-**Course Note:**
-:::
-
-This chapter is under construction. Some sections and content are hidden.
-::::
-
 
 <!-- REPLACE WITH LOCAL FILE -->
 

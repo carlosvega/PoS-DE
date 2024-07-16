@@ -140,7 +140,7 @@
 
 \title{Applied Philosophy of Science and Data Ethics}
 \author{Dr.~Carlos Vega}
-\date{2021 - 2024: Last compiled: 2024-04-19}
+\date{2021 - 2024: Last compiled: 2024-07-16}
 
 \begin{document}
 \maketitle
@@ -569,6 +569,10 @@ The \textbf{study power} is defined as ``the ability of a study to detect an eff
 \end{tipbox}
 
 \chapter{Scientific Inference}\label{scientific-inference}
+
+\begin{quote}
+``Knowledge can be communicated, but not wisdom. One can find it, live it, be fortified by it, do wonders through it, but one cannot communicate and teach it.'' --- Hermann Hesse
+\end{quote}
 
 \section{Overview}\label{overview}
 
@@ -1972,17 +1976,6 @@ A transitional period began in the late 1850s with the work of Louis Pasteur. Th
 
 \chaptermark{Exp. Ctrl. and Stats. Abuse}
 
-\begin{notebox}
-
-\begin{center}
-\textbf{Course Note:}
-
-\end{center}
-
-This chapter is under construction. Some content is hidden.
-
-\end{notebox}
-
 \section{Overview}\label{stats-overview}
 
 \begin{figure}
@@ -2149,6 +2142,8 @@ Therefore, RCTs must be internally valid, --- i.e.~the design must eliminate the
 
 As data scientists, you may wonder why the previous practices are relevant to your job. In this section I want to show how similar control measures must be considered regarding machine learning (ML). When applying supervised ML methods, is important to prevent over-fitting and under-fitting situations. In particular, over-fitting occurs when a model begins to \emph{memorize} training data rather than \emph{learning} to generalize from a trend (see Figure \ref{fig:overfitting}). One of the techniques to detect or lessen the effect of over-fitting includes cross-validation. The basis of this technique is to test the generalization power of the model by evaluating its performance on a set of data not used during the training stage.
 
+\textbf{Importantly}, the purpose of cross-validation is to assess how well the model will generalize to an independent dataset. To do that, CV tests (K-folds) the model on K different partitions of the data. If the model we chose is strong and appropriate for our task, it should showcase a performance consistency across folds. The purpose of cross-validation \textbf{is not} to come up with our final model. \textbf{The purpose of CV is model checking, not model building}. Afterwards, the model is trained on all the data.
+
 
 
 \begin{figure}
@@ -2160,7 +2155,7 @@ As data scientists, you may wonder why the previous practices are relevant to yo
 \caption{Source: \href{https://en.wikipedia.org/wiki/File:Overfitting.svg}{Wikimedia}. The green line represents an overfitted model and the black line represents a regularized model. While the green line best follows the training data, it is too dependent on that data and it is likely to have a higher error rate on new unseen data, compared to the black line.}\label{fig:overfitting}
 \end{figure}
 
-The simplest approach is the \textbf{hold out method} which entails spliting the dataset into a train and test sets. However, yet another part of the dataset is often held out (validation set) so that the model training proceeds on the training set, the model evaluation on the validation set, and once the hyperparameters are successfully tweaked, the final evaluation is conducted on the test set. This process reduces the amount of data available for training. Cross-validation (CV) alleviates this issue.
+To do this, the simplest approach is the \textbf{hold out method} which entails spliting the dataset into a train and test sets. However, yet another part of the dataset is often held out (validation set) so that the model training proceeds on the training set, the model evaluation on the validation set, and once the hyperparameters are successfully tweaked, the final evaluation is conducted on the test set. This process reduces the amount of data available for training. Cross-validation (CV) alleviates this issue.
 
 The following procedure (see Figure \ref{fig:cross-validation}) is followed for each of the \(k\) ``folds'':
 
@@ -2212,6 +2207,8 @@ One strong assumption of machine learning theory is that data is Independent and
 \end{figure}
 
 Similar to RTC internal validity, cross-validation does not ensure transferability to other scenarios. External validation must be performed with independent datasets to ensure robustness against new scenarios. Consider a deep-learning algorithm trained to predict the number of years a patient will survive based on its characteristics and the medication administrated. This system could be then transferred to a different hospital, in another country, region, or city where the population characteristics (diet, hygiene, professions) are different. The model will require undertaking a certain recalibration process to learn the new conditions.
+
+In this chapter we tackle experimental control, and we contrast methods from natural sciences to methods of data science. This does not mean they are equal or equivalent. Despite their differences in nature and aim we can find similarities between a method used for experimental control and methods used in data science (like CV). Unlike CV, RCT aims to determine causality, but both methods aim to reduce or detect spurious associations. Both use randomisation to reduce selection bias and employ a kind of blinding. In a RCT participants and practitioners ignore the assigned group; for CV group-wise CV prevents data leakage (that could break i.i.d.) by grouping samples of the same individuals so that they fall in the same set.
 
 \section{Surrogates, Proxies, Confounders and Colliders}\label{surrogates-proxies-confounders-and-colliders}
 
@@ -2411,17 +2408,6 @@ From a \href{https://www.nytimes.com/interactive/2019/08/29/opinion/hurricane-do
 \end{figure}
 
 \chapter{Ethics and Responsibility}\label{ethics-and-responsibility}
-
-\begin{notebox}
-
-\begin{center}
-\textbf{Course Note:}
-
-\end{center}
-
-This chapter is under construction. Some sections and content are hidden.
-
-\end{notebox}
 
 \section{Overview}\label{overview-2}
 
