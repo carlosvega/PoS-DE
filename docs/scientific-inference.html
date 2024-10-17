@@ -742,16 +742,61 @@ Dr. Ignaz Semmelweis, aged 42 in 1860 copperplate engraving by Jenő Doby.
 <p>Ignaz Semmelweis, a Hungarian physician, was a member of the First Maternity Division at the Vienna General Hospital from 1844 to 1848. Semmelweis was distressed to find a big proportion of the women who delivered their babies contracted a serious and often fatal illness known as childbed fever. In 1844, 8.2% of mothers died from the disease, 6.8% in 1845 and 11.4% in 1846. However, in the adjacent Second Maternity Division which had as many women as the first, the death toll was much lower (2.3%, 2% and 2.7% respectively).</p>
 <p>From this moment on, various explanations were considered, subjected to test and then rejected.</p>
 <p>The first explanation attributed the issue to “epidemic influences” described as “atmospheric-cosmic-telluric changes” spreading over districts and causing childbed fever. This hypothesis did not explain why the first division had more cases than the second. Neither explained the lack of cases in the city of Vienna. Epidemics such as cholera are not so selective. Finally, Semmelweis notes that women who had to give birth in the street on their way to the hospital had a lower death rate than the average for the first division.</p>
+<table>
+<colgroup>
+<col width="23%" />
+<col width="37%" />
+<col width="38%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Year</th>
+<th>First Division Mortality (%)</th>
+<th>Second Division Mortality (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1844</td>
+<td>8.20</td>
+<td>2.30</td>
+</tr>
+<tr class="even">
+<td>1845</td>
+<td>6.80</td>
+<td>2.00</td>
+</tr>
+<tr class="odd">
+<td>1846</td>
+<td>11.40</td>
+<td>2.70</td>
+</tr>
+</tbody>
+</table>
 <p>On a different view, overcrowding of the first division was proposed as a cause but Semmelweis pointed out that the second division was much crowded. Moreover, there were no differences regarding diet or general care of the patients.</p>
 <p>In 1846, a commission was appointed to investigate the issue, which attributed the prevalence to injuries in the first division resulting from rough examination by medical students. Semmelweis refuted this view since: a) the injuries of birth itself are more extensive than those from the examination. b) midwives’ examinations from the second division were similar. c) as a consequence of the commission the number of students was halved and the examinations were reduced to a minimum. The mortality increased.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ignazhyp"></span>
+<img src="Figures/IgnazSemmelweisHyp.png" alt="Summary of the hypotheses considered to explain the deaths in the first division." width="75%" />
+<p class="caption">
+Figure 2.5: Summary of the hypotheses considered to explain the deaths in the first division.
+</p>
+</div>
 <p>After considering peculiar conjectures (e.g. delivery position, priest visits), an accident gave Semmelweis the decisive clue. In 1847, a colleague of his received a puncture wound in the finger, from the scalpel of a student while performing an autopsy. His colleague died after an illness with similar symptoms to those observed in the victims of childbed fever. Note, that the role of micro-organisms had not yet been recognized at the time. Semmelweis ordered all medical students to wash their hands with a chlorinated lime solution before making examinations, especially after performing dissections in the autopsy room.</p>
 <p>Mortality fell to 1.27% in the First Division compared to 1.33% in the second. In further support of his hypothesis, Semmelweis notes that midwives from the Second Division did not dissect cadavers. This also explained the “street births” low mortality since women were rarely examined as they already gave birth. Semmelweis concluded that the cause was infection by cadaveric material and putrid matter.</p>
+<p>At the time, Semmelweis’s findings lacked a scientific explanation. This understanding only emerged in the 1860s and 1870s, thanks to the work of Louis Pasteur, Joseph Lister, and others who advanced the germ theory of disease. Semmelweis’s idea that a single cause existed, centered solely on cleanliness, was considered radical at that time and was mostly ignored, rejected, or mocked. He was politically dismissed from the hospital and faced harassment from the medical community in Vienna, ultimately leading him to relocate to Budapest. People close to him, including his wife, believed he was losing his mind, and in 1865, he was admitted to a lunatic asylum, where he died just 14 days later. Semmelweis’s practices gained widespread acceptance only years after his death, when Louis Pasteur further refined the germ theory of disease, providing a theoretical basis for Semmelweis’s observations.</p>
 <div class="rnote">
 <p>Example and discussion extracted from Chapter 2 of <span class="citation">(<a href="#ref-hempel-pos">Hempel 1966</a>)</span></p>
 </div>
+<div class="tipbox">
+<div data-latex="">
+<p><strong>Note for data scientists!</strong></p>
+</div>
+<p>Notice how this story relates to data science in many aspects. First, Semmelweis considered multiple factors (diet, division sizes, etc.) and collected information about them. Similarly, in data science, the quality and variety of data can significantly help in the data analysis. Semmelweis formulated a hypothesis based on his observations and sought to test it through intervention (handwashing). In data science, hypotheses are also formulated and contrasted using data to compare pre-intervention and post-intervention observations. The medical community initially rejected Semmelweis’s hypothesis despite evidence. This reflects a common bias in scientific inquiry where existing beliefs can overshadow new findings. In data science, <strong>confirmation bias</strong> can lead researchers to favour results that confirm pre-existing hypotheses rather than exploring contrary evidence. Semmelweis’s approach demonstrates the iterative process of refining hypotheses based on new data and observations. Importantly, data showed that Semmelweis was probably right, but only after the advent of the germ theory an explanation could be provided. This shows the importat role of domain knowledge in the interpretation of data-driven results.</p>
+</div>
 <div id="how-a-hypothesis-is-tested" class="section level4 hasAnchor" number="2.8.1.1">
 <h4><span class="header-section-number">2.8.1.1</span> How a hypothesis is tested<a href="scientific-inference.html#how-a-hypothesis-is-tested" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Some conjectures (e.g. differences in diet, crowding or care) were trivial to test as their assumptions conflict with readily observable facts. Others were not as straightforward and required certain interventions. For example, changing the routine of the priest or the birth position. If the hypothesis <span class="math inline">\(H\)</span> is true, then certain observable events <span class="math inline">\(I\)</span> should occur (e.g. drop in mortality) under specified circumstances (e.g. lateral delivery position). Semmelweis experiment showed the test implication to be false, rejecting the hypothesis in consequence.</p>
+<p>Some conjectures (e.g. differences in diet, crowding or care) were trivial to test as their assumptions conflict with readily observable facts (e.g., there were no differences in diet across divisions). Others were not as straightforward and required certain interventions. For example, changing the routine of the priest or the birth position. If the hypothesis <span class="math inline">\(H\)</span> is true, then certain observable events <span class="math inline">\(I\)</span> should occur (e.g. drop in mortality) under specified circumstances (e.g. lateral delivery position). Semmelweis experiment showed the test implication to be false (he changed the routine of the priest or the delivery position and did not find different results in mortality), rejecting the hypothesis in consequence.</p>
 <pre><code>If H is true, then so is I.
 But (as the evidence shows) I is not true.
 ---------------
@@ -786,7 +831,7 @@ H is true.</code></pre>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:wason-cards"></span>
 <img src="Figures/wason_cards.png" alt="Wason selection task or four-card problem." width="25%" />
 <p class="caption">
-Figure 2.5: Wason selection task or four-card problem.
+Figure 2.6: Wason selection task or four-card problem.
 </p>
 </div>
 <p>Consider the following hypothetico-deductive reasoning problem created by Peter Cathcart Wason employing the logical rule of implication:</p>
@@ -855,7 +900,7 @@ Therefore, not even (conclusion)</code></pre>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:us-presidents"></span>
 <img src="Figures/usa_presidents.jpeg" alt="Presidents of the United States of America as of 2021." width="100%" />
 <p class="caption">
-Figure 2.6: Presidents of the United States of America as of 2021.
+Figure 2.7: Presidents of the United States of America as of 2021.
 </p>
 </div>
 <p>Suppose we aim to predict whether the next president of the United States of America will be a woman or not. If we rely solely on the gender of previous presidents, by induction we will predict a zero chance. But by understanding how a person becomes a presidential candidate, and how previously became a candidate for their party, we can take into account the network of people involved in the process and recalculate our forecast with higher precision. In this case the rules are clearly defined in the law. Pouring these bits of domain knowledge into our model will show that chances are increasing over time. Encoding the rules behind the data heavily increased the robustness and precision of our model. Thanks to these rules our inference became deductive rather than inductive, since the conclusion necessarily follows from the premises; and as long as the premises are true the conclusion will also be true.</p>
@@ -892,6 +937,12 @@ Alexandre Yersin.
 <p>From Plague and Cholera, by Patrick Deville. <span class="citation">(<a href="#ref-deville2014plague">Deville 2014</a>)</span></p>
 </div>
 <p>I absolutely recommend this book about Alexandre Yersin life. A Swiss-French physician and bacteriologist, pupil of Louis Pasteur, that trying to run away from himself became an agronomist and an explorer of the highlands of Vietnam and Cambodia.</p>
+<div class="tipbox">
+<div data-latex="">
+<p><strong>Note for data scientists!</strong></p>
+</div>
+<p>In scientific and data science research, having too much control over experimental conditions can limit our understanding of complex phenomena. The text illustrates this through the contrasting approaches of Alexandre Yersin and Kitasato Shibasaburō during their investigation of the plague. Yersin’s observations were conducted in a hut laboratory without the ideal conditions, which allowed him to discover the plague bacillus by directly examining the natural state of the environment. In contrast, Kitasato’s access to a fully equipped hospital laboratory may have created an environment that favoured the growth of contaminants, leading to his misidentification of the pneumococcus as the plague bacillus. This situation highlights the importance of balancing control (like in a laboratory setting) and real-world conditions in scientific inquiry; while controlled experiments are essential for reproducibility, they can also obscure critical variables and insights that emerge from more natural settings. Thus, understanding how much control to exert is crucial for ensuring the validity and applicability of scientific findings.</p>
+</div>
 </div>
 <div id="risks-of-induction-and-non-epistemic-values-in-ml" class="section level3 hasAnchor" number="2.8.5">
 <h3><span class="header-section-number">2.8.5</span> Risks of induction and non-epistemic values in ML<a href="scientific-inference.html#risks-of-induction-and-non-epistemic-values-in-ml" class="anchor-section" aria-label="Anchor link to header"></a></h3>

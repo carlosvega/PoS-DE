@@ -140,7 +140,7 @@
 
 \title{Applied Philosophy of Science and Data Ethics}
 \author{Dr.~Carlos Vega}
-\date{2021 - 2024: Last compiled: 2024-07-16}
+\date{2021 - 2024: Last compiled: 2024-10-17}
 
 \begin{document}
 \maketitle
@@ -1205,22 +1205,64 @@ From this moment on, various explanations were considered, subjected to test and
 
 The first explanation attributed the issue to ``epidemic influences'' described as ``atmospheric-cosmic-telluric changes'' spreading over districts and causing childbed fever. This hypothesis did not explain why the first division had more cases than the second. Neither explained the lack of cases in the city of Vienna. Epidemics such as cholera are not so selective. Finally, Semmelweis notes that women who had to give birth in the street on their way to the hospital had a lower death rate than the average for the first division.
 
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2375}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3750}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3875}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Year
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+First Division Mortality (\%)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Second Division Mortality (\%)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1844 & 8.20 & 2.30 \\
+1845 & 6.80 & 2.00 \\
+1846 & 11.40 & 2.70 \\
+\end{longtable}
+
 On a different view, overcrowding of the first division was proposed as a cause but Semmelweis pointed out that the second division was much crowded. Moreover, there were no differences regarding diet or general care of the patients.
 
 In 1846, a commission was appointed to investigate the issue, which attributed the prevalence to injuries in the first division resulting from rough examination by medical students. Semmelweis refuted this view since: a) the injuries of birth itself are more extensive than those from the examination. b) midwives' examinations from the second division were similar. c) as a consequence of the commission the number of students was halved and the examinations were reduced to a minimum. The mortality increased.
 
+
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.75\linewidth]{Figures/IgnazSemmelweisHyp} 
+
+}
+
+\caption{Summary of the hypotheses considered to explain the deaths in the first division.}\label{fig:ignazhyp}
+\end{figure}
+
 After considering peculiar conjectures (e.g.~delivery position, priest visits), an accident gave Semmelweis the decisive clue. In 1847, a colleague of his received a puncture wound in the finger, from the scalpel of a student while performing an autopsy. His colleague died after an illness with similar symptoms to those observed in the victims of childbed fever. Note, that the role of micro-organisms had not yet been recognized at the time. Semmelweis ordered all medical students to wash their hands with a chlorinated lime solution before making examinations, especially after performing dissections in the autopsy room.
 
 Mortality fell to 1.27\% in the First Division compared to 1.33\% in the second. In further support of his hypothesis, Semmelweis notes that midwives from the Second Division did not dissect cadavers. This also explained the ``street births'' low mortality since women were rarely examined as they already gave birth. Semmelweis concluded that the cause was infection by cadaveric material and putrid matter.
+
+At the time, Semmelweis's findings lacked a scientific explanation. This understanding only emerged in the 1860s and 1870s, thanks to the work of Louis Pasteur, Joseph Lister, and others who advanced the germ theory of disease. Semmelweis's idea that a single cause existed, centered solely on cleanliness, was considered radical at that time and was mostly ignored, rejected, or mocked. He was politically dismissed from the hospital and faced harassment from the medical community in Vienna, ultimately leading him to relocate to Budapest. People close to him, including his wife, believed he was losing his mind, and in 1865, he was admitted to a lunatic asylum, where he died just 14 days later. Semmelweis's practices gained widespread acceptance only years after his death, when Louis Pasteur further refined the germ theory of disease, providing a theoretical basis for Semmelweis's observations.
 
 \begin{rnote}
 Example and discussion extracted from Chapter 2 of \citep{hempel-pos}
 
 \end{rnote}
 
+\begin{tipbox}
+
+\textbf{Note for data scientists!}
+
+Notice how this story relates to data science in many aspects. First, Semmelweis considered multiple factors (diet, division sizes, etc.) and collected information about them. Similarly, in data science, the quality and variety of data can significantly help in the data analysis. Semmelweis formulated a hypothesis based on his observations and sought to test it through intervention (handwashing). In data science, hypotheses are also formulated and contrasted using data to compare pre-intervention and post-intervention observations. The medical community initially rejected Semmelweis's hypothesis despite evidence. This reflects a common bias in scientific inquiry where existing beliefs can overshadow new findings. In data science, \textbf{confirmation bias} can lead researchers to favour results that confirm pre-existing hypotheses rather than exploring contrary evidence. Semmelweis's approach demonstrates the iterative process of refining hypotheses based on new data and observations. Importantly, data showed that Semmelweis was probably right, but only after the advent of the germ theory an explanation could be provided. This shows the importat role of domain knowledge in the interpretation of data-driven results.
+
+\end{tipbox}
+
 \subsubsection{How a hypothesis is tested}\label{how-a-hypothesis-is-tested}
 
-Some conjectures (e.g.~differences in diet, crowding or care) were trivial to test as their assumptions conflict with readily observable facts. Others were not as straightforward and required certain interventions. For example, changing the routine of the priest or the birth position. If the hypothesis \(H\) is true, then certain observable events \(I\) should occur (e.g.~drop in mortality) under specified circumstances (e.g.~lateral delivery position). Semmelweis experiment showed the test implication to be false, rejecting the hypothesis in consequence.
+Some conjectures (e.g.~differences in diet, crowding or care) were trivial to test as their assumptions conflict with readily observable facts (e.g., there were no differences in diet across divisions). Others were not as straightforward and required certain interventions. For example, changing the routine of the priest or the birth position. If the hypothesis \(H\) is true, then certain observable events \(I\) should occur (e.g.~drop in mortality) under specified circumstances (e.g.~lateral delivery position). Semmelweis experiment showed the test implication to be false (he changed the routine of the priest or the delivery position and did not find different results in mortality), rejecting the hypothesis in consequence.
 
 \begin{verbatim}
 If H is true, then so is I.
@@ -1406,6 +1448,14 @@ From Plague and Cholera, by Patrick Deville. \citep{deville2014plague}
 \end{rnote}
 
 I absolutely recommend this book about Alexandre Yersin life. A Swiss-French physician and bacteriologist, pupil of Louis Pasteur, that trying to run away from himself became an agronomist and an explorer of the highlands of Vietnam and Cambodia.
+
+\begin{tipbox}
+
+\textbf{Note for data scientists!}
+
+In scientific and data science research, having too much control over experimental conditions can limit our understanding of complex phenomena. The text illustrates this through the contrasting approaches of Alexandre Yersin and Kitasato Shibasaburō during their investigation of the plague. Yersin's observations were conducted in a hut laboratory without the ideal conditions, which allowed him to discover the plague bacillus by directly examining the natural state of the environment. In contrast, Kitasato's access to a fully equipped hospital laboratory may have created an environment that favoured the growth of contaminants, leading to his misidentification of the pneumococcus as the plague bacillus. This situation highlights the importance of balancing control (like in a laboratory setting) and real-world conditions in scientific inquiry; while controlled experiments are essential for reproducibility, they can also obscure critical variables and insights that emerge from more natural settings. Thus, understanding how much control to exert is crucial for ensuring the validity and applicability of scientific findings.
+
+\end{tipbox}
 
 \subsection{Risks of induction and non-epistemic values in ML}\label{risks-of-induction-and-non-epistemic-values-in-ml}
 
