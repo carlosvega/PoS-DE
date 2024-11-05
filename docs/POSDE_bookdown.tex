@@ -40,6 +40,46 @@
 \makeatother
 \usepackage{xcolor}
 \usepackage[lmargin=4cm,rmargin=3cm,bmargin=3cm]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -140,7 +180,7 @@
 
 \title{Applied Philosophy of Science and Data Ethics}
 \author{Dr.~Carlos Vega}
-\date{2021 - 2024: Last compiled: 2024-10-30}
+\date{2021 - 2024: Last compiled: 2024-11-05}
 
 \begin{document}
 \maketitle
@@ -2018,12 +2058,6 @@ Specifically, an instrumental variable Z is an additional variable used to estim
 
 Although today miasma theory has been discredited, poverty and location are clear confounders. In \citep{book-of-why}, the authors show how instrumental variables can be used to determine the number of lives that could have been saved by purifying the water supply. The instrumental variable \textbf{Water Company} allow us to find the effect of \textbf{Water Purity} on \textbf{Cholera} even without being able to control, or collect data on, the confounder variables (poverty, location, etc.).
 
-One of the main innovations of John Snow approach was to focus on death rates in districts served by two water companies rather than on data from victims of the Broad Street pump which drew water from a well.
-
-\begin{quote}
-A transitional period began in the late 1850s with the work of Louis Pasteur. This work was later extended by Robert Koch in the 1880s. By the end of that decade, the miasma theory was struggling to compete with the germ theory of disease. Viruses were initially discovered in the 1890s. Eventually, a ``golden era'' of bacteriology ensued, during which the germ theory quickly led to the identification of the actual organisms that cause many diseases. --- Wikipedia, \href{https://en.wikipedia.org/wiki/Germ_theory_of_disease}{Germ theory of disease}.
-\end{quote}
-
 \begin{figure}[htbp]
 
 {\centering \includegraphics[width=1\linewidth]{Figures/snow-cholera-map-crop} 
@@ -2032,6 +2066,378 @@ A transitional period began in the late 1850s with the work of Louis Pasteur. Th
 
 \caption{Detail of John Snow’s map of Cholera in the Broad Street outbreak in 1854. Each bar represents one death in a topography that attempted to relate the water source (“Pump”) to pattern of cases in the neighborhood outbreak.}\label{fig:snow-map}
 \end{figure}
+
+One of the main innovations of John Snow approach was to focus on death rates in districts served by two water companies rather than on data from victims of the Broad Street pump which drew water from a well.
+
+\begin{quote}
+A transitional period began in the late 1850s with the work of Louis Pasteur. This work was later extended by Robert Koch in the 1880s. By the end of that decade, the miasma theory was struggling to compete with the germ theory of disease. Viruses were initially discovered in the 1890s. Eventually, a ``golden era'' of bacteriology ensued, during which the germ theory quickly led to the identification of the actual organisms that cause many diseases. --- Wikipedia, \href{https://en.wikipedia.org/wiki/Germ_theory_of_disease}{Germ theory of disease}.
+\end{quote}
+
+\subsection{Causal models: Estimating treatment effect in the pressence of a confounder}\label{causal-models}
+
+This example illustrates the use of a causal model and causal inference methods to estimate the effect of \texttt{study\ hours} (per week) in the final exam \texttt{scores}. Our outcome again is students' scores. We aim to estimate the causal effect that the ``\emph{treatment}'' \texttt{study\ hours} has on students' \texttt{scores} (effect). Our beliefs and assumptions are encoded into a causal model. We assume that \texttt{study\ hours} (per week) is directly related to \texttt{scores} but also that the \texttt{prior\ knowledge} affects both the effect and the cause (i.e., it is a confounder). For this exercise we will employ Python language and the library \href{https://www.pywhy.org}{doWhy}.
+
+This example shows how to estimate the effect while controlling for the confounder. Remember that a confounder \texttt{Z} affects both the cause \texttt{X} and the effect/outcome~\texttt{Y}.
+
+We import the necessary packages to work.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ matplotlib}
+\ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
+\ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
+\ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
+\ImportTok{import}\NormalTok{ dowhy}
+\ImportTok{from}\NormalTok{ dowhy }\ImportTok{import}\NormalTok{ CausalModel}
+\end{Highlighting}
+\end{Shaded}
+
+Then, we begin by creating a synthetic dataset in which study hours and prior knowledge are random variables normally distributed. Then, exam score is a function of both study hours and prior knowledge. In a real world scenario, we would normally not know about this function because is what we are trying to estimate. Note the values in the function, specifically, the \texttt{2\ *\ data{[}"study\_hours"{]}}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{np.random.seed(}\DecValTok{42}\NormalTok{)}
+\NormalTok{data }\OperatorTok{=}\NormalTok{ pd.DataFrame(\{}
+    \StringTok{"study\_hours"}\NormalTok{: np.random.normal(}\DecValTok{10}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{1000}\NormalTok{),  }
+    \StringTok{"prior\_knowledge"}\NormalTok{: np.random.normal(}\DecValTok{3}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1000}\NormalTok{),}
+    \StringTok{"exam\_score"}\NormalTok{: np.zeros(}\DecValTok{1000}\NormalTok{)  }\CommentTok{\# Placeholder for exam score}
+\NormalTok{\})}
+
+\CommentTok{\# Define the relationship: }
+\CommentTok{\# Exam score is influenced by both study hours and prior knowledge}
+\NormalTok{data[}\StringTok{"exam\_score"}\NormalTok{] }\OperatorTok{=}\NormalTok{ (}\DecValTok{5} \OperatorTok{+} \DecValTok{2} \OperatorTok{*}\NormalTok{ data[}\StringTok{"study\_hours"}\NormalTok{] }
+                       \OperatorTok{+} \DecValTok{3} \OperatorTok{*}\NormalTok{ data[}\StringTok{"prior\_knowledge"}\NormalTok{] }
+                       \OperatorTok{+}\NormalTok{ np.random.normal(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1000}\NormalTok{))}
+
+\NormalTok{data.head(}\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    study_hours  prior_knowledge  exam_score
+## 0    10.993428         4.399355   39.509745
+## 1     9.723471         3.924634   36.076325
+## 2    11.295377         3.059630   35.977225
+## 3    13.046060         2.353063   37.843348
+## 4     9.531693         3.698223   33.264442
+\end{verbatim}
+
+Now, we will define the model and visualize it.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model }\OperatorTok{=}\NormalTok{ CausalModel(}
+\NormalTok{    data}\OperatorTok{=}\NormalTok{data,}
+\NormalTok{    treatment}\OperatorTok{=}\StringTok{"study\_hours"}\NormalTok{,}
+\NormalTok{    outcome}\OperatorTok{=}\StringTok{"exam\_score"}\NormalTok{,}
+\NormalTok{    common\_causes}\OperatorTok{=}\NormalTok{[}\StringTok{"prior\_knowledge"}\NormalTok{])}
+
+\NormalTok{model.view\_model(size}\OperatorTok{=}\NormalTok{(}\DecValTok{8}\NormalTok{,}\DecValTok{3}\NormalTok{))}
+\NormalTok{plt.tight\_layout(w\_pad}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{POSDE_bookdown_files/figure-latex/unnamed-chunk-30-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{identified\_estimand }\OperatorTok{=}\NormalTok{ model.identify\_effect()}
+\NormalTok{estimate }\OperatorTok{=}\NormalTok{ model.estimate\_effect(identified\_estimand, }
+\NormalTok{   method\_name}\OperatorTok{=}\StringTok{"backdoor.linear\_regression"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+The result below means that, according to our causal model, an additional hour of study per week is estimated to increase the exam score by approximately 2 points. This effect is derived after accounting for the confounder (in this case, \texttt{prior\ knowledge}) using the backdoor criterion. If this estimate is accurate, it suggests a positive causal relationship between study hours and exam score, where more study hours lead to higher scores.
+
+As can be seen, this estimation is very close to the degree stated in the equation of our synthetic data in \texttt{2\ *\ data{[}"study\_hours"{]}}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Causal Estimate of Study Hours on Exam Score:"}\NormalTok{, }
+\NormalTok{     estimate.value)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Causal Estimate of Study Hours on Exam Score: 2.010902911319434
+\end{verbatim}
+
+A placebo test in causal inference is a refutation technique designed to test the robustness of our causal estimate by using a ``fake'' treatment variable. The idea is to see if our model incorrectly detects a causal effect when there should be none, which would indicate potential bias or flaws in the model. The placebo test helps us check if this estimated causal effect could be due to biases in the model rather than a true causal relationship.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{refute\_result }\OperatorTok{=}\NormalTok{ model.refute\_estimate(identified\_estimand, }
+\NormalTok{  estimate, method\_name}\OperatorTok{=}\StringTok{"placebo\_treatment\_refuter"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Here, the test has replaced the actual treatment (study\_hours) with a ``placebo'' or random variable that should have no causal effect on the outcome (exam\_score).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(refute\_result)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Refute: Use a Placebo Treatment
+## Estimated effect:2.010902911319434
+## New effect:0.0
+## p value:2.0
+\end{verbatim}
+
+\begin{itemize}
+\item
+  New effect (0.0): This shows that the placebo treatment has no effect on the outcome, as expected (since it's a random variable unrelated to exam score).
+\item
+  Original effect (2.01) vs.~New effect (0.0): The fact that the original effect remains 2.01 while the placebo effect is 0 suggests that the observed causal effect of study hours on exam score is not due to random bias. Instead, it's likely a true effect.
+\item
+  p-value (2.0): A high p-value indicates that there is no statistically significant effect with the placebo treatment. This further supports that any observed effect in the placebo scenario is likely due to chance.
+\end{itemize}
+
+The placebo test confirms that our causal model appears robust, as it detects no effect when a placebo treatment is used. Therefore, we can have more confidence that the estimated effect of 2.01 is a genuine causal effect of study hours on exam score, rather than an artifact of model bias or unmeasured confounding.
+
+These results suggest that our initial model is likely valid, meaning that the relationship we estimated is trustworthy given the data and assumptions. But things could still be wrong\ldots{} as we will see in the next example.
+
+\subsubsection{Backdoor criterion}\label{backdoor-criterion}
+
+The backdoor criterion is a method used in causal inference to control for confounders---variables that influence both the treatment and the outcome. By satisfying the backdoor criterion, we aim to isolate the causal effect of the treatment on the outcome by ``blocking'' other paths of influence. Suppose we have a causal structure where a variable\texttt{Z} (like prior knowledge) affects both our treatment \texttt{X} (study hours) and outcome \texttt{Y} (exam score). The backdoor criterion tells us to condition on (i.e., adjust for) variables like \texttt{Z} which lie on ``backdoor paths'' that might introduce bias in estimating the effect of \texttt{X} on \texttt{Y}. By conditioning on \texttt{Z}, we effectively ``block'' any non-causal paths from \texttt{X} to
+\texttt{Y}, allowing us to observe the effect of \texttt{X} on \texttt{Y} without interference from confounding.
+
+When we adjust for a variable like \texttt{Z} in causal inference, we're essentially isolating the relationship between the treatment \texttt{X}(e.g., study hours) and the outcome \texttt{Y} (e.g., exam score) by removing the influence of \texttt{Z} (e.g., prior knowledge) on both \texttt{X}and \texttt{Y}. This adjustment is typically done in one of a few statistical ways, such as conditioning, stratification, or regression. Here a summary of them:
+
+\begin{itemize}
+\item
+  Conditioning on \texttt{Z}: Conditioning involves looking at the relationship between \texttt{X} and \texttt{Y} within subgroups defined by different values of \texttt{Z}. By examining these subgroups, we can remove the influence of \texttt{Z} on \texttt{X} and \texttt{Y}. For instance, if \texttt{Z} represents prior knowledge levels (low, medium, high), we can separately look at the effect of study hours on exam scores within each of these prior knowledge groups. This way, any relationship between \texttt{X} and \texttt{Y} is not confounded by \texttt{Z}.
+\item
+  Stratification by \texttt{Z}: Stratification divides the data into strata (groups) based on the values of \texttt{Z}, and then estimates the effect of \texttt{X} on \texttt{Y} within each stratum. The overall effect is a weighted average of the effect within each stratum. In our example, if \texttt{Z} (prior knowledge) has three levels, we could stratify our analysis into three groups and then calculate the effect of study hours on exam scores within each level of prior knowledge. By averaging these effects, we get a more accurate estimate that accounts for the confounding effect of \texttt{Z}.
+\item
+  Regression Adjustment: Regression adjustment uses statistical models (usually linear or logistic regression) to ``hold constant'' the effects of \texttt{Z} on both \texttt{X} and \texttt{Y}. By including \texttt{Z} as a variable in the regression model, we can estimate the relationship between \texttt{X} and \texttt{Y} while ``controlling'' for \texttt{Z}.
+\end{itemize}
+
+Adjusting for \texttt{Z}removes any indirect associations between \texttt{X} and \texttt{Y} that arise because \texttt{Z} influences both. By blocking this confounding pathway, we effectively ``close'' the backdoor path and allow the model to estimate a more accurate causal effect between \texttt{X} and \texttt{Y}. In causal inference, this adjustment step is crucial because it attempts to mimic a randomized experiment where all confounders would ideally be balanced, allowing us to make stronger causal claims about \texttt{X} and \texttt{Y}.
+
+\subsection{Causal models: Detecting an overestimation}\label{causal-models-overestimation}
+
+This example illustrates the use of a first causal model that is \textbf{WRONG} because it leaves out an important variable (either because we don't know about it or because we \textbf{believe} it does not have an effect on the outcome).
+
+\begin{itemize}
+\tightlist
+\item
+  Our \textbf{outcome} again is students' \texttt{grades}.
+\item
+  We aim to estimate the causal effect that the ``\emph{treatment}'' \texttt{private\ tutoring} has on students' grades (\textbf{effect}).
+\item
+  We \textbf{believe} that \texttt{study\ hours} (per week) is the only variable that affects both tutoring and grades (i.e., it is a \textbf{confounder})
+\end{itemize}
+
+We will see how to \textbf{detect that the model is wrong} and how once corrected it estimates the effect properly.
+
+We generate a synthetic data with different random values. As you can see parental\_involvement is biased with a 70\% probability to be 0 and 30\% of being 1. In the last two lines we fill tutoring and grade as we have synthetically made them to depend on the study hours and parental involvement. Imagine that instead of being synthetically created this data was given to you from data collection (e.g.~via surveys).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{np.random.seed(}\DecValTok{0}\NormalTok{)}
+\NormalTok{data }\OperatorTok{=}\NormalTok{ pd.DataFrame(\{}
+    \StringTok{"study\_hours"}\NormalTok{: np.random.normal(}\DecValTok{5}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1000}\NormalTok{),  }
+    \StringTok{"parental\_involvement"}\NormalTok{: np.random.choice([}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{], }
+\NormalTok{                                             size}\OperatorTok{=}\DecValTok{1000}\NormalTok{, }
+\NormalTok{                                             p}\OperatorTok{=}\NormalTok{[}\FloatTok{0.7}\NormalTok{, }\FloatTok{0.3}\NormalTok{]),  }
+    \StringTok{"tutoring"}\NormalTok{: np.zeros(}\DecValTok{1000}\NormalTok{),  }\CommentTok{\# Placeholder for tutoring}
+    \StringTok{"grade"}\NormalTok{: np.zeros(}\DecValTok{1000}\NormalTok{)  }\CommentTok{\# Placeholder for grade}
+\NormalTok{\})}
+
+\CommentTok{\# Assume tutoring is influenced by }
+\CommentTok{\# both study hours and parental involvement}
+\NormalTok{data[}\StringTok{"tutoring"}\NormalTok{] }\OperatorTok{=}\NormalTok{ (data[}\StringTok{"study\_hours"}\NormalTok{] }
+            \OperatorTok{+} \DecValTok{10} \OperatorTok{*}\NormalTok{ data[}\StringTok{"parental\_involvement"}\NormalTok{] }
+            \OperatorTok{+}\NormalTok{ np.random.normal(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1000}\NormalTok{) }\OperatorTok{\textgreater{}} \DecValTok{6}\NormalTok{).astype(}\BuiltInTok{int}\NormalTok{)}
+
+\NormalTok{data[}\StringTok{"grade"}\NormalTok{] }\OperatorTok{=}\NormalTok{ (}\DecValTok{50} \OperatorTok{+} \DecValTok{10} \OperatorTok{*}\NormalTok{ data[}\StringTok{"tutoring"}\NormalTok{] }
+                    \OperatorTok{+} \DecValTok{5} \OperatorTok{*}\NormalTok{ data[}\StringTok{"study\_hours"}\NormalTok{] }
+                    \OperatorTok{+} \DecValTok{10} \OperatorTok{*}\NormalTok{ data[}\StringTok{"parental\_involvement"}\NormalTok{] }
+                    \OperatorTok{+}\NormalTok{ np.random.normal(}\DecValTok{0}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{1000}\NormalTok{))}
+
+\NormalTok{data.tail(}\DecValTok{10}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      study_hours  parental_involvement  tutoring      grade
+## 990     5.441033                     0         1  86.784749
+## 991     5.178793                     0         0  75.005558
+## 992     4.200578                     1         1  92.496516
+## 993     5.240788                     0         0  74.929059
+## 994     5.289121                     1         1  98.189120
+## 995     5.412871                     0         0  77.813355
+## 996     4.801601                     0         0  76.318058
+## 997     5.094192                     1         1  96.811745
+## 998     3.852389                     0         0  67.153054
+## 999     4.641886                     0         0  71.478162
+\end{verbatim}
+
+Next we create our \textbf{initial causal model} in which we \textbf{wrongly} assume that \texttt{parental\ involvement} does not affect anything else. Again, the reasons for this error could be two:
+
+\begin{itemize}
+\tightlist
+\item
+  We don't know about this variable. So we didn't even captured it to begin with (e.g.~we didn't ask in the survey).
+\item
+  We captured this variable (but we asked so many things in our survey !) but we believe not to affect the other variables.
+\end{itemize}
+
+Note that, whether unknown to us or wrongly assumed by us, variables can be affected by \texttt{parental\ involvement} in reality. The model shows that \texttt{study\ hours} is a \textbf{confounder} of both \texttt{tutoring} and \texttt{grade}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Create a causal model excluding parental involvement initially}
+\NormalTok{model }\OperatorTok{=}\NormalTok{ CausalModel(}
+\NormalTok{    data}\OperatorTok{=}\NormalTok{data,}
+\NormalTok{    treatment}\OperatorTok{=}\StringTok{"tutoring"}\NormalTok{,}
+\NormalTok{    outcome}\OperatorTok{=}\StringTok{"grade"}\NormalTok{,}
+\NormalTok{    common\_causes}\OperatorTok{=}\NormalTok{[}\StringTok{"study\_hours"}\NormalTok{])}
+
+\NormalTok{model.view\_model(size}\OperatorTok{=}\NormalTok{(}\DecValTok{8}\NormalTok{,}\DecValTok{3}\NormalTok{))}
+\NormalTok{plt.tight\_layout(w\_pad}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{POSDE_bookdown_files/figure-latex/unnamed-chunk-36-3.pdf}
+
+Our initial results show an estimated effect of 14.98 meaning that having \texttt{private\ tutoring} is estimated to increase a student's final \texttt{grade} by approximately 17 points. This effect estimate was obtained after controlling for \texttt{study\ hours} but without considering the additional confounder \texttt{parental\ involvement}. At this point we could be naively happy with this result. But what if we are overestimating or underestimating the effect of \texttt{tutoring}?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{identified\_estimand }\OperatorTok{=}\NormalTok{ model.identify\_effect()}
+\NormalTok{estimate }\OperatorTok{=}\NormalTok{ model.estimate\_effect(identified\_estimand, }
+\NormalTok{            method\_name}\OperatorTok{=}\StringTok{"backdoor.linear\_regression"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Estimated Effect (initial model):"}\NormalTok{, }
+\NormalTok{      estimate.value)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Estimated Effect (initial model): 17.585373682989484
+\end{verbatim}
+
+Again, the placebo test below replaces the actual treatment (in this case, \texttt{tutoring}) with a ``placebo'' or random variable that has no relationship to the outcome (final \texttt{grade}).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{refutation }\OperatorTok{=}\NormalTok{ model.refute\_estimate(identified\_estimand, estimate, }
+\NormalTok{                         method\_name}\OperatorTok{=}\StringTok{"placebo\_treatment\_refuter"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+The placebo test here suggests that the original model's structure is robust, meaning that the observed effect of tutoring on grades is not due to random bias. However, this does not yield out the possibility that the obtained estimate could be biased due to an unmeasured confounder.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Placebo Test Result:"}\NormalTok{, refutation)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Placebo Test Result: Refute: Use a Placebo Treatment
+## Estimated effect:17.585373682989484
+## New effect:0.0
+## p value:2.0
+\end{verbatim}
+
+We could ask ourselves too whether the estimated effect changes significantly when we replace the given dataset with bootstrapped samples from the same dataset? (Hint: It should not).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bootstrap\_refutation }\OperatorTok{=}\NormalTok{ model.refute\_estimate(identified\_estimand, estimate, }
+\NormalTok{                                          method\_name}\OperatorTok{=}\StringTok{"bootstrap\_refuter"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+As seen below, the effect does not deviate much from the original estimated effect. Still, something else could be going on.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(bootstrap\_refutation)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Refute: Bootstrap Sample Dataset
+## Estimated effect:17.585373682989484
+## New effect:17.616872980690538
+## p value:0.8
+\end{verbatim}
+
+If we suspect about the presence of unknown confounders, we could test how sensitive is the effect estimate when we add an additional common cause (confounder) to the dataset that is correlated with the treatment and the outcome. (Hint: It should not be too sensitive).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sensitivity\_analysis }\OperatorTok{=}\NormalTok{ model.refute\_estimate(identified\_estimand, estimate, }
+\NormalTok{                                 method\_name}\OperatorTok{=}\StringTok{"add\_unobserved\_common\_cause"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+In this case we see a huge drop. This may indicate that we over estimated the effect of \texttt{tutoring} on the \texttt{grades} and that we are missing an important confounder.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(sensitivity\_analysis)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Refute: Add an Unobserved Common Cause
+## Estimated effect:17.585373682989484
+## New effect:3.0797827732011314
+\end{verbatim}
+
+At this point we should get back to the design table and see that we missed an important variable. In our case we knew already: \texttt{Parental\ involvement}. In real life, we would either ask the students again (through new surveys) or if we already had this variable in our surveys we would add it to the model as a confounder affecting the \texttt{grades} and the \texttt{tutoring}. Note that in ``our reality'' \texttt{parental\ involvement} did not affect \texttt{study\ hours} directly.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Realize missing confounder: Parental involvement}
+\NormalTok{model\_v2 }\OperatorTok{=}\NormalTok{ CausalModel(}
+\NormalTok{    data}\OperatorTok{=}\NormalTok{data,}
+\NormalTok{    treatment}\OperatorTok{=}\StringTok{"tutoring"}\NormalTok{,}
+\NormalTok{    outcome}\OperatorTok{=}\StringTok{"grade"}\NormalTok{,}
+\NormalTok{    common\_causes}\OperatorTok{=}\NormalTok{[}\StringTok{"study\_hours"}\NormalTok{, }\StringTok{"parental\_involvement"}\NormalTok{])}
+
+\CommentTok{\# Visualize the causal graph}
+\NormalTok{model\_v2.view\_model(size}\OperatorTok{=}\NormalTok{(}\DecValTok{8}\NormalTok{,}\DecValTok{3}\NormalTok{))}
+\NormalTok{plt.tight\_layout(w\_pad}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{POSDE_bookdown_files/figure-latex/unnamed-chunk-45-5.pdf}
+
+We then re-run our estimation.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{identified\_estimand\_with\_confounder }\OperatorTok{=}\NormalTok{ model\_v2.identify\_effect()}
+\NormalTok{estimate\_with\_confounder }\OperatorTok{=}\NormalTok{ model\_v2.estimate\_effect(}
+\NormalTok{  identified\_estimand\_with\_confounder,}
+\NormalTok{  method\_name}\OperatorTok{=}\StringTok{"backdoor.linear\_regression"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+As can be seen, this value is closer to the degree of our synthetic data \texttt{10\ *\ data{[}"tutoring"{]}}. Still, in real world scenarios we do not necessarily know the functions that describe the behaviour of real world phenomena.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Estimated Effect (revised model):"}\NormalTok{, }
+\NormalTok{      estimate\_with\_confounder.value)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Estimated Effect (revised model): 10.095828768814442
+\end{verbatim}
 
 \chapter{Experimental Control and Statistical Abuse}\label{stats-abuse}
 

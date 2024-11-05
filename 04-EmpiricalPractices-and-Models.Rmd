@@ -430,13 +430,268 @@ A variable that satisfies these properties is called an **instrumental variable*
 
 Although today miasma theory has been discredited, poverty and location are clear confounders. In [@book-of-why], the authors show how instrumental variables can be used to determine the number of lives that could have been saved by purifying the water supply. The instrumental variable **Water Company** allow us to find the effect of **Water Purity** on **Cholera** even without being able to control, or collect data on, the confounder variables (poverty, location, etc.).
 
+```{r snow-map, echo=F, fig.align="center",  out.width="100%", fig.cap='Detail of John Snow’s map of Cholera in the Broad Street outbreak in 1854. Each bar represents one death in a topography that attempted to relate the water source (“Pump”) to pattern of cases in the neighborhood outbreak.', fig.pos = "htbp"} 
+knitr::include_graphics('Figures/snow-cholera-map-crop.jpg')
+```
+
 One of the main innovations of John Snow approach was to focus on death rates in districts served by two water companies rather than on data from victims of the Broad Street pump which drew water from a well.
 
 > A transitional period began in the late 1850s with the work of Louis Pasteur. This work was later extended by Robert Koch in the 1880s. By the end of that decade, the miasma theory was struggling to compete with the germ theory of disease. Viruses were initially discovered in the 1890s. Eventually, a "golden era" of bacteriology ensued, during which the germ theory quickly led to the identification of the actual organisms that cause many diseases. --- Wikipedia, [Germ theory of disease](https://en.wikipedia.org/wiki/Germ_theory_of_disease).
 
-```{r snow-map, echo=F, fig.align="center",  out.width="100%", fig.cap='Detail of John Snow’s map of Cholera in the Broad Street outbreak in 1854. Each bar represents one death in a topography that attempted to relate the water source (“Pump”) to pattern of cases in the neighborhood outbreak.', fig.pos = "htbp"} 
-knitr::include_graphics('Figures/snow-cholera-map-crop.jpg')
+
+
+### Causal models: Estimating treatment effect in the pressence of a confounder {#causal-models}
+
+This example illustrates the use of a causal model and causal inference methods to estimate the effect of `study hours` (per week) in the final exam `scores`. Our outcome again is students' scores. We aim to estimate the causal effect that the "*treatment*" `study hours` has on students' `scores` (effect). Our beliefs and assumptions are encoded into a causal model. We assume that `study hours` (per week) is directly related to `scores` but also that the `prior knowledge` affects both the effect and the cause (i.e., it is a confounder). For this exercise we will employ Python language and the library [doWhy](https://www.pywhy.org).
+
+This example shows how to estimate the effect while controlling for the confounder. Remember that a confounder `Z` affects both the cause `X` and the effect/outcome\ `Y`.
+
+```{r, setup, include=FALSE}
+library(reticulate)
+virtualenv_create("causal-models-env")
+py_install("dowhy")
+py_install("matplotlib")
 ```
+
+We import the necessary packages to work.
+
+```{python}
+import matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import dowhy
+from dowhy import CausalModel
+```
+
+Then, we begin by creating a synthetic dataset in which study hours and prior knowledge are random variables normally distributed. Then, exam score is a function of both study hours and prior knowledge. In a real world scenario, we would normally not know about this function because is what we are trying to estimate. Note the values in the function, specifically, the `2 * data["study_hours"]`.
+
+```{python}
+np.random.seed(42)
+data = pd.DataFrame({
+    "study_hours": np.random.normal(10, 2, 1000),  
+    "prior_knowledge": np.random.normal(3, 1, 1000),
+    "exam_score": np.zeros(1000)  # Placeholder for exam score
+})
+
+# Define the relationship: 
+# Exam score is influenced by both study hours and prior knowledge
+data["exam_score"] = (5 + 2 * data["study_hours"] 
+                       + 3 * data["prior_knowledge"] 
+                       + np.random.normal(0, 1, 1000))
+
+data.head(5)
+```
+
+Now, we will define the model and visualize it. 
+
+```{python}
+model = CausalModel(
+    data=data,
+    treatment="study_hours",
+    outcome="exam_score",
+    common_causes=["prior_knowledge"])
+
+model.view_model(size=(8,3))
+plt.tight_layout(w_pad=1)
+```
+
+```{python, results = 'hide', error=FALSE, warning=FALSE, message=FALSE}
+identified_estimand = model.identify_effect()
+estimate = model.estimate_effect(identified_estimand, 
+   method_name="backdoor.linear_regression")
+```
+
+The result below means that, according to our causal model, an additional hour of study per week is estimated to increase the exam score by approximately 2 points. This effect is derived after accounting for the confounder (in this case, `prior knowledge`) using the backdoor criterion. If this estimate is accurate, it suggests a positive causal relationship between study hours and exam score, where more study hours lead to higher scores.
+
+As can be seen, this estimation is very close to the degree stated in the equation of our synthetic data in `2 * data["study_hours"]`.
+
+
+```{python}
+print("Causal Estimate of Study Hours on Exam Score:", 
+     estimate.value)
+```
+
+A placebo test in causal inference is a refutation technique designed to test the robustness of our causal estimate by using a "fake" treatment variable. The idea is to see if our model incorrectly detects a causal effect when there should be none, which would indicate potential bias or flaws in the model. The placebo test helps us check if this estimated causal effect could be due to biases in the model rather than a true causal relationship.
+
+```{python, results = 'hide', error=FALSE, warning=FALSE, message=FALSE}
+refute_result = model.refute_estimate(identified_estimand, 
+  estimate, method_name="placebo_treatment_refuter")
+```
+
+Here, the test has replaced the actual treatment (study_hours) with a "placebo" or random variable that should have no causal effect on the outcome (exam_score).
+
+```{python}
+print(refute_result)
+```
+
+- New effect (0.0): This shows that the placebo treatment has no effect on the outcome, as expected (since it’s a random variable unrelated to exam score).
+
+- Original effect (2.01) vs. New effect (0.0): The fact that the original effect remains 2.01 while the placebo effect is 0 suggests that the observed causal effect of study hours on exam score is not due to random bias. Instead, it’s likely a true effect.
+
+- p-value (2.0): A high p-value indicates that there is no statistically significant effect with the placebo treatment. This further supports that any observed effect in the placebo scenario is likely due to chance.
+
+The placebo test confirms that our causal model appears robust, as it detects no effect when a placebo treatment is used. Therefore, we can have more confidence that the estimated effect of 2.01 is a genuine causal effect of study hours on exam score, rather than an artifact of model bias or unmeasured confounding.
+
+These results suggest that our initial model is likely valid, meaning that the relationship we estimated is trustworthy given the data and assumptions. But things could still be wrong... as we will see in the next example.
+
+#### Backdoor criterion
+
+The backdoor criterion is a method used in causal inference to control for confounders—variables that influence both the treatment and the outcome. By satisfying the backdoor criterion, we aim to isolate the causal effect of the treatment on the outcome by "blocking" other paths of influence. Suppose we have a causal structure where a variable`Z` (like prior knowledge) affects both our treatment `X` (study hours) and outcome `Y` (exam score). The backdoor criterion tells us to condition on (i.e., adjust for) variables like `Z` which lie on "backdoor paths" that might introduce bias in estimating the effect of `X` on `Y`. By conditioning on `Z`, we effectively "block" any non-causal paths from `X` to 
+`Y`, allowing us to observe the effect of `X` on `Y` without interference from confounding.
+
+When we adjust for a variable like `Z` in causal inference, we're essentially isolating the relationship between the treatment `X`(e.g., study hours) and the outcome `Y` (e.g., exam score) by removing the influence of `Z` (e.g., prior knowledge) on both `X`and `Y`. This adjustment is typically done in one of a few statistical ways, such as conditioning, stratification, or regression. Here a summary of them:
+
+- Conditioning on `Z`: Conditioning involves looking at the relationship between `X` and `Y` within subgroups defined by different values of `Z`. By examining these subgroups, we can remove the influence of `Z` on `X` and `Y`. For instance, if `Z` represents prior knowledge levels (low, medium, high), we can separately look at the effect of study hours on exam scores within each of these prior knowledge groups. This way, any relationship between `X` and `Y` is not confounded by `Z`.
+
+- Stratification by `Z`: Stratification divides the data into strata (groups) based on the values of `Z`, and then estimates the effect of `X` on `Y` within each stratum. The overall effect is a weighted average of the effect within each stratum.  In our example, if `Z` (prior knowledge) has three levels, we could stratify our analysis into three groups and then calculate the effect of study hours on exam scores within each level of prior knowledge. By averaging these effects, we get a more accurate estimate that accounts for the confounding effect of `Z`.
+
+- Regression Adjustment: Regression adjustment uses statistical models (usually linear or logistic regression) to "hold constant" the effects of `Z` on both `X` and `Y`. By including `Z` as a variable in the regression model, we can estimate the relationship between `X` and `Y` while "controlling" for `Z`.
+
+Adjusting for `Z`removes any indirect associations between `X` and `Y` that arise because `Z` influences both. By blocking this confounding pathway, we effectively "close" the backdoor path and allow the model to estimate a more accurate causal effect between `X` and `Y`. In causal inference, this adjustment step is crucial because it attempts to mimic a randomized experiment where all confounders would ideally be balanced, allowing us to make stronger causal claims about `X` and `Y`.
+
+### Causal models: Detecting an overestimation {#causal-models-overestimation}
+
+This example illustrates the use of a first causal model that is **WRONG** because it leaves out an important variable (either because we don't know about it or because we **believe** it does not have an effect on the outcome).
+
+- Our **outcome** again is students' `grades`.
+- We aim to estimate the causal effect that the "*treatment*" `private tutoring` has on students' grades (**effect**).
+- We **believe** that `study hours` (per week) is the only variable that affects both tutoring and grades (i.e., it is a **confounder**)
+
+We will see how to **detect that the model is wrong** and how once corrected it estimates the effect properly.
+
+We generate a synthetic data with different random values. As you can see parental_involvement is biased with a 70\% probability to be 0 and 30\% of being 1. In the last two lines we fill tutoring and grade as we have synthetically made them to depend on the study hours and parental involvement. Imagine that instead of being synthetically created this data was given to you from data collection (e.g. via surveys). 
+
+```{python}
+np.random.seed(0)
+data = pd.DataFrame({
+    "study_hours": np.random.normal(5, 1, 1000),  
+    "parental_involvement": np.random.choice([0, 1], 
+                                             size=1000, 
+                                             p=[0.7, 0.3]),  
+    "tutoring": np.zeros(1000),  # Placeholder for tutoring
+    "grade": np.zeros(1000)  # Placeholder for grade
+})
+
+# Assume tutoring is influenced by 
+# both study hours and parental involvement
+data["tutoring"] = (data["study_hours"] 
+            + 10 * data["parental_involvement"] 
+            + np.random.normal(0, 1, 1000) > 6).astype(int)
+
+data["grade"] = (50 + 10 * data["tutoring"] 
+                    + 5 * data["study_hours"] 
+                    + 10 * data["parental_involvement"] 
+                    + np.random.normal(0, 2, 1000))
+
+data.tail(10)
+```
+
+Next we create our **initial causal model** in which we **wrongly** assume that `parental involvement` does not affect anything else. Again, the reasons for this error could be two:
+
+- We don't know about this variable. So we didn't even captured it to begin with (e.g. we didn't ask in the survey). 
+- We captured this variable (but we asked so many things in our survey !) but we believe not to affect the other variables.
+
+Note that, whether unknown to us or wrongly assumed by us, variables can be affected by `parental involvement` in reality. The model shows that `study hours` is a **confounder** of both `tutoring` and `grade`.
+
+```{python}
+# Create a causal model excluding parental involvement initially
+model = CausalModel(
+    data=data,
+    treatment="tutoring",
+    outcome="grade",
+    common_causes=["study_hours"])
+
+model.view_model(size=(8,3))
+plt.tight_layout(w_pad=1)
+```
+
+Our initial results show an estimated effect of 14.98 meaning that having `private tutoring` is estimated to increase a student’s final `grade` by approximately 17 points. This effect estimate was obtained after controlling for `study hours` but without considering the additional confounder `parental involvement`. At this point we could be naively happy with this result. But what if we are overestimating or underestimating the effect of `tutoring`?
+
+```{python, results = 'hide', error=FALSE, warning=FALSE, message=FALSE}
+identified_estimand = model.identify_effect()
+estimate = model.estimate_effect(identified_estimand, 
+            method_name="backdoor.linear_regression")
+```
+
+```{python}
+print("Estimated Effect (initial model):", 
+      estimate.value)
+```
+
+Again, the placebo test below replaces the actual treatment (in this case, `tutoring`) with a "placebo" or random variable that has no relationship to the outcome (final `grade`).
+
+```{python, results = 'hide', error=FALSE, warning=FALSE, message=FALSE}
+refutation = model.refute_estimate(identified_estimand, estimate, 
+                         method_name="placebo_treatment_refuter")
+```
+
+The placebo test here suggests that the original model’s structure is robust, meaning that the observed effect of tutoring on grades is not due to random bias. However, this does not yield out the possibility that the obtained estimate could be biased due to an unmeasured confounder.
+
+```{python}
+print("Placebo Test Result:", refutation)
+```
+
+We could ask ourselves too whether the estimated effect changes significantly when we replace the given dataset with bootstrapped samples from the same dataset? (Hint: It should not). 
+
+```{python, results = 'hide', error=FALSE, warning=FALSE, message=FALSE}
+bootstrap_refutation = model.refute_estimate(identified_estimand, 
+                                 estimate, 
+                                 method_name="bootstrap_refuter")
+```
+
+As seen below, the effect does not deviate much from the original estimated effect. Still, something else could be going on.
+
+```{python}
+print(bootstrap_refutation)
+```
+
+If we suspect about the presence of unknown confounders, we could test how sensitive is the effect estimate when we add an additional common cause (confounder) to the dataset that is correlated with the treatment and the outcome. (Hint: It should not be too sensitive).
+
+
+```{python, results = 'hide', error=FALSE, warning=FALSE, message=FALSE}
+sensitivity_analysis = model.refute_estimate(identified_estimand, 
+                                 estimate, 
+                                 method_name="add_unobserved_common_cause")
+```
+
+In this case we see a huge drop. This may indicate that we over estimated the effect of `tutoring` on the `grades` and that we are missing an important confounder.
+
+```{python}
+print(sensitivity_analysis)
+```
+
+At this point we should get back to the design table and see that we missed an important variable. In our case we knew already: `Parental involvement`. In real life, we would either ask the students again (through new surveys) or if we already had this variable in our surveys we would add it to the model as a confounder affecting the `grades` and the `tutoring`. Note that in "our reality" `parental involvement` did not affect `study hours` directly.
+
+```{python}
+# Realize missing confounder: Parental involvement
+model_v2 = CausalModel(
+    data=data,
+    treatment="tutoring",
+    outcome="grade",
+    common_causes=["study_hours", "parental_involvement"])
+
+# Visualize the causal graph
+model_v2.view_model(size=(8,3))
+plt.tight_layout(w_pad=1)
+```
+
+We then re-run our estimation. 
+
+```{python, results = 'hide', error=FALSE, warning=FALSE, message=FALSE}
+identified_estimand_with_confounder = model_v2.identify_effect()
+estimate_with_confounder = model_v2.estimate_effect(
+  identified_estimand_with_confounder,
+  method_name="backdoor.linear_regression")
+```
+
+As can be seen, this value is closer to the degree of our synthetic data `10 * data["tutoring"]`. Still, in real world scenarios we do not necessarily know the functions that describe the behaviour of real world phenomena.
+
+```{python}
+print("Estimated Effect (revised model):", 
+      estimate_with_confounder.value)
+```
+
 
 <!-- [write]
 

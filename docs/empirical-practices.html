@@ -67,6 +67,70 @@ mattcrump=1;
  -->
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
@@ -217,6 +281,11 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="3.4.1" data-path="empirical-practices.html"><a href="empirical-practices.html#willow"><i class="fa fa-check"></i><b>3.4.1</b> Willow tree experiment</a></li>
 <li class="chapter" data-level="3.4.2" data-path="empirical-practices.html"><a href="empirical-practices.html#john-snow"><i class="fa fa-check"></i><b>3.4.2</b> 1854 Broad Street cholera outbreak</a></li>
+<li class="chapter" data-level="3.4.3" data-path="empirical-practices.html"><a href="empirical-practices.html#causal-models"><i class="fa fa-check"></i><b>3.4.3</b> Causal models: Estimating treatment effect in the pressence of a confounder</a>
+<ul>
+<li class="chapter" data-level="3.4.3.1" data-path="empirical-practices.html"><a href="empirical-practices.html#backdoor-criterion"><i class="fa fa-check"></i><b>3.4.3.1</b> Backdoor criterion</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4.4" data-path="empirical-practices.html"><a href="empirical-practices.html#causal-models-overestimation"><i class="fa fa-check"></i><b>3.4.4</b> Causal models: Detecting an overestimation</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="stats-abuse.html"><a href="stats-abuse.html"><i class="fa fa-check"></i><b>4</b> Experimental Control and Statistical Abuse</a>
@@ -721,16 +790,209 @@ Figure 3.17: Causal diagram after the introduction of an instrumental variable.
 <p>Specifically, an instrumental variable Z is an additional variable used to estimate the causal effect of variable X on Y. The traditional definition qualifies a variable Z as an instrumental (relative to the pair (X, Y)) if (i) Z is independent of all variables (including error terms) that have an influence on Y that is not mediated by X and (ii) Z is not independent of X. — <span class="citation">(<a href="#ref-pearl2000causality">Pearl 2000</a>)</span></p>
 </blockquote>
 <p>Although today miasma theory has been discredited, poverty and location are clear confounders. In <span class="citation">(<a href="#ref-book-of-why">Pearl and Mackenzie 2018</a>)</span>, the authors show how instrumental variables can be used to determine the number of lives that could have been saved by purifying the water supply. The instrumental variable <strong>Water Company</strong> allow us to find the effect of <strong>Water Purity</strong> on <strong>Cholera</strong> even without being able to control, or collect data on, the confounder variables (poverty, location, etc.).</p>
-<p>One of the main innovations of John Snow approach was to focus on death rates in districts served by two water companies rather than on data from victims of the Broad Street pump which drew water from a well.</p>
-<blockquote>
-<p>A transitional period began in the late 1850s with the work of Louis Pasteur. This work was later extended by Robert Koch in the 1880s. By the end of that decade, the miasma theory was struggling to compete with the germ theory of disease. Viruses were initially discovered in the 1890s. Eventually, a “golden era” of bacteriology ensued, during which the germ theory quickly led to the identification of the actual organisms that cause many diseases. — Wikipedia, <a href="https://en.wikipedia.org/wiki/Germ_theory_of_disease">Germ theory of disease</a>.</p>
-</blockquote>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:snow-map"></span>
 <img src="Figures/snow-cholera-map-crop.jpg" alt="Detail of John Snow’s map of Cholera in the Broad Street outbreak in 1854. Each bar represents one death in a topography that attempted to relate the water source (“Pump”) to pattern of cases in the neighborhood outbreak." width="100%" />
 <p class="caption">
 Figure 3.18: Detail of John Snow’s map of Cholera in the Broad Street outbreak in 1854. Each bar represents one death in a topography that attempted to relate the water source (“Pump”) to pattern of cases in the neighborhood outbreak.
 </p>
 </div>
+<p>One of the main innovations of John Snow approach was to focus on death rates in districts served by two water companies rather than on data from victims of the Broad Street pump which drew water from a well.</p>
+<blockquote>
+<p>A transitional period began in the late 1850s with the work of Louis Pasteur. This work was later extended by Robert Koch in the 1880s. By the end of that decade, the miasma theory was struggling to compete with the germ theory of disease. Viruses were initially discovered in the 1890s. Eventually, a “golden era” of bacteriology ensued, during which the germ theory quickly led to the identification of the actual organisms that cause many diseases. — Wikipedia, <a href="https://en.wikipedia.org/wiki/Germ_theory_of_disease">Germ theory of disease</a>.</p>
+</blockquote>
+</div>
+<div id="causal-models" class="section level3 hasAnchor" number="3.4.3">
+<h3><span class="header-section-number">3.4.3</span> Causal models: Estimating treatment effect in the pressence of a confounder<a href="empirical-practices.html#causal-models" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This example illustrates the use of a causal model and causal inference methods to estimate the effect of <code>study hours</code> (per week) in the final exam <code>scores</code>. Our outcome again is students’ scores. We aim to estimate the causal effect that the “<em>treatment</em>” <code>study hours</code> has on students’ <code>scores</code> (effect). Our beliefs and assumptions are encoded into a causal model. We assume that <code>study hours</code> (per week) is directly related to <code>scores</code> but also that the <code>prior knowledge</code> affects both the effect and the cause (i.e., it is a confounder). For this exercise we will employ Python language and the library <a href="https://www.pywhy.org">doWhy</a>.</p>
+<p>This example shows how to estimate the effect while controlling for the confounder. Remember that a confounder <code>Z</code> affects both the cause <code>X</code> and the effect/outcome <code>Y</code>.</p>
+<p>We import the necessary packages to work.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="empirical-practices.html#cb19-1" tabindex="-1"></a><span class="im">import</span> matplotlib</span>
+<span id="cb19-2"><a href="empirical-practices.html#cb19-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb19-3"><a href="empirical-practices.html#cb19-3" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb19-4"><a href="empirical-practices.html#cb19-4" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb19-5"><a href="empirical-practices.html#cb19-5" tabindex="-1"></a><span class="im">import</span> dowhy</span>
+<span id="cb19-6"><a href="empirical-practices.html#cb19-6" tabindex="-1"></a><span class="im">from</span> dowhy <span class="im">import</span> CausalModel</span></code></pre></div>
+<p>Then, we begin by creating a synthetic dataset in which study hours and prior knowledge are random variables normally distributed. Then, exam score is a function of both study hours and prior knowledge. In a real world scenario, we would normally not know about this function because is what we are trying to estimate. Note the values in the function, specifically, the <code>2 * data["study_hours"]</code>.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="empirical-practices.html#cb20-1" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb20-2"><a href="empirical-practices.html#cb20-2" tabindex="-1"></a>data <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb20-3"><a href="empirical-practices.html#cb20-3" tabindex="-1"></a>    <span class="st">&quot;study_hours&quot;</span>: np.random.normal(<span class="dv">10</span>, <span class="dv">2</span>, <span class="dv">1000</span>),  </span>
+<span id="cb20-4"><a href="empirical-practices.html#cb20-4" tabindex="-1"></a>    <span class="st">&quot;prior_knowledge&quot;</span>: np.random.normal(<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">1000</span>),</span>
+<span id="cb20-5"><a href="empirical-practices.html#cb20-5" tabindex="-1"></a>    <span class="st">&quot;exam_score&quot;</span>: np.zeros(<span class="dv">1000</span>)  <span class="co"># Placeholder for exam score</span></span>
+<span id="cb20-6"><a href="empirical-practices.html#cb20-6" tabindex="-1"></a>})</span>
+<span id="cb20-7"><a href="empirical-practices.html#cb20-7" tabindex="-1"></a></span>
+<span id="cb20-8"><a href="empirical-practices.html#cb20-8" tabindex="-1"></a><span class="co"># Define the relationship: </span></span>
+<span id="cb20-9"><a href="empirical-practices.html#cb20-9" tabindex="-1"></a><span class="co"># Exam score is influenced by both study hours and prior knowledge</span></span>
+<span id="cb20-10"><a href="empirical-practices.html#cb20-10" tabindex="-1"></a>data[<span class="st">&quot;exam_score&quot;</span>] <span class="op">=</span> (<span class="dv">5</span> <span class="op">+</span> <span class="dv">2</span> <span class="op">*</span> data[<span class="st">&quot;study_hours&quot;</span>] </span>
+<span id="cb20-11"><a href="empirical-practices.html#cb20-11" tabindex="-1"></a>                       <span class="op">+</span> <span class="dv">3</span> <span class="op">*</span> data[<span class="st">&quot;prior_knowledge&quot;</span>] </span>
+<span id="cb20-12"><a href="empirical-practices.html#cb20-12" tabindex="-1"></a>                       <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1000</span>))</span>
+<span id="cb20-13"><a href="empirical-practices.html#cb20-13" tabindex="-1"></a></span>
+<span id="cb20-14"><a href="empirical-practices.html#cb20-14" tabindex="-1"></a>data.head(<span class="dv">5</span>)</span></code></pre></div>
+<pre><code>##    study_hours  prior_knowledge  exam_score
+## 0    10.993428         4.399355   39.509745
+## 1     9.723471         3.924634   36.076325
+## 2    11.295377         3.059630   35.977225
+## 3    13.046060         2.353063   37.843348
+## 4     9.531693         3.698223   33.264442</code></pre>
+<p>Now, we will define the model and visualize it.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="empirical-practices.html#cb22-1" tabindex="-1"></a>model <span class="op">=</span> CausalModel(</span>
+<span id="cb22-2"><a href="empirical-practices.html#cb22-2" tabindex="-1"></a>    data<span class="op">=</span>data,</span>
+<span id="cb22-3"><a href="empirical-practices.html#cb22-3" tabindex="-1"></a>    treatment<span class="op">=</span><span class="st">&quot;study_hours&quot;</span>,</span>
+<span id="cb22-4"><a href="empirical-practices.html#cb22-4" tabindex="-1"></a>    outcome<span class="op">=</span><span class="st">&quot;exam_score&quot;</span>,</span>
+<span id="cb22-5"><a href="empirical-practices.html#cb22-5" tabindex="-1"></a>    common_causes<span class="op">=</span>[<span class="st">&quot;prior_knowledge&quot;</span>])</span>
+<span id="cb22-6"><a href="empirical-practices.html#cb22-6" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="empirical-practices.html#cb22-7" tabindex="-1"></a>model.view_model(size<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">3</span>))</span>
+<span id="cb22-8"><a href="empirical-practices.html#cb22-8" tabindex="-1"></a>plt.tight_layout(w_pad<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div>
+<p><img src="POSDE_bookdown_files/figure-html/unnamed-chunk-30-1.png" width="768" /></p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="empirical-practices.html#cb23-1" tabindex="-1"></a>identified_estimand <span class="op">=</span> model.identify_effect()</span>
+<span id="cb23-2"><a href="empirical-practices.html#cb23-2" tabindex="-1"></a>estimate <span class="op">=</span> model.estimate_effect(identified_estimand, </span>
+<span id="cb23-3"><a href="empirical-practices.html#cb23-3" tabindex="-1"></a>   method_name<span class="op">=</span><span class="st">&quot;backdoor.linear_regression&quot;</span>)</span></code></pre></div>
+<p>The result below means that, according to our causal model, an additional hour of study per week is estimated to increase the exam score by approximately 2 points. This effect is derived after accounting for the confounder (in this case, <code>prior knowledge</code>) using the backdoor criterion. If this estimate is accurate, it suggests a positive causal relationship between study hours and exam score, where more study hours lead to higher scores.</p>
+<p>As can be seen, this estimation is very close to the degree stated in the equation of our synthetic data in <code>2 * data["study_hours"]</code>.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="empirical-practices.html#cb24-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Causal Estimate of Study Hours on Exam Score:&quot;</span>, </span>
+<span id="cb24-2"><a href="empirical-practices.html#cb24-2" tabindex="-1"></a>     estimate.value)</span></code></pre></div>
+<pre><code>## Causal Estimate of Study Hours on Exam Score: 2.010902911319434</code></pre>
+<p>A placebo test in causal inference is a refutation technique designed to test the robustness of our causal estimate by using a “fake” treatment variable. The idea is to see if our model incorrectly detects a causal effect when there should be none, which would indicate potential bias or flaws in the model. The placebo test helps us check if this estimated causal effect could be due to biases in the model rather than a true causal relationship.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="empirical-practices.html#cb26-1" tabindex="-1"></a>refute_result <span class="op">=</span> model.refute_estimate(identified_estimand, </span>
+<span id="cb26-2"><a href="empirical-practices.html#cb26-2" tabindex="-1"></a>  estimate, method_name<span class="op">=</span><span class="st">&quot;placebo_treatment_refuter&quot;</span>)</span></code></pre></div>
+<p>Here, the test has replaced the actual treatment (study_hours) with a “placebo” or random variable that should have no causal effect on the outcome (exam_score).</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="empirical-practices.html#cb27-1" tabindex="-1"></a><span class="bu">print</span>(refute_result)</span></code></pre></div>
+<pre><code>## Refute: Use a Placebo Treatment
+## Estimated effect:2.010902911319434
+## New effect:0.0
+## p value:2.0</code></pre>
+<ul>
+<li><p>New effect (0.0): This shows that the placebo treatment has no effect on the outcome, as expected (since it’s a random variable unrelated to exam score).</p></li>
+<li><p>Original effect (2.01) vs. New effect (0.0): The fact that the original effect remains 2.01 while the placebo effect is 0 suggests that the observed causal effect of study hours on exam score is not due to random bias. Instead, it’s likely a true effect.</p></li>
+<li><p>p-value (2.0): A high p-value indicates that there is no statistically significant effect with the placebo treatment. This further supports that any observed effect in the placebo scenario is likely due to chance.</p></li>
+</ul>
+<p>The placebo test confirms that our causal model appears robust, as it detects no effect when a placebo treatment is used. Therefore, we can have more confidence that the estimated effect of 2.01 is a genuine causal effect of study hours on exam score, rather than an artifact of model bias or unmeasured confounding.</p>
+<p>These results suggest that our initial model is likely valid, meaning that the relationship we estimated is trustworthy given the data and assumptions. But things could still be wrong… as we will see in the next example.</p>
+<div id="backdoor-criterion" class="section level4 hasAnchor" number="3.4.3.1">
+<h4><span class="header-section-number">3.4.3.1</span> Backdoor criterion<a href="empirical-practices.html#backdoor-criterion" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The backdoor criterion is a method used in causal inference to control for confounders—variables that influence both the treatment and the outcome. By satisfying the backdoor criterion, we aim to isolate the causal effect of the treatment on the outcome by “blocking” other paths of influence. Suppose we have a causal structure where a variable<code>Z</code> (like prior knowledge) affects both our treatment <code>X</code> (study hours) and outcome <code>Y</code> (exam score). The backdoor criterion tells us to condition on (i.e., adjust for) variables like <code>Z</code> which lie on “backdoor paths” that might introduce bias in estimating the effect of <code>X</code> on <code>Y</code>. By conditioning on <code>Z</code>, we effectively “block” any non-causal paths from <code>X</code> to
+<code>Y</code>, allowing us to observe the effect of <code>X</code> on <code>Y</code> without interference from confounding.</p>
+<p>When we adjust for a variable like <code>Z</code> in causal inference, we’re essentially isolating the relationship between the treatment <code>X</code>(e.g., study hours) and the outcome <code>Y</code> (e.g., exam score) by removing the influence of <code>Z</code> (e.g., prior knowledge) on both <code>X</code>and <code>Y</code>. This adjustment is typically done in one of a few statistical ways, such as conditioning, stratification, or regression. Here a summary of them:</p>
+<ul>
+<li><p>Conditioning on <code>Z</code>: Conditioning involves looking at the relationship between <code>X</code> and <code>Y</code> within subgroups defined by different values of <code>Z</code>. By examining these subgroups, we can remove the influence of <code>Z</code> on <code>X</code> and <code>Y</code>. For instance, if <code>Z</code> represents prior knowledge levels (low, medium, high), we can separately look at the effect of study hours on exam scores within each of these prior knowledge groups. This way, any relationship between <code>X</code> and <code>Y</code> is not confounded by <code>Z</code>.</p></li>
+<li><p>Stratification by <code>Z</code>: Stratification divides the data into strata (groups) based on the values of <code>Z</code>, and then estimates the effect of <code>X</code> on <code>Y</code> within each stratum. The overall effect is a weighted average of the effect within each stratum. In our example, if <code>Z</code> (prior knowledge) has three levels, we could stratify our analysis into three groups and then calculate the effect of study hours on exam scores within each level of prior knowledge. By averaging these effects, we get a more accurate estimate that accounts for the confounding effect of <code>Z</code>.</p></li>
+<li><p>Regression Adjustment: Regression adjustment uses statistical models (usually linear or logistic regression) to “hold constant” the effects of <code>Z</code> on both <code>X</code> and <code>Y</code>. By including <code>Z</code> as a variable in the regression model, we can estimate the relationship between <code>X</code> and <code>Y</code> while “controlling” for <code>Z</code>.</p></li>
+</ul>
+<p>Adjusting for <code>Z</code>removes any indirect associations between <code>X</code> and <code>Y</code> that arise because <code>Z</code> influences both. By blocking this confounding pathway, we effectively “close” the backdoor path and allow the model to estimate a more accurate causal effect between <code>X</code> and <code>Y</code>. In causal inference, this adjustment step is crucial because it attempts to mimic a randomized experiment where all confounders would ideally be balanced, allowing us to make stronger causal claims about <code>X</code> and <code>Y</code>.</p>
+</div>
+</div>
+<div id="causal-models-overestimation" class="section level3 hasAnchor" number="3.4.4">
+<h3><span class="header-section-number">3.4.4</span> Causal models: Detecting an overestimation<a href="empirical-practices.html#causal-models-overestimation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This example illustrates the use of a first causal model that is <strong>WRONG</strong> because it leaves out an important variable (either because we don’t know about it or because we <strong>believe</strong> it does not have an effect on the outcome).</p>
+<ul>
+<li>Our <strong>outcome</strong> again is students’ <code>grades</code>.</li>
+<li>We aim to estimate the causal effect that the “<em>treatment</em>” <code>private tutoring</code> has on students’ grades (<strong>effect</strong>).</li>
+<li>We <strong>believe</strong> that <code>study hours</code> (per week) is the only variable that affects both tutoring and grades (i.e., it is a <strong>confounder</strong>)</li>
+</ul>
+<p>We will see how to <strong>detect that the model is wrong</strong> and how once corrected it estimates the effect properly.</p>
+<p>We generate a synthetic data with different random values. As you can see parental_involvement is biased with a 70% probability to be 0 and 30% of being 1. In the last two lines we fill tutoring and grade as we have synthetically made them to depend on the study hours and parental involvement. Imagine that instead of being synthetically created this data was given to you from data collection (e.g. via surveys).</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="empirical-practices.html#cb29-1" tabindex="-1"></a>np.random.seed(<span class="dv">0</span>)</span>
+<span id="cb29-2"><a href="empirical-practices.html#cb29-2" tabindex="-1"></a>data <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb29-3"><a href="empirical-practices.html#cb29-3" tabindex="-1"></a>    <span class="st">&quot;study_hours&quot;</span>: np.random.normal(<span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">1000</span>),  </span>
+<span id="cb29-4"><a href="empirical-practices.html#cb29-4" tabindex="-1"></a>    <span class="st">&quot;parental_involvement&quot;</span>: np.random.choice([<span class="dv">0</span>, <span class="dv">1</span>], </span>
+<span id="cb29-5"><a href="empirical-practices.html#cb29-5" tabindex="-1"></a>                                             size<span class="op">=</span><span class="dv">1000</span>, </span>
+<span id="cb29-6"><a href="empirical-practices.html#cb29-6" tabindex="-1"></a>                                             p<span class="op">=</span>[<span class="fl">0.7</span>, <span class="fl">0.3</span>]),  </span>
+<span id="cb29-7"><a href="empirical-practices.html#cb29-7" tabindex="-1"></a>    <span class="st">&quot;tutoring&quot;</span>: np.zeros(<span class="dv">1000</span>),  <span class="co"># Placeholder for tutoring</span></span>
+<span id="cb29-8"><a href="empirical-practices.html#cb29-8" tabindex="-1"></a>    <span class="st">&quot;grade&quot;</span>: np.zeros(<span class="dv">1000</span>)  <span class="co"># Placeholder for grade</span></span>
+<span id="cb29-9"><a href="empirical-practices.html#cb29-9" tabindex="-1"></a>})</span>
+<span id="cb29-10"><a href="empirical-practices.html#cb29-10" tabindex="-1"></a></span>
+<span id="cb29-11"><a href="empirical-practices.html#cb29-11" tabindex="-1"></a><span class="co"># Assume tutoring is influenced by </span></span>
+<span id="cb29-12"><a href="empirical-practices.html#cb29-12" tabindex="-1"></a><span class="co"># both study hours and parental involvement</span></span>
+<span id="cb29-13"><a href="empirical-practices.html#cb29-13" tabindex="-1"></a>data[<span class="st">&quot;tutoring&quot;</span>] <span class="op">=</span> (data[<span class="st">&quot;study_hours&quot;</span>] </span>
+<span id="cb29-14"><a href="empirical-practices.html#cb29-14" tabindex="-1"></a>            <span class="op">+</span> <span class="dv">10</span> <span class="op">*</span> data[<span class="st">&quot;parental_involvement&quot;</span>] </span>
+<span id="cb29-15"><a href="empirical-practices.html#cb29-15" tabindex="-1"></a>            <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1000</span>) <span class="op">&gt;</span> <span class="dv">6</span>).astype(<span class="bu">int</span>)</span>
+<span id="cb29-16"><a href="empirical-practices.html#cb29-16" tabindex="-1"></a></span>
+<span id="cb29-17"><a href="empirical-practices.html#cb29-17" tabindex="-1"></a>data[<span class="st">&quot;grade&quot;</span>] <span class="op">=</span> (<span class="dv">50</span> <span class="op">+</span> <span class="dv">10</span> <span class="op">*</span> data[<span class="st">&quot;tutoring&quot;</span>] </span>
+<span id="cb29-18"><a href="empirical-practices.html#cb29-18" tabindex="-1"></a>                    <span class="op">+</span> <span class="dv">5</span> <span class="op">*</span> data[<span class="st">&quot;study_hours&quot;</span>] </span>
+<span id="cb29-19"><a href="empirical-practices.html#cb29-19" tabindex="-1"></a>                    <span class="op">+</span> <span class="dv">10</span> <span class="op">*</span> data[<span class="st">&quot;parental_involvement&quot;</span>] </span>
+<span id="cb29-20"><a href="empirical-practices.html#cb29-20" tabindex="-1"></a>                    <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">1000</span>))</span>
+<span id="cb29-21"><a href="empirical-practices.html#cb29-21" tabindex="-1"></a></span>
+<span id="cb29-22"><a href="empirical-practices.html#cb29-22" tabindex="-1"></a>data.tail(<span class="dv">10</span>)</span></code></pre></div>
+<pre><code>##      study_hours  parental_involvement  tutoring      grade
+## 990     5.441033                     0         1  86.784749
+## 991     5.178793                     0         0  75.005558
+## 992     4.200578                     1         1  92.496516
+## 993     5.240788                     0         0  74.929059
+## 994     5.289121                     1         1  98.189120
+## 995     5.412871                     0         0  77.813355
+## 996     4.801601                     0         0  76.318058
+## 997     5.094192                     1         1  96.811745
+## 998     3.852389                     0         0  67.153054
+## 999     4.641886                     0         0  71.478162</code></pre>
+<p>Next we create our <strong>initial causal model</strong> in which we <strong>wrongly</strong> assume that <code>parental involvement</code> does not affect anything else. Again, the reasons for this error could be two:</p>
+<ul>
+<li>We don’t know about this variable. So we didn’t even captured it to begin with (e.g. we didn’t ask in the survey).</li>
+<li>We captured this variable (but we asked so many things in our survey !) but we believe not to affect the other variables.</li>
+</ul>
+<p>Note that, whether unknown to us or wrongly assumed by us, variables can be affected by <code>parental involvement</code> in reality. The model shows that <code>study hours</code> is a <strong>confounder</strong> of both <code>tutoring</code> and <code>grade</code>.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="empirical-practices.html#cb31-1" tabindex="-1"></a><span class="co"># Create a causal model excluding parental involvement initially</span></span>
+<span id="cb31-2"><a href="empirical-practices.html#cb31-2" tabindex="-1"></a>model <span class="op">=</span> CausalModel(</span>
+<span id="cb31-3"><a href="empirical-practices.html#cb31-3" tabindex="-1"></a>    data<span class="op">=</span>data,</span>
+<span id="cb31-4"><a href="empirical-practices.html#cb31-4" tabindex="-1"></a>    treatment<span class="op">=</span><span class="st">&quot;tutoring&quot;</span>,</span>
+<span id="cb31-5"><a href="empirical-practices.html#cb31-5" tabindex="-1"></a>    outcome<span class="op">=</span><span class="st">&quot;grade&quot;</span>,</span>
+<span id="cb31-6"><a href="empirical-practices.html#cb31-6" tabindex="-1"></a>    common_causes<span class="op">=</span>[<span class="st">&quot;study_hours&quot;</span>])</span>
+<span id="cb31-7"><a href="empirical-practices.html#cb31-7" tabindex="-1"></a></span>
+<span id="cb31-8"><a href="empirical-practices.html#cb31-8" tabindex="-1"></a>model.view_model(size<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">3</span>))</span>
+<span id="cb31-9"><a href="empirical-practices.html#cb31-9" tabindex="-1"></a>plt.tight_layout(w_pad<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div>
+<p><img src="POSDE_bookdown_files/figure-html/unnamed-chunk-36-3.png" width="768" /></p>
+<p>Our initial results show an estimated effect of 14.98 meaning that having <code>private tutoring</code> is estimated to increase a student’s final <code>grade</code> by approximately 17 points. This effect estimate was obtained after controlling for <code>study hours</code> but without considering the additional confounder <code>parental involvement</code>. At this point we could be naively happy with this result. But what if we are overestimating or underestimating the effect of <code>tutoring</code>?</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="empirical-practices.html#cb32-1" tabindex="-1"></a>identified_estimand <span class="op">=</span> model.identify_effect()</span>
+<span id="cb32-2"><a href="empirical-practices.html#cb32-2" tabindex="-1"></a>estimate <span class="op">=</span> model.estimate_effect(identified_estimand, </span>
+<span id="cb32-3"><a href="empirical-practices.html#cb32-3" tabindex="-1"></a>            method_name<span class="op">=</span><span class="st">&quot;backdoor.linear_regression&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="empirical-practices.html#cb33-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Estimated Effect (initial model):&quot;</span>, </span>
+<span id="cb33-2"><a href="empirical-practices.html#cb33-2" tabindex="-1"></a>      estimate.value)</span></code></pre></div>
+<pre><code>## Estimated Effect (initial model): 17.585373682989484</code></pre>
+<p>Again, the placebo test below replaces the actual treatment (in this case, <code>tutoring</code>) with a “placebo” or random variable that has no relationship to the outcome (final <code>grade</code>).</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="empirical-practices.html#cb35-1" tabindex="-1"></a>refutation <span class="op">=</span> model.refute_estimate(identified_estimand, estimate, </span>
+<span id="cb35-2"><a href="empirical-practices.html#cb35-2" tabindex="-1"></a>                         method_name<span class="op">=</span><span class="st">&quot;placebo_treatment_refuter&quot;</span>)</span></code></pre></div>
+<p>The placebo test here suggests that the original model’s structure is robust, meaning that the observed effect of tutoring on grades is not due to random bias. However, this does not yield out the possibility that the obtained estimate could be biased due to an unmeasured confounder.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="empirical-practices.html#cb36-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Placebo Test Result:&quot;</span>, refutation)</span></code></pre></div>
+<pre><code>## Placebo Test Result: Refute: Use a Placebo Treatment
+## Estimated effect:17.585373682989484
+## New effect:0.0
+## p value:2.0</code></pre>
+<p>We could ask ourselves too whether the estimated effect changes significantly when we replace the given dataset with bootstrapped samples from the same dataset? (Hint: It should not).</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="empirical-practices.html#cb38-1" tabindex="-1"></a>bootstrap_refutation <span class="op">=</span> model.refute_estimate(identified_estimand, estimate, </span>
+<span id="cb38-2"><a href="empirical-practices.html#cb38-2" tabindex="-1"></a>                                          method_name<span class="op">=</span><span class="st">&quot;bootstrap_refuter&quot;</span>)</span></code></pre></div>
+<p>As seen below, the effect does not deviate much from the original estimated effect. Still, something else could be going on.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="empirical-practices.html#cb39-1" tabindex="-1"></a><span class="bu">print</span>(bootstrap_refutation)</span></code></pre></div>
+<pre><code>## Refute: Bootstrap Sample Dataset
+## Estimated effect:17.585373682989484
+## New effect:17.616872980690538
+## p value:0.8</code></pre>
+<p>If we suspect about the presence of unknown confounders, we could test how sensitive is the effect estimate when we add an additional common cause (confounder) to the dataset that is correlated with the treatment and the outcome. (Hint: It should not be too sensitive).</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="empirical-practices.html#cb41-1" tabindex="-1"></a>sensitivity_analysis <span class="op">=</span> model.refute_estimate(identified_estimand, estimate, </span>
+<span id="cb41-2"><a href="empirical-practices.html#cb41-2" tabindex="-1"></a>                                 method_name<span class="op">=</span><span class="st">&quot;add_unobserved_common_cause&quot;</span>)</span></code></pre></div>
+<p>In this case we see a huge drop. This may indicate that we over estimated the effect of <code>tutoring</code> on the <code>grades</code> and that we are missing an important confounder.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a href="empirical-practices.html#cb42-1" tabindex="-1"></a><span class="bu">print</span>(sensitivity_analysis)</span></code></pre></div>
+<pre><code>## Refute: Add an Unobserved Common Cause
+## Estimated effect:17.585373682989484
+## New effect:3.0797827732011314</code></pre>
+<p>At this point we should get back to the design table and see that we missed an important variable. In our case we knew already: <code>Parental involvement</code>. In real life, we would either ask the students again (through new surveys) or if we already had this variable in our surveys we would add it to the model as a confounder affecting the <code>grades</code> and the <code>tutoring</code>. Note that in “our reality” <code>parental involvement</code> did not affect <code>study hours</code> directly.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb44-1"><a href="empirical-practices.html#cb44-1" tabindex="-1"></a><span class="co"># Realize missing confounder: Parental involvement</span></span>
+<span id="cb44-2"><a href="empirical-practices.html#cb44-2" tabindex="-1"></a>model_v2 <span class="op">=</span> CausalModel(</span>
+<span id="cb44-3"><a href="empirical-practices.html#cb44-3" tabindex="-1"></a>    data<span class="op">=</span>data,</span>
+<span id="cb44-4"><a href="empirical-practices.html#cb44-4" tabindex="-1"></a>    treatment<span class="op">=</span><span class="st">&quot;tutoring&quot;</span>,</span>
+<span id="cb44-5"><a href="empirical-practices.html#cb44-5" tabindex="-1"></a>    outcome<span class="op">=</span><span class="st">&quot;grade&quot;</span>,</span>
+<span id="cb44-6"><a href="empirical-practices.html#cb44-6" tabindex="-1"></a>    common_causes<span class="op">=</span>[<span class="st">&quot;study_hours&quot;</span>, <span class="st">&quot;parental_involvement&quot;</span>])</span>
+<span id="cb44-7"><a href="empirical-practices.html#cb44-7" tabindex="-1"></a></span>
+<span id="cb44-8"><a href="empirical-practices.html#cb44-8" tabindex="-1"></a><span class="co"># Visualize the causal graph</span></span>
+<span id="cb44-9"><a href="empirical-practices.html#cb44-9" tabindex="-1"></a>model_v2.view_model(size<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">3</span>))</span>
+<span id="cb44-10"><a href="empirical-practices.html#cb44-10" tabindex="-1"></a>plt.tight_layout(w_pad<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div>
+<p><img src="POSDE_bookdown_files/figure-html/unnamed-chunk-45-5.png" width="768" /></p>
+<p>We then re-run our estimation.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="empirical-practices.html#cb45-1" tabindex="-1"></a>identified_estimand_with_confounder <span class="op">=</span> model_v2.identify_effect()</span>
+<span id="cb45-2"><a href="empirical-practices.html#cb45-2" tabindex="-1"></a>estimate_with_confounder <span class="op">=</span> model_v2.estimate_effect(</span>
+<span id="cb45-3"><a href="empirical-practices.html#cb45-3" tabindex="-1"></a>  identified_estimand_with_confounder,</span>
+<span id="cb45-4"><a href="empirical-practices.html#cb45-4" tabindex="-1"></a>  method_name<span class="op">=</span><span class="st">&quot;backdoor.linear_regression&quot;</span>)</span></code></pre></div>
+<p>As can be seen, this value is closer to the degree of our synthetic data <code>10 * data["tutoring"]</code>. Still, in real world scenarios we do not necessarily know the functions that describe the behaviour of real world phenomena.</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb46-1"><a href="empirical-practices.html#cb46-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Estimated Effect (revised model):&quot;</span>, </span>
+<span id="cb46-2"><a href="empirical-practices.html#cb46-2" tabindex="-1"></a>      estimate_with_confounder.value)</span></code></pre></div>
+<pre><code>## Estimated Effect (revised model): 10.095828768814442</code></pre>
 <!-- [write]
 
 
