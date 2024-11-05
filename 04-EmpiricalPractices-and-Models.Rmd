@@ -519,7 +519,7 @@ refute_result = model.refute_estimate(identified_estimand,
   estimate, method_name="placebo_treatment_refuter")
 ```
 
-Here, the test has replaced the actual treatment (study_hours) with a "placebo" or random variable that should have no causal effect on the outcome (exam_score).
+This test replaces the actual treatment (study hours) with a "placebo" or random variable that should have no causal effect on the outcome (exam score).
 
 ```{python}
 print(refute_result)
@@ -560,10 +560,11 @@ This example illustrates the use of a first causal model that is **WRONG** becau
 
 We will see how to **detect that the model is wrong** and how once corrected it estimates the effect properly.
 
-We generate a synthetic data with different random values. As you can see parental_involvement is biased with a 70\% probability to be 0 and 30\% of being 1. In the last two lines we fill tutoring and grade as we have synthetically made them to depend on the study hours and parental involvement. Imagine that instead of being synthetically created this data was given to you from data collection (e.g. via surveys). 
+We generate a synthetic data with different random values. As you can see `parental involvement` is biased with a 70\% probability to be 0 and 30\% of being 1. In the last two lines we fill tutoring and grade as we have synthetically made them to depend on the study hours and parental involvement. Imagine that instead of being synthetically created this data was given to you from data collection (e.g. via surveys). 
 
 ```{python}
 np.random.seed(0)
+#generate synthetic data
 data = pd.DataFrame({
     "study_hours": np.random.normal(5, 1, 1000),  
     "parental_involvement": np.random.choice([0, 1], 
@@ -651,8 +652,8 @@ If we suspect about the presence of unknown confounders, we could test how sensi
 
 ```{python, results = 'hide', error=FALSE, warning=FALSE, message=FALSE}
 sensitivity_analysis = model.refute_estimate(identified_estimand, 
-                                 estimate, 
-                                 method_name="add_unobserved_common_cause")
+                      estimate, 
+                      method_name="add_unobserved_common_cause")
 ```
 
 In this case we see a huge drop. This may indicate that we over estimated the effect of `tutoring` on the `grades` and that we are missing an important confounder.

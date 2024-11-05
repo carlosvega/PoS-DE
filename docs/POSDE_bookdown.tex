@@ -2171,7 +2171,7 @@ A placebo test in causal inference is a refutation technique designed to test th
 \end{Highlighting}
 \end{Shaded}
 
-Here, the test has replaced the actual treatment (study\_hours) with a ``placebo'' or random variable that should have no causal effect on the outcome (exam\_score).
+This test replaces the actual treatment (study hours) with a ``placebo'' or random variable that should have no causal effect on the outcome (exam score).
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2233,11 +2233,12 @@ This example illustrates the use of a first causal model that is \textbf{WRONG} 
 
 We will see how to \textbf{detect that the model is wrong} and how once corrected it estimates the effect properly.
 
-We generate a synthetic data with different random values. As you can see parental\_involvement is biased with a 70\% probability to be 0 and 30\% of being 1. In the last two lines we fill tutoring and grade as we have synthetically made them to depend on the study hours and parental involvement. Imagine that instead of being synthetically created this data was given to you from data collection (e.g.~via surveys).
+We generate a synthetic data with different random values. As you can see \texttt{parental\ involvement} is biased with a 70\% probability to be 0 and 30\% of being 1. In the last two lines we fill tutoring and grade as we have synthetically made them to depend on the study hours and parental involvement. Imagine that instead of being synthetically created this data was given to you from data collection (e.g.~via surveys).
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{np.random.seed(}\DecValTok{0}\NormalTok{)}
+\CommentTok{\#generate synthetic data}
 \NormalTok{data }\OperatorTok{=}\NormalTok{ pd.DataFrame(\{}
     \StringTok{"study\_hours"}\NormalTok{: np.random.normal(}\DecValTok{5}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1000}\NormalTok{),  }
     \StringTok{"parental\_involvement"}\NormalTok{: np.random.choice([}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{], }
@@ -2353,8 +2354,9 @@ We could ask ourselves too whether the estimated effect changes significantly wh
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{bootstrap\_refutation }\OperatorTok{=}\NormalTok{ model.refute\_estimate(identified\_estimand, estimate, }
-\NormalTok{                                          method\_name}\OperatorTok{=}\StringTok{"bootstrap\_refuter"}\NormalTok{)}
+\NormalTok{bootstrap\_refutation }\OperatorTok{=}\NormalTok{ model.refute\_estimate(identified\_estimand, }
+\NormalTok{                                 estimate, }
+\NormalTok{                                 method\_name}\OperatorTok{=}\StringTok{"bootstrap\_refuter"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2377,8 +2379,9 @@ If we suspect about the presence of unknown confounders, we could test how sensi
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{sensitivity\_analysis }\OperatorTok{=}\NormalTok{ model.refute\_estimate(identified\_estimand, estimate, }
-\NormalTok{                                 method\_name}\OperatorTok{=}\StringTok{"add\_unobserved\_common\_cause"}\NormalTok{)}
+\NormalTok{sensitivity\_analysis }\OperatorTok{=}\NormalTok{ model.refute\_estimate(identified\_estimand, }
+\NormalTok{                      estimate, }
+\NormalTok{                      method\_name}\OperatorTok{=}\StringTok{"add\_unobserved\_common\_cause"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
