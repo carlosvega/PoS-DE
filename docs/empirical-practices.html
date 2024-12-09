@@ -850,14 +850,14 @@ Figure 3.18: Detail of John Snow’s map of Cholera in the Broad Street outbreak
 <p>As can be seen, this estimation is very close to the degree stated in the equation of our synthetic data in <code>2 * data["study_hours"]</code>.</p>
 <div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="empirical-practices.html#cb24-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Causal Estimate of Study Hours on Exam Score:&quot;</span>, </span>
 <span id="cb24-2"><a href="empirical-practices.html#cb24-2" tabindex="-1"></a>     estimate.value)</span></code></pre></div>
-<pre><code>## Causal Estimate of Study Hours on Exam Score: 2.010902911319434</code></pre>
+<pre><code>## Causal Estimate of Study Hours on Exam Score: 2.0109029113194357</code></pre>
 <p>A placebo test in causal inference is a refutation technique designed to test the robustness of our causal estimate by using a “fake” treatment variable. The idea is to see if our model incorrectly detects a causal effect when there should be none, which would indicate potential bias or flaws in the model. The placebo test helps us check if this estimated causal effect could be due to biases in the model rather than a true causal relationship.</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="empirical-practices.html#cb26-1" tabindex="-1"></a>refute_result <span class="op">=</span> model.refute_estimate(identified_estimand, </span>
 <span id="cb26-2"><a href="empirical-practices.html#cb26-2" tabindex="-1"></a>  estimate, method_name<span class="op">=</span><span class="st">&quot;placebo_treatment_refuter&quot;</span>)</span></code></pre></div>
 <p>This test replaces the actual treatment (study hours) with a “placebo” or random variable that should have no causal effect on the outcome (exam score).</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="empirical-practices.html#cb27-1" tabindex="-1"></a><span class="bu">print</span>(refute_result)</span></code></pre></div>
 <pre><code>## Refute: Use a Placebo Treatment
-## Estimated effect:2.010902911319434
+## Estimated effect:2.0109029113194357
 ## New effect:0.0
 ## p value:2.0</code></pre>
 <ul>
@@ -946,14 +946,14 @@ Figure 3.18: Detail of John Snow’s map of Cholera in the Broad Street outbreak
 <span id="cb32-3"><a href="empirical-practices.html#cb32-3" tabindex="-1"></a>            method_name<span class="op">=</span><span class="st">&quot;backdoor.linear_regression&quot;</span>)</span></code></pre></div>
 <div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="empirical-practices.html#cb33-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Estimated Effect (initial model):&quot;</span>, </span>
 <span id="cb33-2"><a href="empirical-practices.html#cb33-2" tabindex="-1"></a>      estimate.value)</span></code></pre></div>
-<pre><code>## Estimated Effect (initial model): 17.585373682989484</code></pre>
+<pre><code>## Estimated Effect (initial model): 17.5853736829895</code></pre>
 <p>Again, the placebo test below replaces the actual treatment (in this case, <code>tutoring</code>) with a “placebo” or random variable that has no relationship to the outcome (final <code>grade</code>).</p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="empirical-practices.html#cb35-1" tabindex="-1"></a>refutation <span class="op">=</span> model.refute_estimate(identified_estimand, estimate, </span>
 <span id="cb35-2"><a href="empirical-practices.html#cb35-2" tabindex="-1"></a>                         method_name<span class="op">=</span><span class="st">&quot;placebo_treatment_refuter&quot;</span>)</span></code></pre></div>
 <p>The placebo test here suggests that the original model’s structure is robust, meaning that the observed effect of tutoring on grades is not due to random bias. However, this does not yield out the possibility that the obtained estimate could be biased due to an unmeasured confounder.</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="empirical-practices.html#cb36-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Placebo Test Result:&quot;</span>, refutation)</span></code></pre></div>
 <pre><code>## Placebo Test Result: Refute: Use a Placebo Treatment
-## Estimated effect:17.585373682989484
+## Estimated effect:17.5853736829895
 ## New effect:0.0
 ## p value:2.0</code></pre>
 <p>We could ask ourselves too whether the estimated effect changes significantly when we replace the given dataset with bootstrapped samples from the same dataset? (Hint: It should not).</p>
@@ -963,8 +963,8 @@ Figure 3.18: Detail of John Snow’s map of Cholera in the Broad Street outbreak
 <p>As seen below, the effect does not deviate much from the original estimated effect. Still, something else could be going on.</p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="empirical-practices.html#cb39-1" tabindex="-1"></a><span class="bu">print</span>(bootstrap_refutation)</span></code></pre></div>
 <pre><code>## Refute: Bootstrap Sample Dataset
-## Estimated effect:17.585373682989484
-## New effect:17.616872980690538
+## Estimated effect:17.5853736829895
+## New effect:17.616872980690527
 ## p value:0.8</code></pre>
 <p>If we suspect about the presence of unknown confounders, we could test how sensitive is the effect estimate when we add an additional common cause (confounder) to the dataset that is correlated with the treatment and the outcome. (Hint: It should not be too sensitive).</p>
 <div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="empirical-practices.html#cb41-1" tabindex="-1"></a>sensitivity_analysis <span class="op">=</span> model.refute_estimate(identified_estimand, </span>
@@ -973,8 +973,8 @@ Figure 3.18: Detail of John Snow’s map of Cholera in the Broad Street outbreak
 <p>In this case we see a huge drop. This may indicate that we over estimated the effect of <code>tutoring</code> on the <code>grades</code> and that we are missing an important confounder.</p>
 <div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a href="empirical-practices.html#cb42-1" tabindex="-1"></a><span class="bu">print</span>(sensitivity_analysis)</span></code></pre></div>
 <pre><code>## Refute: Add an Unobserved Common Cause
-## Estimated effect:17.585373682989484
-## New effect:3.0797827732011314</code></pre>
+## Estimated effect:17.5853736829895
+## New effect:3.0797827732012735</code></pre>
 <p>At this point we should get back to the design table and see that we missed an important variable. In our case we knew already: <code>Parental involvement</code>. In real life, we would either ask the students again (through new surveys) or if we already had this variable in our surveys we would add it to the model as a confounder affecting the <code>grades</code> and the <code>tutoring</code>. Note that in “our reality” <code>parental involvement</code> did not affect <code>study hours</code> directly.</p>
 <div class="sourceCode" id="cb44"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb44-1"><a href="empirical-practices.html#cb44-1" tabindex="-1"></a><span class="co"># Realize missing confounder: Parental involvement</span></span>
 <span id="cb44-2"><a href="empirical-practices.html#cb44-2" tabindex="-1"></a>model_v2 <span class="op">=</span> CausalModel(</span>
@@ -995,7 +995,7 @@ Figure 3.18: Detail of John Snow’s map of Cholera in the Broad Street outbreak
 <p>As can be seen, this value is closer to the degree of our synthetic data <code>10 * data["tutoring"]</code>. Still, in real world scenarios we do not necessarily know the functions that describe the behaviour of real world phenomena.</p>
 <div class="sourceCode" id="cb46"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb46-1"><a href="empirical-practices.html#cb46-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Estimated Effect (revised model):&quot;</span>, </span>
 <span id="cb46-2"><a href="empirical-practices.html#cb46-2" tabindex="-1"></a>      estimate_with_confounder.value)</span></code></pre></div>
-<pre><code>## Estimated Effect (revised model): 10.095828768814414</code></pre>
+<pre><code>## Estimated Effect (revised model): 10.095828768814442</code></pre>
 <!-- [write]
 
 

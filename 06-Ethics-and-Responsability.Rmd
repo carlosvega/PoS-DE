@@ -149,7 +149,7 @@ Sorting phenomena into categories is an interest-related task [@johansson2016phi
 
 ## Ethics in action
 
-> "There are decades where nothing happens; and there are weeks where decades happen" --- Vladimir Ilyich Lenin [@friedman2014there]
+> "There are years, centuries, in which nothing happens, and there are days, like yesterday, into which a whole lifetime is compressed." --- The devil [@vanwestrum1908devil]
 
 Some events in history completely changed how we see the world. Section \@ref(ethic-examples) will present some of these events and how they relate to data ethics. However, the consequences of these events share common aspects. In the case of data ethics and science, some events have reshaped the societal consensus and the conception of certain rights. For instance, the scandals and ban of Dichloro-diphenyl-trichloroethane ([DTT](https://www.nytimes.com/2004/04/11/magazine/what-the-world-needs-now-is-ddt.html)) as insecticide changed the cultural awareness regarding chemicals. In the USA, the [Tuskegee tragedy](https://en.wikipedia.org/wiki/Tuskegee_Syphilis_Study) raised ethical questions regarding voluntary informed consent, which led to the establishment of the [National Commission for the Protection of Human Subjects of Biomedical and Behavioral Research](https://en.wikipedia.org/wiki/National_Commission_for_the_Protection_of_Human_Subjects_of_Biomedical_and_Behavioral_Research) and the [National Research Act](https://en.wikipedia.org/wiki/National_Research_Act). Both were intended to shape bioethics policies in the USA and the establishment of institutional review boards for the studies. 
 
