@@ -1,6 +1,10 @@
 # Extra Material {#wont-fix}
 
-This section includes related questions and topics not tackled in this course.
+This chapter discusses related questions and topics not tackled in this course. As in any course, being exhaustive in the content taught to students is not feasible due to time constraints and the need for curricular coherence. Topics cannot be included merely for the sake of completeness, they must be introduced with clear context, purpose, and alignment with the program’s learning objectives. For this reason, several rich but complex philosophical debates are excluded from the core syllabus. These include Thomas Kuhn’s theory of scientific revolutions, the debate between realism and anti-realism, the Gettier problem, the pessimistic meta-induction, discussions on instrumentalism, and detailed philosophical debates over the aims of science.
+
+While some of these ideas, such as instrumentalism or the plurality of scientific aims, are occasionally mentioned informally to enrich class discussion or highlight philosophical context, the course does not dedicate time to formally exploring them in depth.
+
+For instance, Kuhn’s notion of paradigm shifts offers a compelling sociological view of scientific change, but properly integrating it would need extended dedication to the history and sociology of science. Similarly, the realism debate and the pessimistic meta-induction ask deep questions about whether scientific theories aim at truth or are merely useful fictions. The Gettier problem, while central to analytic epistemology, has little relevance for applied reasoning in data contexts. Likewise, instrumentalism, which treats theories as predictive tools rather than truth claims, could be a fruitful lens but would need to be introduced alongside contrasting positions to avoid confusion. 
 
 ## History of science
 

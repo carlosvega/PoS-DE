@@ -30,11 +30,20 @@ Very often, progress, ethics and laws go hand in hand. The industrial revolution
 knitr::include_graphics('Figures/coaltub.png')
 ```
 
-Similarly, we live in the information revolution, which has transformed the way societies communicate in a way not seen since the Gutenberg printer revolution, enabling the world to transmit information worldwide almost instantaneously through the interconnection of computers. The information era brings ethical challenges to a new dimension. Gutenberg's print helped to spread literature and knowledge, but it also made it easier to spread hate and fake news (see [this article for some examples](https://www.politico.com/magazine/story/2016/12/fake-news-history-long-violent-214535/)). Today, tools like Facebook have been used to incite the [genocide of Rohingya in Myanmar](https://www.nytimes.com/2018/10/15/technology/myanmar-facebook-genocide.html). Every data scientist must understand the impact of their work for the good and the bad. Something as simple as a good visualization can be enlightening and convince people to get a vaccine or find the root of an outbreak (see the map of John Snow). But bad data science can have unexpected real-world consequences too.
+Similarly, we live in the information revolution, which has transformed the way societies communicate in a way not seen since the Gutenberg printer revolution, enabling the world to transmit information worldwide almost instantaneously through the interconnection of computers. The information era brings ethical challenges to a new dimension. Gutenberg's print helped to spread literature and knowledge, but it also made it easier to spread hate and fake news (see [this article for some examples](https://www.politico.com/magazine/story/2016/12/fake-news-history-long-violent-214535/)). Today, tools like Facebook have been used to incite the [genocide of Rohingya in Myanmar](https://www.nytimes.com/2018/10/15/technology/myanmar-facebook-genocide.html). Every data scientist must understand the impact of their work for the good and the bad. Something as simple as a good visualization can be enlightening and convince people to get a vaccine or find the root of an outbreak (see John Snow's map). But bad data science can have unexpected real-world consequences too.
 
 In this chapter, we will not address all the philosophical questions regarding ethics, which are [lengthy](https://en.wikipedia.org/wiki/Ethics) but will try to focus on the ethical practice of data science. Many ethical questions affecting data ethics have already been tackled during this book. Such questions have been interleaved during this book together with other topics, e.g., algorithmic fairness, validity issues and their consequences. Therefore, this book provides a utilitarian framework of ethics. This chapter describes how ethical values, regardless of which they may be, affect the practice of data science, either because of the lack of commitment to them or to how data science is conditioned when abiding by them.
 
 This chapter begins by delving into the definitions of ethics, some ethical frameworks and the values of science. Next, it will describe how ethics are meant to be articulated. Aferwards we will be ready to tackle data ethics and the topics affecting it. Finally, a short summary of the GDPR and examples affecting data ethics are provided to illustrate the impact and significance of this new field.
+
+:::: {.simplebox data-latex=""}
+::: { data-latex=""}
+**Course objectives**
+:::
+
+This final chapter supports objectives 9 and 10, introducing the role of non-epistemic values into every stage of the data science workflow. Historical and current examples showcase the role of regulations, ethical concerns and the consequences of neglecting them. After all, data scientists will have to comply with codes of conduct, legal constraints and consider ethical debates.
+
+::::
 
 ## Morality and Ethics
 
@@ -197,7 +206,9 @@ knitr::asis_output('\\begin{wrapfigure}{R}{.36\\textwidth}
 \\addtocounter{figure}{-1}')
 ```
 
-It is important not to confuse data ethics with computer ethics and information ethics. In the mid 1940s, developments in science and philosophy led to the creation of a new branch of ethics that would later be called "computer ethics" or "information ethics". The founder of this new philosophical field was the American scholar Norbert Wiener, a professor of mathematics and engineering at MIT [@sep-ethics-computer]. Moreover, other terms such as "cyberethics" and "Internet ethics" have been used to refer to computer ethics issues associated with the Internet.
+It is important not to confuse data ethics with computer ethics and information ethics. In the mid 1940s, developments in science and philosophy led to the creation of a new branch of ethics that would later be called "computer ethics" or "information ethics". The founder of this new philosophical field was the American scholar Norbert Wiener, a professor of mathematics and engineering at MIT [@sep-ethics-computer]. 
+
+Moreover, other terms such as "cyberethics" and "Internet ethics" have been used to refer to computer ethics issues associated with the Internet.
 
 > "Because of the breadth of Wiener’s concerns and the applicability of his ideas and methods to every kind of information technology, the term “information ethics” is an apt name for the new field of ethics that he founded. As a result, the term “computer ethics”, as it is typically used today, names only a subfield of Wiener’s much broader concerns." --- [@sep-ethics-computer]
 

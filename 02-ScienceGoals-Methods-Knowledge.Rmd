@@ -21,15 +21,14 @@ Illustrated with examples, this course will tackle the scientific goals, the def
 
 ::::
 
- 
-<!-- ## Overview
 
-1. A
-2. B
-3. C
-4. D
+:::: {.simplebox data-latex=""}
+::: { data-latex=""}
+**Course objectives**
+:::
 
--->
+This chapter supports course objectives 1–3, by introducing key concepts through simple messages and analogies that build understanding without overwhelming students. Relevant examples are resumed in later chapters to connect contents. Higher-level debates (e.g., Thomas Kuhn, realism vs. antirealism) are omitted to focus on the core ideas of the first course weeks.
+::::
 
 ## What is Science?
 
@@ -44,7 +43,9 @@ Rather than finding a proper definition of science, which many have struggled wi
 
 ### Scientific Goals and Knowledge
 
-The main goals of science include prediction, explanation, understanding, and design. Through observation we can draw explanations and achieve understanding of nature phenomena. Once we understand we can aim to make predictions. Thanks to our understanding we can as well design experiments, instruments and solutions that help us further explaining, understanding and predicting our world. Predicting $X$ means knowing that at time *t*, $X$ will happen. Explaining $X$ means to know the cause(s) that produced $X$. Designing $X$ requires knowing that artifact $X$ will satisfy certain functions $F$. All these goals share a common ingredient, scientific knowledge. Scientists arrive to such knowledge by applying the scientific method (see § \@ref(sci-method)). The goals of science are achieved through a series of activities that constitute the scientific method which include systematic observation and experimentation, inductive and deductive reasoning, and the formation and testing of hypotheses and theories.
+In this course we consider prediction, explanation, understanding and design as the most accessible goals of science for the students. Typically, scientific inquiry begins with observation which allow us to make predictions, develop explanations and achieve understanding of nature phenomena. Though, as we will see, these do not necessarily follow a fixed order. Thanks to our understanding we can as well design experiments, instruments and solutions that help us better gather data and further explain, understand, and predict our world. However, the pursuit of one goal does not necessarily contribute to others, with trade-offs often at play [@potochnik2015diverse]. The goals of data science mirror this pluralism but all these goals share a common ingredient: knowledge. 
+
+Predicting $X$ means knowing that at time *t*, $X$ will happen. Explaining $X$ means to know the cause(s) that produced $X$. Designing $X$ requires knowing that artifact $X$ will satisfy certain functions $F$. Again, all these goals share a common ingredient, scientific knowledge. Scientists arrive to such knowledge by applying the scientific method (see § \@ref(sci-method)). The goals of science are achieved through a series of activities that constitute the scientific method which include systematic observation and experimentation, inductive and deductive reasoning, and the formation and testing of hypotheses and theories.
 
 > Knowledge is justified true belief — Plato (428 - 348 BC)
 
@@ -56,6 +57,13 @@ The most popular definition of knowledge was given by philosopher Plato in the a
 - **Justified** because you need proper proof, evidence or reasons to defend our statement.
   - Even if it actually rained, a wet sidewalk caused by a sprinkler is not good justification for you to believe it rained. 
 - **Belief** because even under justified reasons about true facts, people can choose not to believe such knowledge. We define belief as to the state of mind of a person that thinks something is the case. This state of mind is of course *tied to the individual* and *comes in degrees*. We act based on our beliefs and values, and new knowledge can affect these.
+
+:::: {.simplebox data-latex=""}
+::: { data-latex=""}
+**Content note**
+:::
+This definition of knowledge serves as a simple but useful entry point into epistemological thinking for those unfamiliar with these concepts. Although it does not fully capture more current epistemological views like Bayesian epistemology, it is a pedagogical and mnemonic tool to introduce several concepts at once. First, values like honesty and transparency from true. Then, justification, which is central in method choice and model selection. Last, belief, which reminds us that subjective priors and cognitive biases influence reasoning. Through the course we will also see their shortcomings.
+::::
 
 Certainty of belief and truth are different. Is possible to have certain beliefs about false claims. 
 Similarly, we can have uncertain beliefs about true claims. From tossing a coin, we can expect a fair probability in which head and tails have the same probability. But we cannot know for sure if the coin is biased or not until it lands. Similarly, is possible that even our best theories are wrong or partially wrong. Even after many successful experiments, they might be proved wrong (see \@ref(neptune-vulcan)). In fact, scientific hypotheses can rarely if ever be proved right, they can, however, be proven wrong. 
@@ -287,17 +295,17 @@ knitr::include_graphics('Figures/Ouroboros-benzene.png')
 
 ### Why Most Published Research Findings Are False
 
-In his work [Why Most Published Research Findings Are False](https://doi.org/10.1371/journal.pmed.0020124), John P. A. Ioannidis (professor at the Stanford School of Medicine) argues that "the probability that a research claim is true may depend on study power (see note) and bias, the number of other studies on the same question, and, importantly, the ratio of true to no relationships among the relationships probed in each scientific field" [@ioannidis2005most]. 
+In his [Why Most Published Research Findings Are False](https://doi.org/10.1371/journal.pmed.0020124), John P. A. Ioannidis (Prof. at the Stanford School of Medicine) argues that "the probability that a research claim is true may depend on study power (see note) and bias, the number of other studies on the same question, and, importantly, the ratio of true to no relationships among the relationships probed in each scientific field" [@ioannidis2005most]. 
 
 In the form of corollaries, the author enumerates several factors making a paper with a positive result more likely to enter the literature and suppress negative-result papers. For instance, the popularity of a field or a trendy topic has more chances to have more publications about. Financial or political interests can act as prejudices affecting research and publication. Other factors such as sample size and effect sizes (e.g. the strength of the relationship between two variables in a population),  experimenter bias, white hat bias (e.g. cherry picking the evidence and publication bias); flexibility in designs, definitions, outcomes, and analytical modes. 
 
 > These corollaries consider each factor separately, but these factors often influence each other. For example, investigators working in fields where true effect sizes are perceived to be small may be more likely to perform large studies than investigators working in fields where true effect sizes are perceived to be large. --- [@ioannidis2005most]
 
-In summary, the problem is that researchers and institutions tend to value and promote "positive results" and discard negative results as not interesting to be published. This creates a bias in the scientific literature towards certain topics, designs and knowledge.
+In summary, the issue is that academia tends to value and promote "positive results" and discard negative results as not interesting to be published. This biases scientific literature towards certain topics, designs and knowledge.
 
 > Thus, each team may prioritize on pursuing and disseminating its most impressive “positive” results. “Negative” results may become attractive for dissemination only if some other team has found a “positive” association on the same question. In that case, it may be attractive to refute a claim made in some prestigious journal. --- [@ioannidis2005most]
 
-Consider the following example provided by the author. Let $R$ be the ratio of the number of “true relationships” to “no relationships” among those tested in the field. Let $u$ be the proportion of probed analyses that would not have been “research findings”, but nevertheless end up presented and reported as such, because of bias. Importantly, "Bias should not be confused with chance variability that causes some findings to be false by chance even though the study design, data, analysis, and presentation are perfect. Bias can entail manipulation in the analysis or reporting of findings. Selective or distorted reporting is a typical form of such bias" [@ioannidis2005most].
+Consider the following example. Let $R$ be the ratio of the number of “true relationships” to “no relationships” among those tested in the field. Let $u$ be the proportion of probed analyses that would not have been “research findings”, but nevertheless end up presented and reported as such, because of bias. Importantly, "Bias should not be confused with chance variability that causes some findings to be false by chance even though the study design, data, analysis, and presentation are perfect. Bias can entail manipulation in the analysis or reporting of findings. Selective or distorted reporting is a typical form of such bias" [@ioannidis2005most].
 
 > Let us assume that a team of investigators performs a whole genome association study to test whether any of 100,000 gene polymorphisms are associated with susceptibility to schizophrenia. Based on what we know about the extent of heritability of the disease, it is reasonable to expect that probably around ten gene polymorphisms among those tested would be truly associated with schizophrenia, with relatively similar odds ratios around 1.3 for the ten or so polymorphisms and with a fairly similar power to identify any of them. Then $R = 10/100,000 = 10^{−4}$, and the pre-study probability for any polymorphism to be associated with schizophrenia is also $R/(R + 1) = 10^{−4}$. Let us also suppose that the study has 60% power to find an association with an odds ratio of 1.3 at $\alpha = 0.05$. Then it can be estimated that if a statistically significant association is found with the $p$-value barely crossing the 0.05 threshold, the post-study probability that this is true increases about 12-fold compared with the pre-study probability, but it is still only $12 × 10^{−4}$.
 > 

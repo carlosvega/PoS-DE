@@ -15,7 +15,16 @@ The term *"confounding"* means *"to pour, mingle, or mix together"*, and Figure 
 knitr::include_graphics('Figures/causal_diagram_confounder_simple.png')
 ```
 
-### The smoke debate - Part II
+:::: {.simplebox data-latex=""}
+::: { data-latex=""}
+**Course objectives**
+:::
+
+At the end of this chapter, most objectives will have been strengthen, with this chapter focused on wrapping up objectives 5 to 8. Examples from natural and social sciences help illustrate control techniques, which are then connected to data science. This fosters discussion with the students, motivating them to recognise similar issues in data science and understand techniques to mitigate them.
+
+::::
+
+## The smoke debate - Part II
 
 
 (ref:smoke-debate-caption) Source: [Tobacco Ads](https://tobacco.stanford.edu/cigarettes/doctors-smoking/more-doctors-smoke-camels/).
@@ -32,7 +41,7 @@ The *constitutional hypothesis* was almost impossible to test. In 2000, the sequ
 
 The above's explanation shows that the association between smoking and lung cancer is too strong to be explained by appeal to a smoking gene (or any other constitutional hypothesis). In essence, Cornfield's rationale gives us a way to choose between both causal diagrams. Once it becomes evident that such constitutional hypothesis is not able to fully explain the association, the relationship between smoking and lung cancer (left diagram) becomes apparent.
 
-```{r smoke-debate-dia, echo=F, out.width="70%", fig.align="center", fig.cap='The causal diagram on the left presents the situation in which the constitutional hypothesis is insufficient to explain the association between smoking and lung cancer. The diagram on the right side depicts the alternative situation in which the smoking gene fully explains the observed association.'}
+```{r smoke-debate-dia, echo=F, out.width="80%", fig.align="center", fig.cap='The causal diagram on the left presents the situation in which the constitutional hypothesis is insufficient to explain the association between smoking and lung cancer. The diagram on the right side depicts the alternative situation in which the smoking gene fully explains the observed association.'}
 knitr::include_graphics('Figures/SmokeDebate_diagram.png')
 ```
 
@@ -265,23 +274,23 @@ As we have seen during this course, data alone is not enough. Note that this is 
 
 A relevant example on how data depends on its context is user ratings or opinions. For instance, the meaning of *fashionable clothes* changes over time, as do political terms. This issue is known as *concept drift* [@kubat2017introduction]. Similarly, a text-mining engine to tag biology terms with the corresponding ontology terms may confuse elements between species, as several entities appear in multiple animals or organisms. Context is crucial for external validation and translation of solutions into real-world settings. A system for clothes recommendation should adapt to countries, cultures or ages. Similarly, a health system to predict patient risk based on disease comorbidities must be *calibrated* for each country or region (e.g. Diabetes treatment is often affordable in the EU, but an expensive treatment in the USA, which increases its mortality rate).
 
+Figure \@ref(fig:inference-engine) represents an ideal causal inference engine for scientific questions. Today, causal models for scientific applications are based on a similar design. It is important to notice how this diagram showcases the importance of extra-observational information (i.e. information other than data) such as **assumptions**, which derive from the available **knowledge**. With them, a **causal model** is built in any of its different forms, e.g. logical statements, structural equations, causal diagrams, etc. Causation (or a causation assumption) can be defined from the following analogy, $X$ is a cause of $Y$ if $Y$ *listens* to $X$ and determines its value in response to what it hears. For instance, the patient's lifespan $L$ is determined by the intake of drug $D$. In this case, $D$ acts as a cause of $L$ (although it might not be the only cause), which is represented by an arrow from $D$ to $L$ in a causal diagram (see Figure \@ref(fig:blueprint)). For simplicity, the other causes of $L$ can be grouped in an additional variable $Z$. 
+
 ```{r inference-engine, echo=F, fig.align="center",  out.width="90%", fig.cap='Diagram extracted from The Book of Why. The diagram depicts a hypothetical inference engine that combines data and causal knowledge to produce answers to questions of interest. Knowledge (dashed) is not part of the engine but required for its construction. Boxes 4 (testable implications) and 9 (estimate) could also feedback such knowledge to incrementally improve the engine.'}
 knitr::include_graphics('Figures/jpearl_inference_engine.png')
 ```
 
-Figure \@ref(fig:inference-engine) represents an ideal causal inference engine for scientific questions. Today, causal models for scientific applications are based on a similar design. It is important to notice how this diagram showcases the importance of extra-observational information (i.e. information other than data) such as **assumptions**, which derive from the available **knowledge**. With them, a **causal model** is built in any of its different forms, e.g. logical statements, structural equations, causal diagrams, etc. Causation (or a causation assumption) can be defined from the following analogy, $X$ is a cause of $Y$ if $Y$ *listens* to $X$ and determines its value in response to what it hears. For instance, the patient's lifespan $L$ is determined by the intake of drug $D$. In this case, $D$ acts as a cause of $L$ (although it might not be the only cause), which is represented by an arrow from $D$ to $L$ in a causal diagram (see Figure \@ref(fig:blueprint)). For the sake of simplicity the other causes of $L$ can be grouped in an additional variable $Z$. 
-
 In box $4$ the patterns encoded in the paths of the causal model yield a series of observable consequences (or data dependencies), that we know as **testable implications** (remember the hypothetico-deductive method?). These implications can be used to test the model. For instance, the lack of path between $D$ and $L$ would imply that $D$ and $L$ are independent, meaning that a variation of $D$ will not alter $L$. If such implication is contradicted by the data, the model should be revised bearing in mind this new knowledge. The box $5$ is in charge of the scientific **query** which must be encoded in causal vocabulary, e.g. $P(L | do(D))$, i.e. what is the probability that a typical patient would live $L$ years given that it takes the drug $D$?. 
-
-```{r blueprint, echo=F, fig.align="center",  out.width="70%", fig.cap='Diagram depicting two different scenarios: before, and after an intervention.'}
-knitr::include_graphics('Figures/blueprint.png')
-```
 
 The $do()$ operator represents an intervention in the system, in contrast to an observation $P(L|D)$. An instance of the latter would entail letting the patient decide between taking or not the drug (see left side of Figure \@ref(fig:blueprint)). Such decision might be affected by other variables we are not aware, like the patient's education, family, etc. However, when we make an intervention and assume that we are giving the drug to the patient, the arrow illustrating the patient's decision disappears (right side of Figure \@ref(fig:blueprint)).
 
+```{r blueprint, echo=F, out.width="60%", fig.align="center", fig.cap='Diagram depicting two different scenarios: before/after an intervention.'}
+knitr::include_graphics('Figures/blueprint.jpeg')
+```
+
 The ***estimand*** is the recipe to answer the scientific query, written as a probability formula, such as $P(L | D, Z) \times P(Z)$. Once the **data** is introduced, an **estimate** can be calculated. Importantly, some queries may not be answerable regardless of the amount of data collected. For instance, our causal model could indicate that both $D$ and $L$ depend upon a third variable $Z$. If there would not be any way to measure $Z$, the query $P(L | do(D))$ would be unanswerable. Collecting data for this question would be worthless. Under such a scenario, the causal model needs to be reviewed. Either to introduce new knowledge to enable estimating $Z$, or to simplify the previous assumptions, potentially increasing the risk of wrong answers, e.g. stating that $Z$ has a negligible effect on $D$.
 
-Following the analogy, the data acts as the ingredients of the recipe provided by the *estimand*. Our estimate (box $9$) represents an approximate answer to the query. Such an answer is approximate because data always represents a finite sample from a theoretically infinite population [@book-of-why]. An example of answer in this case could be that drug $D$ increases lifespan $L$ of diabetic patients by $30\% \pm 10\%$.
+Following the analogy, the data acts as the ingredients of the recipe provided by the *estimand*. Our estimate (box $9$) represents an approximate answer to the query. This answer is approximate because data always represents a finite sample from a theoretically infinite population [@book-of-why]. An example answer in this case could be that drug $D$ increases lifespan $L$ of diabetic patients by $30\% \pm 10\%$.
 
 The most important fact about the diagram in Figure \@ref(fig:inference-engine) is that data and causal model are two independent pieces of the puzzle that later work together. Data is collected after the causal model and stating that the scientific query can be answered. The *estimand* computation does not require any data. Comparing this to conventional machine learning (ML) systems, a ML solution would have to be re-trained when moved from one hospital to another since such model just fitted a function to data, without levering from any causal model.
 

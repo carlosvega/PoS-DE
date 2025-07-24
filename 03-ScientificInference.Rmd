@@ -1,10 +1,27 @@
+<!--
+
+- Logic basis
+-- deduction and induction
+-- modus ponens and tollens
+- the problem of induction
+-- David Hume’s Problem of Induction
+- The Hypothetico-deductive Method
+- Falsification
+- Confirmation
+- Statistical epistemology
+-- Bayesian and frequentist reasoning
+
+
+-->
+
 # Scientific Inference
 
 > “Knowledge can be communicated, but not wisdom. One can find it, live it, be fortified by it, do wonders through it, but one cannot communicate and teach it.” --- Hermann Hesse
 
 ## Overview
 
-Humans have a natural ability to conjecture and spot relationships about the world, *jumping* from hypotheses to conclusions. The scientific attitude is to keep such *jumps* under control and use a well defined procedure to arrive to a conclusion from an hypothesis. In this chapter we will examine in detail those procedures.
+One of the fundamental questions of the philosophy of science is “How can we obtain knowledge as opposed to mere belief or opinion?” [@ladyman2012understanding]. Humans have a natural ability to conjecture and spot relationships about the world, *jumping* from hypotheses to conclusions. The scientific attitude is to keep such *jumps* under control and use a well defined procedure to arrive to a conclusion from an hypothesis. This chapter taughts how conclusions can be reached from known facts in different ways. For this, a sound basis of logic is needed to understand more complex concepts from this course. The reader will tackle deductive and inductive arguments and link them to data science applications. With this the reader will be equipped to tackle other topics of scientific inference such as the problem of induction, the Hypothetico-deductive method and Falsificationism. 
+
 
 ```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
 cat(
@@ -19,6 +36,14 @@ cat(
 ```
 
 > But our sun is only one of a billion-trillion stars within the observable universe. And those countless suns all obey natural laws some of which are already known to us. How did we discover that there are such laws? If we lived on a planet where nothing ever changed, there wouldn't be much to do, there'd be nothing to figure out. There'd be no impetus for science. And if we lived in an unpredictable world where things changed in random or very complex ways, we wouldn't be able to figure things out. And again, there'd be no such thing as science. But we live in an in between universe where things change alright, but according to patterns, rules, or as we call them, laws of nature. If I throw a stick up in the air, it always falls down. If the sun sets in the west, it always rises again the next morning in the east. And so it's possible to figure things out. We can do science. And with it we can improve our lives. --- Carl Sagan
+
+:::: {.simplebox data-latex=""}
+::: { data-latex=""}
+**Course objectives**
+:::
+
+A foundational grasp of logic is essential to understand scientific inference. This chapter content supports objectives 3, 4 and 6 through examples that motivate in-class debate (e.g., Hume, Popper, Hempel) with a narrative that moves from initial naïve support of theories, to a deeper reflection of their weaknesses and later emphasis on the relevant pieces that affect the practice of data science. 
+::::
 
 ## Types of inferences
 
@@ -193,7 +218,7 @@ The conclusion then is that our tendency to project past regularities into the f
 **Note on uniformity of nature:**
 :::
 
-Notice how Machine Learning (ML) models can be regarded as inductive machines performing inductive inferences based on previous observations. For the ML model to perform well on novel data, is often assumed that novel data will resemble past data.
+Notice how ML models can be regarded as inductive machines performing inductive inferences based on previous observations. For the ML model to perform well on novel data, is often assumed that novel data will resemble past data.
 
 Hume refers to this assumption as the Principle of Uniformity of Nature: *“If reason determined us, it would proceed upon that principle, that instances, of which we have had no experience, must resemble those, of which we have had experience, and that the course of nature continues always uniformly the same.”*
 
@@ -225,6 +250,18 @@ If we visualise the data as points in a plane; every set of finite points belong
 
 ::::
 
+:::: {.simplebox data-latex=""}
+::: { data-latex=""}
+**Ancient views on the regress argument**
+:::
+
+Pyrrhonist philosopher Sextus Empiricus (mid-late 2nd century CE) raised concerns which applied to all types of knowledge and doubted the validity of induction long before David Hume, raising the regress argument against all forms of reasoning ([Wikipedia](https://en.wikipedia.org/wiki/Sextus_Empiricus#Philosophy)). This view is known as Pyrrhonian skepticism.
+
+> Those who claim for themselves to judge the truth are bound to possess a criterion of truth. This criterion, then, either is without a judge's approval or has been approved. But if it is without approval, whence comes it that it is trustworthy? For no matter of dispute is to be trusted without judging. And, if it has been approved, that which approves it, in turn, either has been approved or has not been approved, and so on ad infinitum. -- Sextus Empiricus
+
+::::
+
+
 
 ## The Hypothetico-deductive Method
 
@@ -240,7 +277,11 @@ For relevant examples, check \@ref(semmelweis) and \@ref(wason).
 
 ### A good hypothesis
 
-There are though some criteria for a [good hypothesis](https://opentext.wsu.edu/carriecuttler/chapter/developing-a-hypothesis/). Apart from other criteria such as parsimony, scope, fruitfulness and conservatism, these are other criteria to recall.
+```{r xkcd-hypothesis, echo=F, fig.align="center", out.width="66%", fig.cap='The key aspect being conveyed in this simple exchange is that one of the many good practices in science (no matter the aspect, though the specifics may change according to the precise field of study) is that one should first have an idea of what you can test and then perform the test to confirm (or rule out) your idea. Title text: "Frazzled scientists are requesting that everyone please stop generating hypotheses for a little bit while they work through the backlog". Source: xkcd.com.'}
+knitr::include_graphics('Figures/hypothesis_generation.png')
+```
+
+Still, there are some criteria for a [good hypothesis](https://opentext.wsu.edu/carriecuttler/chapter/developing-a-hypothesis/). Apart from criteria such as parsimony, scope, fruitfulness and conservatism, these are other criteria to recall.
 
 - It should be an statement that can be either true or false (e.g. "Boiling point of a liquid increases with increase in pressure"). In other words, it should be **testable and falsifiable**. We must be able to test the hypothesis using the methods of science and according to Popper’s falsifiability criterion, it must be possible to gather evidence that will reject the hypothesis if it is indeed false.
 
@@ -251,10 +292,6 @@ There are though some criteria for a [good hypothesis](https://opentext.wsu.edu/
 - Finally, the hypothesis should be positive. That is, the hypothesis should make a positive statement about the existence of a relationship or effect, rather than a statement that a relationship or effect does not exist. 
 
 - Finally, it should have some generality (e.g. "things of certain type...") or be about some non-directly observable property of a particular.
-
-```{r xkcd-hypothesis, echo=F, fig.align="center", out.width="66%", fig.cap='The key aspect being conveyed in this simple exchange is that one of the many good practices in science (no matter the aspect, though the specifics may change according to the precise field of study) is that one should first have an idea of what you can test and then perform the test to confirm (or rule out) your idea. Title text: "Frazzled scientists are requesting that everyone please stop generating hypotheses for a little bit while they work through the backlog". Source: xkcd.com.'}
-knitr::include_graphics('Figures/hypothesis_generation.png')
-```
 
 ### Falsification {#falsification}
 
@@ -380,13 +417,93 @@ knitr::include_graphics('Figures/underdetermination_small.png')
 **Note for data scientists!**
 :::
 
-According to *anti-realists*, there will always be multiple *competing* theories about unobservable entities (e.g. atoms) which can account for the data equally well. In other words, such theories are *undetermined* by the empirical data. But then, how do scientists justify choosing one theory over another? *Realists* often reply that aforementioned scenario is only possible in the trivial sense. In fact, scientists often struggle to find even *one* theory that fits the data properly.
+According to **anti-realists**, there will always be multiple **competing** theories about unobservable entities (e.g. atoms) which can account for the data equally well. In other words, such theories are **undetermined** by the empirical data. But then, how do scientists justify choosing one theory over another? **Realists** often reply that aforementioned scenario is only possible in the trivial sense. In fact, scientists often struggle to find even *one* theory that fits the data properly.
 
 But why is this important for data scientists? Often you will find many ML models or solutions that fit your available data or fulfil your requirements, and yet you will have to decide which model/solution is best. If possible, validation with external data and other assessments must be conducted, but sometimes solutions are also chosen based on *non-epistemic* values, such as making society more just or making money.
 
-Is also important to notice how the problem of underdetermination relates to the popular *No Free Lunch Theorem* which is very relevant in the Machine Learning community [@dotan2020theory]. For more on the NFL read [@domingos2015master].
+Is also important to notice how the problem of underdetermination relates to the popular **No Free Lunch Theorem** which is very relevant in the Machine Learning community [@dotan2020theory]. For more on the NFL read [@domingos2015master].
 
 ::::
+
+### Beyond the Hypothetico-Deductive Method: Bayesian Inference and the Logic of Uncertainty {#bayesian-inference}
+
+While the HD method offers a simple and useful framework to think about how science proceeds, from hypothesis formation to testing via deduction, it has important limitations. These become especially clear in data-driven disciplines such as machine learning, statistics, and empirical sciences that rely on probabilistic reasoning. Here, we examine alternative approaches that better accommodate uncertainty, quantify degrees of belief, and reflect how inference is conducted in real-world contexts.
+
+#### Limitations of the HD method in probabilistic contexts
+
+In the HD method, hypotheses are tested by deducing observable consequences and then checking whether those consequences occur. If any of the deduced implications are false, the hypothesis is rejected (falsified). If they are all true, the hypothesis is not proven true, but may be confirmed.
+
+However, most scientific theories, especially those in statistical sciences, are not structured as strict universal generalizations like "all swans are white". Instead, they are probabilistic in nature. For example:
+
+- “If a drug is effective, then 80% of patients will recover.”
+- “If a coin is fair, then heads will appear approximately 50% of the time.”
+
+Here, the predictions are not strictly entailed by the hypothesis. They are probabilistic expectations. This weakens the applicability of modus tollens: if only 60% of patients recover, is the hypothesis falsified? Not necessarily. In probabilistic contexts, observing an outcome that deviates from the expected does not conclusively falsify the hypothesis, because such deviations are themselves expected to occur with some probability. **The data may be compatible with both the hypothesis and the null hypothesis**, making it difficult to draw a sharp deductive conclusion. Instead of strict falsification, we assess how well the data supports one hypothesis over another, often in terms of likelihood or posterior probability.
+
+Moreover, empirical data is noisy. Measurement error, incomplete information, and stochastic processes mean that consequences of a hypothesis may deviate from what is expected even if the hypothesis is "mostly" correct. Under these circumstances, we need a more flexible form of inference, i.e., probabilistic inference, that allows us to reason under uncertainty.
+
+#### Bayesian Epistemology and Conditionalization
+
+Bayesian inference offers a model of rational belief revision. In contrast to the HD method, which evaluates hypotheses in an all-or-nothing fashion, the Bayesian approach updates degrees of belief (probabilities) in light of new evidence. Suppose we have a hypothesis $H$ and we observe some data $D$. The central rule of Bayesian updating is Bayes’ theorem:
+
+Bayes' theorem: $P(H \mid D) = \frac{P(D \mid H) \cdot P(H)}{P(D)}$
+
+This formula tells us how to update our belief in $H$ after observing $D$. Key terms:
+
+- $P(H)$: the prior probability of the hypothesis before seeing the data.
+- $P(D \mid H)$: the likelihood of the data assuming the hypothesis is true.
+- $P(H \mid D)$: the posterior probability of the hypothesis after updating with the data.
+
+This rule allows beliefs to change incrementally as new evidence becomes available, reflecting both prior knowledge and the strength of the data. It avoids the binary logic of the HD method and instead provides a continuous scale of confidence. Where the HD method discards a hypothesis after a single negative test, Bayesian inference merely lowers its probability, unless the evidence is truly decisive [@howson2006scientific].
+
+#### Bayesian vs Frequentist Views
+
+There are two dominant interpretations of probability in scientific inference:
+
+- Frequentist: Probabilities refer to long-run relative frequencies of observable events. Hypotheses are fixed and not assigned probabilities. Evidence is used to reject or fail to reject a hypothesis.
+- Bayesian: Probabilities reflect subjective or rational degrees of belief. Hypotheses themselves are uncertain, and can be compared based on their posterior probabilities.
+
+Both perspectives are widely used in science and data analysis. For example:
+
+| Topic                          | Frequentist Perspective                                  | Bayesian Perspective                                      |
+|-------------------------------|-----------------------------------------------------------|-----------------------------------------------------------|
+| Interpretation of Probability | Long-run frequency of events                              | Degree of belief (subjective or epistemic)                |
+| Hypotheses                    | Fixed and not assigned probabilities                      | Treated as uncertain; assigned prior and updated posterior|
+| Learning from Data            | Estimation via Maximum Likelihood (MLE), confidence intervals | Posterior inference via Bayes’ Theorem                  |
+| Inference                     | Hypothesis testing using p-values                         | Probability of hypothesis given data, i.e., `P(H|D)`           |
+| Updating                      | No explicit mechanism; fixed once data is observed         | Prior updated with data to form posterior                 |
+| ML applications             | Parameter estimation, frequentist confidence               | Bayesian networks, uncertainty quantification             |
+
+Bayesian inference is especially relevant in machine learning, where models are constantly updated as new data is acquired. For example, recommender systems revise their predictions as user preferences evolve, and autonomous vehicles update environmental models in real time.
+
+:::: {.tipbox data-latex=""}
+::: { data-latex=""}
+**Note for data scientists!**
+:::
+
+In Bayesian Machine Learning, priors allow incorporation of domain knowledge into model training. For instance, prior beliefs about plausible parameter ranges can prevent overfitting in small-data regimes. In deep learning, Bayesian neural networks use probability distributions over weights, allowing uncertainty estimation in predictions. These methods are crucial in high-stakes applications such as medical diagnosis, where not knowing the confidence of a prediction can be dangerous.
+
+::::
+
+#### Bayesian Inference and the Problem of Induction
+
+Bayesian epistemology offers one response to Hume’s problem of induction. It does not deny the fallibility of inductive inference, but rather makes it explicit. In Bayesian terms, learning from experience is about adjusting belief in hypotheses as new evidence accumulates.
+
+However, this still does not justify induction in the absolute sense. It formalizes how we might reasonably behave given certain starting beliefs and observations, but it does not explain why those beliefs are justified in the first place. As some philosophers argue, Bayesianism presupposes that some inductive inferences are valid; it does not solve Hume's problem but reframes it.
+
+<!-- 
+check the quote
+
+"The Bayesian model shows how a rational agent should update beliefs, but it still takes for granted that the prior beliefs are reasonable." — [@Talbott2020bayesian]
+
+--> 
+
+#### Underdetermination and Bayesian Model Selection
+
+As seen with Confirmation in section \@ref(confirmation), many hypotheses can be consistent with the same data. This is known as the problem of underdetermination. Bayesian reasoning provides one approach to this problem by allowing us to compare models in terms of their posterior probabilities. Models with higher likelihood given the data, and more plausible priors, are preferred.
+
+Still, choosing priors is an open issue. Different priors can lead to different posterior conclusions, raising philosophical concerns about **subjectivity**. In practice, however, prior sensitivity can be tested and robustified through sensitivity analysis and hierarchical modeling.
+
 
 ## Other types of inference
 
@@ -640,7 +757,7 @@ Chapter 4 of [@hempel-pos] continues on this.
 **Note for data scientists!**
 :::
 
-Notice how Machine Learning (ML) models can also be affected by the previous statement. Many researchers blindly rely on the dogma *the more data, the merrier* but is not just the amount of data that matters but also its variety. The greater the variety, the stronger the resulting support for the trained model.
+Notice how ML models can also be affected by the previous statement. Many researchers blindly rely on the dogma *the more data, the merrier* but is not just the amount of data that matters but also its variety. The greater the variety, the stronger the resulting support for the trained model.
 
 ::::
 

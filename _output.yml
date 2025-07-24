@@ -26,8 +26,8 @@ bookdown::pdf_book:
   keep_tex: yes
   pandoc_args: [
   "--variable=margin-right:3cm",
-  "--variable=margin-left:4cm",
-  "--variable=margin-bottom:3cm",
+  "--variable=margin-left:3.5cm",
+  "--variable=margin-bottom:2.5cm",
   "--variable=fontsize:12pt",
   "--variable=links-as-notes:true",
   "--variable=linestretch:1.1"

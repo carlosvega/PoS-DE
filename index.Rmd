@@ -1,7 +1,7 @@
 --- 
 title: "Applied Philosophy of Science and Data Ethics"
 author: ["Dr. Carlos Vega"]
-date: "2021 - 2024: Last compiled: `r Sys.Date()`"
+date: "2021 - 2025: \\ Last compiled: `r Sys.Date()`"
 site: bookdown::bookdown_site
 output: 
   bookdown::gitbook:
@@ -18,6 +18,10 @@ linkcolor: red
 ---
 
 # Preface {-}
+
+```{=latex}
+\markboth{Preface}{}
+```
 
 This class book gathers the contents addressed in the course **Applied Philosophy of Science and Data Ethics** from the [Master of Data Science](https://wwwfr.uni.lu/formations/fstm/master_of_data_science) at the University of Luxembourg (UL). This course will introduce basic philosophical and scientific concepts supported by examples and discussion. The course expects pro-active participation from the students in the form of presentations and essays as well as open debates. 
 
@@ -37,25 +41,93 @@ I believe this course should be taught in every computer science faculty. It req
 
 ## Course at UL {-}
 
-The course related to this class book aims to provide the students with guidelines and methodologies to identify epistemic and ethical issues present in data science. We expect the students to develop a critical eye that helps them mitigate such problems in their daily work as data scientists.
+Most of the contents of this book are taught in the course "Applied Philosophy of Science and Data Ethics" in the Master of Data Science at the University of Luxembourg (UL). The course goal is to provide the students with guidelines and methodologies to identify epistemic and ethical issues present in data science. We expect the students to develop a critical eye that helps them mitigate such problems in their daily work as data scientists.
 
 During this course, students will learn by example different layers of the scientific method and how they relate to data science and data ethics. In particular, they will learn how the mechanisms behind the data affect the data analysis, and how the different types of scientific inference condition method choice and affect the conclusions drawn from the analysis. In this sense, examples of statistical abuse, misconduct and bad visualization will be shown together with their, sometimes catastrophic, collateral consequences.
+
+## Target audience {-}
+
+Before we describe the course topics and objectives, we must acknowledge the characteristics of the students who register for the Master of Data Science at the University of Luxembourg as they will shape the course contents and structure. The study program receives students from the European Union (EU) and abroad, adding several dimensions of diversity, such as native languages, study frameworks, and cultural differences, which increase the richness of the class debates but also showcase differences in the student's background knowledge. Of course, we have students from neighboring countries like Germany, France, or Belgium who are also part of the Bologna zone, ensuring comparability in the standards and quality of higher education qualifications. Students from other continents (e.g., Asia, Africa, and South America) can sometimes constitute most enrolled students depending on the year. On top of these differences, students come from different bachelor backgrounds (e.g., computer science, statistics, biology, physics), and some have had professional experience in their fields. The Master in Data Science is a program from the Department of Mathematics, with half of the courses in the first two semesters consisting of mathematics courses. By way of example, one key difference that can be appreciated during the course in students both from the EU and abroad is their knowledge regarding propositional logic, which is usually taught (if at all) in high school curriculums. 
+
+## Course objectives {-}
+
+In line with the European Qualitity Framework, Bachelor degrees require a critical understanding of theories and principles, while Master degrees involve higher specialised knowledge and critical awareness of knowledge issues in a field. In this case, the field at issue is data science and the contents will tackle philosophical and ethical issues concerning data science. 
+
+Yet, the aim of this course must not be regarded as offering a complete course on the philosophy of science and data ethics but rather as a leveling course to acquaint the students with the concepts of the philosophy of science and how they relate to the challenges of data science and the current ethical debates of the information era. Importantly, as Dr Grüne-Yanoff highlights, teaching the evolution of scientific methods is pedagogical, especially if done through strategies of hyperbole, skepticism, and discussing historical scientific and ethical errors (Grüne-Yanoff, 2014). 
+
+The course objectives include:
+
+1.	Critically appraise the goals of science, so students can distinguish prediction, explanation, understanding, and design, and grasp how different philosophical views shape what counts as scientific success. 
+
+2.	Justify methodological choices, because data science involves implicit assumptions and conventions, and students must be able to explain their decisions and recognize how methods evolve over time.
+
+3.	Understand scientific inference, to differentiate between deductive, inductive, and abductive reasoning and relate these to reasoning strategies used in both science and AI systems.
+
+4.	Grasp the epistemology of uncertainty, to understand how science moves from data to belief and why traditional models like the Hypothetico-Deductive method fall short in data science, where probabilistic reasoning, model comparison, and frameworks like Bayesian and frequentist inference better capture uncertainty. 
+
+5.	Acknowledge the limits of data, so students appreciate the role of domain knowledge, assumptions, and the iterative nature of inquiry when moving from data to generalizations.
+
+6.	Discriminate between correlation and causation, as confusing the two remains a widespread and harmful error in data-driven fields. 
+
+7.	Recognize and mitigate biases, because biases, whether from measurement, sampling, confounding, or algorithms, can distort every stage of the data pipeline.
+
+8.	Understand the role and limits of models and experiments, since modeling, experimental control, and design decisions shape what can be inferred, especially regarding causality and generalizability.
+
+9.	Integrate non-epistemic values, because ethical, legal, and social considerations directly impact how data science is practiced and evaluated in real-world contexts.
+
+10.	Connect concepts, as a meta-goal students should relate philosophical, methodological, and ethical dimensions into a coherent understanding of data science practice.
+
+The justification of these objectives derives from the work these future data scientists will do. Data science practice is driven by legal, ethical, and resource pressures, so students must see how these forces shape their methods (Obj 9-10) and where each tool reaches its limits (Obj 2; Obj 8). Spotting bias, spurious links, and causal traps in messy data (Obj 6-7) depends on a strong understanding of science’s aims, the logic of inference, and the role of domain knowledge (Obj 1; Obj 3-5). The key takeaway message from this course is to question the data science methods, acknowledge that data without domain knowledge is insufficient, and recognize the current ethical debates and how they guide and constrain the data science developments of our time.
+
+## Course structure {-}
+
+The course is part of the first semester of a two-year master’s program. It consists of five chapters covered over 14 weeks, with a 90-minute class each week. These sessions are supplemented by weekly online quizzes, readings, and essay assignments. Depending on the pacing and in-class participation, topics may shift between weeks. To address potential scheduling issues, some video lectures cover topics in detail and can replace in-class lectures if needed to allow more time for discussions, exams and debates. These videos also include foundational content, such as an introduction to basic concepts of propositional logic in Chapter 2. 
+
+The current chapters and the order they are taught in class are:
+
+-	Chapter 1: Scientific Goals, Methods, and Knowledge (Week 1)
+-	Chapter 2: Scientific Inference (Weeks 2-6)
+-	Chapter 3: Empirical Practices and Models (Weeks 7-9)
+-	Chapter 4: Experimental Control and Statistical Abuse (Weeks 10-12)
+-	Chapter 5: Ethics and Responsibility (Weeks 13-14)
+
+## About this course {-}
+
+Despite deep historical ties between philosophy and computer science, especially in areas such as logic, the two disciplines have been largely taken apart largely in recent decades. Computer science curricula have increasingly focused on technical and practical applications, such as programming, algorithms, and systems design, while philosophy courses tackling theoretical inquiry and critical thinking have been relegated to other departments. This separation has diminished opportunities for students to explore foundational questions about the nature of computation, the ethics of technological innovation, and the philosophical implications of artificial intelligence. Below, a selection of courses and resources is available as guide for future instructors in the philosophy of science for data science. Moreover, the rest of the paper is accompained with examples and references related to the course content which further extend the materials listed below.
+
+While optional and online courses in topics like philosophy of science and data ethics are available, these subjects are not typically integrated into the core courses of computer science departments. Philosophy of science, in particular, is rarely positioned as a fundamental component of computer science education. This gap calls for better interdisciplinary in computer science programs to bridge technical skills with philosophical inquiry.
+
+Some of these online courses which align with the philosophy of science and data ethics and which have influenced this course, are described below. 
+
+The first chapters of this course are inspired by the book from Prof. Dr Lars-Göran Johansson [@johansson2016philosophy] "Philosophy of science for scientists". For several years, Prof. Dr. Till Grüne-Yanoff taught an online course (now unavailable) titled "Philosophy of Science for Engineers and Scientists" on the edX platform, which combined theoretical concepts with practical examples. Currently, he teaches courses on the methodology of science at KTH Royal Institute of Technology in Stockholm, Sweden. He advocates for the revision of the traditional curriculum of Philosophy of Science to better align with modern scientific disciplines [@grune2014teaching]. Regarding the second part of the course, which covers data ethics, I would like to thank the Univerisity of Michigan, for their online courses (from which I was already a fan during my PhD). Especially, Prof. Dr. H. V. Jagadish’s Data Science Ethics course, offered on Coursera by the University of Michigan, which has influenced this course’s data ethics content. The University of Oxford's Department for Continuing Education provides short courses on Philosophy of Science and Data Ethics, which offer valuable opportunities for expanding knowledge in these areas. 
+
+However, the integration of Philosophy of Science into computer science curricula remains limited and the author has struggled to find dedicated resources and courses. Some exceptions exist, such as the University of Bayreuth in Germany, which offers a Master’s program in Philosophy & Computer Science, and the University of Oxford, with an undergraduate program in Computer Science and Philosophy. More recently, the University of Cordoba in Spain will debut a new bachelor in Mathematics and Philosophy in 2025. These programs highlight the potential for interdisciplinary approaches, though they remain rare in broader computer science education.
+
+Additionally, a great variety of books are available and many have shaped the course materials, including: The Book of Why [@book-of-why], Ethics and Data Science [@loukides2018ethics], Understanding philosophy of science [@ladyman2012understanding], Philosophy of Natural Science [@hempel-pos]. Again, one key work is Philosophy of Science for Scientists [@johansson2016philosophy], which emphasizes that lessons from natural sciences are relevant to students and researchers in social and human sciences, to which I must add data scientists. Other books aimed toward the general public such as Philosophy of science: A very short introduction [@okasha-pos] or Philosophy of science : a new introduction [@barker-pos] offer a variety of examples to illustrate the topics of Philosophy of Science. Some more have influenced examples and ethics lessons such as How charts lie [@cairo2019charts] and Automating inequality [@eubanks2018automating].
+
+Since 2021, the author regularly updates this online class book that suits both students and instructors with topics taught in class and additional material.
+
+I hope any resemblance or imitation is seen as an act of flattery.
+
+### Roadmap for instructors {-}
+
+As a brief roadmap for instructors without formal training in philosophy, this author believes [@okasha-pos] and [@book-of-why] (chapters 1 to 5) offer an accessible way into core issues of Philosophy of Science and causal inference. This can be complemented with [@johansson2016philosophy] (chapters 2, 3, 4 and 13) and [@ladyman2012understanding] (chapter 2) as reference books to understand and link relevant concepts. Though, the most important task is to connect such issues with the instructor expertise in data science to enahnce the applied aspect of the course.
 
 ## Disclaimer {-}
 
 Although the impact and extension of the topics addressed in this class book (and the course) are broad and diverse, its length is limited. Hence the scope and depth of the contents are restricted. Consequently, several topics on Philosophy of Science  are tackled superficially while some others are completely ignored. Such philosophical questions are handled from a practical data science point of view. Similarly, Data Ethics is a relatively new matter in continuous evolution. Therefore we will try to cope with the main issues in the most practical way.
 
-## Learning outcomes {-}
+## About the author {-}
 
-In line with the European Qualitity Framework, Bachelor degrees require a critical understanding of theories and principles, while Master degrees involve higher specialised knowledge and critical awareness of knowledge issues in a field. In this case, the field at issue is data science and the contents will tackle philosophical and ethical issues concerning data science. Therefore, the aim is to provide students with a better understanding of method justification, to increase their knowledge about such methods, their scope, purpose and relation to other practices.
+Since October 2023 [Carlos Vega](https://researchportal.lih.lu/en/persons/carlos-vega) works as a Research Engineer in Digital Health at the **Luxembourg Institute of Health** (LIH) in the Department of Medical Informatics led by the CMIO (Chief Medical Information Officer) Dr. Maximilian Fünfgeld. Since September 2023, he is a fellow of MIT Catalyst Europe innovation program, co-leading two teams: (1) on improving emergency response for cardiac device patients and (2) tackling school absenteeism linked to period poverty in Ghana.
 
-- Get familiar with the scientific goals and methods.
-- Learn the most common data science misconduct problems.
-- Critically evaluate ethical issues and method choice.
+From 2018 until September 2023, he worked as a postdoctoral researcher in the Bioinformatics Core Group led by Prof. Dr Reinhard Schneider at the **Luxembourg Centre for Systems Biomedicine** (LCSB) at the University of Luxembourg. 
 
-## About this course {-}
+Previously, he worked at the Autonomous University of Madrid (UAM) researching high-performance solutions for big data analysis as well as anomaly detection methodologies. He received his B.Sc (2013), M.Sc (2014) and PhD (2018 with *cum laude* and industrial mentions) degrees in Computer Science Engineering from UAM. His research career started in 2012 when he joined the High-Performance Computing and Networking Research Group (HPCN) led by Prof. Dr Javier Aracil, first as a student and later as a researcher as part of the Network of Excellence InterNet Science European project. During his PhD (2014 - 2017), he continued his work at the HPCN group as a technical researcher for the project TRÁFICA and the European projects Fed4Fire and dReDBox, among others. At the same time, he worked at [Naudit HPCN](https://www.naudit.es/en) (2015 - 2018) applying his research in computer network auditing projects with different enterprises. 
 
-Some sections from the first chapters of this course are inspired by the book from Prof. Dr Lars-Göran Johansson [@johansson2016philosophy] and the educational works of Prof. Dr Till Grüne-Yanoff [@grune2014teaching], such as his great course at EDX on "Philosophy of Science for Engineers and Scientists". Regarding the second part of the course, which covers data ethics, I would like to thank the Univerisity of Michigan, for their online courses (from which I was already a fan during my PhD) and especially Prof. Dr H. V. Jagadish for his course on Data Science Ethics which inspired me on the contents and examples of this course. Moreover, this last part of the course would not have been possible without many relevant books on the topics tackled in this course (see References). Including The Book of Why [@book-of-why]; Ethics and Data Science [@loukides2018ethics]; Philosophy of Natural Science [@hempel-pos]; How charts lie [@cairo2019charts]; Automating inequality [@eubanks2018automating] and many others. I hope any resemblance or imitation is seen as an act of flattery.
+In 2022, he became a senior member of the Institute of Electrical and Electronics Engineers ([IEEE](https://www.ieee.org)). In 2023, he became a fellow of the [MIT Catalyst Europe program](https://www.catalysteurope.eu).
+
+Additionally, his past teaching experience includes several courses on computer networks, such as Multimedia Networking, Network Planning and Network Management, taught during his time at UAM. Since 2021, he is the main teacher of the course "Applied Philosophy of Science and Data Ethics" for the Master of Data Science at the Faculty of Science, Technology and Medicine (FSTM) of the University of Luxembourg.
 
 ## About this class book {-}
 
@@ -76,17 +148,9 @@ Under the following terms:
 - **No Derivatives**: If you remix, transform, or build upon the material, you may not distribute the modified material.
 - **No additional restrictions**: You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
 
-## About the author {-}
-Since October 2023 [Carlos Vega](https://researchportal.lih.lu/en/persons/carlos-vega) works as a Research Engineer in Digital Health at the **Luxembourg Institute of Health** (LIH) in the IT Expertise in Health Data team of the Data Integration and Analysis Unit led by the CMIO (Chief Medical Information Officer) Dr. Maximilian Fünfgeld.
-
-From 2018 until September 2023, he worked as a postdoctoral researcher in the Bioinformatics Core Group led by Prof. Dr Reinhard Schneider at the **Luxembourg Centre for Systems Biomedicine** (LCSB) at the University of Luxembourg. 
-
-Previously, he worked at the Autonomous University of Madrid (UAM) researching high-performance solutions for big data analysis as well as anomaly detection methodologies. He received his B.Sc (2013), M.Sc (2014) and PhD (2018 with *cum laude* and industrial mentions) degrees in Computer Science Engineering from UAM. His research career started in 2012 when he joined the High-Performance Computing and Networking Research Group (HPCN) led by Prof. Dr Javier Aracil, first as a student and later as a researcher as part of the Network of Excellence InterNet Science European project. During his PhD (2014 - 2017), he continued his work at the HPCN group as a technical researcher for the project TRÁFICA and the European projects Fed4Fire and dReDBox, among others. At the same time, he worked at [Naudit HPCN](https://www.naudit.es/en) (2015 - 2018) applying his research in computer network auditing projects with different enterprises. 
-
-In 2022, he became a senior member of the Institute of Electrical and Electronics Engineers ([IEEE](https://www.ieee.org)). In 2023, he became a fellow of the [MIT Catalyst Europe program](https://www.catalysteurope.eu).
-
-Additionally, his teaching experience includes several courses on computer networks, such as Multimedia Networking, Network Planning and Network Management, taught during his time at UAM. Since 2021, he is the main teacher of the course "Applied Philosophy of Science and Data Ethics" for the Master of Data Science at the Faculty of Science, Technology and Medicine (FSTM) of the University of Luxembourg.
-
 ### Contributing to the book {-}
 
 Contributions are welcomed, feel free to open a pull-request in github for small changes and it will be reviewed as soon as possible. However, for larger contributions (e.g. sections, chapters) please contact the main author at carlos.vega [at] lih.lu .
+
+
+

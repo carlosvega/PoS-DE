@@ -39,7 +39,7 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\usepackage[lmargin=4cm,rmargin=3cm,bmargin=3cm]{geometry}
+\usepackage[lmargin=3.5cm,rmargin=3cm,bmargin=2.5cm]{geometry}
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -148,6 +148,15 @@
   fontlower=\small,
   arc=3pt}
 
+\newtcolorbox{simplebox}{
+  colback=white,
+  colframe=black,
+  coltext=black,
+  boxsep=4pt,
+  fontupper=\small,
+  fontlower=\small,
+  arc=3pt
+}
 
 \newenvironment{rnote}{\par\raggedleft}{\par}
 
@@ -180,16 +189,17 @@
 
 \title{Applied Philosophy of Science and Data Ethics}
 \author{Dr.~Carlos Vega}
-\date{2021 - 2024: Last compiled: 2024-11-06}
+\date{2021 - 2025: ~Last compiled: 2025-07-24}
 
 \begin{document}
 \maketitle
 
 \thispagestyle{empty}
 \includepdf{cover.pdf}
-
+\thispagestyle{empty}
 \let\maketitle\oldmaketitle
 \maketitle
+\thispagestyle{empty}
 
 {
 \hypersetup{linkcolor=}
@@ -199,6 +209,8 @@
 \setstretch{1.1}
 \chapter*{Preface}\label{preface}
 \addcontentsline{toc}{chapter}{Preface}
+
+\markboth{Preface}{}
 
 This class book gathers the contents addressed in the course \textbf{Applied Philosophy of Science and Data Ethics} from the \href{https://wwwfr.uni.lu/formations/fstm/master_of_data_science}{Master of Data Science} at the University of Luxembourg (UL). This course will introduce basic philosophical and scientific concepts supported by examples and discussion. The course expects pro-active participation from the students in the form of presentations and essays as well as open debates.
 
@@ -216,34 +228,112 @@ I believe this course should be taught in every computer science faculty. It req
 \section*{Course at UL}\label{course-at-ul}
 \addcontentsline{toc}{section}{Course at UL}
 
-The course related to this class book aims to provide the students with guidelines and methodologies to identify epistemic and ethical issues present in data science. We expect the students to develop a critical eye that helps them mitigate such problems in their daily work as data scientists.
+Most of the contents of this book are taught in the course ``Applied Philosophy of Science and Data Ethics'' in the Master of Data Science at the University of Luxembourg (UL). The course goal is to provide the students with guidelines and methodologies to identify epistemic and ethical issues present in data science. We expect the students to develop a critical eye that helps them mitigate such problems in their daily work as data scientists.
 
 During this course, students will learn by example different layers of the scientific method and how they relate to data science and data ethics. In particular, they will learn how the mechanisms behind the data affect the data analysis, and how the different types of scientific inference condition method choice and affect the conclusions drawn from the analysis. In this sense, examples of statistical abuse, misconduct and bad visualization will be shown together with their, sometimes catastrophic, collateral consequences.
+
+\section*{Target audience}\label{target-audience}
+\addcontentsline{toc}{section}{Target audience}
+
+Before we describe the course topics and objectives, we must acknowledge the characteristics of the students who register for the Master of Data Science at the University of Luxembourg as they will shape the course contents and structure. The study program receives students from the European Union (EU) and abroad, adding several dimensions of diversity, such as native languages, study frameworks, and cultural differences, which increase the richness of the class debates but also showcase differences in the student's background knowledge. Of course, we have students from neighboring countries like Germany, France, or Belgium who are also part of the Bologna zone, ensuring comparability in the standards and quality of higher education qualifications. Students from other continents (e.g., Asia, Africa, and South America) can sometimes constitute most enrolled students depending on the year. On top of these differences, students come from different bachelor backgrounds (e.g., computer science, statistics, biology, physics), and some have had professional experience in their fields. The Master in Data Science is a program from the Department of Mathematics, with half of the courses in the first two semesters consisting of mathematics courses. By way of example, one key difference that can be appreciated during the course in students both from the EU and abroad is their knowledge regarding propositional logic, which is usually taught (if at all) in high school curriculums.
+
+\section*{Course objectives}\label{course-objectives}
+\addcontentsline{toc}{section}{Course objectives}
+
+In line with the European Qualitity Framework, Bachelor degrees require a critical understanding of theories and principles, while Master degrees involve higher specialised knowledge and critical awareness of knowledge issues in a field. In this case, the field at issue is data science and the contents will tackle philosophical and ethical issues concerning data science.
+
+Yet, the aim of this course must not be regarded as offering a complete course on the philosophy of science and data ethics but rather as a leveling course to acquaint the students with the concepts of the philosophy of science and how they relate to the challenges of data science and the current ethical debates of the information era. Importantly, as Dr Grüne-Yanoff highlights, teaching the evolution of scientific methods is pedagogical, especially if done through strategies of hyperbole, skepticism, and discussing historical scientific and ethical errors (Grüne-Yanoff, 2014).
+
+The course objectives include:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Critically appraise the goals of science, so students can distinguish prediction, explanation, understanding, and design, and grasp how different philosophical views shape what counts as scientific success.
+\item
+  Justify methodological choices, because data science involves implicit assumptions and conventions, and students must be able to explain their decisions and recognize how methods evolve over time.
+\item
+  Understand scientific inference, to differentiate between deductive, inductive, and abductive reasoning and relate these to reasoning strategies used in both science and AI systems.
+\item
+  Grasp the epistemology of uncertainty, to understand how science moves from data to belief and why traditional models like the Hypothetico-Deductive method fall short in data science, where probabilistic reasoning, model comparison, and frameworks like Bayesian and frequentist inference better capture uncertainty.
+\item
+  Acknowledge the limits of data, so students appreciate the role of domain knowledge, assumptions, and the iterative nature of inquiry when moving from data to generalizations.
+\item
+  Discriminate between correlation and causation, as confusing the two remains a widespread and harmful error in data-driven fields.
+\item
+  Recognize and mitigate biases, because biases, whether from measurement, sampling, confounding, or algorithms, can distort every stage of the data pipeline.
+\item
+  Understand the role and limits of models and experiments, since modeling, experimental control, and design decisions shape what can be inferred, especially regarding causality and generalizability.
+\item
+  Integrate non-epistemic values, because ethical, legal, and social considerations directly impact how data science is practiced and evaluated in real-world contexts.
+\item
+  Connect concepts, as a meta-goal students should relate philosophical, methodological, and ethical dimensions into a coherent understanding of data science practice.
+\end{enumerate}
+
+The justification of these objectives derives from the work these future data scientists will do. Data science practice is driven by legal, ethical, and resource pressures, so students must see how these forces shape their methods (Obj 9-10) and where each tool reaches its limits (Obj 2; Obj 8). Spotting bias, spurious links, and causal traps in messy data (Obj 6-7) depends on a strong understanding of science's aims, the logic of inference, and the role of domain knowledge (Obj 1; Obj 3-5). The key takeaway message from this course is to question the data science methods, acknowledge that data without domain knowledge is insufficient, and recognize the current ethical debates and how they guide and constrain the data science developments of our time.
+
+\section*{Course structure}\label{course-structure}
+\addcontentsline{toc}{section}{Course structure}
+
+The course is part of the first semester of a two-year master's program. It consists of five chapters covered over 14 weeks, with a 90-minute class each week. These sessions are supplemented by weekly online quizzes, readings, and essay assignments. Depending on the pacing and in-class participation, topics may shift between weeks. To address potential scheduling issues, some video lectures cover topics in detail and can replace in-class lectures if needed to allow more time for discussions, exams and debates. These videos also include foundational content, such as an introduction to basic concepts of propositional logic in Chapter 2.
+
+The current chapters and the order they are taught in class are:
+
+\begin{itemize}
+\tightlist
+\item
+  Chapter 1: Scientific Goals, Methods, and Knowledge (Week 1)
+\item
+  Chapter 2: Scientific Inference (Weeks 2-6)
+\item
+  Chapter 3: Empirical Practices and Models (Weeks 7-9)
+\item
+  Chapter 4: Experimental Control and Statistical Abuse (Weeks 10-12)
+\item
+  Chapter 5: Ethics and Responsibility (Weeks 13-14)
+\end{itemize}
+
+\section*{About this course}\label{about-this-course}
+\addcontentsline{toc}{section}{About this course}
+
+Despite deep historical ties between philosophy and computer science, especially in areas such as logic, the two disciplines have been largely taken apart largely in recent decades. Computer science curricula have increasingly focused on technical and practical applications, such as programming, algorithms, and systems design, while philosophy courses tackling theoretical inquiry and critical thinking have been relegated to other departments. This separation has diminished opportunities for students to explore foundational questions about the nature of computation, the ethics of technological innovation, and the philosophical implications of artificial intelligence. Below, a selection of courses and resources is available as guide for future instructors in the philosophy of science for data science. Moreover, the rest of the paper is accompained with examples and references related to the course content which further extend the materials listed below.
+
+While optional and online courses in topics like philosophy of science and data ethics are available, these subjects are not typically integrated into the core courses of computer science departments. Philosophy of science, in particular, is rarely positioned as a fundamental component of computer science education. This gap calls for better interdisciplinary in computer science programs to bridge technical skills with philosophical inquiry.
+
+Some of these online courses which align with the philosophy of science and data ethics and which have influenced this course, are described below.
+
+The first chapters of this course are inspired by the book from Prof.~Dr Lars-Göran Johansson \citep{johansson2016philosophy} ``Philosophy of science for scientists''. For several years, Prof.~Dr.~Till Grüne-Yanoff taught an online course (now unavailable) titled ``Philosophy of Science for Engineers and Scientists'' on the edX platform, which combined theoretical concepts with practical examples. Currently, he teaches courses on the methodology of science at KTH Royal Institute of Technology in Stockholm, Sweden. He advocates for the revision of the traditional curriculum of Philosophy of Science to better align with modern scientific disciplines \citep{grune2014teaching}. Regarding the second part of the course, which covers data ethics, I would like to thank the Univerisity of Michigan, for their online courses (from which I was already a fan during my PhD). Especially, Prof.~Dr.~H. V. Jagadish's Data Science Ethics course, offered on Coursera by the University of Michigan, which has influenced this course's data ethics content. The University of Oxford's Department for Continuing Education provides short courses on Philosophy of Science and Data Ethics, which offer valuable opportunities for expanding knowledge in these areas.
+
+However, the integration of Philosophy of Science into computer science curricula remains limited and the author has struggled to find dedicated resources and courses. Some exceptions exist, such as the University of Bayreuth in Germany, which offers a Master's program in Philosophy \& Computer Science, and the University of Oxford, with an undergraduate program in Computer Science and Philosophy. More recently, the University of Cordoba in Spain will debut a new bachelor in Mathematics and Philosophy in 2025. These programs highlight the potential for interdisciplinary approaches, though they remain rare in broader computer science education.
+
+Additionally, a great variety of books are available and many have shaped the course materials, including: The Book of Why \citep{book-of-why}, Ethics and Data Science \citep{loukides2018ethics}, Understanding philosophy of science \citep{ladyman2012understanding}, Philosophy of Natural Science \citep{hempel-pos}. Again, one key work is Philosophy of Science for Scientists \citep{johansson2016philosophy}, which emphasizes that lessons from natural sciences are relevant to students and researchers in social and human sciences, to which I must add data scientists. Other books aimed toward the general public such as Philosophy of science: A very short introduction \citep{okasha-pos} or Philosophy of science : a new introduction \citep{barker-pos} offer a variety of examples to illustrate the topics of Philosophy of Science. Some more have influenced examples and ethics lessons such as How charts lie \citep{cairo2019charts} and Automating inequality \citep{eubanks2018automating}.
+
+Since 2021, the author regularly updates this online class book that suits both students and instructors with topics taught in class and additional material.
+
+I hope any resemblance or imitation is seen as an act of flattery.
+
+\subsection*{Roadmap for instructors}\label{roadmap-for-instructors}
+\addcontentsline{toc}{subsection}{Roadmap for instructors}
+
+As a brief roadmap for instructors without formal training in philosophy, this author believes \citep{okasha-pos} and \citep{book-of-why} (chapters 1 to 5) offer an accessible way into core issues of Philosophy of Science and causal inference. This can be complemented with \citep{johansson2016philosophy} (chapters 2, 3, 4 and 13) and \citep{ladyman2012understanding} (chapter 2) as reference books to understand and link relevant concepts. Though, the most important task is to connect such issues with the instructor expertise in data science to enahnce the applied aspect of the course.
 
 \section*{Disclaimer}\label{disclaimer}
 \addcontentsline{toc}{section}{Disclaimer}
 
 Although the impact and extension of the topics addressed in this class book (and the course) are broad and diverse, its length is limited. Hence the scope and depth of the contents are restricted. Consequently, several topics on Philosophy of Science are tackled superficially while some others are completely ignored. Such philosophical questions are handled from a practical data science point of view. Similarly, Data Ethics is a relatively new matter in continuous evolution. Therefore we will try to cope with the main issues in the most practical way.
 
-\section*{Learning outcomes}\label{learning-outcomes}
-\addcontentsline{toc}{section}{Learning outcomes}
+\section*{About the author}\label{about-the-author}
+\addcontentsline{toc}{section}{About the author}
 
-In line with the European Qualitity Framework, Bachelor degrees require a critical understanding of theories and principles, while Master degrees involve higher specialised knowledge and critical awareness of knowledge issues in a field. In this case, the field at issue is data science and the contents will tackle philosophical and ethical issues concerning data science. Therefore, the aim is to provide students with a better understanding of method justification, to increase their knowledge about such methods, their scope, purpose and relation to other practices.
+Since October 2023 \href{https://researchportal.lih.lu/en/persons/carlos-vega}{Carlos Vega} works as a Research Engineer in Digital Health at the \textbf{Luxembourg Institute of Health} (LIH) in the Department of Medical Informatics led by the CMIO (Chief Medical Information Officer) Dr.~Maximilian Fünfgeld. Since September 2023, he is a fellow of MIT Catalyst Europe innovation program, co-leading two teams: (1) on improving emergency response for cardiac device patients and (2) tackling school absenteeism linked to period poverty in Ghana.
 
-\begin{itemize}
-\tightlist
-\item
-  Get familiar with the scientific goals and methods.
-\item
-  Learn the most common data science misconduct problems.
-\item
-  Critically evaluate ethical issues and method choice.
-\end{itemize}
+From 2018 until September 2023, he worked as a postdoctoral researcher in the Bioinformatics Core Group led by Prof.~Dr Reinhard Schneider at the \textbf{Luxembourg Centre for Systems Biomedicine} (LCSB) at the University of Luxembourg.
 
-\section*{About this course}\label{about-this-course}
-\addcontentsline{toc}{section}{About this course}
+Previously, he worked at the Autonomous University of Madrid (UAM) researching high-performance solutions for big data analysis as well as anomaly detection methodologies. He received his B.Sc (2013), M.Sc (2014) and PhD (2018 with \emph{cum laude} and industrial mentions) degrees in Computer Science Engineering from UAM. His research career started in 2012 when he joined the High-Performance Computing and Networking Research Group (HPCN) led by Prof.~Dr Javier Aracil, first as a student and later as a researcher as part of the Network of Excellence InterNet Science European project. During his PhD (2014 - 2017), he continued his work at the HPCN group as a technical researcher for the project TRÁFICA and the European projects Fed4Fire and dReDBox, among others. At the same time, he worked at \href{https://www.naudit.es/en}{Naudit HPCN} (2015 - 2018) applying his research in computer network auditing projects with different enterprises.
 
-Some sections from the first chapters of this course are inspired by the book from Prof.~Dr Lars-Göran Johansson \citep{johansson2016philosophy} and the educational works of Prof.~Dr Till Grüne-Yanoff \citep{grune2014teaching}, such as his great course at EDX on ``Philosophy of Science for Engineers and Scientists''. Regarding the second part of the course, which covers data ethics, I would like to thank the Univerisity of Michigan, for their online courses (from which I was already a fan during my PhD) and especially Prof.~Dr H. V. Jagadish for his course on Data Science Ethics which inspired me on the contents and examples of this course. Moreover, this last part of the course would not have been possible without many relevant books on the topics tackled in this course (see References). Including The Book of Why \citep{book-of-why}; Ethics and Data Science \citep{loukides2018ethics}; Philosophy of Natural Science \citep{hempel-pos}; How charts lie \citep{cairo2019charts}; Automating inequality \citep{eubanks2018automating} and many others. I hope any resemblance or imitation is seen as an act of flattery.
+In 2022, he became a senior member of the Institute of Electrical and Electronics Engineers (\href{https://www.ieee.org}{IEEE}). In 2023, he became a fellow of the \href{https://www.catalysteurope.eu}{MIT Catalyst Europe program}.
+
+Additionally, his past teaching experience includes several courses on computer networks, such as Multimedia Networking, Network Planning and Network Management, taught during his time at UAM. Since 2021, he is the main teacher of the course ``Applied Philosophy of Science and Data Ethics'' for the Master of Data Science at the Faculty of Science, Technology and Medicine (FSTM) of the University of Luxembourg.
 
 \section*{About this class book}\label{about-this-class-book}
 \addcontentsline{toc}{section}{About this class book}
@@ -277,19 +367,6 @@ Under the following terms:
   \textbf{No additional restrictions}: You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
 \end{itemize}
 
-\section*{About the author}\label{about-the-author}
-\addcontentsline{toc}{section}{About the author}
-
-Since October 2023 \href{https://researchportal.lih.lu/en/persons/carlos-vega}{Carlos Vega} works as a Research Engineer in Digital Health at the \textbf{Luxembourg Institute of Health} (LIH) in the IT Expertise in Health Data team of the Data Integration and Analysis Unit led by the CMIO (Chief Medical Information Officer) Dr.~Maximilian Fünfgeld.
-
-From 2018 until September 2023, he worked as a postdoctoral researcher in the Bioinformatics Core Group led by Prof.~Dr Reinhard Schneider at the \textbf{Luxembourg Centre for Systems Biomedicine} (LCSB) at the University of Luxembourg.
-
-Previously, he worked at the Autonomous University of Madrid (UAM) researching high-performance solutions for big data analysis as well as anomaly detection methodologies. He received his B.Sc (2013), M.Sc (2014) and PhD (2018 with \emph{cum laude} and industrial mentions) degrees in Computer Science Engineering from UAM. His research career started in 2012 when he joined the High-Performance Computing and Networking Research Group (HPCN) led by Prof.~Dr Javier Aracil, first as a student and later as a researcher as part of the Network of Excellence InterNet Science European project. During his PhD (2014 - 2017), he continued his work at the HPCN group as a technical researcher for the project TRÁFICA and the European projects Fed4Fire and dReDBox, among others. At the same time, he worked at \href{https://www.naudit.es/en}{Naudit HPCN} (2015 - 2018) applying his research in computer network auditing projects with different enterprises.
-
-In 2022, he became a senior member of the Institute of Electrical and Electronics Engineers (\href{https://www.ieee.org}{IEEE}). In 2023, he became a fellow of the \href{https://www.catalysteurope.eu}{MIT Catalyst Europe program}.
-
-Additionally, his teaching experience includes several courses on computer networks, such as Multimedia Networking, Network Planning and Network Management, taught during his time at UAM. Since 2021, he is the main teacher of the course ``Applied Philosophy of Science and Data Ethics'' for the Master of Data Science at the Faculty of Science, Technology and Medicine (FSTM) of the University of Luxembourg.
-
 \subsection*{Contributing to the book}\label{contributing-to-the-book}
 \addcontentsline{toc}{subsection}{Contributing to the book}
 
@@ -322,6 +399,14 @@ Illustrated with examples, this course will tackle the scientific goals, the def
 
 \end{tipbox}
 
+\begin{simplebox}
+
+\textbf{Course objectives}
+
+This chapter supports course objectives 1--3, by introducing key concepts through simple messages and analogies that build understanding without overwhelming students. Relevant examples are resumed in later chapters to connect contents. Higher-level debates (e.g., Thomas Kuhn, realism vs.~antirealism) are omitted to focus on the core ideas of the first course weeks.
+
+\end{simplebox}
+
 \section{What is Science?}\label{what-is-science}
 
 \begin{quote}
@@ -337,7 +422,9 @@ Rather than finding a proper definition of science, which many have struggled wi
 
 \subsection{Scientific Goals and Knowledge}\label{scientific-goals-and-knowledge}
 
-The main goals of science include prediction, explanation, understanding, and design. Through observation we can draw explanations and achieve understanding of nature phenomena. Once we understand we can aim to make predictions. Thanks to our understanding we can as well design experiments, instruments and solutions that help us further explaining, understanding and predicting our world. Predicting \(X\) means knowing that at time \emph{t}, \(X\) will happen. Explaining \(X\) means to know the cause(s) that produced \(X\). Designing \(X\) requires knowing that artifact \(X\) will satisfy certain functions \(F\). All these goals share a common ingredient, scientific knowledge. Scientists arrive to such knowledge by applying the scientific method (see § \ref{sci-method}). The goals of science are achieved through a series of activities that constitute the scientific method which include systematic observation and experimentation, inductive and deductive reasoning, and the formation and testing of hypotheses and theories.
+In this course we consider prediction, explanation, understanding and design as the most accessible goals of science for the students. Typically, scientific inquiry begins with observation which allow us to make predictions, develop explanations and achieve understanding of nature phenomena. Though, as we will see, these do not necessarily follow a fixed order. Thanks to our understanding we can as well design experiments, instruments and solutions that help us better gather data and further explain, understand, and predict our world. However, the pursuit of one goal does not necessarily contribute to others, with trade-offs often at play \citep{potochnik2015diverse}. The goals of data science mirror this pluralism but all these goals share a common ingredient: knowledge.
+
+Predicting \(X\) means knowing that at time \emph{t}, \(X\) will happen. Explaining \(X\) means to know the cause(s) that produced \(X\). Designing \(X\) requires knowing that artifact \(X\) will satisfy certain functions \(F\). Again, all these goals share a common ingredient, scientific knowledge. Scientists arrive to such knowledge by applying the scientific method (see § \ref{sci-method}). The goals of science are achieved through a series of activities that constitute the scientific method which include systematic observation and experimentation, inductive and deductive reasoning, and the formation and testing of hypotheses and theories.
 
 \begin{quote}
 Knowledge is justified true belief --- Plato (428 - 348 BC)
@@ -368,6 +455,14 @@ The most popular definition of knowledge was given by philosopher Plato in the a
 \item
   \textbf{Belief} because even under justified reasons about true facts, people can choose not to believe such knowledge. We define belief as to the state of mind of a person that thinks something is the case. This state of mind is of course \emph{tied to the individual} and \emph{comes in degrees}. We act based on our beliefs and values, and new knowledge can affect these.
 \end{itemize}
+
+\begin{simplebox}
+
+\textbf{Content note}
+
+This definition of knowledge serves as a simple but useful entry point into epistemological thinking for those unfamiliar with these concepts. Although it does not fully capture more current epistemological views like Bayesian epistemology, it is a pedagogical and mnemonic tool to introduce several concepts at once. First, values like honesty and transparency from true. Then, justification, which is central in method choice and model selection. Last, belief, which reminds us that subjective priors and cognitive biases influence reasoning. Through the course we will also see their shortcomings.
+
+\end{simplebox}
 
 Certainty of belief and truth are different. Is possible to have certain beliefs about false claims.
 Similarly, we can have uncertain beliefs about true claims. From tossing a coin, we can expect a fair probability in which head and tails have the same probability. But we cannot know for sure if the coin is biased or not until it lands. Similarly, is possible that even our best theories are wrong or partially wrong. Even after many successful experiments, they might be proved wrong (see \ref{neptune-vulcan}). In fact, scientific hypotheses can rarely if ever be proved right, they can, however, be proven wrong.
@@ -585,7 +680,7 @@ The third step of the scientific method (see § \ref{sci-method}) requires guess
 
 \subsection{Why Most Published Research Findings Are False}\label{why-most-published-research-findings-are-false}
 
-In his work \href{https://doi.org/10.1371/journal.pmed.0020124}{Why Most Published Research Findings Are False}, John P. A. Ioannidis (professor at the Stanford School of Medicine) argues that ``the probability that a research claim is true may depend on study power (see note) and bias, the number of other studies on the same question, and, importantly, the ratio of true to no relationships among the relationships probed in each scientific field'' \citep{ioannidis2005most}.
+In his \href{https://doi.org/10.1371/journal.pmed.0020124}{Why Most Published Research Findings Are False}, John P. A. Ioannidis (Prof.~at the Stanford School of Medicine) argues that ``the probability that a research claim is true may depend on study power (see note) and bias, the number of other studies on the same question, and, importantly, the ratio of true to no relationships among the relationships probed in each scientific field'' \citep{ioannidis2005most}.
 
 In the form of corollaries, the author enumerates several factors making a paper with a positive result more likely to enter the literature and suppress negative-result papers. For instance, the popularity of a field or a trendy topic has more chances to have more publications about. Financial or political interests can act as prejudices affecting research and publication. Other factors such as sample size and effect sizes (e.g.~the strength of the relationship between two variables in a population), experimenter bias, white hat bias (e.g.~cherry picking the evidence and publication bias); flexibility in designs, definitions, outcomes, and analytical modes.
 
@@ -593,13 +688,13 @@ In the form of corollaries, the author enumerates several factors making a paper
 These corollaries consider each factor separately, but these factors often influence each other. For example, investigators working in fields where true effect sizes are perceived to be small may be more likely to perform large studies than investigators working in fields where true effect sizes are perceived to be large. --- \citep{ioannidis2005most}
 \end{quote}
 
-In summary, the problem is that researchers and institutions tend to value and promote ``positive results'' and discard negative results as not interesting to be published. This creates a bias in the scientific literature towards certain topics, designs and knowledge.
+In summary, the issue is that academia tends to value and promote ``positive results'' and discard negative results as not interesting to be published. This biases scientific literature towards certain topics, designs and knowledge.
 
 \begin{quote}
 Thus, each team may prioritize on pursuing and disseminating its most impressive ``positive'' results. ``Negative'' results may become attractive for dissemination only if some other team has found a ``positive'' association on the same question. In that case, it may be attractive to refute a claim made in some prestigious journal. --- \citep{ioannidis2005most}
 \end{quote}
 
-Consider the following example provided by the author. Let \(R\) be the ratio of the number of ``true relationships'' to ``no relationships'' among those tested in the field. Let \(u\) be the proportion of probed analyses that would not have been ``research findings'', but nevertheless end up presented and reported as such, because of bias. Importantly, ``Bias should not be confused with chance variability that causes some findings to be false by chance even though the study design, data, analysis, and presentation are perfect. Bias can entail manipulation in the analysis or reporting of findings. Selective or distorted reporting is a typical form of such bias'' \citep{ioannidis2005most}.
+Consider the following example. Let \(R\) be the ratio of the number of ``true relationships'' to ``no relationships'' among those tested in the field. Let \(u\) be the proportion of probed analyses that would not have been ``research findings'', but nevertheless end up presented and reported as such, because of bias. Importantly, ``Bias should not be confused with chance variability that causes some findings to be false by chance even though the study design, data, analysis, and presentation are perfect. Bias can entail manipulation in the analysis or reporting of findings. Selective or distorted reporting is a typical form of such bias'' \citep{ioannidis2005most}.
 
 \begin{quote}
 Let us assume that a team of investigators performs a whole genome association study to test whether any of 100,000 gene polymorphisms are associated with susceptibility to schizophrenia. Based on what we know about the extent of heritability of the disease, it is reasonable to expect that probably around ten gene polymorphisms among those tested would be truly associated with schizophrenia, with relatively similar odds ratios around 1.3 for the ten or so polymorphisms and with a fairly similar power to identify any of them. Then \(R = 10/100,000 = 10^{−4}\), and the pre-study probability for any polymorphism to be associated with schizophrenia is also \(R/(R + 1) = 10^{−4}\). Let us also suppose that the study has 60\% power to find an association with an odds ratio of 1.3 at \(\alpha = 0.05\). Then it can be estimated that if a statistically significant association is found with the \(p\)-value barely crossing the 0.05 threshold, the post-study probability that this is true increases about 12-fold compared with the pre-study probability, but it is still only \(12 × 10^{−4}\).
@@ -627,11 +722,19 @@ The \textbf{study power} is defined as ``the ability of a study to detect an eff
 
 \section{Overview}\label{overview}
 
-Humans have a natural ability to conjecture and spot relationships about the world, \emph{jumping} from hypotheses to conclusions. The scientific attitude is to keep such \emph{jumps} under control and use a well defined procedure to arrive to a conclusion from an hypothesis. In this chapter we will examine in detail those procedures.
+One of the fundamental questions of the philosophy of science is ``How can we obtain knowledge as opposed to mere belief or opinion?'' \citep{ladyman2012understanding}. Humans have a natural ability to conjecture and spot relationships about the world, \emph{jumping} from hypotheses to conclusions. The scientific attitude is to keep such \emph{jumps} under control and use a well defined procedure to arrive to a conclusion from an hypothesis. This chapter taughts how conclusions can be reached from known facts in different ways. For this, a sound basis of logic is needed to understand more complex concepts from this course. The reader will tackle deductive and inductive arguments and link them to data science applications. With this the reader will be equipped to tackle other topics of scientific inference such as the problem of induction, the Hypothetico-deductive method and Falsificationism.
 
 \begin{quote}
 But our sun is only one of a billion-trillion stars within the observable universe. And those countless suns all obey natural laws some of which are already known to us. How did we discover that there are such laws? If we lived on a planet where nothing ever changed, there wouldn't be much to do, there'd be nothing to figure out. There'd be no impetus for science. And if we lived in an unpredictable world where things changed in random or very complex ways, we wouldn't be able to figure things out. And again, there'd be no such thing as science. But we live in an in between universe where things change alright, but according to patterns, rules, or as we call them, laws of nature. If I throw a stick up in the air, it always falls down. If the sun sets in the west, it always rises again the next morning in the east. And so it's possible to figure things out. We can do science. And with it we can improve our lives. --- Carl Sagan
 \end{quote}
+
+\begin{simplebox}
+
+\textbf{Course objectives}
+
+A foundational grasp of logic is essential to understand scientific inference. This chapter content supports objectives 3, 4 and 6 through examples that motivate in-class debate (e.g., Hume, Popper, Hempel) with a narrative that moves from initial naïve support of theories, to a deeper reflection of their weaknesses and later emphasis on the relevant pieces that affect the practice of data science.
+
+\end{simplebox}
 
 \section{Types of inferences}\label{types-of-inferences}
 
@@ -805,7 +908,7 @@ The conclusion then is that our tendency to project past regularities into the f
 
 \textbf{Note on uniformity of nature:}
 
-Notice how Machine Learning (ML) models can be regarded as inductive machines performing inductive inferences based on previous observations. For the ML model to perform well on novel data, is often assumed that novel data will resemble past data.
+Notice how ML models can be regarded as inductive machines performing inductive inferences based on previous observations. For the ML model to perform well on novel data, is often assumed that novel data will resemble past data.
 
 Hume refers to this assumption as the Principle of Uniformity of Nature: \emph{``If reason determined us, it would proceed upon that principle, that instances, of which we have had no experience, must resemble those, of which we have had experience, and that the course of nature continues always uniformly the same.''}
 
@@ -843,6 +946,18 @@ Consequently, Hume concludes that no inductive inference rule can be justified. 
 If we visualise the data as points in a plane; every set of finite points belongs to infinite functions or curves. The problem of induction, in this case, consists in establishing criteria that allow us to say that the finite series of data confirms only one of the functions, or less dramatically but just as problematic, that one is more confirmed than the others \citep{diez1997fundamentos}. (See the problem of underdetermination in §\ref{confirmation}).
 
 \end{tipbox}
+
+\begin{simplebox}
+
+\textbf{Ancient views on the regress argument}
+
+Pyrrhonist philosopher Sextus Empiricus (mid-late 2nd century CE) raised concerns which applied to all types of knowledge and doubted the validity of induction long before David Hume, raising the regress argument against all forms of reasoning (\href{https://en.wikipedia.org/wiki/Sextus_Empiricus\#Philosophy}{Wikipedia}). This view is known as Pyrrhonian skepticism.
+
+\begin{quote}
+Those who claim for themselves to judge the truth are bound to possess a criterion of truth. This criterion, then, either is without a judge's approval or has been approved. But if it is without approval, whence comes it that it is trustworthy? For no matter of dispute is to be trusted without judging. And, if it has been approved, that which approves it, in turn, either has been approved or has not been approved, and so on ad infinitum. -- Sextus Empiricus
+\end{quote}
+
+\end{simplebox}
 
 \section{The Hypothetico-deductive Method}\label{the-hypothetico-deductive-method}
 
@@ -895,7 +1010,16 @@ For relevant examples, check \ref{semmelweis} and \ref{wason}.
 
 \subsection{A good hypothesis}\label{a-good-hypothesis}
 
-There are though some criteria for a \href{https://opentext.wsu.edu/carriecuttler/chapter/developing-a-hypothesis/}{good hypothesis}. Apart from other criteria such as parsimony, scope, fruitfulness and conservatism, these are other criteria to recall.
+\begin{figure}
+
+{\centering \includegraphics[width=0.66\linewidth]{Figures/hypothesis_generation} 
+
+}
+
+\caption{The key aspect being conveyed in this simple exchange is that one of the many good practices in science (no matter the aspect, though the specifics may change according to the precise field of study) is that one should first have an idea of what you can test and then perform the test to confirm (or rule out) your idea. Title text: "Frazzled scientists are requesting that everyone please stop generating hypotheses for a little bit while they work through the backlog". Source: xkcd.com.}\label{fig:xkcd-hypothesis}
+\end{figure}
+
+Still, there are some criteria for a \href{https://opentext.wsu.edu/carriecuttler/chapter/developing-a-hypothesis/}{good hypothesis}. Apart from criteria such as parsimony, scope, fruitfulness and conservatism, these are other criteria to recall.
 
 \begin{itemize}
 \item
@@ -909,15 +1033,6 @@ There are though some criteria for a \href{https://opentext.wsu.edu/carriecuttle
 \item
   Finally, it should have some generality (e.g.~``things of certain type\ldots{}'') or be about some non-directly observable property of a particular.
 \end{itemize}
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.66\linewidth]{Figures/hypothesis_generation} 
-
-}
-
-\caption{The key aspect being conveyed in this simple exchange is that one of the many good practices in science (no matter the aspect, though the specifics may change according to the precise field of study) is that one should first have an idea of what you can test and then perform the test to confirm (or rule out) your idea. Title text: "Frazzled scientists are requesting that everyone please stop generating hypotheses for a little bit while they work through the backlog". Source: xkcd.com.}\label{fig:xkcd-hypothesis}
-\end{figure}
 
 \subsection{Falsification}\label{falsification}
 
@@ -1087,13 +1202,115 @@ An additional problem to the compatibility issue, is that very many hypotheses a
 
 \textbf{Note for data scientists!}
 
-According to \emph{anti-realists}, there will always be multiple \emph{competing} theories about unobservable entities (e.g.~atoms) which can account for the data equally well. In other words, such theories are \emph{undetermined} by the empirical data. But then, how do scientists justify choosing one theory over another? \emph{Realists} often reply that aforementioned scenario is only possible in the trivial sense. In fact, scientists often struggle to find even \emph{one} theory that fits the data properly.
+According to \textbf{anti-realists}, there will always be multiple \textbf{competing} theories about unobservable entities (e.g.~atoms) which can account for the data equally well. In other words, such theories are \textbf{undetermined} by the empirical data. But then, how do scientists justify choosing one theory over another? \textbf{Realists} often reply that aforementioned scenario is only possible in the trivial sense. In fact, scientists often struggle to find even \emph{one} theory that fits the data properly.
 
 But why is this important for data scientists? Often you will find many ML models or solutions that fit your available data or fulfil your requirements, and yet you will have to decide which model/solution is best. If possible, validation with external data and other assessments must be conducted, but sometimes solutions are also chosen based on \emph{non-epistemic} values, such as making society more just or making money.
 
-Is also important to notice how the problem of underdetermination relates to the popular \emph{No Free Lunch Theorem} which is very relevant in the Machine Learning community \citep{dotan2020theory}. For more on the NFL read \citep{domingos2015master}.
+Is also important to notice how the problem of underdetermination relates to the popular \textbf{No Free Lunch Theorem} which is very relevant in the Machine Learning community \citep{dotan2020theory}. For more on the NFL read \citep{domingos2015master}.
 
 \end{tipbox}
+
+\subsection{Beyond the Hypothetico-Deductive Method: Bayesian Inference and the Logic of Uncertainty}\label{bayesian-inference}
+
+While the HD method offers a simple and useful framework to think about how science proceeds, from hypothesis formation to testing via deduction, it has important limitations. These become especially clear in data-driven disciplines such as machine learning, statistics, and empirical sciences that rely on probabilistic reasoning. Here, we examine alternative approaches that better accommodate uncertainty, quantify degrees of belief, and reflect how inference is conducted in real-world contexts.
+
+\subsubsection{Limitations of the HD method in probabilistic contexts}\label{limitations-of-the-hd-method-in-probabilistic-contexts}
+
+In the HD method, hypotheses are tested by deducing observable consequences and then checking whether those consequences occur. If any of the deduced implications are false, the hypothesis is rejected (falsified). If they are all true, the hypothesis is not proven true, but may be confirmed.
+
+However, most scientific theories, especially those in statistical sciences, are not structured as strict universal generalizations like ``all swans are white''. Instead, they are probabilistic in nature. For example:
+
+\begin{itemize}
+\tightlist
+\item
+  ``If a drug is effective, then 80\% of patients will recover.''
+\item
+  ``If a coin is fair, then heads will appear approximately 50\% of the time.''
+\end{itemize}
+
+Here, the predictions are not strictly entailed by the hypothesis. They are probabilistic expectations. This weakens the applicability of modus tollens: if only 60\% of patients recover, is the hypothesis falsified? Not necessarily. In probabilistic contexts, observing an outcome that deviates from the expected does not conclusively falsify the hypothesis, because such deviations are themselves expected to occur with some probability. \textbf{The data may be compatible with both the hypothesis and the null hypothesis}, making it difficult to draw a sharp deductive conclusion. Instead of strict falsification, we assess how well the data supports one hypothesis over another, often in terms of likelihood or posterior probability.
+
+Moreover, empirical data is noisy. Measurement error, incomplete information, and stochastic processes mean that consequences of a hypothesis may deviate from what is expected even if the hypothesis is ``mostly'' correct. Under these circumstances, we need a more flexible form of inference, i.e., probabilistic inference, that allows us to reason under uncertainty.
+
+\subsubsection{Bayesian Epistemology and Conditionalization}\label{bayesian-epistemology-and-conditionalization}
+
+Bayesian inference offers a model of rational belief revision. In contrast to the HD method, which evaluates hypotheses in an all-or-nothing fashion, the Bayesian approach updates degrees of belief (probabilities) in light of new evidence. Suppose we have a hypothesis \(H\) and we observe some data \(D\). The central rule of Bayesian updating is Bayes' theorem:
+
+Bayes' theorem: \(P(H \mid D) = \frac{P(D \mid H) \cdot P(H)}{P(D)}\)
+
+This formula tells us how to update our belief in \(H\) after observing \(D\). Key terms:
+
+\begin{itemize}
+\tightlist
+\item
+  \(P(H)\): the prior probability of the hypothesis before seeing the data.
+\item
+  \(P(D \mid H)\): the likelihood of the data assuming the hypothesis is true.
+\item
+  \(P(H \mid D)\): the posterior probability of the hypothesis after updating with the data.
+\end{itemize}
+
+This rule allows beliefs to change incrementally as new evidence becomes available, reflecting both prior knowledge and the strength of the data. It avoids the binary logic of the HD method and instead provides a continuous scale of confidence. Where the HD method discards a hypothesis after a single negative test, Bayesian inference merely lowers its probability, unless the evidence is truly decisive \citep{howson2006scientific}.
+
+\subsubsection{Bayesian vs Frequentist Views}\label{bayesian-vs-frequentist-views}
+
+There are two dominant interpretations of probability in scientific inference:
+
+\begin{itemize}
+\tightlist
+\item
+  Frequentist: Probabilities refer to long-run relative frequencies of observable events. Hypotheses are fixed and not assigned probabilities. Evidence is used to reject or fail to reject a hypothesis.
+\item
+  Bayesian: Probabilities reflect subjective or rational degrees of belief. Hypotheses themselves are uncertain, and can be compared based on their posterior probabilities.
+\end{itemize}
+
+Both perspectives are widely used in science and data analysis. For example:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2081}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3960}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3960}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Topic
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Frequentist Perspective
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Bayesian Perspective
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Interpretation of Probability & Long-run frequency of events & Degree of belief (subjective or epistemic) \\
+Hypotheses & Fixed and not assigned probabilities & Treated as uncertain; assigned prior and updated posterior \\
+Learning from Data & Estimation via Maximum Likelihood (MLE), confidence intervals & Posterior inference via Bayes' Theorem \\
+Inference & Hypothesis testing using p-values & Probability of hypothesis given data, i.e., \texttt{P(H\textbar{}D)} \\
+Updating & No explicit mechanism; fixed once data is observed & Prior updated with data to form posterior \\
+ML applications & Parameter estimation, frequentist confidence & Bayesian networks, uncertainty quantification \\
+\end{longtable}
+
+Bayesian inference is especially relevant in machine learning, where models are constantly updated as new data is acquired. For example, recommender systems revise their predictions as user preferences evolve, and autonomous vehicles update environmental models in real time.
+
+\begin{tipbox}
+
+\textbf{Note for data scientists!}
+
+In Bayesian Machine Learning, priors allow incorporation of domain knowledge into model training. For instance, prior beliefs about plausible parameter ranges can prevent overfitting in small-data regimes. In deep learning, Bayesian neural networks use probability distributions over weights, allowing uncertainty estimation in predictions. These methods are crucial in high-stakes applications such as medical diagnosis, where not knowing the confidence of a prediction can be dangerous.
+
+\end{tipbox}
+
+\subsubsection{Bayesian Inference and the Problem of Induction}\label{bayesian-inference-and-the-problem-of-induction}
+
+Bayesian epistemology offers one response to Hume's problem of induction. It does not deny the fallibility of inductive inference, but rather makes it explicit. In Bayesian terms, learning from experience is about adjusting belief in hypotheses as new evidence accumulates.
+
+However, this still does not justify induction in the absolute sense. It formalizes how we might reasonably behave given certain starting beliefs and observations, but it does not explain why those beliefs are justified in the first place. As some philosophers argue, Bayesianism presupposes that some inductive inferences are valid; it does not solve Hume's problem but reframes it.
+
+\subsubsection{Underdetermination and Bayesian Model Selection}\label{underdetermination-and-bayesian-model-selection}
+
+As seen with Confirmation in section \ref{confirmation}, many hypotheses can be consistent with the same data. This is known as the problem of underdetermination. Bayesian reasoning provides one approach to this problem by allowing us to compare models in terms of their posterior probabilities. Models with higher likelihood given the data, and more plausible priors, are preferred.
+
+Still, choosing priors is an open issue. Different priors can lead to different posterior conclusions, raising philosophical concerns about \textbf{subjectivity}. In practice, however, prior sensitivity can be tested and robustified through sensitivity analysis and hierarchical modeling.
 
 \section{Other types of inference}\label{other-types-of-inference}
 
@@ -1355,7 +1572,7 @@ In the absence of unfavorable evidence, the confirmation of a hypothesis will no
 
 \textbf{Note for data scientists!}
 
-Notice how Machine Learning (ML) models can also be affected by the previous statement. Many researchers blindly rely on the dogma \emph{the more data, the merrier} but is not just the amount of data that matters but also its variety. The greater the variety, the stronger the resulting support for the trained model.
+Notice how ML models can also be affected by the previous statement. Many researchers blindly rely on the dogma \emph{the more data, the merrier} but is not just the amount of data that matters but also its variety. The greater the variety, the stronger the resulting support for the trained model.
 
 \end{tipbox}
 
@@ -1544,6 +1761,14 @@ In the case of Amazon the false hypothesis and background assumptions were found
 I would like to introduce this chapter in the same way the Book of Why \citep{book-of-why} introduces its fourth chapter ``Slaying the lurking variable''. During the times of Babylonian King Nebuchadnezzar (642 BC - 562 BC), one captive -- Daniel -- refused to eat royal meat offered by the King as part of their education and service in the court since it did not comply with his religious beliefs. Instead, Daniel asked to be fed on a vegetable diet. The overseer was reluctant as he thought the servants would lose weight and become weaker. Daniel proposed an experiment to convince his overseer. For ten days, one group of servants would be given a vegetable diet, while another group of servants would eat the king's meat. Then, the overseer would compare both groups and see that the vegetable diet did not reduce their strength. Of course, the experiment was a success, and the king was so impressed that he granted Daniel a favoured place in the court.
 
 This example synthesizes the process of controlled experiments employed nowadays in experimental science. The overseer poses a question, \emph{will the vegetarian diet cause my servants to lose weight?}. There it is our hypothesis. To address the question, Daniel proposed a methodology. Divide the servants in two identical groups. Give one group a new treatment (e.g.~diet or a drug), while another group (control) remains under no special treatment. Of course, the two groups should be comparable and representative of some population in order to transfer the conclusions to the population at large. This process allowed Daniel to show the \emph{causal effect} (beware, we will tackle this in Chapter \ref{stats-abuse}) of the diet. Moreover, Daniel's experiment was prospective (in contrast to retrospective studies) as the groups were chosen in advance. Prospective controlled trials are a common characteristic of sound science. Still, Daniel did not think of everything, but we will see that in Chapter \ref{stats-abuse}.
+
+\begin{simplebox}
+
+\textbf{Course objectives}
+
+This chapter addresses objectives 5 to 8 by illustrating the varied roles of data across experiments, observational studies, and models. Aimed at students unfamiliar with scientific studies and causal inference, it highlights their limits through examples that raise questions to be tackled in the chapter dedicated to experimental control and statistical abuse.
+
+\end{simplebox}
 
 \section{What is an experiment?}\label{what-is-an-experiment}
 
@@ -2470,7 +2695,15 @@ The term \emph{``confounding''} means \emph{``to pour, mingle, or mix together''
 \caption{Most basic version of confounding situation: Z is a confounder of the proposed causal relationship between X and Y.}\label{fig:confounder-simple}
 \end{figure}
 
-\subsection{The smoke debate - Part II}\label{the-smoke-debate---part-ii}
+\begin{simplebox}
+
+\textbf{Course objectives}
+
+At the end of this chapter, most objectives will have been strengthen, with this chapter focused on wrapping up objectives 5 to 8. Examples from natural and social sciences help illustrate control techniques, which are then connected to data science. This fosters discussion with the students, motivating them to recognise similar issues in data science and understand techniques to mitigate them.
+
+\end{simplebox}
+
+\section{The smoke debate - Part II}\label{the-smoke-debate---part-ii}
 
 
 
@@ -2493,7 +2726,7 @@ The above's explanation shows that the association between smoking and lung canc
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.7\linewidth]{Figures/SmokeDebate_diagram} 
+{\centering \includegraphics[width=0.8\linewidth]{Figures/SmokeDebate_diagram} 
 
 }
 
@@ -2759,6 +2992,8 @@ As we have seen during this course, data alone is not enough. Note that this is 
 
 A relevant example on how data depends on its context is user ratings or opinions. For instance, the meaning of \emph{fashionable clothes} changes over time, as do political terms. This issue is known as \emph{concept drift} \citep{kubat2017introduction}. Similarly, a text-mining engine to tag biology terms with the corresponding ontology terms may confuse elements between species, as several entities appear in multiple animals or organisms. Context is crucial for external validation and translation of solutions into real-world settings. A system for clothes recommendation should adapt to countries, cultures or ages. Similarly, a health system to predict patient risk based on disease comorbidities must be \emph{calibrated} for each country or region (e.g.~Diabetes treatment is often affordable in the EU, but an expensive treatment in the USA, which increases its mortality rate).
 
+Figure \ref{fig:inference-engine} represents an ideal causal inference engine for scientific questions. Today, causal models for scientific applications are based on a similar design. It is important to notice how this diagram showcases the importance of extra-observational information (i.e.~information other than data) such as \textbf{assumptions}, which derive from the available \textbf{knowledge}. With them, a \textbf{causal model} is built in any of its different forms, e.g.~logical statements, structural equations, causal diagrams, etc. Causation (or a causation assumption) can be defined from the following analogy, \(X\) is a cause of \(Y\) if \(Y\) \emph{listens} to \(X\) and determines its value in response to what it hears. For instance, the patient's lifespan \(L\) is determined by the intake of drug \(D\). In this case, \(D\) acts as a cause of \(L\) (although it might not be the only cause), which is represented by an arrow from \(D\) to \(L\) in a causal diagram (see Figure \ref{fig:blueprint}). For simplicity, the other causes of \(L\) can be grouped in an additional variable \(Z\).
+
 \begin{figure}
 
 {\centering \includegraphics[width=0.9\linewidth]{Figures/jpearl_inference_engine} 
@@ -2768,24 +3003,22 @@ A relevant example on how data depends on its context is user ratings or opinion
 \caption{Diagram extracted from The Book of Why. The diagram depicts a hypothetical inference engine that combines data and causal knowledge to produce answers to questions of interest. Knowledge (dashed) is not part of the engine but required for its construction. Boxes 4 (testable implications) and 9 (estimate) could also feedback such knowledge to incrementally improve the engine.}\label{fig:inference-engine}
 \end{figure}
 
-Figure \ref{fig:inference-engine} represents an ideal causal inference engine for scientific questions. Today, causal models for scientific applications are based on a similar design. It is important to notice how this diagram showcases the importance of extra-observational information (i.e.~information other than data) such as \textbf{assumptions}, which derive from the available \textbf{knowledge}. With them, a \textbf{causal model} is built in any of its different forms, e.g.~logical statements, structural equations, causal diagrams, etc. Causation (or a causation assumption) can be defined from the following analogy, \(X\) is a cause of \(Y\) if \(Y\) \emph{listens} to \(X\) and determines its value in response to what it hears. For instance, the patient's lifespan \(L\) is determined by the intake of drug \(D\). In this case, \(D\) acts as a cause of \(L\) (although it might not be the only cause), which is represented by an arrow from \(D\) to \(L\) in a causal diagram (see Figure \ref{fig:blueprint}). For the sake of simplicity the other causes of \(L\) can be grouped in an additional variable \(Z\).
-
 In box \(4\) the patterns encoded in the paths of the causal model yield a series of observable consequences (or data dependencies), that we know as \textbf{testable implications} (remember the hypothetico-deductive method?). These implications can be used to test the model. For instance, the lack of path between \(D\) and \(L\) would imply that \(D\) and \(L\) are independent, meaning that a variation of \(D\) will not alter \(L\). If such implication is contradicted by the data, the model should be revised bearing in mind this new knowledge. The box \(5\) is in charge of the scientific \textbf{query} which must be encoded in causal vocabulary, e.g.~\(P(L | do(D))\), i.e.~what is the probability that a typical patient would live \(L\) years given that it takes the drug \(D\)?.
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.7\linewidth]{Figures/blueprint} 
-
-}
-
-\caption{Diagram depicting two different scenarios: before, and after an intervention.}\label{fig:blueprint}
-\end{figure}
 
 The \(do()\) operator represents an intervention in the system, in contrast to an observation \(P(L|D)\). An instance of the latter would entail letting the patient decide between taking or not the drug (see left side of Figure \ref{fig:blueprint}). Such decision might be affected by other variables we are not aware, like the patient's education, family, etc. However, when we make an intervention and assume that we are giving the drug to the patient, the arrow illustrating the patient's decision disappears (right side of Figure \ref{fig:blueprint}).
 
+\begin{figure}
+
+{\centering \includegraphics[width=0.6\linewidth]{Figures/blueprint} 
+
+}
+
+\caption{Diagram depicting two different scenarios: before/after an intervention.}\label{fig:blueprint}
+\end{figure}
+
 The \textbf{\emph{estimand}} is the recipe to answer the scientific query, written as a probability formula, such as \(P(L | D, Z) \times P(Z)\). Once the \textbf{data} is introduced, an \textbf{estimate} can be calculated. Importantly, some queries may not be answerable regardless of the amount of data collected. For instance, our causal model could indicate that both \(D\) and \(L\) depend upon a third variable \(Z\). If there would not be any way to measure \(Z\), the query \(P(L | do(D))\) would be unanswerable. Collecting data for this question would be worthless. Under such a scenario, the causal model needs to be reviewed. Either to introduce new knowledge to enable estimating \(Z\), or to simplify the previous assumptions, potentially increasing the risk of wrong answers, e.g.~stating that \(Z\) has a negligible effect on \(D\).
 
-Following the analogy, the data acts as the ingredients of the recipe provided by the \emph{estimand}. Our estimate (box \(9\)) represents an approximate answer to the query. Such an answer is approximate because data always represents a finite sample from a theoretically infinite population \citep{book-of-why}. An example of answer in this case could be that drug \(D\) increases lifespan \(L\) of diabetic patients by \(30\% \pm 10\%\).
+Following the analogy, the data acts as the ingredients of the recipe provided by the \emph{estimand}. Our estimate (box \(9\)) represents an approximate answer to the query. This answer is approximate because data always represents a finite sample from a theoretically infinite population \citep{book-of-why}. An example answer in this case could be that drug \(D\) increases lifespan \(L\) of diabetic patients by \(30\% \pm 10\%\).
 
 The most important fact about the diagram in Figure \ref{fig:inference-engine} is that data and causal model are two independent pieces of the puzzle that later work together. Data is collected after the causal model and stating that the scientific query can be answered. The \emph{estimand} computation does not require any data. Comparing this to conventional machine learning (ML) systems, a ML solution would have to be re-trained when moved from one hospital to another since such model just fitted a function to data, without levering from any causal model.
 
@@ -2892,11 +3125,19 @@ Very often, progress, ethics and laws go hand in hand. The industrial revolution
 \caption{A young drawer pulling a coal tub along a mine gallery.}\label{fig:coaltub}
 \end{figure}
 
-Similarly, we live in the information revolution, which has transformed the way societies communicate in a way not seen since the Gutenberg printer revolution, enabling the world to transmit information worldwide almost instantaneously through the interconnection of computers. The information era brings ethical challenges to a new dimension. Gutenberg's print helped to spread literature and knowledge, but it also made it easier to spread hate and fake news (see \href{https://www.politico.com/magazine/story/2016/12/fake-news-history-long-violent-214535/}{this article for some examples}). Today, tools like Facebook have been used to incite the \href{https://www.nytimes.com/2018/10/15/technology/myanmar-facebook-genocide.html}{genocide of Rohingya in Myanmar}. Every data scientist must understand the impact of their work for the good and the bad. Something as simple as a good visualization can be enlightening and convince people to get a vaccine or find the root of an outbreak (see the map of John Snow). But bad data science can have unexpected real-world consequences too.
+Similarly, we live in the information revolution, which has transformed the way societies communicate in a way not seen since the Gutenberg printer revolution, enabling the world to transmit information worldwide almost instantaneously through the interconnection of computers. The information era brings ethical challenges to a new dimension. Gutenberg's print helped to spread literature and knowledge, but it also made it easier to spread hate and fake news (see \href{https://www.politico.com/magazine/story/2016/12/fake-news-history-long-violent-214535/}{this article for some examples}). Today, tools like Facebook have been used to incite the \href{https://www.nytimes.com/2018/10/15/technology/myanmar-facebook-genocide.html}{genocide of Rohingya in Myanmar}. Every data scientist must understand the impact of their work for the good and the bad. Something as simple as a good visualization can be enlightening and convince people to get a vaccine or find the root of an outbreak (see John Snow's map). But bad data science can have unexpected real-world consequences too.
 
 In this chapter, we will not address all the philosophical questions regarding ethics, which are \href{https://en.wikipedia.org/wiki/Ethics}{lengthy} but will try to focus on the ethical practice of data science. Many ethical questions affecting data ethics have already been tackled during this book. Such questions have been interleaved during this book together with other topics, e.g., algorithmic fairness, validity issues and their consequences. Therefore, this book provides a utilitarian framework of ethics. This chapter describes how ethical values, regardless of which they may be, affect the practice of data science, either because of the lack of commitment to them or to how data science is conditioned when abiding by them.
 
 This chapter begins by delving into the definitions of ethics, some ethical frameworks and the values of science. Next, it will describe how ethics are meant to be articulated. Aferwards we will be ready to tackle data ethics and the topics affecting it. Finally, a short summary of the GDPR and examples affecting data ethics are provided to illustrate the impact and significance of this new field.
+
+\begin{simplebox}
+
+\textbf{Course objectives}
+
+This final chapter supports objectives 9 and 10, introducing the role of non-epistemic values into every stage of the data science workflow. Historical and current examples showcase the role of regulations, ethical concerns and the consequences of neglecting them. After all, data scientists will have to comply with codes of conduct, legal constraints and consider ethical debates.
+
+\end{simplebox}
 
 \section{Morality and Ethics}\label{morality-and-ethics}
 
@@ -3025,7 +3266,7 @@ Sorting phenomena into categories is an interest-related task \citep{johansson20
 \section{Ethics in action}\label{ethics-in-action}
 
 \begin{quote}
-``There are decades where nothing happens; and there are weeks where decades happen'' --- Vladimir Ilyich Lenin \citep{friedman2014there}
+``There are years, centuries, in which nothing happens, and there are days, like yesterday, into which a whole lifetime is compressed.'' --- The devil \citep{vanwestrum1908devil}
 \end{quote}
 
 Some events in history completely changed how we see the world. Section \ref{ethic-examples} will present some of these events and how they relate to data ethics. However, the consequences of these events share common aspects. In the case of data ethics and science, some events have reshaped the societal consensus and the conception of certain rights. For instance, the scandals and ban of Dichloro-diphenyl-trichloroethane (\href{https://www.nytimes.com/2004/04/11/magazine/what-the-world-needs-now-is-ddt.html}{DTT}) as insecticide changed the cultural awareness regarding chemicals. In the USA, the \href{https://en.wikipedia.org/wiki/Tuskegee_Syphilis_Study}{Tuskegee tragedy} raised ethical questions regarding voluntary informed consent, which led to the establishment of the \href{https://en.wikipedia.org/wiki/National_Commission_for_the_Protection_of_Human_Subjects_of_Biomedical_and_Behavioral_Research}{National Commission for the Protection of Human Subjects of Biomedical and Behavioral Research} and the \href{https://en.wikipedia.org/wiki/National_Research_Act}{National Research Act}. Both were intended to shape bioethics policies in the USA and the establishment of institutional review boards for the studies.
@@ -3063,7 +3304,9 @@ In this section we will tackle the origins, and the specifics of data ethics, in
 \end{wrapfigure}
 \addtocounter{figure}{-1}
 
-It is important not to confuse data ethics with computer ethics and information ethics. In the mid 1940s, developments in science and philosophy led to the creation of a new branch of ethics that would later be called ``computer ethics'' or ``information ethics''. The founder of this new philosophical field was the American scholar Norbert Wiener, a professor of mathematics and engineering at MIT \citep{sep-ethics-computer}. Moreover, other terms such as ``cyberethics'' and ``Internet ethics'' have been used to refer to computer ethics issues associated with the Internet.
+It is important not to confuse data ethics with computer ethics and information ethics. In the mid 1940s, developments in science and philosophy led to the creation of a new branch of ethics that would later be called ``computer ethics'' or ``information ethics''. The founder of this new philosophical field was the American scholar Norbert Wiener, a professor of mathematics and engineering at MIT \citep{sep-ethics-computer}.
+
+Moreover, other terms such as ``cyberethics'' and ``Internet ethics'' have been used to refer to computer ethics issues associated with the Internet.
 
 \begin{quote}
 ``Because of the breadth of Wiener's concerns and the applicability of his ideas and methods to every kind of information technology, the term ``information ethics'' is an apt name for the new field of ethics that he founded. As a result, the term ``computer ethics'', as it is typically used today, names only a subfield of Wiener's much broader concerns.'' --- \citep{sep-ethics-computer}
@@ -3311,7 +3554,11 @@ The company and its founders broke several ethical principles and standards such
 
 \chapter{Extra Material}\label{wont-fix}
 
-This section includes related questions and topics not tackled in this course.
+This chapter discusses related questions and topics not tackled in this course. As in any course, being exhaustive in the content taught to students is not feasible due to time constraints and the need for curricular coherence. Topics cannot be included merely for the sake of completeness, they must be introduced with clear context, purpose, and alignment with the program's learning objectives. For this reason, several rich but complex philosophical debates are excluded from the core syllabus. These include Thomas Kuhn's theory of scientific revolutions, the debate between realism and anti-realism, the Gettier problem, the pessimistic meta-induction, discussions on instrumentalism, and detailed philosophical debates over the aims of science.
+
+While some of these ideas, such as instrumentalism or the plurality of scientific aims, are occasionally mentioned informally to enrich class discussion or highlight philosophical context, the course does not dedicate time to formally exploring them in depth.
+
+For instance, Kuhn's notion of paradigm shifts offers a compelling sociological view of scientific change, but properly integrating it would need extended dedication to the history and sociology of science. Similarly, the realism debate and the pessimistic meta-induction ask deep questions about whether scientific theories aim at truth or are merely useful fictions. The Gettier problem, while central to analytic epistemology, has little relevance for applied reasoning in data contexts. Likewise, instrumentalism, which treats theories as predictive tools rather than truth claims, could be a fruitful lens but would need to be introduced alongside contrasting positions to avoid confusion.
 
 \section{History of science}\label{history-of-science}
 
