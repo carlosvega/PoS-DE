@@ -395,9 +395,7 @@ The following content is important for the mid-term exam. More examples will com
 ::::
 
 
-This tool should help you spotting what assumptions were made, how evidence was connected to theory, whether the conclusions follow logically. This program or tool, comes from the book "Understanding scientific reasoning" from Ronald N. Giere, John Bickle and Robert F. Mauldin [@giere2006understanding].
-
-The following schema is a tool for evaluating whether a scientific model seems to fit the world, doesn’t fit, or remains uncertain. It is a systematic way to identify the main components:
+This tool should help you spotting what assumptions were made, how evidence was connected to theory, whether the conclusions follow logically. This program or tool, comes from the book "Understanding scientific reasoning" from Ronald N. Giere, John Bickle and Robert F. Mauldin [@giere2006understanding]. The following schema is a tool for evaluating whether a scientific model seems to fit the world, doesn’t fit, or remains uncertain. It is a systematic way to identify the main components:
 
 - What is being studied.
 - What is the proposed model/theory.
@@ -416,7 +414,7 @@ The tool reduces the process of evaluating reports involving theoretical models 
 
 - **Step 4: Data**. Identify the actual observations or experimental results reported, e.g., "DNA analysis shows the turtles have been distinct for only tens of thousands of years".
 
-- **Step 5: Negative Evidence?** Do the data and prediction agree? If no then, negative evidence, the model likely does not fit the real world. If yes, go to step 6.
+- **Step 5: Negative Evidence?** Do the data and prediction agree? If no then, negative evidence, the model likely does not fit the real world. Otherwise, step 6.
 
 - **Step 6: Positive Evidence?** Would the prediction likely be true even if the model were wrong? If no, then positive evidence: the data support the model. For instance, "Subjects guessed 90 % correctly. This is unlikely by chance. Then, supports model". If yes, then other plausible models could also explain the data (inconclusive). For instance, "Warm decade could occur naturally. then, our data is inconclusive".
 
