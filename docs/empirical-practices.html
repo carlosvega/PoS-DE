@@ -243,7 +243,9 @@ div.csl-indent {
 <li class="chapter" data-level="2.6" data-path="scientific-inference.html"><a href="scientific-inference.html#non-monotonic-logic-and-defeasible-reasoning"><i class="fa fa-check"></i><b>2.6</b> Non-Monotonic logic and defeasible reasoning</a></li>
 <li class="chapter" data-level="2.7" data-path="scientific-inference.html"><a href="scientific-inference.html#explanation"><i class="fa fa-check"></i><b>2.7</b> Explanation</a>
 <ul>
-<li class="chapter" data-level="2.7.1" data-path="scientific-inference.html"><a href="scientific-inference.html#explanation-and-causality"><i class="fa fa-check"></i><b>2.7.1</b> Explanation and causality</a></li>
+<li class="chapter" data-level="2.7.1" data-path="scientific-inference.html"><a href="scientific-inference.html#limitations-of-hempels-model"><i class="fa fa-check"></i><b>2.7.1</b> Limitations of Hempel’s model</a></li>
+<li class="chapter" data-level="2.7.2" data-path="scientific-inference.html"><a href="scientific-inference.html#explanation-and-causality"><i class="fa fa-check"></i><b>2.7.2</b> Explanation and causality</a></li>
+<li class="chapter" data-level="2.7.3" data-path="scientific-inference.html"><a href="scientific-inference.html#summary-and-modern-views"><i class="fa fa-check"></i><b>2.7.3</b> Summary and Modern views</a></li>
 </ul></li>
 <li class="chapter" data-level="2.8" data-path="scientific-inference.html"><a href="scientific-inference.html#examples-1"><i class="fa fa-check"></i><b>2.8</b> Examples</a>
 <ul>
@@ -873,8 +875,7 @@ Figure 3.13: Historic photo of the Wright brothers’ third test glider being la
 </div>
 <p>The following content is important for the mid-term exam. More examples will come soon.</p>
 </div>
-<p>This tool should help you spotting what assumptions were made, how evidence was connected to theory, whether the conclusions follow logically. This program or tool, comes from the book “Understanding scientific reasoning” from Ronald N. Giere, John Bickle and Robert F. Mauldin <span class="citation">(<a href="#ref-giere2006understanding">Giere, Bickle, and Mauldin 2006</a>)</span>.</p>
-<p>The following schema is a tool for evaluating whether a scientific model seems to fit the world, doesn’t fit, or remains uncertain. It is a systematic way to identify the main components:</p>
+<p>This tool should help you spotting what assumptions were made, how evidence was connected to theory, whether the conclusions follow logically. This program or tool, comes from the book “Understanding scientific reasoning” from Ronald N. Giere, John Bickle and Robert F. Mauldin <span class="citation">(<a href="#ref-giere2006understanding">Giere, Bickle, and Mauldin 2006</a>)</span>. The following schema is a tool for evaluating whether a scientific model seems to fit the world, doesn’t fit, or remains uncertain. It is a systematic way to identify the main components:</p>
 <ul>
 <li>What is being studied.</li>
 <li>What is the proposed model/theory.</li>
@@ -889,7 +890,7 @@ Figure 3.13: Historic photo of the Wright brothers’ third test glider being la
 <li><p><strong>Step 2: Model</strong>. Identify the theoretical model being tested. Explain it briefly, how it represents or explains the real-world phenomenon. For example: “Turtles began migrating 40 million years ago when the island was near the coast and kept going as it drifted away.”</p></li>
 <li><p><strong>Step 3: Prediction</strong>. State what the model predicts should be observed if it truly fits the real world. This links theory to observation or experiment, e.g., “Genetic data should show the turtle population is about 40 million years old”.</p></li>
 <li><p><strong>Step 4: Data</strong>. Identify the actual observations or experimental results reported, e.g., “DNA analysis shows the turtles have been distinct for only tens of thousands of years”.</p></li>
-<li><p><strong>Step 5: Negative Evidence?</strong> Do the data and prediction agree? If no then, negative evidence, the model likely does not fit the real world. If yes, go to step 6.</p></li>
+<li><p><strong>Step 5: Negative Evidence?</strong> Do the data and prediction agree? If no then, negative evidence, the model likely does not fit the real world. Otherwise, step 6.</p></li>
 <li><p><strong>Step 6: Positive Evidence?</strong> Would the prediction likely be true even if the model were wrong? If no, then positive evidence: the data support the model. For instance, “Subjects guessed 90 % correctly. This is unlikely by chance. Then, supports model”. If yes, then other plausible models could also explain the data (inconclusive). For instance, “Warm decade could occur naturally. then, our data is inconclusive”.</p></li>
 </ul>
 
@@ -1391,7 +1392,7 @@ Figure 3.19: Detail of John Snow’s map of Cholera in the Broad Street outbreak
 <p>As can be seen, this value is closer to the degree of our synthetic data <code>10 * data["tutoring"]</code>. Still, in real world scenarios we do not necessarily know the functions that describe the behaviour of real world phenomena.</p>
 <div class="sourceCode" id="cb46"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb46-1"><a href="empirical-practices.html#cb46-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Estimated Effect (revised model):&quot;</span>, </span>
 <span id="cb46-2"><a href="empirical-practices.html#cb46-2" tabindex="-1"></a>      estimate_with_confounder.value)</span></code></pre></div>
-<pre><code>## Estimated Effect (revised model): 10.095828768814414</code></pre>
+<pre><code>## Estimated Effect (revised model): 10.095828768814442</code></pre>
 <!-- [write]
 
 

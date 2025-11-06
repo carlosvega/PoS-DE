@@ -243,7 +243,9 @@ div.csl-indent {
 <li class="chapter" data-level="2.6" data-path="scientific-inference.html"><a href="scientific-inference.html#non-monotonic-logic-and-defeasible-reasoning"><i class="fa fa-check"></i><b>2.6</b> Non-Monotonic logic and defeasible reasoning</a></li>
 <li class="chapter" data-level="2.7" data-path="scientific-inference.html"><a href="scientific-inference.html#explanation"><i class="fa fa-check"></i><b>2.7</b> Explanation</a>
 <ul>
-<li class="chapter" data-level="2.7.1" data-path="scientific-inference.html"><a href="scientific-inference.html#explanation-and-causality"><i class="fa fa-check"></i><b>2.7.1</b> Explanation and causality</a></li>
+<li class="chapter" data-level="2.7.1" data-path="scientific-inference.html"><a href="scientific-inference.html#limitations-of-hempels-model"><i class="fa fa-check"></i><b>2.7.1</b> Limitations of Hempel’s model</a></li>
+<li class="chapter" data-level="2.7.2" data-path="scientific-inference.html"><a href="scientific-inference.html#explanation-and-causality"><i class="fa fa-check"></i><b>2.7.2</b> Explanation and causality</a></li>
+<li class="chapter" data-level="2.7.3" data-path="scientific-inference.html"><a href="scientific-inference.html#summary-and-modern-views"><i class="fa fa-check"></i><b>2.7.3</b> Summary and Modern views</a></li>
 </ul></li>
 <li class="chapter" data-level="2.8" data-path="scientific-inference.html"><a href="scientific-inference.html#examples-1"><i class="fa fa-check"></i><b>2.8</b> Examples</a>
 <ul>
@@ -877,8 +879,8 @@ Figure 2.3: Double arrows indicate non-defeasible inferences (hard fact), single
 Carl Hempel (1905 - 1997).
 </figcaption>
 </figure>
-<p>At this point, many of you probably have already related data science to two of the goals of science: explanation and prediction. But how do they relate to one another? and what is a scientific explanation? Either to satisfy our natural curiosity or for a further purpose, science has always attempted to understand how the world works. The German philosopher Carl Hempel attempted to answer this question in the 1950s with what is known as the <em>covering law</em> model of explanation. He stated that a scientific explanation is an answer given in response to <em>explanation-seeking why-questions</em> (e.g. why salt dissolves in water).</p>
-<p>According to Hempel, explanations are structured like an argument, i.e. a set of premises followed by a conclusion. Therefore, the conclusion of such an argument states that certain phenomenon occurs, e.g. “salt dissolves in water”. On the other hand, the premises indicate why the conclusion is true. Then, the challenge lays in the relationship that should follow between such premises and the conclusion. For Hempel, the premises should all be true and entail the conclusion, i.e. the argument should be deductive and <em>sound</em>. Additionally, the premises should contain at least one general law (e.g. all metals conduct electricity), a.k.a. <em>laws of nature</em>. The name of the model comes from that fact that the phenomenon to be explained is “covered” by some general law.</p>
+<p>At this point, many of you probably have already related data science to two of the goals of science: explanation and prediction. But how do they relate to one another? and what is a scientific explanation? Either to satisfy our natural curiosity or for a further purpose, science has always attempted to understand how the world works. The German philosopher Carl Hempel attempted to answer this question in the 1950s with what is known as the <em>covering law</em> model of explanation. He stated that a scientific explanation is an answer given in response to <em>explanation-seeking why-questions</em> (e.g. why salt dissolves in water). <strong>In this section, we will first present Hempel’s model, then discuss its main problems, and finally explore modern causal and mechanistic views of explanation</strong>.</p>
+<p>According to Hempel, explanations are structured like an argument, i.e. a set of premises followed by a conclusion. Therefore, the conclusion of such an argument states that certain phenomenon occurs, e.g. “salt dissolves in water”. On the other hand, the premises indicate why the conclusion is true. Then, the challenge lays in the relationship that should follow between such premises and the conclusion. For Hempel, the premises should all be true and entail the conclusion, i.e. the argument should be deductive and <em>sound</em>. Additionally, the premises should contain at least one general law (e.g. all metals conduct electricity), also known as <em>laws of nature</em>. The name of the model comes from that fact that the phenomenon to be explained is “covered” by some general law.</p>
 <ol style="list-style-type: decimal">
 <li>The <em>explanandum</em> must be a valid deductive argument.</li>
 <li>The <em>explanans</em> must contain at least one general law actually needed in the deduction.</li>
@@ -890,7 +892,7 @@ Carl Hempel (1905 - 1997).
 Particular Facts (explanans)
 ---------
 Phenomenon to be explained (explanandum)</code></pre>
-<p>An interesting consequence of this model lays in the relationship between explanation and prediction. Hempel argued that these are two sides of the same coin. Whenever a phenomenon is explained with the help of a covering law, the laws and the particular facts we use could have allowed us to predict the occurrence of the phenomenon. Hempel expressed this by saying that every scientific explanation is potentially a prediction. Hempel argued that the opposite is also true: every prediction is potentially an explanation. <strong>For Hempel, explanation and prediction are structurally symmetric</strong>. For instance, the same information we could use to predict an animal species extinction before it happened will serve to explain that very same fact after it has happened.</p>
+<p>An interesting consequence of this model lies in the relationship between explanation and prediction. <strong>Hempel argued that explanation and prediction are two sides of the same coin</strong>. Whenever a phenomenon is explained with the help of a covering law, the laws and the particular facts we use could have allowed us to predict the occurrence of the phenomenon. Hempel expressed this by saying that every scientific explanation is potentially a prediction. Hempel argued that the opposite is also true: every prediction is potentially an explanation. <strong>For Hempel, explanation and prediction are structurally symmetric</strong>. For instance, the same information we could use to predict an animal species extinction before it happened will serve to explain that very same fact after it has happened.</p>
 
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:flagpole"></span>
 <img src="Figures/flagpole.png" alt="A 15-metre flagpole casts a shadow of 20 metres when the sun is 37° overhead. Figure from (Okasha 2016)." width="75%" />
@@ -898,6 +900,8 @@ Phenomenon to be explained (explanandum)</code></pre>
 Figure 2.4: A 15-metre flagpole casts a shadow of 20 metres when the sun is 37° overhead. Figure from <span class="citation">(<a href="#ref-okasha-pos">Okasha 2016</a>)</span>.
 </p>
 </div>
+<div id="limitations-of-hempels-model" class="section level3 hasAnchor" number="2.7.1">
+<h3><span class="header-section-number">2.7.1</span> Limitations of Hempel’s model<a href="scientific-inference.html#limitations-of-hempels-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Hempel’s model might be too liberal, as it faces a number of odd counterexamples. For example, consider Figure <a href="scientific-inference.html#fig:flagpole">2.4</a>. In order to explain why the shadow is 20 metres long. Indeed, this is a <em>explanation-seeking why-question</em> and a possible answer could be the following: The light rays from the sun hit the flagpole (15 metres high), the sun’s elevation angle is 37° and light travels in straight lines. The trigonometric calculation <span class="math inline">\(tan(37°) = 15/20\)</span> demonstrates that the flagpole will cast a shadow of 20 metres long. This example can be found in both <span class="citation">(<a href="#ref-rosenberg2019philosophy">Rosenberg and McIntyre 2019</a>)</span> and <span class="citation">(<a href="#ref-okasha-pos">Okasha 2016</a>)</span>.</p>
 <pre><code>General Law      (Light travels in straight lines)
 General Law      (Trigonometric laws)
@@ -912,18 +916,76 @@ Particular Fact  (Shadow is 20 metres long)
 Particular Fact  (Sun&#39;s angle of elevation is 37°)
 ---------
 Phenomenon to be explained (Flagpole is 15 metres high)</code></pre>
-<p>The moral of this example is that the concept of explanation showcases an important <strong>asymmetry</strong>. The length of the shadow can be explained by the height of the flagpole, given aforementioned general laws. But this does not happen in the other direction. In general, if <span class="math inline">\(x\)</span> explains <span class="math inline">\(y\)</span>, then it will not be true that <span class="math inline">\(y\)</span> explains <span class="math inline">\(x\)</span> given the same laws and facts. Explanation is then an asymetric relation and Hempel’s covering law model does not respect such asymmetry. Information that allow us to predict a fact before we know it does not serve to explain that very same fact after we know it, which <strong>contradicts Hempel’s thesis</strong>.
-The general conclusion is that a good explanation of a phenomenon should contain information that is relevant to the phenomenon’s occurrence.</p>
-<div id="explanation-and-causality" class="section level3 hasAnchor" number="2.7.1">
-<h3><span class="header-section-number">2.7.1</span> Explanation and causality<a href="scientific-inference.html#explanation-and-causality" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>There are alternatives to the covering law model that help us understanding scientific explanation. For many, explaining a phenomenon is simply to say what caused it. Obviously, causality is also an asymmetric relation. If a faulty appliance caused a fire, then is clear that the fire did not cause the appliance’s failure. The asymmetry of explanation derives from the asymmetry of causality.</p>
+<p>The moral of this example is that the concept of explanation showcases an important <strong>asymmetry</strong>. The length of the shadow can be explained by the height of the flagpole, given aforementioned general laws. But this does not happen in the other direction. In general, if <span class="math inline">\(x\)</span> explains <span class="math inline">\(y\)</span>, then it will not be true that <span class="math inline">\(y\)</span> explains <span class="math inline">\(x\)</span> given the same laws and facts. <strong>Explanation is then an asymmetric relation and Hempel’s covering law model does not respect such asymmetry</strong>. Information that allow us to predict a fact before we know it does not serve to explain that very same fact after we know it, which <strong>contradicts Hempel’s thesis</strong>.</p>
+<p>The general conclusion is that a good explanation of a phenomenon should contain information that is relevant to the phenomenon’s occurrence. Hempel’s model left unanswered why some explanations feel more informative than others. Philosophers and scientists increasingly turned toward causation as the missing ingredient: what truly makes an explanation explanatory.</p>
+</div>
+<div id="explanation-and-causality" class="section level3 hasAnchor" number="2.7.2">
+<h3><span class="header-section-number">2.7.2</span> Explanation and causality<a href="scientific-inference.html#explanation-and-causality" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>There are alternatives to the covering law model that help us understand what counts as scientific explanation. For many, explaining a phenomenon is simply to say what caused it. Obviously, causality is also an asymmetric relation. If a faulty appliance caused a fire, then it is clear that the fire did not cause the appliance’s failure. The asymmetry of explanation derives from the asymmetry of causality.</p>
 <p>However, the criticism against Hempel covering law is a bit unfair as he was an empiricist. Empiricists are sceptical about the concept of causality and argue that all our knowledge comes from experience. David Hume argued that is impossible to experience causal relations, and that causality is just what we humans project to understand the world.</p>
-<p>There are however some examples were explanation and causality do not match. For example, to say that an object’s temperature is the average kinetic energy of its molecules is to explain what temperature <em>is</em>, but this does not yield the cause of such temperature.</p>
+<p>There are however some examples where explanation and causality do not align For example, to say that an object’s temperature is the average kinetic energy of its molecules is to explain what temperature <em>is</em>, but this does not yield the cause of such temperature.</p>
 <p>The law <span class="math inline">\(PV = nRT.\)</span> explains the temperature of a gas at equilibrium by appeal to its pressure and the volume it takes up. But volume and pressure cannot be <em>causes</em> of temperature since all of them — the temperature, the volume, and the pressure — vary, in the way the law describes, instantaneously. The changes in volume at one time do not cause changes in temperature at a later time; instead, the change in temperature occurs during exactly the same interval that pressure is changing <span class="citation">(<a href="#ref-rosenberg2019philosophy">Rosenberg and McIntyre 2019</a>)</span>. The nature of causation is still an open debate, but most philosophers have agreed that causes somehow necessitate their effects and that mere regularity cannot express this necessity.</p>
 <p>Another example, this time from <span class="citation">(<a href="#ref-book-of-why">Pearl and Mackenzie 2018</a>)</span>, show us the gap between causal vocabulary and ordinary scientific vocabulary. Consider the problem of expressing the following causal relationship: The barometer reading <span class="math inline">\(B\)</span> tracks the atmospheric pressure <span class="math inline">\(P\)</span>. We can write down the relationship as <span class="math inline">\(B = kP\)</span>, where <span class="math inline">\(k\)</span> is a constant of proportionality. Thanks to algebra we can rewrite the equation in multiple ways such as: <span class="math inline">\(P = B/k\)</span>, <span class="math inline">\(k = B/P\)</span>, or <span class="math inline">\(B-kP = 0\)</span>. They mean the same and given two of the variables we can calculate the third. But in these equations there is no account of directionality. We cannot express that is the pressure which <em>causes</em> the barometer to change and not the other way around. Similarly, we cannot express the fact that the singing of the rooster <em>does not cause</em> the sun to rise. Why have scientists not captured such facts in formulas as is done in other areas like mechanics, geometry or optics? For a better understanding of causation and its role in data science I recommend you the Book of Why <span class="citation">(<a href="#ref-book-of-why">Pearl and Mackenzie 2018</a>)</span>.</p>
 <blockquote>
 <p>Data can tell you that the people who took a medicine recovered faster than those who did not take it, but they can’t tell you why. — Book of Why</p>
 </blockquote>
+</div>
+<div id="summary-and-modern-views" class="section level3 hasAnchor" number="2.7.3">
+<h3><span class="header-section-number">2.7.3</span> Summary and Modern views<a href="scientific-inference.html#summary-and-modern-views" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We can summarise Hempel’s view as follows:</p>
+<ul>
+<li>Hempel proposed that scientific explanations answer why-questions using a logical argument.</li>
+<li>The structure of an explanation resembles a deductive argument, consisting of explanans (premises including at least one general law and specific facts) and an explanandum (the phenomenon to be explained).</li>
+<li>For Hempel, a valid scientific explanation must be a deductive and sound argument; contain at least one general law of nature; have empirically testable premises; use true statement.</li>
+<li>Hempel held that explanation and prediction are structurally symmetric.</li>
+</ul>
+<p>In short, Hempel’s model helped formalize scientific explanation, but it faces key limitations:</p>
+<ul>
+<li>It considers “explanations” many arguments that don’t really explain (e.g., the flagpole-shadow example).</li>
+<li>The model treats explanation and prediction as equivalent, but in reality, they are asymmetric (knowing the shadow length doesn’t explain the pole’s height).</li>
+<li>Ignores causality: The model focuses on logical form, not on causal relationships.</li>
+<li>Relevance problem: Explanations must contain information relevant to the phenomenon (explanandum); Hempel’s model doesn’t ensure this.</li>
+<li>No directionality: It doesn’t distinguish between causes and effects; causality is one-directional, but deduction is symmetric.</li>
+<li>Empiricist skepticism of causality: Hempel, influenced by Hume, downplayed causal reasoning, yet most explanations are causal in nature.</li>
+</ul>
+<p>The covering-law model was foundational, but incomplete: it motivated the causal-mechanistic turn in philosophy of science. A good explanation should provide relevant information about why the event occurred, not just a correlation or logical entailment.</p>
+<p>Because the covering-law model treated explanation as mere deduction from general laws, it failed to capture how scientists actually explain phenomena through causal or mechanistic reasoning. Contemporary models emphasize that explaining is not just showing that an event fits under a law, but showing why it occurs, by revealing the underlying causal mechanisms, counterfactual dependencies, and contextual relevance that make the phenomenon intelligible.</p>
+<ul>
+<li>Causal-Mechanistic Turn:
+<ul>
+<li>Explanation moved from logical form to causal relevance and counterfactuals.</li>
+<li>Focus on causal relevance and counterfactual dependence.</li>
+<li>To explain = to show how changing X would change Y.</li>
+<li>Causation tied to manipulability and intervention (e.g., Pearl’s causal diagrams).</li>
+</ul></li>
+<li>Mechanistic Models (esp. in biology &amp; medicine):
+<ul>
+<li>“To explain is to describe a mechanism”.</li>
+<li>Explanation shows how entities and activities are organised to produce a phenomenon.</li>
+<li>Mechanisms replace general laws in complex domains.</li>
+<li>In complex sciences, general laws are rare but mechanisms are abundant.</li>
+</ul></li>
+<li>Unificationist and Pragmatic Views:
+<ul>
+<li>Unification: explanation means showing how diverse phenomena fit under a few general patterns (e.g., Newton’s laws unify celestial motion).</li>
+<li>Pragmatic: explanation is context-dependent, addressing why A happened rather than B, for a given audience or contrast.</li>
+</ul></li>
+<li>Pluralism in Explanation:
+<ul>
+<li>There is no single canonical model today.</li>
+<li>Different sciences adopt different explanatory ideals:
+<ul>
+<li>Physics: laws and mathematical deduction.</li>
+<li>Biology/Medicine: mechanisms and probabilities.</li>
+</ul></li>
+</ul></li>
+<li>Modern consensus
+<ul>
+<li>Explanation implies revealing the causal, probabilistic, or structural dependencies that make a phenomenon understandable within scientific practice.</li>
+</ul></li>
+</ul>
+<p>In sum, while Hempel’s covering-law model provided the first systematic account of scientific explanation, its neglect of causality, asymmetry, and context opened the path for contemporary approaches that view explanation as revealing the mechanisms, dependencies, and conditions that make phenomena intelligible rather than merely deducible.</p>
+<p>In data science, explanatory and predictive goals often overlap but differ in purpose: prediction seeks accuracy about future observations, whereas explanation seeks understanding of why they occur. Both, however, depend on our ability to uncover the underlying structures—logical, causal, or mechanistic—that connect data to the world</p>
 <div class="tipbox">
 <div data-latex="">
 <p><strong>Note for data scientists!</strong></p>
