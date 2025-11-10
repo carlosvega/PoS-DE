@@ -244,8 +244,13 @@ div.csl-indent {
 <li class="chapter" data-level="2.5.4" data-path="scientific-inference.html"><a href="scientific-inference.html#bayesian-inference-and-the-problem-of-induction"><i class="fa fa-check"></i><b>2.5.4</b> Bayesian Inference and the Problem of Induction</a></li>
 <li class="chapter" data-level="2.5.5" data-path="scientific-inference.html"><a href="scientific-inference.html#underdetermination-and-bayesian-model-selection"><i class="fa fa-check"></i><b>2.5.5</b> Underdetermination and Bayesian Model Selection</a></li>
 </ul></li>
-<li class="chapter" data-level="2.6" data-path="scientific-inference.html"><a href="scientific-inference.html#other-types-of-inference"><i class="fa fa-check"></i><b>2.6</b> Other types of inference</a></li>
-<li class="chapter" data-level="2.7" data-path="scientific-inference.html"><a href="scientific-inference.html#non-monotonic-logic-and-defeasible-reasoning"><i class="fa fa-check"></i><b>2.7</b> Non-Monotonic logic and defeasible reasoning</a></li>
+<li class="chapter" data-level="2.6" data-path="scientific-inference.html"><a href="scientific-inference.html#other-types-of-inference"><i class="fa fa-check"></i><b>2.6</b> Other types of inference</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="scientific-inference.html"><a href="scientific-inference.html#abduction-and-inference-to-the-best-explanation-ibe"><i class="fa fa-check"></i><b>2.6.1</b> Abduction and Inference to the Best Explanation (IBE)</a></li>
+<li class="chapter" data-level="2.6.2" data-path="scientific-inference.html"><a href="scientific-inference.html#monotonic-and-non-monotonic-logic"><i class="fa fa-check"></i><b>2.6.2</b> Monotonic and Non-monotonic Logic</a></li>
+<li class="chapter" data-level="2.6.3" data-path="scientific-inference.html"><a href="scientific-inference.html#defeasible-reasoning"><i class="fa fa-check"></i><b>2.6.3</b> Defeasible Reasoning</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="scientific-inference.html"><a href="scientific-inference.html#summary-of-the-different-inference-methods"><i class="fa fa-check"></i><b>2.7</b> Summary of the different inference methods</a></li>
 <li class="chapter" data-level="2.8" data-path="scientific-inference.html"><a href="scientific-inference.html#explanation"><i class="fa fa-check"></i><b>2.8</b> Explanation</a>
 <ul>
 <li class="chapter" data-level="2.8.1" data-path="scientific-inference.html"><a href="scientific-inference.html#limitations-of-hempels-model"><i class="fa fa-check"></i><b>2.8.1</b> Limitations of Hempel’s model</a></li>
@@ -731,13 +736,14 @@ Figure 2.2: The problem of underdetermination illustrated with a chart.
 <p>While the HD method offers a simple and useful framework to think about how science proceeds, from hypothesis formation to testing via deduction, it has important limitations. These become especially clear in data-driven disciplines such as machine learning, statistics, and empirical sciences that rely on probabilistic reasoning. Here, we examine alternative approaches that better accommodate uncertainty, quantify degrees of belief, and reflect how inference is conducted in real-world contexts.</p>
 <div id="limitations-of-the-hd-method-in-probabilistic-contexts" class="section level3 hasAnchor" number="2.5.1">
 <h3><span class="header-section-number">2.5.1</span> Limitations of the HD method in probabilistic contexts<a href="scientific-inference.html#limitations-of-the-hd-method-in-probabilistic-contexts" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>In the HD method, hypotheses are tested by deducing observable consequences and then checking whether those consequences occur. If any of the deduced implications are false, the hypothesis is rejected (falsified). If they are all true, the hypothesis is not proven true, but may be confirmed.</p>
-<p>However, most scientific theories, especially those in statistical sciences, are not structured as strict universal generalizations like “all swans are white”. Instead, they are probabilistic in nature. For example:</p>
+<p>In the HD method, hypotheses are tested by deducing observable consequences and then checking whether those consequences occur. If any of the deduced implications are false, the hypothesis is rejected (falsified). If they are all true, the hypothesis is not proven true, but may be confirmed. However, <strong>we must distinguish between logical incompatibility (in the rejection of hypothesis) and statistical evidence in hypothesis testing</strong>. In the latter, data is logically compatible with both the null and the alternative hypotheses, i.e., no matter what data is observed, both hypotheses can accommodate, though with varying likelihood extents <span class="citation">(<a href="#ref-sep-logical-consequence">Beall, Restall, and Sagi 2024</a>)</span>.</p>
+<p>Importantly, most scientific theories, especially those in statistical sciences, are not structured as strict universal generalizations like “all swans are white”. Instead, they are probabilistic in nature. For example:</p>
 <ul>
 <li>“If a drug is effective, then 80% of patients will recover.”</li>
 <li>“If a coin is fair, then heads will appear approximately 50% of the time.”</li>
 </ul>
 <p>Here, the predictions are not strictly entailed by the hypothesis. They are probabilistic expectations. This weakens the applicability of modus tollens: if only 60% of patients recover, is the hypothesis falsified? Not necessarily. In probabilistic contexts, observing an outcome that deviates from the expected does not conclusively falsify the hypothesis, because such deviations are themselves expected to occur with some probability. <strong>The data may be compatible with both the hypothesis and the null hypothesis</strong>, making it difficult to draw a sharp deductive conclusion. Instead of strict falsification, we assess how well the data supports one hypothesis over another, often in terms of likelihood or posterior probability.</p>
+<p>This complexity is further compounded when we consider that hypotheses are rarely tested alone but often depend on <strong>auxiliary hypotheses</strong> <span class="citation">(<a href="#ref-phlogiston">Grünbaum 1976</a>)</span>, which in practice motivates robustness checks and sensitivity analyses to see how conclusions depend on background assumptions.</p>
 <p>Moreover, empirical data is noisy. Measurement error, incomplete information, and stochastic processes mean that consequences of a hypothesis may deviate from what is expected even if the hypothesis is “mostly” correct. Under these circumstances, we need a more flexible form of inference, i.e., probabilistic inference, that allows us to reason under uncertainty.</p>
 </div>
 <div id="bayesian-epistemology-and-conditionalization" class="section level3 hasAnchor" number="2.5.2">
@@ -762,9 +768,9 @@ Figure 2.2: The problem of underdetermination illustrated with a chart.
 <p>Both perspectives are widely used in science and data analysis. For example:</p>
 <table>
 <colgroup>
-<col width="20%" />
-<col width="39%" />
-<col width="39%" />
+<col width="23%" />
+<col width="38%" />
+<col width="38%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -833,44 +839,79 @@ check the quote
 </div>
 <div id="other-types-of-inference" class="section level2 hasAnchor" number="2.6">
 <h2><span class="header-section-number">2.6</span> Other types of inference<a href="scientific-inference.html#other-types-of-inference" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="notebox">
-<div class="center">
-<p><strong>Course Note:</strong></p>
+<p>So far we have discussed deduction and induction, but we can find additional scientific reasoning methods. In practice, scientists and data scientists often rely on other forms of inference that go beyond strict deduction and enumerative induction. These include abduction (or inference to the best explanation), and logics that depart from the classical, monotonic model of reasoning, such as non-monotonic and defeasible inference.</p>
+<div id="abduction-and-inference-to-the-best-explanation-ibe" class="section level3 hasAnchor" number="2.6.1">
+<h3><span class="header-section-number">2.6.1</span> Abduction and Inference to the Best Explanation (IBE)<a href="scientific-inference.html#abduction-and-inference-to-the-best-explanation-ibe" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Abduction was first introduced by Charles Peirce (1839-1914) to describe the process of inferring the most plausible hypothesis from a set of observations. <strong>Abduction, then, is an explanatory form of reasoning</strong>: given evidence <code>E</code> and a set of possible hypotheses <code>H₁, H₂, …, Hₙ</code>, we infer that <code>Hᵢ</code> is true because it best explains <code>E</code>. This is different from enumerative induction, which generalises from a limited number of instances to a rule.</p>
+<p>For example, if we find an empty plate with crumbs and recall hearing scratching sounds in the larder, we infer that the cheese was eaten by a mouse. Similarly, a doctor observing fever, cough, and shortness of breath will <em>abduce</em> (or infer) that the patient might have an infection. Both are plausible explanations, not certain deductions.</p>
+<p>Philosopher Peter Lipton (1954-2007) later framed abduction as Inference to the Best Explanation (IBE), stressing that what makes an explanation “best” depends on factors like simplicity, coherence with background knowledge, and explanatory power. While some philosophers distinguish abduction as a psychological process from IBE as its normative version, in practice we treat them as one and the same, both describe how we move from observed data to explanatory hypotheses. For the shake of distinguishing them, abduction, in this sense, is the creative step that proposes a possible explanation, it tells us <em>how</em> hypotheses arise. IBE, is the <em>evaluative</em> step that selects which of the available hypotheses is most plausible. Of course, these two steps, often happen together.</p>
 </div>
-<p>The following content is under construction but might as well be taught during the course. This section will superficially tackle abduction and causal inferences and its relation to data science regarding non-monotonic logic.</p>
+<div id="monotonic-and-non-monotonic-logic" class="section level3 hasAnchor" number="2.6.2">
+<h3><span class="header-section-number">2.6.2</span> Monotonic and Non-monotonic Logic<a href="scientific-inference.html#monotonic-and-non-monotonic-logic" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Traditional deductive logic is monotonic: once a conclusion is validly derived from a set of premises, adding more premises can never invalidate it. If <code>A ⊢ p</code>, then <code>A ∧ B ⊢ p</code> still holds. This is the logic of mathematics and formal proofs. However, <strong>most real-world reasoning, and especially scientific reasoning, is non-monotonic</strong>. New evidence can force us to withdraw a previous conclusion. For instance, a physician might initially diagnose pneumonia from a chest X-ray, but revise the diagnosis after receiving negative test results or learning that the symptoms were caused by tuberculosis instead.</p>
+<p>In its epistemic sense, <strong>monotonicity expresses the fact that adding more premises to an argument allows you to derive all the same conclusions as you could with fewer</strong> <span class="citation">(<a href="#ref-sep-logic-nonmonotonic">Strasser and Antonelli 2019</a>)</span>. Specifically, under monotonic reasoning, if a conclusion <span class="math inline">\(p\)</span> follows from a set of premises <span class="math inline">\(A\)</span>, (denoted as <span class="math inline">\(A\)</span> <span class="math inline">\(p\)</span>), adding another set of premises <span class="math inline">\(B\)</span> doesn’t alter the conclusion (i.e. <span class="math inline">\(A ∧ B \vdash p\)</span> also holds). Therefore, reasoning is <a href="https://plato.stanford.edu/entries/logic-nonmonotonic/">non-monotonic</a> when a conclusion supported by a set of premises can be retracted in the light of new information. Or in other words, we can infer certain conclusions from a subset of a set <span class="math inline">\(S\)</span> of premises which cannot be inferred from <span class="math inline">\(S\)</span> as a whole. Medical diagnosis fits very well under such definition.</p>
+<p>In machine learning terms, this corresponds to models that must update their predictions when new, possibly conflicting, data arrive. This very notion relates to how knowledge is indeed provisional, which in turn justifies practices like MLOps techniques to monitor the performance of deployed machine learning models and act on events of <strong>concept drift</strong> (when the relationship between input features and the target variable changes over time, e.g. when what “counts” as a fraudulent transaction evolves) and <strong>data drift</strong> (when the distribution of input data itself shifts, e.g. new patterns or populations differing from those seen during training).</p>
 </div>
-<!--
-
-The following types of inference are very common in science.
-
-#### Abduction
-
-Abduction or Inference to the Best Explanation (IBE)...
-
-#### Causal Inference
-
-#### Probability and Inference
-
-Mention non-monotonic logic, defeasible reasoning and tweety.
-
--->
-</div>
-<div id="non-monotonic-logic-and-defeasible-reasoning" class="section level2 hasAnchor" number="2.7">
-<h2><span class="header-section-number">2.7</span> Non-Monotonic logic and defeasible reasoning<a href="scientific-inference.html#non-monotonic-logic-and-defeasible-reasoning" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In its epistemic sense, monotonicity expresses the fact that adding more premises to an argument allows you to derive all the same conclusions as you could with fewer <span class="citation">(<a href="#ref-sep-logic-nonmonotonic">Strasser and Antonelli 2019</a>)</span>. Specifically, under monotonic reasoning, if a conclusion <span class="math inline">\(p\)</span> follows from a set of premises <span class="math inline">\(A\)</span>, (denoted as <span class="math inline">\(A\)</span> <span class="math inline">\(p\)</span>), adding another set of premises <span class="math inline">\(B\)</span> doesn’t alter the conclusion (i.e. <span class="math inline">\(A ∧ B \vdash p\)</span> also holds). Therefore, reasoning is <a href="https://plato.stanford.edu/entries/logic-nonmonotonic/">non-monotonic</a> when a conclusion supported by a set of premises can be retracted in the light of new information. Or in other words, we can infer certain conclusions from a subset of a set <span class="math inline">\(S\)</span> of premises which cannot be inferred from <span class="math inline">\(S\)</span> as a whole. Medical diagnosis fits very well under such definition.</p>
+<div id="defeasible-reasoning" class="section level3 hasAnchor" number="2.6.3">
+<h3><span class="header-section-number">2.6.3</span> Defeasible Reasoning<a href="scientific-inference.html#defeasible-reasoning" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:tweety"></span>
 <img src="Figures/PenguinFlies.png" alt="Double arrows indicate non-defeasible inferences (hard fact), single arrows depict defeasible inferences, and strikethrough arrows denote a negation. It can be read as: Penguins are birds (no exceptions); Birds usually fly; and Penguins usually don’t fly." width="33%" />
 <p class="caption">
 Figure 2.3: Double arrows indicate non-defeasible inferences (hard fact), single arrows depict defeasible inferences, and strikethrough arrows denote a negation. It can be read as: Penguins are birds (no exceptions); Birds usually fly; and Penguins usually don’t fly.
 </p>
 </div>
-<p>Defeasible reasoning deals with tentative relationships between premises and conclusions, which can be <em>defeated</em> by additional information, allowing for the retraction of inferences. For instance, while we may infer that Tweety flies based on the information that Tweety is a bird and the domain knowledge that birds generally fly, we can retract this inference when we learn that Tweety is a penguin. Tweety is indeed a bird but it cannot fly. Defeasible reasoning is not exempt from limitations, requiring from causal information to properly derive conclusions under certain scenarios. Consider, for example, this problem of Judea Pearl: if the sprinkler is on, then normally the sidewalk is wet, and, if the sidewalk is wet, then normally it is raining. However, we should not infer that it is raining from the fact that the sprinkler is on <span class="citation">(<a href="#ref-pearl2014probabilistic">Pearl 2014</a>)</span>. Conflicts may arise between hard facts and defeasible conclusions. For instance, both arguments in Figure <a href="scientific-inference.html#fig:tweety">2.3</a> <span class="math inline">\(Penguin ⇒ Bird → flies\)</span> and <span class="math inline">\(Penguin → ¬flies\)</span> finish with a defeasible inference. The transitivity rule <span class="math inline">\((a → b, b → c) ⇒ a → c\)</span> cannot be applied to the first argument. In this case, according to their specificity we can give priority to the argument with more a specific antecedent but is not always as trivial, and complex conflicts can remain unresolved.</p>
+<p>Defeasible reasoning deals with tentative relationships between premises and conclusions, which can be <em>defeated</em> by additional information, allowing for the retraction of inferences. For instance, while we may infer that Tweety flies based on the information that Tweety is a bird and the domain knowledge that birds generally fly, we can retract this inference when we learn that Tweety is a penguin. Tweety is indeed a bird but it cannot fly. Defeasible reasoning is not exempt from limitations, requiring from causal information to properly derive conclusions under certain scenarios.</p>
+<p>Consider, for example, this problem of Judea Pearl: if the sprinkler is on, then normally the sidewalk is wet, and, if the sidewalk is wet, then normally it is raining. However, we should not infer that it is raining from the fact that the sprinkler is on <span class="citation">(<a href="#ref-pearl2014probabilistic">Pearl 2014</a>)</span>. Conflicts may arise between hard facts and defeasible conclusions. For instance, both arguments in Figure <a href="scientific-inference.html#fig:tweety">2.3</a> <span class="math inline">\(Penguin ⇒ Bird → flies\)</span> and <span class="math inline">\(Penguin → ¬flies\)</span> finish with a defeasible inference. The transitivity rule <span class="math inline">\((a → b, b → c) ⇒ a → c\)</span> cannot be applied to the first argument. In this case, according to their specificity we can give priority to the argument with more a specific antecedent but is not always as trivial, and complex conflicts can remain unresolved.</p>
 <blockquote>
 <p>Reasoning is defeasible when the corresponding argument is rationally compelling but not deductively valid. The truth of the premises of a good defeasible argument provide support for the conclusion, even though it is possible for the premises to be true and the conclusion false. In other words, the relationship of support between premises and conclusion is a tentative one, potentially defeated by additional information. — <span class="citation">(<a href="#ref-sep-reasoning-defeasible">Koons 2021</a>)</span>.</p>
 </blockquote>
 <blockquote>
 <p>Defeasible reasoning is a particular kind of non-demonstrative reasoning, where the reasoning does not produce a full, complete, or final demonstration of a claim, i.e., where fallibility and corrigibility of a conclusion are acknowledged. In other words, defeasible reasoning produces a contingent statement or claim. Defeasible reasoning is also a kind of ampliative reasoning because its conclusions reach beyond the pure meanings of the premises. Defeasible reasoning finds its fullest expression in jurisprudence, ethics and moral philosophy, epistemology, pragmatics and conversational conventions in linguistics, constructivist decision theories, and in knowledge representation and planning in artificial intelligence. — Wikipedia</p>
 </blockquote>
+<p>These forms of reasoning are particularly relevant to modern AI and data science. Medical diagnosis, for instance, cannot rely on purely monotonic inference because diseases may overlap, evolve over time, and require multimodal evidence (radiology, lab tests, symptoms). As in the examples of COVID-19 and lung disease, a binary or multiclass classifier that assumes mutually exclusive categories cannot capture such complexity. Reasoning must be able to handle exceptions, conflicting information, and revision of beliefs.</p>
+</div>
+</div>
+<div id="summary-of-the-different-inference-methods" class="section level2 hasAnchor" number="2.7">
+<h2><span class="header-section-number">2.7</span> Summary of the different inference methods<a href="scientific-inference.html#summary-of-the-different-inference-methods" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Each of the inference methods plays a distinctive role in both science and data science. <strong>Deduction</strong> ensures internal consistency and allows us to derive testable implications from theories or models. <strong>Induction</strong> supports the generalisation of empirical patterns into broader laws or statistical regularities. <strong>Abduction</strong> drives the generation of explanatory hypotheses when the causes behind observed data are unknown or not fully understood. Finally, <strong>non-monotonic and defeasible reasoning</strong> capture the inherently provisional and revisable nature of scientific knowledge, where conclusions must adapt to new evidence or changing contexts. Together, these inferential modes reflect how science advances: not by accumulating certain truths, but by continuously updating, testing, and improving our best explanations of the world.</p>
+<div style="overflow-x:auto;">
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Concept</th>
+<th>Question</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Deduction</td>
+<td>From general laws to specific consequences</td>
+<td>If this theory is true, what should we observe?</td>
+<td>Testing and deriving predictions</td>
+</tr>
+<tr class="even">
+<td>Induction</td>
+<td>From specific observations to general regularities</td>
+<td>Given what we have seen, what general pattern might hold?</td>
+<td>Testing and generalising</td>
+</tr>
+<tr class="odd">
+<td>Abduction</td>
+<td>From surprising facts to plausible explanations</td>
+<td>What hypothesis would best explain these facts?</td>
+<td>Hypothesis and model generation</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div id="explanation" class="section level2 hasAnchor" number="2.8">
 <h2><span class="header-section-number">2.8</span> Explanation<a href="scientific-inference.html#explanation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -1012,11 +1053,6 @@ Dr. Ignaz Semmelweis, aged 42 in 1860 copperplate engraving by Jenő Doby.
 <p>From this moment on, various explanations were considered, subjected to test and then rejected.</p>
 <p>The first explanation attributed the issue to “epidemic influences” described as “atmospheric-cosmic-telluric changes” spreading over districts and causing childbed fever. This hypothesis did not explain why the first division had more cases than the second. Neither explained the lack of cases in the city of Vienna. Epidemics such as cholera are not so selective. Finally, Semmelweis notes that women who had to give birth in the street on their way to the hospital had a lower death rate than the average for the first division.</p>
 <table>
-<colgroup>
-<col width="23%" />
-<col width="37%" />
-<col width="38%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th>Year</th>
@@ -1245,6 +1281,9 @@ Alexandre Yersin.
 </div>
 <h3> References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-sep-logical-consequence" class="csl-entry">
+Beall, Jc, Greg Restall, and Gil Sagi. 2024. <span>“<span>Logical Consequence</span>.”</span> In <em>The <span>Stanford</span> Encyclopedia of Philosophy</em>, edited by Edward N. Zalta and Uri Nodelman, <span>S</span>ummer 2024. <a href="https://plato.stanford.edu/archives/sum2024/entries/logical-consequence/" class="uri">https://plato.stanford.edu/archives/sum2024/entries/logical-consequence/</a>; Metaphysics Research Lab, Stanford University.
+</div>
 <div id="ref-bergadano1991problem" class="csl-entry">
 Bergadano, Francesco. 1991. <span>“The Problem of Induction and Machine Learning.”</span> In <em>IJCAI</em>.
 </div>

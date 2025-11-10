@@ -1,3 +1,4 @@
+```{=html}
 <!--
 
 - Logic basis
@@ -13,6 +14,7 @@
 
 
 -->
+```
 
 # Scientific Inference
 
@@ -20,8 +22,7 @@
 
 ## Overview
 
-One of the fundamental questions of the philosophy of science is “How can we obtain knowledge as opposed to mere belief or opinion?” [@ladyman2012understanding]. Humans have a natural ability to conjecture and spot relationships about the world, *jumping* from hypotheses to conclusions. The scientific attitude is to keep such *jumps* under control and use a well defined procedure to arrive to a conclusion from an hypothesis. This chapter taughts how conclusions can be reached from known facts in different ways. For this, a sound basis of logic is needed to understand more complex concepts from this course. The reader will tackle deductive and inductive arguments and link them to data science applications. With this the reader will be equipped to tackle other topics of scientific inference such as the problem of induction, the Hypothetico-deductive method and Falsificationism. 
-
+One of the fundamental questions of the philosophy of science is “How can we obtain knowledge as opposed to mere belief or opinion?” [@ladyman2012understanding]. Humans have a natural ability to conjecture and spot relationships about the world, *jumping* from hypotheses to conclusions. The scientific attitude is to keep such *jumps* under control and use a well defined procedure to arrive to a conclusion from an hypothesis. This chapter taughts how conclusions can be reached from known facts in different ways. For this, a sound basis of logic is needed to understand more complex concepts from this course. The reader will tackle deductive and inductive arguments and link them to data science applications. With this the reader will be equipped to tackle other topics of scientific inference such as the problem of induction, the Hypothetico-deductive method and Falsificationism.
 
 ```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
 cat(
@@ -38,11 +39,11 @@ cat(
 > But our sun is only one of a billion-trillion stars within the observable universe. And those countless suns all obey natural laws some of which are already known to us. How did we discover that there are such laws? If we lived on a planet where nothing ever changed, there wouldn't be much to do, there'd be nothing to figure out. There'd be no impetus for science. And if we lived in an unpredictable world where things changed in random or very complex ways, we wouldn't be able to figure things out. And again, there'd be no such thing as science. But we live in an in between universe where things change alright, but according to patterns, rules, or as we call them, laws of nature. If I throw a stick up in the air, it always falls down. If the sun sets in the west, it always rises again the next morning in the east. And so it's possible to figure things out. We can do science. And with it we can improve our lives. --- Carl Sagan
 
 :::: {.simplebox data-latex=""}
-::: { data-latex=""}
+::: {data-latex=""}
 **Course objectives**
 :::
 
-A foundational grasp of logic is essential to understand scientific inference. This chapter content supports objectives 3, 4 and 6 through examples that motivate in-class debate (e.g., Hume, Popper, Hempel) with a narrative that moves from initial naïve support of theories, to a deeper reflection of their weaknesses and later emphasis on the relevant pieces that affect the practice of data science. 
+A foundational grasp of logic is essential to understand scientific inference. This chapter content supports objectives 3, 4 and 6 through examples that motivate in-class debate (e.g., Hume, Popper, Hempel) with a narrative that moves from initial naïve support of theories, to a deeper reflection of their weaknesses and later emphasis on the relevant pieces that affect the practice of data science.
 ::::
 
 ## Types of inferences
@@ -55,14 +56,14 @@ A good argument is one whose conclusions follow from its premises. But how do we
 
 Below there is an example of a deductive inference with two premises followed by a conclusion.
 
-```
+```         
 All Frenchmen like cheese
 Loubin is a Frenchman
 ------------------------------
 Therefore, Loubin likes cheese
 ```
 
-```
+```         
 All As are Bs
 a is an A
 --------------------
@@ -73,7 +74,7 @@ We call an inference *deductive* whenever the conclusion *necessarily* follows f
 
 Not all inferences are deductive. For example:
 
-```
+```         
 The first five eggs in the box were good.
 All the eggs have the same best-before date stamped on them.
 ------------------------------------------------------------
@@ -98,21 +99,21 @@ The following content relates to deduction and is usually taught in high school 
 
 There are two rules of inference in deductive reasoning. Deduction constitutes top-down logic because particular conclusions are drawn from general premises. Whereas in bottom-up logic the conclusion is reached by generalizing from specific cases.
 
-- Modus ponens: `P implies Q. P is true. Therefore Q must also be true.`
-- Modus tollens: `If P, then Q. Not Q. Therefore, not P.`
+-   Modus ponens: `P implies Q. P is true. Therefore Q must also be true.`
+-   Modus tollens: `If P, then Q. Not Q. Therefore, not P.`
 
 The form of a **modus ponens** argument looks like a syllogism consisting of two premises and a conclusion. The first premise is a conditional if-then claim (e.g. `P implies Q`). The second premise is an assertion that $P$ (the antecedent of the first premise) is indeed true. From these two premises, it can be concluded that $Q$, (the consequent of the first premise) must be true as well.
 
-```
+```         
 If P, then Q.
 P.
 --------------
 Therefore, Q.
 ```
 
-The next example fits the form of *modus ponens*. 
+The next example fits the form of *modus ponens*.
 
-```
+```         
 If today rains, John will take the umbrella.
 Today is raining.
 ------------------
@@ -123,7 +124,7 @@ The argument is valid but it doesn't matter if the statements in the argument ar
 
 On the other hand, the form of a **modus tollens** argument also consists of two premises and a conclusion. The first premise is a conditional if-then claim (e.g. `P implies Q`). The second premise is an assertion that $Q$ (the consequent of the conditional claim) is not the case. From these two premises, it can be concluded that $P$ is also not the case. *Modus tollens* rule can be written as $P \rightarrow Q, \lnot Q \vdash \lnot P$.
 
-```
+```         
 If P, then Q.
 Not Q.
 -----------------
@@ -132,7 +133,7 @@ Therefore, not P.
 
 Modus tollens is specially important in falsification (see \@ref(falsification)). For instance, we take our hypothesis H to test and assume that is true. If $H$ is true, then consequent $C$ is true. We make an observation and see that $C$ is false. Therefore, we conclude that H is false.
 
-```
+```         
 If H, then C.
 C is false.
 -----------------
@@ -153,31 +154,32 @@ Men could still be machines that do not follow a definite set of rules.
 
 Another trivial example of this second fallacy.
 
-```
+```         
 If you are a bus driver, then you have a job.
 You are not a bus driver.
 ---------------------------
 Therefore, you have no job.
 ```
 
-
+```{=html}
 <!-- ### Propositional knowledge
 
 [@johansson2016philosophy] -->
+```
 
 ## The problem(s) of induction {#problem-induction}
 
 **Do scientists use induction?** Pretty much all the time. Whenever scientists move from limited data to general conclusions scientists reason inductively. **In inductive arguments, the truth of the premises is never sufficient for the truth of the conclusion.** For instance, a newspaper may run the headline "scientists find experimental proof that transgenic maize is safe to eat". This means scientists tested transgenic maize on a large number of people without finding any issues. Does this *strictly prove* that transgenic maize is safe? Is this prove as strong as the proof of the Pythagoras' theorem? Going from "the transgenic maize didn't harm any of the people on whom it was tested" to "the transgenic maize will not harm anyone" is an inductive inference, not deductive.
 
 :::: {.tipbox data-latex=""}
-::: { data-latex=""}
+::: {data-latex=""}
 **Writing Note:**
 :::
 
 Suppose the following inductive inference $I$: If the probability of observing $R$, given that $H$ is true, is smaller than a significance level of 0.05, then reject $H$. Is important to distinguish between the two following things:
 
-- Justification *with* an inference rule: Justifying the conclusion by pointing to the premise and the inference rule. Inference rules justify conclusions.
-- Justification *of* an inference rule: What makes $I$ a good inductive inference? Why not choosing other parameters? The choice of a particular inference rule must be justified.
+-   Justification *with* an inference rule: Justifying the conclusion by pointing to the premise and the inference rule. Inference rules justify conclusions.
+-   Justification *of* an inference rule: What makes $I$ a good inductive inference? Why not choosing other parameters? The choice of a particular inference rule must be justified.
 ::::
 
 ### David Hume's Problem of Induction
@@ -227,16 +229,16 @@ Hume's argument concerns specific inductive inferences such as `All observed ins
 
 Therefore, there is no non-circular argument for UP and thus, inference `I` is not justified. The reader is left to debate this unsettling conclusion and its consequences. For Hume, the conclusion is that our tendency to project past regularities into the future is not underpinned by reason.
 
-The problem now becomes how to find a way to avoid this conclusion, despite Hume's argument [@sep-induction-problem]. **Hume's problem of induction is still an active area of research for philosophers**. We can frame this problem with different lenses. 
+The problem now becomes how to find a way to avoid this conclusion, despite Hume's argument [@sep-induction-problem]. **Hume's problem of induction is still an active area of research for philosophers**. We can frame this problem with different lenses.
 
-- **Infinitism** embraces an epistemic view that challenges the premise that inference `I` presupposes UP, since, after all, the future only resembles the past in some respects, but not others. Maybe inductive inferences do not rely in a common UP, but rather, each inductive inference depends on separate empirical presuppositions [@sep-induction-problem], **replacing the justification circularity problem with an infinite regress**.
-- **Foundationalism** argues that the justification chain should end with foundational beliefs that do not requrie inferential justification. 
-- **Coherentism** proposes that beliefs are justified if they cohere within a web of beliefs, with a chain of reasons that is never-ending but which does not involve infinite beliefs [@sep-justep-coherence].
+-   **Infinitism** embraces an epistemic view that challenges the premise that inference `I` presupposes UP, since, after all, the future only resembles the past in some respects, but not others. Maybe inductive inferences do not rely in a common UP, but rather, each inductive inference depends on separate empirical presuppositions [@sep-induction-problem], **replacing the justification circularity problem with an infinite regress**.
+-   **Foundationalism** argues that the justification chain should end with foundational beliefs that do not requrie inferential justification.
+-   **Coherentism** proposes that beliefs are justified if they cohere within a web of beliefs, with a chain of reasons that is never-ending but which does not involve infinite beliefs [@sep-justep-coherence].
 
 There are many different ways to respond to Hume's argument, yet none is fully convincing. Peter Strawson (1950s) used the following analogy: **justifying induction is like asking whether the law is itself legal**. This is rather odd, since the law is the standard against which the legality of other things is judged. Others, like Karl Popper (1902-1994) argued that science is not in fact based on inductive inferences at all and presented a deductivist view of science. We will study this in detail in § \@ref(falsification). **Bayesian approaches frame induction probabilistically**. Schurz’s **meta-induction** justifies using induction not by logic, but by tracking which predictive strategy has been most successful over time. This is linked to on-line machine learning methods, where the learner adapts based on past success [@ortner2023adaptive].
 
 :::: {.tipbox data-latex=""}
-::: { data-latex=""}
+::: {data-latex=""}
 **Note on uniformity of nature:**
 :::
 
@@ -247,13 +249,12 @@ Hume refers to this assumption as the Principle of Uniformity of Nature: *“If 
 And it continues: *“Our foregoing method of reasoning will easily convince us, that there can be no demonstrative arguments to prove, that those instances, of which we have had no experience, resemble those, of which we have had experience. We can at least conceive a change in the course of nature; which sufficiently proves, that such a change is not absolutely impossible. To form a clear idea of any thing, is an undeniable argument for its possibility, and is alone a refutation of any pretended demonstration against it.”*
 
 [@hume1739treatise] T. 1.3.6.4
-
 ::::
 
 As scientists, Hume's problem of induction may leave a huge void in our heart. An empty feeling that science is indeed fallible and the sudden realisation of the impossibility of establishing the truth or falsity of scientific laws [@rosenberg2019philosophy]. But perhaps there is a way to fill such gap, and perhaps big part of the effort of science is put on filling this void with as much certainty as possible. Just because an inference rule has yield true conclusions in the past does not necessarily imply that it will do so in the future. Consequently, Hume concludes that no inductive inference rule can be justified. But, does this mean all scientific inductive inferences are not justified?
 
 :::: {.tipbox data-latex=""}
-::: { data-latex=""}
+::: {data-latex=""}
 **Note for data scientists!**
 :::
 
@@ -263,17 +264,14 @@ Notice how the problem of induction relates to model choice given different data
 ::::
 
 :::: {.simplebox data-latex=""}
-::: { data-latex=""}
+::: {data-latex=""}
 **Ancient views on the regress argument**
 :::
 
 Pyrrhonist philosopher Sextus Empiricus (mid-late 2nd century CE) raised concerns which applied to all types of knowledge and doubted the validity of induction long before David Hume, raising the regress argument against all forms of reasoning ([Wikipedia](https://en.wikipedia.org/wiki/Sextus_Empiricus#Philosophy)). This view is known as Pyrrhonian skepticism.
 
 > Those who claim for themselves to judge the truth are bound to possess a criterion of truth. This criterion, then, either is without a judge's approval or has been approved. But if it is without approval, whence comes it that it is trustworthy? For no matter of dispute is to be trusted without judging. And, if it has been approved, that which approves it, in turn, either has been approved or has not been approved, and so on ad infinitum. -- Sextus Empiricus
-
 ::::
-
-
 
 ## The Hypothetico-deductive Method
 
@@ -301,15 +299,15 @@ knitr::include_graphics('Figures/hypothesis_generation.png')
 
 Still, there are some criteria for a [good hypothesis](https://opentext.wsu.edu/carriecuttler/chapter/developing-a-hypothesis/). Apart from criteria such as parsimony, scope, fruitfulness and conservatism, these are other criteria to recall.
 
-- It should be an statement that can be either true or false (e.g. "Boiling point of a liquid increases with increase in pressure"). In other words, it should be **testable and falsifiable**. We must be able to test the hypothesis using the methods of science and according to Popper’s falsifiability criterion, it must be possible to gather evidence that will reject the hypothesis if it is indeed false.
+-   It should be an statement that can be either true or false (e.g. "Boiling point of a liquid increases with increase in pressure"). In other words, it should be **testable and falsifiable**. We must be able to test the hypothesis using the methods of science and according to Popper’s falsifiability criterion, it must be possible to gather evidence that will reject the hypothesis if it is indeed false.
 
-- A hypothesis must not be a tautology (i.e. claims that are necessarily true or false; e.g. "Either it will rain tomorrow or it will not rain." or "all bachelors are unmarried"). 
+-   A hypothesis must not be a tautology (i.e. claims that are necessarily true or false; e.g. "Either it will rain tomorrow or it will not rain." or "all bachelors are unmarried").
 
-- Hypotheses should be informed by previous theories or observations and logical reasoning.
+-   Hypotheses should be informed by previous theories or observations and logical reasoning.
 
-- Finally, the hypothesis should be positive. That is, the hypothesis should make a positive statement about the existence of a relationship or effect, rather than a statement that a relationship or effect does not exist. 
+-   Finally, the hypothesis should be positive. That is, the hypothesis should make a positive statement about the existence of a relationship or effect, rather than a statement that a relationship or effect does not exist.
 
-- Finally, it should have some generality (e.g. "things of certain type...") or be about some non-directly observable property of a particular.
+-   Finally, it should have some generality (e.g. "things of certain type...") or be about some non-directly observable property of a particular.
 
 ### Falsification {#falsification}
 
@@ -333,13 +331,13 @@ knitr::asis_output('\\begin{wrapfigure}{R}{.25\\textwidth}
 \\addtocounter{figure}{-1}')
 ```
 
-According to the Hypothetico-deductive method (H-D), a hypothesis is formulated, then relevant consequences are deduced, and finally we observe whether these consequences are false or true. Depending on these observations the hypothesis will be either falsified or confirmed. 
+According to the Hypothetico-deductive method (H-D), a hypothesis is formulated, then relevant consequences are deduced, and finally we observe whether these consequences are false or true. Depending on these observations the hypothesis will be either falsified or confirmed.
 
-Is important to note a key difference between confirmation and falsification. In step 4 of the **H-D method** we can infer the falsity of the hypothesis from the falsity of even a single one of the expected consequences. In contrast, in step 5 confirmation of the hypothesis is not inferred from the truth of even a large set of the consequences. Instead, we only increase our confidence on the hypothesis after finding that many consequences of the hypothesis are true. This difference is referred as the **asymmetry between confirmation and falsification**. Although a scientific theory can never be proved true by a finite amount of data, it can be proved false, or refuted by a single experiment. 
+Is important to note a key difference between confirmation and falsification. In step 4 of the **H-D method** we can infer the falsity of the hypothesis from the falsity of even a single one of the expected consequences. In contrast, in step 5 confirmation of the hypothesis is not inferred from the truth of even a large set of the consequences. Instead, we only increase our confidence on the hypothesis after finding that many consequences of the hypothesis are true. This difference is referred as the **asymmetry between confirmation and falsification**. Although a scientific theory can never be proved true by a finite amount of data, it can be proved false, or refuted by a single experiment.
 
 > “No amount of experimentation can ever prove me right; a single experiment can prove me wrong.” --- Albert Einstein
 
-This asymmetry forms the basics of Karl Popper's (1902-1994) falsificationism. 
+This asymmetry forms the basics of Karl Popper's (1902-1994) falsificationism.
 
 -   Propose falsifiable hypotheses.
 -   Try to falsify these hypotheses with observable evidence.
@@ -348,11 +346,11 @@ This asymmetry forms the basics of Karl Popper's (1902-1994) falsificationism.
 
 > One objection to this [the asymmetry between confirmation and falsification] holds that the asymmetry is an illusion, because whenever we refute a universal statement we thereby verify its negation. A universal statement “All x are y” is equivalent to “There is no non-y x.” Therefore, when we refute “All apples are green” we automatically verify “There is a non-green apple.” --- [@percival2015confirmation]
 
-Popper is quite radical in this last step. For him, confirmation places no role at all. One can never infer the truth of hypotheses - Popper argues -  from the observations regarding their implications. Not even increase the confidence in the truth of the hypothesis. Popper hoped to avoid Hume's problem of induction by not employing induction in science. Popper thought that science was and should be deductive, and therefore that the lack of justification for inductive inferences was not as damaging for science. Below example is illustrative.
+Popper is quite radical in this last step. For him, confirmation places no role at all. One can never infer the truth of hypotheses - Popper argues - from the observations regarding their implications. Not even increase the confidence in the truth of the hypothesis. Popper hoped to avoid Hume's problem of induction by not employing induction in science. Popper thought that science was and should be deductive, and therefore that the lack of justification for inductive inferences was not as damaging for science. Below example is illustrative.
 
 > Suppose a scientist is testing the hypothesis that all pieces of metal conduct electricity. Even if every piece of metal they examine conducts electricity, this doesn’t prove that the hypothesis is true, for reasons that we’ve seen. But if the scientist finds even one piece of metal that fails to conduct electricity, this conclusively refutes the theory. For the inference from ‘this piece of metal does not conduct electricity’ to ‘it is false that all pieces of metal conduct electricity’ is a deductive inference—the premise entails the conclusion. So if a scientist were trying to refute their theory, rather than establish its truth, their goal could be accomplished without the use of induction. --- [@okasha-pos]
 
-However, this view of the scientific process could be rather limiting with respect to the actual scientific practice. First, it does not allow to distinguish between non-falsified hypotheses. Popper argues that obtaining evidence in favour of a given theory is generally easy, and holds that such *corroboration* should count scientifically only if it is the positive result of a genuinely *risky* prediction, which might conceivably have been false. 
+However, this view of the scientific process could be rather limiting with respect to the actual scientific practice. First, it does not allow to distinguish between non-falsified hypotheses. Popper argues that obtaining evidence in favour of a given theory is generally easy, and holds that such *corroboration* should count scientifically only if it is the positive result of a genuinely *risky* prediction, which might conceivably have been false.
 
 > It is logically impossible to verify a universal proposition by reference to experience (as Hume saw clearly), but a single genuine counter-instance falsifies the corresponding universal law. In a word, an exception, far from “proving” a rule, conclusively refutes it. --- [@sep-popper]
 
@@ -379,7 +377,7 @@ Second, in scientific practice hypotheses rarely have immediate observable conse
     5.  If $\{C_i\}$ is true, increase confidence in $H \& \{AH_j\}$.
 
 :::: {.tipbox data-latex=""}
-::: { data-latex=""}
+::: {data-latex=""}
 **Semantic Note:**
 :::
 
@@ -390,7 +388,6 @@ Note the difference between *falsifiable* and *falsified*.
 **Falsification** is the observation that an implication of a hypothesis is not true which implies (by *modus tollens*) the falsity of the hypothesis. Hypothesis can only be falsified if they are falsifiable.
 
 > Falsification uses the valid inference modus tollens: if from a statement $P$ we logically deduce $Q$, but what is observed is $\lnot Q$, we infer that $P$ is false. For example, given the statement "all swans are white" and the initial condition "there is a swan here", we can deduce "the swan here is white", but if what is observed is "the swan here is not white" (say black), then "all swans are white" is false, or it was not a swan.
-
 ::::
 
 The take-away message from falsification is that despite proposing an unrealistically restrictive practice of science, it might be a useful inference method for scientists. However, they should be aware of its limitations and for instance, bear in mind the pitfalls of *ad-hoc* modifications. (See negative weight in phlogiston theory [@phlogiston]). An *ad-hoc* hypothesis is added to a theory to save it from being falsified. A modification is considered *ad-hoc* if it reduces the falsifiability of the hypothesis in question.
@@ -401,7 +398,7 @@ The take-away message from falsification is that despite proposing an unrealisti
 
 Confirmation is the act of using evidence to justify increasing the confidence in the hypothesis. Confirmation is not based on deductively valid inferences. For instance, in the **H-D method** we identify some $C$ that is an implication of $H$. $H$ implies $C$, then if $H$ is true we conclude (by *modus ponens*) that $C$ is also true. Moreover, if we observe than $C$ is false, then we conclude (by *modus tollens*) that $H$ is false as well.
 
-```
+```         
 Modus ponens     Modus tollens    Induction
 
 H, then C        H, then C        H, then C
@@ -410,14 +407,14 @@ H                not C            C
 C                not H            H 
 ```
 
-While these two inference rules are deductively valid, they do not tell us what to conclude if the implication $C$ is true. There is no valid deductive rule that can be used for the case where $H$ implies $C$ and $C$ is true. We cannot deduce anything from that. 
+While these two inference rules are deductively valid, they do not tell us what to conclude if the implication $C$ is true. There is no valid deductive rule that can be used for the case where $H$ implies $C$ and $C$ is true. We cannot deduce anything from that.
 
 Instead, any rule used here must amplify the information contained in the premises to infer the conclusions. Therefore we must make use of inductive inferences. Inductive inferences are fallible (inductions that fail are common e.g. predicting the weather, stock investing). But fallibility comes in degrees and this degree is affected by the kind and quality of the evidence as well as the inference rule employed. Scientists have attempted to quantify confidence, most prominently by using probabilities. For instance, if an observation $O$ confirms hypothesis $H$, therefore we say that $P(H|O)$ is greater than $P(H|\lnot O)$ where $P(H|O)$ means "the probability of $H$ given $O$".
 
 There is certain debate on this last point. Not everybody agrees that it makes sense to assign probabilities to hypotheses because they differ on the interpretation of the concept of probability. **Frequentists** interpret the probabilities as the frequencies of repeatable observable events. Therefore probabilities cannot be assigned to hypotheses since these are not events, nor observable or repeatable. Another problem is that probabilities are already used to express a property different from confidence. For instance, we may say that the probability of tails when throwing a coin is 50%. But then someone may ask us how confident we are about our claim. Even if we can also answer that second question with a probability, is clear that these two numbers express different things.
 
 :::: {.tipbox data-latex=""}
-::: { data-latex=""}
+::: {data-latex=""}
 **Note for data scientists!**
 :::
 
@@ -428,7 +425,7 @@ The frequentist computes the probability of result or data $D$ given hypothesis 
 
 Understanding that confirmation comes in degrees may help clarify the last step of **H-D method**. Observing $C$ to be true, increases our degree of confidence that $H$ is true. But why is this? A naïve answer to this question is that observing $C$ confirms $H$ because $H$ is compatible with $C$. But this seems rather weak justification. Indefinitely irrelevant implications could be inferred from a hypothesis. For instance:
 
-```
+```         
 I have pancreas cancer, then I have a pancreas
 I have a pancreas    
 ---------
@@ -444,7 +441,7 @@ knitr::include_graphics('Figures/underdetermination_small.png')
 ```
 
 :::: {.tipbox data-latex=""}
-::: { data-latex=""}
+::: {data-latex=""}
 **Note for data scientists!**
 :::
 
@@ -453,7 +450,6 @@ According to **anti-realists**, there will always be multiple **competing** theo
 But why is this important for data scientists? Often you will find many ML models or solutions that fit your available data or fulfil your requirements, and yet you will have to decide which model/solution is best. If possible, validation with external data and other assessments must be conducted, but sometimes solutions are also chosen based on *non-epistemic* values, such as making society more just or making money.
 
 Is also important to notice how the problem of underdetermination relates to the popular **No Free Lunch Theorem** which is very relevant in the Machine Learning community [@dotan2020theory]. For more on the NFL read [@domingos2015master].
-
 ::::
 
 ## Beyond the Hypothetico-Deductive Method: Bayesian Inference and the Logic of Uncertainty {#bayesian-inference}
@@ -462,16 +458,16 @@ While the HD method offers a simple and useful framework to think about how scie
 
 ### Limitations of the HD method in probabilistic contexts
 
-In the HD method, hypotheses are tested by deducing observable consequences and then checking whether those consequences occur. If any of the deduced implications are false, the hypothesis is rejected (falsified). If they are all true, the hypothesis is not proven true, but may be confirmed. However, **we must distinguish between logical incompatibility (in the rejection of hypothesis) and statistical evidence in hypothesis testing**. In the latter, data is logically compatible with both the null and the alternative hypotheses, i.e., no matter what data is observed, both hypotheses can accommodate, though with varying likelihood extents [@sep-logical-consequence]. 
+In the HD method, hypotheses are tested by deducing observable consequences and then checking whether those consequences occur. If any of the deduced implications are false, the hypothesis is rejected (falsified). If they are all true, the hypothesis is not proven true, but may be confirmed. However, **we must distinguish between logical incompatibility (in the rejection of hypothesis) and statistical evidence in hypothesis testing**. In the latter, data is logically compatible with both the null and the alternative hypotheses, i.e., no matter what data is observed, both hypotheses can accommodate, though with varying likelihood extents [@sep-logical-consequence].
 
 Importantly, most scientific theories, especially those in statistical sciences, are not structured as strict universal generalizations like "all swans are white". Instead, they are probabilistic in nature. For example:
 
-- “If a drug is effective, then 80% of patients will recover.”
-- “If a coin is fair, then heads will appear approximately 50% of the time.”
+-   “If a drug is effective, then 80% of patients will recover.”
+-   “If a coin is fair, then heads will appear approximately 50% of the time.”
 
 Here, the predictions are not strictly entailed by the hypothesis. They are probabilistic expectations. This weakens the applicability of modus tollens: if only 60% of patients recover, is the hypothesis falsified? Not necessarily. In probabilistic contexts, observing an outcome that deviates from the expected does not conclusively falsify the hypothesis, because such deviations are themselves expected to occur with some probability. **The data may be compatible with both the hypothesis and the null hypothesis**, making it difficult to draw a sharp deductive conclusion. Instead of strict falsification, we assess how well the data supports one hypothesis over another, often in terms of likelihood or posterior probability.
 
-This complexity is further compounded when we consider that hypotheses are rarely tested alone but often depend on **auxiliary hypotheses** [@phlogiston], which in practice motivates robustness checks and sensitivity analyses to see how conclusions depend on background assumptions. 
+This complexity is further compounded when we consider that hypotheses are rarely tested alone but often depend on **auxiliary hypotheses** [@phlogiston], which in practice motivates robustness checks and sensitivity analyses to see how conclusions depend on background assumptions.
 
 Moreover, empirical data is noisy. Measurement error, incomplete information, and stochastic processes mean that consequences of a hypothesis may deviate from what is expected even if the hypothesis is "mostly" correct. Under these circumstances, we need a more flexible form of inference, i.e., probabilistic inference, that allows us to reason under uncertainty.
 
@@ -483,9 +479,9 @@ Bayes' theorem: $P(H \mid D) = \frac{P(D \mid H) \cdot P(H)}{P(D)}$
 
 This formula tells us how to update our belief in $H$ after observing $D$. Key terms:
 
-- $P(H)$: the prior probability of the hypothesis before seeing the data.
-- $P(D \mid H)$: the likelihood of the data assuming the hypothesis is true.
-- $P(H \mid D)$: the posterior probability of the hypothesis after updating with the data.
+-   $P(H)$: the prior probability of the hypothesis before seeing the data.
+-   $P(D \mid H)$: the likelihood of the data assuming the hypothesis is true.
+-   $P(H \mid D)$: the posterior probability of the hypothesis after updating with the data.
 
 This rule allows beliefs to change incrementally as new evidence becomes available, reflecting both prior knowledge and the strength of the data. It avoids the binary logic of the HD method and instead provides a continuous scale of confidence. Where the HD method discards a hypothesis after a single negative test, Bayesian inference merely lowers its probability, unless the evidence is truly decisive [@howson2006scientific].
 
@@ -493,29 +489,28 @@ This rule allows beliefs to change incrementally as new evidence becomes availab
 
 There are two dominant interpretations of probability in scientific inference:
 
-- Frequentist: Probabilities refer to long-run relative frequencies of observable events. Hypotheses are fixed and not assigned probabilities. Evidence is used to reject or fail to reject a hypothesis.
-- Bayesian: Probabilities reflect subjective or rational degrees of belief. Hypotheses themselves are uncertain, and can be compared based on their posterior probabilities.
+-   Frequentist: Probabilities refer to long-run relative frequencies of observable events. Hypotheses are fixed and not assigned probabilities. Evidence is used to reject or fail to reject a hypothesis.
+-   Bayesian: Probabilities reflect subjective or rational degrees of belief. Hypotheses themselves are uncertain, and can be compared based on their posterior probabilities.
 
 Both perspectives are widely used in science and data analysis. For example:
 
-| Topic                          | Frequentist Perspective                                  | Bayesian Perspective                                      |
-|-------------------------------|-----------------------------------------------------------|-----------------------------------------------------------|
-| Interpretation of Probability | Long-run frequency of events                              | Degree of belief (subjective or epistemic)                |
-| Hypotheses                    | Fixed and not assigned probabilities                      | Treated as uncertain; assigned prior and updated posterior|
-| Learning from Data            | Estimation via Maximum Likelihood (MLE), confidence intervals | Posterior inference via Bayes’ Theorem                  |
-| Inference                     | Hypothesis testing using p-values                         | Probability of hypothesis given data, i.e., `P(H|D)`           |
-| Updating                      | No explicit mechanism; fixed once data is observed         | Prior updated with data to form posterior                 |
-| ML applications             | Parameter estimation, frequentist confidence               | Bayesian networks, uncertainty quantification             |
+| Topic | Frequentist Perspective | Bayesian Perspective |
+|-----------------|---------------------------|---------------------------|
+| Interpretation of Probability | Long-run frequency of events | Degree of belief (subjective or epistemic) |
+| Hypotheses | Fixed and not assigned probabilities | Treated as uncertain; assigned prior and updated posterior |
+| Learning from Data | Estimation via Maximum Likelihood (MLE), confidence intervals | Posterior inference via Bayes’ Theorem |
+| Inference | Hypothesis testing using p-values | Probability of hypothesis given data, i.e., `P(H|D)` |
+| Updating | No explicit mechanism; fixed once data is observed | Prior updated with data to form posterior |
+| ML applications | Parameter estimation, frequentist confidence | Bayesian networks, uncertainty quantification |
 
 Bayesian inference is especially relevant in machine learning, where models are constantly updated as new data is acquired. For example, recommender systems revise their predictions as user preferences evolve, and autonomous vehicles update environmental models in real time.
 
 :::: {.tipbox data-latex=""}
-::: { data-latex=""}
+::: {data-latex=""}
 **Note for data scientists!**
 :::
 
 In Bayesian Machine Learning, priors allow incorporation of domain knowledge into model training. For instance, prior beliefs about plausible parameter ranges can prevent overfitting in small-data regimes. In deep learning, Bayesian neural networks use probability distributions over weights, allowing uncertainty estimation in predictions. These methods are crucial in high-stakes applications such as medical diagnosis, where not knowing the confidence of a prediction can be dangerous.
-
 ::::
 
 ### Bayesian Inference and the Problem of Induction
@@ -524,12 +519,14 @@ Bayesian epistemology offers one response to Hume’s problem of induction. It d
 
 However, this still does not justify induction in the absolute sense. It formalizes how we might reasonably behave given certain starting beliefs and observations, but it does not explain why those beliefs are justified in the first place. As some philosophers argue, Bayesianism presupposes that some inductive inferences are valid; it does not solve Hume's problem but reframes it.
 
+```{=html}
 <!-- 
 check the quote
 
 "The Bayesian model shows how a rational agent should update beliefs, but it still takes for granted that the prior beliefs are reasonable." — [@Talbott2020bayesian]
 
---> 
+-->
+```
 
 ### Underdetermination and Bayesian Model Selection
 
@@ -537,47 +534,64 @@ As seen with Confirmation in section \@ref(confirmation), many hypotheses can be
 
 Still, choosing priors is an open issue. Different priors can lead to different posterior conclusions, raising philosophical concerns about **subjectivity**. In practice, however, prior sensitivity can be tested and robustified through sensitivity analysis and hierarchical modeling.
 
-
 ## Other types of inference
 
-:::: {.notebox data-latex=""}
-::: {.center data-latex=""}
-**Course Note:**
-:::
+So far we have discussed deduction and induction, but we can find additional scientific reasoning methods. In practice, scientists and data scientists often rely on other forms of inference that go beyond strict deduction and enumerative induction. These include abduction (or inference to the best explanation), and logics that depart from the classical, monotonic model of reasoning, such as non-monotonic and defeasible inference.
 
-The following content is under construction but might as well be taught during the course. This section will superficially tackle abduction and causal inferences and its relation to data science regarding non-monotonic logic.
-::::
+### Abduction and Inference to the Best Explanation (IBE)
 
-<!--
+Abduction was first introduced by Charles Peirce (1839-1914) to describe the process of inferring the most plausible hypothesis from a set of observations. **Abduction, then, is an explanatory form of reasoning**: given evidence `E` and a set of possible hypotheses `H₁, H₂, …, Hₙ`, we infer that `Hᵢ` is true because it best explains `E`. This is different from enumerative induction, which generalises from a limited number of instances to a rule.
 
-The following types of inference are very common in science.
+For example, if we find an empty plate with crumbs and recall hearing scratching sounds in the larder, we infer that the cheese was eaten by a mouse. Similarly, a doctor observing fever, cough, and shortness of breath will *abduce* (or infer) that the patient might have an infection. Both are plausible explanations, not certain deductions.
 
-#### Abduction
+Philosopher Peter Lipton (1954-2007) later framed abduction as Inference to the Best Explanation (IBE), stressing that what makes an explanation "best" depends on factors like simplicity, coherence with background knowledge, and explanatory power. While some philosophers distinguish abduction as a psychological process from IBE as its normative version, in practice we treat them as one and the same, both describe how we move from observed data to explanatory hypotheses. For the shake of distinguishing them, abduction, in this sense, is the creative step that proposes a possible explanation, it tells us *how* hypotheses arise. IBE, is the *evaluative* step that selects which of the available hypotheses is most plausible. Of course, these two steps, often happen together.
 
-Abduction or Inference to the Best Explanation (IBE)...
+### Monotonic and Non-monotonic Logic
 
-#### Causal Inference
+Traditional deductive logic is monotonic: once a conclusion is validly derived from a set of premises, adding more premises can never invalidate it. If `A ⊢ p`, then `A ∧ B ⊢ p` still holds. This is the logic of mathematics and formal proofs. However, **most real-world reasoning, and especially scientific reasoning, is non-monotonic**. New evidence can force us to withdraw a previous conclusion. For instance, a physician might initially diagnose pneumonia from a chest X-ray, but revise the diagnosis after receiving negative test results or learning that the symptoms were caused by tuberculosis instead.
 
-#### Probability and Inference
+In its epistemic sense, **monotonicity expresses the fact that adding more premises to an argument allows you to derive all the same conclusions as you could with fewer** [@sep-logic-nonmonotonic]. Specifically, under monotonic reasoning, if a conclusion $p$ follows from a set of premises $A$, (denoted as $A$ \vdash $p$), adding another set of premises $B$ doesn’t alter the conclusion (i.e. $A ∧ B \vdash p$ also holds). Therefore, reasoning is [non-monotonic](https://plato.stanford.edu/entries/logic-nonmonotonic/) when a conclusion supported by a set of premises can be retracted in the light of new information. Or in other words, we can infer certain conclusions from a subset of a set $S$ of premises which cannot be inferred from $S$ as a whole. Medical diagnosis fits very well under such definition.
 
-Mention non-monotonic logic, defeasible reasoning and tweety.
+In machine learning terms, this corresponds to models that must update their predictions when new, possibly conflicting, data arrive. This very notion relates to how knowledge is indeed provisional, which in turn justifies practices like MLOps techniques to monitor the performance of deployed machine learning models and act on events of **concept drift** (when the relationship between input features and the target variable changes over time, e.g. when what “counts” as a fraudulent transaction evolves) and **data drift** (when the distribution of input data itself shifts, e.g. new patterns or populations differing from those seen during training).
 
--->
-
-## Non-Monotonic logic and defeasible reasoning
-
-In its epistemic sense, monotonicity expresses the fact that adding more premises to an argument allows you to derive all the same conclusions as you could with fewer [@sep-logic-nonmonotonic]. Specifically, under monotonic reasoning, if a conclusion $p$ follows from a set of premises $A$, (denoted as $A$ \vdash $p$), adding another set of premises $B$ doesn’t alter the conclusion (i.e. $A ∧ B \vdash p$ also holds). Therefore, reasoning is [non-monotonic](https://plato.stanford.edu/entries/logic-nonmonotonic/) when a conclusion supported by a set of premises can be retracted in the light of new information. Or in other words, we can infer certain conclusions from a subset of a set $S$ of premises which cannot be inferred from $S$ as a whole. Medical diagnosis fits very well under such definition.
-
+### Defeasible Reasoning
 
 ```{r tweety, echo=F, fig.align="center", out.width="33%", fig.cap='Double arrows indicate non-defeasible inferences (hard fact), single arrows depict defeasible inferences, and strikethrough arrows denote a negation. It can be read as: Penguins are birds (no exceptions); Birds usually fly; and Penguins usually don’t fly.'}
 knitr::include_graphics('Figures/PenguinFlies.png')
 ```
 
-Defeasible reasoning deals with tentative relationships between premises and conclusions, which can be *defeated* by additional information, allowing for the retraction of inferences. For instance, while we may infer that Tweety flies based on the information that Tweety is a bird and the domain knowledge that birds generally fly, we can retract this inference when we learn that Tweety is a penguin. Tweety is indeed a bird but it cannot fly. Defeasible reasoning is not exempt from limitations, requiring from causal information to properly derive conclusions under certain scenarios. Consider, for example, this problem of Judea Pearl: if the sprinkler is on, then normally the sidewalk is wet, and, if the sidewalk is wet, then normally it is raining. However, we should not infer that it is raining from the fact that the sprinkler is on [@pearl2014probabilistic]. Conflicts may arise between hard facts and defeasible conclusions. For instance, both arguments in Figure \@ref(fig:tweety) $Penguin ⇒ Bird → flies$ and $Penguin → ¬flies$ finish with a defeasible inference. The transitivity rule $(a → b, b → c) ⇒ a → c$ cannot be applied to the first argument. In this case, according to their specificity we can give priority to the argument with more a specific antecedent but is not always as trivial, and complex conflicts can remain unresolved.
+Defeasible reasoning deals with tentative relationships between premises and conclusions, which can be *defeated* by additional information, allowing for the retraction of inferences. For instance, while we may infer that Tweety flies based on the information that Tweety is a bird and the domain knowledge that birds generally fly, we can retract this inference when we learn that Tweety is a penguin. Tweety is indeed a bird but it cannot fly. Defeasible reasoning is not exempt from limitations, requiring from causal information to properly derive conclusions under certain scenarios. 
+
+Consider, for example, this problem of Judea Pearl: if the sprinkler is on, then normally the sidewalk is wet, and, if the sidewalk is wet, then normally it is raining. However, we should not infer that it is raining from the fact that the sprinkler is on [@pearl2014probabilistic]. Conflicts may arise between hard facts and defeasible conclusions. For instance, both arguments in Figure \@ref(fig:tweety) $Penguin ⇒ Bird → flies$ and $Penguin → ¬flies$ finish with a defeasible inference. The transitivity rule $(a → b, b → c) ⇒ a → c$ cannot be applied to the first argument. In this case, according to their specificity we can give priority to the argument with more a specific antecedent but is not always as trivial, and complex conflicts can remain unresolved.
 
 > Reasoning is defeasible when the corresponding argument is rationally compelling but not deductively valid. The truth of the premises of a good defeasible argument provide support for the conclusion, even though it is possible for the premises to be true and the conclusion false. In other words, the relationship of support between premises and conclusion is a tentative one, potentially defeated by additional information. --- [@sep-reasoning-defeasible].
 
 > Defeasible reasoning is a particular kind of non-demonstrative reasoning, where the reasoning does not produce a full, complete, or final demonstration of a claim, i.e., where fallibility and corrigibility of a conclusion are acknowledged. In other words, defeasible reasoning produces a contingent statement or claim. Defeasible reasoning is also a kind of ampliative reasoning because its conclusions reach beyond the pure meanings of the premises. Defeasible reasoning finds its fullest expression in jurisprudence, ethics and moral philosophy, epistemology, pragmatics and conversational conventions in linguistics, constructivist decision theories, and in knowledge representation and planning in artificial intelligence. --- Wikipedia
+
+These forms of reasoning are particularly relevant to modern AI and data science. Medical diagnosis, for instance, cannot rely on purely monotonic inference because diseases may overlap, evolve over time, and require multimodal evidence (radiology, lab tests, symptoms). As in the examples of COVID-19 and lung disease, a binary or multiclass classifier that assumes mutually exclusive categories cannot capture such complexity. Reasoning must be able to handle exceptions, conflicting information, and revision of beliefs.
+
+## Summary of the different inference methods
+
+Each of the inference methods plays a distinctive role in both science and data science. **Deduction** ensures internal consistency and allows us to derive testable implications from theories or models. **Induction** supports the generalisation of empirical patterns into broader laws or statistical regularities. **Abduction** drives the generation of explanatory hypotheses when the causes behind observed data are unknown or not fully understood. Finally, **non-monotonic and defeasible reasoning** capture the inherently provisional and revisable nature of scientific knowledge, where conclusions must adapt to new evidence or changing contexts. Together, these inferential modes reflect how science advances: not by accumulating certain truths, but by continuously updating, testing, and improving our best explanations of the world.
+
+```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
+cat(
+'<div style="overflow-x:auto;">'
+)
+```
+
+| Type | Concept | Question | Role |
+|----|----|----|----|
+| Deduction | From general laws to specific consequences | If this theory is true, what should we observe? | Testing and deriving predictions |
+| Induction | From specific observations to general regularities | Given what we have seen, what general pattern might hold? | Testing and generalising |
+| Abduction | From surprising facts to plausible explanations | What hypothesis would best explain these facts? | Hypothesis and model generation |
+
+```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
+cat(
+'</div>'
+)
+```
+
 
 ## Explanation
 
@@ -605,14 +619,14 @@ At this point, many of you probably have already related data science to two of 
 
 According to Hempel, explanations are structured like an argument, i.e. a set of premises followed by a conclusion. Therefore, the conclusion of such an argument states that certain phenomenon occurs, e.g. "salt dissolves in water". On the other hand, the premises indicate why the conclusion is true. Then, the challenge lays in the relationship that should follow between such premises and the conclusion. For Hempel, the premises should all be true and entail the conclusion, i.e. the argument should be deductive and *sound*. Additionally, the premises should contain at least one general law (e.g. all metals conduct electricity), also known as *laws of nature*. The name of the model comes from that fact that the phenomenon to be explained is "covered" by some general law.
 
-1. The *explanandum* must be a valid deductive argument.
-2. The *explanans* must contain at least one general law actually needed in the deduction.
-3. The *explanans* must be empirically testable.
-4. The sentences in the *explanans* must be true.
+1.  The *explanandum* must be a valid deductive argument.
+2.  The *explanans* must contain at least one general law actually needed in the deduction.
+3.  The *explanans* must be empirically testable.
+4.  The sentences in the *explanans* must be true.
 
 For instance, Newton explained the elliptical orbits of planets alluding a general rule (his law of universal gravitation) together with some minor assumptions. This example fits Hempel's model very well, but not all scientific explanations do.
 
-```
+```         
 General Law      (explanans)
 Particular Facts (explanans)
 ---------
@@ -631,7 +645,7 @@ knitr::include_graphics('Figures/flagpole.png')
 
 Hempel's model might be too liberal, as it faces a number of odd counterexamples. For example, consider Figure \@ref(fig:flagpole). In order to explain why the shadow is 20 metres long. Indeed, this is a *explanation-seeking why-question* and a possible answer could be the following: The light rays from the sun hit the flagpole (15 metres high), the sun's elevation angle is 37° and light travels in straight lines. The trigonometric calculation $tan(37°) = 15/20$ demonstrates that the flagpole will cast a shadow of 20 metres long. This example can be found in both [@rosenberg2019philosophy] and [@okasha-pos].
 
-```
+```         
 General Law      (Light travels in straight lines)
 General Law      (Trigonometric laws)
 Particular Fact  (Flagpole is 15 metres high)
@@ -642,7 +656,7 @@ Phenomenon to be explained (Shadow is 20 metres long)
 
 This explanation can be structured according to Hempel's schema and indeed fits Hempel's covering law model. However, when we swap the *explanandum* with the particular fact that the flagpole is 15 metres high, a problem arises. The explanation still complies with the covering law pattern, but it would be rather odd to regard it as an explanation of why the flagpole is 15 metres high. In this case, we know that the height of the flagpole is not conditioned by the sun's angle of elevation but rather because it was manufactured with such height. We can *calculate* or *predict* its height but this height will not change upon the other variables, so they do not *explain* the flagpole height.
 
-```
+```         
 General Law      (Light travels in straight lines)
 General Law      (Trigonometric laws)
 Particular Fact  (Shadow is 20 metres long)
@@ -657,7 +671,7 @@ The general conclusion is that a good explanation of a phenomenon should contain
 
 ### Explanation and causality
 
-There are alternatives to the covering law model that help us understand what counts as scientific explanation. For many, explaining a phenomenon is simply to say what caused it. Obviously, causality is also an asymmetric relation. If a faulty appliance caused a fire, then it is clear that the fire did not cause the appliance's failure. The asymmetry of explanation derives from the asymmetry of causality. 
+There are alternatives to the covering law model that help us understand what counts as scientific explanation. For many, explaining a phenomenon is simply to say what caused it. Obviously, causality is also an asymmetric relation. If a faulty appliance caused a fire, then it is clear that the fire did not cause the appliance's failure. The asymmetry of explanation derives from the asymmetry of causality.
 
 However, the criticism against Hempel covering law is a bit unfair as he was an empiricist. Empiricists are sceptical about the concept of causality and argue that all our knowledge comes from experience. David Hume argued that is impossible to experience causal relations, and that causality is just what we humans project to understand the world.
 
@@ -673,63 +687,57 @@ Another example, this time from [@book-of-why], show us the gap between causal v
 
 We can summarise Hempel's view as follows:
 
-- Hempel proposed that scientific explanations answer why-questions using a logical argument.
-- The structure of an explanation resembles a deductive argument, consisting of explanans (premises including at least one general law and specific facts) and an explanandum (the phenomenon to be explained).
-- For Hempel, a valid scientific explanation must be a deductive and sound argument; contain at least one general law of nature; have empirically testable premises; use true statement.
-- Hempel held that explanation and prediction are structurally symmetric.
+-   Hempel proposed that scientific explanations answer why-questions using a logical argument.
+-   The structure of an explanation resembles a deductive argument, consisting of explanans (premises including at least one general law and specific facts) and an explanandum (the phenomenon to be explained).
+-   For Hempel, a valid scientific explanation must be a deductive and sound argument; contain at least one general law of nature; have empirically testable premises; use true statement.
+-   Hempel held that explanation and prediction are structurally symmetric.
 
-In short, Hempel’s model helped formalize scientific explanation, but it faces key limitations: 
+In short, Hempel’s model helped formalize scientific explanation, but it faces key limitations:
 
-- It considers "explanations" many arguments that don’t really explain (e.g., the flagpole-shadow example). 
-- The model treats explanation and prediction as equivalent, but in reality, they are asymmetric (knowing the shadow length doesn’t explain the pole’s height).
-- Ignores causality: The model focuses on logical form, not on causal relationships.
-- Relevance problem: Explanations must contain information relevant to the phenomenon (explanandum); Hempel’s model doesn’t ensure this.
-- No directionality: It doesn’t distinguish between causes and effects; causality is one-directional, but deduction is symmetric.
-- Empiricist skepticism of causality: Hempel, influenced by Hume, downplayed causal reasoning, yet most explanations are causal in nature.
+-   It considers "explanations" many arguments that don’t really explain (e.g., the flagpole-shadow example).
+-   The model treats explanation and prediction as equivalent, but in reality, they are asymmetric (knowing the shadow length doesn’t explain the pole’s height).
+-   Ignores causality: The model focuses on logical form, not on causal relationships.
+-   Relevance problem: Explanations must contain information relevant to the phenomenon (explanandum); Hempel’s model doesn’t ensure this.
+-   No directionality: It doesn’t distinguish between causes and effects; causality is one-directional, but deduction is symmetric.
+-   Empiricist skepticism of causality: Hempel, influenced by Hume, downplayed causal reasoning, yet most explanations are causal in nature.
 
 The covering-law model was foundational, but incomplete: it motivated the causal-mechanistic turn in philosophy of science. A good explanation should provide relevant information about why the event occurred, not just a correlation or logical entailment.
 
 Because the covering-law model treated explanation as mere deduction from general laws, it failed to capture how scientists actually explain phenomena through causal or mechanistic reasoning. Contemporary models emphasize that explaining is not just showing that an event fits under a law, but showing why it occurs, by revealing the underlying causal mechanisms, counterfactual dependencies, and contextual relevance that make the phenomenon intelligible.
 
-- Causal-Mechanistic Turn:
-  - Explanation moved from logical form to causal relevance and counterfactuals.
-  - Focus on causal relevance and counterfactual dependence.
-  - To explain = to show how changing X would change Y.
-  - Causation tied to manipulability and intervention (e.g., Pearl’s causal diagrams).
+-   Causal-Mechanistic Turn:
+    -   Explanation moved from logical form to causal relevance and counterfactuals.
+    -   Focus on causal relevance and counterfactual dependence.
+    -   To explain = to show how changing X would change Y.
+    -   Causation tied to manipulability and intervention (e.g., Pearl’s causal diagrams).
+-   Mechanistic Models (esp. in biology & medicine):
+    -   "To explain is to describe a mechanism".
+    -   Explanation shows how entities and activities are organised to produce a phenomenon.
+    -   Mechanisms replace general laws in complex domains.
+    -   In complex sciences, general laws are rare but mechanisms are abundant.
+-   Unificationist and Pragmatic Views:
+    -   Unification: explanation means showing how diverse phenomena fit under a few general patterns (e.g., Newton’s laws unify celestial motion).
+    -   Pragmatic: explanation is context-dependent, addressing why A happened rather than B, for a given audience or contrast.
+-   Pluralism in Explanation:
+    -   There is no single canonical model today.
+    -   Different sciences adopt different explanatory ideals:
+        -   Physics: laws and mathematical deduction.
+        -   Biology/Medicine: mechanisms and probabilities.
+-   Modern consensus
+    -   Explanation implies revealing the causal, probabilistic, or structural dependencies that make a phenomenon understandable within scientific practice.
 
-- Mechanistic Models (esp. in biology & medicine):
-  - "To explain is to describe a mechanism".
-  - Explanation shows how entities and activities are organised to produce a phenomenon.
-  - Mechanisms replace general laws in complex domains.
-  - In complex sciences, general laws are rare but mechanisms are abundant.
-
-- Unificationist and Pragmatic Views:
-  - Unification: explanation means showing how diverse phenomena fit under a few general patterns (e.g., Newton’s laws unify celestial motion).
-  - Pragmatic: explanation is context-dependent, addressing why A happened rather than B, for a given audience or contrast.
-
-- Pluralism in Explanation:
-  - There is no single canonical model today.
-  - Different sciences adopt different explanatory ideals:
-    - Physics: laws and mathematical deduction.
-    - Biology/Medicine: mechanisms and probabilities.
-
-- Modern consensus
-  - Explanation implies revealing the causal, probabilistic, or structural dependencies that make a phenomenon understandable within scientific practice.
-  
 In sum, while Hempel’s covering-law model provided the first systematic account of scientific explanation, its neglect of causality, asymmetry, and context opened the path for contemporary approaches that view explanation as revealing the mechanisms, dependencies, and conditions that make phenomena intelligible rather than merely deducible.
 
 In data science, explanatory and predictive goals often overlap but differ in purpose: prediction seeks accuracy about future observations, whereas explanation seeks understanding of why they occur. Both, however, depend on our ability to uncover the underlying structures—logical, causal, or mechanistic—that connect data to the world
 
-
 :::: {.tipbox data-latex=""}
-::: { data-latex=""}
+::: {data-latex=""}
 **Note for data scientists!**
 :::
 
-In the biological and social sciences, instead of strict laws one finds statements of probabilities, or statistical regularities, and explanations that appeal to them. In the medical contexts, explanations often employ relations that are reported in statistical form in order to express causal relationships. For instance, it is accepted that smoking causes lung cancer because it is associated with a big increase in the probability of contracting lung cancer. Nonetheless, we know that **statistical correlation does not warrant causal connection**. There are some problems with the statement that smoking causes cancer. Some smokers never contract cancer, while some lung cancer victims never smoked. The latter issue is easy, smoking is not the only cause of lung cancer. However, the first problem is harder to tackle. 
+In the biological and social sciences, instead of strict laws one finds statements of probabilities, or statistical regularities, and explanations that appeal to them. In the medical contexts, explanations often employ relations that are reported in statistical form in order to express causal relationships. For instance, it is accepted that smoking causes lung cancer because it is associated with a big increase in the probability of contracting lung cancer. Nonetheless, we know that **statistical correlation does not warrant causal connection**. There are some problems with the statement that smoking causes cancer. Some smokers never contract cancer, while some lung cancer victims never smoked. The latter issue is easy, smoking is not the only cause of lung cancer. However, the first problem is harder to tackle.
 
 > Smoking can be said to cause cancer if and only if, among all the different background conditions we know about (heredity, diet, exercise, air pollution, etc.), there is no correlation between smoking and a lower than average incidence of lung cancer, and in one or more of these background conditions, smoking is correlated with a higher incidence in lung cancer rates. --- [@rosenberg2019philosophy]
-
 ::::
 
 ```{r, include=knitr::is_latex_output(), echo = F}
@@ -764,13 +772,13 @@ Ignaz Semmelweis, a Hungarian physician, was a member of the First Maternity Div
 
 From this moment on, various explanations were considered, subjected to test and then rejected.
 
-The first explanation attributed the issue to "epidemic influences" described as "atmospheric-cosmic-telluric changes" spreading over districts and causing childbed fever. This hypothesis did not explain why the first division had more cases than the second. Neither explained the lack of cases in the city of Vienna. Epidemics such as cholera are not so selective. Finally, Semmelweis notes that women who had to give birth in the street on their way to the hospital had a lower death rate than the average for the first division. 
+The first explanation attributed the issue to "epidemic influences" described as "atmospheric-cosmic-telluric changes" spreading over districts and causing childbed fever. This hypothesis did not explain why the first division had more cases than the second. Neither explained the lack of cases in the city of Vienna. Epidemics such as cholera are not so selective. Finally, Semmelweis notes that women who had to give birth in the street on their way to the hospital had a lower death rate than the average for the first division.
 
-| Year              | First Division Mortality (%) | Second Division Mortality (%) |
-|-------------------|------------------------------|-------------------------------|
-| 1844              | 8.20                         | 2.30                          |
-| 1845              | 6.80                         | 2.00                          |
-| 1846              | 11.40                        | 2.70                          |
+| Year | First Division Mortality (%) | Second Division Mortality (%) |
+|------|------------------------------|-------------------------------|
+| 1844 | 8.20                         | 2.30                          |
+| 1845 | 6.80                         | 2.00                          |
+| 1846 | 11.40                        | 2.70                          |
 
 On a different view, overcrowding of the first division was proposed as a cause but Semmelweis pointed out that the second division was much crowded. Moreover, there were no differences regarding diet or general care of the patients.
 
@@ -788,24 +796,23 @@ Mortality fell to 1.27% in the First Division compared to 1.33% in the second. I
 
 At the time, Semmelweis's findings lacked a scientific explanation. This understanding only emerged in the 1860s and 1870s, thanks to the work of Louis Pasteur, Joseph Lister, and others who advanced the germ theory of disease. Semmelweis's idea that a single cause existed, centered solely on cleanliness, was considered radical at that time and was mostly ignored, rejected, or mocked. He was politically dismissed from the hospital and faced harassment from the medical community in Vienna, ultimately leading him to relocate to Budapest. People close to him, including his wife, believed he was losing his mind, and in 1865, he was admitted to a lunatic asylum, where he died just 14 days later. Semmelweis's practices gained widespread acceptance only years after his death, when Louis Pasteur further refined the germ theory of disease, providing a theoretical basis for Semmelweis's observations.
 
-:::: {.rnote data-latex=""}
+::: {.rnote data-latex=""}
 Example and discussion extracted from Chapter 2 of [@hempel-pos]
 :::
 
 :::: {.tipbox data-latex=""}
-::: { data-latex=""}
+::: {data-latex=""}
 **Note for data scientists!**
 :::
 
 Notice how this story relates to data science in many aspects. First, Semmelweis considered multiple factors (diet, division sizes, etc.) and collected information about them. Similarly, in data science, the quality and variety of data can significantly help in the data analysis. Semmelweis formulated a hypothesis based on his observations and sought to test it through intervention (handwashing). In data science, hypotheses are also formulated and contrasted using data to compare pre-intervention and post-intervention observations. The medical community initially rejected Semmelweis's hypothesis despite evidence. This reflects a common bias in scientific inquiry where existing beliefs can overshadow new findings. In data science, **confirmation bias** can lead researchers to favour results that confirm pre-existing hypotheses rather than exploring contrary evidence. Semmelweis’s approach demonstrates the iterative process of refining hypotheses based on new data and observations. Importantly, data showed that Semmelweis was probably right, but only after the advent of the germ theory an explanation could be provided. This shows the importat role of domain knowledge in the interpretation of data-driven results.
-
 ::::
 
 #### How a hypothesis is tested
 
 Some conjectures (e.g. differences in diet, crowding or care) were trivial to test as their assumptions conflict with readily observable facts (e.g., there were no differences in diet across divisions). Others were not as straightforward and required certain interventions. For example, changing the routine of the priest or the birth position. If the hypothesis $H$ is true, then certain observable events $I$ should occur (e.g. drop in mortality) under specified circumstances (e.g. lateral delivery position). Semmelweis experiment showed the test implication to be false (he changed the routine of the priest or the delivery position and did not find different results in mortality), rejecting the hypothesis in consequence.
 
-```
+```         
 If H is true, then so is I.
 But (as the evidence shows) I is not true.
 ---------------
@@ -814,7 +821,7 @@ H is not true.
 
 This is a good example of *modus tollens* (see \@ref(modus)). However, let us consider now the case where observation or experiment confirms the test implication $I$. From the hypothesis that childbed fever is blood poisoning produced by cadaveric matter, Semmelweis infers that antiseptic measures will reduce mortality rates. Now, the experiment shows the test implication to be true. But this favourable outcome does not prove the hypothesis true.
 
-```
+```         
 If H is true, then so is I.
 (as the evidence shows) I is true.
 ---------------
@@ -823,7 +830,7 @@ H is true.
 
 This reasoning is deductively invalid and referred to as the *fallacy of affirming the consequent* (see \@ref(modus)). The conclusion may be false even if its premises are true. Thus, even if many implications of a hypothesis have been confirmed by tests, the hypothesis may still be false.
 
-```
+```         
 If H is true, then so are I1, I2, ...
 (as the evidence shows) I1, I2, ... are all true.
 ---------------
@@ -832,19 +839,18 @@ H is true.
 
 Above's argument still commits the fallacy. Note that although the many tests do not provide conclusive proof for a hypothesis, they provide at least some support or confirmation for it.
 
-:::: {.rnote data-latex=""}
+::: {.rnote data-latex=""}
 Chapter 4 of [@hempel-pos] continues on this.
 :::
 
 > In the absence of unfavorable evidence, the confirmation of a hypothesis will normally be regarded as increasing with the number of favorable test findings. [...] **the increase in confirmation effected by one new favorable instance will generally become smaller as the number of previously established favorable instances grows.** If thousands of confirmatory cases are already available, **the addition of one more favorable finding will raise the confirmation but little.**
 
 :::: {.tipbox data-latex=""}
-::: { data-latex=""}
+::: {data-latex=""}
 **Note for data scientists!**
 :::
 
 Notice how ML models can also be affected by the previous statement. Many researchers blindly rely on the dogma *the more data, the merrier* but is not just the amount of data that matters but also its variety. The greater the variety, the stronger the resulting support for the trained model.
-
 ::::
 
 ### Wason selection task {#wason}
@@ -853,32 +859,34 @@ Notice how ML models can also be affected by the previous statement. Many resear
 knitr::include_graphics('Figures/wason_cards.png')
 ```
 
-Consider the following  hypothetico-deductive reasoning problem created by Peter Cathcart Wason employing the logical rule of implication:
+Consider the following hypothetico-deductive reasoning problem created by Peter Cathcart Wason employing the logical rule of implication:
 
 > You are shown a set of four cards placed on a table, each of which has a number on one side and a colored patch on the other side. The visible faces of the cards show 3, 8, red and brown. Which card(s) must you turn over in order to test the truth of the proposition that if a card shows an even number on one face, then its opposite face is red?
 
 Hypothesis H: "If a card shows an even number on one face, then its opposite face is red"
 
-Test whether H is false. Which consequences of H do you need to consider - i.e. which cards do you need to turn over? Under what conditions would this statement be false? 
+Test whether H is false. Which consequences of H do you need to consider - i.e. which cards do you need to turn over? Under what conditions would this statement be false?
 
+```{=html}
 <!-- - When a card is even and its opposite face is not red. => $H$ is falsified by observing a brown even-number card.
 - need to turn over even-number cards and brown cards! -->
+```
 
 These are the possible situations:
 
-- If the 3 card is red (or brown), that doesn't violate the rule. The rule makes no claims about odd numbers. (Denying the antecedent)
-- If the 8 card is not red, it violates the rule. (Modus ponens)
-- If the red card is odd (or even), that doesn't violate the rule. The red color is not exclusive to even numbers. (Affirming the consequent)
-- If the brown card is even, it violates the rule. (Modus tollens)
+-   If the 3 card is red (or brown), that doesn't violate the rule. The rule makes no claims about odd numbers. (Denying the antecedent)
+-   If the 8 card is not red, it violates the rule. (Modus ponens)
+-   If the red card is odd (or even), that doesn't violate the rule. The red color is not exclusive to even numbers. (Affirming the consequent)
+-   If the brown card is even, it violates the rule. (Modus tollens)
 
-$p$       $q$     $p \rightarrow q$
------     ------ -------
-   T        T       *T  
-   T        F       F
-   F        T       T
-   F        F       **T
+| $p$ | $q$ | $p \rightarrow q$ |
+|:----|:----|------------------:|
+| T   | T   |               \*T |
+| T   | F   |                 F |
+| F   | T   |                 T |
+| F   | F   |             \*\*T |
 
-Table: Truth table for $p \rightarrow q$. (ref:table-ponens) (ref:table-tollens)
+: Truth table for $p \rightarrow q$. (ref:table-ponens) (ref:table-tollens)
 
 (ref:table-ponens) </br> **(\*)** In instances of *modus ponens* we assume as premises that $p \rightarrow q$ is true and $p$ is true. Only one line of the truth table — the first — satisfies these two conditions ($p$ and $p \rightarrow q$). On this line, $q$ is also true. Therefore, whenever $p \rightarrow q$ is true and $p$ is true, $q$ must also be true.
 
@@ -886,7 +894,7 @@ Table: Truth table for $p \rightarrow q$. (ref:table-ponens) (ref:table-tollens)
 
 There are two ways to face the problem and reach the solution. First, we can choose the cards based on *modus ponens* and *modus tollens* as follows: From *modus ponens* we need to check the cards that are even. If even cards are not red, then the claim is false.
 
-```
+```         
 If even, then red. (claim)
 even               (obs)
 -----------------
@@ -895,7 +903,7 @@ Therefore, red.    (conclusion)
 
 From *modus tollens* we need to check the cards that are not red i.e. brown. If brown cards are even, then the claim is false.
 
-```
+```         
 If even, then red. (claim)
 not red            (obs)
 -----------------
@@ -918,7 +926,7 @@ Suppose we aim to predict whether the next president of the United States of Ame
 
 We can identify two issues in the first approach of our example: First, partial data can misrepresent the underlying phenomena that shapes the data, producing a model that does not resemble the real world. This is especially notable in the case of bias and confounders which are further aggravated by the lack of domain knowledge in designing the solutions. The second issue relates to induction. Contrary to deduction, where the truth of the premises guarantees the truth of the conclusion, inductive inferences are *ampliative* --- since whose conclusions go beyond what is contained in their premises --- and their conclusions could be totally wrong even if infinitely many examples confirm them [@bergadano1991problem]. This *ampliative* factor has also an amplifying effect over the partial data from which we infer a conclusion. In this case, considering only the final results of the elections amplified the bias derived from a partial collection of the data, reducing the chances of women being predicted as president to zero.
 
-:::: {.rnote data-latex=""}
+::: {.rnote data-latex=""}
 From [@vega2021hume].
 :::
 
@@ -950,29 +958,28 @@ knitr::asis_output('\\begin{wrapfigure}{R}{.25\\textwidth}
 
 This excerpt from Plague and Cholera is a great example of how laboratory conditions can act as an unintended auxiliary hypothesis that must be taken into account during research. It was 1894 in Hong Kong and all was set for an intellectual duel between Alexandre Yersin and Kitasato Shibasaburō that eventually unveiled the cause of the disease plague.
 
-> From the moment of his disembarkation in torrential rain, Yersin sees the bodies of plague victims lying in the street, in pools of standing water, in parks, aboard moored junks. British soldiers, acting on authority, remove the sick and empty their houses, pile everything up and set fire to it. [...] 
+> From the moment of his disembarkation in torrential rain, Yersin sees the bodies of plague victims lying in the street, in pools of standing water, in parks, aboard moored junks. British soldiers, acting on authority, remove the sick and empty their houses, pile everything up and set fire to it. [...]
 
-> 'I notice many dead rats lying on the ground.' The first note scribbled by Yersin that evening concerns sewers spewing out decomposed bodies of rats. Since Camus, that has seemed obvious, but not then. [...] By telegram, and as a concession to diplomacy, British governor Sir William Robinson gives Yersin explicit authority to come and study plague in Hong Kong. However, bad faith on the British side is clear to see, and it is even worse with the Japanese team under Shibasaburo Kitasato, who intends to reserve all autopsies for himself. [...] 
+> 'I notice many dead rats lying on the ground.' The first note scribbled by Yersin that evening concerns sewers spewing out decomposed bodies of rats. Since Camus, that has seemed obvious, but not then. [...] By telegram, and as a concession to diplomacy, British governor Sir William Robinson gives Yersin explicit authority to come and study plague in Hong Kong. However, bad faith on the British side is clear to see, and it is even worse with the Japanese team under Shibasaburo Kitasato, who intends to reserve all autopsies for himself. [...]
 
 > Never again, in the history of humanity, will there be such an opportunity to become the person who vanquished plague. A few more weeks of devastation will mean a few thousand more bodies to study. [...] Kitasato, though, has a handicap advantage. Not a single cadaver will be placed at Yersin's disposal. [...]
 
-> For Yersin's benefit he [Father Vigano] arranges, in just two days, to have a bamboo-framed, straw-covered hut erected near the Alice Memorial Hospital. With the matter of his living quarters and laboratory settled, Yersin installs a camp bed, unlocks the cabin trunk, and sets out microscope and test tubes. Vigano then greases the palms of the British sailors in charge of the hospital mortuary, where the bodies are stacked prior to being cremated or buried, and buys several from them. Yersin proceeds to ply his scalpel. [...] 'The bubo is quite distinct. In less than a minute I have it out and take it up to my laboratory. I make a quick preparation and place it under the microscope. One glance reveals a veritable mess of microbes, all similar. They are small stubby rods with rounded ends.' [...] Yersin becomes the first human being to observe the plague bacillus, as Pasteur was the first to observe those of silkworm pebrine, ovine anthrax, chicken cholera and canine rabies. 
+> For Yersin's benefit he [Father Vigano] arranges, in just two days, to have a bamboo-framed, straw-covered hut erected near the Alice Memorial Hospital. With the matter of his living quarters and laboratory settled, Yersin installs a camp bed, unlocks the cabin trunk, and sets out microscope and test tubes. Vigano then greases the palms of the British sailors in charge of the hospital mortuary, where the bodies are stacked prior to being cremated or buried, and buys several from them. Yersin proceeds to ply his scalpel. [...] 'The bubo is quite distinct. In less than a minute I have it out and take it up to my laboratory. I make a quick preparation and place it under the microscope. One glance reveals a veritable mess of microbes, all similar. They are small stubby rods with rounded ends.' [...] Yersin becomes the first human being to observe the plague bacillus, as Pasteur was the first to observe those of silkworm pebrine, ovine anthrax, chicken cholera and canine rabies.
 
 > What Kitasato describes, having sampled organs and blood and disregarded the bubo, is the pneumococcus of a collateral infection, which he mistakes for the plague bacillus. Without luck, without chance, genius is nothing. The agnostic Yersin is blessed by the gods. Subsequent studies will show that one reason for Kitasato's failure is that he enjoyed the benefits of a proper hospital laboratory, including an incubator set at the temperature of the human body, a temperature at which pneumococcus proliferates, whereas the plague bacillus develops best at approximately twenty-eight degrees centigrade, the mean temperature in Hong Kong at that time of year and the temperature at which Yersin, with no incubator, conducts his observations.
 
-:::: {.rnote data-latex=""}
+::: {.rnote data-latex=""}
 From Plague and Cholera, by Patrick Deville. [@deville2014plague]
 :::
 
 I absolutely recommend this book about Alexandre Yersin life. A Swiss-French physician and bacteriologist, pupil of Louis Pasteur, that trying to run away from himself became an agronomist and an explorer of the highlands of Vietnam and Cambodia.
 
 :::: {.tipbox data-latex=""}
-::: { data-latex=""}
+::: {data-latex=""}
 **Note for data scientists!**
 :::
 
 In scientific and data science research, having too much control over experimental conditions can limit our understanding of complex phenomena. The text illustrates this through the contrasting approaches of Alexandre Yersin and Kitasato Shibasaburō during their investigation of the plague. Yersin's observations were conducted in a hut laboratory without the ideal conditions, which allowed him to discover the plague bacillus by directly examining the natural state of the environment. In contrast, Kitasato's access to a fully equipped hospital laboratory may have created an environment that favoured the growth of contaminants, leading to his misidentification of the pneumococcus as the plague bacillus. This situation highlights the importance of balancing control (like in a laboratory setting) and real-world conditions in scientific inquiry; while controlled experiments are essential for reproducibility, they can also obscure critical variables and insights that emerge from more natural settings. Thus, understanding how much control to exert is crucial for ensuring the validity and applicability of scientific findings.
-
 ::::
 
 ### Risks of induction and non-epistemic values in ML
@@ -985,10 +992,13 @@ I recommend the following [blog post](https://simonfischer.me/the-necessity-of-n
 
 > In the case of Amazon the false hypothesis and background assumptions were found rather quickly. But there could be more subtle biases around us which we are not yet aware. This again shows the twofold consequences in terms of inductive risk: The danger of scientists implementing these biases into the algorithms and the benefit of amplifying these biases, and thus making them visible to us. --- [@fischer_2020]
 
+```{=html}
 <!--- https://en.wikipedia.org/wiki/Underdetermination Any phenomenon can be explained by a multiplicity of hypotheses. How, then, can data ever be sufficient to prove a theory? This is the "epistemological problem of the indeterminacy of data to theory".
 
   -->
+```
 
+```{=html}
 <!--
 
 ## Takeaway Messages
@@ -1000,3 +1010,4 @@ I recommend the following [blog post](https://simonfischer.me/the-necessity-of-n
 5. E
 
 -->
+```

@@ -1200,9 +1200,9 @@ While the HD method offers a simple and useful framework to think about how scie
 
 \subsection{Limitations of the HD method in probabilistic contexts}\label{limitations-of-the-hd-method-in-probabilistic-contexts}
 
-In the HD method, hypotheses are tested by deducing observable consequences and then checking whether those consequences occur. If any of the deduced implications are false, the hypothesis is rejected (falsified). If they are all true, the hypothesis is not proven true, but may be confirmed.
+In the HD method, hypotheses are tested by deducing observable consequences and then checking whether those consequences occur. If any of the deduced implications are false, the hypothesis is rejected (falsified). If they are all true, the hypothesis is not proven true, but may be confirmed. However, \textbf{we must distinguish between logical incompatibility (in the rejection of hypothesis) and statistical evidence in hypothesis testing}. In the latter, data is logically compatible with both the null and the alternative hypotheses, i.e., no matter what data is observed, both hypotheses can accommodate, though with varying likelihood extents \citep{sep-logical-consequence}.
 
-However, most scientific theories, especially those in statistical sciences, are not structured as strict universal generalizations like ``all swans are white''. Instead, they are probabilistic in nature. For example:
+Importantly, most scientific theories, especially those in statistical sciences, are not structured as strict universal generalizations like ``all swans are white''. Instead, they are probabilistic in nature. For example:
 
 \begin{itemize}
 \tightlist
@@ -1213,6 +1213,8 @@ However, most scientific theories, especially those in statistical sciences, are
 \end{itemize}
 
 Here, the predictions are not strictly entailed by the hypothesis. They are probabilistic expectations. This weakens the applicability of modus tollens: if only 60\% of patients recover, is the hypothesis falsified? Not necessarily. In probabilistic contexts, observing an outcome that deviates from the expected does not conclusively falsify the hypothesis, because such deviations are themselves expected to occur with some probability. \textbf{The data may be compatible with both the hypothesis and the null hypothesis}, making it difficult to draw a sharp deductive conclusion. Instead of strict falsification, we assess how well the data supports one hypothesis over another, often in terms of likelihood or posterior probability.
+
+This complexity is further compounded when we consider that hypotheses are rarely tested alone but often depend on \textbf{auxiliary hypotheses} \citep{phlogiston}, which in practice motivates robustness checks and sensitivity analyses to see how conclusions depend on background assumptions.
 
 Moreover, empirical data is noisy. Measurement error, incomplete information, and stochastic processes mean that consequences of a hypothesis may deviate from what is expected even if the hypothesis is ``mostly'' correct. Under these circumstances, we need a more flexible form of inference, i.e., probabilistic inference, that allows us to reason under uncertainty.
 
@@ -1251,9 +1253,9 @@ There are two dominant interpretations of probability in scientific inference:
 Both perspectives are widely used in science and data analysis. For example:
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.2081}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3960}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3960}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.2394}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3803}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3803}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Topic
@@ -1298,20 +1300,25 @@ Still, choosing priors is an open issue. Different priors can lead to different 
 
 \section{Other types of inference}\label{other-types-of-inference}
 
-\begin{notebox}
+So far we have discussed deduction and induction, but we can find additional scientific reasoning methods. In practice, scientists and data scientists often rely on other forms of inference that go beyond strict deduction and enumerative induction. These include abduction (or inference to the best explanation), and logics that depart from the classical, monotonic model of reasoning, such as non-monotonic and defeasible inference.
 
-\begin{center}
-\textbf{Course Note:}
+\subsection{Abduction and Inference to the Best Explanation (IBE)}\label{abduction-and-inference-to-the-best-explanation-ibe}
 
-\end{center}
+Abduction was first introduced by Charles Peirce (1839-1914) to describe the process of inferring the most plausible hypothesis from a set of observations. \textbf{Abduction, then, is an explanatory form of reasoning}: given evidence \texttt{E} and a set of possible hypotheses \texttt{H₁,\ H₂,\ …,\ Hₙ}, we infer that \texttt{Hᵢ} is true because it best explains \texttt{E}. This is different from enumerative induction, which generalises from a limited number of instances to a rule.
 
-The following content is under construction but might as well be taught during the course. This section will superficially tackle abduction and causal inferences and its relation to data science regarding non-monotonic logic.
+For example, if we find an empty plate with crumbs and recall hearing scratching sounds in the larder, we infer that the cheese was eaten by a mouse. Similarly, a doctor observing fever, cough, and shortness of breath will \emph{abduce} (or infer) that the patient might have an infection. Both are plausible explanations, not certain deductions.
 
-\end{notebox}
+Philosopher Peter Lipton (1954-2007) later framed abduction as Inference to the Best Explanation (IBE), stressing that what makes an explanation ``best'' depends on factors like simplicity, coherence with background knowledge, and explanatory power. While some philosophers distinguish abduction as a psychological process from IBE as its normative version, in practice we treat them as one and the same, both describe how we move from observed data to explanatory hypotheses. For the shake of distinguishing them, abduction, in this sense, is the creative step that proposes a possible explanation, it tells us \emph{how} hypotheses arise. IBE, is the \emph{evaluative} step that selects which of the available hypotheses is most plausible. Of course, these two steps, often happen together.
 
-\section{Non-Monotonic logic and defeasible reasoning}\label{non-monotonic-logic-and-defeasible-reasoning}
+\subsection{Monotonic and Non-monotonic Logic}\label{monotonic-and-non-monotonic-logic}
 
-In its epistemic sense, monotonicity expresses the fact that adding more premises to an argument allows you to derive all the same conclusions as you could with fewer \citep{sep-logic-nonmonotonic}. Specifically, under monotonic reasoning, if a conclusion \(p\) follows from a set of premises \(A\), (denoted as \(A\) \vdash \(p\)), adding another set of premises \(B\) doesn't alter the conclusion (i.e.~\(A ∧ B \vdash p\) also holds). Therefore, reasoning is \href{https://plato.stanford.edu/entries/logic-nonmonotonic/}{non-monotonic} when a conclusion supported by a set of premises can be retracted in the light of new information. Or in other words, we can infer certain conclusions from a subset of a set \(S\) of premises which cannot be inferred from \(S\) as a whole. Medical diagnosis fits very well under such definition.
+Traditional deductive logic is monotonic: once a conclusion is validly derived from a set of premises, adding more premises can never invalidate it. If \texttt{A\ ⊢\ p}, then \texttt{A\ ∧\ B\ ⊢\ p} still holds. This is the logic of mathematics and formal proofs. However, \textbf{most real-world reasoning, and especially scientific reasoning, is non-monotonic}. New evidence can force us to withdraw a previous conclusion. For instance, a physician might initially diagnose pneumonia from a chest X-ray, but revise the diagnosis after receiving negative test results or learning that the symptoms were caused by tuberculosis instead.
+
+In its epistemic sense, \textbf{monotonicity expresses the fact that adding more premises to an argument allows you to derive all the same conclusions as you could with fewer} \citep{sep-logic-nonmonotonic}. Specifically, under monotonic reasoning, if a conclusion \(p\) follows from a set of premises \(A\), (denoted as \(A\) \vdash \(p\)), adding another set of premises \(B\) doesn't alter the conclusion (i.e.~\(A ∧ B \vdash p\) also holds). Therefore, reasoning is \href{https://plato.stanford.edu/entries/logic-nonmonotonic/}{non-monotonic} when a conclusion supported by a set of premises can be retracted in the light of new information. Or in other words, we can infer certain conclusions from a subset of a set \(S\) of premises which cannot be inferred from \(S\) as a whole. Medical diagnosis fits very well under such definition.
+
+In machine learning terms, this corresponds to models that must update their predictions when new, possibly conflicting, data arrive. This very notion relates to how knowledge is indeed provisional, which in turn justifies practices like MLOps techniques to monitor the performance of deployed machine learning models and act on events of \textbf{concept drift} (when the relationship between input features and the target variable changes over time, e.g.~when what ``counts'' as a fraudulent transaction evolves) and \textbf{data drift} (when the distribution of input data itself shifts, e.g.~new patterns or populations differing from those seen during training).
+
+\subsection{Defeasible Reasoning}\label{defeasible-reasoning}
 
 \begin{figure}
 
@@ -1322,7 +1329,9 @@ In its epistemic sense, monotonicity expresses the fact that adding more premise
 \caption{Double arrows indicate non-defeasible inferences (hard fact), single arrows depict defeasible inferences, and strikethrough arrows denote a negation. It can be read as: Penguins are birds (no exceptions); Birds usually fly; and Penguins usually don’t fly.}\label{fig:tweety}
 \end{figure}
 
-Defeasible reasoning deals with tentative relationships between premises and conclusions, which can be \emph{defeated} by additional information, allowing for the retraction of inferences. For instance, while we may infer that Tweety flies based on the information that Tweety is a bird and the domain knowledge that birds generally fly, we can retract this inference when we learn that Tweety is a penguin. Tweety is indeed a bird but it cannot fly. Defeasible reasoning is not exempt from limitations, requiring from causal information to properly derive conclusions under certain scenarios. Consider, for example, this problem of Judea Pearl: if the sprinkler is on, then normally the sidewalk is wet, and, if the sidewalk is wet, then normally it is raining. However, we should not infer that it is raining from the fact that the sprinkler is on \citep{pearl2014probabilistic}. Conflicts may arise between hard facts and defeasible conclusions. For instance, both arguments in Figure \ref{fig:tweety} \(Penguin ⇒ Bird → flies\) and \(Penguin → ¬flies\) finish with a defeasible inference. The transitivity rule \((a → b, b → c) ⇒ a → c\) cannot be applied to the first argument. In this case, according to their specificity we can give priority to the argument with more a specific antecedent but is not always as trivial, and complex conflicts can remain unresolved.
+Defeasible reasoning deals with tentative relationships between premises and conclusions, which can be \emph{defeated} by additional information, allowing for the retraction of inferences. For instance, while we may infer that Tweety flies based on the information that Tweety is a bird and the domain knowledge that birds generally fly, we can retract this inference when we learn that Tweety is a penguin. Tweety is indeed a bird but it cannot fly. Defeasible reasoning is not exempt from limitations, requiring from causal information to properly derive conclusions under certain scenarios.
+
+Consider, for example, this problem of Judea Pearl: if the sprinkler is on, then normally the sidewalk is wet, and, if the sidewalk is wet, then normally it is raining. However, we should not infer that it is raining from the fact that the sprinkler is on \citep{pearl2014probabilistic}. Conflicts may arise between hard facts and defeasible conclusions. For instance, both arguments in Figure \ref{fig:tweety} \(Penguin ⇒ Bird → flies\) and \(Penguin → ¬flies\) finish with a defeasible inference. The transitivity rule \((a → b, b → c) ⇒ a → c\) cannot be applied to the first argument. In this case, according to their specificity we can give priority to the argument with more a specific antecedent but is not always as trivial, and complex conflicts can remain unresolved.
 
 \begin{quote}
 Reasoning is defeasible when the corresponding argument is rationally compelling but not deductively valid. The truth of the premises of a good defeasible argument provide support for the conclusion, even though it is possible for the premises to be true and the conclusion false. In other words, the relationship of support between premises and conclusion is a tentative one, potentially defeated by additional information. --- \citep{sep-reasoning-defeasible}.
@@ -1331,6 +1340,36 @@ Reasoning is defeasible when the corresponding argument is rationally compelling
 \begin{quote}
 Defeasible reasoning is a particular kind of non-demonstrative reasoning, where the reasoning does not produce a full, complete, or final demonstration of a claim, i.e., where fallibility and corrigibility of a conclusion are acknowledged. In other words, defeasible reasoning produces a contingent statement or claim. Defeasible reasoning is also a kind of ampliative reasoning because its conclusions reach beyond the pure meanings of the premises. Defeasible reasoning finds its fullest expression in jurisprudence, ethics and moral philosophy, epistemology, pragmatics and conversational conventions in linguistics, constructivist decision theories, and in knowledge representation and planning in artificial intelligence. --- Wikipedia
 \end{quote}
+
+These forms of reasoning are particularly relevant to modern AI and data science. Medical diagnosis, for instance, cannot rely on purely monotonic inference because diseases may overlap, evolve over time, and require multimodal evidence (radiology, lab tests, symptoms). As in the examples of COVID-19 and lung disease, a binary or multiclass classifier that assumes mutually exclusive categories cannot capture such complexity. Reasoning must be able to handle exceptions, conflicting information, and revision of beliefs.
+
+\section{Summary of the different inference methods}\label{summary-of-the-different-inference-methods}
+
+Each of the inference methods plays a distinctive role in both science and data science. \textbf{Deduction} ensures internal consistency and allows us to derive testable implications from theories or models. \textbf{Induction} supports the generalisation of empirical patterns into broader laws or statistical regularities. \textbf{Abduction} drives the generation of explanatory hypotheses when the causes behind observed data are unknown or not fully understood. Finally, \textbf{non-monotonic and defeasible reasoning} capture the inherently provisional and revisable nature of scientific knowledge, where conclusions must adapt to new evidence or changing contexts. Together, these inferential modes reflect how science advances: not by accumulating certain truths, but by continuously updating, testing, and improving our best explanations of the world.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Type
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Concept
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Question
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Role
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Deduction & From general laws to specific consequences & If this theory is true, what should we observe? & Testing and deriving predictions \\
+Induction & From specific observations to general regularities & Given what we have seen, what general pattern might hold? & Testing and generalising \\
+Abduction & From surprising facts to plausible explanations & What hypothesis would best explain these facts? & Hypothesis and model generation \\
+\end{longtable}
 
 \section{Explanation}\label{explanation}
 
@@ -1569,18 +1608,9 @@ From this moment on, various explanations were considered, subjected to test and
 
 The first explanation attributed the issue to ``epidemic influences'' described as ``atmospheric-cosmic-telluric changes'' spreading over districts and causing childbed fever. This hypothesis did not explain why the first division had more cases than the second. Neither explained the lack of cases in the city of Vienna. Epidemics such as cholera are not so selective. Finally, Semmelweis notes that women who had to give birth in the street on their way to the hospital had a lower death rate than the average for the first division.
 
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.2375}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3750}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3875}}@{}}
+\begin{longtable}[]{@{}lll@{}}
 \toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-Year
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-First Division Mortality (\%)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Second Division Mortality (\%)
-\end{minipage} \\
+Year & First Division Mortality (\%) & Second Division Mortality (\%) \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
@@ -2441,7 +2471,7 @@ This yields 3 possible conclusions.
   \textbf{Case 3. Inconclusive evidence}: (Agreement but plausible alternatives exist) If data and prediction agree, but other plausible models could also explain the same data, then the agreement does not tell us which model is correct. The model is not disproven, but also not confirmed. Therefore, our data is inconclusive regarding the fit of the model and the world.
 \end{itemize}
 
-Next, three examples are given that cover each of the cases aforementioned.
+Below, three examples are given that cover each of the cases aforementioned.
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0460}}
@@ -2824,7 +2854,7 @@ Then, we begin by creating a synthetic dataset in which study hours and prior kn
 ## 4     9.531693         3.698223   33.264442
 \end{verbatim}
 
-Now, we will define the model and visualize it.
+Now, we define the model and visualize it.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2834,19 +2864,11 @@ Now, we will define the model and visualize it.
 \NormalTok{    outcome}\OperatorTok{=}\StringTok{"exam\_score"}\NormalTok{,}
 \NormalTok{    common\_causes}\OperatorTok{=}\NormalTok{[}\StringTok{"prior\_knowledge"}\NormalTok{])}
 
-\NormalTok{model.view\_model(size}\OperatorTok{=}\NormalTok{(}\DecValTok{8}\NormalTok{,}\DecValTok{3}\NormalTok{))}
+\NormalTok{model.view\_model(size}\OperatorTok{=}\NormalTok{(}\DecValTok{8}\NormalTok{,}\DecValTok{3}\NormalTok{))}\OperatorTok{;}
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{POSDE_bookdown_files/figure-latex/unnamed-chunk-34-1.pdf}}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{plt.tight\_layout(w\_pad}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\pandocbounded{\includegraphics[keepaspectratio]{POSDE_bookdown_files/figure-latex/unnamed-chunk-34-2.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{Figures/causal-models/plot-causal-model-one-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3010,15 +3032,7 @@ Note that, whether unknown to us or wrongly assumed by us, variables can be affe
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{POSDE_bookdown_files/figure-latex/unnamed-chunk-40-5.pdf}}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{plt.tight\_layout(w\_pad}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\pandocbounded{\includegraphics[keepaspectratio]{POSDE_bookdown_files/figure-latex/unnamed-chunk-40-6.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{Figures/causal-models/model-example-two-3.pdf}}
 
 Our initial results show an estimated effect of 14.98 meaning that having \texttt{private\ tutoring} is estimated to increase a student's final \texttt{grade} by approximately 17 points. This effect estimate was obtained after controlling for \texttt{study\ hours} but without considering the additional confounder \texttt{parental\ involvement}. At this point we could be naively happy with this result. But what if we are overestimating or underestimating the effect of \texttt{tutoring}?
 
@@ -3130,15 +3144,7 @@ At this point we should get back to the design table and see that we missed an i
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{POSDE_bookdown_files/figure-latex/unnamed-chunk-49-9.pdf}}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{plt.tight\_layout(w\_pad}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\pandocbounded{\includegraphics[keepaspectratio]{POSDE_bookdown_files/figure-latex/unnamed-chunk-49-10.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{Figures/causal-models/new-model-two-5.pdf}}
 
 We then re-run our estimation.
 

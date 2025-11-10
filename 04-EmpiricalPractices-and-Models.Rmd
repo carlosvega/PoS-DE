@@ -432,13 +432,26 @@ This yields 3 possible conclusions.
 
 - **Case 3. Inconclusive evidence**: (Agreement but plausible alternatives exist) If data and prediction agree, but other plausible models could also explain the same data, then  the agreement does not tell us which model is correct. The model is not disproven, but also not confirmed. Therefore, our data is inconclusive regarding the fit of the model and the world.
 
-Next, three examples are given that cover each of the cases aforementioned.
+Below, three examples are given that cover each of the cases aforementioned.
+
+```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
+cat(
+'<div style="overflow-x:auto;">'
+)
+```
 
 | Case | Topic                   | Data vs. Prediction              | Result          | Evidence Type |
 | ---- | ----------------------- | -------------------------------- | --------------- | ------------- |
 | 1    | Turtle migration theory | Disagree                         | Model rejected  | Negative      |
 | 2    | Unconscious perception  | Agree, unlikely by chance        | Model supported | Positive      |
 | 3    | Greenhouse effect       | Agree, but alternative plausible | Model uncertain | Inconclusive  |
+
+```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
+cat(
+'</div>'
+)
+```
+
 
 ### A Case of Negative Evidence. "Gene Analysis Upsets Turtle Theory"
 
@@ -716,7 +729,7 @@ This example illustrates the use of a causal model and causal inference methods 
 
 This example shows how to estimate the effect while controlling for the confounder. Remember that a confounder `Z` affects both the cause `X` and the effect/outcome `Y`.
 
-```{r, setup, include=FALSE}
+```{r, setup, include=FALSE, label="setup", cache=TRUE}
 library(reticulate)
 virtualenv_create("causal-models-env")
 py_install("dowhy")
@@ -725,7 +738,7 @@ py_install("matplotlib")
 
 We import the necessary packages to work.
 
-```{python}
+```{python, label="imports"}
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
@@ -736,7 +749,7 @@ from dowhy import CausalModel
 
 Then, we begin by creating a synthetic dataset in which study hours and prior knowledge are random variables normally distributed. Then, exam score is a function of both study hours and prior knowledge. In a real world scenario, we would normally not know about this function because is what we are trying to estimate. Note the values in the function, specifically, the `2 * data["study_hours"]`.
 
-```{python}
+```{python, label="data-study-hours"}
 np.random.seed(42)
 data = pd.DataFrame({
     "study_hours": np.random.normal(10, 2, 1000),  
@@ -753,20 +766,22 @@ data["exam_score"] = (5 + 2 * data["study_hours"]
 data.head(5)
 ```
 
-Now, we will define the model and visualize it.
+Now, we define the model and visualize it.
 
-```{python}
+```{python, label="plot-causal-model-one", fig.path="Figures/causal-models/"}
+
 model = CausalModel(
     data=data,
     treatment="study_hours",
     outcome="exam_score",
     common_causes=["prior_knowledge"])
 
-model.view_model(size=(8,3))
-plt.tight_layout(w_pad=1)
+model.view_model(size=(8,3));
+
 ```
 
-```{python, results = 'hide', error=FALSE, warning=FALSE, message=FALSE}
+
+```{python, results = 'hide', error=FALSE, warning=FALSE, message=FALSE, label="estimand-one"}
 identified_estimand = model.identify_effect()
 estimate = model.estimate_effect(identified_estimand, 
    method_name="backdoor.linear_regression")
@@ -776,21 +791,21 @@ The result below means that, according to our causal model, an additional hour o
 
 As can be seen, this estimation is very close to the degree stated in the equation of our synthetic data in `2 * data["study_hours"]`.
 
-```{python}
+```{python, label="print-estimate-one"}
 print("Causal Estimate of Study Hours on Exam Score:", 
      estimate.value)
 ```
 
 A placebo test in causal inference is a refutation technique designed to test the robustness of our causal estimate by using a "fake" treatment variable. The idea is to see if our model incorrectly detects a causal effect when there should be none, which would indicate potential bias or flaws in the model. The placebo test helps us check if this estimated causal effect could be due to biases in the model rather than a true causal relationship.
 
-```{python, results = 'hide', error=FALSE, warning=FALSE, message=FALSE}
+```{python, results = 'hide', error=FALSE, warning=FALSE, message=FALSE, label="refute-estimate-one"}
 refute_result = model.refute_estimate(identified_estimand, 
   estimate, method_name="placebo_treatment_refuter")
 ```
 
 This test replaces the actual treatment (study hours) with a "placebo" or random variable that should have no causal effect on the outcome (exam score).
 
-```{python}
+```{python, label="print-refute-estimate-one"}
 print(refute_result)
 ```
 
@@ -830,7 +845,7 @@ We will see how to **detect that the model is wrong** and how once corrected it 
 
 We generate a synthetic data with different random values. As you can see `parental involvement` is biased with a 70% probability to be 0 and 30% of being 1. In the last two lines we fill tutoring and grade as we have synthetically made them to depend on the study hours and parental involvement. Imagine that instead of being synthetically created this data was given to you from data collection (e.g. via surveys).
 
-```{python}
+```{python, label="data-example-two"}
 np.random.seed(0)
 #generate synthetic data
 data = pd.DataFrame({
@@ -863,7 +878,7 @@ Next we create our **initial causal model** in which we **wrongly** assume that 
 
 Note that, whether unknown to us or wrongly assumed by us, variables can be affected by `parental involvement` in reality. The model shows that `study hours` is a **confounder** of both `tutoring` and `grade`.
 
-```{python}
+```{python, label="model-example-two", fig.path="Figures/causal-models/"}
 # Create a causal model excluding parental involvement initially
 model = CausalModel(
     data=data,
@@ -872,38 +887,37 @@ model = CausalModel(
     common_causes=["study_hours"])
 
 model.view_model(size=(8,3))
-plt.tight_layout(w_pad=1)
 ```
 
 Our initial results show an estimated effect of 14.98 meaning that having `private tutoring` is estimated to increase a student's final `grade` by approximately 17 points. This effect estimate was obtained after controlling for `study hours` but without considering the additional confounder `parental involvement`. At this point we could be naively happy with this result. But what if we are overestimating or underestimating the effect of `tutoring`?
 
-```{python, results = 'hide', error=FALSE, warning=FALSE, message=FALSE}
+```{python, results = 'hide', error=FALSE, warning=FALSE, message=FALSE, label="estimate-two"}
 identified_estimand = model.identify_effect()
 estimate = model.estimate_effect(identified_estimand, 
             method_name="backdoor.linear_regression")
 ```
 
-```{python}
+```{python, label="print-estimate-two"}
 print("Estimated Effect (initial model):", 
       estimate.value)
 ```
 
 Again, the placebo test below replaces the actual treatment (in this case, `tutoring`) with a "placebo" or random variable that has no relationship to the outcome (final `grade`).
 
-```{python, results = 'hide', error=FALSE, warning=FALSE, message=FALSE}
+```{python, results = 'hide', error=FALSE, warning=FALSE, message=FALSE, label="refute-estimate-two"}
 refutation = model.refute_estimate(identified_estimand, estimate, 
                          method_name="placebo_treatment_refuter")
 ```
 
 The placebo test here suggests that the original model's structure is robust, meaning that the observed effect of tutoring on grades is not due to random bias. However, this does not yield out the possibility that the obtained estimate could be biased due to an unmeasured confounder.
 
-```{python}
+```{python, label="print-refute-estimate-two"}
 print("Placebo Test Result:", refutation)
 ```
 
 We could ask ourselves too whether the estimated effect changes significantly when we replace the given dataset with bootstrapped samples from the same dataset? (Hint: It should not).
 
-```{python, results = 'hide', error=FALSE, warning=FALSE, message=FALSE}
+```{python, results = 'hide', error=FALSE, warning=FALSE, message=FALSE, label="bootstrap-refute-estimate-two"}
 bootstrap_refutation = model.refute_estimate(identified_estimand, 
                                  estimate, 
                                  method_name="bootstrap_refuter")
@@ -911,13 +925,13 @@ bootstrap_refutation = model.refute_estimate(identified_estimand,
 
 As seen below, the effect does not deviate much from the original estimated effect. Still, something else could be going on.
 
-```{python}
+```{python, label="print-bootstrap-refute-estimate-two"}
 print(bootstrap_refutation)
 ```
 
 If we suspect about the presence of unknown confounders, we could test how sensitive is the effect estimate when we add an additional common cause (confounder) to the dataset that is correlated with the treatment and the outcome. (Hint: It should not be too sensitive).
 
-```{python, results = 'hide', error=FALSE, warning=FALSE, message=FALSE}
+```{python, results = 'hide', error=FALSE, warning=FALSE, message=FALSE, label="sensitivity-refute-estimate-two"}
 sensitivity_analysis = model.refute_estimate(identified_estimand, 
                       estimate, 
                       method_name="add_unobserved_common_cause")
@@ -925,13 +939,13 @@ sensitivity_analysis = model.refute_estimate(identified_estimand,
 
 In this case we see a huge drop. This may indicate that we over estimated the effect of `tutoring` on the `grades` and that we are missing an important confounder.
 
-```{python}
+```{python, label="print-sensitivity-refute-estimate-two"}
 print(sensitivity_analysis)
 ```
 
 At this point we should get back to the design table and see that we missed an important variable. In our case we knew already: `Parental involvement`. In real life, we would either ask the students again (through new surveys) or if we already had this variable in our surveys we would add it to the model as a confounder affecting the `grades` and the `tutoring`. Note that in "our reality" `parental involvement` did not affect `study hours` directly.
 
-```{python}
+```{python, label="new-model-two", fig.path="Figures/causal-models/"}
 # Realize missing confounder: Parental involvement
 model_v2 = CausalModel(
     data=data,
@@ -941,12 +955,11 @@ model_v2 = CausalModel(
 
 # Visualize the causal graph
 model_v2.view_model(size=(8,3))
-plt.tight_layout(w_pad=1)
 ```
 
 We then re-run our estimation.
 
-```{python, results = 'hide', error=FALSE, warning=FALSE, message=FALSE}
+```{python, results = 'hide', error=FALSE, warning=FALSE, message=FALSE, label="new-estimate-model-two"}
 identified_estimand_with_confounder = model_v2.identify_effect()
 estimate_with_confounder = model_v2.estimate_effect(
   identified_estimand_with_confounder,
@@ -955,26 +968,16 @@ estimate_with_confounder = model_v2.estimate_effect(
 
 As can be seen, this value is closer to the degree of our synthetic data `10 * data["tutoring"]`. Still, in real world scenarios we do not necessarily know the functions that describe the behaviour of real world phenomena.
 
-```{python}
+```{python, label="print-new-estimate-model-two"}
 print("Estimated Effect (revised model):", 
       estimate_with_confounder.value)
 ```
 
-```{=html}
+
 <!-- [write]
 
 
-<!--
-[write]
-
 https://www.technologyreview.com/2019/02/04/137602/this-is-how-ai-bias-really-happensand-why-its-so-hard-to-fix/
 
--->
-```
-```{=html}
-<!--
-## Takeaway Messages
-
 
 -->
-```
