@@ -167,7 +167,7 @@ Therefore, you have no job.
 
 ## The problem(s) of induction {#problem-induction}
 
-**Do scientists use induction?** Pretty much all the time. Whenever scientists move from limited data to general conclusions scientists reason inductively. **In inductively valid arguments, the (joint) truth of the premises is very likely (but not necessarily) sufficient for the truth of the conclusion.** For instance, a newspaper may run the headline "scientists find experimental proof that transgenic maize is safe to eat". This means scientists tested transgenic maize on a large number of people without finding any issues. Does this *strictly prove* that transgenic maize is safe? Is this prove as strong as the proof of the Pythagoras' theorem? Going from "the transgenic maize didn't harm any of the people on whom it was tested" to "the transgenic maize will not harm anyone" is an inductive inference, not deductive.
+**Do scientists use induction?** Pretty much all the time. Whenever scientists move from limited data to general conclusions scientists reason inductively. **In inductive arguments, the truth of the premises is never sufficient for the truth of the conclusion.** For instance, a newspaper may run the headline "scientists find experimental proof that transgenic maize is safe to eat". This means scientists tested transgenic maize on a large number of people without finding any issues. Does this *strictly prove* that transgenic maize is safe? Is this prove as strong as the proof of the Pythagoras' theorem? Going from "the transgenic maize didn't harm any of the people on whom it was tested" to "the transgenic maize will not harm anyone" is an inductive inference, not deductive.
 
 :::: {.tipbox data-latex=""}
 ::: { data-latex=""}
@@ -203,7 +203,9 @@ knitr::asis_output('\\begin{wrapfigure}{R}{.33\\textwidth}
 \\addtocounter{figure}{-1}')
 ```
 
-We use induction to justify our statements but how do we justify induction itself? How would you convince someone else that induction is a good inference method? The Scottish philosopher David Hume (1711-76) argued that the use of induction cannot be rationally justified at all. In 1739, still under the shadow of the bubonic plague in Europe, David Hume publishes *A Treatise of Human Nature*, presumably without knowing that his work would not only continue to be debated more than 200 years later, but also still remarkably relevant in the technological advances of our time. In *the problem of induction* Hume argues that we cannot make a causal inference just by *a priori* means, and poses the question of how we can conclude from the observed to the unobserved.
+In his work, David Hume begins with a critique of causal inference, arguing that we cannot make a causal inference by purely a priori means, as we can always conceive a different effect. Later, he exposes the broader epistemological problem, challenging us to justify any inference that moves from the observed to the unobserved.
+
+We use induction to justify our statements but **how do we justify induction itself?** How would you convince someone else that induction is a good inference method? The Scottish philosopher David Hume (1711-76) argued that the use of induction cannot be rationally justified at all. In 1739, still under the shadow of the bubonic plague in Europe, David Hume publishes *A Treatise of Human Nature*, presumably without knowing that his work would not only continue to be debated more than 200 years later, but also still remarkably relevant in the technological advances of our time. In *the problem of induction* Hume argues that we cannot make a causal inference just by *a priori* means, and poses the question of how we can conclude from the observed to the unobserved.
 
 Hume admitted that we use induction all the time in everyday life and science but insisted that this is just a matter of brute animal habit. What does he mean by that? Bertrand Russell (1872-1970) gives us a good example on this. He argues that the inductive association is also present in animals.
 
@@ -211,14 +213,30 @@ Hume admitted that we use induction all the time in everyday life and science bu
 
 Hume arrived to this conclusion by noting that whenever we make inductive inferences we presuppose the *uniformity of nature*. Remember the eggs box example in § \@ref(deduction) ? Our reasoning depends on the assumption that objects that we have not examined yet will resemble those objects that we have already examined. Then, Hume argues that we cannot prove the truth of the uniformity assumption. Basically, from the mere act of being able to imagine a world where nature is not uniform but changes at random it follows that we cannot prove that the uniformity assumption is true. Also, if we try to argue for the uniformity assumption on empirical grounds, we end up reasoning in a circle.
 
-The conclusion then is that our tendency to project past regularities into the future is not underpinned by reason. The problem of induction is to find a way to avoid this conclusion, despite Hume’s argument [@sep-induction-problem]. **Hume's problem of induction is still an active area of research for philosophers**. There are many different ways to respond to Hume's argument, yet none is fully convincing. Peter Strawson (1950s) used the following analogy: justifying induction is like asking whether the law is itself legal. This is rather odd, since the law is the standard against which the legality of other things is judged. Others, like Karl Popper (1902-1994) argued that science is not in fact based on inductive inferences at all and presented a deductivist view of science. We will study this in detail in § \@ref(falsification).
+Hume's argument concerns specific inductive inferences such as `All observed instances of A have been B` and `The next instance of A will be B`. His argument proceeds as follows:
+
+-   Suppose an inductive inference *I* as: All observed instances of *A* have been *B*; The next instance of *A* will be *B*.
+
+-   To justify *I*, it must be inferred from some premises in an argument.
+
+-   Every argument is either inductive or deductive.
+
+-   Inference *I* presupposes the uniformity of nature (UP), i.e., the resemblance between observed and unobserved regularities; but this cannot be proven by deduction because we can conceive situations where nature will not be uniform any more without causing a logical contradiction. Hence, a deductive argument is not possible [@sep-induction-problem].
+
+-   Similarly, any inductive argument for UP would presuppose UP itself, producing a vicious circle. However, an argument cannot rely on the very principle it aims to justify. Thus, there is no inductive argument for UP.
+
+Therefore, there is no non-circular argument for UP and thus, inference *I* is not justified. The students are left to debate what they often feel as an unsettling conclusion and its consequences. The conclusion then is that our tendency to project past regularities into the future is not underpinned by reason.
+
+The problem now becomes how to find a way to avoid this conclusion, despite Hume's argument [@sep-induction-problem]. **Hume's problem of induction is still an active area of research for philosophers**. We can frame this problem with different lenses. First, some authors challenge the premise that inference *I* presupposes UP, since, after all, the future only resembles the past in some respects, but not others. Maybe inductive inferences do not rely in a common UP, but rather, each inductive inference depends on separate empirical presuppositions [@sep-induction-problem], **replacing the justification circularity problem with an infinite regress**. **Infinitism** embraces this epistemic view. **Foundationalism** argues that the justification chain should end with foundational beliefs that do not requrie inferential justification. **Coherentism** proposes that beliefs are justified if they cohere within a web of beliefs, with a chain of reasons that is never-ending but which does not involve infinite beliefs [@sep-justep-coherence].
+
+There are many different ways to respond to Hume's argument, yet none is fully convincing. Peter Strawson (1950s) used the following analogy: justifying induction is like asking whether the law is itself legal. This is rather odd, since the law is the standard against which the legality of other things is judged. Others, like Karl Popper (1902-1994) argued that science is not in fact based on inductive inferences at all and presented a deductivist view of science. We will study this in detail in § \@ref(falsification). • **Bayesian approaches that frame induction probabilistically**. Schurz’s **meta-induction** that justifies using induction not by logic, but by tracking which predictive strategy has been most successful over time. This is linked to on-line machine learning methods, where the learner adapts based on past success [@ortner2023adaptive].
 
 :::: {.tipbox data-latex=""}
 ::: { data-latex=""}
 **Note on uniformity of nature:**
 :::
 
-Notice how ML models can be regarded as inductive machines performing inductive inferences based on previous observations. For the ML model to perform well on novel data, is often assumed that novel data will resemble past data.
+Notice how ML models can be regarded as inductive machines performing inductive inferences based on previous observations. For the ML model to perform well on novel data, is often assumed that novel data will resemble past data. But it is easy to conceive that data would stop resembling the past (see data drift and concept drift).
 
 Hume refers to this assumption as the Principle of Uniformity of Nature: *“If reason determined us, it would proceed upon that principle, that instances, of which we have had no experience, must resemble those, of which we have had experience, and that the course of nature continues always uniformly the same.”*
 
@@ -228,18 +246,7 @@ And it continues: *“Our foregoing method of reasoning will easily convince us,
 
 ::::
 
-As scientists, Hume's problem of induction may leave a huge void in our heart. An empty feeling that science is indeed fallible and the sudden realisation of the impossibility of establishing the truth or falsity of scientific laws [@rosenberg2019philosophy]. But perhaps there is a way to fill such gap, and perhaps big part of the effort of science is put on filling this void with as much certainty as possible. 
-
-Hume’s argument concerns specific inductive inferences such as `All observed instances of A have been B` and `The next instance of A will be B`. Hume's argument proceeds as follows:
-
-- Every inference is either inductive or deductive.
-- To justify an inductive inference rule $I$, this rule must be inferred from some premises.
-- Is not possible to infer the rule $I$ deductively, because there are no necessary connection between past and future inferences.
-- Therefore, the rule $I$ must be inferred inductively.
-- When inferring $I$ inductively, we must invoke another inductive inference rule $J$ to justify this induction. But then, how do we justify $J$? ... [*infinite regress*]
-
-Just because an inference rule has yield true conclusions in the past does not necessarily imply that it will do so in the future.
-Consequently, Hume concludes that no inductive inference rule can be justified. But, does this mean all scientific inductive inferences are not justified? 
+As scientists, Hume's problem of induction may leave a huge void in our heart. An empty feeling that science is indeed fallible and the sudden realisation of the impossibility of establishing the truth or falsity of scientific laws [@rosenberg2019philosophy]. But perhaps there is a way to fill such gap, and perhaps big part of the effort of science is put on filling this void with as much certainty as possible. Just because an inference rule has yield true conclusions in the past does not necessarily imply that it will do so in the future. Consequently, Hume concludes that no inductive inference rule can be justified. But, does this mean all scientific inductive inferences are not justified?
 
 :::: {.tipbox data-latex=""}
 ::: { data-latex=""}
@@ -248,6 +255,7 @@ Consequently, Hume concludes that no inductive inference rule can be justified. 
 
 If we visualise the data as points in a plane; every set of finite points belongs to infinite functions or curves. The problem of induction, in this case, consists in establishing criteria that allow us to say that the finite series of data confirms only one of the functions, or less dramatically but just as problematic, that one is more confirmed than the others [@diez1997fundamentos]. (See the problem of underdetermination in §\@ref(confirmation)).
 
+Notice how the problem of induction relates to model choice given different data-generation processes. Statistical learning theory focuses on how model complexity and sample size affect the reliability of generalization from finite data, motivating practices like regularization and validation. Formal learning theory tackles which learners can converge to the truth given enough evidence. These learning-theoretic perspectives show how the problem of induction affects the practice of data science.
 ::::
 
 :::: {.simplebox data-latex=""}
@@ -267,17 +275,23 @@ Pyrrhonist philosopher Sextus Empiricus (mid-late 2nd century CE) raised concern
 
 In the section about the [scientific method](#sci-method), we learnt how scientists begin proposing (or guessing) unproven hypotheses. After an initial consideration of the problem and collection of data a conjecture or hypothesis to explain a particular phenomena is formulated. Afterwards, deduction is used to derive consequences or observable implications $\{C_i\}$ from such hypotheses $H$. These consequences should be relevant for $H$ and observable directly or with the help of instruments (e.g. microscope, MRI, etc.). Next, hypotheses are put to test and either based on the results scientists decrease or increase the confidence over the hypotheses.
 
-- 1. Propose a hypothesis $H$.
-- 2. Deduce observable consequences $\{C_i\}$ from $H$.
-- 3. Test. Look for evidence that conflicts with the predicted consequences $\{C_i\}$ in order to disprove $H$.
-- 4. If $\{C_i\}$ is false, infer that $H$ is false, reformulate $H$. (See § \@ref(falsification))
-- 5. If $\{C_i\}$ is true, increase confidence in $H$. (See § \@ref(confirmation))
+1.  Propose a hypothesis $H$.
 
-For relevant examples, check \@ref(semmelweis) and \@ref(wason).
+2.  Deduce observable consequences $\{C_i\}$ from $H$.
+
+3.  Test. Look for evidence that conflicts with the predicted consequences $\{C_i\}$ in order to disprove $H$.
+
+4.  If $\{C_i\}$ is false, infer that $H$ is false, reformulate $H$. (See § \@ref(falsification))
+
+5.  If $\{C_i\}$ is true, increase confidence in $H$. (See § \@ref(confirmation))
+
+For relevant examples, check \@ref(semmelweis) and \@ref(wason). **Importantly, read the limitations of the HD Method at the end of this section** \@ref(bayesian-inference). Notably, the HD method assumes a strict logical entailment between theory and data. However, in data science, models yield probabilistic predictions rather than deductive consequences [@mayo1996error] (chapter VI).
 
 ### A good hypothesis
 
-```{r xkcd-hypothesis, echo=F, fig.align="center", out.width="66%", fig.cap='The key aspect being conveyed in this simple exchange is that one of the many good practices in science (no matter the aspect, though the specifics may change according to the precise field of study) is that one should first have an idea of what you can test and then perform the test to confirm (or rule out) your idea. Title text: "Frazzled scientists are requesting that everyone please stop generating hypotheses for a little bit while they work through the backlog". Source: xkcd.com.'}
+(ref:xkcd-caption) The key aspect being conveyed in this simple exchange is that one of the many good practices in science (no matter the aspect, though the specifics may change according to the precise field of study) is that one should first have an idea of what you can test and then perform the test to confirm (or rule out) your idea. Title text: "Frazzled scientists are requesting that everyone please stop generating hypotheses for a little bit while they work through the backlog". Source: xkcd.com
+
+```{r xkcd-hypothesis, echo=F, out.width="66%", fig.align="center", fig.cap='(ref:xkcd-caption)'}
 knitr::include_graphics('Figures/hypothesis_generation.png')
 ```
 
