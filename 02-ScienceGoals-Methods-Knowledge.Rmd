@@ -22,13 +22,13 @@ Illustrated with examples, this course will tackle the scientific goals, the def
 ::::
 
 
-:::: {.simplebox data-latex=""}
+::: {.simplebox data-latex=""}
 ::: { data-latex=""}
 **Course objectives**
 :::
 
 This chapter supports course objectives 1–3, by introducing key concepts through simple messages and analogies that build understanding without overwhelming students. Relevant examples are resumed in later chapters to connect contents. Higher-level debates (e.g., Thomas Kuhn, realism vs. antirealism) are omitted to focus on the core ideas of the first course weeks.
-::::
+:::
 
 ## What is Science?
 

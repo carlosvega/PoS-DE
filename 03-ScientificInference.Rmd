@@ -121,7 +121,7 @@ Therefore, John will take the umbrella.
 
 The argument is valid but it doesn't matter if the statements in the argument are actually true. An argument can be valid but nonetheless unsound if their premises are false. *Modus ponens* rule can be written as $P \rightarrow Q, P \vdash Q$. In logic, an argument is sound if it is both valid in form and its premises are true.
 
-On the other hand, the form of a **modus tollens** argument also consists of two premises and a conclusion. The first premise is a conditional if-then claim (e.g. `P implies Q`). The second premise is an assertion that $Q$ (the consequent of the conditional claim) is not the case. From these two premises, it can be concluded that $P$ is also not the case.  *Modus tollens* rule can be written as $P \rightarrow Q, \lnot Q \vdash \lnot P$. 
+On the other hand, the form of a **modus tollens** argument also consists of two premises and a conclusion. The first premise is a conditional if-then claim (e.g. `P implies Q`). The second premise is an assertion that $Q$ (the consequent of the conditional claim) is not the case. From these two premises, it can be concluded that $P$ is also not the case. *Modus tollens* rule can be written as $P \rightarrow Q, \lnot Q \vdash \lnot P$.
 
 ```
 If P, then Q.
@@ -139,13 +139,13 @@ C is false.
 Therefore, H is false.
 ```
 
----
+------------------------------------------------------------------------
 
 Other forms of arguments are apparently **similar but invalid forms**.
 
-**Affirming the consequent**. This formal fallacy consists of taking a true conditional statement  $P \rightarrow Q$ and invalidly inferring its converse  $Q \rightarrow P$. For example, the statement "if the light is broken, the room would be dark" does not justify inferring the converse "the room is dark, therefore the lamp is broken". This situations may arise when a consequent has more than one possible antecedent.
+**Affirming the consequent**. This formal fallacy consists of taking a true conditional statement $P \rightarrow Q$ and invalidly inferring its converse $Q \rightarrow P$. For example, the statement "if the light is broken, the room would be dark" does not justify inferring the converse "the room is dark, therefore the lamp is broken". This situations may arise when a consequent has more than one possible antecedent.
 
-**Denying the antecedent**. This fallacy is committed by reasoning in the form: `If P, then Q. Therefore, if not P, then not Q`. This kind of arguments can seem valid at first glance. Consider this famous example from Alan Turing: 
+**Denying the antecedent**. This fallacy is committed by reasoning in the form: `If P, then Q. Therefore, if not P, then not Q`. This kind of arguments can seem valid at first glance. Consider this famous example from Alan Turing:
 
 > If each man had a definite set of rules of conduct by which he regulated his life he would be no better than a machine. But there are no such rules, so men cannot be machines. --- Alan Turing
 
@@ -323,10 +323,10 @@ Is important to note a key difference between confirmation and falsification. In
 
 This asymmetry forms the basics of Karl Popper's (1902-1994) falsificationism. 
 
-- Propose falsifiable hypotheses.
-- Try to falsify these hypotheses with observable evidence.
-- Reject any falsified hypothesis as false.
-- Never accept any hypothesis as true - consider non-falsified hypotheses as "not-rejected yet".
+-   Propose falsifiable hypotheses.
+-   Try to falsify these hypotheses with observable evidence.
+-   Reject any falsified hypothesis as false.
+-   Never accept any hypothesis as true - consider non-falsified hypotheses as "not-rejected yet".
 
 > One objection to this [the asymmetry between confirmation and falsification] holds that the asymmetry is an illusion, because whenever we refute a universal statement we thereby verify its negation. A universal statement “All x are y” is equivalent to “There is no non-y x.” Therefore, when we refute “All apples are green” we automatically verify “There is a non-green apple.” --- [@percival2015confirmation]
 
@@ -340,11 +340,25 @@ However, this view of the scientific process could be rather limiting with respe
 
 Second, in scientific practice hypotheses rarely have immediate observable consequences, they often require measurements or experiments to do so. For instance, the hypothesis "this liquid contains 3 substances" does not entail any direct observable consequence. We might use distillation or chromatography to test such hypothesis but this requires relying on **auxiliary hypothesis** (e.g. the distillation machine works properly). This consideration quite changes the **H-D method** steps. Moreover, we never test a single hypothesis alone, but only in conjunction with various auxiliary hypotheses (Duhem-Quine Thesis). One relevant example is the work of Galileo Galilei and his reports of mountains on the moon and Jupiter satellites. Philosophers such as Cesare Cremonini refused to look through the telescope, arguing that the instrument itself might have introduced artefacts, producing a visual illusion. Therefore, Duhem-Quine thesis states that in order to falsify a hypothesis we must be confident that the responsible for falsity of the consequence are not the auxiliary hypotheses but the main hypothesis.
 
-- 1. Propose a hypothesis $H$.
-- 2. Deduce observable consequences $\{C_i\}$ from $H$ in conjunction with auxiliary hypotheses ${AH_j}$
-- 3. Test. Look for evidence that conflicts with the predicted consequences $\{C_i\}$ in order to disprove $H$.
-- 4. If $\{C_i\}$ is false, infer that $H \& \{AH_j\}$ is false, reformulate $H$.
-- 5. If $\{C_i\}$ is true, increase confidence in $H \& \{AH_j\}$.
+-   
+
+    1.  Propose a hypothesis $H$.
+
+-   
+
+    2.  Deduce observable consequences $\{C_i\}$ from $H$ in conjunction with auxiliary hypotheses ${AH_j}$
+
+-   
+
+    3.  Test. Look for evidence that conflicts with the predicted consequences $\{C_i\}$ in order to disprove $H$.
+
+-   
+
+    4.  If $\{C_i\}$ is false, infer that $H \& \{AH_j\}$ is false, reformulate $H$.
+
+-   
+
+    5.  If $\{C_i\}$ is true, increase confidence in $H \& \{AH_j\}$.
 
 :::: {.tipbox data-latex=""}
 ::: { data-latex=""}
@@ -367,8 +381,7 @@ The take-away message from falsification is that despite proposing an unrealisti
 
 <!-- [rewrite] -->
 
-Confirmation is the act of using evidence to justify increasing the confidence in the hypothesis.
-Confirmation is not based on deductively valid inferences. For instance, in the **H-D method** we identify some $C$ that is an implication of $H$. $H$ implies $C$, then if $H$ is true we conclude (by *modus ponens*) that $C$ is also true. Moreover, if we observe than $C$ is false, then we conclude (by *modus tollens*) that $H$ is false as well. 
+Confirmation is the act of using evidence to justify increasing the confidence in the hypothesis. Confirmation is not based on deductively valid inferences. For instance, in the **H-D method** we identify some $C$ that is an implication of $H$. $H$ implies $C$, then if $H$ is true we conclude (by *modus ponens*) that $C$ is also true. Moreover, if we observe than $C$ is false, then we conclude (by *modus tollens*) that $H$ is false as well.
 
 ```
 Modus ponens     Modus tollens    Induction
@@ -395,7 +408,7 @@ Is important to note the relevance of frequentist and Bayesian approaches in art
 The frequentist computes the probability of result or data $D$ given hypothesis $H$ is true, i.e. $P(D|H)$. In comparison, the Bayesian approach focus on the probability of hypothesis $H$ when the result or data $D$ occurs, i.e. $P(H|D)$ [@orloffcomparison].
 ::::
 
-Understanding that confirmation comes in degrees may help clarify the last step of **H-D method**.  Observing $C$ to be true, increases our degree of confidence that $H$ is true. But why is this? A naïve answer to this question is that observing $C$ confirms $H$ because $H$ is compatible with $C$. But this seems rather weak justification. Indefinitely irrelevant implications could be inferred from a hypothesis. For instance:
+Understanding that confirmation comes in degrees may help clarify the last step of **H-D method**. Observing $C$ to be true, increases our degree of confidence that $H$ is true. But why is this? A naïve answer to this question is that observing $C$ confirms $H$ because $H$ is compatible with $C$. But this seems rather weak justification. Indefinitely irrelevant implications could be inferred from a hypothesis. For instance:
 
 ```
 I have pancreas cancer, then I have a pancreas
@@ -512,8 +525,7 @@ Still, choosing priors is an open issue. Different priors can lead to different 
 **Course Note:**
 :::
 
-The following content is under construction but might as well be taught during the course. 
-This section will superficially tackle abduction and causal inferences and its relation to data science regarding non-monotonic logic. 
+The following content is under construction but might as well be taught during the course. This section will superficially tackle abduction and causal inferences and its relation to data science regarding non-monotonic logic.
 ::::
 
 <!--
