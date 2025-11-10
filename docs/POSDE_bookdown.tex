@@ -924,7 +924,7 @@ The problem now becomes how to find a way to avoid this conclusion, despite Hume
 \begin{itemize}
 \tightlist
 \item
-  *Infinitism\textbf{ embraces an epistemic view that challenges the premise that inference \texttt{I} presupposes UP, since, after all, the future only resembles the past in some respects, but not others. Maybe inductive inferences do not rely in a common UP, but rather, each inductive inference depends on separate empirical presuppositions \citep{sep-induction-problem}, }replacing the justification circularity problem with an infinite regress**.
+  \textbf{Infinitism} embraces an epistemic view that challenges the premise that inference \texttt{I} presupposes UP, since, after all, the future only resembles the past in some respects, but not others. Maybe inductive inferences do not rely in a common UP, but rather, each inductive inference depends on separate empirical presuppositions \citep{sep-induction-problem}, \textbf{replacing the justification circularity problem with an infinite regress}.
 \item
   \textbf{Foundationalism} argues that the justification chain should end with foundational beliefs that do not requrie inferential justification.
 \item
@@ -1194,11 +1194,11 @@ Is also important to notice how the problem of underdetermination relates to the
 
 \end{tipbox}
 
-\subsection{Beyond the Hypothetico-Deductive Method: Bayesian Inference and the Logic of Uncertainty}\label{bayesian-inference}
+\section{Beyond the Hypothetico-Deductive Method: Bayesian Inference and the Logic of Uncertainty}\label{bayesian-inference}
 
 While the HD method offers a simple and useful framework to think about how science proceeds, from hypothesis formation to testing via deduction, it has important limitations. These become especially clear in data-driven disciplines such as machine learning, statistics, and empirical sciences that rely on probabilistic reasoning. Here, we examine alternative approaches that better accommodate uncertainty, quantify degrees of belief, and reflect how inference is conducted in real-world contexts.
 
-\subsubsection{Limitations of the HD method in probabilistic contexts}\label{limitations-of-the-hd-method-in-probabilistic-contexts}
+\subsection{Limitations of the HD method in probabilistic contexts}\label{limitations-of-the-hd-method-in-probabilistic-contexts}
 
 In the HD method, hypotheses are tested by deducing observable consequences and then checking whether those consequences occur. If any of the deduced implications are false, the hypothesis is rejected (falsified). If they are all true, the hypothesis is not proven true, but may be confirmed.
 
@@ -1216,7 +1216,7 @@ Here, the predictions are not strictly entailed by the hypothesis. They are prob
 
 Moreover, empirical data is noisy. Measurement error, incomplete information, and stochastic processes mean that consequences of a hypothesis may deviate from what is expected even if the hypothesis is ``mostly'' correct. Under these circumstances, we need a more flexible form of inference, i.e., probabilistic inference, that allows us to reason under uncertainty.
 
-\subsubsection{Bayesian Epistemology and Conditionalization}\label{bayesian-epistemology-and-conditionalization}
+\subsection{Bayesian Epistemology and Conditionalization}\label{bayesian-epistemology-and-conditionalization}
 
 Bayesian inference offers a model of rational belief revision. In contrast to the HD method, which evaluates hypotheses in an all-or-nothing fashion, the Bayesian approach updates degrees of belief (probabilities) in light of new evidence. Suppose we have a hypothesis \(H\) and we observe some data \(D\). The central rule of Bayesian updating is Bayes' theorem:
 
@@ -1236,7 +1236,7 @@ This formula tells us how to update our belief in \(H\) after observing \(D\). K
 
 This rule allows beliefs to change incrementally as new evidence becomes available, reflecting both prior knowledge and the strength of the data. It avoids the binary logic of the HD method and instead provides a continuous scale of confidence. Where the HD method discards a hypothesis after a single negative test, Bayesian inference merely lowers its probability, unless the evidence is truly decisive \citep{howson2006scientific}.
 
-\subsubsection{Bayesian vs Frequentist Views}\label{bayesian-vs-frequentist-views}
+\subsection{Bayesian vs Frequentist Views}\label{bayesian-vs-frequentist-views}
 
 There are two dominant interpretations of probability in scientific inference:
 
@@ -1284,13 +1284,13 @@ In Bayesian Machine Learning, priors allow incorporation of domain knowledge int
 
 \end{tipbox}
 
-\subsubsection{Bayesian Inference and the Problem of Induction}\label{bayesian-inference-and-the-problem-of-induction}
+\subsection{Bayesian Inference and the Problem of Induction}\label{bayesian-inference-and-the-problem-of-induction}
 
 Bayesian epistemology offers one response to Hume's problem of induction. It does not deny the fallibility of inductive inference, but rather makes it explicit. In Bayesian terms, learning from experience is about adjusting belief in hypotheses as new evidence accumulates.
 
 However, this still does not justify induction in the absolute sense. It formalizes how we might reasonably behave given certain starting beliefs and observations, but it does not explain why those beliefs are justified in the first place. As some philosophers argue, Bayesianism presupposes that some inductive inferences are valid; it does not solve Hume's problem but reframes it.
 
-\subsubsection{Underdetermination and Bayesian Model Selection}\label{underdetermination-and-bayesian-model-selection}
+\subsection{Underdetermination and Bayesian Model Selection}\label{underdetermination-and-bayesian-model-selection}
 
 As seen with Confirmation in section \ref{confirmation}, many hypotheses can be consistent with the same data. This is known as the problem of underdetermination. Bayesian reasoning provides one approach to this problem by allowing us to compare models in terms of their posterior probabilities. Models with higher likelihood given the data, and more plausible priors, are preferred.
 
@@ -3161,7 +3161,7 @@ As can be seen, this value is closer to the degree of our synthetic data \texttt
 \end{Shaded}
 
 \begin{verbatim}
-## Estimated Effect (revised model): 10.095828768814442
+## Estimated Effect (revised model): 10.095828768814414
 \end{verbatim}
 
 \chapter{Experimental Control and Statistical Abuse}\label{stats-abuse}

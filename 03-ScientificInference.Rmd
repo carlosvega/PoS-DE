@@ -456,24 +456,26 @@ Is also important to notice how the problem of underdetermination relates to the
 
 ::::
 
-### Beyond the Hypothetico-Deductive Method: Bayesian Inference and the Logic of Uncertainty {#bayesian-inference}
+## Beyond the Hypothetico-Deductive Method: Bayesian Inference and the Logic of Uncertainty {#bayesian-inference}
 
 While the HD method offers a simple and useful framework to think about how science proceeds, from hypothesis formation to testing via deduction, it has important limitations. These become especially clear in data-driven disciplines such as machine learning, statistics, and empirical sciences that rely on probabilistic reasoning. Here, we examine alternative approaches that better accommodate uncertainty, quantify degrees of belief, and reflect how inference is conducted in real-world contexts.
 
-#### Limitations of the HD method in probabilistic contexts
+### Limitations of the HD method in probabilistic contexts
 
-In the HD method, hypotheses are tested by deducing observable consequences and then checking whether those consequences occur. If any of the deduced implications are false, the hypothesis is rejected (falsified). If they are all true, the hypothesis is not proven true, but may be confirmed.
+In the HD method, hypotheses are tested by deducing observable consequences and then checking whether those consequences occur. If any of the deduced implications are false, the hypothesis is rejected (falsified). If they are all true, the hypothesis is not proven true, but may be confirmed. However, **we must distinguish between logical incompatibility (in the rejection of hypothesis) and statistical evidence in hypothesis testing**. In the latter, data is logically compatible with both the null and the alternative hypotheses, i.e., no matter what data is observed, both hypotheses can accommodate, though with varying likelihood extents [@sep-logical-consequence]. 
 
-However, most scientific theories, especially those in statistical sciences, are not structured as strict universal generalizations like "all swans are white". Instead, they are probabilistic in nature. For example:
+Importantly, most scientific theories, especially those in statistical sciences, are not structured as strict universal generalizations like "all swans are white". Instead, they are probabilistic in nature. For example:
 
 - “If a drug is effective, then 80% of patients will recover.”
 - “If a coin is fair, then heads will appear approximately 50% of the time.”
 
 Here, the predictions are not strictly entailed by the hypothesis. They are probabilistic expectations. This weakens the applicability of modus tollens: if only 60% of patients recover, is the hypothesis falsified? Not necessarily. In probabilistic contexts, observing an outcome that deviates from the expected does not conclusively falsify the hypothesis, because such deviations are themselves expected to occur with some probability. **The data may be compatible with both the hypothesis and the null hypothesis**, making it difficult to draw a sharp deductive conclusion. Instead of strict falsification, we assess how well the data supports one hypothesis over another, often in terms of likelihood or posterior probability.
 
+This complexity is further compounded when we consider that hypotheses are rarely tested alone but often depend on **auxiliary hypotheses** [@phlogiston], which in practice motivates robustness checks and sensitivity analyses to see how conclusions depend on background assumptions. 
+
 Moreover, empirical data is noisy. Measurement error, incomplete information, and stochastic processes mean that consequences of a hypothesis may deviate from what is expected even if the hypothesis is "mostly" correct. Under these circumstances, we need a more flexible form of inference, i.e., probabilistic inference, that allows us to reason under uncertainty.
 
-#### Bayesian Epistemology and Conditionalization
+### Bayesian Epistemology and Conditionalization
 
 Bayesian inference offers a model of rational belief revision. In contrast to the HD method, which evaluates hypotheses in an all-or-nothing fashion, the Bayesian approach updates degrees of belief (probabilities) in light of new evidence. Suppose we have a hypothesis $H$ and we observe some data $D$. The central rule of Bayesian updating is Bayes’ theorem:
 
@@ -487,7 +489,7 @@ This formula tells us how to update our belief in $H$ after observing $D$. Key t
 
 This rule allows beliefs to change incrementally as new evidence becomes available, reflecting both prior knowledge and the strength of the data. It avoids the binary logic of the HD method and instead provides a continuous scale of confidence. Where the HD method discards a hypothesis after a single negative test, Bayesian inference merely lowers its probability, unless the evidence is truly decisive [@howson2006scientific].
 
-#### Bayesian vs Frequentist Views
+### Bayesian vs Frequentist Views
 
 There are two dominant interpretations of probability in scientific inference:
 
@@ -516,7 +518,7 @@ In Bayesian Machine Learning, priors allow incorporation of domain knowledge int
 
 ::::
 
-#### Bayesian Inference and the Problem of Induction
+### Bayesian Inference and the Problem of Induction
 
 Bayesian epistemology offers one response to Hume’s problem of induction. It does not deny the fallibility of inductive inference, but rather makes it explicit. In Bayesian terms, learning from experience is about adjusting belief in hypotheses as new evidence accumulates.
 
@@ -529,7 +531,7 @@ check the quote
 
 --> 
 
-#### Underdetermination and Bayesian Model Selection
+### Underdetermination and Bayesian Model Selection
 
 As seen with Confirmation in section \@ref(confirmation), many hypotheses can be consistent with the same data. This is known as the problem of underdetermination. Bayesian reasoning provides one approach to this problem by allowing us to compare models in terms of their posterior probabilities. Models with higher likelihood given the data, and more plausible priors, are preferred.
 
