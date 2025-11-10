@@ -215,21 +215,25 @@ Hume arrived to this conclusion by noting that whenever we make inductive infere
 
 Hume's argument concerns specific inductive inferences such as `All observed instances of A have been B` and `The next instance of A will be B`. His argument proceeds as follows:
 
--   Suppose an inductive inference *I* as: All observed instances of *A* have been *B*; The next instance of *A* will be *B*.
+-   Suppose an inductive inference `I` as: All observed instances of `A` have been `B`; The next instance of `A` will be `B`.
 
--   To justify *I*, it must be inferred from some premises in an argument.
+-   To justify `I`, it must be inferred from some premises in an argument.
 
 -   Every argument is either inductive or deductive.
 
--   Inference *I* presupposes the uniformity of nature (UP), i.e., the resemblance between observed and unobserved regularities; but this cannot be proven by deduction because we can conceive situations where nature will not be uniform any more without causing a logical contradiction. Hence, a deductive argument is not possible [@sep-induction-problem].
+-   Inference `I` presupposes the uniformity of nature (UP), i.e., the resemblance between observed and unobserved regularities; but this cannot be proven by deduction because we can conceive situations where nature will not be uniform any more without causing a logical contradiction. Hence, a deductive argument is not possible [@sep-induction-problem].
 
 -   Similarly, any inductive argument for UP would presuppose UP itself, producing a vicious circle. However, an argument cannot rely on the very principle it aims to justify. Thus, there is no inductive argument for UP.
 
-Therefore, there is no non-circular argument for UP and thus, inference *I* is not justified. The students are left to debate what they often feel as an unsettling conclusion and its consequences. The conclusion then is that our tendency to project past regularities into the future is not underpinned by reason.
+Therefore, there is no non-circular argument for UP and thus, inference `I` is not justified. The reader is left to debate this unsettling conclusion and its consequences. For Hume, the conclusion is that our tendency to project past regularities into the future is not underpinned by reason.
 
-The problem now becomes how to find a way to avoid this conclusion, despite Hume's argument [@sep-induction-problem]. **Hume's problem of induction is still an active area of research for philosophers**. We can frame this problem with different lenses. First, some authors challenge the premise that inference *I* presupposes UP, since, after all, the future only resembles the past in some respects, but not others. Maybe inductive inferences do not rely in a common UP, but rather, each inductive inference depends on separate empirical presuppositions [@sep-induction-problem], **replacing the justification circularity problem with an infinite regress**. **Infinitism** embraces this epistemic view. **Foundationalism** argues that the justification chain should end with foundational beliefs that do not requrie inferential justification. **Coherentism** proposes that beliefs are justified if they cohere within a web of beliefs, with a chain of reasons that is never-ending but which does not involve infinite beliefs [@sep-justep-coherence].
+The problem now becomes how to find a way to avoid this conclusion, despite Hume's argument [@sep-induction-problem]. **Hume's problem of induction is still an active area of research for philosophers**. We can frame this problem with different lenses. 
 
-There are many different ways to respond to Hume's argument, yet none is fully convincing. Peter Strawson (1950s) used the following analogy: justifying induction is like asking whether the law is itself legal. This is rather odd, since the law is the standard against which the legality of other things is judged. Others, like Karl Popper (1902-1994) argued that science is not in fact based on inductive inferences at all and presented a deductivist view of science. We will study this in detail in § \@ref(falsification). • **Bayesian approaches that frame induction probabilistically**. Schurz’s **meta-induction** that justifies using induction not by logic, but by tracking which predictive strategy has been most successful over time. This is linked to on-line machine learning methods, where the learner adapts based on past success [@ortner2023adaptive].
+- **Infinitism** embraces an epistemic view that challenges the premise that inference `I` presupposes UP, since, after all, the future only resembles the past in some respects, but not others. Maybe inductive inferences do not rely in a common UP, but rather, each inductive inference depends on separate empirical presuppositions [@sep-induction-problem], **replacing the justification circularity problem with an infinite regress**.
+- **Foundationalism** argues that the justification chain should end with foundational beliefs that do not requrie inferential justification. 
+- **Coherentism** proposes that beliefs are justified if they cohere within a web of beliefs, with a chain of reasons that is never-ending but which does not involve infinite beliefs [@sep-justep-coherence].
+
+There are many different ways to respond to Hume's argument, yet none is fully convincing. Peter Strawson (1950s) used the following analogy: **justifying induction is like asking whether the law is itself legal**. This is rather odd, since the law is the standard against which the legality of other things is judged. Others, like Karl Popper (1902-1994) argued that science is not in fact based on inductive inferences at all and presented a deductivist view of science. We will study this in detail in § \@ref(falsification). **Bayesian approaches frame induction probabilistically**. Schurz’s **meta-induction** justifies using induction not by logic, but by tracking which predictive strategy has been most successful over time. This is linked to on-line machine learning methods, where the learner adapts based on past success [@ortner2023adaptive].
 
 :::: {.tipbox data-latex=""}
 ::: { data-latex=""}

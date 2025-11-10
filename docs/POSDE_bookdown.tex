@@ -2,12 +2,13 @@
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
-%
 \documentclass[
   12pt,
 ]{book}
+\usepackage{xcolor}
+\usepackage[lmargin=3.5cm,rmargin=3cm,bmargin=2.5cm]{geometry}
 \usepackage{amsmath,amssymb}
-\usepackage{setspace}
+\setcounter{secnumdepth}{5}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
@@ -28,6 +29,7 @@
   \usepackage[]{microtype}
   \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
+\usepackage{setspace}
 \makeatletter
 \@ifundefined{KOMAClassName}{% if non-KOMA class
   \IfFileExists{parskip.sty}{%
@@ -38,8 +40,6 @@
 }{% if KOMA class
   \KOMAoptions{parskip=half}}
 \makeatother
-\usepackage{xcolor}
-\usepackage[lmargin=3.5cm,rmargin=3cm,bmargin=2.5cm]{geometry}
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -92,21 +92,24 @@
 \makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
 % Set default figure placement to htbp
-\makeatletter
 \def\fps@figure{htbp}
 \makeatother
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{5}
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
 \usepackage{pdfpages}
 
 \usepackage{booktabs}
@@ -167,11 +170,6 @@
 \usepackage{float}
 \usepackage{wrapfig}
 \usepackage{caption}
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
-\usepackage[]{natbib}
-\bibliographystyle{apalike}
 \usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
@@ -189,7 +187,7 @@
 
 \title{Applied Philosophy of Science and Data Ethics}
 \author{Dr.~Carlos Vega}
-\date{2021 - 2025: ~Last compiled: 2025-11-06}
+\date{2021 - 2025: ~Last compiled: 2025-11-10}
 
 \begin{document}
 \maketitle
@@ -863,7 +861,7 @@ Therefore, you have no job.
 
 \section{The problem(s) of induction}\label{problem-induction}
 
-\textbf{Do scientists use induction?} Pretty much all the time. Whenever scientists move from limited data to general conclusions scientists reason inductively. \textbf{In inductively valid arguments, the (joint) truth of the premises is very likely (but not necessarily) sufficient for the truth of the conclusion.} For instance, a newspaper may run the headline ``scientists find experimental proof that transgenic maize is safe to eat''. This means scientists tested transgenic maize on a large number of people without finding any issues. Does this \emph{strictly prove} that transgenic maize is safe? Is this prove as strong as the proof of the Pythagoras' theorem? Going from ``the transgenic maize didn't harm any of the people on whom it was tested'' to ``the transgenic maize will not harm anyone'' is an inductive inference, not deductive.
+\textbf{Do scientists use induction?} Pretty much all the time. Whenever scientists move from limited data to general conclusions scientists reason inductively. \textbf{In inductive arguments, the truth of the premises is never sufficient for the truth of the conclusion.} For instance, a newspaper may run the headline ``scientists find experimental proof that transgenic maize is safe to eat''. This means scientists tested transgenic maize on a large number of people without finding any issues. Does this \emph{strictly prove} that transgenic maize is safe? Is this prove as strong as the proof of the Pythagoras' theorem? Going from ``the transgenic maize didn't harm any of the people on whom it was tested'' to ``the transgenic maize will not harm anyone'' is an inductive inference, not deductive.
 
 \begin{tipbox}
 
@@ -892,7 +890,9 @@ Suppose the following inductive inference \(I\): If the probability of observing
 \end{wrapfigure}
 \addtocounter{figure}{-1}
 
-We use induction to justify our statements but how do we justify induction itself? How would you convince someone else that induction is a good inference method? The Scottish philosopher David Hume (1711-76) argued that the use of induction cannot be rationally justified at all. In 1739, still under the shadow of the bubonic plague in Europe, David Hume publishes \emph{A Treatise of Human Nature}, presumably without knowing that his work would not only continue to be debated more than 200 years later, but also still remarkably relevant in the technological advances of our time. In \emph{the problem of induction} Hume argues that we cannot make a causal inference just by \emph{a priori} means, and poses the question of how we can conclude from the observed to the unobserved.
+In his work, David Hume begins with a critique of causal inference, arguing that we cannot make a causal inference by purely a priori means, as we can always conceive a different effect. Later, he exposes the broader epistemological problem, challenging us to justify any inference that moves from the observed to the unobserved.
+
+We use induction to justify our statements but \textbf{how do we justify induction itself?} How would you convince someone else that induction is a good inference method? The Scottish philosopher David Hume (1711-76) argued that the use of induction cannot be rationally justified at all. In 1739, still under the shadow of the bubonic plague in Europe, David Hume publishes \emph{A Treatise of Human Nature}, presumably without knowing that his work would not only continue to be debated more than 200 years later, but also still remarkably relevant in the technological advances of our time. In \emph{the problem of induction} Hume argues that we cannot make a causal inference just by \emph{a priori} means, and poses the question of how we can conclude from the observed to the unobserved.
 
 Hume admitted that we use induction all the time in everyday life and science but insisted that this is just a matter of brute animal habit. What does he mean by that? Bertrand Russell (1872-1970) gives us a good example on this. He argues that the inductive association is also present in animals.
 
@@ -902,13 +902,42 @@ Hume admitted that we use induction all the time in everyday life and science bu
 
 Hume arrived to this conclusion by noting that whenever we make inductive inferences we presuppose the \emph{uniformity of nature}. Remember the eggs box example in § \ref{deduction} ? Our reasoning depends on the assumption that objects that we have not examined yet will resemble those objects that we have already examined. Then, Hume argues that we cannot prove the truth of the uniformity assumption. Basically, from the mere act of being able to imagine a world where nature is not uniform but changes at random it follows that we cannot prove that the uniformity assumption is true. Also, if we try to argue for the uniformity assumption on empirical grounds, we end up reasoning in a circle.
 
-The conclusion then is that our tendency to project past regularities into the future is not underpinned by reason. The problem of induction is to find a way to avoid this conclusion, despite Hume's argument \citep{sep-induction-problem}. \textbf{Hume's problem of induction is still an active area of research for philosophers}. There are many different ways to respond to Hume's argument, yet none is fully convincing. Peter Strawson (1950s) used the following analogy: justifying induction is like asking whether the law is itself legal. This is rather odd, since the law is the standard against which the legality of other things is judged. Others, like Karl Popper (1902-1994) argued that science is not in fact based on inductive inferences at all and presented a deductivist view of science. We will study this in detail in § \ref{falsification}.
+Hume's argument concerns specific inductive inferences such as \texttt{All\ observed\ instances\ of\ A\ have\ been\ B} and \texttt{The\ next\ instance\ of\ A\ will\ be\ B}. His argument proceeds as follows:
+
+\begin{itemize}
+\item
+  Suppose an inductive inference \texttt{I} as: All observed instances of \texttt{A} have been \texttt{B}; The next instance of \texttt{A} will be \texttt{B}.
+\item
+  To justify \texttt{I}, it must be inferred from some premises in an argument.
+\item
+  Every argument is either inductive or deductive.
+\item
+  Inference \texttt{I} presupposes the uniformity of nature (UP), i.e., the resemblance between observed and unobserved regularities; but this cannot be proven by deduction because we can conceive situations where nature will not be uniform any more without causing a logical contradiction. Hence, a deductive argument is not possible \citep{sep-induction-problem}.
+\item
+  Similarly, any inductive argument for UP would presuppose UP itself, producing a vicious circle. However, an argument cannot rely on the very principle it aims to justify. Thus, there is no inductive argument for UP.
+\end{itemize}
+
+Therefore, there is no non-circular argument for UP and thus, inference \texttt{I} is not justified. The reader is left to debate this unsettling conclusion and its consequences. For Hume, the conclusion is that our tendency to project past regularities into the future is not underpinned by reason.
+
+The problem now becomes how to find a way to avoid this conclusion, despite Hume's argument \citep{sep-induction-problem}. \textbf{Hume's problem of induction is still an active area of research for philosophers}. We can frame this problem with different lenses.
+
+\begin{itemize}
+\tightlist
+\item
+  *Infinitism\textbf{ embraces an epistemic view that challenges the premise that inference \texttt{I} presupposes UP, since, after all, the future only resembles the past in some respects, but not others. Maybe inductive inferences do not rely in a common UP, but rather, each inductive inference depends on separate empirical presuppositions \citep{sep-induction-problem}, }replacing the justification circularity problem with an infinite regress**.
+\item
+  \textbf{Foundationalism} argues that the justification chain should end with foundational beliefs that do not requrie inferential justification.
+\item
+  \textbf{Coherentism} proposes that beliefs are justified if they cohere within a web of beliefs, with a chain of reasons that is never-ending but which does not involve infinite beliefs \citep{sep-justep-coherence}.
+\end{itemize}
+
+There are many different ways to respond to Hume's argument, yet none is fully convincing. Peter Strawson (1950s) used the following analogy: \textbf{justifying induction is like asking whether the law is itself legal}. This is rather odd, since the law is the standard against which the legality of other things is judged. Others, like Karl Popper (1902-1994) argued that science is not in fact based on inductive inferences at all and presented a deductivist view of science. We will study this in detail in § \ref{falsification}. \textbf{Bayesian approaches frame induction probabilistically}. Schurz's \textbf{meta-induction} justifies using induction not by logic, but by tracking which predictive strategy has been most successful over time. This is linked to on-line machine learning methods, where the learner adapts based on past success \citep{ortner2023adaptive}.
 
 \begin{tipbox}
 
 \textbf{Note on uniformity of nature:}
 
-Notice how ML models can be regarded as inductive machines performing inductive inferences based on previous observations. For the ML model to perform well on novel data, is often assumed that novel data will resemble past data.
+Notice how ML models can be regarded as inductive machines performing inductive inferences based on previous observations. For the ML model to perform well on novel data, is often assumed that novel data will resemble past data. But it is easy to conceive that data would stop resembling the past (see data drift and concept drift).
 
 Hume refers to this assumption as the Principle of Uniformity of Nature: \emph{``If reason determined us, it would proceed upon that principle, that instances, of which we have had no experience, must resemble those, of which we have had experience, and that the course of nature continues always uniformly the same.''}
 
@@ -918,32 +947,15 @@ And it continues: \emph{``Our foregoing method of reasoning will easily convince
 
 \end{tipbox}
 
-As scientists, Hume's problem of induction may leave a huge void in our heart. An empty feeling that science is indeed fallible and the sudden realisation of the impossibility of establishing the truth or falsity of scientific laws \citep{rosenberg2019philosophy}. But perhaps there is a way to fill such gap, and perhaps big part of the effort of science is put on filling this void with as much certainty as possible.
-
-Hume's argument concerns specific inductive inferences such as \texttt{All\ observed\ instances\ of\ A\ have\ been\ B} and \texttt{The\ next\ instance\ of\ A\ will\ be\ B}. Hume's argument proceeds as follows:
-
-\begin{itemize}
-\tightlist
-\item
-  Every inference is either inductive or deductive.
-\item
-  To justify an inductive inference rule \(I\), this rule must be inferred from some premises.
-\item
-  Is not possible to infer the rule \(I\) deductively, because there are no necessary connection between past and future inferences.
-\item
-  Therefore, the rule \(I\) must be inferred inductively.
-\item
-  When inferring \(I\) inductively, we must invoke another inductive inference rule \(J\) to justify this induction. But then, how do we justify \(J\)? \ldots{} {[}\emph{infinite regress}{]}
-\end{itemize}
-
-Just because an inference rule has yield true conclusions in the past does not necessarily imply that it will do so in the future.
-Consequently, Hume concludes that no inductive inference rule can be justified. But, does this mean all scientific inductive inferences are not justified?
+As scientists, Hume's problem of induction may leave a huge void in our heart. An empty feeling that science is indeed fallible and the sudden realisation of the impossibility of establishing the truth or falsity of scientific laws \citep{rosenberg2019philosophy}. But perhaps there is a way to fill such gap, and perhaps big part of the effort of science is put on filling this void with as much certainty as possible. Just because an inference rule has yield true conclusions in the past does not necessarily imply that it will do so in the future. Consequently, Hume concludes that no inductive inference rule can be justified. But, does this mean all scientific inductive inferences are not justified?
 
 \begin{tipbox}
 
 \textbf{Note for data scientists!}
 
 If we visualise the data as points in a plane; every set of finite points belongs to infinite functions or curves. The problem of induction, in this case, consists in establishing criteria that allow us to say that the finite series of data confirms only one of the functions, or less dramatically but just as problematic, that one is more confirmed than the others \citep{diez1997fundamentos}. (See the problem of underdetermination in §\ref{confirmation}).
+
+Notice how the problem of induction relates to model choice given different data-generation processes. Statistical learning theory focuses on how model complexity and sample size affect the reliability of generalization from finite data, motivating practices like regularization and validation. Formal learning theory tackles which learners can converge to the truth given enough evidence. These learning-theoretic perspectives show how the problem of induction affects the practice of data science.
 
 \end{tipbox}
 
@@ -963,52 +975,25 @@ Those who claim for themselves to judge the truth are bound to possess a criteri
 
 In the section about the \hyperref[sci-method]{scientific method}, we learnt how scientists begin proposing (or guessing) unproven hypotheses. After an initial consideration of the problem and collection of data a conjecture or hypothesis to explain a particular phenomena is formulated. Afterwards, deduction is used to derive consequences or observable implications \(\{C_i\}\) from such hypotheses \(H\). These consequences should be relevant for \(H\) and observable directly or with the help of instruments (e.g.~microscope, MRI, etc.). Next, hypotheses are put to test and either based on the results scientists decrease or increase the confidence over the hypotheses.
 
-\begin{itemize}
-\tightlist
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \item
-  \begin{enumerate}
-  \def\labelenumi{\arabic{enumi}.}
-  \tightlist
-  \item
-    Propose a hypothesis \(H\).
-  \end{enumerate}
+  Propose a hypothesis \(H\).
 \item
-  \begin{enumerate}
-  \def\labelenumi{\arabic{enumi}.}
-  \setcounter{enumi}{1}
-  \tightlist
-  \item
-    Deduce observable consequences \(\{C_i\}\) from \(H\).
-  \end{enumerate}
+  Deduce observable consequences \(\{C_i\}\) from \(H\).
 \item
-  \begin{enumerate}
-  \def\labelenumi{\arabic{enumi}.}
-  \setcounter{enumi}{2}
-  \tightlist
-  \item
-    Test. Look for evidence that conflicts with the predicted consequences \(\{C_i\}\) in order to disprove \(H\).
-  \end{enumerate}
+  Test. Look for evidence that conflicts with the predicted consequences \(\{C_i\}\) in order to disprove \(H\).
 \item
-  \begin{enumerate}
-  \def\labelenumi{\arabic{enumi}.}
-  \setcounter{enumi}{3}
-  \tightlist
-  \item
-    If \(\{C_i\}\) is false, infer that \(H\) is false, reformulate \(H\). (See § \ref{falsification})
-  \end{enumerate}
+  If \(\{C_i\}\) is false, infer that \(H\) is false, reformulate \(H\). (See § \ref{falsification})
 \item
-  \begin{enumerate}
-  \def\labelenumi{\arabic{enumi}.}
-  \setcounter{enumi}{4}
-  \tightlist
-  \item
-    If \(\{C_i\}\) is true, increase confidence in \(H\). (See § \ref{confirmation})
-  \end{enumerate}
-\end{itemize}
+  If \(\{C_i\}\) is true, increase confidence in \(H\). (See § \ref{confirmation})
+\end{enumerate}
 
-For relevant examples, check \ref{semmelweis} and \ref{wason}.
+For relevant examples, check \ref{semmelweis} and \ref{wason}. \textbf{Importantly, read the limitations of the HD Method at the end of this section} \ref{bayesian-inference}. Notably, the HD method assumes a strict logical entailment between theory and data. However, in data science, models yield probabilistic predictions rather than deductive consequences \citep{mayo1996error} (chapter VI).
 
 \subsection{A good hypothesis}\label{a-good-hypothesis}
+
+
 
 \begin{figure}
 
@@ -1016,7 +1001,7 @@ For relevant examples, check \ref{semmelweis} and \ref{wason}.
 
 }
 
-\caption{The key aspect being conveyed in this simple exchange is that one of the many good practices in science (no matter the aspect, though the specifics may change according to the precise field of study) is that one should first have an idea of what you can test and then perform the test to confirm (or rule out) your idea. Title text: "Frazzled scientists are requesting that everyone please stop generating hypotheses for a little bit while they work through the backlog". Source: xkcd.com.}\label{fig:xkcd-hypothesis}
+\caption{The key aspect being conveyed in this simple exchange is that one of the many good practices in science (no matter the aspect, though the specifics may change according to the precise field of study) is that one should first have an idea of what you can test and then perform the test to confirm (or rule out) your idea. Title text: ``Frazzled scientists are requesting that everyone please stop generating hypotheses for a little bit while they work through the backlog''. Source: xkcd.com}\label{fig:xkcd-hypothesis}
 \end{figure}
 
 Still, there are some criteria for a \href{https://opentext.wsu.edu/carriecuttler/chapter/developing-a-hypothesis/}{good hypothesis}. Apart from criteria such as parsimony, scope, fruitfulness and conservatism, these are other criteria to recall.
@@ -1148,8 +1133,7 @@ The take-away message from falsification is that despite proposing an unrealisti
 
 \subsection{Confirmation}\label{confirmation}
 
-Confirmation is the act of using evidence to justify increasing the confidence in the hypothesis.
-Confirmation is not based on deductively valid inferences. For instance, in the \textbf{H-D method} we identify some \(C\) that is an implication of \(H\). \(H\) implies \(C\), then if \(H\) is true we conclude (by \emph{modus ponens}) that \(C\) is also true. Moreover, if we observe than \(C\) is false, then we conclude (by \emph{modus tollens}) that \(H\) is false as well.
+Confirmation is the act of using evidence to justify increasing the confidence in the hypothesis. Confirmation is not based on deductively valid inferences. For instance, in the \textbf{H-D method} we identify some \(C\) that is an implication of \(H\). \(H\) implies \(C\), then if \(H\) is true we conclude (by \emph{modus ponens}) that \(C\) is also true. Moreover, if we observe than \(C\) is false, then we conclude (by \emph{modus tollens}) that \(H\) is false as well.
 
 \begin{verbatim}
 Modus ponens     Modus tollens    Induction
@@ -1267,9 +1251,9 @@ There are two dominant interpretations of probability in scientific inference:
 Both perspectives are widely used in science and data analysis. For example:
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2081}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3960}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3960}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.2081}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3960}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3960}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Topic
@@ -1321,8 +1305,7 @@ Still, choosing priors is an open issue. Different priors can lead to different 
 
 \end{center}
 
-The following content is under construction but might as well be taught during the course.
-This section will superficially tackle abduction and causal inferences and its relation to data science regarding non-monotonic logic.
+The following content is under construction but might as well be taught during the course. This section will superficially tackle abduction and causal inferences and its relation to data science regarding non-monotonic logic.
 
 \end{notebox}
 
@@ -1360,9 +1343,9 @@ Defeasible reasoning is a particular kind of non-demonstrative reasoning, where 
 \end{wrapfigure}
 \addtocounter{figure}{-1}
 
-At this point, many of you probably have already related data science to two of the goals of science: explanation and prediction. But how do they relate to one another? and what is a scientific explanation? Either to satisfy our natural curiosity or for a further purpose, science has always attempted to understand how the world works. The German philosopher Carl Hempel attempted to answer this question in the 1950s with what is known as the \emph{covering law} model of explanation. He stated that a scientific explanation is an answer given in response to \emph{explanation-seeking why-questions} (e.g.~why salt dissolves in water).
+At this point, many of you probably have already related data science to two of the goals of science: explanation and prediction. But how do they relate to one another? and what is a scientific explanation? Either to satisfy our natural curiosity or for a further purpose, science has always attempted to understand how the world works. The German philosopher Carl Hempel attempted to answer this question in the 1950s with what is known as the \emph{covering law} model of explanation. He stated that a scientific explanation is an answer given in response to \emph{explanation-seeking why-questions} (e.g.~why salt dissolves in water). \textbf{In this section, we will first present Hempel's model, then discuss its main problems, and finally explore modern causal and mechanistic views of explanation}.
 
-According to Hempel, explanations are structured like an argument, i.e.~a set of premises followed by a conclusion. Therefore, the conclusion of such an argument states that certain phenomenon occurs, e.g.~``salt dissolves in water''. On the other hand, the premises indicate why the conclusion is true. Then, the challenge lays in the relationship that should follow between such premises and the conclusion. For Hempel, the premises should all be true and entail the conclusion, i.e.~the argument should be deductive and \emph{sound}. Additionally, the premises should contain at least one general law (e.g.~all metals conduct electricity), a.k.a. \emph{laws of nature}. The name of the model comes from that fact that the phenomenon to be explained is ``covered'' by some general law.
+According to Hempel, explanations are structured like an argument, i.e.~a set of premises followed by a conclusion. Therefore, the conclusion of such an argument states that certain phenomenon occurs, e.g.~``salt dissolves in water''. On the other hand, the premises indicate why the conclusion is true. Then, the challenge lays in the relationship that should follow between such premises and the conclusion. For Hempel, the premises should all be true and entail the conclusion, i.e.~the argument should be deductive and \emph{sound}. Additionally, the premises should contain at least one general law (e.g.~all metals conduct electricity), also known as \emph{laws of nature}. The name of the model comes from that fact that the phenomenon to be explained is ``covered'' by some general law.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1386,7 +1369,7 @@ Particular Facts (explanans)
 Phenomenon to be explained (explanandum)
 \end{verbatim}
 
-An interesting consequence of this model lays in the relationship between explanation and prediction. \textbf{Hempel argued that explanation and prediction are two sides of the same coin}. Whenever a phenomenon is explained with the help of a covering law, the laws and the particular facts we use could have allowed us to predict the occurrence of the phenomenon. Hempel expressed this by saying that every scientific explanation is potentially a prediction. Hempel argued that the opposite is also true: every prediction is potentially an explanation. \textbf{For Hempel, explanation and prediction are structurally symmetric}. For instance, the same information we could use to predict an animal species extinction before it happened will serve to explain that very same fact after it has happened.
+An interesting consequence of this model lies in the relationship between explanation and prediction. \textbf{Hempel argued that explanation and prediction are two sides of the same coin}. Whenever a phenomenon is explained with the help of a covering law, the laws and the particular facts we use could have allowed us to predict the occurrence of the phenomenon. Hempel expressed this by saying that every scientific explanation is potentially a prediction. Hempel argued that the opposite is also true: every prediction is potentially an explanation. \textbf{For Hempel, explanation and prediction are structurally symmetric}. For instance, the same information we could use to predict an animal species extinction before it happened will serve to explain that very same fact after it has happened.
 
 
 
@@ -1398,6 +1381,8 @@ An interesting consequence of this model lays in the relationship between explan
 
 \caption{A 15-metre flagpole casts a shadow of 20 metres when the sun is 37° overhead. Figure from \citep{okasha-pos}.}\label{fig:flagpole}
 \end{figure}
+
+\subsection{Limitations of Hempel's model}\label{limitations-of-hempels-model}
 
 Hempel's model might be too liberal, as it faces a number of odd counterexamples. For example, consider Figure \ref{fig:flagpole}. In order to explain why the shadow is 20 metres long. Indeed, this is a \emph{explanation-seeking why-question} and a possible answer could be the following: The light rays from the sun hit the flagpole (15 metres high), the sun's elevation angle is 37° and light travels in straight lines. The trigonometric calculation \(tan(37°) = 15/20\) demonstrates that the flagpole will cast a shadow of 20 metres long. This example can be found in both \citep{rosenberg2019philosophy} and \citep{okasha-pos}.
 
@@ -1421,11 +1406,27 @@ Particular Fact  (Sun's angle of elevation is 37°)
 Phenomenon to be explained (Flagpole is 15 metres high)
 \end{verbatim}
 
-The moral of this example is that the concept of explanation showcases an important \textbf{asymmetry}. The length of the shadow can be explained by the height of the flagpole, given aforementioned general laws. But this does not happen in the other direction. In general, if \(x\) explains \(y\), then it will not be true that \(y\) explains \(x\) given the same laws and facts. \textbf{Explanation is then an asymetric relation and Hempel's covering law model does not respect such asymmetry}. Information that allow us to predict a fact before we know it does not serve to explain that very same fact after we know it, which \textbf{contradicts Hempel's thesis}.
+The moral of this example is that the concept of explanation showcases an important \textbf{asymmetry}. The length of the shadow can be explained by the height of the flagpole, given aforementioned general laws. But this does not happen in the other direction. In general, if \(x\) explains \(y\), then it will not be true that \(y\) explains \(x\) given the same laws and facts. \textbf{Explanation is then an asymmetric relation and Hempel's covering law model does not respect such asymmetry}. Information that allow us to predict a fact before we know it does not serve to explain that very same fact after we know it, which \textbf{contradicts Hempel's thesis}.
 
-The general conclusion is that a good explanation of a phenomenon should contain information that is relevant to the phenomenon's occurrence.
+The general conclusion is that a good explanation of a phenomenon should contain information that is relevant to the phenomenon's occurrence. Hempel's model left unanswered why some explanations feel more informative than others. Philosophers and scientists increasingly turned toward causation as the missing ingredient: what truly makes an explanation explanatory.
 
-\subsection{Hempel's model limitations}\label{hempels-model-limitations}
+\subsection{Explanation and causality}\label{explanation-and-causality}
+
+There are alternatives to the covering law model that help us understand what counts as scientific explanation. For many, explaining a phenomenon is simply to say what caused it. Obviously, causality is also an asymmetric relation. If a faulty appliance caused a fire, then it is clear that the fire did not cause the appliance's failure. The asymmetry of explanation derives from the asymmetry of causality.
+
+However, the criticism against Hempel covering law is a bit unfair as he was an empiricist. Empiricists are sceptical about the concept of causality and argue that all our knowledge comes from experience. David Hume argued that is impossible to experience causal relations, and that causality is just what we humans project to understand the world.
+
+There are however some examples where explanation and causality do not align For example, to say that an object's temperature is the average kinetic energy of its molecules is to explain what temperature \emph{is}, but this does not yield the cause of such temperature.
+
+The law \(PV = nRT.\) explains the temperature of a gas at equilibrium by appeal to its pressure and the volume it takes up. But volume and pressure cannot be \emph{causes} of temperature since all of them --- the temperature, the volume, and the pressure --- vary, in the way the law describes, instantaneously. The changes in volume at one time do not cause changes in temperature at a later time; instead, the change in temperature occurs during exactly the same interval that pressure is changing \citep{rosenberg2019philosophy}. The nature of causation is still an open debate, but most philosophers have agreed that causes somehow necessitate their effects and that mere regularity cannot express this necessity.
+
+Another example, this time from \citep{book-of-why}, show us the gap between causal vocabulary and ordinary scientific vocabulary. Consider the problem of expressing the following causal relationship: The barometer reading \(B\) tracks the atmospheric pressure \(P\). We can write down the relationship as \(B = kP\), where \(k\) is a constant of proportionality. Thanks to algebra we can rewrite the equation in multiple ways such as: \(P = B/k\), \(k = B/P\), or \(B-kP = 0\). They mean the same and given two of the variables we can calculate the third. But in these equations there is no account of directionality. We cannot express that is the pressure which \emph{causes} the barometer to change and not the other way around. Similarly, we cannot express the fact that the singing of the rooster \emph{does not cause} the sun to rise. Why have scientists not captured such facts in formulas as is done in other areas like mechanics, geometry or optics? For a better understanding of causation and its role in data science I recommend you the Book of Why \citep{book-of-why}.
+
+\begin{quote}
+Data can tell you that the people who took a medicine recovered faster than those who did not take it, but they can't tell you why. --- Book of Why
+\end{quote}
+
+\subsection{Summary and modern views}\label{summary-and-modern-views}
 
 We can summarise Hempel's view as follows:
 
@@ -1441,7 +1442,7 @@ We can summarise Hempel's view as follows:
   Hempel held that explanation and prediction are structurally symmetric.
 \end{itemize}
 
-However, his model is too liberal.
+In short, Hempel's model helped formalize scientific explanation, but it faces key limitations:
 
 \begin{itemize}
 \tightlist
@@ -1459,9 +1460,7 @@ However, his model is too liberal.
   Empiricist skepticism of causality: Hempel, influenced by Hume, downplayed causal reasoning, yet most explanations are causal in nature.
 \end{itemize}
 
-The covering-law model was foundational but incomplete: it motivated the causal-mechanistic turn in philosophy of science. A good explanation should provide relevant information about why the event occurred, not just a correlation or logical entailment.
-
-\subsection{Modern views}\label{modern-views}
+The covering-law model was foundational, but incomplete: it motivated the causal-mechanistic turn in philosophy of science. A good explanation should provide relevant information about why the event occurred, not just a correlation or logical entailment.
 
 Because the covering-law model treated explanation as mere deduction from general laws, it failed to capture how scientists actually explain phenomena through causal or mechanistic reasoning. Contemporary models emphasize that explaining is not just showing that an event fits under a law, but showing why it occurs, by revealing the underlying causal mechanisms, counterfactual dependencies, and contextual relevance that make the phenomenon intelligible.
 
@@ -1533,21 +1532,9 @@ Because the covering-law model treated explanation as mere deduction from genera
   \end{itemize}
 \end{itemize}
 
-\subsection{Explanation and causality}\label{explanation-and-causality}
+In sum, while Hempel's covering-law model provided the first systematic account of scientific explanation, its neglect of causality, asymmetry, and context opened the path for contemporary approaches that view explanation as revealing the mechanisms, dependencies, and conditions that make phenomena intelligible rather than merely deducible.
 
-There are alternatives to the covering law model that help us understanding scientific explanation. For many, explaining a phenomenon is simply to say what caused it. Obviously, causality is also an asymmetric relation. If a faulty appliance caused a fire, then is clear that the fire did not cause the appliance's failure. The asymmetry of explanation derives from the asymmetry of causality.
-
-However, the criticism against Hempel covering law is a bit unfair as he was an empiricist. Empiricists are sceptical about the concept of causality and argue that all our knowledge comes from experience. David Hume argued that is impossible to experience causal relations, and that causality is just what we humans project to understand the world.
-
-There are however some examples were explanation and causality do not match. For example, to say that an object's temperature is the average kinetic energy of its molecules is to explain what temperature \emph{is}, but this does not yield the cause of such temperature.
-
-The law \(PV = nRT.\) explains the temperature of a gas at equilibrium by appeal to its pressure and the volume it takes up. But volume and pressure cannot be \emph{causes} of temperature since all of them --- the temperature, the volume, and the pressure --- vary, in the way the law describes, instantaneously. The changes in volume at one time do not cause changes in temperature at a later time; instead, the change in temperature occurs during exactly the same interval that pressure is changing \citep{rosenberg2019philosophy}. The nature of causation is still an open debate, but most philosophers have agreed that causes somehow necessitate their effects and that mere regularity cannot express this necessity.
-
-Another example, this time from \citep{book-of-why}, show us the gap between causal vocabulary and ordinary scientific vocabulary. Consider the problem of expressing the following causal relationship: The barometer reading \(B\) tracks the atmospheric pressure \(P\). We can write down the relationship as \(B = kP\), where \(k\) is a constant of proportionality. Thanks to algebra we can rewrite the equation in multiple ways such as: \(P = B/k\), \(k = B/P\), or \(B-kP = 0\). They mean the same and given two of the variables we can calculate the third. But in these equations there is no account of directionality. We cannot express that is the pressure which \emph{causes} the barometer to change and not the other way around. Similarly, we cannot express the fact that the singing of the rooster \emph{does not cause} the sun to rise. Why have scientists not captured such facts in formulas as is done in other areas like mechanics, geometry or optics? For a better understanding of causation and its role in data science I recommend you the Book of Why \citep{book-of-why}.
-
-\begin{quote}
-Data can tell you that the people who took a medicine recovered faster than those who did not take it, but they can't tell you why. --- Book of Why
-\end{quote}
+In data science, explanatory and predictive goals often overlap but differ in purpose: prediction seeks accuracy about future observations, whereas explanation seeks understanding of why they occur. Both, however, depend on our ability to uncover the underlying structures---logical, causal, or mechanistic---that connect data to the world
 
 \begin{tipbox}
 
@@ -1583,9 +1570,9 @@ From this moment on, various explanations were considered, subjected to test and
 The first explanation attributed the issue to ``epidemic influences'' described as ``atmospheric-cosmic-telluric changes'' spreading over districts and causing childbed fever. This hypothesis did not explain why the first division had more cases than the second. Neither explained the lack of cases in the city of Vienna. Epidemics such as cholera are not so selective. Finally, Semmelweis notes that women who had to give birth in the street on their way to the hospital had a lower death rate than the average for the first division.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2375}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3750}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3875}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.2375}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3750}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3875}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Year
@@ -2038,14 +2025,14 @@ For data science, understanding these designs matters because \textbf{datasets i
 \end{itemize}
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 \textbf{Type}
@@ -2355,12 +2342,12 @@ Real scientific practice usually combines all three: a model resembles (analogy)
 \end{itemize}
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 \textbf{View}
@@ -2457,11 +2444,11 @@ This yields 3 possible conclusions.
 Next, three examples are given that cover each of the cases aforementioned.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.0460}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2644}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.3678}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1724}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1494}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0460}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2644}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.3678}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1724}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1494}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Case
@@ -2848,11 +2835,18 @@ Now, we will define the model and visualize it.
 \NormalTok{    common\_causes}\OperatorTok{=}\NormalTok{[}\StringTok{"prior\_knowledge"}\NormalTok{])}
 
 \NormalTok{model.view\_model(size}\OperatorTok{=}\NormalTok{(}\DecValTok{8}\NormalTok{,}\DecValTok{3}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{POSDE_bookdown_files/figure-latex/unnamed-chunk-34-1.pdf}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{plt.tight\_layout(w\_pad}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{POSDE_bookdown_files/figure-latex/unnamed-chunk-34-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{POSDE_bookdown_files/figure-latex/unnamed-chunk-34-2.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2898,7 +2892,7 @@ This test replaces the actual treatment (study hours) with a ``placebo'' or rand
 ## Refute: Use a Placebo Treatment
 ## Estimated effect:2.010902911319434
 ## New effect:0.0
-## p value:2.0
+## p value:1.0
 \end{verbatim}
 
 \begin{itemize}
@@ -3013,11 +3007,18 @@ Note that, whether unknown to us or wrongly assumed by us, variables can be affe
 \NormalTok{    common\_causes}\OperatorTok{=}\NormalTok{[}\StringTok{"study\_hours"}\NormalTok{])}
 
 \NormalTok{model.view\_model(size}\OperatorTok{=}\NormalTok{(}\DecValTok{8}\NormalTok{,}\DecValTok{3}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{POSDE_bookdown_files/figure-latex/unnamed-chunk-40-5.pdf}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{plt.tight\_layout(w\_pad}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{POSDE_bookdown_files/figure-latex/unnamed-chunk-40-3.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{POSDE_bookdown_files/figure-latex/unnamed-chunk-40-6.pdf}}
 
 Our initial results show an estimated effect of 14.98 meaning that having \texttt{private\ tutoring} is estimated to increase a student's final \texttt{grade} by approximately 17 points. This effect estimate was obtained after controlling for \texttt{study\ hours} but without considering the additional confounder \texttt{parental\ involvement}. At this point we could be naively happy with this result. But what if we are overestimating or underestimating the effect of \texttt{tutoring}?
 
@@ -3060,8 +3061,8 @@ The placebo test here suggests that the original model's structure is robust, me
 \begin{verbatim}
 ## Placebo Test Result: Refute: Use a Placebo Treatment
 ## Estimated effect:17.585373682989484
-## New effect:0.0
-## p value:2.0
+## New effect:-0.05521038628415212
+## p value:0.92
 \end{verbatim}
 
 We could ask ourselves too whether the estimated effect changes significantly when we replace the given dataset with bootstrapped samples from the same dataset? (Hint: It should not).
@@ -3085,8 +3086,8 @@ As seen below, the effect does not deviate much from the original estimated effe
 \begin{verbatim}
 ## Refute: Bootstrap Sample Dataset
 ## Estimated effect:17.585373682989484
-## New effect:17.616872980690538
-## p value:0.8
+## New effect:17.60096969638309
+## p value:0.8400000000000001
 \end{verbatim}
 
 If we suspect about the presence of unknown confounders, we could test how sensitive is the effect estimate when we add an additional common cause (confounder) to the dataset that is correlated with the treatment and the outcome. (Hint: It should not be too sensitive).
@@ -3110,7 +3111,7 @@ In this case we see a huge drop. This may indicate that we over estimated the ef
 \begin{verbatim}
 ## Refute: Add an Unobserved Common Cause
 ## Estimated effect:17.585373682989484
-## New effect:3.0797827732011314
+## New effect:1.6491017911987171
 \end{verbatim}
 
 At this point we should get back to the design table and see that we missed an important variable. In our case we knew already: \texttt{Parental\ involvement}. In real life, we would either ask the students again (through new surveys) or if we already had this variable in our surveys we would add it to the model as a confounder affecting the \texttt{grades} and the \texttt{tutoring}. Note that in ``our reality'' \texttt{parental\ involvement} did not affect \texttt{study\ hours} directly.
@@ -3126,11 +3127,18 @@ At this point we should get back to the design table and see that we missed an i
 
 \CommentTok{\# Visualize the causal graph}
 \NormalTok{model\_v2.view\_model(size}\OperatorTok{=}\NormalTok{(}\DecValTok{8}\NormalTok{,}\DecValTok{3}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{POSDE_bookdown_files/figure-latex/unnamed-chunk-49-9.pdf}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{plt.tight\_layout(w\_pad}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{POSDE_bookdown_files/figure-latex/unnamed-chunk-49-5.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{POSDE_bookdown_files/figure-latex/unnamed-chunk-49-10.pdf}}
 
 We then re-run our estimation.
 
@@ -4094,6 +4102,6 @@ One of the most compelling arguments against scientific realisms is the `Pessimi
 
 My personal take on this, is as follows: It is argued that from a future perspective we will criticise and debunk our current theories as we now do with past theories. However, for this to be true, we must necessarily assume that we will gain knowledge over time. Such knowledge will be used to debunk, improve or replace the previous theories. Notably, this knowledge will mostly be obtained thanks to prior theories. For instance, the rejection of luminiferous aether theory happened thanks to an experiment that was designed with the help of previous theories. Scientists follow their theories to their limits, and when found, they require theory reformulation or replacement. In the same way the Americas were found on the assumption that they would reach East Indies. Failures lead to new discoveries and theories are always under development, is not just theories what realists use as truth but rather all the knowledge that transcends in the process of developing theories, including, of course, the theories themselves.
 
-  \bibliography{book.bib,packages.bib}
+\bibliography{book.bib,packages.bib}
 
 \end{document}
