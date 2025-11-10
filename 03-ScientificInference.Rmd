@@ -218,13 +218,9 @@ Hume arrived to this conclusion by noting that whenever we make inductive infere
 Hume's argument concerns specific inductive inferences such as `All observed instances of A have been B` and `The next instance of A will be B`. His argument proceeds as follows:
 
 -   Suppose an inductive inference `I` as: All observed instances of `A` have been `B`; The next instance of `A` will be `B`.
-
 -   To justify `I`, it must be inferred from some premises in an argument.
-
 -   Every argument is either inductive or deductive.
-
 -   Inference `I` presupposes the uniformity of nature (UP), i.e., the resemblance between observed and unobserved regularities; but this cannot be proven by deduction because we can conceive situations where nature will not be uniform any more without causing a logical contradiction. Hence, a deductive argument is not possible [@sep-induction-problem].
-
 -   Similarly, any inductive argument for UP would presuppose UP itself, producing a vicious circle. However, an argument cannot rely on the very principle it aims to justify. Thus, there is no inductive argument for UP.
 
 Therefore, there is no non-circular argument for UP and thus, inference `I` is not justified. The reader is left to debate this unsettling conclusion and its consequences. For Hume, the conclusion is that our tendency to project past regularities into the future is not underpinned by reason.

@@ -1251,7 +1251,7 @@ Figure 3.19: Detail of John Snow’s map of Cholera in the Broad Street outbreak
 <span id="cb22-5"><a href="empirical-practices.html#cb22-5" tabindex="-1"></a>    common_causes<span class="op">=</span>[<span class="st">&quot;prior_knowledge&quot;</span>])</span>
 <span id="cb22-6"><a href="empirical-practices.html#cb22-6" tabindex="-1"></a></span>
 <span id="cb22-7"><a href="empirical-practices.html#cb22-7" tabindex="-1"></a>model.view_model(size<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">3</span>))<span class="op">;</span></span></code></pre></div>
-<p><img src="Figures/causal-models/plot-causal-model-one-1.png" width="768" /></p>
+<p><img src="Figures/plot-causal-model-one-1.png" width="768" /></p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="empirical-practices.html#cb23-1" tabindex="-1"></a>identified_estimand <span class="op">=</span> model.identify_effect()</span>
 <span id="cb23-2"><a href="empirical-practices.html#cb23-2" tabindex="-1"></a>estimate <span class="op">=</span> model.estimate_effect(identified_estimand, </span>
 <span id="cb23-3"><a href="empirical-practices.html#cb23-3" tabindex="-1"></a>   method_name<span class="op">=</span><span class="st">&quot;backdoor.linear_regression&quot;</span>)</span></code></pre></div>
@@ -1346,7 +1346,7 @@ Figure 3.19: Detail of John Snow’s map of Cholera in the Broad Street outbreak
 <span id="cb31-6"><a href="empirical-practices.html#cb31-6" tabindex="-1"></a>    common_causes<span class="op">=</span>[<span class="st">&quot;study_hours&quot;</span>])</span>
 <span id="cb31-7"><a href="empirical-practices.html#cb31-7" tabindex="-1"></a></span>
 <span id="cb31-8"><a href="empirical-practices.html#cb31-8" tabindex="-1"></a>model.view_model(size<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">3</span>))</span></code></pre></div>
-<p><img src="Figures/causal-models/model-example-two-3.png" width="768" /></p>
+<p><img src="Figures/model-example-two-3.png" width="768" /></p>
 <p>Our initial results show an estimated effect of 14.98 meaning that having <code>private tutoring</code> is estimated to increase a student’s final <code>grade</code> by approximately 17 points. This effect estimate was obtained after controlling for <code>study hours</code> but without considering the additional confounder <code>parental involvement</code>. At this point we could be naively happy with this result. But what if we are overestimating or underestimating the effect of <code>tutoring</code>?</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="empirical-practices.html#cb32-1" tabindex="-1"></a>identified_estimand <span class="op">=</span> model.identify_effect()</span>
 <span id="cb32-2"><a href="empirical-practices.html#cb32-2" tabindex="-1"></a>estimate <span class="op">=</span> model.estimate_effect(identified_estimand, </span>
@@ -1392,7 +1392,7 @@ Figure 3.19: Detail of John Snow’s map of Cholera in the Broad Street outbreak
 <span id="cb44-7"><a href="empirical-practices.html#cb44-7" tabindex="-1"></a></span>
 <span id="cb44-8"><a href="empirical-practices.html#cb44-8" tabindex="-1"></a><span class="co"># Visualize the causal graph</span></span>
 <span id="cb44-9"><a href="empirical-practices.html#cb44-9" tabindex="-1"></a>model_v2.view_model(size<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">3</span>))</span></code></pre></div>
-<p><img src="Figures/causal-models/new-model-two-5.png" width="768" /></p>
+<p><img src="Figures/new-model-two-5.png" width="768" /></p>
 <p>We then re-run our estimation.</p>
 <div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="empirical-practices.html#cb45-1" tabindex="-1"></a>identified_estimand_with_confounder <span class="op">=</span> model_v2.identify_effect()</span>
 <span id="cb45-2"><a href="empirical-practices.html#cb45-2" tabindex="-1"></a>estimate_with_confounder <span class="op">=</span> model_v2.estimate_effect(</span>

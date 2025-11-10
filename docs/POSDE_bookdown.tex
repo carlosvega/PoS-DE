@@ -905,6 +905,7 @@ Hume arrived to this conclusion by noting that whenever we make inductive infere
 Hume's argument concerns specific inductive inferences such as \texttt{All\ observed\ instances\ of\ A\ have\ been\ B} and \texttt{The\ next\ instance\ of\ A\ will\ be\ B}. His argument proceeds as follows:
 
 \begin{itemize}
+\tightlist
 \item
   Suppose an inductive inference \texttt{I} as: All observed instances of \texttt{A} have been \texttt{B}; The next instance of \texttt{A} will be \texttt{B}.
 \item
@@ -2868,7 +2869,7 @@ Now, we define the model and visualize it.
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{Figures/causal-models/plot-causal-model-one-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{Figures/plot-causal-model-one-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3032,7 +3033,7 @@ Note that, whether unknown to us or wrongly assumed by us, variables can be affe
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{Figures/causal-models/model-example-two-3.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{Figures/model-example-two-3.pdf}}
 
 Our initial results show an estimated effect of 14.98 meaning that having \texttt{private\ tutoring} is estimated to increase a student's final \texttt{grade} by approximately 17 points. This effect estimate was obtained after controlling for \texttt{study\ hours} but without considering the additional confounder \texttt{parental\ involvement}. At this point we could be naively happy with this result. But what if we are overestimating or underestimating the effect of \texttt{tutoring}?
 
@@ -3144,7 +3145,7 @@ At this point we should get back to the design table and see that we missed an i
 \end{Highlighting}
 \end{Shaded}
 
-\pandocbounded{\includegraphics[keepaspectratio]{Figures/causal-models/new-model-two-5.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{Figures/new-model-two-5.pdf}}
 
 We then re-run our estimation.
 
@@ -3167,7 +3168,7 @@ As can be seen, this value is closer to the degree of our synthetic data \texttt
 \end{Shaded}
 
 \begin{verbatim}
-## Estimated Effect (revised model): 10.095828768814414
+## Estimated Effect (revised model): 10.095828768814442
 \end{verbatim}
 
 \chapter{Experimental Control and Statistical Abuse}\label{stats-abuse}

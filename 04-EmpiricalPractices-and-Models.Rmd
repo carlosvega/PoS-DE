@@ -768,7 +768,7 @@ data.head(5)
 
 Now, we define the model and visualize it.
 
-```{python, label="plot-causal-model-one", fig.path="Figures/causal-models/"}
+```{python, label="plot-causal-model-one", fig.path="Figures/"}
 
 model = CausalModel(
     data=data,
@@ -878,7 +878,7 @@ Next we create our **initial causal model** in which we **wrongly** assume that 
 
 Note that, whether unknown to us or wrongly assumed by us, variables can be affected by `parental involvement` in reality. The model shows that `study hours` is a **confounder** of both `tutoring` and `grade`.
 
-```{python, label="model-example-two", fig.path="Figures/causal-models/"}
+```{python, label="model-example-two", fig.path="Figures/"}
 # Create a causal model excluding parental involvement initially
 model = CausalModel(
     data=data,
@@ -945,7 +945,7 @@ print(sensitivity_analysis)
 
 At this point we should get back to the design table and see that we missed an important variable. In our case we knew already: `Parental involvement`. In real life, we would either ask the students again (through new surveys) or if we already had this variable in our surveys we would add it to the model as a confounder affecting the `grades` and the `tutoring`. Note that in "our reality" `parental involvement` did not affect `study hours` directly.
 
-```{python, label="new-model-two", fig.path="Figures/causal-models/"}
+```{python, label="new-model-two", fig.path="Figures/"}
 # Realize missing confounder: Parental involvement
 model_v2 = CausalModel(
     data=data,
