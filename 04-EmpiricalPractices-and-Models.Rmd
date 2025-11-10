@@ -582,6 +582,34 @@ the real climate of the 1980s.
 
 Here, the data seem to support the greenhouse model, but since another credible model (Lorenz’s) explains the same warming trend, the results do not clearly prove anything. The evidence is inconclusive about which model best fits the real world. Also, it is worth remembering that not all numbers count as "data". The ±3.6°F (±2.0°C) change came from computer equations — a prediction, not an observation. So it does not serve as direct evidence.
 
+### Dr. Arbuthnot's "Male Years"
+
+> In 1710, Dr. John Arbuthnot examined the records of births in London for the previous eighty-two years, and discovered that every year was "male" by which he meant that each year contained a preponderance of male births. Calculating the probability that this sequence of "male years" would occur by chance, he showed that probability to be truly minute, and ascribed the phenomenon to divine providence. How do you explain a sequence of eighty-two male years? If you think
+explaining requires identifying the causes that produced a sequence of events, it appears you should be interested in tracing the individual etiologies (causes)
+of all the London births. That account - the Gory Details, as we'll call it - is too long for us to write in this box, but we can give a recipe for it.
+> 
+> 1. Start with the first birth of 1628. Go back to 1627, and the act of copulation that began the pregnancy. Trace the movements of the sperm to the fertilization of the egg, Derive the chromosomal character of the sperm that won the race. Follow the process of pregnancy and birth. You have now explained the sex of the first birth of 1628. Enter it, under `M` or `F`, in a tabulation.
+> 
+> 2. Repeat this for the second birth of 1628, and continue through all the births of 1628. Now add up the totals in each column of your tabulation.You have now explained why 1628 was a "male year".
+>
+> 3. Repeat the same procedure for 1629, 1630, and all the years up to 1709. You now have a complete causal explanation of why all these years were "male".
+>
+> We suspect you will feel that following this recipe does not provide much insight into the surprising fact Arbuthnot discovered: Even if you knew the Gory Details, you would still wonder at the coincidence (and we suspect you would not invoke divine providence). Notice that knowing the Gory Details doesn't shed any light on what is expected in 1710 (which was also,as it turned out, a "male year").
+> 
+> A better explanation comes from evolutionary theory. R. A. Fisher, one of the founders of population genetics, also began sex-ratio theory. In many (but not all) organisms that reproduce sexually, including human beings, there is an equilibrium value of the sex ratio at sexual maturity of 1:1. This means that if the sex ratio deviates from 1:1, organisms with a tendency to produce the under-represented sex will be favoured by natural selection. If boys predominate and girls are relatively scarce, couples with a tendency to produce daughters will tend, on average, to have a larger number of grandchildren (each birth requires one male and one female, and because there are more sons than daughters, the probability of a son fathering a grandchild is less than that of a daughter giving birth to a grandchild). Natural selection keeps the sex ratio at sexual maturity close to 1:1.
+> 
+> So why, in the large population of a city, are years "male"? Because the population is big enough to make it highly improbable that the sex ratio at maturity deviates far from 1:1. And because the mortality of boys (at least for most of human history) is greater than the mortality of girls. If you are to have a 1:1 ratio at puberty, more boys have to be born to compensate for those who will be lost in the intervening years. Part of the explanation is that in our species males are (in this sense) the weaker sex.
+> --- Extracted from [@barker-pos]
+
+- **Step 1. Real World.** London birth records between 1628 and 1709 show that every one of the 82 years had more male than female births.
+- **Step 2. Model(s).** (1) Arbuthnot’s hypothesis: The consistent excess of male births is evidence of divine providence, God’s design ensures population balance. (2) Fischer later hypothesis: Natural selection favors an equilibrium sex ratio of 1:1 at sexual maturity. Since boys have higher mortality, more males must be born.
+- **Step 3. Prediction.** Arbuthnot’s model: We should always observe more male births, reflecting divine design. If Fisher’s model is correct, then large populations should show slightly more male births than female births every year, with fluctuations due to chance but always biased toward males.
+- **Step 4. Data.** The London records show 82 consecutive “male years.” Modern demographic data confirm a consistent pattern: the human birth ratio is indeed slightly male-biased across large populations.
+- **Step 5. Negative Evidence?** Not really. The observed data fit both models: both predict male-skewed births. There is no direct contradiction with either hypothesis.
+- **Step 6. Positive Evidence?** Unclear. Fischer model explains why such a pattern is expected, it ties the bias to reproductive success and evolutionary stability. Divine providence hypothesis adds no predictive or mechanistic insight.
+
+Fisher model provides a deeper, mechanistic–statistical explanation at the population level, connecting the pattern to evolutionary forces rather than coincidence or divine intervention.
+
 ## Examples
 
 ### Willow tree experiment {#willow}
