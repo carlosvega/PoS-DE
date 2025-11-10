@@ -335,6 +335,15 @@ Is important to note a key difference between confirmation and falsification. In
 
 This asymmetry forms the basics of Karl Popper's (1902-1994) falsificationism.
 
+:::: {.tipbox data-latex=""}
+::: {data-latex=""}
+**Note for data scientists!**
+:::
+Importantly, we must note that **in statistical hypothesis testing, data do not logically falsify a hypothesis**; rather, they can provide a severe test of it  [@mayo2021statistical] (see Section \ref(bayesian-inference)). Falsification, in the strict Popperian sense, refers to universal (deterministic) hypotheses, i.e., those that can be refuted by a single counterexample. The kind of hypothesis that can be refuted by a single failed experiment is a universal hypothesis, or deterministic law-like hypothesis. Probabilistic statements like "The mean of population A equals that of population B" do not entail any single observation with logical necessity. Hence, no single data point can logically falsify such a hypothesis. We can only evaluate the hypothesis’ consistency with data.
+::::
+
+The process described by Popper is as follows:
+
 -   Propose falsifiable hypotheses.
 -   Try to falsify these hypotheses with observable evidence.
 -   Reject any falsified hypothesis as false.
@@ -386,7 +395,7 @@ Note the difference between *falsifiable* and *falsified*.
 > Falsification uses the valid inference modus tollens: if from a statement $P$ we logically deduce $Q$, but what is observed is $\lnot Q$, we infer that $P$ is false. For example, given the statement "all swans are white" and the initial condition "there is a swan here", we can deduce "the swan here is white", but if what is observed is "the swan here is not white" (say black), then "all swans are white" is false, or it was not a swan.
 ::::
 
-The take-away message from falsification is that despite proposing an unrealistically restrictive practice of science, it might be a useful inference method for scientists. However, they should be aware of its limitations and for instance, bear in mind the pitfalls of *ad-hoc* modifications. (See negative weight in phlogiston theory [@phlogiston]). An *ad-hoc* hypothesis is added to a theory to save it from being falsified. A modification is considered *ad-hoc* if it reduces the falsifiability of the hypothesis in question.
+The take-away message from falsification is that despite proposing an unrealistically restrictive practice of science, it might be a useful inference method for scientists. However, they should be aware of its limitations and for instance, bear in mind the pitfalls of *ad-hoc* modifications. (See negative weight in phlogiston theory [@phlogiston]). An *ad-hoc* hypothesis is added to a theory to save it from being falsified. A modification is considered *ad-hoc* if it reduces the falsifiability of the hypothesis in question. Again, **remember that in statistical hypothesis testing, data do not logically falsify a hypothesis**; rather, they can provide a severe test of it [@mayo2021statistical] (see Section \ref(bayesian-inference)).
 
 ### Confirmation {#confirmation}
 
@@ -491,7 +500,7 @@ There are two dominant interpretations of probability in scientific inference:
 Both perspectives are widely used in science and data analysis. For example:
 
 | Topic | Frequentist Perspective | Bayesian Perspective |
-|-----------------|---------------------------|---------------------------|
+|------------------|---------------------------|---------------------------|
 | Interpretation of Probability | Long-run frequency of events | Degree of belief (subjective or epistemic) |
 | Hypotheses | Fixed and not assigned probabilities | Treated as uncertain; assigned prior and updated posterior |
 | Learning from Data | Estimation via Maximum Likelihood (MLE), confidence intervals | Posterior inference via Bayes’ Theorem |
@@ -556,7 +565,7 @@ In machine learning terms, this corresponds to models that must update their pre
 knitr::include_graphics('Figures/PenguinFlies.png')
 ```
 
-Defeasible reasoning deals with tentative relationships between premises and conclusions, which can be *defeated* by additional information, allowing for the retraction of inferences. For instance, while we may infer that Tweety flies based on the information that Tweety is a bird and the domain knowledge that birds generally fly, we can retract this inference when we learn that Tweety is a penguin. Tweety is indeed a bird but it cannot fly. Defeasible reasoning is not exempt from limitations, requiring from causal information to properly derive conclusions under certain scenarios. 
+Defeasible reasoning deals with tentative relationships between premises and conclusions, which can be *defeated* by additional information, allowing for the retraction of inferences. For instance, while we may infer that Tweety flies based on the information that Tweety is a bird and the domain knowledge that birds generally fly, we can retract this inference when we learn that Tweety is a penguin. Tweety is indeed a bird but it cannot fly. Defeasible reasoning is not exempt from limitations, requiring from causal information to properly derive conclusions under certain scenarios.
 
 Consider, for example, this problem of Judea Pearl: if the sprinkler is on, then normally the sidewalk is wet, and, if the sidewalk is wet, then normally it is raining. However, we should not infer that it is raining from the fact that the sprinkler is on [@pearl2014probabilistic]. Conflicts may arise between hard facts and defeasible conclusions. For instance, both arguments in Figure \@ref(fig:tweety) $Penguin ⇒ Bird → flies$ and $Penguin → ¬flies$ finish with a defeasible inference. The transitivity rule $(a → b, b → c) ⇒ a → c$ cannot be applied to the first argument. In this case, according to their specificity we can give priority to the argument with more a specific antecedent but is not always as trivial, and complex conflicts can remain unresolved.
 
@@ -577,7 +586,7 @@ cat(
 ```
 
 | Type | Concept | Question | Role |
-|----|----|----|----|
+|------------------|------------------|------------------|------------------|
 | Deduction | From general laws to specific consequences | If this theory is true, what should we observe? | Testing and deriving predictions |
 | Induction | From specific observations to general regularities | Given what we have seen, what general pattern might hold? | Testing and generalising |
 | Abduction | From surprising facts to plausible explanations | What hypothesis would best explain these facts? | Hypothesis and model generation |
@@ -587,7 +596,6 @@ cat(
 '</div>'
 )
 ```
-
 
 ## Explanation
 

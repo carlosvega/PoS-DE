@@ -640,6 +640,13 @@ Karl Popper in the 1980’s.
 <p>“No amount of experimentation can ever prove me right; a single experiment can prove me wrong.” — Albert Einstein</p>
 </blockquote>
 <p>This asymmetry forms the basics of Karl Popper’s (1902-1994) falsificationism.</p>
+<div class="tipbox">
+<div data-latex="">
+<p><strong>Note for data scientists!</strong></p>
+</div>
+<p>Importantly, we must note that <strong>in statistical hypothesis testing, data do not logically falsify a hypothesis</strong>; rather, they can provide a severe test of it <span class="citation">(<a href="#ref-mayo2021statistical">Mayo-Wilson 2021</a>)</span> (see Section (bayesian-inference)). Falsification, in the strict Popperian sense, refers to universal (deterministic) hypotheses, i.e., those that can be refuted by a single counterexample. The kind of hypothesis that can be refuted by a single failed experiment is a universal hypothesis, or deterministic law-like hypothesis. Probabilistic statements like “The mean of population A equals that of population B” do not entail any single observation with logical necessity. Hence, no single data point can logically falsify such a hypothesis. We can only evaluate the hypothesis’ consistency with data.</p>
+</div>
+<p>The process described by Popper is as follows:</p>
 <ul>
 <li>Propose falsifiable hypotheses.</li>
 <li>Try to falsify these hypotheses with observable evidence.</li>
@@ -686,7 +693,7 @@ Karl Popper in the 1980’s.
 <p>Falsification uses the valid inference modus tollens: if from a statement <span class="math inline">\(P\)</span> we logically deduce <span class="math inline">\(Q\)</span>, but what is observed is <span class="math inline">\(\lnot Q\)</span>, we infer that <span class="math inline">\(P\)</span> is false. For example, given the statement “all swans are white” and the initial condition “there is a swan here”, we can deduce “the swan here is white”, but if what is observed is “the swan here is not white” (say black), then “all swans are white” is false, or it was not a swan.</p>
 </blockquote>
 </div>
-<p>The take-away message from falsification is that despite proposing an unrealistically restrictive practice of science, it might be a useful inference method for scientists. However, they should be aware of its limitations and for instance, bear in mind the pitfalls of <em>ad-hoc</em> modifications. (See negative weight in phlogiston theory <span class="citation">(<a href="#ref-phlogiston">Grünbaum 1976</a>)</span>). An <em>ad-hoc</em> hypothesis is added to a theory to save it from being falsified. A modification is considered <em>ad-hoc</em> if it reduces the falsifiability of the hypothesis in question.</p>
+<p>The take-away message from falsification is that despite proposing an unrealistically restrictive practice of science, it might be a useful inference method for scientists. However, they should be aware of its limitations and for instance, bear in mind the pitfalls of <em>ad-hoc</em> modifications. (See negative weight in phlogiston theory <span class="citation">(<a href="#ref-phlogiston">Grünbaum 1976</a>)</span>). An <em>ad-hoc</em> hypothesis is added to a theory to save it from being falsified. A modification is considered <em>ad-hoc</em> if it reduces the falsifiability of the hypothesis in question. Again, <strong>remember that in statistical hypothesis testing, data do not logically falsify a hypothesis</strong>; rather, they can provide a severe test of it <span class="citation">(<a href="#ref-mayo2021statistical">Mayo-Wilson 2021</a>)</span> (see Section (bayesian-inference)).</p>
 </div>
 <div id="confirmation" class="section level3 hasAnchor" number="2.4.3">
 <h3><span class="header-section-number">2.4.3</span> Confirmation<a href="scientific-inference.html#confirmation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -768,9 +775,9 @@ Figure 2.2: The problem of underdetermination illustrated with a chart.
 <p>Both perspectives are widely used in science and data analysis. For example:</p>
 <table>
 <colgroup>
-<col width="23%" />
-<col width="38%" />
-<col width="38%" />
+<col width="25%" />
+<col width="37%" />
+<col width="37%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -1334,6 +1341,9 @@ Ladyman, James. 2012. <em>Understanding Philosophy of Science</em>. Routledge.
 </div>
 <div id="ref-mayo1996error" class="csl-entry">
 Mayo, Deborah G. 1996. <em>Error and the Growth of Experimental Knowledge</em>. University of Chicago Press.
+</div>
+<div id="ref-mayo2021statistical" class="csl-entry">
+Mayo-Wilson, Conor. 2021. <span>“Statistical Inference as Severe Testing: How to Get Beyond the Statistics.”</span> Duke University Press Durham, NC.
 </div>
 <div id="ref-okasha-pos" class="csl-entry">
 Okasha, Samir. 2016. <em>Philosophy of Science: Very Short Introduction</em>. Oxford University Press.
