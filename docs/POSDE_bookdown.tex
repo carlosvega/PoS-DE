@@ -1035,19 +1035,21 @@ According to the Hypothetico-deductive method (H-D), a hypothesis is formulated,
 
 Is important to note a key difference between confirmation and falsification. In step 4 of the \textbf{H-D method} we can infer the falsity of the hypothesis from the falsity of even a single one of the expected consequences. In contrast, in step 5 confirmation of the hypothesis is not inferred from the truth of even a large set of the consequences. Instead, we only increase our confidence on the hypothesis after finding that many consequences of the hypothesis are true. This difference is referred as the \textbf{asymmetry between confirmation and falsification}. Although a scientific theory can never be proved true by a finite amount of data, it can be proved false, or refuted by a single experiment.
 
-\begin{tipbox}
-
-\textbf{Note for data scientists!}
-
-Importantly, we must note that in statistical hypothesis testing, data do not logically falsify a hypothesis; rather, they can provide a severe test of it \citep{mayo2021statistical} (see Section \ref(bayesian-inference)). Falsification, in the strict Popperian sense, refers to universal (deterministic) hypotheses, i.e., those that can be refuted by a single counterexample. The kind of hypothesis that can be refuted by a single failed experiment is a universal hypothesis, or deterministic law-like hypothesis. Probabilistic statements like ``The mean of population A equals that of population B'' do not entail any single observation with logical necessity. Hence, no single data point can logically falsify such a hypothesis. We can only evaluate the hypothesis' consistency with data.
-
-\end{tipbox}
-
 \begin{quote}
 ``No amount of experimentation can ever prove me right; a single experiment can prove me wrong.'' --- Albert Einstein
 \end{quote}
 
 This asymmetry forms the basics of Karl Popper's (1902-1994) falsificationism.
+
+\begin{tipbox}
+
+\textbf{Note for data scientists!}
+
+Importantly, we must note that \textbf{in statistical hypothesis testing, data do not logically falsify a hypothesis}; rather, they can provide a severe test of it \citep{mayo2021statistical} (see Section \ref(bayesian-inference)). Falsification, in the strict Popperian sense, refers to universal (deterministic) hypotheses, i.e., those that can be refuted by a single counterexample. The kind of hypothesis that can be refuted by a single failed experiment is a universal hypothesis, or deterministic law-like hypothesis. Probabilistic statements like ``The mean of population A equals that of population B'' do not entail any single observation with logical necessity. Hence, no single data point can logically falsify such a hypothesis. We can only evaluate the hypothesis' consistency with data.
+
+\end{tipbox}
+
+The process described by Popper is as follows:
 
 \begin{itemize}
 \tightlist
@@ -1138,7 +1140,7 @@ Falsification uses the valid inference modus tollens: if from a statement \(P\) 
 
 \end{tipbox}
 
-The take-away message from falsification is that despite proposing an unrealistically restrictive practice of science, it might be a useful inference method for scientists. However, they should be aware of its limitations and for instance, bear in mind the pitfalls of \emph{ad-hoc} modifications. (See negative weight in phlogiston theory \citep{phlogiston}). An \emph{ad-hoc} hypothesis is added to a theory to save it from being falsified. A modification is considered \emph{ad-hoc} if it reduces the falsifiability of the hypothesis in question. Again, remember that in statistical hypothesis testing, data do not logically falsify a hypothesis; rather, they can provide a severe test of it \citep{mayo2021statistical} (see Section \ref(bayesian-inference)).
+The take-away message from falsification is that despite proposing an unrealistically restrictive practice of science, it might be a useful inference method for scientists. However, they should be aware of its limitations and for instance, bear in mind the pitfalls of \emph{ad-hoc} modifications. (See negative weight in phlogiston theory \citep{phlogiston}). An \emph{ad-hoc} hypothesis is added to a theory to save it from being falsified. A modification is considered \emph{ad-hoc} if it reduces the falsifiability of the hypothesis in question. Again, \textbf{remember that in statistical hypothesis testing, data do not logically falsify a hypothesis}; rather, they can provide a severe test of it \citep{mayo2021statistical} (see Section \ref(bayesian-inference)).
 
 \subsection{Confirmation}\label{confirmation}
 
@@ -3176,7 +3178,7 @@ As can be seen, this value is closer to the degree of our synthetic data \texttt
 \end{Shaded}
 
 \begin{verbatim}
-## Estimated Effect (revised model): 10.095828768814414
+## Estimated Effect (revised model): 10.095828768814442
 \end{verbatim}
 
 \chapter{Experimental Control and Statistical Abuse}\label{stats-abuse}
