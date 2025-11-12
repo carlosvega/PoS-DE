@@ -582,6 +582,7 @@ the real climate of the 1980s.
 
 Here, the data seem to support the greenhouse model, but since another credible model (Lorenz’s) explains the same warming trend, the results do not clearly prove anything. The evidence is inconclusive about which model best fits the real world. Also, it is worth remembering that not all numbers count as "data". The ±3.6°F (±2.0°C) change came from computer equations — a prediction, not an observation. So it does not serve as direct evidence.
 
+<!--
 ### Dr. Arbuthnot's "Male Years"
 
 > In 1710, Dr. John Arbuthnot examined the records of births in London for the previous eighty-two years, and discovered that every year was "male" by which he meant that each year contained a preponderance of male births. Calculating the probability that this sequence of "male years" would occur by chance, he showed that probability to be truly minute, and ascribed the phenomenon to divine providence. How do you explain a sequence of eighty-two male years? If you think
@@ -609,6 +610,8 @@ of all the London births. That account - the Gory Details, as we'll call it - is
 - **Step 6. Positive Evidence?** Unclear. Fischer model explains why such a pattern is expected, it ties the bias to reproductive success and evolutionary stability. Divine providence hypothesis adds no predictive or mechanistic insight.
 
 Fisher model provides a deeper, mechanistic–statistical explanation at the population level, connecting the pattern to evolutionary forces rather than coincidence or divine intervention.
+
+-->
 
 ## Examples
 
