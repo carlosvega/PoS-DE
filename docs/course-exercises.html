@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 Course Exercises | 08-Exercises</title>
+  <meta name="description" content="This class book gathers the contents addressed in the course Applied Philosophy of Science and Data Ethics from the Master of Data Science at the University of Luxembourg. This class book will introduce basic philosophical and scientific concepts supported by examples and discussion." />
+  <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 Course Exercises | 08-Exercises" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This class book gathers the contents addressed in the course Applied Philosophy of Science and Data Ethics from the Master of Data Science at the University of Luxembourg. This class book will introduce basic philosophical and scientific concepts supported by examples and discussion." />
+  <meta name="github-repo" content="carlosvega/PoS-DE" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 Course Exercises | 08-Exercises" />
+  
+  <meta name="twitter:description" content="This class book gathers the contents addressed in the course Applied Philosophy of Science and Data Ethics from the Master of Data Science at the University of Luxembourg. This class book will introduce basic philosophical and scientific concepts supported by examples and discussion." />
+  
+
+<meta name="author" content="Dr. Carlos Vega" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="wont-fix.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-79429674-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-79429674-2');
+</script>
+
+
+<script type="text/javascript">
+mattcrump=1;
+</script>
+ -->
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"><strong>APPLIED PHILOSOPHY OF SCIENCE </br>AND DATA ETHICS</strong></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-presentation"><i class="fa fa-check"></i>Course presentation</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-at-ul"><i class="fa fa-check"></i>Course at UL</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#target-audience"><i class="fa fa-check"></i>Target audience</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-objectives"><i class="fa fa-check"></i>Course objectives</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-structure"><i class="fa fa-check"></i>Course structure</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-this-course"><i class="fa fa-check"></i>About this course</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#roadmap-for-instructors"><i class="fa fa-check"></i>Roadmap for instructors</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#disclaimer"><i class="fa fa-check"></i>Disclaimer</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-author"><i class="fa fa-check"></i>About the author</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-this-class-book"><i class="fa fa-check"></i>About this class book</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributing-to-the-book"><i class="fa fa-check"></i>Contributing to the book</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="scientific-goals-methods-and-knowledge.html"><a href="scientific-goals-methods-and-knowledge.html"><i class="fa fa-check"></i><b>1</b> Scientific Goals, Methods and Knowledge</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="scientific-goals-methods-and-knowledge.html"><a href="scientific-goals-methods-and-knowledge.html#what-is-science"><i class="fa fa-check"></i><b>1.1</b> What is Science?</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="scientific-goals-methods-and-knowledge.html"><a href="scientific-goals-methods-and-knowledge.html#scientific-goals-and-knowledge"><i class="fa fa-check"></i><b>1.1.1</b> Scientific Goals and Knowledge</a>
+<ul>
+<li class="chapter" data-level="1.1.1.1" data-path="scientific-goals-methods-and-knowledge.html"><a href="scientific-goals-methods-and-knowledge.html#data-information-and-knowledge"><i class="fa fa-check"></i><b>1.1.1.1</b> Data, information and knowledge</a></li>
+</ul></li>
+<li class="chapter" data-level="1.1.2" data-path="scientific-goals-methods-and-knowledge.html"><a href="scientific-goals-methods-and-knowledge.html#what-is-philosophy-of-science"><i class="fa fa-check"></i><b>1.1.2</b> What is Philosophy of Science?</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="scientific-goals-methods-and-knowledge.html"><a href="scientific-goals-methods-and-knowledge.html#sci-method"><i class="fa fa-check"></i><b>1.2</b> The scientific method</a></li>
+<li class="chapter" data-level="1.3" data-path="scientific-goals-methods-and-knowledge.html"><a href="scientific-goals-methods-and-knowledge.html#methodology"><i class="fa fa-check"></i><b>1.3</b> Methodology</a></li>
+<li class="chapter" data-level="1.4" data-path="scientific-goals-methods-and-knowledge.html"><a href="scientific-goals-methods-and-knowledge.html#examples"><i class="fa fa-check"></i><b>1.4</b> Examples</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="scientific-goals-methods-and-knowledge.html"><a href="scientific-goals-methods-and-knowledge.html#neptune-vulcan"><i class="fa fa-check"></i><b>1.4.1</b> Neptune and Vulcan</a></li>
+<li class="chapter" data-level="1.4.2" data-path="scientific-goals-methods-and-knowledge.html"><a href="scientific-goals-methods-and-knowledge.html#michelson-morley"><i class="fa fa-check"></i><b>1.4.2</b> The most famous “failed” experiment</a></li>
+<li class="chapter" data-level="1.4.3" data-path="scientific-goals-methods-and-knowledge.html"><a href="scientific-goals-methods-and-knowledge.html#eddington-expeditions"><i class="fa fa-check"></i><b>1.4.3</b> Eddington expeditions</a></li>
+<li class="chapter" data-level="1.4.4" data-path="scientific-goals-methods-and-knowledge.html"><a href="scientific-goals-methods-and-knowledge.html#smoke-debate"><i class="fa fa-check"></i><b>1.4.4</b> The smoke debate</a></li>
+<li class="chapter" data-level="1.4.5" data-path="scientific-goals-methods-and-knowledge.html"><a href="scientific-goals-methods-and-knowledge.html#kekul%C3%A9s-dream"><i class="fa fa-check"></i><b>1.4.5</b> Kekulé’s dream</a></li>
+<li class="chapter" data-level="1.4.6" data-path="scientific-goals-methods-and-knowledge.html"><a href="scientific-goals-methods-and-knowledge.html#why-most-published-research-findings-are-false"><i class="fa fa-check"></i><b>1.4.6</b> Why Most Published Research Findings Are False</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="scientific-inference.html"><a href="scientific-inference.html"><i class="fa fa-check"></i><b>2</b> Scientific Inference</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="scientific-inference.html"><a href="scientific-inference.html#overview"><i class="fa fa-check"></i><b>2.1</b> Overview</a></li>
+<li class="chapter" data-level="2.2" data-path="scientific-inference.html"><a href="scientific-inference.html#types-of-inferences"><i class="fa fa-check"></i><b>2.2</b> Types of inferences</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="scientific-inference.html"><a href="scientific-inference.html#deduction"><i class="fa fa-check"></i><b>2.2.1</b> Deduction and Induction</a></li>
+<li class="chapter" data-level="2.2.2" data-path="scientific-inference.html"><a href="scientific-inference.html#modus"><i class="fa fa-check"></i><b>2.2.2</b> Modus ponens and Modus tollens</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="scientific-inference.html"><a href="scientific-inference.html#problem-induction"><i class="fa fa-check"></i><b>2.3</b> The problem(s) of induction</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="scientific-inference.html"><a href="scientific-inference.html#david-humes-problem-of-induction"><i class="fa fa-check"></i><b>2.3.1</b> David Hume’s Problem of Induction</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="scientific-inference.html"><a href="scientific-inference.html#the-hypothetico-deductive-method"><i class="fa fa-check"></i><b>2.4</b> The Hypothetico-deductive Method</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="scientific-inference.html"><a href="scientific-inference.html#a-good-hypothesis"><i class="fa fa-check"></i><b>2.4.1</b> A good hypothesis</a></li>
+<li class="chapter" data-level="2.4.2" data-path="scientific-inference.html"><a href="scientific-inference.html#falsification"><i class="fa fa-check"></i><b>2.4.2</b> Falsification</a></li>
+<li class="chapter" data-level="2.4.3" data-path="scientific-inference.html"><a href="scientific-inference.html#confirmation"><i class="fa fa-check"></i><b>2.4.3</b> Confirmation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="scientific-inference.html"><a href="scientific-inference.html#bayesian-inference"><i class="fa fa-check"></i><b>2.5</b> Beyond the Hypothetico-Deductive Method: Bayesian Inference and the Logic of Uncertainty</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="scientific-inference.html"><a href="scientific-inference.html#limitations-of-the-hd-method-in-probabilistic-contexts"><i class="fa fa-check"></i><b>2.5.1</b> Limitations of the HD method in probabilistic contexts</a></li>
+<li class="chapter" data-level="2.5.2" data-path="scientific-inference.html"><a href="scientific-inference.html#bayesian-epistemology-and-conditionalization"><i class="fa fa-check"></i><b>2.5.2</b> Bayesian Epistemology and Conditionalization</a></li>
+<li class="chapter" data-level="2.5.3" data-path="scientific-inference.html"><a href="scientific-inference.html#bayesian-vs-frequentist-views"><i class="fa fa-check"></i><b>2.5.3</b> Bayesian vs Frequentist Views</a></li>
+<li class="chapter" data-level="2.5.4" data-path="scientific-inference.html"><a href="scientific-inference.html#bayesian-inference-and-the-problem-of-induction"><i class="fa fa-check"></i><b>2.5.4</b> Bayesian Inference and the Problem of Induction</a></li>
+<li class="chapter" data-level="2.5.5" data-path="scientific-inference.html"><a href="scientific-inference.html#underdetermination-and-bayesian-model-selection"><i class="fa fa-check"></i><b>2.5.5</b> Underdetermination and Bayesian Model Selection</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="scientific-inference.html"><a href="scientific-inference.html#other-types-of-inference"><i class="fa fa-check"></i><b>2.6</b> Other types of inference</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="scientific-inference.html"><a href="scientific-inference.html#abduction-and-inference-to-the-best-explanation-ibe"><i class="fa fa-check"></i><b>2.6.1</b> Abduction and Inference to the Best Explanation (IBE)</a></li>
+<li class="chapter" data-level="2.6.2" data-path="scientific-inference.html"><a href="scientific-inference.html#monotonic-and-non-monotonic-logic"><i class="fa fa-check"></i><b>2.6.2</b> Monotonic and Non-monotonic Logic</a></li>
+<li class="chapter" data-level="2.6.3" data-path="scientific-inference.html"><a href="scientific-inference.html#defeasible-reasoning"><i class="fa fa-check"></i><b>2.6.3</b> Defeasible Reasoning</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="scientific-inference.html"><a href="scientific-inference.html#summary-of-the-different-inference-methods"><i class="fa fa-check"></i><b>2.7</b> Summary of the different inference methods</a></li>
+<li class="chapter" data-level="2.8" data-path="scientific-inference.html"><a href="scientific-inference.html#explanation"><i class="fa fa-check"></i><b>2.8</b> Explanation</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="scientific-inference.html"><a href="scientific-inference.html#limitations-of-hempels-model"><i class="fa fa-check"></i><b>2.8.1</b> Limitations of Hempel’s model</a></li>
+<li class="chapter" data-level="2.8.2" data-path="scientific-inference.html"><a href="scientific-inference.html#explanation-and-causality"><i class="fa fa-check"></i><b>2.8.2</b> Explanation and causality</a></li>
+<li class="chapter" data-level="2.8.3" data-path="scientific-inference.html"><a href="scientific-inference.html#summary-and-modern-views"><i class="fa fa-check"></i><b>2.8.3</b> Summary and modern views</a></li>
+</ul></li>
+<li class="chapter" data-level="2.9" data-path="scientific-inference.html"><a href="scientific-inference.html#examples-1"><i class="fa fa-check"></i><b>2.9</b> Examples</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="scientific-inference.html"><a href="scientific-inference.html#semmelweis"><i class="fa fa-check"></i><b>2.9.1</b> The problem is in your hands!</a>
+<ul>
+<li class="chapter" data-level="2.9.1.1" data-path="scientific-inference.html"><a href="scientific-inference.html#how-a-hypothesis-is-tested"><i class="fa fa-check"></i><b>2.9.1.1</b> How a hypothesis is tested</a></li>
+</ul></li>
+<li class="chapter" data-level="2.9.2" data-path="scientific-inference.html"><a href="scientific-inference.html#wason"><i class="fa fa-check"></i><b>2.9.2</b> Wason selection task</a></li>
+<li class="chapter" data-level="2.9.3" data-path="scientific-inference.html"><a href="scientific-inference.html#u.s.a.-presidents"><i class="fa fa-check"></i><b>2.9.3</b> U.S.A. Presidents</a></li>
+<li class="chapter" data-level="2.9.4" data-path="scientific-inference.html"><a href="scientific-inference.html#yersinia-pestis"><i class="fa fa-check"></i><b>2.9.4</b> Yersinia pestis</a></li>
+<li class="chapter" data-level="2.9.5" data-path="scientific-inference.html"><a href="scientific-inference.html#risks-of-induction-and-non-epistemic-values-in-ml"><i class="fa fa-check"></i><b>2.9.5</b> Risks of induction and non-epistemic values in ML</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="empirical-practices.html"><a href="empirical-practices.html"><i class="fa fa-check"></i><b>3</b> Empirical Practices and Models</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="empirical-practices.html"><a href="empirical-practices.html#overview-1"><i class="fa fa-check"></i><b>3.1</b> Overview</a></li>
+<li class="chapter" data-level="3.2" data-path="empirical-practices.html"><a href="empirical-practices.html#experiments"><i class="fa fa-check"></i><b>3.2</b> Experiments</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="empirical-practices.html"><a href="empirical-practices.html#observational-studies"><i class="fa fa-check"></i><b>3.2.1</b> Observational studies</a>
+<ul>
+<li class="chapter" data-level="3.2.1.1" data-path="empirical-practices.html"><a href="empirical-practices.html#natural-experiments"><i class="fa fa-check"></i><b>3.2.1.1</b> Natural experiments</a></li>
+<li class="chapter" data-level="3.2.1.2" data-path="empirical-practices.html"><a href="empirical-practices.html#observability"><i class="fa fa-check"></i><b>3.2.1.2</b> Observability</a></li>
+<li class="chapter" data-level="3.2.1.3" data-path="empirical-practices.html"><a href="empirical-practices.html#indicators"><i class="fa fa-check"></i><b>3.2.1.3</b> Indicators</a></li>
+<li class="chapter" data-level="3.2.1.4" data-path="empirical-practices.html"><a href="empirical-practices.html#data-and-evidence"><i class="fa fa-check"></i><b>3.2.1.4</b> Data and Evidence</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2.2" data-path="empirical-practices.html"><a href="empirical-practices.html#field-laboratory-and-simulation-experiments"><i class="fa fa-check"></i><b>3.2.2</b> Field, laboratory and simulation experiments</a>
+<ul>
+<li class="chapter" data-level="3.2.2.1" data-path="empirical-practices.html"><a href="empirical-practices.html#field-experiments"><i class="fa fa-check"></i><b>3.2.2.1</b> Field experiments</a></li>
+<li class="chapter" data-level="3.2.2.2" data-path="empirical-practices.html"><a href="empirical-practices.html#laboratory-experiments"><i class="fa fa-check"></i><b>3.2.2.2</b> Laboratory experiments</a></li>
+<li class="chapter" data-level="3.2.2.3" data-path="empirical-practices.html"><a href="empirical-practices.html#simulation-experiments"><i class="fa fa-check"></i><b>3.2.2.3</b> Simulation experiments</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2.3" data-path="empirical-practices.html"><a href="empirical-practices.html#summary-of-the-different-experiments"><i class="fa fa-check"></i><b>3.2.3</b> Summary of the different experiments</a></li>
+<li class="chapter" data-level="3.2.4" data-path="empirical-practices.html"><a href="empirical-practices.html#how-to-evaluate-experiment-success"><i class="fa fa-check"></i><b>3.2.4</b> How to evaluate experiment success</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="empirical-practices.html"><a href="empirical-practices.html#scientific-models"><i class="fa fa-check"></i><b>3.3</b> Scientific models</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="empirical-practices.html"><a href="empirical-practices.html#the-models-of-the-atom"><i class="fa fa-check"></i><b>3.3.1</b> The models of the atom</a></li>
+<li class="chapter" data-level="3.3.2" data-path="empirical-practices.html"><a href="empirical-practices.html#the-models-of-benzene"><i class="fa fa-check"></i><b>3.3.2</b> The models of benzene</a></li>
+<li class="chapter" data-level="3.3.3" data-path="empirical-practices.html"><a href="empirical-practices.html#models-as-analogies"><i class="fa fa-check"></i><b>3.3.3</b> Models as analogies</a></li>
+<li class="chapter" data-level="3.3.4" data-path="empirical-practices.html"><a href="empirical-practices.html#differences-between-models-and-experiments"><i class="fa fa-check"></i><b>3.3.4</b> Differences between Models and Experiments</a></li>
+<li class="chapter" data-level="3.3.5" data-path="empirical-practices.html"><a href="empirical-practices.html#what-makes-a-good-model"><i class="fa fa-check"></i><b>3.3.5</b> What makes a good model?</a></li>
+<li class="chapter" data-level="3.3.6" data-path="empirical-practices.html"><a href="empirical-practices.html#models-as-mirrors"><i class="fa fa-check"></i><b>3.3.6</b> Models as mirrors</a></li>
+<li class="chapter" data-level="3.3.7" data-path="empirical-practices.html"><a href="empirical-practices.html#models-as-isolations"><i class="fa fa-check"></i><b>3.3.7</b> Models as isolations</a></li>
+<li class="chapter" data-level="3.3.8" data-path="empirical-practices.html"><a href="empirical-practices.html#summary-of-the-different-model-views"><i class="fa fa-check"></i><b>3.3.8</b> Summary of the different model views</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="empirical-practices.html"><a href="empirical-practices.html#a-tool-for-scientific-reasoning"><i class="fa fa-check"></i><b>3.4</b> A tool for scientific reasoning</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="empirical-practices.html"><a href="empirical-practices.html#a-case-of-negative-evidence.-gene-analysis-upsets-turtle-theory"><i class="fa fa-check"></i><b>3.4.1</b> A Case of Negative Evidence. “Gene Analysis Upsets Turtle Theory”</a></li>
+<li class="chapter" data-level="3.4.2" data-path="empirical-practices.html"><a href="empirical-practices.html#a-case-of-positive-evidence.-new-view-of-the-mind-gives-unconscious-an-expanded-role"><i class="fa fa-check"></i><b>3.4.2</b> A Case of Positive Evidence. “New View of the Mind Gives Unconscious an Expanded Role”</a></li>
+<li class="chapter" data-level="3.4.3" data-path="empirical-practices.html"><a href="empirical-practices.html#inconclusive-data.-was-that-a-greenhouse-effect-it-depends-on-your-theory"><i class="fa fa-check"></i><b>3.4.3</b> Inconclusive Data. “Was That a Greenhouse Effect? It Depends on Your Theory”</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="empirical-practices.html"><a href="empirical-practices.html#examples-2"><i class="fa fa-check"></i><b>3.5</b> Examples</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="empirical-practices.html"><a href="empirical-practices.html#willow"><i class="fa fa-check"></i><b>3.5.1</b> Willow tree experiment</a></li>
+<li class="chapter" data-level="3.5.2" data-path="empirical-practices.html"><a href="empirical-practices.html#john-snow"><i class="fa fa-check"></i><b>3.5.2</b> 1854 Broad Street cholera outbreak</a></li>
+<li class="chapter" data-level="3.5.3" data-path="empirical-practices.html"><a href="empirical-practices.html#causal-models"><i class="fa fa-check"></i><b>3.5.3</b> Causal models: Estimating treatment effect in the pressence of a confounder</a>
+<ul>
+<li class="chapter" data-level="3.5.3.1" data-path="empirical-practices.html"><a href="empirical-practices.html#backdoor-criterion"><i class="fa fa-check"></i><b>3.5.3.1</b> Backdoor criterion</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5.4" data-path="empirical-practices.html"><a href="empirical-practices.html#causal-models-overestimation"><i class="fa fa-check"></i><b>3.5.4</b> Causal models: Detecting an overestimation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="stats-abuse.html"><a href="stats-abuse.html"><i class="fa fa-check"></i><b>4</b> Experimental Control and Statistical Abuse</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="stats-abuse.html"><a href="stats-abuse.html#stats-overview"><i class="fa fa-check"></i><b>4.1</b> Overview</a></li>
+<li class="chapter" data-level="4.2" data-path="stats-abuse.html"><a href="stats-abuse.html#the-smoke-debate---part-ii"><i class="fa fa-check"></i><b>4.2</b> The smoke debate - Part II</a></li>
+<li class="chapter" data-level="4.3" data-path="stats-abuse.html"><a href="stats-abuse.html#experimental-control"><i class="fa fa-check"></i><b>4.3</b> Experimental Control</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="stats-abuse.html"><a href="stats-abuse.html#other-experimental-control-techniques"><i class="fa fa-check"></i><b>4.3.1</b> Other experimental control techniques</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="stats-abuse.html"><a href="stats-abuse.html#randomised-control-trials"><i class="fa fa-check"></i><b>4.4</b> Randomised Control Trials</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="stats-abuse.html"><a href="stats-abuse.html#origins-of-rcts"><i class="fa fa-check"></i><b>4.4.1</b> Origins of RCTs</a></li>
+<li class="chapter" data-level="4.4.2" data-path="stats-abuse.html"><a href="stats-abuse.html#validity"><i class="fa fa-check"></i><b>4.4.2</b> Validity</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="stats-abuse.html"><a href="stats-abuse.html#cross-validation-in-machine-learning"><i class="fa fa-check"></i><b>4.5</b> Cross-validation in Machine Learning</a></li>
+<li class="chapter" data-level="4.6" data-path="stats-abuse.html"><a href="stats-abuse.html#surrogates-proxies-confounders-and-colliders"><i class="fa fa-check"></i><b>4.6</b> Surrogates, Proxies, Confounders and Colliders</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="stats-abuse.html"><a href="stats-abuse.html#surrogates-and-proxies"><i class="fa fa-check"></i><b>4.6.1</b> Surrogates and Proxies</a></li>
+<li class="chapter" data-level="4.6.2" data-path="stats-abuse.html"><a href="stats-abuse.html#confounding-factors"><i class="fa fa-check"></i><b>4.6.2</b> Confounding factors</a></li>
+<li class="chapter" data-level="4.6.3" data-path="stats-abuse.html"><a href="stats-abuse.html#collider-bias-and-m-bias"><i class="fa fa-check"></i><b>4.6.3</b> Collider bias and M-bias</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="stats-abuse.html"><a href="stats-abuse.html#data-is-not-enough"><i class="fa fa-check"></i><b>4.7</b> Data alone is not enough</a></li>
+<li class="chapter" data-level="4.8" data-path="stats-abuse.html"><a href="stats-abuse.html#examples-3"><i class="fa fa-check"></i><b>4.8</b> Examples</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="stats-abuse.html"><a href="stats-abuse.html#covid-israel"><i class="fa fa-check"></i><b>4.8.1</b> Covid-19: How can efficacy versus severe disease be strong when 60% of hospitalized are vaccinated?</a></li>
+<li class="chapter" data-level="4.8.2" data-path="stats-abuse.html"><a href="stats-abuse.html#viz-hurricane"><i class="fa fa-check"></i><b>4.8.2</b> Misinterpretations of hurricane forecast maps</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html"><i class="fa fa-check"></i><b>5</b> Ethics and Responsibility</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#overview-2"><i class="fa fa-check"></i><b>5.1</b> Overview</a></li>
+<li class="chapter" data-level="5.2" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#morality-and-ethics"><i class="fa fa-check"></i><b>5.2</b> Morality and Ethics</a></li>
+<li class="chapter" data-level="5.3" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#ethical-frameworks"><i class="fa fa-check"></i><b>5.3</b> Ethical Frameworks</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#consequentialism"><i class="fa fa-check"></i><b>5.3.1</b> Consequentialism</a></li>
+<li class="chapter" data-level="5.3.2" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#deontology"><i class="fa fa-check"></i><b>5.3.2</b> Deontology</a></li>
+<li class="chapter" data-level="5.3.3" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#virtues"><i class="fa fa-check"></i><b>5.3.3</b> Virtues</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#values-in-science"><i class="fa fa-check"></i><b>5.4</b> Values in Science</a></li>
+<li class="chapter" data-level="5.5" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#ethics-in-action"><i class="fa fa-check"></i><b>5.5</b> Ethics in action</a></li>
+<li class="chapter" data-level="5.6" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#data-ethics"><i class="fa fa-check"></i><b>5.6</b> Data Ethics</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#origins"><i class="fa fa-check"></i><b>5.6.1</b> Origins</a></li>
+<li class="chapter" data-level="5.6.2" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#what-are-data-ethics"><i class="fa fa-check"></i><b>5.6.2</b> What are data ethics?</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#gdpr"><i class="fa fa-check"></i><b>5.7</b> General Data Protection Regulation (GDPR)</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#personal-data"><i class="fa fa-check"></i><b>5.7.1</b> Personal data</a>
+<ul>
+<li class="chapter" data-level="5.7.1.1" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#special-category-data"><i class="fa fa-check"></i><b>5.7.1.1</b> Special Category Data</a></li>
+<li class="chapter" data-level="5.7.1.2" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#childrens-data"><i class="fa fa-check"></i><b>5.7.1.2</b> Children’s data</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7.2" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#principles-gdpr"><i class="fa fa-check"></i><b>5.7.2</b> Principles GDPR</a>
+<ul>
+<li class="chapter" data-level="5.7.2.1" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#lawfulness-fairness-and-transparency"><i class="fa fa-check"></i><b>5.7.2.1</b> Lawfulness, Fairness and Transparency</a></li>
+<li class="chapter" data-level="5.7.2.2" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#purpose-limitation"><i class="fa fa-check"></i><b>5.7.2.2</b> Purpose Limitation</a></li>
+<li class="chapter" data-level="5.7.2.3" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#data-minimization"><i class="fa fa-check"></i><b>5.7.2.3</b> Data Minimization</a></li>
+<li class="chapter" data-level="5.7.2.4" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#storage-limitation"><i class="fa fa-check"></i><b>5.7.2.4</b> Storage Limitation</a></li>
+<li class="chapter" data-level="5.7.2.5" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#integrity-and-confidentiality"><i class="fa fa-check"></i><b>5.7.2.5</b> Integrity and Confidentiality</a></li>
+<li class="chapter" data-level="5.7.2.6" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#accountability"><i class="fa fa-check"></i><b>5.7.2.6</b> Accountability</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7.3" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#controllers-processors-and-subjects."><i class="fa fa-check"></i><b>5.7.3</b> Controllers, Processors and Subjects.</a></li>
+<li class="chapter" data-level="5.7.4" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#rights-of-the-data-subject"><i class="fa fa-check"></i><b>5.7.4</b> Rights of the data subject</a></li>
+<li class="chapter" data-level="5.7.5" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#international-transfers"><i class="fa fa-check"></i><b>5.7.5</b> International transfers</a></li>
+<li class="chapter" data-level="5.7.6" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#data-breaches"><i class="fa fa-check"></i><b>5.7.6</b> Data breaches</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#ethic-examples"><i class="fa fa-check"></i><b>5.8</b> Examples</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#a-genocide-incited-on-facebook"><i class="fa fa-check"></i><b>5.8.1</b> A Genocide Incited on Facebook</a></li>
+<li class="chapter" data-level="5.8.2" data-path="ethics-and-responsibility.html"><a href="ethics-and-responsibility.html#the-theranos-scandal---a-drop-of-blood-for-hundreds-of-different-assays"><i class="fa fa-check"></i><b>5.8.2</b> The Theranos scandal - A drop of blood for hundreds of different assays</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="wont-fix.html"><a href="wont-fix.html"><i class="fa fa-check"></i><b>6</b> Extra Material</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="wont-fix.html"><a href="wont-fix.html#history-of-science"><i class="fa fa-check"></i><b>6.1</b> History of science</a></li>
+<li class="chapter" data-level="6.2" data-path="wont-fix.html"><a href="wont-fix.html#theory-relatedness-of-observations"><i class="fa fa-check"></i><b>6.2</b> Theory-relatedness of observations</a></li>
+<li class="chapter" data-level="6.3" data-path="wont-fix.html"><a href="wont-fix.html#thomas-kuhn-and-the-idea-of-scientific-revolutions"><i class="fa fa-check"></i><b>6.3</b> Thomas Kuhn and the idea of scientific revolutions</a></li>
+<li class="chapter" data-level="6.4" data-path="wont-fix.html"><a href="wont-fix.html#gettier-problems"><i class="fa fa-check"></i><b>6.4</b> Gettier problems</a></li>
+<li class="chapter" data-level="6.5" data-path="wont-fix.html"><a href="wont-fix.html#realism"><i class="fa fa-check"></i><b>6.5</b> Realism and anti-realism</a></li>
+<li class="chapter" data-level="6.6" data-path="wont-fix.html"><a href="wont-fix.html#pessimistic-meta-induction"><i class="fa fa-check"></i><b>6.6</b> Pessimistic meta-induction</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="course-exercises.html"><a href="course-exercises.html"><i class="fa fa-check"></i><b>7</b> Course Exercises</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="course-exercises.html"><a href="course-exercises.html#the-issues-of-data-synthesis"><i class="fa fa-check"></i><b>7.1</b> The issues of data synthesis</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="course-exercises.html"><a href="course-exercises.html#greenlands-size"><i class="fa fa-check"></i><b>7.1.1</b> Greenland’s size</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="course-exercises.html"><a href="course-exercises.html#learning-from-history"><i class="fa fa-check"></i><b>7.2</b> Learning from History</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="course-exercises.html"><a href="course-exercises.html#al-razi-and-hospital-location"><i class="fa fa-check"></i><b>7.2.1</b> Al-Razi and Hospital Location</a></li>
+<li class="chapter" data-level="7.2.2" data-path="course-exercises.html"><a href="course-exercises.html#ibn-sina-and-medical-evidence"><i class="fa fa-check"></i><b>7.2.2</b> Ibn Sina and Medical Evidence</a></li>
+<li class="chapter" data-level="7.2.3" data-path="course-exercises.html"><a href="course-exercises.html#florence-nightingale-and-military-mortality"><i class="fa fa-check"></i><b>7.2.3</b> Florence Nightingale and Military Mortality</a></li>
+<li class="chapter" data-level="7.2.4" data-path="course-exercises.html"><a href="course-exercises.html#the-collapse-of-angkor"><i class="fa fa-check"></i><b>7.2.4</b> The Collapse of Angkor</a></li>
+<li class="chapter" data-level="7.2.5" data-path="course-exercises.html"><a href="course-exercises.html#ignaz-goldziher"><i class="fa fa-check"></i><b>7.2.5</b> Ignaz Goldziher</a></li>
+<li class="chapter" data-level="7.2.6" data-path="course-exercises.html"><a href="course-exercises.html#wu-lien-teh-and-the-manchurian-plague"><i class="fa fa-check"></i><b>7.2.6</b> Wu Lien-teh and the Manchurian Plague</a></li>
+<li class="chapter" data-level="7.2.7" data-path="course-exercises.html"><a href="course-exercises.html#janet-lane-claypon-and-breast-cancer-research"><i class="fa fa-check"></i><b>7.2.7</b> Janet Lane-Claypon and Breast Cancer Research</a></li>
+<li class="chapter" data-level="7.2.8" data-path="course-exercises.html"><a href="course-exercises.html#terranova-the-northern-cod-collapse"><i class="fa fa-check"></i><b>7.2.8</b> Terranova, the Northern Cod Collapse</a></li>
+<li class="chapter" data-level="7.2.9" data-path="course-exercises.html"><a href="course-exercises.html#li-wenliang-and-early-covid-19-signals"><i class="fa fa-check"></i><b>7.2.9</b> Li Wenliang and Early COVID-19 Signals</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>8</b> References</a></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="_blank">Built with Bookdown + RStudio</a></li>
+<li><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">08-Exercises</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="course-exercises" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Course Exercises<a href="course-exercises.html#course-exercises" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="the-issues-of-data-synthesis" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> The issues of data synthesis<a href="course-exercises.html#the-issues-of-data-synthesis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="greenlands-size" class="section level3 hasAnchor" number="7.1.1">
+<h3><span class="header-section-number">7.1.1</span> Greenland’s size<a href="course-exercises.html#greenlands-size" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Many people believe that Greenland is comparable in size to Africa or larger than South America.</p>
+<p>This belief is widespread in textbooks, news media, and online discussions. This belief is reinforced by commonly used world maps based on the Mercator projection, where Greenland appears vastly larger than it truly is.</p>
+<p>In reality, Greenland’s surface area is approximately 2.1 million km², while Africa’s is about 30 million km². The apparent similarity in size is not due to incorrect measurements, but to a systematic distortion introduced by map projection and visual synthesis.</p>
+<p>This example illustrates how correct data, when transformed, aggregated, or visualised improperly, can generate persistent and intuitive false beliefs. Distortions from data synthetisation may be intentional or accidental, yet their effects are powerful, especially when visual representations are treated as neutral or self-explanatory.</p>
+<p>Answer the following questions.</p>
+<ol style="list-style-type: decimal">
+<li>Give one example in data science where aggregation or visualisation can similarly mislead interpretation without involving false data.</li>
+<li>Explain why this example illustrates a problem of data synthesis and representation rather than incorrect data collection.</li>
+<li>Briefly explain how similar distortions in data science can contribute to biased narratives, echo chambers, or misguided policy decisions.</li>
+<li>In your opinion, when does data stop describing reality and start constructing it?</li>
+</ol>
+<p><strong>How to approach the answers</strong></p>
+<p>This exercise is designed to help you reason about <strong>distortion introduced by data synthesis and representation</strong>, rather than errors in measurement or data collection. The goal is not to test geographical knowledge, but to see how <em>true data</em> can still lead to <em>false beliefs</em> once transformed or visualised.</p>
+<p>When approaching the first question, focus on identifying an example where:</p>
+<ul>
+<li>the underlying data are correct,</li>
+<li>yet aggregation, scaling, or visual encoding changes how the data are perceived.</li>
+</ul>
+<p>Typical candidates include averages hiding variability, misleading axes in charts, heatmaps without normalization, or global indicators masking regional disparities. The key is to show that <em>nothing is fabricated</em>, but interpretation is nonetheless skewed.</p>
+<p>For the second question, clearly separate <strong>data collection</strong> from <strong>data representation</strong>. Ask yourself:</p>
+<ul>
+<li>Were the original quantities measured accurately?</li>
+<li>At what step does distortion enter?</li>
+</ul>
+<p>Your explanation should make clear that the problem arises <em>after</em> data collection, during transformation, aggregation, or visualisation choices. This reinforces the idea that epistemic failure often occurs downstream from measurement.</p>
+<p>The third question invites you to connect epistemic distortion to <strong>social and ethical consequences</strong>. When thinking about biased narratives or echo chambers, consider how repeated exposure to the same distorted representation can:</p>
+<ul>
+<li>legitimise certain interpretations,</li>
+<li>or marginalise alternative perspectives.</li>
+</ul>
+<p>You are not asked for a detailed sociological theory, but for a plausible mechanism linking representation to belief and action.</p>
+<p>The final question is intentionally reflective and normative. There is no single correct answer. Instead, you should:</p>
+<ul>
+<li>articulate a criterion or threshold (e.g. scale, repetition, authority, policy use),</li>
+<li>explain when representations cease to be descriptive tools and become <em>world-shaping constructs</em>.</li>
+</ul>
+<p>This question tests your ability to integrate epistemology, data practice, and ethics, rather than recall factual content.</p>
+<p>Overall, approach this exercise by keeping in mind that <strong>data visualisations are not neutral windows onto reality</strong>. They are models and syntheses that highlight some aspects while obscuring others, and this selective emphasis is precisely where both insight and distortion originate.</p>
+</div>
+</div>
+<div id="learning-from-history" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Learning from History<a href="course-exercises.html#learning-from-history" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>These exercises explore how knowledge is produced, interpreted, and acted upon under conditions of uncertainty by examining historical cases that mirror core problems in modern data science.</p>
+<p>Across medicine, public health, history, and environmental management, the cases show how evidence is shaped by proxies, data-generating processes, missing controls, ethical constraints, and high-stakes decision-making. Rather than focusing on technical calculation, the questions invite you to reflect on reasoning: what data actually measure, what they fail to capture, how comparisons substitute for experiments, and why correct conclusions can sometimes emerge from weak or incomplete evidence. Together, the cases illustrate that epistemic judgement, not just data volume or statistical fit, is central to responsible inference and action</p>
+<div id="al-razi-and-hospital-location" class="section level3 hasAnchor" number="7.2.1">
+<h3><span class="header-section-number">7.2.1</span> Al-Razi and Hospital Location<a href="course-exercises.html#al-razi-and-hospital-location" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In the 10th century, the Persian physician <strong>Al-Razi</strong> was tasked with selecting the most suitable location for a new hospital in Baghdad, a large and densely populated city. At the time, medical knowledge relied heavily on authority, tradition, and humoral theories, and there were no instruments to measure air quality, pollution, or disease risk.</p>
+<p>Rather than choosing a location based on prestige, custom, or anecdotal reputation, Al-Razi sought a method that relied on observable differences across districts. He placed pieces of raw meat in several parts of the city and monitored how quickly they decayed. His reasoning was indirect: faster decay suggested environmental conditions that might also promote illness, while slower decay suggested cleaner air.</p>
+<p>This approach did not involve experimental control, randomisation, or a causal theory of disease transmission. Al-Razi could not isolate variables such as temperature, insects, or humidity, nor could he test alternative explanations. Nonetheless, his method represented a deliberate attempt to <em>compare</em> environments systematically using a proxy rather than speculation, authority, or superstition.</p>
+<p><strong>Questions</strong></p>
+<ol style="list-style-type: decimal">
+<li>What role does the meat play in Al-Razi’s reasoning?<br />
+</li>
+<li>Is this an example of direct measurement of air quality?<br />
+</li>
+<li>What experimental control is missing in this method? Name one.<br />
+</li>
+<li>Why does the inference remain uncertain even if the method is systematic?<br />
+</li>
+<li>Give a modern data-science analogy to Al-Razi’s approach.</li>
+</ol>
+<p><strong>How to approach the answers</strong></p>
+<ul>
+<li>Identify the <strong>epistemic role of a proxy</strong> and distinguish it from direct measurement.</li>
+<li>Think about <strong>what is being inferred vs. what is observed</strong>.</li>
+<li>Reflect on missing controls (confounders, standardisation, replication).</li>
+<li>Emphasise why systematic comparison reduces arbitrariness but does not eliminate uncertainty.</li>
+<li>For the analogy, map <em>proxy to target</em> in modern data science (e.g., indirect indicators).</li>
+</ul>
+</div>
+<div id="ibn-sina-and-medical-evidence" class="section level3 hasAnchor" number="7.2.2">
+<h3><span class="header-section-number">7.2.2</span> Ibn Sina and Medical Evidence<a href="course-exercises.html#ibn-sina-and-medical-evidence" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In the 11th century, <strong>Ibn Sina (Avicenna)</strong> reflected critically on medical practice. He observed that physicians often inferred the effectiveness of treatments after witnessing a few apparent recoveries, without considering alternative explanations.</p>
+<p>Ibn Sina warned that recovery could result from natural healing, coincidence, or concurrent interventions. He argued that without systematic comparison and repetition under similar conditions, physicians risked mistaking chance or background processes for causal effects.</p>
+<p>Although formal experimental methods were not yet developed, Ibn Sina articulated a core insight of modern experimental reasoning: isolated success stories are epistemically weak. Reliable knowledge requires distinguishing treatment effects from background variation.</p>
+<p><strong>Questions</strong></p>
+<ol style="list-style-type: decimal">
+<li>What epistemic problem does Ibn Sina identify in relying on individual treatment successes?<br />
+</li>
+<li>Why is the argument “the patient recovered after treatment, therefore the treatment works” problematic?<br />
+</li>
+<li>What core principle of experimental control is Ibn Sina implicitly advocating?<br />
+</li>
+<li>Give one example of how Ibn Sina’s critique applies to modern data science or machine learning.</li>
+</ol>
+<p><strong>How to approach the answers</strong></p>
+<ul>
+<li>Focus on <strong>post hoc reasoning</strong> and confounding.</li>
+<li>Identify the difference between <strong>correlation, coincidence, and causation</strong>.</li>
+<li>Translate Ibn Sina’s insight into modern ideas like baselines, control groups, or validation.</li>
+<li>Use a contemporary example involving misleading performance claims.</li>
+</ul>
+</div>
+<div id="florence-nightingale-and-military-mortality" class="section level3 hasAnchor" number="7.2.3">
+<h3><span class="header-section-number">7.2.3</span> Florence Nightingale and Military Mortality<a href="course-exercises.html#florence-nightingale-and-military-mortality" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>During the Crimean War in the 1850s, <strong>Florence Nightingale</strong> confronted widespread assumptions about military deaths. High mortality among soldiers was often attributed directly to battle injuries, reinforcing the belief that little could be done beyond improving combat medicine.</p>
+<p>Nightingale collected detailed hospital records and noticed that most deaths occurred away from the battlefield. Rather than relying on total death counts, she reorganised the data by <em>cause of death</em> and <em>time period</em>. She then compared mortality patterns before and after sanitation reforms, using innovative visualisations to communicate her findings.</p>
+<p>Although Nightingale could not run controlled experiments or randomise conditions, she approximated control through structured comparison. Her work demonstrated how careful aggregation and disaggregation of observational data could reveal patterns that raw numbers concealed, and her analysis directly informed policy changes that saved lives.</p>
+<p><strong>Questions</strong></p>
+<ol style="list-style-type: decimal">
+<li>Why were raw mortality numbers insufficient to support Nightingale’s conclusions?<br />
+</li>
+<li>What form of experimental control was approximated in Nightingale’s analysis?<br />
+</li>
+<li>What statistical issue would occur if deaths were not disaggregated by cause?<br />
+</li>
+<li>Why was Nightingale’s use of data ethically significant?</li>
+</ol>
+<p><strong>How to approach the answers</strong></p>
+<ul>
+<li>Contrast <strong>raw counts</strong> with <strong>structured comparisons</strong>.</li>
+<li>Identify what was being held approximately constant across time periods.</li>
+<li>Consider aggregation bias and loss of explanatory resolution.</li>
+<li>Link ethical significance to <strong>prevention capacity</strong>, responsibility, and policy impact.</li>
+</ul>
+</div>
+<div id="the-collapse-of-angkor" class="section level3 hasAnchor" number="7.2.4">
+<h3><span class="header-section-number">7.2.4</span> The Collapse of Angkor<a href="course-exercises.html#the-collapse-of-angkor" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When French explorer <strong>Henri Mouhot</strong> encountered Angkor in the 19th century, he interpreted its overgrown monuments as evidence of sudden civilisational collapse. This interpretation relied heavily on visible ruins as proxies for societal vitality.</p>
+<p>Later historical accounts and modern remote sensing revealed a different picture: Angkor declined gradually due to climatic stress and infrastructural strain, not sudden decay or invasion. Monument survival turned out to be a misleading proxy for social complexity and continuity.</p>
+<p><strong>Questions</strong></p>
+<ol style="list-style-type: decimal">
+<li>Identify Mouhot’s main proxy and why it is epistemically risky.<br />
+</li>
+<li>Explain why this is not a case where experimental control is feasible, and what “control” can mean instead.<br />
+</li>
+<li>What statistical/causal error occurs if we infer societal vitality from monument survival alone?<br />
+</li>
+<li>State one ethical risk of colonial knowledge production in interpreting Angkor’s past.<br />
+</li>
+<li>Propose a data-science analogue where a convenient proxy drives a wrong narrative, and name one mitigation.</li>
+</ol>
+<p><strong>How to approach the answers</strong></p>
+<ul>
+<li>Identify proxy misuse and construct validity.</li>
+<li>Explain non-experimental forms of control (triangulation, comparison).</li>
+<li>Triangulation means: Do different ways of measuring or analysing the same phenomenon point to a similar conclusion?</li>
+<li>Link epistemic error to narrative bias.</li>
+<li>Include ethical dimensions of power and representation.</li>
+</ul>
+</div>
+<div id="ignaz-goldziher" class="section level3 hasAnchor" number="7.2.5">
+<h3><span class="header-section-number">7.2.5</span> Ignaz Goldziher<a href="course-exercises.html#ignaz-goldziher" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In the late nineteenth century, <strong>Ignaz Goldziher</strong> studied large corpora of Islamic legal and religious texts. Earlier scholars treated these texts as direct historical observations, assuming that many similar reports implied factual accuracy about early Islamic history.</p>
+<p>Goldziher challenged this view by analysing how such texts were produced. He argued that legal debates, institutional incentives, and educational transmission shaped what texts were written, preserved, and repeated. As a result, strong regularities could emerge even when the texts were not direct measurements of the historical events they purported to describe.</p>
+<p>Goldziher’s insight was not that the data were useless, but that they measured <em>something different</em> from what researchers often assumed. This distinction between data generation and target phenomenon is central to modern data science.</p>
+<p><strong>Questions</strong></p>
+<ol style="list-style-type: decimal">
+<li>What is the core data-science error in treating these texts as direct observations of early historical events? Hint: The target variable here is “early historical events”, and the observed variable “texts produced by later institutions”.<br />
+</li>
+<li>Explain how a shared generative process can produce strong statistical patterns without corresponding to the target phenomenon.<br />
+</li>
+<li>Why can increasing dataset size increase confidence in the wrong conclusion in this case?<br />
+</li>
+<li>Why is it ethically important, in data-driven research, to state clearly what a dataset does and does not measure?<br />
+</li>
+<li>Give a modern data-science example where data accurately reflects a process but is commonly misinterpreted as measuring a different target.</li>
+</ol>
+<p><strong>How to approach the answers</strong></p>
+<ul>
+<li>Explicitly distinguish <strong>observed variables</strong> from <strong>target constructs</strong>.</li>
+<li>Use the idea of <strong>generative processes</strong> and feedback loops.</li>
+<li>Explain why more data can amplify bias rather than correct it.</li>
+<li>Link ethical responsibility to transparency and misuse prevention.</li>
+</ul>
+</div>
+<div id="wu-lien-teh-and-the-manchurian-plague" class="section level3 hasAnchor" number="7.2.6">
+<h3><span class="header-section-number">7.2.6</span> Wu Lien-teh and the Manchurian Plague<a href="course-exercises.html#wu-lien-teh-and-the-manchurian-plague" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In the early 1910s, during a plague outbreak in Manchuria, prevailing medical theories emphasised flea-borne transmission. <strong>Wu Lien-teh</strong> observed rapid spread among people with close contact, including medical staff, suggesting airborne transmission.</p>
+<p>Without experimental confirmation or microbiological proof, Wu recommended face masks, quarantine, and burial reforms. These measures were controversial but likely contributed to controlling the outbreak.</p>
+<p>The case exemplifies abductive reasoning under severe time pressure and highlights decision-making when experimental control is impossible.</p>
+<p><strong>Questions</strong></p>
+<ol style="list-style-type: decimal">
+<li>Why was experimental confirmation impossible in this case?<br />
+</li>
+<li>Why was this inference epistemically risky?<br />
+</li>
+<li>Why would waiting for stronger statistical evidence be problematic?<br />
+</li>
+<li>What lesson does this case provide for data science in crisis situations?</li>
+</ol>
+<p><strong>How to approach the answers</strong></p>
+<ul>
+<li>Emphasise constraints of time, ethics, and feasibility.</li>
+<li>Identify uncertainty and alternative explanations.</li>
+<li>Discuss asymmetric costs of delay.</li>
+<li>Generalise to modern crisis analytics and precautionary action.</li>
+</ul>
+</div>
+<div id="janet-lane-claypon-and-breast-cancer-research" class="section level3 hasAnchor" number="7.2.7">
+<h3><span class="header-section-number">7.2.7</span> Janet Lane-Claypon and Breast Cancer Research<a href="course-exercises.html#janet-lane-claypon-and-breast-cancer-research" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In the early 20th century, <strong>Janet Lane-Claypon</strong> investigated possible causes of breast cancer. Many suspected factors were common among affected women, but this alone did not establish causation.</p>
+<p>Lane-Claypon introduced a systematic comparison between women with breast cancer and women without it. By examining how frequently exposures appeared in each group, she showed that some seemingly important factors were actually common in the general population.</p>
+<p>This comparative approach marked an early form of case-control reasoning and laid the groundwork for modern epidemiology, allowing researchers to distinguish coincidence from potential causal influence.</p>
+<p><strong>Questions</strong></p>
+<ol style="list-style-type: decimal">
+<li>Why were common exposures alone insufficient to identify causes of breast cancer?<br />
+</li>
+<li>What methodological innovation distinguishes Lane-Claypon’s approach?<br />
+</li>
+<li>How does this help avoiding misleading conclusions?<br />
+</li>
+<li>What kind of causal reasoning becomes possible once this innovation is introduced?<br />
+</li>
+<li>Why is this comparative approach ethically preferable to other types of experimentation?</li>
+</ol>
+<p><strong>How to approach the answers</strong></p>
+<ul>
+<li>Emphasise <strong>base rates</strong> and comparison groups.</li>
+<li>Identify the methodological shift from description to inference.</li>
+<li>Connect comparison to counterfactual reasoning.</li>
+<li>Discuss ethical constraints in medical research.</li>
+</ul>
+</div>
+<div id="terranova-the-northern-cod-collapse" class="section level3 hasAnchor" number="7.2.8">
+<h3><span class="header-section-number">7.2.8</span> Terranova, the Northern Cod Collapse<a href="course-exercises.html#terranova-the-northern-cod-collapse" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>From the late 1970s to the early 1990s, Canadian regulators relied on stock-assessment models to manage the Northern cod fishery. Indicators such as catch-per-unit-effort suggested stability, even as cod populations declined.</p>
+<p>Industrial fishing fleets increasingly concentrated in remaining high-density areas, masking broader collapse. Models remained statistically well-fit, but their assumptions failed under ecological change. When the collapse became undeniable, the resulting moratorium caused widespread social and economic harm.</p>
+<p><strong>Questions</strong></p>
+<ol style="list-style-type: decimal">
+<li>Explain how aggregation across space can hide collapse in sub-populations (name the general phenomenon).<br />
+</li>
+<li>Give one experimental control substitute that regulators could have used.<br />
+</li>
+<li>Why can a model be statistically well-fit yet epistemically unreliable here?<br />
+</li>
+<li>What non-epistemic values were in tension when setting quotas (name two)?</li>
+</ol>
+<p><strong>How to approach the answers</strong></p>
+<ul>
+<li>Identify aggregation bias or Simpson-like effects.</li>
+<li>Think of monitoring designs as substitutes for experiments.</li>
+<li>Separate goodness-of-fit from validity of assumptions.</li>
+<li>Name economic, social, or political values explicitly.</li>
+</ul>
+</div>
+<div id="li-wenliang-and-early-covid-19-signals" class="section level3 hasAnchor" number="7.2.9">
+<h3><span class="header-section-number">7.2.9</span> Li Wenliang and Early COVID-19 Signals<a href="course-exercises.html#li-wenliang-and-early-covid-19-signals" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In December 2019, <strong>Li Wenliang</strong>, an ophthalmologist in Wuhan, noticed several patients with unusual pneumonia symptoms resembling earlier SARS cases. At that stage, the number of cases was very small, no pathogen had been identified, and no epidemiological studies were available.</p>
+<p>From a statistical perspective, the evidence was weak and noisy; from an experimental perspective, no controlled interventions were possible. Nonetheless, Li warned colleagues to take precautions, prioritising potential harm over evidential certainty.</p>
+<p>In hindsight, his warning proved correct. The case highlights the tension between epistemic standards and ethical responsibility under uncertainty.</p>
+<p><strong>Questions</strong></p>
+<ol style="list-style-type: decimal">
+<li>Why was it impossible, at the time Li raised concerns, to obtain the kind of evidence normally required for strong causal or statistical inference?<br />
+</li>
+<li>Why did the available data fail to meet standard criteria for statistical reliability, despite later turning out to be correct?<br />
+</li>
+<li>What epistemic risk exists in waiting for stronger evidence in situations like this?<br />
+</li>
+<li>Why does this case raise an ethical duty to warn even when evidence is incomplete?<br />
+</li>
+<li>What does this case teach about decision-making under uncertainty in high-stakes data-driven systems?</li>
+</ol>
+<p><strong>How to approach the answers</strong></p>
+<ul>
+<li>Contrast <strong>ideal evidence</strong> with <strong>available evidence</strong>.</li>
+<li>Explain retrospective validation vs prospective uncertainty.</li>
+<li>Identify asymmetric risks (false alarms vs delayed action).</li>
+<li>Link ethics to precaution and responsibility.</li>
+</ul>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="wont-fix.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": false,
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["POSDE_bookdown.pdf"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection",
+    "scroll_highlight": true
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
