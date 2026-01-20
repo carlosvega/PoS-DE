@@ -1,4 +1,4 @@
-Carlos Vega. (2021 - 2024). Applied Philosophy of Science and Data Ethics.
+Carlos Vega. (2021 - 2026). Applied Philosophy of Science and Data Ethics.
 
 <p align="right">
     Also available at: <a href="https://posde.cvega.es">https://posde.cvega.es/</a>
