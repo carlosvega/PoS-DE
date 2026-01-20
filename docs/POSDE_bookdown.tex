@@ -176,7 +176,7 @@
 % Make links footnotes instead of hotlinks:
 \DeclareRobustCommand{\href}[2]{#2\footnote{\url{#1}}}
 \hypersetup{
-  pdftitle={Applied Philosophy of Science and Data Ethics},
+  pdftitle={08-Exercises},
   pdfauthor={Dr.~Carlos Vega},
   colorlinks=true,
   linkcolor={red},
@@ -185,9 +185,9 @@
   urlcolor={blue},
   pdfcreator={LaTeX via pandoc}}
 
-\title{Applied Philosophy of Science and Data Ethics}
+\title{08-Exercises}
 \author{Dr.~Carlos Vega}
-\date{2021 - 2025: ~Last compiled: 2025-11-12}
+\date{2021 - 2025: ~Last compiled: 2026-01-20}
 
 \begin{document}
 \maketitle
@@ -3178,7 +3178,7 @@ As can be seen, this value is closer to the degree of our synthetic data \texttt
 \end{Shaded}
 
 \begin{verbatim}
-## Estimated Effect (revised model): 10.095828768814442
+## Estimated Effect (revised model): 10.095828768814414
 \end{verbatim}
 
 \chapter{Experimental Control and Statistical Abuse}\label{stats-abuse}
@@ -4118,6 +4118,436 @@ One of the most compelling arguments against scientific realisms is the `Pessimi
 \end{quote}
 
 My personal take on this, is as follows: It is argued that from a future perspective we will criticise and debunk our current theories as we now do with past theories. However, for this to be true, we must necessarily assume that we will gain knowledge over time. Such knowledge will be used to debunk, improve or replace the previous theories. Notably, this knowledge will mostly be obtained thanks to prior theories. For instance, the rejection of luminiferous aether theory happened thanks to an experiment that was designed with the help of previous theories. Scientists follow their theories to their limits, and when found, they require theory reformulation or replacement. In the same way the Americas were found on the assumption that they would reach East Indies. Failures lead to new discoveries and theories are always under development, is not just theories what realists use as truth but rather all the knowledge that transcends in the process of developing theories, including, of course, the theories themselves.
+
+\chapter{Course Exercises}\label{course-exercises}
+
+\section{The issues of data synthesis}\label{the-issues-of-data-synthesis}
+
+\subsection{Greenland's size}\label{greenlands-size}
+
+Many people believe that Greenland is comparable in size to Africa or larger than South America.
+
+This belief is widespread in textbooks, news media, and online discussions.~This belief is reinforced by commonly used world maps based on the Mercator projection, where Greenland appears vastly larger than it truly is.
+
+In reality, Greenland's surface area is approximately 2.1 million km², while Africa's is about 30 million km².~The apparent similarity in size is not due to incorrect measurements, but to a systematic distortion introduced by map projection and visual synthesis.
+
+This example illustrates how correct data, when transformed, aggregated, or visualised improperly, can generate persistent and intuitive false beliefs. Distortions from data synthetisation may be intentional or accidental, yet their effects are powerful, especially when visual representations are treated as neutral or self-explanatory.
+
+Answer the following questions.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Give one example in data science where aggregation or visualisation can similarly mislead interpretation without involving false data.
+\item
+  Explain why this example illustrates a problem of data synthesis and representation rather than incorrect data collection.
+\item
+  Briefly explain how similar distortions in data science can contribute to biased narratives, echo chambers, or misguided policy decisions.
+\item
+  In your opinion, when does data stop describing reality and start constructing it?
+\end{enumerate}
+
+\subsubsection{How to approach the answers}\label{how-to-approach-the-answers}
+
+This exercise is designed to help you reason about \textbf{distortion introduced by data synthesis and representation}, rather than errors in measurement or data collection. The goal is not to test geographical knowledge, but to see how \emph{true data} can still lead to \emph{false beliefs} once transformed or visualised.
+
+When approaching the first question, focus on identifying an example where:
+
+\begin{itemize}
+\tightlist
+\item
+  the underlying data are correct,
+\item
+  yet aggregation, scaling, or visual encoding changes how the data are perceived.
+  Typical candidates include averages hiding variability, misleading axes in charts, heatmaps without normalization, or global indicators masking regional disparities. The key is to show that \emph{nothing is fabricated}, but interpretation is nonetheless skewed.
+\end{itemize}
+
+For the second question, clearly separate \textbf{data collection} from \textbf{data representation}. Ask yourself:
+
+\begin{itemize}
+\tightlist
+\item
+  Were the original quantities measured accurately?
+\item
+  At what step does distortion enter?
+  Your explanation should make clear that the problem arises \emph{after} data collection, during transformation, aggregation, or visualisation choices. This reinforces the idea that epistemic failure often occurs downstream from measurement.
+\end{itemize}
+
+The third question invites you to connect epistemic distortion to \textbf{social and ethical consequences}. When thinking about biased narratives or echo chambers, consider how repeated exposure to the same distorted representation can:
+
+\begin{itemize}
+\tightlist
+\item
+  stabilise false intuitions,
+\item
+  legitimise certain interpretations,
+\item
+  or marginalise alternative perspectives.
+  You are not asked for a detailed sociological theory, but for a plausible mechanism linking representation to belief and action.
+\end{itemize}
+
+The final question is intentionally reflective and normative. There is no single correct answer. Instead, you should:
+
+\begin{itemize}
+\tightlist
+\item
+  articulate a criterion or threshold (e.g.~scale, repetition, authority, policy use),
+\item
+  explain when representations cease to be descriptive tools and become \emph{world-shaping constructs}.
+  This question tests your ability to integrate epistemology, data practice, and ethics, rather than recall factual content.
+\end{itemize}
+
+Overall, approach this exercise by keeping in mind that \textbf{data visualisations are not neutral windows onto reality}. They are models and syntheses that highlight some aspects while obscuring others, and this selective emphasis is precisely where both insight and distortion originate.
+
+\section{Learning from History}\label{learning-from-history}
+
+These exercises explore how knowledge is produced, interpreted, and acted upon under conditions of uncertainty by examining historical cases that mirror core problems in modern data science.
+
+Across medicine, public health, history, and environmental management, the cases show how evidence is shaped by proxies, data-generating processes, missing controls, ethical constraints, and high-stakes decision-making. Rather than focusing on technical calculation, the questions invite you to reflect on reasoning: what data actually measure, what they fail to capture, how comparisons substitute for experiments, and why correct conclusions can sometimes emerge from weak or incomplete evidence. Together, the cases illustrate that epistemic judgement, not just data volume or statistical fit, is central to responsible inference and action
+
+\subsection{Al-Razi and Hospital Location}\label{al-razi-and-hospital-location}
+
+In the 10th century, the Persian physician \textbf{Al-Razi} was tasked with selecting the most suitable location for a new hospital in Baghdad, a large and densely populated city. At the time, medical knowledge relied heavily on authority, tradition, and humoral theories, and there were no instruments to measure air quality, pollution, or disease risk.
+
+Rather than choosing a location based on prestige, custom, or anecdotal reputation, Al-Razi sought a method that relied on observable differences across districts. He placed pieces of raw meat in several parts of the city and monitored how quickly they decayed. His reasoning was indirect: faster decay suggested environmental conditions that might also promote illness, while slower decay suggested cleaner air.
+
+This approach did not involve experimental control, randomisation, or a causal theory of disease transmission. Al-Razi could not isolate variables such as temperature, insects, or humidity, nor could he test alternative explanations. Nonetheless, his method represented a deliberate attempt to \emph{compare} environments systematically using a proxy rather than speculation, authority, or superstition.
+
+\subsubsection{Questions}\label{questions}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  What role does the meat play in Al-Razi's reasoning?\\
+\item
+  Is this an example of direct measurement of air quality?\\
+\item
+  What experimental control is missing in this method? Name one.\\
+\item
+  Why does the inference remain uncertain even if the method is systematic?\\
+\item
+  Give a modern data-science analogy to Al-Razi's approach.
+\end{enumerate}
+
+\subsubsection{How to approach the answers}\label{how-to-approach-the-answers-1}
+
+\begin{itemize}
+\tightlist
+\item
+  Identify the \textbf{epistemic role of a proxy} and distinguish it from direct measurement.
+\item
+  Think about \textbf{what is being inferred vs.~what is observed}.
+\item
+  Reflect on missing controls (confounders, standardisation, replication).
+\item
+  Emphasise why systematic comparison reduces arbitrariness but does not eliminate uncertainty.
+\item
+  For the analogy, map \emph{proxy to target} in modern data science (e.g., indirect indicators).
+\end{itemize}
+
+\subsection{Ibn Sina and Medical Evidence}\label{ibn-sina-and-medical-evidence}
+
+In the 11th century, \textbf{Ibn Sina (Avicenna)} reflected critically on medical practice. He observed that physicians often inferred the effectiveness of treatments after witnessing a few apparent recoveries, without considering alternative explanations.
+
+Ibn Sina warned that recovery could result from natural healing, coincidence, or concurrent interventions. He argued that without systematic comparison and repetition under similar conditions, physicians risked mistaking chance or background processes for causal effects.
+
+Although formal experimental methods were not yet developed, Ibn Sina articulated a core insight of modern experimental reasoning: isolated success stories are epistemically weak. Reliable knowledge requires distinguishing treatment effects from background variation.
+
+\subsubsection{Questions}\label{questions-1}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  What epistemic problem does Ibn Sina identify in relying on individual treatment successes?\\
+\item
+  Why is the argument ``the patient recovered after treatment, therefore the treatment works'' problematic?\\
+\item
+  What core principle of experimental control is Ibn Sina implicitly advocating?\\
+\item
+  Give one example of how Ibn Sina's critique applies to modern data science or machine learning.
+\end{enumerate}
+
+\subsubsection{How to approach the answers}\label{how-to-approach-the-answers-2}
+
+\begin{itemize}
+\tightlist
+\item
+  Focus on \textbf{post hoc reasoning} and confounding.
+\item
+  Identify the difference between \textbf{correlation, coincidence, and causation}.
+\item
+  Translate Ibn Sina's insight into modern ideas like baselines, control groups, or validation.
+\item
+  Use a contemporary example involving misleading performance claims.
+\end{itemize}
+
+\subsection{Florence Nightingale and Military Mortality}\label{florence-nightingale-and-military-mortality}
+
+During the Crimean War in the 1850s, \textbf{Florence Nightingale} confronted widespread assumptions about military deaths. High mortality among soldiers was often attributed directly to battle injuries, reinforcing the belief that little could be done beyond improving combat medicine.
+
+Nightingale collected detailed hospital records and noticed that most deaths occurred away from the battlefield. Rather than relying on total death counts, she reorganised the data by \emph{cause of death} and \emph{time period}. She then compared mortality patterns before and after sanitation reforms, using innovative visualisations to communicate her findings.
+
+Although Nightingale could not run controlled experiments or randomise conditions, she approximated control through structured comparison. Her work demonstrated how careful aggregation and disaggregation of observational data could reveal patterns that raw numbers concealed, and her analysis directly informed policy changes that saved lives.
+
+\subsubsection{Questions}\label{questions-2}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Why were raw mortality numbers insufficient to support Nightingale's conclusions?\\
+\item
+  What form of experimental control was approximated in Nightingale's analysis?\\
+\item
+  What statistical issue would occur if deaths were not disaggregated by cause?\\
+\item
+  Why was Nightingale's use of data ethically significant?
+\end{enumerate}
+
+\subsubsection{How to approach the answers}\label{how-to-approach-the-answers-3}
+
+\begin{itemize}
+\tightlist
+\item
+  Contrast \textbf{raw counts} with \textbf{structured comparisons}.
+\item
+  Identify what was being held approximately constant across time periods.
+\item
+  Consider aggregation bias and loss of explanatory resolution.
+\item
+  Link ethical significance to \textbf{prevention capacity}, responsibility, and policy impact.
+\end{itemize}
+
+\subsubsection{The Collapse of Angkor}\label{the-collapse-of-angkor}
+
+When French explorer \textbf{Henri Mouhot} encountered Angkor in the 19th century, he interpreted its overgrown monuments as evidence of sudden civilisational collapse. This interpretation relied heavily on visible ruins as proxies for societal vitality.
+
+Later historical accounts and modern remote sensing revealed a different picture: Angkor declined gradually due to climatic stress and infrastructural strain, not sudden decay or invasion. Monument survival turned out to be a misleading proxy for social complexity and continuity.
+
+\subsubsection{Questions}\label{questions-3}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Identify Mouhot's main proxy and why it is epistemically risky.\\
+\item
+  Explain why this is not a case where experimental control is feasible, and what ``control'' can mean instead.\\
+\item
+  What statistical/causal error occurs if we infer societal vitality from monument survival alone?\\
+\item
+  State one ethical risk of colonial knowledge production in interpreting Angkor's past.\\
+\item
+  Propose a data-science analogue where a convenient proxy drives a wrong narrative, and name one mitigation.
+\end{enumerate}
+
+\subsubsection{How to approach the answers}\label{how-to-approach-the-answers-4}
+
+\begin{itemize}
+\tightlist
+\item
+  Identify proxy misuse and construct validity.
+\item
+  Explain non-experimental forms of control (triangulation, comparison).
+\item
+  Triangulation means: Do different ways of measuring or analysing the same phenomenon point to a similar conclusion?
+\item
+  Link epistemic error to narrative bias.
+\item
+  Include ethical dimensions of power and representation.
+\end{itemize}
+
+\subsection{Ignaz Goldziher}\label{ignaz-goldziher}
+
+In the late nineteenth century, \textbf{Ignaz Goldziher} studied large corpora of Islamic legal and religious texts. Earlier scholars treated these texts as direct historical observations, assuming that many similar reports implied factual accuracy about early Islamic history.
+
+Goldziher challenged this view by analysing how such texts were produced. He argued that legal debates, institutional incentives, and educational transmission shaped what texts were written, preserved, and repeated. As a result, strong regularities could emerge even when the texts were not direct measurements of the historical events they purported to describe.
+
+Goldziher's insight was not that the data were useless, but that they measured \emph{something different} from what researchers often assumed. This distinction between data generation and target phenomenon is central to modern data science.
+
+\subsubsection{Questions}\label{questions-4}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  What is the core data-science error in treating these texts as direct observations of early historical events? Hint: The target variable here is ``early historical events'', and the observed variable ``texts produced by later institutions''.\\
+\item
+  Explain how a shared generative process can produce strong statistical patterns without corresponding to the target phenomenon.\\
+\item
+  Why can increasing dataset size increase confidence in the wrong conclusion in this case?\\
+\item
+  Why is it ethically important, in data-driven research, to state clearly what a dataset does and does not measure?\\
+\item
+  Give a modern data-science example where data accurately reflects a process but is commonly misinterpreted as measuring a different target.
+\end{enumerate}
+
+\subsubsection{How to approach the answers}\label{how-to-approach-the-answers-5}
+
+\begin{itemize}
+\tightlist
+\item
+  Explicitly distinguish \textbf{observed variables} from \textbf{target constructs}.
+\item
+  Use the idea of \textbf{generative processes} and feedback loops.
+\item
+  Explain why more data can amplify bias rather than correct it.
+\item
+  Link ethical responsibility to transparency and misuse prevention.
+\end{itemize}
+
+\subsection{Wu Lien-teh and the Manchurian Plague}\label{wu-lien-teh-and-the-manchurian-plague}
+
+In the early 1910s, during a plague outbreak in Manchuria, prevailing medical theories emphasised flea-borne transmission. \textbf{Wu Lien-teh} observed rapid spread among people with close contact, including medical staff, suggesting airborne transmission.
+
+Without experimental confirmation or microbiological proof, Wu recommended face masks, quarantine, and burial reforms. These measures were controversial but likely contributed to controlling the outbreak.
+
+The case exemplifies abductive reasoning under severe time pressure and highlights decision-making when experimental control is impossible.
+
+\subsubsection{Questions}\label{questions-5}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Why was experimental confirmation impossible in this case?\\
+\item
+  Why was this inference epistemically risky?\\
+\item
+  Why would waiting for stronger statistical evidence be problematic?\\
+\item
+  What lesson does this case provide for data science in crisis situations?
+\end{enumerate}
+
+\subsubsection{How to approach the answers}\label{how-to-approach-the-answers-6}
+
+\begin{itemize}
+\tightlist
+\item
+  Emphasise constraints of time, ethics, and feasibility.
+\item
+  Identify uncertainty and alternative explanations.
+\item
+  Discuss asymmetric costs of delay.
+\item
+  Generalise to modern crisis analytics and precautionary action.
+\end{itemize}
+
+\subsection{Janet Lane-Claypon and Breast Cancer Research}\label{janet-lane-claypon-and-breast-cancer-research}
+
+In the early 20th century, \textbf{Janet Lane-Claypon} investigated possible causes of breast cancer. Many suspected factors were common among affected women, but this alone did not establish causation.
+
+Lane-Claypon introduced a systematic comparison between women with breast cancer and women without it. By examining how frequently exposures appeared in each group, she showed that some seemingly important factors were actually common in the general population.
+
+This comparative approach marked an early form of case-control reasoning and laid the groundwork for modern epidemiology, allowing researchers to distinguish coincidence from potential causal influence.
+
+\subsubsection{Questions}\label{questions-6}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Why were common exposures alone insufficient to identify causes of breast cancer?\\
+\item
+  What methodological innovation distinguishes Lane-Claypon's approach?\\
+\item
+  How does this help avoiding misleading conclusions?\\
+\item
+  What kind of causal reasoning becomes possible once this innovation is introduced?\\
+\item
+  Why is this comparative approach ethically preferable to other types of experimentation?
+\end{enumerate}
+
+\subsubsection{How to approach the answers}\label{how-to-approach-the-answers-7}
+
+\begin{itemize}
+\tightlist
+\item
+  Emphasise \textbf{base rates} and comparison groups.
+\item
+  Identify the methodological shift from description to inference.
+\item
+  Connect comparison to counterfactual reasoning.
+\item
+  Discuss ethical constraints in medical research.
+\end{itemize}
+
+\subsection{Terranova, the Northern Cod Collapse}\label{terranova-the-northern-cod-collapse}
+
+From the late 1970s to the early 1990s, Canadian regulators relied on stock-assessment models to manage the Northern cod fishery. Indicators such as catch-per-unit-effort suggested stability, even as cod populations declined.
+
+Industrial fishing fleets increasingly concentrated in remaining high-density areas, masking broader collapse. Models remained statistically well-fit, but their assumptions failed under ecological change. When the collapse became undeniable, the resulting moratorium caused widespread social and economic harm.
+
+\subsubsection{Questions}\label{questions-7}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Explain how aggregation across space can hide collapse in sub-populations (name the general phenomenon).\\
+\item
+  Give one experimental control substitute that regulators could have used.\\
+\item
+  Why can a model be statistically well-fit yet epistemically unreliable here?\\
+\item
+  What non-epistemic values were in tension when setting quotas (name two)?
+\end{enumerate}
+
+\subsubsection{How to approach the answers}\label{how-to-approach-the-answers-8}
+
+\begin{itemize}
+\tightlist
+\item
+  Identify aggregation bias or Simpson-like effects.
+\item
+  Think of monitoring designs as substitutes for experiments.
+\item
+  Separate goodness-of-fit from validity of assumptions.
+\item
+  Name economic, social, or political values explicitly.
+\end{itemize}
+
+\subsection{Li Wenliang and Early COVID-19 Signals}\label{li-wenliang-and-early-covid-19-signals}
+
+In December 2019, \textbf{Li Wenliang}, an ophthalmologist in Wuhan, noticed several patients with unusual pneumonia symptoms resembling earlier SARS cases. At that stage, the number of cases was very small, no pathogen had been identified, and no epidemiological studies were available.
+
+From a statistical perspective, the evidence was weak and noisy; from an experimental perspective, no controlled interventions were possible. Nonetheless, Li warned colleagues to take precautions, prioritising potential harm over evidential certainty.
+
+In hindsight, his warning proved correct. The case highlights the tension between epistemic standards and ethical responsibility under uncertainty.
+
+\subsubsection{Questions}\label{questions-8}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Why was it impossible, at the time Li raised concerns, to obtain the kind of evidence normally required for strong causal or statistical inference?\\
+\item
+  Why did the available data fail to meet standard criteria for statistical reliability, despite later turning out to be correct?\\
+\item
+  What epistemic risk exists in waiting for stronger evidence in situations like this?\\
+\item
+  Why does this case raise an ethical duty to warn even when evidence is incomplete?\\
+\item
+  What does this case teach about decision-making under uncertainty in high-stakes data-driven systems?
+\end{enumerate}
+
+\subsubsection{How to approach the answers}\label{how-to-approach-the-answers-9}
+
+\begin{itemize}
+\tightlist
+\item
+  Contrast \textbf{ideal evidence} with \textbf{available evidence}.
+\item
+  Explain retrospective validation vs prospective uncertainty.
+\item
+  Identify asymmetric risks (false alarms vs delayed action).
+\item
+  Link ethics to precaution and responsibility.
+\end{itemize}
 
 \bibliography{book.bib,packages.bib}
 
