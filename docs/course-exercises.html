@@ -410,7 +410,7 @@ div.csl-indent {
 <li class="chapter" data-level="7.2.2" data-path="course-exercises.html"><a href="course-exercises.html#ibn-sina-and-medical-evidence"><i class="fa fa-check"></i><b>7.2.2</b> Ibn Sina and Medical Evidence</a></li>
 <li class="chapter" data-level="7.2.3" data-path="course-exercises.html"><a href="course-exercises.html#florence-nightingale-and-military-mortality"><i class="fa fa-check"></i><b>7.2.3</b> Florence Nightingale and Military Mortality</a></li>
 <li class="chapter" data-level="7.2.4" data-path="course-exercises.html"><a href="course-exercises.html#the-collapse-of-angkor"><i class="fa fa-check"></i><b>7.2.4</b> The Collapse of Angkor</a></li>
-<li class="chapter" data-level="7.2.5" data-path="course-exercises.html"><a href="course-exercises.html#ignaz-goldziher"><i class="fa fa-check"></i><b>7.2.5</b> Ignaz Goldziher</a></li>
+<li class="chapter" data-level="7.2.5" data-path="course-exercises.html"><a href="course-exercises.html#ignaz-goldziher-from-textual-corpora-to-historical-claims"><i class="fa fa-check"></i><b>7.2.5</b> Ignaz Goldziher: From Textual Corpora to Historical Claims</a></li>
 <li class="chapter" data-level="7.2.6" data-path="course-exercises.html"><a href="course-exercises.html#wu-lien-teh-and-the-manchurian-plague"><i class="fa fa-check"></i><b>7.2.6</b> Wu Lien-teh and the Manchurian Plague</a></li>
 <li class="chapter" data-level="7.2.7" data-path="course-exercises.html"><a href="course-exercises.html#janet-lane-claypon-and-breast-cancer-research"><i class="fa fa-check"></i><b>7.2.7</b> Janet Lane-Claypon and Breast Cancer Research</a></li>
 <li class="chapter" data-level="7.2.8" data-path="course-exercises.html"><a href="course-exercises.html#terranova-the-northern-cod-collapse"><i class="fa fa-check"></i><b>7.2.8</b> Terranova, the Northern Cod Collapse</a></li>
@@ -445,18 +445,28 @@ div.csl-indent {
 <h2><span class="header-section-number">7.1</span> The issues of data synthesis<a href="course-exercises.html#the-issues-of-data-synthesis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="greenlands-size" class="section level3 hasAnchor" number="7.1.1">
 <h3><span class="header-section-number">7.1.1</span> Greenland’s size<a href="course-exercises.html#greenlands-size" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:greenland-map"></span>
+<img src="Figures/mercator.png" alt="These maps show two different approaches to depicting Greenland. The left map is an orthographic projection, emulating a globe. The right map is a Mercator projection, which exaggerates the sizes of landmasses — including Greenland. Alyson Hurt / NPR" width="75%" />
+<p class="caption">
+Figure 7.1: These maps show two different approaches to depicting Greenland. The left map is an orthographic projection, emulating a globe. The right map is a Mercator projection, which exaggerates the sizes of landmasses — including Greenland. Alyson Hurt / NPR
+</p>
+</div>
 <p>Many people believe that Greenland is comparable in size to Africa or larger than South America.</p>
 <p>This belief is widespread in textbooks, news media, and online discussions. This belief is reinforced by commonly used world maps based on the Mercator projection, where Greenland appears vastly larger than it truly is.</p>
 <p>In reality, Greenland’s surface area is approximately 2.1 million km², while Africa’s is about 30 million km². The apparent similarity in size is not due to incorrect measurements, but to a systematic distortion introduced by map projection and visual synthesis.</p>
 <p>This example illustrates how correct data, when transformed, aggregated, or visualised improperly, can generate persistent and intuitive false beliefs. Distortions from data synthetisation may be intentional or accidental, yet their effects are powerful, especially when visual representations are treated as neutral or self-explanatory.</p>
-<p>Answer the following questions.</p>
+<figure>
+<img src="Figures/mercator-vs-truesize.gif">
+</figure>
+<p>Answer the following questions:</p>
 <ol style="list-style-type: decimal">
 <li>Give one example in data science where aggregation or visualisation can similarly mislead interpretation without involving false data.</li>
 <li>Explain why this example illustrates a problem of data synthesis and representation rather than incorrect data collection.</li>
 <li>Briefly explain how similar distortions in data science can contribute to biased narratives, echo chambers, or misguided policy decisions.</li>
 <li>In your opinion, when does data stop describing reality and start constructing it?</li>
 </ol>
-<p><strong>How to approach the answers</strong></p>
+<p><strong>How to approach the answers:</strong></p>
 <p>This exercise is designed to help you reason about <strong>distortion introduced by data synthesis and representation</strong>, rather than errors in measurement or data collection. The goal is not to test geographical knowledge, but to see how <em>true data</em> can still lead to <em>false beliefs</em> once transformed or visualised.</p>
 <p>When approaching the first question, focus on identifying an example where:</p>
 <ul>
@@ -491,6 +501,12 @@ div.csl-indent {
 <p>Across medicine, public health, history, and environmental management, the cases show how evidence is shaped by proxies, data-generating processes, missing controls, ethical constraints, and high-stakes decision-making. Rather than focusing on technical calculation, the questions invite you to reflect on reasoning: what data actually measure, what they fail to capture, how comparisons substitute for experiments, and why correct conclusions can sometimes emerge from weak or incomplete evidence. Together, the cases illustrate that epistemic judgement, not just data volume or statistical fit, is central to responsible inference and action</p>
 <div id="al-razi-and-hospital-location" class="section level3 hasAnchor" number="7.2.1">
 <h3><span class="header-section-number">7.2.1</span> Al-Razi and Hospital Location<a href="course-exercises.html#al-razi-and-hospital-location" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<figure class="wrap-figure">
+<img src="Figures/learning_from_history_al_razi.jpg">
+<figcaption>
+Rhazes, a physician, examines a kneeling boy who has his mouth wide open, they are in a surgery full of equipment.</br>
+</figcaption>
+</figure>
 <p>In the 10th century, the Persian physician <strong>Al-Razi</strong> was tasked with selecting the most suitable location for a new hospital in Baghdad, a large and densely populated city. At the time, medical knowledge relied heavily on authority, tradition, and humoral theories, and there were no instruments to measure air quality, pollution, or disease risk.</p>
 <p>Rather than choosing a location based on prestige, custom, or anecdotal reputation, Al-Razi sought a method that relied on observable differences across districts. He placed pieces of raw meat in several parts of the city and monitored how quickly they decayed. His reasoning was indirect: faster decay suggested environmental conditions that might also promote illness, while slower decay suggested cleaner air.</p>
 <p>This approach did not involve experimental control, randomisation, or a causal theory of disease transmission. Al-Razi could not isolate variables such as temperature, insects, or humidity, nor could he test alternative explanations. Nonetheless, his method represented a deliberate attempt to <em>compare</em> environments systematically using a proxy rather than speculation, authority, or superstition.</p>
@@ -506,7 +522,7 @@ div.csl-indent {
 </li>
 <li>Give a modern data-science analogy to Al-Razi’s approach.</li>
 </ol>
-<p><strong>How to approach the answers</strong></p>
+<p><strong>How to approach the answers:</strong></p>
 <ul>
 <li>Identify the <strong>epistemic role of a proxy</strong> and distinguish it from direct measurement.</li>
 <li>Think about <strong>what is being inferred vs. what is observed</strong>.</li>
@@ -517,6 +533,12 @@ div.csl-indent {
 </div>
 <div id="ibn-sina-and-medical-evidence" class="section level3 hasAnchor" number="7.2.2">
 <h3><span class="header-section-number">7.2.2</span> Ibn Sina and Medical Evidence<a href="course-exercises.html#ibn-sina-and-medical-evidence" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<figure class="wrap-figure">
+<img src="Figures/learning_from_history_avicena.jpg">
+<figcaption>
+Modern portrait of Ibn Sina, US National Library of Medicine (1952).</br>
+</figcaption>
+</figure>
 <p>In the 11th century, <strong>Ibn Sina (Avicenna)</strong> reflected critically on medical practice. He observed that physicians often inferred the effectiveness of treatments after witnessing a few apparent recoveries, without considering alternative explanations.</p>
 <p>Ibn Sina warned that recovery could result from natural healing, coincidence, or concurrent interventions. He argued that without systematic comparison and repetition under similar conditions, physicians risked mistaking chance or background processes for causal effects.</p>
 <p>Although formal experimental methods were not yet developed, Ibn Sina articulated a core insight of modern experimental reasoning: isolated success stories are epistemically weak. Reliable knowledge requires distinguishing treatment effects from background variation.</p>
@@ -530,7 +552,7 @@ div.csl-indent {
 </li>
 <li>Give one example of how Ibn Sina’s critique applies to modern data science or machine learning.</li>
 </ol>
-<p><strong>How to approach the answers</strong></p>
+<p><strong>How to approach the answers:</strong></p>
 <ul>
 <li>Focus on <strong>post hoc reasoning</strong> and confounding.</li>
 <li>Identify the difference between <strong>correlation, coincidence, and causation</strong>.</li>
@@ -540,6 +562,13 @@ div.csl-indent {
 </div>
 <div id="florence-nightingale-and-military-mortality" class="section level3 hasAnchor" number="7.2.3">
 <h3><span class="header-section-number">7.2.3</span> Florence Nightingale and Military Mortality<a href="course-exercises.html#florence-nightingale-and-military-mortality" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:florence-pic"></span>
+<img src="Figures/learning_from_history_nightingale.png" alt="Florence Nightingale’s 1858 ‘Rose Diagram’. It uses color-coded wedges to show that more soldiers died from preventable infections (blue) than from battlefield wounds (red). By comparing mortality before and after sanitary reforms, she visually proved that basic hygiene and ventilation drastically reduced death rates, transforming military healthcare forever." width="75%" />
+<p class="caption">
+Figure 7.2: Florence Nightingale’s 1858 ‘Rose Diagram’. It uses color-coded wedges to show that more soldiers died from preventable infections (blue) than from battlefield wounds (red). By comparing mortality before and after sanitary reforms, she visually proved that basic hygiene and ventilation drastically reduced death rates, transforming military healthcare forever.
+</p>
+</div>
 <p>During the Crimean War in the 1850s, <strong>Florence Nightingale</strong> confronted widespread assumptions about military deaths. High mortality among soldiers was often attributed directly to battle injuries, reinforcing the belief that little could be done beyond improving combat medicine.</p>
 <p>Nightingale collected detailed hospital records and noticed that most deaths occurred away from the battlefield. Rather than relying on total death counts, she reorganised the data by <em>cause of death</em> and <em>time period</em>. She then compared mortality patterns before and after sanitation reforms, using innovative visualisations to communicate her findings.</p>
 <p>Although Nightingale could not run controlled experiments or randomise conditions, she approximated control through structured comparison. Her work demonstrated how careful aggregation and disaggregation of observational data could reveal patterns that raw numbers concealed, and her analysis directly informed policy changes that saved lives.</p>
@@ -553,7 +582,7 @@ div.csl-indent {
 </li>
 <li>Why was Nightingale’s use of data ethically significant?</li>
 </ol>
-<p><strong>How to approach the answers</strong></p>
+<p><strong>How to approach the answers:</strong></p>
 <ul>
 <li>Contrast <strong>raw counts</strong> with <strong>structured comparisons</strong>.</li>
 <li>Identify what was being held approximately constant across time periods.</li>
@@ -563,6 +592,13 @@ div.csl-indent {
 </div>
 <div id="the-collapse-of-angkor" class="section level3 hasAnchor" number="7.2.4">
 <h3><span class="header-section-number">7.2.4</span> The Collapse of Angkor<a href="course-exercises.html#the-collapse-of-angkor" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:angkor-pic"></span>
+<img src="Figures/learning_from_history_angkor.jpg" alt="Facade of Angkor Wat, a drawing by Henri Mouhot (1860)" width="75%" />
+<p class="caption">
+Figure 7.3: Facade of Angkor Wat, a drawing by Henri Mouhot (1860)
+</p>
+</div>
 <p>When French explorer <strong>Henri Mouhot</strong> encountered Angkor in the 19th century, he interpreted its overgrown monuments as evidence of sudden civilisational collapse. This interpretation relied heavily on visible ruins as proxies for societal vitality.</p>
 <p>Later historical accounts and modern remote sensing revealed a different picture: Angkor declined gradually due to climatic stress and infrastructural strain, not sudden decay or invasion. Monument survival turned out to be a misleading proxy for social complexity and continuity.</p>
 <p><strong>Questions</strong></p>
@@ -577,7 +613,7 @@ div.csl-indent {
 </li>
 <li>Propose a data-science analogue where a convenient proxy drives a wrong narrative, and name one mitigation.</li>
 </ol>
-<p><strong>How to approach the answers</strong></p>
+<p><strong>How to approach the answers:</strong></p>
 <ul>
 <li>Identify proxy misuse and construct validity.</li>
 <li>Explain non-experimental forms of control (triangulation, comparison).</li>
@@ -586,8 +622,14 @@ div.csl-indent {
 <li>Include ethical dimensions of power and representation.</li>
 </ul>
 </div>
-<div id="ignaz-goldziher" class="section level3 hasAnchor" number="7.2.5">
-<h3><span class="header-section-number">7.2.5</span> Ignaz Goldziher<a href="course-exercises.html#ignaz-goldziher" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="ignaz-goldziher-from-textual-corpora-to-historical-claims" class="section level3 hasAnchor" number="7.2.5">
+<h3><span class="header-section-number">7.2.5</span> Ignaz Goldziher: From Textual Corpora to Historical Claims<a href="course-exercises.html#ignaz-goldziher-from-textual-corpora-to-historical-claims" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<figure class="wrap-figure">
+<img src="Figures/learning_from_history_Goldziher.jpg">
+<figcaption>
+Ignác Goldziher (1850 - 1921)</br>
+</figcaption>
+</figure>
 <p>In the late nineteenth century, <strong>Ignaz Goldziher</strong> studied large corpora of Islamic legal and religious texts. Earlier scholars treated these texts as direct historical observations, assuming that many similar reports implied factual accuracy about early Islamic history.</p>
 <p>Goldziher challenged this view by analysing how such texts were produced. He argued that legal debates, institutional incentives, and educational transmission shaped what texts were written, preserved, and repeated. As a result, strong regularities could emerge even when the texts were not direct measurements of the historical events they purported to describe.</p>
 <p>Goldziher’s insight was not that the data were useless, but that they measured <em>something different</em> from what researchers often assumed. This distinction between data generation and target phenomenon is central to modern data science.</p>
@@ -603,7 +645,7 @@ div.csl-indent {
 </li>
 <li>Give a modern data-science example where data accurately reflects a process but is commonly misinterpreted as measuring a different target.</li>
 </ol>
-<p><strong>How to approach the answers</strong></p>
+<p><strong>How to approach the answers:</strong></p>
 <ul>
 <li>Explicitly distinguish <strong>observed variables</strong> from <strong>target constructs</strong>.</li>
 <li>Use the idea of <strong>generative processes</strong> and feedback loops.</li>
@@ -613,6 +655,13 @@ div.csl-indent {
 </div>
 <div id="wu-lien-teh-and-the-manchurian-plague" class="section level3 hasAnchor" number="7.2.6">
 <h3><span class="header-section-number">7.2.6</span> Wu Lien-teh and the Manchurian Plague<a href="course-exercises.html#wu-lien-teh-and-the-manchurian-plague" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:manchuria-pic"></span>
+<img src="Figures/learning_from_history_wu.jpg" alt="Dr Wu Lien-Teh working in his laboratory in Harbin, China, 1911" width="75%" />
+<p class="caption">
+Figure 7.4: Dr Wu Lien-Teh working in his laboratory in Harbin, China, 1911
+</p>
+</div>
 <p>In the early 1910s, during a plague outbreak in Manchuria, prevailing medical theories emphasised flea-borne transmission. <strong>Wu Lien-teh</strong> observed rapid spread among people with close contact, including medical staff, suggesting airborne transmission.</p>
 <p>Without experimental confirmation or microbiological proof, Wu recommended face masks, quarantine, and burial reforms. These measures were controversial but likely contributed to controlling the outbreak.</p>
 <p>The case exemplifies abductive reasoning under severe time pressure and highlights decision-making when experimental control is impossible.</p>
@@ -626,7 +675,7 @@ div.csl-indent {
 </li>
 <li>What lesson does this case provide for data science in crisis situations?</li>
 </ol>
-<p><strong>How to approach the answers</strong></p>
+<p><strong>How to approach the answers:</strong></p>
 <ul>
 <li>Emphasise constraints of time, ethics, and feasibility.</li>
 <li>Identify uncertainty and alternative explanations.</li>
@@ -636,6 +685,12 @@ div.csl-indent {
 </div>
 <div id="janet-lane-claypon-and-breast-cancer-research" class="section level3 hasAnchor" number="7.2.7">
 <h3><span class="header-section-number">7.2.7</span> Janet Lane-Claypon and Breast Cancer Research<a href="course-exercises.html#janet-lane-claypon-and-breast-cancer-research" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<figure class="wrap-figure">
+<img src="Figures/learning_from_history_janet.png">
+<figcaption>
+Janet Lane-Claypon (1877 - 1967)</br>
+</figcaption>
+</figure>
 <p>In the early 20th century, <strong>Janet Lane-Claypon</strong> investigated possible causes of breast cancer. Many suspected factors were common among affected women, but this alone did not establish causation.</p>
 <p>Lane-Claypon introduced a systematic comparison between women with breast cancer and women without it. By examining how frequently exposures appeared in each group, she showed that some seemingly important factors were actually common in the general population.</p>
 <p>This comparative approach marked an early form of case-control reasoning and laid the groundwork for modern epidemiology, allowing researchers to distinguish coincidence from potential causal influence.</p>
@@ -651,7 +706,7 @@ div.csl-indent {
 </li>
 <li>Why is this comparative approach ethically preferable to other types of experimentation?</li>
 </ol>
-<p><strong>How to approach the answers</strong></p>
+<p><strong>How to approach the answers:</strong></p>
 <ul>
 <li>Emphasise <strong>base rates</strong> and comparison groups.</li>
 <li>Identify the methodological shift from description to inference.</li>
@@ -661,6 +716,13 @@ div.csl-indent {
 </div>
 <div id="terranova-the-northern-cod-collapse" class="section level3 hasAnchor" number="7.2.8">
 <h3><span class="header-section-number">7.2.8</span> Terranova, the Northern Cod Collapse<a href="course-exercises.html#terranova-the-northern-cod-collapse" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:code-pic"></span>
+<img src="Figures/learning_from_history_cod.jpg" alt="Collapse of Atlantic cod stocks off Newfoundland (1992): Offshore trawling since the 1950s drove catches up but biomass down, and international and national quotas failed to stop the decline." width="75%" />
+<p class="caption">
+Figure 7.5: Collapse of Atlantic cod stocks off Newfoundland (1992): Offshore trawling since the 1950s drove catches up but biomass down, and international and national quotas failed to stop the decline.
+</p>
+</div>
 <p>From the late 1970s to the early 1990s, Canadian regulators relied on stock-assessment models to manage the Northern cod fishery. Indicators such as catch-per-unit-effort suggested stability, even as cod populations declined.</p>
 <p>Industrial fishing fleets increasingly concentrated in remaining high-density areas, masking broader collapse. Models remained statistically well-fit, but their assumptions failed under ecological change. When the collapse became undeniable, the resulting moratorium caused widespread social and economic harm.</p>
 <p><strong>Questions</strong></p>
@@ -673,7 +735,7 @@ div.csl-indent {
 </li>
 <li>What non-epistemic values were in tension when setting quotas (name two)?</li>
 </ol>
-<p><strong>How to approach the answers</strong></p>
+<p><strong>How to approach the answers:</strong></p>
 <ul>
 <li>Identify aggregation bias or Simpson-like effects.</li>
 <li>Think of monitoring designs as substitutes for experiments.</li>
@@ -683,6 +745,12 @@ div.csl-indent {
 </div>
 <div id="li-wenliang-and-early-covid-19-signals" class="section level3 hasAnchor" number="7.2.9">
 <h3><span class="header-section-number">7.2.9</span> Li Wenliang and Early COVID-19 Signals<a href="course-exercises.html#li-wenliang-and-early-covid-19-signals" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<figure class="wrap-figure">
+<img src="Figures/learning_from_history_li.jpg">
+<figcaption>
+Li Wenliang (1985 - 2020)</br>
+</figcaption>
+</figure>
 <p>In December 2019, <strong>Li Wenliang</strong>, an ophthalmologist in Wuhan, noticed several patients with unusual pneumonia symptoms resembling earlier SARS cases. At that stage, the number of cases was very small, no pathogen had been identified, and no epidemiological studies were available.</p>
 <p>From a statistical perspective, the evidence was weak and noisy; from an experimental perspective, no controlled interventions were possible. Nonetheless, Li warned colleagues to take precautions, prioritising potential harm over evidential certainty.</p>
 <p>In hindsight, his warning proved correct. The case highlights the tension between epistemic standards and ethical responsibility under uncertainty.</p>
@@ -698,7 +766,7 @@ div.csl-indent {
 </li>
 <li>What does this case teach about decision-making under uncertainty in high-stakes data-driven systems?</li>
 </ol>
-<p><strong>How to approach the answers</strong></p>
+<p><strong>How to approach the answers:</strong></p>
 <ul>
 <li>Contrast <strong>ideal evidence</strong> with <strong>available evidence</strong>.</li>
 <li>Explain retrospective validation vs prospective uncertainty.</li>

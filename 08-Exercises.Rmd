@@ -7,6 +7,12 @@
 
 ### Greenland's size
 
+(ref:greenland) These maps show two different approaches to depicting Greenland. The left map is an orthographic projection, emulating a globe. The right map is a Mercator projection, which exaggerates the sizes of landmasses — including Greenland. Alyson Hurt / NPR
+
+```{r greenland-map, echo=F, fig.align="center", out.width="75%", fig.cap='(ref:greenland)'}
+knitr::include_graphics('Figures/mercator.png')
+```
+
 Many people believe that Greenland is comparable in size to Africa or larger than South America.
 
 This belief is widespread in textbooks, news media, and online discussions. This belief is reinforced by commonly used world maps based on the Mercator projection, where Greenland appears vastly larger than it truly is.
@@ -15,14 +21,22 @@ In reality, Greenland’s surface area is approximately 2.1 million km², while 
 
 This example illustrates how correct data, when transformed, aggregated, or visualised improperly, can generate persistent and intuitive false beliefs. Distortions from data synthetisation may be intentional or accidental, yet their effects are powerful, especially when visual representations are treated as neutral or self-explanatory.
 
-Answer the following questions.
+```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
+cat(
+'<figure>
+<img src="Figures/mercator-vs-truesize.gif">
+</figure>'
+)
+```
+
+Answer the following questions:
 
 1. Give one example in data science where aggregation or visualisation can similarly mislead interpretation without involving false data.
 2. Explain why this example illustrates a problem of data synthesis and representation rather than incorrect data collection.
 3. Briefly explain how similar distortions in data science can contribute to biased narratives, echo chambers, or misguided policy decisions.
 4. In your opinion, when does data stop describing reality and start constructing it?
 
-**How to approach the answers**
+**How to approach the answers:**
 
 This exercise is designed to help you reason about **distortion introduced by data synthesis and representation**, rather than errors in measurement or data collection. The goal is not to test geographical knowledge, but to see how *true data* can still lead to *false beliefs* once transformed or visualised.
 
@@ -65,6 +79,26 @@ Across medicine, public health, history, and environmental management, the cases
 
 ### Al-Razi and Hospital Location
 
+```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
+cat(
+'<figure class="wrap-figure">
+<img src="Figures/learning_from_history_al_razi.jpg">
+<figcaption>Rhazes, a physician, examines a kneeling boy who has his mouth wide open, they are in a surgery full of equipment.</br></figcaption>
+</figure>'
+)
+```
+
+```{r, include=knitr::is_latex_output(), echo = F}
+knitr::asis_output('\\begin{wrapfigure}{R}{.33\\textwidth}  
+ \\begin{center}
+    \\includegraphics[width=.30\\textwidth]{Figures/learning_from_history_al_razi.jpg}  
+  \\captionsetup{labelformat=empty}
+  \\caption{Rhazes, a physician, examines a kneeling boy who has his mouth wide open, they are in a surgery full of equipment.} 
+\\end{center}
+\\end{wrapfigure}
+\\addtocounter{figure}{-1}')
+```
+
 In the 10th century, the Persian physician **Al-Razi** was tasked with selecting the most suitable location for a new hospital in Baghdad, a large and densely populated city. At the time, medical knowledge relied heavily on authority, tradition, and humoral theories, and there were no instruments to measure air quality, pollution, or disease risk.
 
 Rather than choosing a location based on prestige, custom, or anecdotal reputation, Al-Razi sought a method that relied on observable differences across districts. He placed pieces of raw meat in several parts of the city and monitored how quickly they decayed. His reasoning was indirect: faster decay suggested environmental conditions that might also promote illness, while slower decay suggested cleaner air.
@@ -79,7 +113,7 @@ This approach did not involve experimental control, randomisation, or a causal t
 4. Why does the inference remain uncertain even if the method is systematic?  
 5. Give a modern data-science analogy to Al-Razi’s approach.
 
-**How to approach the answers**
+**How to approach the answers:**
 
 - Identify the **epistemic role of a proxy** and distinguish it from direct measurement.
 - Think about **what is being inferred vs. what is observed**.
@@ -88,6 +122,26 @@ This approach did not involve experimental control, randomisation, or a causal t
 - For the analogy, map *proxy to target* in modern data science (e.g., indirect indicators).
 
 ### Ibn Sina and Medical Evidence
+
+```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
+cat(
+'<figure class="wrap-figure">
+<img src="Figures/learning_from_history_avicena.jpg">
+<figcaption>Modern portrait of Ibn Sina, US National Library of Medicine (1952).</br></figcaption>
+</figure>'
+)
+```
+
+```{r, include=knitr::is_latex_output(), echo = F}
+knitr::asis_output('\\begin{wrapfigure}{R}{.33\\textwidth}  
+ \\begin{center}
+    \\includegraphics[width=.30\\textwidth]{Figures/learning_from_history_avicena.jpg}  
+  \\captionsetup{labelformat=empty}
+  \\caption{Modern portrait of Ibn Sina, US National Library of Medicine (1952).} 
+\\end{center}
+\\end{wrapfigure}
+\\addtocounter{figure}{-1}')
+```
 
 In the 11th century, **Ibn Sina (Avicenna)** reflected critically on medical practice. He observed that physicians often inferred the effectiveness of treatments after witnessing a few apparent recoveries, without considering alternative explanations.
 
@@ -102,7 +156,7 @@ Although formal experimental methods were not yet developed, Ibn Sina articulate
 3. What core principle of experimental control is Ibn Sina implicitly advocating?  
 4. Give one example of how Ibn Sina’s critique applies to modern data science or machine learning.
 
-**How to approach the answers**
+**How to approach the answers:**
 
 - Focus on **post hoc reasoning** and confounding.
 - Identify the difference between **correlation, coincidence, and causation**.
@@ -110,11 +164,14 @@ Although formal experimental methods were not yet developed, Ibn Sina articulate
 - Use a contemporary example involving misleading performance claims.
 
 
-
-
-
-
 ### Florence Nightingale and Military Mortality
+
+(ref:florence) Florence Nightingale’s 1858 'Rose Diagram'. It uses color-coded wedges to show that more soldiers died from preventable infections (blue) than from battlefield wounds (red). By comparing mortality before and after sanitary reforms, she visually proved that basic hygiene and ventilation drastically reduced death rates, transforming military healthcare forever.
+
+```{r florence-pic, echo=F, fig.align="center", out.width="75%", fig.cap='(ref:florence)'}
+knitr::include_graphics('Figures/learning_from_history_nightingale.png')
+```
+
 
 During the Crimean War in the 1850s, **Florence Nightingale** confronted widespread assumptions about military deaths. High mortality among soldiers was often attributed directly to battle injuries, reinforcing the belief that little could be done beyond improving combat medicine.
 
@@ -129,7 +186,7 @@ Although Nightingale could not run controlled experiments or randomise condition
 3. What statistical issue would occur if deaths were not disaggregated by cause?  
 4. Why was Nightingale’s use of data ethically significant?
 
-**How to approach the answers**
+**How to approach the answers:**
 
 - Contrast **raw counts** with **structured comparisons**.
 - Identify what was being held approximately constant across time periods.
@@ -138,6 +195,12 @@ Although Nightingale could not run controlled experiments or randomise condition
 
 
 ### The Collapse of Angkor
+
+(ref:angkor-cap) Facade of Angkor Wat, a drawing by Henri Mouhot (1860)
+
+```{r angkor-pic, echo=F, fig.align="center", out.width="75%", fig.cap='(ref:angkor-cap)'}
+knitr::include_graphics('Figures/learning_from_history_angkor.jpg')
+```
 
 When French explorer **Henri Mouhot** encountered Angkor in the 19th century, he interpreted its overgrown monuments as evidence of sudden civilisational collapse. This interpretation relied heavily on visible ruins as proxies for societal vitality.
 
@@ -151,7 +214,7 @@ Later historical accounts and modern remote sensing revealed a different picture
 4. State one ethical risk of colonial knowledge production in interpreting Angkor’s past.  
 5. Propose a data-science analogue where a convenient proxy drives a wrong narrative, and name one mitigation.
 
-**How to approach the answers**
+**How to approach the answers:**
 
 - Identify proxy misuse and construct validity.
 - Explain non-experimental forms of control (triangulation, comparison). 
@@ -162,7 +225,27 @@ Later historical accounts and modern remote sensing revealed a different picture
 
 
 
-### Ignaz Goldziher
+### Ignaz Goldziher: From Textual Corpora to Historical Claims
+
+```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
+cat(
+'<figure class="wrap-figure">
+<img src="Figures/learning_from_history_Goldziher.jpg">
+<figcaption>Ignác Goldziher (1850 - 1921)</br></figcaption>
+</figure>'
+)
+```
+
+```{r, include=knitr::is_latex_output(), echo = F}
+knitr::asis_output('\\begin{wrapfigure}{R}{.33\\textwidth}  
+ \\begin{center}
+    \\includegraphics[width=.30\\textwidth]{Figures/learning_from_history_Goldziher.jpg}  
+  \\captionsetup{labelformat=empty}
+  \\caption{Ignác Goldziher (1850 - 1921)} 
+\\end{center}
+\\end{wrapfigure}
+\\addtocounter{figure}{-1}')
+```
 
 In the late nineteenth century, **Ignaz Goldziher** studied large corpora of Islamic legal and religious texts. Earlier scholars treated these texts as direct historical observations, assuming that many similar reports implied factual accuracy about early Islamic history.
 
@@ -178,7 +261,7 @@ Goldziher’s insight was not that the data were useless, but that they measured
 4. Why is it ethically important, in data-driven research, to state clearly what a dataset does and does not measure?  
 5. Give a modern data-science example where data accurately reflects a process but is commonly misinterpreted as measuring a different target.
 
-**How to approach the answers**
+**How to approach the answers:**
 
 - Explicitly distinguish **observed variables** from **target constructs**.
 - Use the idea of **generative processes** and feedback loops.
@@ -188,6 +271,13 @@ Goldziher’s insight was not that the data were useless, but that they measured
 
 
 ### Wu Lien-teh and the Manchurian Plague
+
+
+(ref:manchuria-cap) Dr Wu Lien-Teh working in his laboratory in Harbin, China, 1911
+
+```{r manchuria-pic, echo=F, fig.align="center", out.width="75%", fig.cap='(ref:manchuria-cap)'}
+knitr::include_graphics('Figures/learning_from_history_wu.jpg')
+```
 
 In the early 1910s, during a plague outbreak in Manchuria, prevailing medical theories emphasised flea-borne transmission. **Wu Lien-teh** observed rapid spread among people with close contact, including medical staff, suggesting airborne transmission.
 
@@ -202,7 +292,7 @@ The case exemplifies abductive reasoning under severe time pressure and highligh
 3. Why would waiting for stronger statistical evidence be problematic?  
 4. What lesson does this case provide for data science in crisis situations?
 
-**How to approach the answers**
+**How to approach the answers:**
 
 - Emphasise constraints of time, ethics, and feasibility.
 - Identify uncertainty and alternative explanations.
@@ -212,6 +302,26 @@ The case exemplifies abductive reasoning under severe time pressure and highligh
 
 
 ### Janet Lane-Claypon and Breast Cancer Research
+
+```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
+cat(
+'<figure class="wrap-figure">
+<img src="Figures/learning_from_history_janet.png">
+<figcaption>Janet Lane-Claypon (1877 - 1967)</br></figcaption>
+</figure>'
+)
+```
+
+```{r, include=knitr::is_latex_output(), echo = F}
+knitr::asis_output('\\begin{wrapfigure}{R}{.33\\textwidth}  
+ \\begin{center}
+    \\includegraphics[width=.30\\textwidth]{Figures/learning_from_history_janet.png}  
+  \\captionsetup{labelformat=empty}
+  \\caption{Janet Lane-Claypon (1877 - 1967)} 
+\\end{center}
+\\end{wrapfigure}
+\\addtocounter{figure}{-1}')
+```
 
 In the early 20th century, **Janet Lane-Claypon** investigated possible causes of breast cancer. Many suspected factors were common among affected women, but this alone did not establish causation.
 
@@ -227,7 +337,7 @@ This comparative approach marked an early form of case-control reasoning and lai
 4. What kind of causal reasoning becomes possible once this innovation is introduced?  
 5. Why is this comparative approach ethically preferable to other types of experimentation?
 
-**How to approach the answers**
+**How to approach the answers:**
 
 - Emphasise **base rates** and comparison groups.
 - Identify the methodological shift from description to inference.
@@ -241,6 +351,12 @@ This comparative approach marked an early form of case-control reasoning and lai
 
 ### Terranova, the Northern Cod Collapse
 
+(ref:code-cap) Collapse of Atlantic cod stocks off Newfoundland (1992): Offshore trawling since the 1950s drove catches up but biomass down, and international and national quotas failed to stop the decline.
+
+```{r code-pic, echo=F, fig.align="center", out.width="75%", fig.cap='(ref:code-cap)'}
+knitr::include_graphics('Figures/learning_from_history_cod.jpg')
+```
+
 From the late 1970s to the early 1990s, Canadian regulators relied on stock-assessment models to manage the Northern cod fishery. Indicators such as catch-per-unit-effort suggested stability, even as cod populations declined.
 
 Industrial fishing fleets increasingly concentrated in remaining high-density areas, masking broader collapse. Models remained statistically well-fit, but their assumptions failed under ecological change. When the collapse became undeniable, the resulting moratorium caused widespread social and economic harm.
@@ -252,7 +368,7 @@ Industrial fishing fleets increasingly concentrated in remaining high-density ar
 3. Why can a model be statistically well-fit yet epistemically unreliable here?  
 4. What non-epistemic values were in tension when setting quotas (name two)?
 
-**How to approach the answers**
+**How to approach the answers:**
 
 - Identify aggregation bias or Simpson-like effects.
 - Think of monitoring designs as substitutes for experiments.
@@ -263,6 +379,26 @@ Industrial fishing fleets increasingly concentrated in remaining high-density ar
 
 
 ### Li Wenliang and Early COVID-19 Signals
+
+```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
+cat(
+'<figure class="wrap-figure">
+<img src="Figures/learning_from_history_li.jpg">
+<figcaption>Li Wenliang (1985 - 2020)</br></figcaption>
+</figure>'
+)
+```
+
+```{r, include=knitr::is_latex_output(), echo = F}
+knitr::asis_output('\\begin{wrapfigure}{R}{.33\\textwidth}  
+ \\begin{center}
+    \\includegraphics[width=.30\\textwidth]{Figures/learning_from_history_li.jpg}  
+  \\captionsetup{labelformat=empty}
+  \\caption{Li Wenliang (1985 - 2020)} 
+\\end{center}
+\\end{wrapfigure}
+\\addtocounter{figure}{-1}')
+```
 
 In December 2019, **Li Wenliang**, an ophthalmologist in Wuhan, noticed several patients with unusual pneumonia symptoms resembling earlier SARS cases. At that stage, the number of cases was very small, no pathogen had been identified, and no epidemiological studies were available.
 
@@ -278,7 +414,7 @@ In hindsight, his warning proved correct. The case highlights the tension betwee
 4. Why does this case raise an ethical duty to warn even when evidence is incomplete?  
 5. What does this case teach about decision-making under uncertainty in high-stakes data-driven systems?
 
-**How to approach the answers**
+**How to approach the answers:**
 
 - Contrast **ideal evidence** with **available evidence**.
 - Explain retrospective validation vs prospective uncertainty.
