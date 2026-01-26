@@ -3178,7 +3178,7 @@ As can be seen, this value is closer to the degree of our synthetic data \texttt
 \end{Shaded}
 
 \begin{verbatim}
-## Estimated Effect (revised model): 10.095828768814442
+## Estimated Effect (revised model): 10.095828768814414
 \end{verbatim}
 
 \chapter{Experimental Control and Statistical Abuse}\label{stats-abuse}
@@ -4133,14 +4133,12 @@ My personal take on this, is as follows: It is argued that from a future perspec
 
 }
 
-\caption{These maps show two different approaches to depicting Greenland. The left map is an orthographic projection, emulating a globe. The right map is a Mercator projection, which exaggerates the sizes of landmasses --- including Greenland. Alyson Hurt / NPR}\label{fig:greenland-map}
+\caption{The left map shows an orthographic projection, emulating a globe. The right map is a Mercator projection, which exaggerates the sizes of landmasses, including Greenland. Alyson Hurt / NPR}\label{fig:greenland-map}
 \end{figure}
 
-Many people believe that Greenland is comparable in size to Africa or larger than South America.
+Many people believe that Greenland is comparable in size to Africa or larger than South America. This belief is widespread in textbooks, news media, and online discussions. This belief is reinforced by commonly used world maps based on the Mercator projection, where Greenland appears vastly larger than it truly is.
 
-This belief is widespread in textbooks, news media, and online discussions.~This belief is reinforced by commonly used world maps based on the Mercator projection, where Greenland appears vastly larger than it truly is.
-
-In reality, Greenland's surface area is approximately 2.1 million km², while Africa's is about 30 million km².~The apparent similarity in size is not due to incorrect measurements, but to a systematic distortion introduced by map projection and visual synthesis.
+In reality, Greenland's surface area is approximately 2.1 million km², while Africa's is about 30 million km². The apparent similarity in size is not due to incorrect measurements, but to a systematic distortion introduced by map projection and visual synthesis. In Fact, Greenland's size is comparable to countries like Saudi Arabia or Mexico.
 
 This example illustrates how correct data, when transformed, aggregated, or visualised improperly, can generate persistent and intuitive false beliefs. Distortions from data synthetisation may be intentional or accidental, yet their effects are powerful, especially when visual representations are treated as neutral or self-explanatory.
 
@@ -4156,7 +4154,7 @@ Answer the following questions:
 \item
   Briefly explain how similar distortions in data science can contribute to biased narratives, echo chambers, or misguided policy decisions.
 \item
-  In your opinion, when does data stop describing reality and start constructing it?
+  When does data stop describing reality and start constructing it?
 \end{enumerate}
 
 \textbf{How to approach the answers:}
@@ -4219,13 +4217,15 @@ These exercises explore how knowledge is produced, interpreted, and acted upon u
 
 Across medicine, public health, history, and environmental management, the cases show how evidence is shaped by proxies, data-generating processes, missing controls, ethical constraints, and high-stakes decision-making. Rather than focusing on technical calculation, the questions invite you to reflect on reasoning: what data actually measure, what they fail to capture, how comparisons substitute for experiments, and why correct conclusions can sometimes emerge from weak or incomplete evidence. Together, the cases illustrate that epistemic judgement, not just data volume or statistical fit, is central to responsible inference and action
 
+\newpage
+
 \subsection{Al-Razi and Hospital Location}\label{al-razi-and-hospital-location}
 
 \begin{wrapfigure}{R}{.33\textwidth}  
  \begin{center}
     \includegraphics[width=.30\textwidth]{Figures/learning_from_history_al_razi.jpg}  
   \captionsetup{labelformat=empty}
-  \caption{Rhazes, a physician, examines a kneeling boy who has his mouth wide open, they are in a surgery full of equipment.} 
+  \caption{Al-Razi examines a boy.} 
 \end{center}
 \end{wrapfigure}
 \addtocounter{figure}{-1}
@@ -4234,7 +4234,7 @@ In the 10th century, the Persian physician \textbf{Al-Razi} was tasked with sele
 
 Rather than choosing a location based on prestige, custom, or anecdotal reputation, Al-Razi sought a method that relied on observable differences across districts. He placed pieces of raw meat in several parts of the city and monitored how quickly they decayed. His reasoning was indirect: faster decay suggested environmental conditions that might also promote illness, while slower decay suggested cleaner air.
 
-This approach did not involve experimental control, randomisation, or a causal theory of disease transmission. Al-Razi could not isolate variables such as temperature, insects, or humidity, nor could he test alternative explanations. Nonetheless, his method represented a deliberate attempt to \emph{compare} environments systematically using a proxy rather than speculation, authority, or superstition.
+This approach did not involve experimental control, randomisation, or a causal theory of disease transmission. He could not isolate variables such as temperature, insects, or humidity, nor could he test alternative explanations. However, his method represented a deliberate attempt to \emph{compare} environments systematically using a proxy rather than speculation, authority, or superstition.
 
 \textbf{Questions}
 
@@ -4258,7 +4258,7 @@ This approach did not involve experimental control, randomisation, or a causal t
 \begin{itemize}
 \tightlist
 \item
-  Identify the \textbf{epistemic role of a proxy} and distinguish it from direct measurement.
+  Find the \textbf{epistemic role of a proxy} and distinguish it from direct measurement.
 \item
   Think about \textbf{what is being inferred vs.~what is observed}.
 \item
@@ -4282,7 +4282,7 @@ This approach did not involve experimental control, randomisation, or a causal t
 
 In the 11th century, \textbf{Ibn Sina (Avicenna)} reflected critically on medical practice. He observed that physicians often inferred the effectiveness of treatments after witnessing a few apparent recoveries, without considering alternative explanations.
 
-Ibn Sina warned that recovery could result from natural healing, coincidence, or concurrent interventions. He argued that without systematic comparison and repetition under similar conditions, physicians risked mistaking chance or background processes for causal effects.
+He warned that recovery could result from natural healing, coincidence, or concurrent interventions. He argued that without systematic comparison and repetition under similar conditions, physicians risked mistaking chance or background processes for causal effects.
 
 Although formal experimental methods were not yet developed, Ibn Sina articulated a core insight of modern experimental reasoning: isolated success stories are epistemically weak. Reliable knowledge requires distinguishing treatment effects from background variation.
 
@@ -4298,7 +4298,7 @@ Although formal experimental methods were not yet developed, Ibn Sina articulate
 \item
   What core principle of experimental control is Ibn Sina implicitly advocating?\\
 \item
-  Give one example of how Ibn Sina's critique applies to modern data science or machine learning.
+  Give one example of how Ibn Sina's critique applies to modern data science.
 \end{enumerate}
 
 \textbf{How to approach the answers:}
@@ -4310,7 +4310,7 @@ Although formal experimental methods were not yet developed, Ibn Sina articulate
 \item
   Identify the difference between \textbf{correlation, coincidence, and causation}.
 \item
-  Translate Ibn Sina's insight into modern ideas like baselines, control groups, or validation.
+  Find modern analogies like baselines, control groups, or validation.
 \item
   Use a contemporary example involving misleading performance claims.
 \end{itemize}
@@ -4330,7 +4330,7 @@ Although formal experimental methods were not yet developed, Ibn Sina articulate
 
 During the Crimean War in the 1850s, \textbf{Florence Nightingale} confronted widespread assumptions about military deaths. High mortality among soldiers was often attributed directly to battle injuries, reinforcing the belief that little could be done beyond improving combat medicine.
 
-Nightingale collected detailed hospital records and noticed that most deaths occurred away from the battlefield. Rather than relying on total death counts, she reorganised the data by \emph{cause of death} and \emph{time period}. She then compared mortality patterns before and after sanitation reforms, using innovative visualisations to communicate her findings.
+Nightingale collected detailed hospital records and noticed that most deaths occurred away from the battlefield. Rather than relying on total death counts, she reorganised the data by \emph{cause of death} and \emph{time period}. She then compared mortality patterns before and after sanitation reforms, using visualisations to communicate her findings.
 
 Although Nightingale could not run controlled experiments or randomise conditions, she approximated control through structured comparison. Her work demonstrated how careful aggregation and disaggregation of observational data could reveal patterns that raw numbers concealed, and her analysis directly informed policy changes that saved lives.
 
@@ -4340,7 +4340,7 @@ Although Nightingale could not run controlled experiments or randomise condition
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Why were raw mortality numbers insufficient to support Nightingale's conclusions?\\
+  Why were raw mortality numbers insufficient to support her conclusions?\\
 \item
   What form of experimental control was approximated in Nightingale's analysis?\\
 \item
@@ -4360,7 +4360,7 @@ Although Nightingale could not run controlled experiments or randomise condition
 \item
   Consider aggregation bias and loss of explanatory resolution.
 \item
-  Link ethical significance to \textbf{prevention capacity}, responsibility, and policy impact.
+  Link ethics to \textbf{prevention capacity}, responsibility, and policy impact.
 \end{itemize}
 
 \subsection{The Collapse of Angkor}\label{the-collapse-of-angkor}
@@ -4413,7 +4413,7 @@ Later historical accounts and modern remote sensing revealed a different picture
   Include ethical dimensions of power and representation.
 \end{itemize}
 
-\subsection{Ignaz Goldziher: From Textual Corpora to Historical Claims}\label{ignaz-goldziher-from-textual-corpora-to-historical-claims}
+\subsection{Goldziher: From Textual Corpora to Historical Claims}\label{goldziher-from-textual-corpora-to-historical-claims}
 
 \begin{wrapfigure}{R}{.33\textwidth}  
  \begin{center}
@@ -4515,14 +4515,14 @@ The case exemplifies abductive reasoning under severe time pressure and highligh
  \begin{center}
     \includegraphics[width=.30\textwidth]{Figures/learning_from_history_janet.png}  
   \captionsetup{labelformat=empty}
-  \caption{Janet Lane-Claypon (1877 - 1967)} 
+  \caption{Dr Lane-Claypon (1877 - 1967)} 
 \end{center}
 \end{wrapfigure}
 \addtocounter{figure}{-1}
 
 In the early 20th century, \textbf{Janet Lane-Claypon} investigated possible causes of breast cancer. Many suspected factors were common among affected women, but this alone did not establish causation.
 
-Lane-Claypon introduced a systematic comparison between women with breast cancer and women without it. By examining how frequently exposures appeared in each group, she showed that some seemingly important factors were actually common in the general population.
+She introduced a systematic comparison between women with breast cancer and women without it. By examining how frequently exposures appeared in each group, she showed that some seemingly important factors were actually common in the general population.
 
 This comparative approach marked an early form of case-control reasoning and laid the groundwork for modern epidemiology, allowing researchers to distinguish coincidence from potential causal influence.
 
@@ -4532,7 +4532,7 @@ This comparative approach marked an early form of case-control reasoning and lai
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Why were common exposures alone insufficient to identify causes of breast cancer?\\
+  Why were common exposures alone insufficient to identify causes of cancer?\\
 \item
   What methodological innovation distinguishes Lane-Claypon's approach?\\
 \item
@@ -4557,7 +4557,13 @@ This comparative approach marked an early form of case-control reasoning and lai
   Discuss ethical constraints in medical research.
 \end{itemize}
 
+\clearpage
+
 \subsection{Terranova, the Northern Cod Collapse}\label{terranova-the-northern-cod-collapse}
+
+From the late 1970s to the early 1990s, Canadian regulators relied on stock-assessment models to manage the Northern cod fishery. Indicators such as catch-per-unit-effort suggested stability, even as cod populations declined.
+
+Industrial fishing fleets increasingly concentrated in remaining high-density areas, masking broader collapse. Models remained statistically well-fit, but their assumptions failed under ecological change. When the collapse became undeniable, the resulting moratorium caused widespread social and economic harm.
 
 
 
@@ -4569,10 +4575,6 @@ This comparative approach marked an early form of case-control reasoning and lai
 
 \caption{Collapse of Atlantic cod stocks off Newfoundland (1992): Offshore trawling since the 1950s drove catches up but biomass down, and international and national quotas failed to stop the decline.}\label{fig:code-pic}
 \end{figure}
-
-From the late 1970s to the early 1990s, Canadian regulators relied on stock-assessment models to manage the Northern cod fishery. Indicators such as catch-per-unit-effort suggested stability, even as cod populations declined.
-
-Industrial fishing fleets increasingly concentrated in remaining high-density areas, masking broader collapse. Models remained statistically well-fit, but their assumptions failed under ecological change. When the collapse became undeniable, the resulting moratorium caused widespread social and economic harm.
 
 \textbf{Questions}
 
@@ -4610,7 +4612,7 @@ Industrial fishing fleets increasingly concentrated in remaining high-density ar
     \includegraphics[width=.30\textwidth]{Figures/learning_from_history_li.jpg}  
   \captionsetup{labelformat=empty}
   \caption{Li Wenliang (1985 - 2020)} 
-\end{center}
+\end{center} 
 \end{wrapfigure}
 \addtocounter{figure}{-1}
 

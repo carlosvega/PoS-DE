@@ -410,7 +410,7 @@ div.csl-indent {
 <li class="chapter" data-level="7.2.2" data-path="course-exercises.html"><a href="course-exercises.html#ibn-sina-and-medical-evidence"><i class="fa fa-check"></i><b>7.2.2</b> Ibn Sina and Medical Evidence</a></li>
 <li class="chapter" data-level="7.2.3" data-path="course-exercises.html"><a href="course-exercises.html#florence-nightingale-and-military-mortality"><i class="fa fa-check"></i><b>7.2.3</b> Florence Nightingale and Military Mortality</a></li>
 <li class="chapter" data-level="7.2.4" data-path="course-exercises.html"><a href="course-exercises.html#the-collapse-of-angkor"><i class="fa fa-check"></i><b>7.2.4</b> The Collapse of Angkor</a></li>
-<li class="chapter" data-level="7.2.5" data-path="course-exercises.html"><a href="course-exercises.html#ignaz-goldziher-from-textual-corpora-to-historical-claims"><i class="fa fa-check"></i><b>7.2.5</b> Ignaz Goldziher: From Textual Corpora to Historical Claims</a></li>
+<li class="chapter" data-level="7.2.5" data-path="course-exercises.html"><a href="course-exercises.html#goldziher-from-textual-corpora-to-historical-claims"><i class="fa fa-check"></i><b>7.2.5</b> Goldziher: From Textual Corpora to Historical Claims</a></li>
 <li class="chapter" data-level="7.2.6" data-path="course-exercises.html"><a href="course-exercises.html#wu-lien-teh-and-the-manchurian-plague"><i class="fa fa-check"></i><b>7.2.6</b> Wu Lien-teh and the Manchurian Plague</a></li>
 <li class="chapter" data-level="7.2.7" data-path="course-exercises.html"><a href="course-exercises.html#janet-lane-claypon-and-breast-cancer-research"><i class="fa fa-check"></i><b>7.2.7</b> Janet Lane-Claypon and Breast Cancer Research</a></li>
 <li class="chapter" data-level="7.2.8" data-path="course-exercises.html"><a href="course-exercises.html#terranova-the-northern-cod-collapse"><i class="fa fa-check"></i><b>7.2.8</b> Terranova, the Northern Cod Collapse</a></li>
@@ -447,14 +447,13 @@ div.csl-indent {
 <h3><span class="header-section-number">7.1.1</span> Greenland’s size<a href="course-exercises.html#greenlands-size" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:greenland-map"></span>
-<img src="Figures/mercator.png" alt="These maps show two different approaches to depicting Greenland. The left map is an orthographic projection, emulating a globe. The right map is a Mercator projection, which exaggerates the sizes of landmasses — including Greenland. Alyson Hurt / NPR" width="75%" />
+<img src="Figures/mercator.png" alt="The left map shows an orthographic projection, emulating a globe. The right map is a Mercator projection, which exaggerates the sizes of landmasses, including Greenland. Alyson Hurt / NPR" width="75%" />
 <p class="caption">
-Figure 7.1: These maps show two different approaches to depicting Greenland. The left map is an orthographic projection, emulating a globe. The right map is a Mercator projection, which exaggerates the sizes of landmasses — including Greenland. Alyson Hurt / NPR
+Figure 7.1: The left map shows an orthographic projection, emulating a globe. The right map is a Mercator projection, which exaggerates the sizes of landmasses, including Greenland. Alyson Hurt / NPR
 </p>
 </div>
-<p>Many people believe that Greenland is comparable in size to Africa or larger than South America.</p>
-<p>This belief is widespread in textbooks, news media, and online discussions. This belief is reinforced by commonly used world maps based on the Mercator projection, where Greenland appears vastly larger than it truly is.</p>
-<p>In reality, Greenland’s surface area is approximately 2.1 million km², while Africa’s is about 30 million km². The apparent similarity in size is not due to incorrect measurements, but to a systematic distortion introduced by map projection and visual synthesis.</p>
+<p>Many people believe that Greenland is comparable in size to Africa or larger than South America. This belief is widespread in textbooks, news media, and online discussions. This belief is reinforced by commonly used world maps based on the Mercator projection, where Greenland appears vastly larger than it truly is.</p>
+<p>In reality, Greenland’s surface area is approximately 2.1 million km², while Africa’s is about 30 million km². The apparent similarity in size is not due to incorrect measurements, but to a systematic distortion introduced by map projection and visual synthesis. In Fact, Greenland’s size is comparable to countries like Saudi Arabia or Mexico.</p>
 <p>This example illustrates how correct data, when transformed, aggregated, or visualised improperly, can generate persistent and intuitive false beliefs. Distortions from data synthetisation may be intentional or accidental, yet their effects are powerful, especially when visual representations are treated as neutral or self-explanatory.</p>
 <figure>
 <img src="Figures/mercator-vs-truesize.gif">
@@ -464,7 +463,7 @@ Figure 7.1: These maps show two different approaches to depicting Greenland. The
 <li>Give one example in data science where aggregation or visualisation can similarly mislead interpretation without involving false data.</li>
 <li>Explain why this example illustrates a problem of data synthesis and representation rather than incorrect data collection.</li>
 <li>Briefly explain how similar distortions in data science can contribute to biased narratives, echo chambers, or misguided policy decisions.</li>
-<li>In your opinion, when does data stop describing reality and start constructing it?</li>
+<li>When does data stop describing reality and start constructing it?</li>
 </ol>
 <p><strong>How to approach the answers:</strong></p>
 <p>This exercise is designed to help you reason about <strong>distortion introduced by data synthesis and representation</strong>, rather than errors in measurement or data collection. The goal is not to test geographical knowledge, but to see how <em>true data</em> can still lead to <em>false beliefs</em> once transformed or visualised.</p>
@@ -499,17 +498,18 @@ Figure 7.1: These maps show two different approaches to depicting Greenland. The
 <h2><span class="header-section-number">7.2</span> Learning from History<a href="course-exercises.html#learning-from-history" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>These exercises explore how knowledge is produced, interpreted, and acted upon under conditions of uncertainty by examining historical cases that mirror core problems in modern data science.</p>
 <p>Across medicine, public health, history, and environmental management, the cases show how evidence is shaped by proxies, data-generating processes, missing controls, ethical constraints, and high-stakes decision-making. Rather than focusing on technical calculation, the questions invite you to reflect on reasoning: what data actually measure, what they fail to capture, how comparisons substitute for experiments, and why correct conclusions can sometimes emerge from weak or incomplete evidence. Together, the cases illustrate that epistemic judgement, not just data volume or statistical fit, is central to responsible inference and action</p>
+<div style="page-break-after: always;"></div>
 <div id="al-razi-and-hospital-location" class="section level3 hasAnchor" number="7.2.1">
 <h3><span class="header-section-number">7.2.1</span> Al-Razi and Hospital Location<a href="course-exercises.html#al-razi-and-hospital-location" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <figure class="wrap-figure">
 <img src="Figures/learning_from_history_al_razi.jpg">
 <figcaption>
-Rhazes, a physician, examines a kneeling boy who has his mouth wide open, they are in a surgery full of equipment.</br>
+Al-Razi examines a boy.</br>
 </figcaption>
 </figure>
 <p>In the 10th century, the Persian physician <strong>Al-Razi</strong> was tasked with selecting the most suitable location for a new hospital in Baghdad, a large and densely populated city. At the time, medical knowledge relied heavily on authority, tradition, and humoral theories, and there were no instruments to measure air quality, pollution, or disease risk.</p>
 <p>Rather than choosing a location based on prestige, custom, or anecdotal reputation, Al-Razi sought a method that relied on observable differences across districts. He placed pieces of raw meat in several parts of the city and monitored how quickly they decayed. His reasoning was indirect: faster decay suggested environmental conditions that might also promote illness, while slower decay suggested cleaner air.</p>
-<p>This approach did not involve experimental control, randomisation, or a causal theory of disease transmission. Al-Razi could not isolate variables such as temperature, insects, or humidity, nor could he test alternative explanations. Nonetheless, his method represented a deliberate attempt to <em>compare</em> environments systematically using a proxy rather than speculation, authority, or superstition.</p>
+<p>This approach did not involve experimental control, randomisation, or a causal theory of disease transmission. He could not isolate variables such as temperature, insects, or humidity, nor could he test alternative explanations. However, his method represented a deliberate attempt to <em>compare</em> environments systematically using a proxy rather than speculation, authority, or superstition.</p>
 <p><strong>Questions</strong></p>
 <ol style="list-style-type: decimal">
 <li>What role does the meat play in Al-Razi’s reasoning?<br />
@@ -524,7 +524,7 @@ Rhazes, a physician, examines a kneeling boy who has his mouth wide open, they a
 </ol>
 <p><strong>How to approach the answers:</strong></p>
 <ul>
-<li>Identify the <strong>epistemic role of a proxy</strong> and distinguish it from direct measurement.</li>
+<li>Find the <strong>epistemic role of a proxy</strong> and distinguish it from direct measurement.</li>
 <li>Think about <strong>what is being inferred vs. what is observed</strong>.</li>
 <li>Reflect on missing controls (confounders, standardisation, replication).</li>
 <li>Emphasise why systematic comparison reduces arbitrariness but does not eliminate uncertainty.</li>
@@ -540,7 +540,7 @@ Modern portrait of Ibn Sina, US National Library of Medicine (1952).</br>
 </figcaption>
 </figure>
 <p>In the 11th century, <strong>Ibn Sina (Avicenna)</strong> reflected critically on medical practice. He observed that physicians often inferred the effectiveness of treatments after witnessing a few apparent recoveries, without considering alternative explanations.</p>
-<p>Ibn Sina warned that recovery could result from natural healing, coincidence, or concurrent interventions. He argued that without systematic comparison and repetition under similar conditions, physicians risked mistaking chance or background processes for causal effects.</p>
+<p>He warned that recovery could result from natural healing, coincidence, or concurrent interventions. He argued that without systematic comparison and repetition under similar conditions, physicians risked mistaking chance or background processes for causal effects.</p>
 <p>Although formal experimental methods were not yet developed, Ibn Sina articulated a core insight of modern experimental reasoning: isolated success stories are epistemically weak. Reliable knowledge requires distinguishing treatment effects from background variation.</p>
 <p><strong>Questions</strong></p>
 <ol style="list-style-type: decimal">
@@ -550,13 +550,13 @@ Modern portrait of Ibn Sina, US National Library of Medicine (1952).</br>
 </li>
 <li>What core principle of experimental control is Ibn Sina implicitly advocating?<br />
 </li>
-<li>Give one example of how Ibn Sina’s critique applies to modern data science or machine learning.</li>
+<li>Give one example of how Ibn Sina’s critique applies to modern data science.</li>
 </ol>
 <p><strong>How to approach the answers:</strong></p>
 <ul>
 <li>Focus on <strong>post hoc reasoning</strong> and confounding.</li>
 <li>Identify the difference between <strong>correlation, coincidence, and causation</strong>.</li>
-<li>Translate Ibn Sina’s insight into modern ideas like baselines, control groups, or validation.</li>
+<li>Find modern analogies like baselines, control groups, or validation.</li>
 <li>Use a contemporary example involving misleading performance claims.</li>
 </ul>
 </div>
@@ -570,11 +570,11 @@ Figure 7.2: Florence Nightingale’s 1858 ‘Rose Diagram’. It uses color-code
 </p>
 </div>
 <p>During the Crimean War in the 1850s, <strong>Florence Nightingale</strong> confronted widespread assumptions about military deaths. High mortality among soldiers was often attributed directly to battle injuries, reinforcing the belief that little could be done beyond improving combat medicine.</p>
-<p>Nightingale collected detailed hospital records and noticed that most deaths occurred away from the battlefield. Rather than relying on total death counts, she reorganised the data by <em>cause of death</em> and <em>time period</em>. She then compared mortality patterns before and after sanitation reforms, using innovative visualisations to communicate her findings.</p>
+<p>Nightingale collected detailed hospital records and noticed that most deaths occurred away from the battlefield. Rather than relying on total death counts, she reorganised the data by <em>cause of death</em> and <em>time period</em>. She then compared mortality patterns before and after sanitation reforms, using visualisations to communicate her findings.</p>
 <p>Although Nightingale could not run controlled experiments or randomise conditions, she approximated control through structured comparison. Her work demonstrated how careful aggregation and disaggregation of observational data could reveal patterns that raw numbers concealed, and her analysis directly informed policy changes that saved lives.</p>
 <p><strong>Questions</strong></p>
 <ol style="list-style-type: decimal">
-<li>Why were raw mortality numbers insufficient to support Nightingale’s conclusions?<br />
+<li>Why were raw mortality numbers insufficient to support her conclusions?<br />
 </li>
 <li>What form of experimental control was approximated in Nightingale’s analysis?<br />
 </li>
@@ -587,7 +587,7 @@ Figure 7.2: Florence Nightingale’s 1858 ‘Rose Diagram’. It uses color-code
 <li>Contrast <strong>raw counts</strong> with <strong>structured comparisons</strong>.</li>
 <li>Identify what was being held approximately constant across time periods.</li>
 <li>Consider aggregation bias and loss of explanatory resolution.</li>
-<li>Link ethical significance to <strong>prevention capacity</strong>, responsibility, and policy impact.</li>
+<li>Link ethics to <strong>prevention capacity</strong>, responsibility, and policy impact.</li>
 </ul>
 </div>
 <div id="the-collapse-of-angkor" class="section level3 hasAnchor" number="7.2.4">
@@ -622,8 +622,8 @@ Figure 7.3: Facade of Angkor Wat, a drawing by Henri Mouhot (1860)
 <li>Include ethical dimensions of power and representation.</li>
 </ul>
 </div>
-<div id="ignaz-goldziher-from-textual-corpora-to-historical-claims" class="section level3 hasAnchor" number="7.2.5">
-<h3><span class="header-section-number">7.2.5</span> Ignaz Goldziher: From Textual Corpora to Historical Claims<a href="course-exercises.html#ignaz-goldziher-from-textual-corpora-to-historical-claims" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="goldziher-from-textual-corpora-to-historical-claims" class="section level3 hasAnchor" number="7.2.5">
+<h3><span class="header-section-number">7.2.5</span> Goldziher: From Textual Corpora to Historical Claims<a href="course-exercises.html#goldziher-from-textual-corpora-to-historical-claims" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <figure class="wrap-figure">
 <img src="Figures/learning_from_history_Goldziher.jpg">
 <figcaption>
@@ -692,11 +692,11 @@ Janet Lane-Claypon (1877 - 1967)</br>
 </figcaption>
 </figure>
 <p>In the early 20th century, <strong>Janet Lane-Claypon</strong> investigated possible causes of breast cancer. Many suspected factors were common among affected women, but this alone did not establish causation.</p>
-<p>Lane-Claypon introduced a systematic comparison between women with breast cancer and women without it. By examining how frequently exposures appeared in each group, she showed that some seemingly important factors were actually common in the general population.</p>
+<p>She introduced a systematic comparison between women with breast cancer and women without it. By examining how frequently exposures appeared in each group, she showed that some seemingly important factors were actually common in the general population.</p>
 <p>This comparative approach marked an early form of case-control reasoning and laid the groundwork for modern epidemiology, allowing researchers to distinguish coincidence from potential causal influence.</p>
 <p><strong>Questions</strong></p>
 <ol style="list-style-type: decimal">
-<li>Why were common exposures alone insufficient to identify causes of breast cancer?<br />
+<li>Why were common exposures alone insufficient to identify causes of cancer?<br />
 </li>
 <li>What methodological innovation distinguishes Lane-Claypon’s approach?<br />
 </li>
@@ -716,6 +716,8 @@ Janet Lane-Claypon (1877 - 1967)</br>
 </div>
 <div id="terranova-the-northern-cod-collapse" class="section level3 hasAnchor" number="7.2.8">
 <h3><span class="header-section-number">7.2.8</span> Terranova, the Northern Cod Collapse<a href="course-exercises.html#terranova-the-northern-cod-collapse" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>From the late 1970s to the early 1990s, Canadian regulators relied on stock-assessment models to manage the Northern cod fishery. Indicators such as catch-per-unit-effort suggested stability, even as cod populations declined.</p>
+<p>Industrial fishing fleets increasingly concentrated in remaining high-density areas, masking broader collapse. Models remained statistically well-fit, but their assumptions failed under ecological change. When the collapse became undeniable, the resulting moratorium caused widespread social and economic harm.</p>
 
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:code-pic"></span>
 <img src="Figures/learning_from_history_cod.jpg" alt="Collapse of Atlantic cod stocks off Newfoundland (1992): Offshore trawling since the 1950s drove catches up but biomass down, and international and national quotas failed to stop the decline." width="75%" />
@@ -723,8 +725,6 @@ Janet Lane-Claypon (1877 - 1967)</br>
 Figure 7.5: Collapse of Atlantic cod stocks off Newfoundland (1992): Offshore trawling since the 1950s drove catches up but biomass down, and international and national quotas failed to stop the decline.
 </p>
 </div>
-<p>From the late 1970s to the early 1990s, Canadian regulators relied on stock-assessment models to manage the Northern cod fishery. Indicators such as catch-per-unit-effort suggested stability, even as cod populations declined.</p>
-<p>Industrial fishing fleets increasingly concentrated in remaining high-density areas, masking broader collapse. Models remained statistically well-fit, but their assumptions failed under ecological change. When the collapse became undeniable, the resulting moratorium caused widespread social and economic harm.</p>
 <p><strong>Questions</strong></p>
 <ol style="list-style-type: decimal">
 <li>Explain how aggregation across space can hide collapse in sub-populations (name the general phenomenon).<br />
