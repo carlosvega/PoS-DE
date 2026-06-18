@@ -2804,14 +2804,6 @@ The observations of John Snow introduced a new variable into the causal diagram 
 \caption{Causal diagram after the introduction of an instrumental variable.}\label{fig:snow-dia-B}
 \end{figure}
 
-A variable that satisfies these properties is called an \textbf{instrumental variable}. See \citep{pokropek2016introduction} for examples of valid and invalid instrumental variables and \href{https://scpoecon.github.io/ScPoEconometrics/IV.html}{SciencesPo} for econometric examples. \textbf{Since there are no confounders of the relation between Water Company and Cholera, any observed association must be causal}. Similarly, the association between Water Purity and Cholera is also causal.
-
-\begin{quote}
-Specifically, an instrumental variable Z is an additional variable used to estimate the causal effect of variable X on Y. The traditional definition qualifies a variable Z as an instrumental (relative to the pair (X, Y)) if (i) Z is independent of all variables (including error terms) that have an influence on Y that is not mediated by X and (ii) Z is not independent of X. --- \citep{pearl2000causality}
-\end{quote}
-
-Although today miasma theory has been discredited, poverty and location are clear confounders. In \citep{book-of-why}, the authors show how instrumental variables can be used to determine the number of lives that could have been saved by purifying the water supply. The instrumental variable \textbf{Water Company} allow us to find the effect of \textbf{Water Purity} on \textbf{Cholera} even without being able to control, or collect data on, the confounder variables (poverty, location, etc.).
-
 \begin{figure}[htbp]
 
 {\centering \includegraphics[width=1\linewidth]{Figures/snow-cholera-map-crop} 
@@ -2820,6 +2812,14 @@ Although today miasma theory has been discredited, poverty and location are clea
 
 \caption{Detail of John Snow’s map of Cholera in the Broad Street outbreak in 1854. Each bar represents one death in a topography that attempted to relate the water source (“Pump”) to pattern of cases in the neighborhood outbreak.}\label{fig:snow-map}
 \end{figure}
+
+A variable that satisfies these properties is called an \textbf{instrumental variable}. See \citep{pokropek2016introduction} for examples of valid and invalid instrumental variables and \href{https://scpoecon.github.io/ScPoEconometrics/IV.html}{SciencesPo} for econometric examples. \textbf{Since there are no confounders of the relation between Water Company and Cholera, any observed association must be causal}. Similarly, the association between Water Purity and Cholera is also causal.
+
+\begin{quote}
+Specifically, an instrumental variable Z is an additional variable used to estimate the causal effect of variable X on Y. The traditional definition qualifies a variable Z as an instrumental (relative to the pair (X, Y)) if (i) Z is independent of all variables (including error terms) that have an influence on Y that is not mediated by X and (ii) Z is not independent of X. --- \citep{pearl2000causality}
+\end{quote}
+
+Although today miasma theory has been discredited, poverty and location are clear confounders. In \citep{book-of-why}, the authors show how instrumental variables can be used to determine the number of lives that could have been saved by purifying the water supply. The instrumental variable \textbf{Water Company} allow us to find the effect of \textbf{Water Purity} on \textbf{Cholera} even without being able to control, or collect data on, the confounder variables (poverty, location, etc.).
 
 One of the main innovations of John Snow approach was to focus on death rates in districts served by two water companies rather than on data from victims of the Broad Street pump which drew water from a well.
 
@@ -3189,7 +3189,7 @@ As can be seen, this value is closer to the degree of our synthetic data \texttt
 \end{Shaded}
 
 \begin{verbatim}
-## Estimated Effect (revised model): 10.095828768814442
+## Estimated Effect (revised model): 10.095828768814414
 \end{verbatim}
 
 \chapter{Experimental Control and Statistical Abuse}\label{stats-abuse}

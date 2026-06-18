@@ -740,15 +740,15 @@ The observations of John Snow introduced a new variable into the causal diagram 
 knitr::include_graphics('Figures/SnowDiagramB.png')
 ```
 
+```{r snow-map, echo=F, fig.align="center",  out.width="100%", fig.cap='Detail of John Snow’s map of Cholera in the Broad Street outbreak in 1854. Each bar represents one death in a topography that attempted to relate the water source (“Pump”) to pattern of cases in the neighborhood outbreak.', fig.pos = "htbp"}
+knitr::include_graphics('Figures/snow-cholera-map-crop.jpg')
+```
+
 A variable that satisfies these properties is called an **instrumental variable**. See [@pokropek2016introduction] for examples of valid and invalid instrumental variables and [SciencesPo](https://scpoecon.github.io/ScPoEconometrics/IV.html) for econometric examples. **Since there are no confounders of the relation between Water Company and Cholera, any observed association must be causal**. Similarly, the association between Water Purity and Cholera is also causal.
 
 > Specifically, an instrumental variable Z is an additional variable used to estimate the causal effect of variable X on Y. The traditional definition qualifies a variable Z as an instrumental (relative to the pair (X, Y)) if (i) Z is independent of all variables (including error terms) that have an influence on Y that is not mediated by X and (ii) Z is not independent of X. --- [@pearl2000causality]
 
 Although today miasma theory has been discredited, poverty and location are clear confounders. In [@book-of-why], the authors show how instrumental variables can be used to determine the number of lives that could have been saved by purifying the water supply. The instrumental variable **Water Company** allow us to find the effect of **Water Purity** on **Cholera** even without being able to control, or collect data on, the confounder variables (poverty, location, etc.).
-
-```{r snow-map, echo=F, fig.align="center",  out.width="100%", fig.cap='Detail of John Snow’s map of Cholera in the Broad Street outbreak in 1854. Each bar represents one death in a topography that attempted to relate the water source (“Pump”) to pattern of cases in the neighborhood outbreak.', fig.pos = "htbp"}
-knitr::include_graphics('Figures/snow-cholera-map-crop.jpg')
-```
 
 One of the main innovations of John Snow approach was to focus on death rates in districts served by two water companies rather than on data from victims of the Broad Street pump which drew water from a well.
 
