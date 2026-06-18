@@ -22,7 +22,7 @@
 
 ## Overview
 
-One of the fundamental questions of the philosophy of science is “How can we obtain knowledge as opposed to mere belief or opinion?” [@ladyman2012understanding]. Humans have a natural ability to conjecture and spot relationships about the world, *jumping* from hypotheses to conclusions. The scientific attitude is to keep such *jumps* under control and use a well defined procedure to arrive to a conclusion from an hypothesis. This chapter taughts how conclusions can be reached from known facts in different ways. For this, a sound basis of logic is needed to understand more complex concepts from this course. The reader will tackle deductive and inductive arguments and link them to data science applications. With this the reader will be equipped to tackle other topics of scientific inference such as the problem of induction, the Hypothetico-deductive method and Falsificationism.
+One of the fundamental questions of the philosophy of science is “How can we obtain knowledge as opposed to mere belief or opinion?” [@ladyman2012understanding]. Humans have a natural ability to conjecture and spot relationships about the world, *jumping* from hypotheses to conclusions. The scientific attitude is to keep such *jumps* under control and use a well defined procedure to arrive to a conclusion from an hypothesis. This chapter teaches how conclusions can be reached from known facts in different ways. For this, a sound basis of logic is needed to understand more complex concepts from this course. The reader will tackle deductive and inductive arguments and link them to data science applications. With this the reader will be equipped to tackle other topics of scientific inference such as the problem of induction, the Hypothetico-deductive method and Falsificationism.
 
 ```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
 cat(
@@ -52,7 +52,7 @@ Most scientific conclusions are uncanny at first glance and difficult to believe
 
 ### Deduction and Induction {#deduction}
 
-A good argument is one whose conclusions follow from its premises. But how do we tell if the conclusion is a consequence of its premises? Is often assumed that as long as the premises are valid, the conclusions will be valid too. This does not imply that the conclusion is also true. The premises might not be true, but if they are true, then the conclusion will also be true. However, is the truth of the premises always *necessarily sufficient* for the truth of the conclusions? Logicians distinguish between deductive and inductive inference. [@sep-abduction]
+A good argument is one whose conclusions follow from its premises. But how do we tell if the conclusion is a consequence of its premises? It is often assumed that as long as the premises are valid, the conclusions will be valid too. This does not imply that the conclusion is also true. The premises might not be true, but if they are true, then the conclusion will also be true. However, is the truth of the premises always *necessarily sufficient* for the truth of the conclusions? Logicians distinguish between deductive and inductive inference. [@sep-abduction]
 
 Below there is an example of a deductive inference with two premises followed by a conclusion.
 
@@ -99,10 +99,12 @@ The following content relates to deduction and is usually taught in high school 
 
 There are two rules of inference in deductive reasoning. Deduction constitutes top-down logic because particular conclusions are drawn from general premises. Whereas in bottom-up logic the conclusion is reached by generalizing from specific cases.
 
+-   Syllogism: a kind of logical argument that applies deductive reasoning to arrive at a conclusion based on two propositions that are asserted or assumed to be true.
 -   Modus ponens: `P implies Q. P is true. Therefore Q must also be true.`
 -   Modus tollens: `If P, then Q. Not Q. Therefore, not P.`
 
 The form of a **modus ponens** argument looks like a syllogism consisting of two premises and a conclusion. The first premise is a conditional if-then claim (e.g. `P implies Q`). The second premise is an assertion that $P$ (the antecedent of the first premise) is indeed true. From these two premises, it can be concluded that $Q$, (the consequent of the first premise) must be true as well.
+
 
 ```         
 If P, then Q.
@@ -231,7 +233,7 @@ The problem now becomes how to find a way to avoid this conclusion, despite Hume
 -   **Foundationalism** argues that the justification chain should end with foundational beliefs that do not requrie inferential justification.
 -   **Coherentism** proposes that beliefs are justified if they cohere within a web of beliefs, with a chain of reasons that is never-ending but which does not involve infinite beliefs [@sep-justep-coherence].
 
-There are many different ways to respond to Hume's argument, yet none is fully convincing. Peter Strawson (1950s) used the following analogy: **justifying induction is like asking whether the law is itself legal**. This is rather odd, since the law is the standard against which the legality of other things is judged. Others, like Karl Popper (1902-1994) argued that science is not in fact based on inductive inferences at all and presented a deductivist view of science. We will study this in detail in § \@ref(falsification). **Bayesian approaches frame induction probabilistically**. Schurz’s **meta-induction** justifies using induction not by logic, but by tracking which predictive strategy has been most successful over time. This is linked to on-line machine learning methods, where the learner adapts based on past success [@ortner2023adaptive].
+There are many different ways to respond to Hume's argument, yet none is fully convincing. Peter Strawson (1950s) used the following analogy: **justifying induction is like asking whether the law (the legal system) is itself legal**. This is rather odd, since the law is the standard against which the legality of other things is judged. Others, like Karl Popper (1902-1994) argued that science is not in fact based on inductive inferences at all and presented a deductivist view of science. We will study this in detail in § \@ref(falsification). **Bayesian approaches frame induction probabilistically**. Schurz’s **meta-induction** justifies using induction not by logic, but by tracking which predictive strategy has been most successful over time. This is linked to on-line machine learning methods, where the learner adapts based on past success [@ortner2023adaptive].
 
 :::: {.tipbox data-latex=""}
 ::: {data-latex=""}
@@ -301,9 +303,9 @@ Still, there are some criteria for a [good hypothesis](https://opentext.wsu.edu/
 
 -   Hypotheses should be informed by previous theories or observations and logical reasoning.
 
--   Finally, the hypothesis should be positive. That is, the hypothesis should make a positive statement about the existence of a relationship or effect, rather than a statement that a relationship or effect does not exist.
+-   The hypothesis should be positive. That is, the hypothesis should make a positive statement about the existence of a relationship or effect, rather than a statement that a relationship or effect does not exist.
 
--   Finally, it should have some generality (e.g. "things of certain type...") or be about some non-directly observable property of a particular.
+-   The hypothesis should have some generality (e.g. "things of certain type...") or be about some non-directly observable property of a particular.
 
 ### Falsification {#falsification}
 
@@ -355,7 +357,7 @@ Popper is quite radical in this last step. For him, confirmation places no role 
 
 > Suppose a scientist is testing the hypothesis that all pieces of metal conduct electricity. Even if every piece of metal they examine conducts electricity, this doesn’t prove that the hypothesis is true, for reasons that we’ve seen. But if the scientist finds even one piece of metal that fails to conduct electricity, this conclusively refutes the theory. For the inference from ‘this piece of metal does not conduct electricity’ to ‘it is false that all pieces of metal conduct electricity’ is a deductive inference—the premise entails the conclusion. So if a scientist were trying to refute their theory, rather than establish its truth, their goal could be accomplished without the use of induction. --- [@okasha-pos]
 
-However, this view of the scientific process could be rather limiting with respect to the actual scientific practice. First, it does not allow to distinguish between non-falsified hypotheses. Popper argues that obtaining evidence in favour of a given theory is generally easy, and holds that such *corroboration* should count scientifically only if it is the positive result of a genuinely *risky* prediction, which might conceivably have been false.
+However, this view of the scientific process could be rather limiting with respect to the actual scientific practice. First, it does not allow to distinguish between non-falsified hypotheses. Popper argues that obtaining evidence in favour of a given theory is generally easy, and holds that such *corroboration*, should count scientifically only if it is the positive result of a genuinely *risky* prediction, which might conceivably have been false.
 
 > It is logically impossible to verify a universal proposition by reference to experience (as Hume saw clearly), but a single genuine counter-instance falsifies the corresponding universal law. In a word, an exception, far from “proving” a rule, conclusively refutes it. --- [@sep-popper]
 
@@ -423,7 +425,7 @@ There is certain debate on this last point. Not everybody agrees that it makes s
 **Note for data scientists!**
 :::
 
-Is important to note the relevance of frequentist and Bayesian approaches in artificial intelligence. Both frequentist and Bayesian are statistical approaches to learning from data. But there is a broad distinction between the frequentist and Bayesian. The frequentist learning only depends on the given data, while the Bayesian learning is performed by the prior belief as well as the given data [@jun2016frequentist].
+It is important to note the relevance of frequentist and Bayesian approaches in artificial intelligence. Both frequentist and Bayesian are statistical approaches to learning from data. But there is a broad distinction between the frequentist and Bayesian. The frequentist learning only depends on the given data, while the Bayesian learning is performed by the prior belief as well as the given data [@jun2016frequentist].
 
 The frequentist computes the probability of result or data $D$ given hypothesis $H$ is true, i.e. $P(D|H)$. In comparison, the Bayesian approach focus on the probability of hypothesis $H$ when the result or data $D$ occurs, i.e. $P(H|D)$ [@orloffcomparison].
 ::::
@@ -439,7 +441,7 @@ I have pancreas cancer
 
 A clear deductive consequence from this example is that indeed I have a pancreas. However, observing that I do have a pancreas should not confirm the claim that I have pancreas cancer. To solve this issue we should introduce a criteria for relevance to make sure that the chosen implications are relevant to the question. This is key part of the scientific process as this often depends on the domain knowledge we have about the matter we are investigating.
 
-An additional problem to the compatibility issue, is that very many hypotheses are compatible with any given observation. This is called the problem of underdetermination.
+An additional problem to the compatibility issue, is that many hypotheses are compatible with any given observation. This is called the problem of underdetermination.
 
 ```{r chart-underdetermination, echo=F, fig.align="center",  out.width="75%", fig.cap='The problem of underdetermination illustrated with a chart.'}
 knitr::include_graphics('Figures/underdetermination_small.png')
@@ -454,7 +456,7 @@ According to **anti-realists**, there will always be multiple **competing** theo
 
 But why is this important for data scientists? Often you will find many ML models or solutions that fit your available data or fulfil your requirements, and yet you will have to decide which model/solution is best. If possible, validation with external data and other assessments must be conducted, but sometimes solutions are also chosen based on *non-epistemic* values, such as making society more just or making money.
 
-Is also important to notice how the problem of underdetermination relates to the popular **No Free Lunch Theorem** which is very relevant in the Machine Learning community [@dotan2020theory]. For more on the NFL read [@domingos2015master].
+It is also important to notice how the problem of underdetermination relates to the popular **No Free Lunch Theorem** (NFL) which is very relevant in the Machine Learning community [@dotan2020theory]. For more on the NFL read [@domingos2015master].
 ::::
 
 ## Beyond the Hypothetico-Deductive Method: Bayesian Inference and the Logic of Uncertainty {#bayesian-inference}

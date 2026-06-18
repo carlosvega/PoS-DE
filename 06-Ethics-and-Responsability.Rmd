@@ -34,7 +34,7 @@ Similarly, we live in the information revolution, which has transformed the way 
 
 In this chapter, we will not address all the philosophical questions regarding ethics, which are [lengthy](https://en.wikipedia.org/wiki/Ethics) but will try to focus on the ethical practice of data science. Many ethical questions affecting data ethics have already been tackled during this book. Such questions have been interleaved during this book together with other topics, e.g., algorithmic fairness, validity issues and their consequences. Therefore, this book provides a utilitarian framework of ethics. This chapter describes how ethical values, regardless of which they may be, affect the practice of data science, either because of the lack of commitment to them or to how data science is conditioned when abiding by them.
 
-This chapter begins by delving into the definitions of ethics, some ethical frameworks and the values of science. Next, it will describe how ethics are meant to be articulated. Aferwards we will be ready to tackle data ethics and the topics affecting it. Finally, a short summary of the GDPR and examples affecting data ethics are provided to illustrate the impact and significance of this new field.
+This chapter begins tackling the definitions of ethics together with some ethical frameworks and the values of science. Next, it will describe how ethics are meant to be articulated. Aferwards we will be ready to tackle data ethics and the topics affecting it. Finally, a short summary of the GDPR and examples affecting data ethics are provided to illustrate the impact and significance of this new field.
 
 :::: {.simplebox data-latex=""}
 ::: { data-latex=""}
@@ -370,7 +370,7 @@ Apart from the lawful bases, 1 condition out of the following 10 must be met to 
 
 #### Children’s data 
 
-This kind of data is common in schools, hospitals, etc. Collection of children's data generally entails writing a privacy notice which can be understood by a child. Some additional steps may be needed to prove a person's age. For more information see [Art. 8 of the GDPR](https://gdpr-info.eu/art-8-gdpr/). 
+This kind of data is common in schools, hospitals, etc. Collection of children's data generally entails writing a privacy notice simple enough to be understood by a child. Some additional steps may be needed to prove a person's age. For more information see [Art. 8 of the GDPR](https://gdpr-info.eu/art-8-gdpr/). 
 
 ### Principles GDPR
 
@@ -407,7 +407,7 @@ This principle relates to demonstrating compliance with the other principles. It
 
 ### Controllers, Processors and Subjects. 
 
-If a company is the main data decision making, when to collect data, what data to collect and how it should be processed, then this company is acting as **data controller**. Two companies sharing the same data for the same purposes are called **joint controllers** (e.g. two auditing companies). If a company processes data on behalf of another organization and acts under their instructions, then the company is acting as a **data processor**. Last, **data subjects** are physical living people, i.e., the person identified by personal data.
+If a company is the main data decision maker, when to collect data, what data to collect and how it should be processed, then this company is acting as **data controller**. Two companies sharing the same data for the same purposes are called **joint controllers** (e.g. two auditing companies). If a company processes data on behalf of another organization and acts under their instructions, then the company is acting as a **data processor**. Last, **data subjects** are physical living people, i.e., the person identified by personal data.
 
 Data controllers bear the higher responsibility. They must comply with the regulation, demonstrate and document their compliance and ensure compliance of the data processors. Data processors must follow data controllers instructions and help the controller comply with the regulation and provide them with all necessary information. Ensure all sub-processors comply with GDPR.
 
@@ -418,7 +418,7 @@ The following is a very short summary of [Chapter 3 from the GDPR](https://gdpr-
 - **Right to be informed**: The data subjects have the right to know what happens with their data, how is collected, etc. This should be found in the privacy policy.
 - **Right to access**: Data subjects have the right to request a copy of their data held by the company. For exceptions, see Recital 73 of GDPR tackling restrictions of rights and principles.
 - **Rectification**: This allows data subjects to correct their data and improves data accuracy. However, data subjects may be required to provide justification and proof before making changes so that mistakes are not made upon rectification. 
-- **Erasure**: This right is also known as the right to be forgotten. This right has limitations. For instance, removing a data subject from all backups retrospectively. Should this be done they would not be backups any more. Therefore, a best effort must be made and in the case of backups, we should keep a list of removed data subjects to erase their records upon recovery should we need to restore a backup.
+- **Erasure**: This right is also known as the right to be forgotten. This right has limitations. For instance, removing a data subject from all backups retrospectively. Should this be done there would not be backups any more. Therefore, a best effort must be made and in the case of backups, we should keep a list of removed data subjects to erase their records upon recovery should we need to restore a backup.
 - **Right to restrict processing**: Data subjects can temporarily limit how their data is used.
 - **Data portability**: Data subjects have the right to receive their data in a structured, common and machine readable format. They can also request to move their data from one data controller to another.
 - **Right to object**: Allows data subject to object the processing of their data on the grounds that it is being done unlawfully.

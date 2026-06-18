@@ -187,7 +187,7 @@
 
 \title{Applied Philosophy of Science and Data Ethics}
 \author{Dr.~Carlos Vega}
-\date{2021 - 2026: ~Last compiled: 2026-06-15}
+\date{2021 - 2026: ~Last compiled: 2026-06-18}
 
 \begin{document}
 \maketitle
@@ -600,14 +600,14 @@ For a longer and deeper explanation of the experiment, its historical context an
 
 \subsection{Eddington expeditions}\label{eddington-expeditions}
 
-\begin{wrapfigure}{R}{.25\textwidth}  
- \begin{center}
-    \includegraphics[width=.22\textwidth]{Figures/Arthur_Stanley_Eddington.jpg}  
-  \captionsetup{labelformat=empty}
-  \caption{Sir Arthur Stanley Eddington (1882–1944).} 
-\end{center}
-\end{wrapfigure}
-\addtocounter{figure}{-1}
+\begin{figure}
+
+{\centering \includegraphics[width=0.22\linewidth]{Figures/Arthur_Stanley_Eddington} 
+
+}
+
+\caption{English astrophysicist Sir Arthur Stanley Eddington (1882–1944)}\label{fig:eddington-photo}
+\end{figure}
 
 The following example also relates to falsification (see \ref{falsification}) which is taught in the next Chapter. However, this is also a good example of how a good theory should make definite predictions such as those from Einstein's theory of general relativity.
 
@@ -649,7 +649,7 @@ One of the interesting facts from Stanley's account is that Einstein had made a 
 
 In the mid-1700s, James Lind discovered that citrus fruits prevent scurvy, while in the mid-1800s, John Snow figured out that water contaminated with faecal matter caused cholera. These two examples share a common fortunate one-to-one relation between cause and effect. Deficiency of vitamin C is necessary to produce scurvy. Similarly, cholera bacillus is the only cause of cholera.
 
-However, during the late 1950s and early 1960s, whether or not smoking caused lung cancer was not clear. The subject of the debate wasn't tobacco or cancer but rather the word \emph{caused} as one of the most important arguments against the smoking-cancer hypothesis was the possible existence of confounding factors that may cause lung cancer and nicotine dependency. Many smokers live long lives without getting lung cancer while others develop cancer without ever smoking. Plotting the rates of lung cancer and tobacco consumption makes the connection impossible to miss (See Figure \ref{fig:smoke-ts}). However, time-series data are poor evidence for causality. Researchers already knew about RCT though its use was unethical in this case.
+However, during the late 1950s and early 1960s, whether or not smoking caused lung cancer was not clear. The subject of the debate wasn't tobacco or cancer but rather the word \emph{caused} as one of the most important arguments against the smoking-cancer hypothesis was the possible existence of confounding factors that may cause lung cancer and nicotine dependency. Many smokers live long lives without getting lung cancer while others develop cancer without ever smoking. Plotting the rates of lung cancer and tobacco consumption makes the connection impossible to miss (See Figure \ref{fig:smoke-ts}). However, time-series data are poor evidence for causality. Researchers already knew about Randomised Control Trials (RCT) though its use was unethical in this case because you cannot assign a group of participants to smoke.
 
 
 
@@ -664,7 +664,7 @@ However, during the late 1950s and early 1960s, whether or not smoking caused lu
 
 Austin B. Hill proposed to compare patients already diagnosed with cancer to a control group of healthy volunteers. The results showed that all but two of the 649 lung cancer patients had been smokers. This type of study is today called a case-control study because it compares cases to controls. However, \textbf{this method has some drawbacks too}. First, the study is retrospective, meaning that participants known to have cancer are considered and researchers look back to understand why. Second, the probability logic is backwards, as the data tell us the probability that a cancer patient is a smoker instead of the probability that a smoker will get cancer. Moreover, case-control studies admit several possible sources of bias such as recall bias or selection bias. Hospitalised cancer patients were not a representative sample of the population, not even from the smoke population. Researchers were careful to call their results an ``association''. Later on, the study was replicated with similar results. Deniers such as R. A. Fischer were right to point out that repeating a biased study doesn't make it any better as is still biased.
 
-We won't focus on how this story ends here but \textbf{is important to notice how methods chosen based on scientific reasons are sometimes tough to implement and often need to fight against outcome-oriented studies} such as those sponsored by leading tobacco companies.
+We won't focus on how this story ends here but \textbf{it is important to notice how methods chosen based on scientific reasons are sometimes tough to implement and often need to fight against outcome-oriented studies} such as those sponsored by leading tobacco companies.
 
 In the end, many subsequent studies settled the smoking-cancer debate. We will come back to this example in upcoming sections of the course. If you can't wait, read Chapter 5 from the Book of Why, by Judea Pearl and Dana Mackenzie \citep{book-of-why}.
 
@@ -715,7 +715,9 @@ Whether the model is correct or not, Ioannidis' claims are reasonable meta-scien
 
 \textbf{Note for data scientists!}
 
-The \textbf{study power} is defined as ``the ability of a study to detect an effect or association if one really exists in a wider population''. Clinical studies are conducted on a subset of the patient population because it is not possible to measure a characteristic in the entire population. Whenever a statistical inference is made from a sample, it is subject to some error. Researchers attempt to reduce systematic errors through proper design so that only random errors remain. There are two types of random errors to be considered before making inferences about the studied population: \textbf{type I and type II errors}. To make a statistical inference, 2 hypotheses must be set: the \textbf{null hypothesis} (there is no difference) and \textbf{alternate hypothesis} (there is a difference). The probability of reaching a statistically significant result if in truth there is no difference or of rejecting the null hypothesis when it should have been accepted is denoted as \(\alpha\), or the \textbf{probability of type I error}. It is similar to the false positive result of a clinical test. The probability of not detecting a minimum clinically important difference if in truth there is a difference or of accepting the null hypothesis when it should have been rejected is denoted as \(\beta\), or the \textbf{probability of type II error}. It is similar to the false negative result of a clinical test. Properly, researchers choose the size of \(\alpha\) and \(\beta\) before gathering data so that their choices cannot be influenced by study results. The typical value of \(\alpha\) is set at 0.05, and the significance level (\(p\) value) determined from the data is compared with \(\alpha\) to decide on statistical significance. The typical value of \(\beta\) is set at 0.2. The power of the study, its complement, is \(1-\beta\) and is commonly reported as a percentage. --- Adapted from \citep{cadeddu2008users}
+The \textbf{study power} is defined as the ability of a study to detect an effect or association if one truly exists in the population. Clinical studies are conducted on a subset of the patient population because measuring a characteristic in the entire population is not feasible. Whenever a statistical inference is made from a sample, it is subject to some error. Researchers attempt to reduce systematic errors through proper design, leaving only random errors to contend with. There are two types of random errors to consider when making inferences about the studied population: \textbf{type I and type II errors}.
+
+To make a statistical inference, two hypotheses must be set: the \textbf{null hypothesis} (there is no difference) and the \textbf{alternate hypothesis} (there is a difference). The probability of reaching a statistically significant result when in truth there is no difference---or of rejecting the null hypothesis when it should have been accepted---is denoted as \(\alpha\), or the \textbf{probability of type I error}. It is analogous to the false positive result of a clinical test. The probability of not detecting a minimum clinically important difference when in truth there is a difference---or of accepting the null hypothesis when it should have been rejected---is denoted as \(\beta\), or the \textbf{probability of type II error}. It is analogous to the false negative result of a clinical test. Ideally, researchers choose the values of \(\alpha\) and \(\beta\) before gathering data so that their choices cannot be influenced by study results. The typical value of \(\alpha\) is set at 0.05, and the significance level (\(p\) value) determined from the data is compared with \(\alpha\) to decide on statistical significance. The typical value of \(\beta\) is set at 0.2. Study power, its complement, equals \(1-\beta\) and is commonly reported as a percentage. --- Adapted from \citep{cadeddu2008users}
 
 \end{tipbox}
 
@@ -727,7 +729,7 @@ The \textbf{study power} is defined as ``the ability of a study to detect an eff
 
 \section{Overview}\label{overview}
 
-One of the fundamental questions of the philosophy of science is ``How can we obtain knowledge as opposed to mere belief or opinion?'' \citep{ladyman2012understanding}. Humans have a natural ability to conjecture and spot relationships about the world, \emph{jumping} from hypotheses to conclusions. The scientific attitude is to keep such \emph{jumps} under control and use a well defined procedure to arrive to a conclusion from an hypothesis. This chapter taughts how conclusions can be reached from known facts in different ways. For this, a sound basis of logic is needed to understand more complex concepts from this course. The reader will tackle deductive and inductive arguments and link them to data science applications. With this the reader will be equipped to tackle other topics of scientific inference such as the problem of induction, the Hypothetico-deductive method and Falsificationism.
+One of the fundamental questions of the philosophy of science is ``How can we obtain knowledge as opposed to mere belief or opinion?'' \citep{ladyman2012understanding}. Humans have a natural ability to conjecture and spot relationships about the world, \emph{jumping} from hypotheses to conclusions. The scientific attitude is to keep such \emph{jumps} under control and use a well defined procedure to arrive to a conclusion from an hypothesis. This chapter teaches how conclusions can be reached from known facts in different ways. For this, a sound basis of logic is needed to understand more complex concepts from this course. The reader will tackle deductive and inductive arguments and link them to data science applications. With this the reader will be equipped to tackle other topics of scientific inference such as the problem of induction, the Hypothetico-deductive method and Falsificationism.
 
 \begin{quote}
 But our sun is only one of a billion-trillion stars within the observable universe. And those countless suns all obey natural laws some of which are already known to us. How did we discover that there are such laws? If we lived on a planet where nothing ever changed, there wouldn't be much to do, there'd be nothing to figure out. There'd be no impetus for science. And if we lived in an unpredictable world where things changed in random or very complex ways, we wouldn't be able to figure things out. And again, there'd be no such thing as science. But we live in an in between universe where things change alright, but according to patterns, rules, or as we call them, laws of nature. If I throw a stick up in the air, it always falls down. If the sun sets in the west, it always rises again the next morning in the east. And so it's possible to figure things out. We can do science. And with it we can improve our lives. --- Carl Sagan
@@ -747,7 +749,7 @@ Most scientific conclusions are uncanny at first glance and difficult to believe
 
 \subsection{Deduction and Induction}\label{deduction}
 
-A good argument is one whose conclusions follow from its premises. But how do we tell if the conclusion is a consequence of its premises? Is often assumed that as long as the premises are valid, the conclusions will be valid too. This does not imply that the conclusion is also true. The premises might not be true, but if they are true, then the conclusion will also be true. However, is the truth of the premises always \emph{necessarily sufficient} for the truth of the conclusions? Logicians distinguish between deductive and inductive inference. \citep{sep-abduction}
+A good argument is one whose conclusions follow from its premises. But how do we tell if the conclusion is a consequence of its premises? It is often assumed that as long as the premises are valid, the conclusions will be valid too. This does not imply that the conclusion is also true. The premises might not be true, but if they are true, then the conclusion will also be true. However, is the truth of the premises always \emph{necessarily sufficient} for the truth of the conclusions? Logicians distinguish between deductive and inductive inference. \citep{sep-abduction}
 
 Below there is an example of a deductive inference with two premises followed by a conclusion.
 
@@ -799,6 +801,8 @@ There are two rules of inference in deductive reasoning. Deduction constitutes t
 
 \begin{itemize}
 \tightlist
+\item
+  Syllogism: a kind of logical argument that applies deductive reasoning to arrive at a conclusion based on two propositions that are asserted or assumed to be true.
 \item
   Modus ponens: \texttt{P\ implies\ Q.\ P\ is\ true.\ Therefore\ Q\ must\ also\ be\ true.}
 \item
@@ -939,7 +943,7 @@ The problem now becomes how to find a way to avoid this conclusion, despite Hume
   \textbf{Coherentism} proposes that beliefs are justified if they cohere within a web of beliefs, with a chain of reasons that is never-ending but which does not involve infinite beliefs \citep{sep-justep-coherence}.
 \end{itemize}
 
-There are many different ways to respond to Hume's argument, yet none is fully convincing. Peter Strawson (1950s) used the following analogy: \textbf{justifying induction is like asking whether the law is itself legal}. This is rather odd, since the law is the standard against which the legality of other things is judged. Others, like Karl Popper (1902-1994) argued that science is not in fact based on inductive inferences at all and presented a deductivist view of science. We will study this in detail in § \ref{falsification}. \textbf{Bayesian approaches frame induction probabilistically}. Schurz's \textbf{meta-induction} justifies using induction not by logic, but by tracking which predictive strategy has been most successful over time. This is linked to on-line machine learning methods, where the learner adapts based on past success \citep{ortner2023adaptive}.
+There are many different ways to respond to Hume's argument, yet none is fully convincing. Peter Strawson (1950s) used the following analogy: \textbf{justifying induction is like asking whether the law (the legal system) is itself legal}. This is rather odd, since the law is the standard against which the legality of other things is judged. Others, like Karl Popper (1902-1994) argued that science is not in fact based on inductive inferences at all and presented a deductivist view of science. We will study this in detail in § \ref{falsification}. \textbf{Bayesian approaches frame induction probabilistically}. Schurz's \textbf{meta-induction} justifies using induction not by logic, but by tracking which predictive strategy has been most successful over time. This is linked to on-line machine learning methods, where the learner adapts based on past success \citep{ortner2023adaptive}.
 
 \begin{tipbox}
 
@@ -1022,9 +1026,9 @@ Still, there are some criteria for a \href{https://opentext.wsu.edu/carriecuttle
 \item
   Hypotheses should be informed by previous theories or observations and logical reasoning.
 \item
-  Finally, the hypothesis should be positive. That is, the hypothesis should make a positive statement about the existence of a relationship or effect, rather than a statement that a relationship or effect does not exist.
+  The hypothesis should be positive. That is, the hypothesis should make a positive statement about the existence of a relationship or effect, rather than a statement that a relationship or effect does not exist.
 \item
-  Finally, it should have some generality (e.g.~``things of certain type\ldots{}'') or be about some non-directly observable property of a particular.
+  The hypothesis should have some generality (e.g.~``things of certain type\ldots{}'') or be about some non-directly observable property of a particular.
 \end{itemize}
 
 \subsection{Falsification}\label{falsification}
@@ -1080,7 +1084,7 @@ Popper is quite radical in this last step. For him, confirmation places no role 
 Suppose a scientist is testing the hypothesis that all pieces of metal conduct electricity. Even if every piece of metal they examine conducts electricity, this doesn't prove that the hypothesis is true, for reasons that we've seen. But if the scientist finds even one piece of metal that fails to conduct electricity, this conclusively refutes the theory. For the inference from `this piece of metal does not conduct electricity' to `it is false that all pieces of metal conduct electricity' is a deductive inference---the premise entails the conclusion. So if a scientist were trying to refute their theory, rather than establish its truth, their goal could be accomplished without the use of induction. --- \citep{okasha-pos}
 \end{quote}
 
-However, this view of the scientific process could be rather limiting with respect to the actual scientific practice. First, it does not allow to distinguish between non-falsified hypotheses. Popper argues that obtaining evidence in favour of a given theory is generally easy, and holds that such \emph{corroboration} should count scientifically only if it is the positive result of a genuinely \emph{risky} prediction, which might conceivably have been false.
+However, this view of the scientific process could be rather limiting with respect to the actual scientific practice. First, it does not allow to distinguish between non-falsified hypotheses. Popper argues that obtaining evidence in favour of a given theory is generally easy, and holds that such \emph{corroboration}, should count scientifically only if it is the positive result of a genuinely \emph{risky} prediction, which might conceivably have been false.
 
 \begin{quote}
 It is logically impossible to verify a universal proposition by reference to experience (as Hume saw clearly), but a single genuine counter-instance falsifies the corresponding universal law. In a word, an exception, far from ``proving'' a rule, conclusively refutes it. --- \citep{sep-popper}
@@ -1172,7 +1176,7 @@ There is certain debate on this last point. Not everybody agrees that it makes s
 
 \textbf{Note for data scientists!}
 
-Is important to note the relevance of frequentist and Bayesian approaches in artificial intelligence. Both frequentist and Bayesian are statistical approaches to learning from data. But there is a broad distinction between the frequentist and Bayesian. The frequentist learning only depends on the given data, while the Bayesian learning is performed by the prior belief as well as the given data \citep{jun2016frequentist}.
+It is important to note the relevance of frequentist and Bayesian approaches in artificial intelligence. Both frequentist and Bayesian are statistical approaches to learning from data. But there is a broad distinction between the frequentist and Bayesian. The frequentist learning only depends on the given data, while the Bayesian learning is performed by the prior belief as well as the given data \citep{jun2016frequentist}.
 
 The frequentist computes the probability of result or data \(D\) given hypothesis \(H\) is true, i.e.~\(P(D|H)\). In comparison, the Bayesian approach focus on the probability of hypothesis \(H\) when the result or data \(D\) occurs, i.e.~\(P(H|D)\) \citep{orloffcomparison}.
 
@@ -1189,7 +1193,7 @@ I have pancreas cancer
 
 A clear deductive consequence from this example is that indeed I have a pancreas. However, observing that I do have a pancreas should not confirm the claim that I have pancreas cancer. To solve this issue we should introduce a criteria for relevance to make sure that the chosen implications are relevant to the question. This is key part of the scientific process as this often depends on the domain knowledge we have about the matter we are investigating.
 
-An additional problem to the compatibility issue, is that very many hypotheses are compatible with any given observation. This is called the problem of underdetermination.
+An additional problem to the compatibility issue, is that many hypotheses are compatible with any given observation. This is called the problem of underdetermination.
 
 \begin{figure}
 
@@ -1208,7 +1212,7 @@ According to \textbf{anti-realists}, there will always be multiple \textbf{compe
 
 But why is this important for data scientists? Often you will find many ML models or solutions that fit your available data or fulfil your requirements, and yet you will have to decide which model/solution is best. If possible, validation with external data and other assessments must be conducted, but sometimes solutions are also chosen based on \emph{non-epistemic} values, such as making society more just or making money.
 
-Is also important to notice how the problem of underdetermination relates to the popular \textbf{No Free Lunch Theorem} which is very relevant in the Machine Learning community \citep{dotan2020theory}. For more on the NFL read \citep{domingos2015master}.
+It is also important to notice how the problem of underdetermination relates to the popular \textbf{No Free Lunch Theorem} (NFL) which is very relevant in the Machine Learning community \citep{dotan2020theory}. For more on the NFL read \citep{domingos2015master}.
 
 \end{tipbox}
 
@@ -1930,13 +1934,13 @@ However, there are whole research areas were scientists cannot make experiments.
 
 \subsubsection{Natural experiments}\label{natural-experiments}
 
-\href{https://en.wikipedia.org/wiki/Natural_experiment}{\textbf{Natural experiments}} on the other side share the first two characteristics but is possible to control background variables (but not through manipulation though). See § \ref{john-snow} for an example. A major limitation of natural experiments when inferring causation is the presence of unmeasured confounding factors. Natural experiments are appealing for public health research because they enable the evaluation of events or interventions that are difficult or impossible to manipulate experimentally, such as many policy and health system reforms \citep{de2021conceptualising}.
+\href{https://en.wikipedia.org/wiki/Natural_experiment}{\textbf{Natural experiments}} on the other side share the first two characteristics but is possible to control background variables (but not through manipulation though). See § \ref{john-snow} for an example. A major limitation of natural experiments when inferring causation is the presence of unmeasured confounding factors. Natural experiments are appealing for public health research because they enable the evaluation of events or interventions which are difficult or impossible to manipulate experimentally, such as many policy and health system reforms \citep{de2021conceptualising}.
 
 \begin{quote}
 For example the Canterbury earthquakes in 2010-2011 could be used to study the impact of such disasters because about half of a well-studied birth cohort lived in the affected area with the remainder living outside. {[}\ldots{]} More recently, the use of the term `natural' has been understood more broadly as an event which did not involve the deliberate manipulation of exposure for research purposes, even if human agency was involved. {[}\ldots{]} Natural experiments describing the study of an event which did not involve the deliberate manipulation of an exposure but involved human agency, such as the impact of a new policy, are the mainstay of `natural experimental research' in public health. --- \citep{de2021conceptualising}
 \end{quote}
 
-See Figure \ref{fig:diagram-experiments} for an schema depicting the conceptualisation of natural and quasi-experiments. Some authors differentiate between natural experiments and \emph{quasi-experiments}. In a quasi-experiment, the criterion for group assignment of the study units (e.g.~study participants) is selected by the researchers, whereas, in a natural experiment, the assignment occurs \emph{naturally}, without the intervention of the researchers.
+See Figure \ref{fig:diagram-experiments} for an schema depicting the conceptualisation of natural and quasi-experiments. Some authors differentiate between natural experiments and \emph{quasi-experiments}. In a quasi-experiment, the criterion for group assignment of the study units (e.g.~study participants) is selected by the researchers, whereas, in a natural experiment, the assignment occurs \emph{naturally}, without the intervention of the researchers. For instance, a city implements a new traffic calming policy in one district but not another, and researchers compare accident rates between the two areas. In this case the districts were not randomly assigned, but the policy change creates a natural treatment and control group.
 
 \begin{quote}
 Quasi-experiment: A quasi-experiment is an empirical interventional study used to estimate the causal impact of an intervention on target population without random assignment. Quasi-experimental research shares similarities with the traditional experimental design or randomized controlled trial, but it specifically lacks the element of random assignment to treatment or control. Instead, quasi-experimental designs typically allow the researcher to control the assignment to the treatment condition, but using some criterion other than random assignment. Quasi-experiments are subject to concerns regarding internal validity, because the treatment and control groups may not be comparable at baseline. In other words, it may not be possible to convincingly demonstrate a causal link between the treatment condition and observed outcomes. This is particularly true if there are confounding variables that cannot be controlled or accounted for. --- Wikipedia on \citep{rossi1985evaluation} and \citep{dinardo2010natural}.
@@ -1979,7 +1983,7 @@ Observations are often expressed in the form of a rule so that other researchers
 
 \subsubsection{Indicators}\label{indicators}
 
-Most facts we know about are indirectly observable, i.e.~we infer them through an intermediary. For instance, the wind is not directly observable but inferred from bodies apparently moved by it. We \emph{objectify} an unobservable fact by establishing its relationship to some perceptible fact(s) that serve us as an \emph{indicator} of the fact. In other words, hypotheses are made concerning unperceived facts and tested through evidence consisting of data about other directly observable facts, assuming that the latter are \textbf{collaterally connected with} or \textbf{effects} of the former. Of course, that such relationship should hold is as well a hypothesis (see Figure \ref{fig:indicator}).
+Most facts we know about are indirectly observable, i.e.~we infer them through an intermediary. For instance, the wind is not directly observable but inferred from bodies apparently moved by it. We \emph{objectify} an unobservable fact by establishing its relationship to some perceptible fact(s) that serve us as an \emph{indicator} of the fact. In other words, hypotheses are made concerning unperceived facts and tested through evidence consisting of data about other directly observable facts, assuming that the latter are \textbf{collaterally connected with} or are \textbf{effects} of the former. Of course, that such relationship should hold is as well a hypothesis (see Figure \ref{fig:indicator}).
 
 
 
@@ -1994,7 +1998,7 @@ Most facts we know about are indirectly observable, i.e.~we infer them through a
 
 \subsubsection{Data and Evidence}\label{data-and-evidence}
 
-Every evidence is a \emph{datum} but not every datum constitutes \emph{evidence}. What turns a datum into evidence is that is relevant to some idea, that it makes sense under some theory or body of knowledge. In particular, we believe a datum constitutes an evidence in favour of a theory and assign the theory some \emph{credence} because it justifies or predicts that evidence. The evidence must be related to a specific hypothesis, and this relationship is justified because of a body of theoretical knowledge. In fact, no evidence is absolute. Consider the following example from \citep{bunge2017philosophy}:
+Every evidence is a \emph{datum} but not every datum constitutes \emph{evidence}. What turns a datum into evidence is that it is relevant to some idea, that it makes sense under some theory or body of knowledge. In particular, we believe a datum constitutes an evidence in favour of a theory and assign the theory some \emph{credence} because it justifies or predicts that evidence. The evidence must be related to a specific hypothesis, and this relationship is justified because of a body of theoretical knowledge. In fact, no evidence is absolute. Consider the following example from \citep{bunge2017philosophy}:
 
 \begin{quote}
 The observed deviation of a magnetic needle in the vicinity of an electric circuit (datum \(e\)) supports the hypothesis \(h_x\) that electricity is flowing through the circuit, on the theory \(⊤_1\) that electric currents produce magnetic fields which in turn interact with the fields of magnetic needles. But exactly the same datum \(e\) might be taken as an evidence in favour of the rival hypothesis \(h_2\) that a big magnet somewhere nearby has been switched on, on the theory \(⊤_2\) that magnets can interact directly with one another. The given datum is then \emph{ambiguous} and only an independent checking of \(h_x\) and \(h_2\), i.e.~a test independent of \(e\), will enable us to reach a decision between the two rivals.
@@ -2035,7 +2039,7 @@ In the example (see Figure \ref{fig:fertiliser}), the background variables are c
 \item
   Excludability: The assumption of excludability states that the randomization does not affect outcomes through other variables than the reception of the treatment. If this assumption is violated, the causal effect identified in a study is a combination of the treatment and other variables \citep{hansen2020systematic}. For instance, that the two fields do not receive the same amount of light.
 \item
-  Interference: Interference occurs when experimental units alter each other's outcomes. This generates a bias that precludes the proper estimation of causal effects by the reseachers.
+  Interference: Interference occurs when experimental units alter each other's outcomes. This generates a bias that prevents the proper estimation of causal effects by the reseachers.
 \item
   Attrition: Attrition occurs when outcome data are missing. Attrition becomes a problem for causal inference when two conditions are present: (1) units with missing outcomes differ systematically on the outcome from those that are not missing and (2) attrition is different in experimental groups. There is greater potential for attrition in field experiments than in laboratory experiments because field experiments confer less control \citep{hansen2020systematic}. For instance, some participants may leave a study if they do not get any improvement.
 \end{itemize}
@@ -2286,8 +2290,6 @@ The \textbf{similarity} criterion can for example assess physical resemblance. M
 \caption{Accuracy consists of trueness (proximity of measurement results to the true value) and precision (repeatability or reproducibility of the measurement). Source: \href{https://wp.stolaf.edu/it/gis-precision-accuracy/}{St.~Olaf College}.}\label{fig:prec-vs-acc}
 \end{figure}
 
-Another model criterion to consider is \textbf{precision} (w.r.t. parameters). We say that model \(M_1\) is more precise than \(M_2\) if the parameter specifications of \(M_1\) \emph{imply} those from \(M_2\). This definition is better understood through an example. Consider the following models \(M_1\), \(M_2\), and \(M_3\) and below definitions. The first model describes a rate of changes as a function of \(X\). \(M_2\) is more precise as describes the rate of changes as a linear function of \(X\). The description of \(M_2\) implies the description of \(M_1\). Linear functions of \(X\) are a subset of functions of \(X\). Finally, the third model is yet more precise as it indicates an absolute value of the parameter \(a\), reducing the subset of linear functions from the definition of \(M_2\) to a particular linear function. Importantly, parameter precision is a property of the model alone, not of the relationship between model and target. Although precision offers potential for high accuracy, it is no warrant for it. For instance, if the actual rate of linear change would be other than \(1.2X\), then the less precise model \(M_2\) would be more accurate than \(M_3\). Similarly, if the rate of change would not change linearly, the more general model \(M_1\) would be more accurate than the alternatives.
-
 \begin{itemize}
 \tightlist
 \item
@@ -2297,6 +2299,8 @@ Another model criterion to consider is \textbf{precision} (w.r.t. parameters). W
 \item
   \(M_3: dX/dt = 1.2X\)
 \end{itemize}
+
+Another model criterion to consider is \textbf{precision} (w.r.t. parameters). We say that model \(M_1\) is more precise than \(M_2\) if the parameter specifications of \(M_1\) \emph{imply} those from \(M_2\). This definition is better understood through an example. Consider the following models \(M_1\), \(M_2\), and \(M_3\) and above definitions. The first model \(M_1\) describes a rate of changes as a function of \(X\). \(M_2\) is more precise as describes the rate of changes as a linear function of \(X\). The description of \(M_2\) implies the description of \(M_1\). Linear functions of \(X\) are a subset of functions of \(X\). Finally, the third model is yet more precise as it indicates an absolute value of the parameter \(a\), reducing the subset of linear functions from the definition of \(M_2\) to a particular linear function. Importantly, parameter precision is a property of the model alone, not of the relationship between model and target. Although precision offers potential for high accuracy, it is no warrant for it. For instance, if the actual rate of linear change would be other than \(1.2X\), then the less precise model \(M_2\) would be more accurate than \(M_3\). Similarly, if the rate of change would not change linearly, the more general model \(M_1\) would be more accurate than the alternatives.
 
 \begin{tipbox}
 
@@ -3185,7 +3189,7 @@ As can be seen, this value is closer to the degree of our synthetic data \texttt
 \end{Shaded}
 
 \begin{verbatim}
-## Estimated Effect (revised model): 10.095828768814414
+## Estimated Effect (revised model): 10.095828768814442
 \end{verbatim}
 
 \chapter{Experimental Control and Statistical Abuse}\label{stats-abuse}
@@ -3452,7 +3456,7 @@ Importantly, should the underlying association change, the proxy or surragate wo
 
 \subsection{Confounding factors}\label{confounding-factors}
 
-Related to this, we can find confounding variables. Confounders (see age in Fig. \ref{fig:cibb-confounding}) are variables that affect both the potential predictor variable (physical activity) and the outcome (cardiac problems). When the presence of confounders is unknown and in lack of experiments specifically designed to minimise them (e.g., randomised controlled trials), we cannot control for them. Uncontrolled confounders may lead to wrongly conclude that a given feature is a strong predictor of the outcome when in reality the association is spurious.
+Related to this, we can find confounding variables. Confounders (see age in Fig. \ref{fig:cibb-confounding}) are variables that affect both the potential predictor variable (physical activity) and the outcome (cardiac problems). When the presence of confounders is unknown and in lack of experiments which are specifically designed to minimise them (e.g., randomised controlled trials), we cannot control for them. Uncontrolled confounders may lead to wrongly concluding that a given feature is a strong predictor of the outcome when in reality the association is spurious.
 
 \begin{figure}
 
@@ -3490,7 +3494,7 @@ A collider entails a variable that is influenced by two other variables, i.e.~co
 \end{figure}
 
 \begin{quote}
-``If we assume that a given \textbf{covariate} influences both the hypothesised risk factor and the outcome (a confounder), it is appropriate to condition on that covariate to remove bias induced by the confounding structure. However, if the covariate is a consequence of either or both the exposure and the outcome (a collider), rather than a common cause (a confounder), then conditioning on the covariate can induce, rather than reduce bias. That is, \textbf{collider bias can also be introduced when making statistical adjustments for variables that lie on the causal pathway between risk factor and outcome}. A priori knowledge of the underlying causal structure of variables and whether they function as a common cause or common consequence of risk factor and outcome in the data generating process can be hard to infer. Therefore, it is appropriate to treat collider bias with a similar level of caution to confounding bias.'' --- \citep{griffith2020collider}
+``If we assume that a given \textbf{covariate} influences both the hypothesised risk factor and the outcome (a confounder), it is appropriate to condition on that covariate to remove bias induced by the confounding structure. However, if the covariate is a consequence of either or both the exposure and the outcome (a collider), rather than a common cause (a confounder), then conditioning on the covariate can induce bias rather than reduce it. That is, \textbf{collider bias can also be introduced when making statistical adjustments for variables that lie on the causal pathway between risk factor and outcome}. A priori knowledge of the underlying causal structure of variables and whether they function as a common cause or common consequence of risk factor and outcome in the data generating process can be hard to infer. Therefore, it is appropriate to treat collider bias with a similar level of caution to confounding bias.'' --- \citep{griffith2020collider}
 \end{quote}
 
 \begin{tipbox}
@@ -3552,7 +3556,7 @@ The most important fact about the diagram in Figure \ref{fig:inference-engine} i
 
 \end{rnote}
 
-In this \href{https://www.covid-datascience.com/post/israeli-data-how-can-efficacy-vs-severe-disease-be-strong-when-60-of-hospitalized-are-vaccinated}{blog post}, biostatistics Professor Jeffrey Morris demonstrates how without properly controlling for age, efficacy against severe disease in Israel may appear weak when in fact within each age-group it is extremely strong. Consider the table from Figure \ref{fig:vaccine-rates-a} and the following data from the the Israeli government. As of August 15, 2021 nearly 60\% of all patients currently hospitalized for COVID-19 are vaccinated. Out of 515 patients currently hospitalized with severe cases in Israel, 301 (58.4\%) of these cases were fully vaccinated.
+In this \href{https://www.covid-datascience.com/post/israeli-data-how-can-efficacy-vs-severe-disease-be-strong-when-60-of-hospitalized-are-vaccinated}{blog post}, biostatistics Professor Jeffrey Morris demonstrates how without properly controlling for age, the efficacy against severe disease in Israel may appear weak when in fact within each age-group it is extremely strong. Consider the table from Figure \ref{fig:vaccine-rates-a} and the following data from the the Israeli government. As of August 15, 2021 nearly 60\% of all patients currently hospitalized for COVID-19 are vaccinated. Out of 515 patients currently hospitalized with severe cases in Israel, 301 (58.4\%) of these cases were fully vaccinated.
 
 \begin{figure}
 
@@ -3579,7 +3583,7 @@ Vaccine Efficacy vs.~Severe disease = 1 - 5.3/16.4 = 67.5\%.
 The interpretation of this number is that the vaccines are preventing \textgreater2/3 of the serious infections leading to hospitalization that would have occurred sans vaccination.
 \end{quote}
 
-Still, the obtained efficacy is lower than what we would expect. There are other factors that contribute to this confusion, including: age disparity in vaccinations, old people is more likely to be hospitalized than young people, etc.
+Still, the obtained efficacy is lower than what we would expect. There are other factors that contribute to this confusion, including: age disparity in vaccinations, old people are more likely to be hospitalized than young people, etc.
 
 I recommend going through the blog post to see how the author continues to apply adjustments and stratifications to find the true efficacy of the vaccines. Moreover, this is a good example of the Simpson's paradox, where misleading results can be obtained in the presence of confounding factors.
 
@@ -3650,7 +3654,7 @@ Similarly, we live in the information revolution, which has transformed the way 
 
 In this chapter, we will not address all the philosophical questions regarding ethics, which are \href{https://en.wikipedia.org/wiki/Ethics}{lengthy} but will try to focus on the ethical practice of data science. Many ethical questions affecting data ethics have already been tackled during this book. Such questions have been interleaved during this book together with other topics, e.g., algorithmic fairness, validity issues and their consequences. Therefore, this book provides a utilitarian framework of ethics. This chapter describes how ethical values, regardless of which they may be, affect the practice of data science, either because of the lack of commitment to them or to how data science is conditioned when abiding by them.
 
-This chapter begins by delving into the definitions of ethics, some ethical frameworks and the values of science. Next, it will describe how ethics are meant to be articulated. Aferwards we will be ready to tackle data ethics and the topics affecting it. Finally, a short summary of the GDPR and examples affecting data ethics are provided to illustrate the impact and significance of this new field.
+This chapter begins tackling the definitions of ethics together with some ethical frameworks and the values of science. Next, it will describe how ethics are meant to be articulated. Aferwards we will be ready to tackle data ethics and the topics affecting it. Finally, a short summary of the GDPR and examples affecting data ethics are provided to illustrate the impact and significance of this new field.
 
 \begin{simplebox}
 
@@ -3946,7 +3950,7 @@ Apart from the lawful bases, 1 condition out of the following 10 must be met to 
 
 \subsubsection{Children's data}\label{childrens-data}
 
-This kind of data is common in schools, hospitals, etc. Collection of children's data generally entails writing a privacy notice which can be understood by a child. Some additional steps may be needed to prove a person's age. For more information see \href{https://gdpr-info.eu/art-8-gdpr/}{Art. 8 of the GDPR}.
+This kind of data is common in schools, hospitals, etc. Collection of children's data generally entails writing a privacy notice simple enough to be understood by a child. Some additional steps may be needed to prove a person's age. For more information see \href{https://gdpr-info.eu/art-8-gdpr/}{Art. 8 of the GDPR}.
 
 \subsection{Principles GDPR}\label{principles-gdpr}
 
@@ -3981,7 +3985,7 @@ This principle relates to demonstrating compliance with the other principles. It
 
 \subsection{Controllers, Processors and Subjects.}\label{controllers-processors-and-subjects.}
 
-If a company is the main data decision making, when to collect data, what data to collect and how it should be processed, then this company is acting as \textbf{data controller}. Two companies sharing the same data for the same purposes are called \textbf{joint controllers} (e.g.~two auditing companies). If a company processes data on behalf of another organization and acts under their instructions, then the company is acting as a \textbf{data processor}. Last, \textbf{data subjects} are physical living people, i.e., the person identified by personal data.
+If a company is the main data decision maker, when to collect data, what data to collect and how it should be processed, then this company is acting as \textbf{data controller}. Two companies sharing the same data for the same purposes are called \textbf{joint controllers} (e.g.~two auditing companies). If a company processes data on behalf of another organization and acts under their instructions, then the company is acting as a \textbf{data processor}. Last, \textbf{data subjects} are physical living people, i.e., the person identified by personal data.
 
 Data controllers bear the higher responsibility. They must comply with the regulation, demonstrate and document their compliance and ensure compliance of the data processors. Data processors must follow data controllers instructions and help the controller comply with the regulation and provide them with all necessary information. Ensure all sub-processors comply with GDPR.
 
@@ -3998,7 +4002,7 @@ The following is a very short summary of \href{https://gdpr-info.eu/chapter-3/}{
 \item
   \textbf{Rectification}: This allows data subjects to correct their data and improves data accuracy. However, data subjects may be required to provide justification and proof before making changes so that mistakes are not made upon rectification.
 \item
-  \textbf{Erasure}: This right is also known as the right to be forgotten. This right has limitations. For instance, removing a data subject from all backups retrospectively. Should this be done they would not be backups any more. Therefore, a best effort must be made and in the case of backups, we should keep a list of removed data subjects to erase their records upon recovery should we need to restore a backup.
+  \textbf{Erasure}: This right is also known as the right to be forgotten. This right has limitations. For instance, removing a data subject from all backups retrospectively. Should this be done there would not be backups any more. Therefore, a best effort must be made and in the case of backups, we should keep a list of removed data subjects to erase their records upon recovery should we need to restore a backup.
 \item
   \textbf{Right to restrict processing}: Data subjects can temporarily limit how their data is used.
 \item

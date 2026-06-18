@@ -222,26 +222,9 @@ For a longer and deeper explanation of the experiment, its historical context an
 
 ### Eddington expeditions {#eddington-expeditions}
 
-```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
-cat(
-'<figure class="wrap-figure">
-<img src="Figures/Arthur_Stanley_Eddington.jpg">
-<figcaption>English astrophysicist Sir Arthur Stanley Eddington (1882–1944).</figcaption>
-</figure>'
-)
+```{r eddington-photo, echo=F, fig.align="center", out.width="22%", fig.cap="English astrophysicist Sir Arthur Stanley Eddington (1882–1944)"}
+knitr::include_graphics('Figures/Arthur_Stanley_Eddington.jpg')
 ```
-
-```{r, include=knitr::is_latex_output(), echo = F}
-knitr::asis_output('\\begin{wrapfigure}{R}{.25\\textwidth}  
- \\begin{center}
-    \\includegraphics[width=.22\\textwidth]{Figures/Arthur_Stanley_Eddington.jpg}  
-  \\captionsetup{labelformat=empty}
-  \\caption{Sir Arthur Stanley Eddington (1882–1944).} 
-\\end{center}
-\\end{wrapfigure}
-\\addtocounter{figure}{-1}')
-```
-
 
 The following example also relates to falsification (see \@ref(falsification)) which is taught in the next Chapter. However, this is also a good example of how a good theory should make definite predictions such as those from Einstein's theory of general relativity.
 
@@ -267,7 +250,7 @@ knitr::include_graphics('Figures/solar_eclipse.jpg')
 
 In the mid-1700s, James Lind discovered that citrus fruits prevent scurvy, while in the mid-1800s, John Snow figured out that water contaminated with faecal matter caused cholera. These two examples share a common fortunate one-to-one relation between cause and effect. Deficiency of vitamin C is necessary to produce scurvy. Similarly, cholera bacillus is the only cause of cholera.
 
-However, during the late 1950s and early 1960s, whether or not smoking caused lung cancer was not clear. The subject of the debate wasn't tobacco or cancer but rather the word *caused* as one of the most important arguments against the smoking-cancer hypothesis was the possible existence of confounding factors that may cause lung cancer and nicotine dependency. Many smokers live long lives without getting lung cancer while others develop cancer without ever smoking. Plotting the rates of lung cancer and tobacco consumption makes the connection impossible to miss (See Figure \@ref(fig:smoke-ts)). However, time-series data are poor evidence for causality. Researchers already knew about RCT though its use was unethical in this case. 
+However, during the late 1950s and early 1960s, whether or not smoking caused lung cancer was not clear. The subject of the debate wasn't tobacco or cancer but rather the word *caused* as one of the most important arguments against the smoking-cancer hypothesis was the possible existence of confounding factors that may cause lung cancer and nicotine dependency. Many smokers live long lives without getting lung cancer while others develop cancer without ever smoking. Plotting the rates of lung cancer and tobacco consumption makes the connection impossible to miss (See Figure \@ref(fig:smoke-ts)). However, time-series data are poor evidence for causality. Researchers already knew about Randomised Control Trials (RCT) though its use was unethical in this case because you cannot assign a group of participants to smoke.
 
 (ref:smoke-ts-caption) Source: [Our World in Data](https://ourworldindata.org/smoking-big-problem-in-brief).
 
@@ -277,7 +260,7 @@ knitr::include_graphics('Figures/Smoking-and-lung-cancer-mortality-US-only.png')
 
 Austin B. Hill proposed to compare patients already diagnosed with cancer to a control group of healthy volunteers. The results showed that all but two of the 649 lung cancer patients had been smokers. This type of study is today called a case-control study because it compares cases to controls. However, **this method has some drawbacks too**. First, the study is retrospective, meaning that participants known to have cancer are considered and researchers look back to understand why. Second, the probability logic is backwards, as the data tell us the probability that a cancer patient is a smoker instead of the probability that a smoker will get cancer. Moreover, case-control studies admit several possible sources of bias such as recall bias or selection bias. Hospitalised cancer patients were not a representative sample of the population, not even from the smoke population. Researchers were careful to call their results an "association". Later on, the study was replicated with similar results. Deniers such as R. A. Fischer were right to point out that repeating a biased study doesn't make it any better as is still biased. 
 
-We won't focus on how this story ends here but **is important to notice how methods chosen based on scientific reasons are sometimes tough to implement and often need to fight against outcome-oriented studies** such as those sponsored by leading tobacco companies.
+We won't focus on how this story ends here but **it is important to notice how methods chosen based on scientific reasons are sometimes tough to implement and often need to fight against outcome-oriented studies** such as those sponsored by leading tobacco companies.
 
 In the end, many subsequent studies settled the smoking-cancer debate. We will come back to this example in upcoming sections of the course. If you can't wait, read Chapter 5 from the Book of Why, by Judea Pearl and Dana Mackenzie [@book-of-why].
 
@@ -320,7 +303,9 @@ Whether the model is correct or not, Ioannidis' claims are reasonable meta-scien
 **Note for data scientists!**
 :::
 
-The **study power** is defined as "the ability of a study to detect an effect or association if one really exists in a wider population". Clinical studies are conducted on a subset of the patient population because it is not possible to measure a characteristic in the entire population. Whenever a statistical inference is made from a sample, it is subject to some error. Researchers attempt to reduce systematic errors through proper design so that only random errors remain. There are two types of random errors to be considered before making inferences about the studied population: **type I and type II errors**. To make a statistical inference, 2 hypotheses must be set: the **null hypothesis** (there is no difference) and **alternate hypothesis** (there is a difference). The probability of reaching a statistically significant result if in truth there is no difference or of rejecting the null hypothesis when it should have been accepted is denoted as $\alpha$, or the **probability of type I error**. It is similar to the false positive result of a clinical test. The probability of not detecting a minimum clinically important difference if in truth there is a difference or of accepting the null hypothesis when it should have been rejected is denoted as $\beta$, or the **probability of type II error**. It is similar to the false negative result of a clinical test. Properly, researchers choose the size of $\alpha$ and $\beta$ before gathering data so that their choices cannot be influenced by study results. The typical value of $\alpha$ is set at 0.05, and the significance level ($p$ value) determined from the data is compared with $\alpha$ to decide on statistical significance. The typical value of $\beta$ is set at 0.2. The power of the study, its complement, is $1-\beta$ and is commonly reported as a percentage. --- Adapted from [@cadeddu2008users]
+The **study power** is defined as the ability of a study to detect an effect or association if one truly exists in the population. Clinical studies are conducted on a subset of the patient population because measuring a characteristic in the entire population is not feasible. Whenever a statistical inference is made from a sample, it is subject to some error. Researchers attempt to reduce systematic errors through proper design, leaving only random errors to contend with. There are two types of random errors to consider when making inferences about the studied population: **type I and type II errors**.
+
+To make a statistical inference, two hypotheses must be set: the **null hypothesis** (there is no difference) and the **alternate hypothesis** (there is a difference). The probability of reaching a statistically significant result when in truth there is no difference---or of rejecting the null hypothesis when it should have been accepted---is denoted as $\alpha$, or the **probability of type I error**. It is analogous to the false positive result of a clinical test. The probability of not detecting a minimum clinically important difference when in truth there is a difference---or of accepting the null hypothesis when it should have been rejected---is denoted as $\beta$, or the **probability of type II error**. It is analogous to the false negative result of a clinical test. Ideally, researchers choose the values of $\alpha$ and $\beta$ before gathering data so that their choices cannot be influenced by study results. The typical value of $\alpha$ is set at 0.05, and the significance level ($p$ value) determined from the data is compared with $\alpha$ to decide on statistical significance. The typical value of $\beta$ is set at 0.2. Study power, its complement, equals $1-\beta$ and is commonly reported as a percentage. --- Adapted from [@cadeddu2008users]
 ::::
 
 <!--
